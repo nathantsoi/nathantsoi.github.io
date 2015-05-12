@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog Name</title>
+  <subtitle>Blog subtitle</subtitle>
+  <id>http://blog.url.com/blog</id>
+  <link href="http://blog.url.com/blog"/>
+  <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <updated>2015-05-11T20:13:00-07:00</updated>
+  <author>
+    <name>Blog Author</name>
+  </author>
+  <entry>
+    <title>Ebay HC-05 Bluetooth Setup Guide</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2015/05/12/ebay-hc-05-bluetooth-setup-guide/"/>
+    <id>http://blog.url.com/blog/2015/05/12/ebay-hc-05-bluetooth-setup-guide/</id>
+    <published>2015-05-11T20:13:00-07:00</published>
+    <updated>2015-05-11T20:30:07-07:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;First, we&amp;rsquo;ll change the baud rate as described by &lt;a href="http://blog.oscarliang.net/multiwii-bluetooth-change-baud-rate/"&gt;Oscar&lt;/a&gt;. Use this link if you&amp;rsquo;re using an Arduino to change the baud.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Using my cool CP102 USB to UART adapter, I tried following the directions from &lt;a href="https://www.youtube.com/watch?v=jSxcEZHsV0A"&gt;painless360&lt;/a&gt;, summarized below, but I couldnt change my com port. Turns out you need to run Arduino as an adminstrator to change the COM port. Also those commands are for the new HC-06.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Here is &lt;a href="http://www.martyncurrey.com/arduino-with-hc-05-bluetooth-module-at-mode/"&gt;another great guide&lt;/a&gt; I used, specific to the HC-05 I ordered.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The HC-05 is different from the HC-06 in 2 respects, it requires the button be depressed when powering on to go into AT mode and it wants both NL and CR sent with the command. Also, my UART to USB adapter has the option of 3 or 5v. 3v didn&amp;rsquo;t work, so I had to use 5v.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Plug it in&lt;/li&gt;
+&lt;li&gt;Open the Arduino Studio&lt;/li&gt;
+&lt;li&gt;Open the serial Monitor&lt;/li&gt;
+&lt;li&gt;Pick &amp;ldquo;Both NL &amp;amp; CR&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Set serial monitor BAUD to 9600
+
+&lt;ul&gt;
+&lt;li&gt; NOTE: Not sure why this is, but my board wouldnt work unless I set the BAUD to 38400. If the following doesnt work, try the &lt;code&gt;AT&lt;/code&gt; command with every BAUD until you find the right one.&lt;/li&gt;
+&lt;li&gt;Also note, the &lt;code&gt;AT+UART&lt;/code&gt; command, which returns the BAUD, showed that it was running 9600,0,0. Edit: This is for non-AT mode.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Type &lt;code&gt;AT&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It should say &amp;ldquo;OK&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Change BAUD enter &lt;code&gt;AT+UART=115200,1,0&lt;/code&gt; where 1 is the stop bit and 0 is the parity. On the HC-06 the command is just &lt;code&gt;AT+BAUD8&lt;/code&gt; More documentation for the HC-05 is available at &lt;a href="http://wiki.iteadstudio.com/Serial_Port_Bluetooth_Module_%28Master/Slave%29_:_HC-05#6._Set.2FCheck_module_name:"&gt;iteadsstudio.com&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It should say &lt;code&gt;OK&lt;/code&gt; on the HC-05,  &lt;code&gt;OK115200&lt;/code&gt; on the HC-06&lt;/li&gt;
+&lt;li&gt;This will change the BAUD in bluetooth mode, not the baud in AT mode, so your connection should remain open&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Change the name, on the HC-05 &lt;code&gt;AT+NAME?&lt;/code&gt; doesnt seem to work
+
+&lt;ul&gt;
+&lt;li&gt;For the HC-06: &lt;code&gt;AT+NAMEputhtenamehere&lt;/code&gt;, e.g. &lt;code&gt;AT+NAMESuperCopter&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Check the pin with &lt;code&gt;AT+ PSWD?&lt;/code&gt; and set it with &lt;code&gt;AT+ PSWD=0000&lt;/code&gt; where 0000 is your pin
+
+&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;AT+PIN1234&lt;/code&gt; for the HC-06&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;If you&amp;rsquo;re using a cc3d like me, here&amp;rsquo;s how you wire it onto your copter&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span class="center img-quarter-width"&gt;&lt;img alt="cc3d serial wiring" src="../../../../../assets/images/blog/cc3d/serial-49293599.png" /&gt;&lt;/span&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>3D Camera on the Tricopter</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2015/05/12/3d-camera-on-the-tricopter/"/>
+    <id>http://blog.url.com/blog/2015/05/12/3d-camera-on-the-tricopter/</id>
+    <published>2015-05-11T20:08:00-07:00</published>
+    <updated>2015-05-11T20:30:07-07:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;First, a huge shoutout to David Windestal over at &lt;a href="http://rcexplorer.se/"&gt;rcexplorer.se&lt;/a&gt; for developing the awesome &lt;a href="http://rcexplorer.se/projects/2012/07/the-tricopter-v2-6hv/"&gt;tricopter&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;My buddy Alex and I just built one and threw a couple awesome &lt;a href="http://www.techmoan.com/blog/2015/3/30/the-full-xiaomi-yi-action-camera-review.html"&gt;GoPro clones&lt;/a&gt; on it and had our first flight, followed by our first crash.&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;ll want to watch this with your &lt;a href="https://www.google.com/get/cardboard/"&gt;Google Cardboard&lt;/a&gt; or 3D tv.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-quarter-width"&gt;&lt;img alt="3d tricopter maiden qrcode" src="../../../../../assets/images/blog/qr/youtube-eOhSti7CwyA-205146d7.png" /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;iframe width="960" height="270" src="https://www.youtube.com/embed/eOhSti7CwyA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+</content>
+  </entry>
+  <entry>
+    <title>ProRes editing in Photoshop</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2015/05/11/prores-editing-in-photoshop/"/>
+    <id>http://blog.url.com/blog/2015/05/11/prores-editing-in-photoshop/</id>
+    <published>2015-05-10T21:39:00-07:00</published>
+    <updated>2015-05-11T20:30:07-07:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Unfinished Draft&lt;/p&gt;
+
+&lt;h3&gt;Downloads&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;the Codecs&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://support.apple.com/kb/DL1396?locale=en_US"&gt;ProRes Video Codecs&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Unpackage&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.timdoug.com/unpkg/"&gt;Unpkg&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Uncompress&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Uncompress the pkg with unpkg and copy the extracted files into their respective folders&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href="http://www.martin-thoburn.com/vj/install-apple-prores-codec-without-final-cut/"&gt;Here&amp;rsquo;s a guide&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=fSFIQSXJ4RE"&gt;And a youtube&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Presets&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;You&amp;rsquo;ll want to use this preset for your Timeline:&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;And here&amp;rsquo;s an export preset:&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For uploading to YouTube, export in H.264:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Xiaomi Yi -- The Ant Camera</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2015/05/08/xiaomi-yi-the-ant-camera/"/>
+    <id>http://blog.url.com/blog/2015/05/08/xiaomi-yi-the-ant-camera/</id>
+    <published>2015-05-08T10:27:00-07:00</published>
+    <updated>2015-05-11T20:30:07-07:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h2&gt;Building A Video Out Cable&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Pin #4 &amp;ndash; Video out (the center in a normal RCA jack)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Pin #5 &amp;ndash; Ground&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-quarter-width"&gt;&lt;img alt="usb micro" src="../../../../../assets/images/blog/xiaomi_yi/micro-usb-B-connector-68895ffe.png" /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Download Links&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;click the button at the bottom&lt;/p&gt;
+
+&lt;p&gt;(Android App)[http://www.xiaoyi.com/home/sports/download.html]&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;or grab it from my Dropbox&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(Android App Dropbox Link)[https://www.dropbox.com/s/xt8ikfbw95bm09t/%E5%B0%8F%E8%9A%81%E8%BF%90%E5%8A%A8%E7%9B%B8%E6%9C%BA&lt;em&gt;1.5&lt;/em&gt;15.apk?dl=1]&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;latest firmware is available here, enter your serial number in the box to download:&lt;/p&gt;
+
+&lt;p&gt;(Latest Firmware)[http://www.xiaoyi.com/home/upgrade.html]&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;or grab it from my Dropbox&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(Firmware Dropbox link)[https://www.dropbox.com/s/ktg92fehk7b2rq4/1429783965432_fw.bin?dl=1]&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Firmware Update&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Copy the firmware downloaded above to the root of your microsd card&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Rename it &lt;code&gt;firmware.bin&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Turn your Yi on and plug it into the power cord (USB), I didn&amp;rsquo;t use a computer for this, but a wall-to-usb brick&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It will work without plugging in the Yi, if it is charged enough. However, flashing seems to always work when plugged into power&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It will start beeping constantly for a minute or so then the light will flash red on the front and the camera turn off. Wait until the camera turns off if it is beeping constantly. Losing power during flashing could brick your camera&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;firmware.bin will be deleted after it flashes successfully, so you&amp;rsquo;re good to go!&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Flash cleanflight on cc3d</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2015/04/27/flash-cleanflight-on-cc3d/"/>
+    <id>http://blog.url.com/blog/2015/04/27/flash-cleanflight-on-cc3d/</id>
+    <published>2015-04-27T15:40:00-07:00</published>
+    <updated>2015-05-11T20:30:07-07:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Unfinished Draft&lt;/p&gt;
+
+&lt;h3&gt;Download Cleanflight&lt;/h3&gt;
+
+&lt;p&gt;Latest releases are available here: &lt;a href="https://github.com/cleanflight/cleanflight/releases"&gt;https://github.com/cleanflight/cleanflight/releases&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Assuming you want to keep the OpenPilot bootloader, you&amp;rsquo;ll want the latest &lt;a href="https://github.com/cleanflight/cleanflight/releases/download/v1.8.1/cleanflight_CC3D.bin"&gt;cleanflight_CC3D.bin&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Open up OpenPilot&lt;/h3&gt;
+
+&lt;h4&gt;Pick &amp;ldquo;Firmware&amp;rdquo;&lt;/h4&gt;
+
+&lt;p&gt;&lt;span class="img-half-width"&gt;&lt;img alt="firmware" src="../../../../../assets/images/blog/flash_cc3d_cleanflight/1-575aa410.png" /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h4&gt;Click &amp;ldquo;Rescue&amp;rdquo;&lt;/h4&gt;
+
+&lt;p&gt;&lt;span class="img-half-width"&gt;&lt;img alt="rescue" src="../../../../../assets/images/blog/flash_cc3d_cleanflight/2-3cea7a49.png" /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h4&gt;Connect the board to your computer via USB&lt;/h4&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h4&gt;Wait for the board to connect&lt;/h4&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h4&gt;Click &amp;ldquo;Open&amp;rdquo;&lt;/h4&gt;
+
+&lt;p&gt;&lt;span class="img-half-width"&gt;&lt;img alt="open" src="../../../../../assets/images/blog/flash_cc3d_cleanflight/3-e3bb984d.png" /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h4&gt;Pick the .bin you downloaded&lt;/h4&gt;
+
+&lt;p&gt;&lt;span class="img-half-width"&gt;&lt;img alt="cleanflight_cc3d.bin" src="../../../../../assets/images/blog/flash_cc3d_cleanflight/4-a8b71d2d.png" /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h4&gt;Click &amp;ldquo;I know what I&amp;rsquo;m Doing&amp;rdquo;&lt;/h4&gt;
+
+&lt;p&gt;&lt;span class="img-half-width"&gt;&lt;img alt="i know what im doing" src="../../../../../assets/images/blog/flash_cc3d_cleanflight/5-b7c70d64.png" /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h4&gt;Click &amp;ldquo;Flash&amp;rdquo;&lt;/h4&gt;
+
+&lt;p&gt;&lt;span class="img-half-width"&gt;&lt;img alt="flash" src="../../../../../assets/images/blog/flash_cc3d_cleanflight/6-f8544c6c.png" /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h4&gt;Wait for the &amp;ldquo;Upload successful&amp;rdquo; message&lt;/h4&gt;
+
+&lt;p&gt;&lt;span class="img-half-width"&gt;&lt;img alt="success" src="../../../../../assets/images/blog/flash_cc3d_cleanflight/7-ecdef746.png" /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h4&gt;Close OpenPilot, Open Cleanflight Configurator&lt;/h4&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h4&gt;Unplug your flight controller and plug it back in via the USB cable&lt;/h4&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h4&gt;Make sure your receiver is properly plugged in&lt;/h4&gt;
+
+&lt;p&gt;Here is the pinout for the cc3d: &lt;a href="https://github.com/cleanflight/cleanflight/blob/master/docs/Board%20-%20CC3D.md#pinouts"&gt;https://github.com/cleanflight/cleanflight/blob/master/docs/Board%20-%20CC3D.md#pinouts&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that in PWM mode (as I&amp;rsquo;m using, sadly), pins 4-8 are RX CH1-5 after disabling the battery voltage sensor&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h4&gt;Configure your copter&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Open the CLI tab and enter some settings:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SET LOOPTIME = 2500&lt;/li&gt;
+&lt;li&gt;SET ACC&lt;em&gt;LPF&lt;/em&gt;FACTOR = 100&lt;/li&gt;
+&lt;li&gt;FEATURE RX_PPM (if you&amp;rsquo;re using ppm)&lt;/li&gt;
+&lt;li&gt;FEATURE FAILSAFE (turns on failsafe)&lt;/li&gt;
+&lt;li&gt;FEATURE MOTOR_STOP (if you dont want arming to turn on the motors, this can be dangerous when used with failsafe since the motors can start if a failsafe is detected on the ground)&lt;/li&gt;
+&lt;li&gt;SET DISARM&lt;em&gt;KILL&lt;/em&gt;SWITCH = 1 (if you want to use a switch to arm/disarm your copter)&lt;/li&gt;
+&lt;li&gt;SET ALIGN&lt;em&gt;BOARD&lt;/em&gt;YAW = 90 (to make it easier to access the on board usb, rotate the board 90 degrees on your copter and tell the board about it here)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Set the min/max values&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These can be confusing but you&amp;rsquo;ll want the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;MIN_COMMAND: Open the reciever tab and pull your throttle all the way down. You&amp;rsquo;ll see a value in the throttle channel, use this value. Mine is 1180.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MAX_CHECK: Pull the throttle all the way up. Use 90% of this value e.g. my max throttle value as shown in the reciever tab is 1845 * .9 = 1661. I&amp;rsquo;ll enter 1661 for this value&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MIN_CHECK: Pull the throttle all the way down. Use 110% of this value e.g. my min throttle is 1180 * 1.1 = 1298. I&amp;rsquo;ll enter 1298 for this value&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h4&gt;Pid Tuning&lt;/h4&gt;
+
+&lt;p&gt;There are several different control loop algorithms as described here: &lt;a href="https://github.com/cleanflight/cleanflight/blob/master/docs/PID%20tuning.md#pid-controllers"&gt;https://github.com/cleanflight/cleanflight/blob/master/docs/PID%20tuning.md#pid-controllers&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll be using 1 - rewrite.&lt;/p&gt;
+
+&lt;p&gt;The defaults were good, but when I got into a hover, it started to shake, so I turned down the P and I gains&lt;/p&gt;
+
+&lt;p&gt;ROLL P: 4 -&amp;gt; set to -&amp;gt; 3.9
+PITCH P: 4 -&amp;gt; set to -&amp;gt; 3.9&lt;/p&gt;
+
+&lt;p&gt;Auto level doesn’t work on LEVEL I: .010 -&amp;gt; set to -&amp;gt; .025&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Ebay Naze32 with GPS, Bluetooth, OSD and Current Sensor</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2015/04/23/ebay-naze32-with-gps-osd-and-bluetooth/"/>
+    <id>http://blog.url.com/blog/2015/04/23/ebay-naze32-with-gps-osd-and-bluetooth/</id>
+    <published>2015-04-22T20:43:00-07:00</published>
+    <updated>2015-05-11T20:30:07-07:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Unfinished Draft&lt;/p&gt;
+
+&lt;p&gt;I recently set out to build the ultimate diy tricopter complete with GPS autopilot, GPS position hold, altitude hold, return to home, heading hold and an on screen display (OSD) that shows battery voltage, mah usage, orientation, gps position, altitude, heading and RSSI. Here&amp;rsquo;s what I came up with.&lt;/p&gt;
+
+&lt;p&gt;My &lt;a href="/blog/2015/04/21/my-first-tricopter-build/"&gt;tricopter setup is detailed here&lt;/a&gt;, but is basically &lt;a href="http://rcexplorer.se/projects/2011/09/the-tricopter-v2-5/"&gt;David&amp;rsquo;s tricopter v2.5&lt;/a&gt; with DT750 motors running a 4S 3000mah battery, BlHeli on the ESCs and a vibration dampened battery tray.&lt;/p&gt;
+
+&lt;p&gt;The main components are a full Flip32 (Naze32 clone, they can be used interchangeably) flight controller and GPS, MinimOSD with a curren sensor and FPV camera + transmitter. I&amp;rsquo;ll talk about the FPV gear in depth another time, but I bring it up here because we&amp;rsquo;ll need to consider its power requirements.&lt;/p&gt;
+
+&lt;h3&gt;Power&lt;/h3&gt;
+
+&lt;p&gt;Different components need different voltage power supplies. Linear voltage regulators are less efficent, but cleaner and switching voltage regulators are efficient but noisy. The 4S battery I&amp;rsquo;m using will be 16.8V fully charged. The GPS needs 3.3V, the Flip32 will takes 5V, the tail servo should get 6V to ensure maximum torque and my FPV gear takes 12V, preferably through a low pass filter to elimate any noise in the video. Here&amp;rsquo;s what we&amp;rsquo;ll need for power distribution:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://www.banggood.com/5Pcs-Mini-DC-DC-Converter-Adjustable-Power-Supply-Step-Down-Module-p-951165.html?p=1G09211226617201502J"&gt;BEC &amp;ndash; 2-3A Switching Variable Voltage Regulator from Banggood&lt;/a&gt; ~ $0.83
+&lt;span class="center img-quarter-width"&gt;&lt;a href="http://www.banggood.com/5Pcs-Mini-DC-DC-Converter-Adjustable-Power-Supply-Step-Down-Module-p-951165.html?p=1G09211226617201502J"&gt;&lt;img alt="flip32 pins" src="../../../../../assets/images/blog/flip32_controller_build/switching_voltage_regulator-45d39aa2.jpg" /&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Commonly called a &amp;ldquo;Battery Elimination Circuit&amp;rdquo; or BEC in RC circles, this is nothing more than a switching voltage regulator.&lt;/li&gt;
+&lt;li&gt;We&amp;rsquo;ll use this to power the flight controller and receiver instead of the BEC on the ESCs. If your ESCs have linear voltage regulators, it should be fine to connect all of them to your flight controller, but if it uses switching voltage regulators, you could run into &lt;a href="http://webcache.googleusercontent.com/search?q=cache:Bp-qEhAwtvUJ:fpvlab.com/forums/showthread.php%3F29139-Why-disconnect-redundant-power-from-esc-s-bec+&amp;amp;cd=4&amp;amp;hl=en&amp;amp;ct=clnk&amp;amp;gl=us#post_492092"&gt;problems&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Set it to 6V using a power supply and voltimeter, turning the screw until it outputs 6V.&lt;/li&gt;
+&lt;li&gt;TODO: redundancy, perhaps using two switching voltage regulators that failover via &lt;a href="http://www.eetimes.com/document.asp?doc_id=1273175&amp;amp;print=yes"&gt;diode oring&lt;/a&gt;, here&amp;rsquo;s an integrated solution &amp;ndash; &lt;a href="http://datasheet.sii-ic.com/en/composite_power_ic/S8426A_E.pdf"&gt;S8426A_E.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://www.ebay.com/itm/10Pcs-AMS1117-3-3-LM1117-3-3V-1A-SOT-223-Voltage-Regulator-/130750978645?pt=LH_DefaultDomain_0&amp;amp;hash=item1e715d9a55"&gt;GPS Power Supply &amp;ndash; 3.3V 1A Linear Voltage Regulator AMS1117-3.3&lt;/a&gt; ~$0.10&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.advanced-monolithic.com/pdf/ds1117.pdf"&gt;Datasheet ds1117.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://www.ebay.com/itm/5-x-L7812CV-LM7812-L7812-Voltage-Regulator-IC-12V-LDO-New-/290696995063?pt=LH_DefaultDomain_0&amp;amp;hash=item43aee420f7"&gt;Video Power Supply &amp;ndash; 12V 1A Linear Voltage Regulator L7812CV&lt;/a&gt; ~$0.20&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We&amp;rsquo;ll use this for our video power supply. It should be smoother than the switching voltage regulator&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://datasheet.octopart.com/L7812CV-STMicroelectronics-datasheet-7271552.pdf"&gt;Datasheet L7812CV-STMicroelectronics-datasheet-7271552.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h3&gt;Copter Components&lt;/h3&gt;
+
+&lt;p&gt;These will be installed in the tricopter&lt;/p&gt;
+
+&lt;h4&gt;Total Cost: $51.69&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.banggood.com/Naze32-Flight-Controller-With-32-bit-STM32-for-Multicopter-10Dof-p-953849.html?p=1G09211226617201502J"&gt;Flight Controller &amp;ndash; Flip32 from Banggood&lt;/a&gt; $23.99
+&lt;span class="center img-half-width"&gt;&lt;a href="http://www.banggood.com/Naze32-Flight-Controller-With-32-bit-STM32-for-Multicopter-10Dof-p-953849.html?p=1G09211226617201502J"&gt;&lt;img alt="flip32 pins" src="../../../../../assets/images/blog/flip32_controller_build/flip32_pins-ecabc11c.png" /&gt;&lt;/a&gt;&lt;/span&gt;
+
+&lt;ul&gt;
+&lt;li&gt;32bit processor that we&amp;rsquo;ll run on &lt;a href="https://github.com/cleanflight/cleanflight/tree/master/docs"&gt;CleanFlight&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;3-axis MEMS gyro and accelerometer(MPU6050)&lt;/li&gt;
+&lt;li&gt;3-axis magenetometer (HMC5883L)&lt;/li&gt;
+&lt;li&gt;Pressure sensor (MS5611)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://cgi.ebay.com/ws/eBayISAPI.dll?ViewItem&amp;amp;item=161679912244"&gt;Bluetooth Module &amp;ndash; HC-05 Master-Slave Machine Integrated WLAN Module Serial Module Pass Through from Ebay&lt;/a&gt; $3.50&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For tuning the copter via the Android App &lt;a href="https://play.google.com/store/apps/details?id=com.ezio.multiwii&amp;amp;hl=en"&gt;Download&lt;/a&gt;, &lt;a href="https://docs.google.com/document/d/1_CTtoeEMj9M-4Vzw2cMXGyPPlP_ysiYD3a4U2hMKqUA/pub"&gt;Documentation&lt;/a&gt;, &lt;a href="http://www.multiwii.com/forum/viewtopic.php?f=8&amp;amp;t=2034"&gt;Forum Post&lt;/a&gt;, &lt;a href="https://plus.google.com/communities/117757859636739210133"&gt;Google+ Group&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://cgi.ebay.com/ws/eBayISAPI.dll?ViewItem&amp;amp;item=281568666366"&gt;On Screen Display &amp;ndash; MinimOSD from Ebay&lt;/a&gt; $7.88&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We&amp;rsquo;ll run the rush-osd (also called Team KV) firmware for Naze32 &amp;ndash; &lt;a href="https://code.google.com/p/rush-osd-development/"&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://cgi.ebay.com/ws/eBayISAPI.dll?ViewItem&amp;amp;item=370999422953"&gt;Current Sensor &amp;ndash; ACS758LCB-100U from Ebay&lt;/a&gt; $7.19&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A hall effect instead of a shunt resistor. More efficient, but also slightly more expensive. Buy a shunt resistor if you want to save a few bucks.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.banggood.com/1-5Hz-VK16U6-TTL-Ublox-GPS-Module-With-Antenna-p-965540.html?p=1G09211226617201502J"&gt;GPS - UBOX VK16U6 with Antenna from BangGood&lt;/a&gt; $9.13
+&lt;span class="center img-half-width"&gt;&lt;a href="http://www.banggood.com/1-5Hz-VK16U6-TTL-Ublox-GPS-Module-With-Antenna-p-965540.html?p=1G09211226617201502J"&gt;&lt;img alt="VK16U6" src="../../../../../assets/images/blog/flip32_controller_build/VK16U6-8982e381.png" /&gt;&lt;/a&gt;&lt;/span&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Baud is set to 9600 by default&lt;/li&gt;
+&lt;li&gt;Runs at 3.3v&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://artofcircuits.com/product/gps-module-vk16u6-ttl-output-with-built-in-antenna"&gt;Specs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="#"&gt;Precision Resistors for the Voltage Dividers&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Tools&lt;/h3&gt;
+
+&lt;p&gt;This is what we&amp;rsquo;ll need to program the above setup&lt;/p&gt;
+
+&lt;h4&gt;Total Cost: $51.69&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://cgi.ebay.com/ws/eBayISAPI.dll?ViewItem&amp;amp;item=181561951638"&gt;USB to Serial Adaptor &amp;ndash; CP2102 Module USB 2.0 To TTL&lt;/a&gt; $1.76&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx"&gt;SI Labs CP210x USB to UART Bridge VCP Driver Download&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Bluetooth Setup&lt;/h3&gt;
+
+&lt;p&gt;Checkout the &lt;a href="#"&gt;Ebay HC-05 Bluetooth Setup Guide&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+</feed>

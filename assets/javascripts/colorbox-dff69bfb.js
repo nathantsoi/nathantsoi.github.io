@@ -1,0 +1,1 @@
+(function(){$(function(){return $(".colorbox").colorbox({opacity:.5}),$(".colorbox.iframe").colorbox({opacity:.5,iframe:!0,width:"80%",height:"80%"})})}).call(this);
