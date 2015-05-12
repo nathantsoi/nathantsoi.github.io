@@ -1467,6 +1467,45 @@ By Date
 
 <p>&nbsp;</p>
 
+<h3>Wiring</h3>
+
+<ul>
+<li><a href="http://fpvlab.com/forums/member.php?2197-Derrick">Derrick</a>, over at FPVLab wrote <a href="http://fpvlab.com/forums/showthread.php?24144-KV-OSD">this awesome post about wiring the minimosd</a>, and drew up this awesome diagram. Even though it&rsquo;s for a board with the A/D converter pins already broken out, it gets across the general idea</li>
+</ul>
+
+<p><span class="centerh"><img alt="minimosd wiring" src="../../../../../assets/images/blog/minimosd/minimosd-wiring-7539557e.png" /></span></p>
+
+<ul>
+<li><p>As it comes, the ebay minim osd uses 2 different voltages, 5v on the flight controller/atmega328p side and 12v on the video/max7456 side. Let&rsquo;s change that to use 5v from the flight controller on both sides. This serves two purposes, first it allows the chip to be powered by the UART-USB adapter, meaning you dont have to plug in your copter battery to upload font and second it ensures nothing burns out if we were to accidentally apply more than 12v on the video side of the chip. <a href="https://hoogvlieger.wordpress.com/2013/11/01/rctimer-minimosd-5v-mod/">Hoogvliger describes how to do this on his blog</a>, I&rsquo;ll summarize his work here.</p>
+
+<ul>
+<li>Jump the flight controller side GND to </li>
+</ul></li>
+<li><p>To know what pins to breakout on the atmega328p chip, let&rsquo;s read the code:</p>
+
+<ul>
+<li><a href="https://github.com/ShikOfTheRa/scarab-osd/blob/master/MW_OSD/Config.h#L182">Pinouts</a></li>
+<li><a href="https://github.com/ShikOfTheRa/scarab-osd/blob/master/MW_OSD/Config.h#L245">Voltage Pinouts</a></li>
+</ul></li>
+</ul>
+<pre class="highlight plaintext"><code>#define AMPERAGEPIN   A1
+#define TEMPPIN       A6           
+#define RSSIPIN       A3              
+#define PWMRSSIPIN    A3              
+#define LEDPIN        7
+
+#define VOLTAGEPIN    A0
+#define VIDVOLTAGEPIN A2
+</code></pre>
+
+<ul>
+<li>So let&rsquo;s break out those pins on the chip, here&rsquo;s the Atmega328p pinout</li>
+</ul>
+
+<p><span class="center img-half-width"><img alt="atmega328p pinout" src="../../../../../assets/images/blog/atmega328p/atmega328p-pinout-3da94489.png" /></span></p>
+
+<p>&nbsp;</p>
+
 <h3>Flashing</h3>
 
 <ul>
@@ -1490,6 +1529,8 @@ By Date
 </ul></li>
 </ul>
 
+<p>&nbsp;</p>
+
 <h3>Configuration</h3>
 
 <ul>
@@ -1497,27 +1538,7 @@ By Date
 <li><p>Here&rsquo;s how to configure the sensors <a href="https://github.com/ShikOfTheRa/scarab-osd/blob/master/DOCUMENTATION/Calibration.md">Calibration Guide</a></p></li>
 </ul>
 
-<h3>Wiring</h3>
-
-<ul>
-<li><p><a href="https://github.com/ShikOfTheRa/scarab-osd/blob/master/MW_OSD/Config.h#L182">Pinouts</a></p></li>
-<li><p><a href="https://github.com/ShikOfTheRa/scarab-osd/blob/master/MW_OSD/Config.h#L245">Voltage Pinouts</a></p></li>
-</ul>
-<pre class="highlight plaintext"><code>#define AMPERAGEPIN   A1
-#define TEMPPIN       A6           
-#define RSSIPIN       A3              
-#define PWMRSSIPIN    A3              
-#define LEDPIN        7
-
-#define VOLTAGEPIN    A0
-#define VIDVOLTAGEPIN A2
-</code></pre>
-
-<ul>
-<li>Atmega328p pinout</li>
-</ul>
-
-<p><span class="center img-half-width"><img alt="atmega328p pinout" src="../../../../../assets/images/blog/atmega328p/atmega328p-pinout-3da94489.png" /></span></p>
+<p>&nbsp;</p>
 
 <h4>Current Sensing</h4>
 
@@ -1537,8 +1558,17 @@ By Date
 
 <p>It&rsquo;s almost impossible to see 0Amps with no load. We can only minimize this effect. In a real situation all your gear, mostly your AV TX, camera etc. will draw between 250mah and 400mah.</p>
 
+<p>We&rsquo;ll also need to edit the current sensing code in scarab-osd which </p>
+
 <ul>
-<li><p>The current sensing code is here <a href="https://github.com/ShikOfTheRa/scarab-osd/blob/1d044d9a54f97bea21ad21dae952f2bf0b7c928e/MW_OSD/MW_OSD.ino#L769">https://github.com/ShikOfTheRa/scarab-osd/blob/1d044d9a54f97bea21ad21dae952f2bf0b7c928e/MW<em>OSD/MW</em>OSD.ino#L769</a></p></li>
+<li><p>The current sensing code is here <a href="https://github.com/ShikOfTheRa/scarab-osd/blob/1d044d9a54f97bea21ad21dae952f2bf0b7c928e/MW_OSD/MW_OSD.ino#L769">https://github.com/ShikOfTheRa/scarab-osd/blob/1d044d9a54f97bea21ad21dae952f2bf0b7c928e/MW<em>OSD/MW</em>OSD.ino#L769</a></p>
+
+<p>amperage = map(amperage, Settings[S<em>AMPMIN]+AMPERAGEOFFSET, S16</em>AMPMAX, 0, AMPERAGEMAX);</p>
+
+<ul>
+<li>This uses the linar <a href="http://www.arduino.cc/en/Reference/Map">map function</a> to translate the ouput of the current sensor to the recorded amperage based on the limits configured in the GUI. This code is nice and clean, but will not work for our ACS758LCB-100U sensor.</li>
+<li>Instead we should replace this line with our own calculation based on the ACS758 datasheet:</li>
+</ul></li>
 <li><p>Read more at <a href="https://code.google.com/p/rush-osd-development/wiki/Current_Sensing_Tutorial">the guide</a></p></li>
 </ul>
 
