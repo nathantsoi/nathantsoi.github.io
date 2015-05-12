@@ -1495,7 +1495,6 @@ By Date
 <ul>
 <li><p>Here&rsquo;s the <a href="https://github.com/ShikOfTheRa/scarab-osd/blob/master/DOCUMENTATION/User_Guide.md">user guide</a></p></li>
 <li><p>Here&rsquo;s how to configure the sensors <a href="https://github.com/ShikOfTheRa/scarab-osd/blob/master/DOCUMENTATION/Calibration.md">Calibration Guide</a></p></li>
-<li><p>The curren sensing code is here <a href="https://github.com/ShikOfTheRa/scarab-osd/blob/1d044d9a54f97bea21ad21dae952f2bf0b7c928e/MW_OSD/MW_OSD.ino#L769">https://github.com/ShikOfTheRa/scarab-osd/blob/1d044d9a54f97bea21ad21dae952f2bf0b7c928e/MW<em>OSD/MW</em>OSD.ino#L769</a></p></li>
 </ul>
 
 <h3>Wiring</h3>
@@ -1526,23 +1525,26 @@ By Date
 
 <p>Sensor sensitivity of 40mv/a means the sensor output voltage will increase 40mV each one Ampere of real current increment flowing through the sensor.</p>
 
-<p>Basic plan is to solder the + Pin of Lipo to IP+, IP- where your battery plugs in</p>
+<p>Basic plan is to solder the + Pin of Lipo to IP+, IP- using two XT-60 connectors inline between the battery and the copter.</p>
 
-<p>VCC is +5V (from ESC or Arduino), GND is GND, VIOUT is the signal, which is 0.6V when power is zero and 4,6V when power is 100A.</p>
+<p>VCC is +5V (from ESC or Arduino), GND is GND, shared between the battery ground and the minimosd ground. VIOUT is the signal, which is 0.6V when power is zero and 4,6V when power is 100A.</p>
 
 <p>Unidirectional means the sensor does not sense the current flow direction, therefore the positive and negative leads can be connected in any direction.</p>
 
 <p>We&rsquo;ll need to se the sensor offset value so the zero current indicator is correct when the system is not under load. It can be off due to temperature, tolerance or analog to digital conversion (ADC) so you could see 1 or 2 &ldquo;steps&rdquo; of ADC convertion value, resulting in a small amperage reading such as 0.2 to 0.4A.</p>
 
-<p>Cause of these tollerances, we need to adjust them setting a proper value in OFFSET in order to have 0Amps on screen when no current is flowing in the sensors.</p>
+<p>Cause of these tolerances, we need to adjust them setting a proper value in OFFSET in order to have 0Amps on screen when no current is flowing in the sensors.</p>
 
 <p>It&rsquo;s almost impossible to see 0Amps with no load. We can only minimize this effect. In a real situation all your gear, mostly your AV TX, camera etc. will draw between 250mah and 400mah.</p>
 
-<p>Read more at <a href="https://code.google.com/p/rush-osd-development/wiki/Current_Sensing_Tutorial">the guide</a></p>
+<ul>
+<li><p>The current sensing code is here <a href="https://github.com/ShikOfTheRa/scarab-osd/blob/1d044d9a54f97bea21ad21dae952f2bf0b7c928e/MW_OSD/MW_OSD.ino#L769">https://github.com/ShikOfTheRa/scarab-osd/blob/1d044d9a54f97bea21ad21dae952f2bf0b7c928e/MW<em>OSD/MW</em>OSD.ino#L769</a></p></li>
+<li><p>Read more at <a href="https://code.google.com/p/rush-osd-development/wiki/Current_Sensing_Tutorial">the guide</a></p></li>
+</ul>
 
 <h4>RSSI</h4>
 
-<p>I dug into this yet, but per the datasheet:</p>
+<p>I haven&rsquo;t implemented this yet, but per the datasheet for the transceiver in my cheap FS-T6A TX/RX:</p>
 
 <p>17.1 RSSI Measurement
 A7105 supports 8-bits digital RSSI to detect RF signal strength. RSSI value is stored in ADC <a href="1Dh">7:0</a>. Fig 17.1 shows a typical plot of RSSI reading as a function of input power. This curve is base on the current gain setting of A7105 reference code. A7105 automatically averages 8-times ADC conversion a RSSI measurement until A7105 exits RX mode. Therefore, each RSSI measuring time is ( 8 x 20 x FADC). For quick RSSI measurement, recommend to set FSARS = 1 (FADC =8MHz, 20 us measuring time). For power saving, recommend to set FSARS = 0 (FADC =4MHz, 40 us measuring time). Be aware RSSI accuracy is about ± 6dBm.</p>
