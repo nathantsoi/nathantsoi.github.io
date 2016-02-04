@@ -14,17 +14,25 @@
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"/>
     <id>http://nathan.vertile.com/blog/2016/02/03/rctimer-beerotorf3-flight-controller/</id>
     <published>2016-02-02T19:56:00-08:00</published>
-    <updated>2016-02-03T19:05:57-08:00</updated>
+    <updated>2016-02-03T21:19:34-08:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
-    <content type="html">&lt;p&gt;This is a review and hardware guide for the new &lt;a href="http://www.rctimer.com/product-1592.html/#r-pNathanT"&gt;BeerotorF3&lt;/a&gt; all-in-one (AIO) flight controller from Rctimer.&lt;/p&gt;
+    <content type="html">&lt;p&gt;This is a review and setup guide for the new &lt;a href="http://www.rctimer.com/product-1592.html/#r-pNathanT"&gt;BeerotorF3 (BRF3)&lt;/a&gt; all-in-one (AIO) flight controller from Rctimer.&lt;/p&gt;
 
-&lt;p&gt;Before the Beerotor, to get all my stats to display on an OSD, I had to build something like this:&lt;/p&gt;
+&lt;p&gt;&lt;span class="center img-quarter-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-offset-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "&gt;&lt;img data-ratio='1.3161953727506426' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1556'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;You probably know why having an OSD that displays current consumption is so important, but I&amp;#39;ll reiterate it anyway. A current sensor measures the exact amount of battery that has been used and the OSD displays this information as text overlaid on your video feed along with all the other available sensor data like RSSI, Voltage, mA currently in use, total mAh consumed, flight mode, an artificial horizon and GPS coordinates. This way you know exactly when you&amp;#39;re going to run out of battery.&lt;/p&gt;
+
+&lt;p&gt;The BRF3 adds a barometer which will give you altitude information as you fly.&lt;/p&gt;
+
+&lt;p&gt;Before the BRF3, to get all my stats to display on an OSD, I had to build something like this, with a mess of different wires and 4 discrete components:&lt;/p&gt;
 
 &lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-mess-ba-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess-32ba0762.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5049019607843137' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess-32ba0762.jpg' class='resize-ratio lazyload trailing-space' width='4912' height='3264'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;With the &lt;a href="http://www.rctimer.com/product-1592.html/#r-pNathanT"&gt;BeerotorF3 (BRF3)&lt;/a&gt;, the current sensor, dataflash logger, pdb and OSD look like this:&lt;/p&gt;
+&lt;p&gt;With the &lt;a href="http://www.rctimer.com/product-1592.html/#r-pNathanT"&gt;BeerotorF3&lt;/a&gt;, those 4 components (current sensor, Blackbox, PDB and OSD) look like this:&lt;/p&gt;
 
 &lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-clean-f-de-aa-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "&gt;&lt;img data-ratio='1.5049019607843137' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-clean-f2de1aa6.jpg' class='resize-ratio lazyload trailing-space' width='4912' height='3264'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
@@ -33,12 +41,6 @@
 &lt;p&gt;BRF3 and PDB weigh only 13g, compared to 22g for 3 discrete components: PDB, NAZE32 and MinimOSD. Plus you would need to get a current sensor if you went with the discrete setup.&lt;/p&gt;
 
 &lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-weight-b-a-b-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-b9a2119b.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='0.8605042016806723' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-b9a2119b.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2380'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;You probably know why having an OSD that displays current consumption is so important, but I&amp;#39;ll reiterate it anyway. A current sensor measures the exact amount of battery that has been used and the OSD displays this information as text overlaid on your video feed along with other data like RSSI, Voltage, mA in use and total mAh, flight mode and an artificial horizon.&lt;/p&gt;
-
-&lt;p&gt;The BRF3 adds a barometer which will give you altitude information as you fly.&lt;/p&gt;
-
-&lt;p&gt;Other F1-based AIO boards don&amp;#39;t have the processing power to run LuxFloat at 2KHz while consuming all available sensor data, plus GPS. The on-board MinimOSD will display all the data from these sensors.&lt;/p&gt;
 
 &lt;h2 id="pinouts"&gt;Pinouts&lt;/h2&gt;
 
@@ -132,7 +134,7 @@ Cycle Time: 1012, I2C Errors: 2, config size: 2060
 
 &lt;p&gt;The really exciting part about this board is the on-board MinimOSD. A minim osd is basically two chips: the MAX7456 chip and ATMEGA328p, which you can see on the bottom of the board:&lt;/p&gt;
 
-&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-offset-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3161953727506426' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1556'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-offset-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "&gt;&lt;img data-ratio='1.3161953727506426' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1556'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;The MAX chip is in charge of drawing characters onto the video signal and the ATMEGA chip tells the MAX chip what characters to draw.&lt;/p&gt;
 
