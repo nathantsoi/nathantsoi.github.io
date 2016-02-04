@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>gobot - welcome to the web</title>
+<meta content='Hadoop, the primer' name='description'>
+<meta content='Nathan Tsoi' name='author'>
+<meta content='yes' name='apple-mobile-web-app-capable'>
+<meta content='black-translucent' name='apple-mobile-web-app-status-bar-style'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport'>
+<link href="../../assets/stylesheets/slides/reveal-12909d57.css" rel="stylesheet" />
+<link href="../../assets/stylesheets/slides/theme/moon-eccc9692.css" rel="stylesheet" />
+<link href="../../assets/stylesheets/slides/lib/zenburn-c17bd975.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+<script src="../../assets/javascripts/vendor/html5shiv-7e074556.js"></script>
+<![endif]-->
+</head>
+<body style='-webkit-transition: -webkit-transform 0.8s ease; transition: -webkit-transform 0.8s ease;'>
+<div class='reveal center' data-background-transition='default' data-transition-speed='default'>
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class='slides'>
+<section>
+<section>
+<h1>
+What's up with the
+<img alt='elephant' src='https://s3-us-west-1.amazonaws.com/nathantsoi.github.io/slides/hellohadoop/elephant.png' style='top:.25em;position:relative;'>
+?
+</h1>
+<p style='text-align:center;color:#fefefe;'>
+<a href='http://nathan.vertile.com' style='color:#fefefe;'>Nathan Tsoi</a>
+/
+<a href='http://twitter.com/nathantsoi' style='color:#fefefe;'>@nathantsoi</a>
+</p>
+</section>
+</section>
+<section>
+<h1>
+<img alt='elephant' src='https://s3-us-west-1.amazonaws.com/nathantsoi.github.io/slides/hellohadoop/664px-Hadoop_logo.svg.png'>
+</h1>
+<ol>
+<li class='fragment'>History</li>
+<li class='fragment'>Components</li>
+<li class='fragment'>Code</li>
+</ol>
+<aside class='notes'>
+- three things i'd like to talk about
+- history - what is hadoop, where did it come from and why we're using it
+- components - what are all the pieces that are needed to make it work?
+- code - how do we interact with hadoop and extract awesome synergistic insights?
+</aside>
+</section>
+<section>
+<section>
+<h2>
+History
+</h2>
+<h4 class='fragment'>
+(Google vs Yahoo)
+</h4>
+</section>
+<section>
+<h2>2002</h2>
+<img alt='yahoo' class='fragment' src='https://s3-us-west-1.amazonaws.com/nathantsoi.github.io/slides/hellohadoop/Yahoo_Headquarters.jpg'>
+</section>
+<section>
+<table>
+<tbody>
+<tr>
+<td style='vertical-align:middle;' width='50%'>
+<img alt='doug' src='https://s3-us-west-1.amazonaws.com/nathantsoi.github.io/slides/hellohadoop/doug_cutting.jpg'>
+<h3 class='fragment' style='text-align: center'>Doug Cutting</h3>
+</td>
+<td style='vertical-align:middle;' width='50%'>
+<img alt='mike' class='fragment' src='https://s3-us-west-1.amazonaws.com/nathantsoi.github.io/slides/hellohadoop/mike_cafarella.jpg'>
+<h3 class='fragment' style='text-align: center'>Mike Cafarella</h3>
+</td>
+</tr>
+</tbody>
+</table>
+<aside class='notes'>
+- Doug Cutting
+- Mike Cafarella
+</aside>
+</section>
+<section>
+<img alt='nutch' src='https://s3-us-west-1.amazonaws.com/nathantsoi.github.io/slides/hellohadoop/Nutch-logo.gif'>
+<h1 class='fragment'>==</h1>
+<h3 class='fragment'>Yahoo's web crawler</h3>
+<aside class='notes'>
+- Working on Nutch
+- Nutch needed a distributed file store
+</aside>
+</section>
+<section>
+<h3>
+<img alt='nutch' src='https://s3-us-west-1.amazonaws.com/nathantsoi.github.io/slides/hellohadoop/Nutch-logo.gif' style='top:.35em;position:relative;'>
+How was it going?
+</h3>
+<ul style='text-align:center;list-style-type:none;'>
+<li class='fragment'>100 Millon Pages</li>
+<li class='fragment'>but...</li>
+<li class='fragment'>
+there are now
+<a href='http://www.cnn.com/2011/TECH/web/09/12/web.index/index.html?_s=PM%253ATECH'>
+Trillions of webpages
+</a>
+</li>
+<li class='fragment'>and nutch could only run on a few machines</li>
+<li class='fragment'>
+plus,
+<a href='http://gigaom.com/2013/03/04/the-history-of-hadoop-from-4-nodes-to-the-future-of-data/'>
+it kept falling over
+</a>
+</li>
+</ul>
+</section>
+<section>
+<h3>
+Google
+<span class='fragment'>- 2003</span>
+</h3>
+<iframe class='fragment' height='550px' src='http://research.google.com/archive/gfs.html' width='100%'></iframe>
+</section>
+<section>
+<h3>
+Google
+<span class='fragment'>- 2004</span>
+</h3>
+<iframe class='fragment' height='550px' src='http://research.google.com/archive/mapreduce.html' width='100%'></iframe>
+</section>
+<section>
+<div>
+"I remember working on it for several months, being quite proud of what we had been doing, and then the Google File System paper came out and I realized ‘Oh, that’s a much better way of doing it. We should do it that way.'"
+</div>
+<div class='fragment' style='margin-top: .5em'>
+"Then, by the time we had a first working version, the MapReduce paper came out and that seemed like a pretty good idea, too."
+<div>
+--
+<a href='http://gigaom.com/2013/03/04/the-history-of-hadoop-from-4-nodes-to-the-future-of-data/'>Mike Cafarella</a>
+</div>
+</div>
+</section>
+<section>
+While proprietary implementations of GFS and MapReduce are hidden away at Google...
+</section>
+<section>
+<h1 class='fragment'>Hadoop is born</h1>
+<div class='fragment'>... but that's not the end</div>
+</section>
+<section>
+<h3>2008</h3>
+<img alt='cloudera' class='fragment' src='https://s3-us-west-1.amazonaws.com/nathantsoi.github.io/slides/hellohadoop/cloudera_logo.gif'>
+<div class='fragment'>
+Christophe Bisciglia (Google), Amr Awadallah (Yahoo), Jeff Hammerbacher (Facebook) and Mike Olson (Oracle)
+</div>
+<div class='fragment'>
+$1.2B (Accel, Google, Greylock, Meritech, Intel)
+</div>
+</section>
+<section>
+<h3>2011</h3>
+<div class='fragment'>
+<img alt='hortonworks' src='https://s3-us-west-1.amazonaws.com/nathantsoi.github.io/slides/hellohadoop/hortonworks_logo.gif'>
+<h4>Hortonworks</h4>
+</div>
+<div class='fragment'>
+Spun out of Yahoo
+</div>
+<div class='fragment'>
+$248M (Benchmark, BlackRock, Index, HP, Yahoo)
+</div>
+</section>
+</section>
+<section>
+<section>
+<h2>Components</h2>
+<h4 class='fragment'>(It's an ecosystem...)</h4>
+</section>
+<section>
+<h3>Distributions</h3>
+<table width='100%'>
+<tbody>
+<tr>
+<td style='vertical-align:middle;text-align:center;' width='50%'>
+<img alt='cloudera' src='https://s3-us-west-1.amazonaws.com/nathantsoi.github.io/slides/hellohadoop/cloudera_logo.gif'>
+</td>
+<td style='vertical-align:middle;text-align:center;' width='50%'>
+<img alt='hortonworks' src='https://s3-us-west-1.amazonaws.com/nathantsoi.github.io/slides/hellohadoop/hortonworks_logo.gif'>
+</td>
+</tr>
+</tbody>
+</table>
+<table class='fragment' style='margin-top: .5em;' width='100%'>
+<tbody>
+<tr>
+<td style='vertical-align:middle;text-align:center;' width='50%'>
+$1.2B
+</td>
+<td style='vertical-align:middle;text-align:center;' width='50%'>
+$248M
+</td>
+</tr>
+</tbody>
+</table>
+<table class='fragment' style='margin-top: .5em;' width='100%'>
+<tbody>
+<tr>
+<td style='vertical-align:middle;text-align:center;' width='50%'>
+737 LinkedIn employees
+</td>
+<td style='vertical-align:middle;text-align:center;' width='50%'>
+459
+</td>
+</tr>
+</tbody>
+</table>
+<table class='fragment' style='margin-top: .5em;' width='100%'>
+<tbody>
+<tr>
+<td style='vertical-align:middle;text-align:center;' width='50%'>
+<a href='http://www.computerweekly.com/feature/Cloudera-v-Hortonworks-Hadoop-to-complement-replace-data-warehouse'>
+~350 customers.
+</a>
+Nokia, Mastercard, BT and ebay
+</td>
+<td style='vertical-align:middle;text-align:center;' width='50%'>
+<a href='http://venturebeat.com/2014/03/25/hortonworks-loads-up-100m-to-keep-fighting-the-hadoop-fight/'>
+~60 customers/qrtr, ~250 in the last 5 qrtrs.
+</a>
+Spotify, Bloomberg, Samsung and ebay
+</td>
+</tr>
+</tbody>
+</table>
+<table class='fragment' style='margin-top: .5em;' width='100%'>
+<tbody>
+<tr>
+<td style='vertical-align:middle;text-align:center;' width='50%'>
+closed source
+</td>
+<td style='vertical-align:middle;text-align:center;' width='50%'>
+open source
+</td>
+</tr>
+</tbody>
+</table>
+<table class='fragment' style='margin-top: .5em;' width='100%'>
+<tbody>
+<tr>
+<td style='vertical-align:middle;text-align:center;' width='50%'>
+Cloudera manager
+</td>
+<td style='vertical-align:middle;text-align:center;' width='50%'>
+Ambari
+</td>
+</tr>
+</tbody>
+</table>
+<table class='fragment' style='margin-top: .5em;' width='100%'>
+<tbody>
+<tr>
+<td style='vertical-align:middle;text-align:center;' width='50%'>
+Impala
+</td>
+<td style='vertical-align:middle;text-align:center;' width='50%'>
+Spark
+</td>
+</tr>
+</tbody>
+</table>
+<small class='fragment' style='margin-top: .5em'>There is also a distribution by MapR.</small>
+</section>
+<section>
+<h3>Deployment</h3>
+<ul style='text-align:center;list-style-type:none;'>
+<li style='margin-top: .5em'>
+<span class='fragment'>AWS</span>
+<span class='fragment'>- or the hosting provider of your choice</span>
+</li>
+<li style='margin-top: .5em'>
+<span class='fragment'>Vagrant</span>
+<span class='fragment'>- physical machine configuration, I'd like to switch to Docker.</span>
+</li>
+<li style='margin-top: .5em'>
+<span class='fragment'>Chef</span>
+<span class='fragment'>- package configuration</span>
+</li>
+<li style='margin-top: .5em'>
+<span class='fragment'>Ambari</span>
+<span class='fragment'>- hadoop configuration</span>
+</li>
+</ul>
+</section>
+<section>
+<h3>Foundation</h3>
+<ul style='text-align:center;list-style-type:none;'>
+<li style='margin-top: .5em'>
+<span class='fragment'>HDFS</span>
+<span class='fragment'>- Massive scale file system</span>
+</li>
+<li style='margin-top: .5em'>
+<span class='fragment'>MapReduce2 (Yarn)</span>
+<span class='fragment'>- Batch oriented processing</span>
+</li>
+</ul>
+<h4 class='fragment'>
+This is Hadoop
+<img alt='elephant' src='https://s3-us-west-1.amazonaws.com/nathantsoi.github.io/slides/hellohadoop/elephant.png' style='top:1em;position:relative;height:2em;'>
+</h4>
+</section>
+<section>
+<h3>MapReduce</h3>
+<img class='fragment' src='https://farm3.static.flickr.com/2151/3529146569_f80eb39a44_o.png'>
+<img class='fragment' src='https://farm4.static.flickr.com/3213/3529959720_273aca53fe_o.png'>
+</section>
+<section>
+<h3>Supporting Services</h3>
+<ul style='text-align:center;list-style-type:none;'>
+<li style='margin-top: .5em'>
+<span class='fragment'>Ooize</span>
+<span class='fragment'>- Scheduling and orchestration</span>
+</li>
+<li style='margin-top: .5em'>
+<span class='fragment'>Flume</span>
+<span class='fragment'>- Streaming events</span>
+</li>
+<li style='margin-top: .5em'>
+<span class='fragment'>Spark</span>
+<span class='fragment'>- Real time query engine</span>
+</li>
+</ul>
+</section>
+<section>
+<h3>Tools</h3>
+<ul style='text-align:center;list-style-type:none;'>
+<li style='margin-top: .5em'>
+<span class='fragment'>Pig</span>
+<span class='fragment'>- High level map-reduce language</span>
+</li>
+<li style='margin-top: .5em'>
+<span class='fragment'>Hive</span>
+<span class='fragment'>- Sql-like map-reduce interface</span>
+</li>
+<li style='margin-top: .5em'>
+<span class='fragment'>Sqoop</span>
+<span class='fragment'>- Relational database batch processing</span>
+</li>
+<li style='margin-top: .5em'>
+<span class='fragment'>Java</span>
+<span class='fragment'>- Map-reduce apis</span>
+</li>
+</ul>
+</section>
+<section>
+<img alt='components' src='http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-1.2.1/bk_getting-started-guide/content/figures/3/figures/Typical_Hadoop_Cluster.png'>
+</section>
+</section>
+<section>
+<section>
+<h2>Code</h2>
+<h4 class='fragment'>(that's all great, but how do I use it?)</h4>
+</section>
+<section>
+<iframe height='550px' src='https://docs.google.com/a/sequoiacap.com/document/d/1W73tCNZU1SMDotchtuLS6kKKG9wYBaGMDOqwOBJ4UPg/pub?embedded=true' width='100%'></iframe>
+<div class='small'>
+<a href='https://docs.google.com/a/sequoiacap.com/document/d/1W73tCNZU1SMDotchtuLS6kKKG9wYBaGMDOqwOBJ4UPg/pub?embedded=true' target='_blank'>
+Sequoia's Config
+</a>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../../assets/javascripts/slides-a8a690a9.js"></script>
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+  
+    theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+  
+    // Parallax scrolling
+    // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+    // parallaxBackgroundSize: '2100px 900px',
+  
+    // Optional libraries used to extend on reveal.js
+    dependencies: [
+      { src: "../../assets/javascripts/slides/lib/js/classList.js", condition: function() { return !document.body.classList; } },
+      { src: "../../assets/javascripts/slides/plugin/markdown/marked-08b4f196.js", condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: "../../assets/javascripts/slides/plugin/markdown/markdown-ee916f7a.js", condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: "../../assets/javascripts/slides/plugin/highlight/highlight-d8fb1506.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: "../../assets/javascripts/slides/plugin/zoom-js/zoom-4b445011.js", async: true, condition: function() { return !!document.body.classList; } },
+      { src: "../../assets/javascripts/slides/plugin/notes/notes-01bb3400.js", async: true, condition: function() { return !!document.body.classList; } }
+    ]
+  });
+</script>
+</body>
+</html>

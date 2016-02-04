@@ -1,0 +1,1 @@
+(function(){$(function(){var o;return o={maxWidth:"95%",maxHeight:"95%",opacity:5},$(".colorbox").colorbox(o)})}).call(this);

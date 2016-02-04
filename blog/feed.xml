@@ -1,0 +1,1352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Vertile</title>
+  <subtitle>Nathan's Notes</subtitle>
+  <id>http://nathan.vertile.com/blog</id>
+  <link href="http://nathan.vertile.com/blog"/>
+  <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
+  <updated>2016-02-02T19:56:00-08:00</updated>
+  <author>
+    <name>Nathan Tsoi</name>
+  </author>
+  <entry>
+    <title>Rctimer BeerotorF3 Flight Controller</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"/>
+    <id>http://nathan.vertile.com/blog/2016/02/03/rctimer-beerotorf3-flight-controller/</id>
+    <published>2016-02-02T19:56:00-08:00</published>
+    <updated>2016-02-03T19:05:57-08:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This is a review and hardware guide for the new &lt;a href="http://www.rctimer.com/product-1592.html/#r-pNathanT"&gt;BeerotorF3&lt;/a&gt; all-in-one (AIO) flight controller from Rctimer.&lt;/p&gt;
+
+&lt;p&gt;Before the Beerotor, to get all my stats to display on an OSD, I had to build something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-mess-ba-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess-32ba0762.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5049019607843137' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess-32ba0762.jpg' class='resize-ratio lazyload trailing-space' width='4912' height='3264'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;With the &lt;a href="http://www.rctimer.com/product-1592.html/#r-pNathanT"&gt;BeerotorF3 (BRF3)&lt;/a&gt;, the current sensor, dataflash logger, pdb and OSD look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-clean-f-de-aa-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "&gt;&lt;img data-ratio='1.5049019607843137' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-clean-f2de1aa6.jpg' class='resize-ratio lazyload trailing-space' width='4912' height='3264'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The bottom board shown in the photo above is the companion &lt;a href="http://www.rctimer.com/product-1593.html/#r-pNathanT"&gt;Beerotor PDB (BRPDB)&lt;/a&gt;, which carries a shunt resistor current sensor and 28v (6s) compatible MP1593DN voltage regulator.&lt;/p&gt;
+
+&lt;p&gt;BRF3 and PDB weigh only 13g, compared to 22g for 3 discrete components: PDB, NAZE32 and MinimOSD. Plus you would need to get a current sensor if you went with the discrete setup.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-weight-b-a-b-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-b9a2119b.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='0.8605042016806723' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-b9a2119b.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2380'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;You probably know why having an OSD that displays current consumption is so important, but I&amp;#39;ll reiterate it anyway. A current sensor measures the exact amount of battery that has been used and the OSD displays this information as text overlaid on your video feed along with other data like RSSI, Voltage, mA in use and total mAh, flight mode and an artificial horizon.&lt;/p&gt;
+
+&lt;p&gt;The BRF3 adds a barometer which will give you altitude information as you fly.&lt;/p&gt;
+
+&lt;p&gt;Other F1-based AIO boards don&amp;#39;t have the processing power to run LuxFloat at 2KHz while consuming all available sensor data, plus GPS. The on-board MinimOSD will display all the data from these sensors.&lt;/p&gt;
+
+&lt;h2 id="pinouts"&gt;Pinouts&lt;/h2&gt;
+
+&lt;p&gt;Top:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-top-schematic-cdf-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-top-schematic-cdf10220.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.1858714533873769' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-top-schematic-cdf10220.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1727'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Bottom:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-bottom-schematic-bee-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-bottom-schematic-0534bee6.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='0.9879401833092137' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-bottom-schematic-0534bee6.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2073'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The full manual is here: &lt;a href="http://www.rctimer.com/download/BeeRotorF3Manual.pdf"&gt;http://www.rctimer.com/download/BeeRotorF3Manual.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="why-choose-the-brf3"&gt;Why choose the BRF3?&lt;/h2&gt;
+
+&lt;p&gt;You&amp;#39;re probably thinking, why should I buy a BeerotorF3 when there are so many flight controllers on the market.&lt;/p&gt;
+
+&lt;p&gt;The advantages over a Naze32, SpracingF3 or Oze32 are numerous but the decision when choosing any flight controller boils down to three things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="#flight-performance"&gt;Flight Performance&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="#features"&gt;Features&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="#value"&gt;Value&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="flight-performance"&gt;Flight Performance&lt;/h3&gt;
+
+&lt;p&gt;Without flight performance, none of the other things matter, so let&amp;#39;s look at that first. This section is kinda boring, so if you believe me when I say that F3 is better than F1, just skip to &lt;a href="#features"&gt;features&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re not already, you should be flying &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;BetaFlight&lt;/a&gt;. Unlike the name sounds, BetaFlight is actually very stable.&lt;/p&gt;
+
+&lt;p&gt;The un-tuned flight performance of BetaFlight is amazing. It also implements many features that may or may not make it into CleanFlight such as filters that will allow 2khz and possibly 8khz loop times, AirMode and a task scheduler.&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;ll use that final feature, the task scheduler, to compare performance between a Naze32 (running an STM32F1) and the BRF3 which runs a STM32F3.&lt;/p&gt;
+
+&lt;p&gt;The F3 and the F1 run at the same clock speed, 72MHz, but the F3 has a floating point co-processor which allows it to do floating point math off-cpu. This means that it can run the LuxFloat PID controller, which is much more accurate and feels more &amp;quot;locked in&amp;quot; than the normal &amp;quot;Rewrite&amp;quot; PID controller.&lt;/p&gt;
+
+&lt;p&gt;Using the &lt;code&gt;status&lt;/code&gt; CLI command in BetaFlight, we can ask the task scheduler how busy the CPU is and it will tell us &lt;code&gt;System load&lt;/code&gt;. 1 is equal to 100%, so if we&amp;#39;re above 1.0, the copter will not arm. It just can&amp;#39;t do everything we&amp;#39;ve asked it to do within the looptime specified.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s what my NAZE32 says when I try to run LuxFloat, even after disabling the manometer:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;System Uptime: 20 seconds, Voltage: 0 * 0.1V (1S battery - NOT PRESENT), System load: 4.08
+CPU Clock=72MHz, GYRO=MPU6050, ACC=MPU6050.n, BARO=MS5611
+Cycle Time: 993, I2C Errors: 0, config size: 2020
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice the load of 4.08, that&amp;#39;s means the system load is 408%, which just not going to work...&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s what the BRF3 says:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;System Uptime: 816 seconds, Voltage: 0 * 0.1V (1S battery - NOT PRESENT), System load: 0.07
+CPU Clock=72MHz, GYRO=MPU6050, ACC=MPU6050.n, BARO=BMP085
+Cycle Time: 1012, I2C Errors: 2, config size: 2060
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Wow. 7% load.&lt;/p&gt;
+
+&lt;p&gt;In terms of performance, as long as system load is under 90% or so, it really doesn&amp;#39;t matter. Once it runs, less load doesn&amp;#39;t make it faster. What it does mean though is that 93% of CPU time is available for other processing. With 93% CPU time left, we should have no problem running GPS, MSP, LEDs, etc.&lt;/p&gt;
+
+&lt;p&gt;You&amp;#39;ll notice from the Beerotor system status that we don&amp;#39;t have a magnetometer on the board. Perhaps surprisingly, this is ideal.&lt;/p&gt;
+
+&lt;h3 id="features"&gt;Features&lt;/h3&gt;
+
+&lt;p&gt;Like all F3 boards, we have 3 hardware UARTS.&lt;/p&gt;
+
+&lt;p&gt;On the BRF3 they&amp;#39;re mapped as follows.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;UART1&lt;/code&gt; - wired to the onboard OSD&amp;#39;s ATMEGA328p&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;UART2&lt;/code&gt; - GPS, next to the I2C pins&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;UART3&lt;/code&gt; - Serial RX, wired into the Spektrum Satellite port, also next to RSSI on the SB port.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="magnetometer-and-gps"&gt;Magnetometer and GPS&lt;/h4&gt;
+
+&lt;p&gt;As we can see from the status output in the performance section, you get an IMU and Barometer on the board, but no magnetometer (e.g. compass).&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;ve faced issues with a noisy compass, you know it&amp;#39;s always better to have a magnetometer you can move away from any magnetic-field-generating current loops (e.g. PDB and motor leads). Even a few inches can make a big difference.&lt;/p&gt;
+
+&lt;p&gt;The problem with having a built-in magnetometer goes back to how the I2C bus works. I2C is the protocol used by the magnetometer to talk to the flight controller. I2C expects every device on the bus (a bus is just a bunch of sensors all connected on the same set of wires) to have a unique ID. However, every device does not have a unique ID, the ID is tied to a particular type of sensor. For example, the HMC5883 magnetometer on the NAZE32 has a unique address, but if you attach another HMC5883 to the I2C bus, they both have the same address and neither will work.&lt;/p&gt;
+
+&lt;p&gt;For flight controllers that have an on-board compass, the traces to the on board magnetometer can be cut, then plugging in an external magnetometer will work, but with the BRF3, you won&amp;#39;t need to do this!&lt;/p&gt;
+
+&lt;p&gt;Just get a GPS with a magnetometer, like this &lt;a href="http://www.rctimer.com/product-1287.html/#r-pNathanT"&gt;NEO-M8N with a compass&lt;/a&gt; and plug it in here:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-gps-e-e-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-gps-e869676e.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='0.9879401833092137' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-gps-e869676e.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2073'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;I2C&lt;/code&gt; ports are for the compass&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;UART2&lt;/code&gt; is for the GPS. Be sure to enable GPS for UART2 in the configurator&lt;/p&gt;
+
+&lt;h4 id="minimosd"&gt;MinimOSD&lt;/h4&gt;
+
+&lt;p&gt;The really exciting part about this board is the on-board MinimOSD. A minim osd is basically two chips: the MAX7456 chip and ATMEGA328p, which you can see on the bottom of the board:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-offset-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3161953727506426' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1556'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The MAX chip is in charge of drawing characters onto the video signal and the ATMEGA chip tells the MAX chip what characters to draw.&lt;/p&gt;
+
+&lt;p&gt;For this to work, the MAX chip needs the video signal to pass through it, in one pin and out another, so you&amp;#39;ll need to wire the &lt;code&gt;SD&lt;/code&gt; port in-line with your camera and video transmitter:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-video-pins-f-f-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-video-pins-f465666f.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.1858714533873769' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-video-pins-f465666f.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1727'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;VIDEO_IN&lt;/code&gt; is the yellow line from the camera (video signal)&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;VIDEO_OUT&lt;/code&gt; goes to your video transmitter&lt;/p&gt;
+
+&lt;p&gt;Back to how the MinimOSD works: the ATMEGA chip decides what to tell the MAX chip to write. The way it does this is by asking the flight controller what is going on. It communicates with the BRF3 in this case, over UART1. It talks the same protocol as the configurator: multiwii serial protocol (MSP).&lt;/p&gt;
+
+&lt;p&gt;This is important because it means that on the BRF3 UART1 is wired to the ATMEGA&amp;#39;s UART port. Therefore, to talk to the MinimOSD for upgrading and configuration, we need to make sure the BRF3&amp;#39;s STM32F3 is turned off and the ATMEGA is turned on. To power just the ATMEGA, connected the provided FTDI cable to your handy &lt;a href="http://www.banggood.com/CJMCU-CP2102-USB-To-TTLSerial-Module-UART-STC-Downloader-p-970993.html?p=1G09211226617201502J"&gt;UART/USB adapter&lt;/a&gt; and use the &lt;a href="https://github.com/ShikOfTheRa/scarab-osd/releases"&gt;Scarab OSD&lt;/a&gt; configuration tool to configure the MinimOSD.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-ftdi-c-b-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-ftdi-c7442b3a.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-ftdi-c7442b3a.jpg' class='resize-ratio lazyload trailing-space' width='563' height='422'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The colors in the photo correspond to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;black&lt;/code&gt; - ground&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;red&lt;/code&gt; - 5v&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;orange&lt;/code&gt; - TX&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;yellow&lt;/code&gt; - RX&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;green&lt;/code&gt; - DTR (e.g. reset)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Remember that when connecting UARTs, one TX goes to the other RX, so in this case orange will go to RX on the UART/USB adapter.&lt;/p&gt;
+
+&lt;p&gt;Unlike the OZE32, there are no dip-switches, which is a great improvement.&lt;/p&gt;
+
+&lt;p&gt;When working with the on-board MinimOSD, remember:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;UART1 must have MSP assigned in the configurator to communicate with your computer via USB and with the ATMEGA chip&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The board is designed such that when a USB cable is plugged in, the ATMEGA chip will be turned off, so we can communicate with the BRF3&amp;#39;s STM32 chip&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The MinimOSD can only be configured or updated when the USB and battery are unplugged&lt;/li&gt;
+&lt;li&gt;Connect only the FTDI adapter cable to the &lt;code&gt;SE&lt;/code&gt; port to upgrade or configure the OSD&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Powering the board via a battery or any 5v lead will turn both the ATMEGA and STM32, this is &amp;quot;Flight Mode&amp;quot; and the OSD should show data.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Also, there is an open pull request against CleanFlight that makes it possible to configure the MinimOSD by communicating through the STM32: &lt;a href="https://github.com/cleanflight/cleanflight/pull/1620"&gt;https://github.com/cleanflight/cleanflight/pull/1620&lt;/a&gt;. When this feature is finished, we won&amp;#39;t need to go through all this to configure the MinimOSD, we&amp;#39;ll be able to do it all via the normal USB connection.&lt;/p&gt;
+
+&lt;h4 id="dataflash"&gt;DataFlash&lt;/h4&gt;
+
+&lt;p&gt;The BRF3 has 8MB of flash for blackbox logging. This is way more than the 2MB included on the CC3D and full NAZE32. Flash, by the way, is way faster than an SDCard-based OpenLog device, so you&amp;#39;ll never miss a frame of data.&lt;/p&gt;
+
+&lt;p&gt;Run this in the configurator CLI to enable it:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;feature BLACKBOX
+set blackbox_device=SPIFLASH
+save
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="value"&gt;Value&lt;/h3&gt;
+
+&lt;p&gt;To get a comparable setup, in discrete components, we would need:&lt;/p&gt;
+
+&lt;table class="small-img"&gt;
+  &lt;tbody&gt;
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/MinimOSD-MAVLink-OSD-APM-APM2-Flight-Control-Board-p-73436.html?p=1G09211226617201502J"&gt;&lt;a id="assets-images-blog-minimosd-devices-minimosd-b-e-jpg" href="../../../../../assets/images/blog/minimosd/devices/minimosd-b6e42636.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.0' data-src='../../../../../assets/images/blog/minimosd/devices/minimosd-b6e42636.jpg' class='resize-ratio lazyload ' width='361' height='361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/MinimOSD-MAVLink-OSD-APM-APM2-Flight-Control-Board-p-73436.html?p=1G09211226617201502J"&gt;$7.99 MinimOSD&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1526.html/#r-pNathanT"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-comparable-pdb-f-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/comparable-pdb-908f1448.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/flight_controllers/brf3/comparable-pdb-908f1448.jpg' class='resize-ratio lazyload ' width='563' height='422'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1526.html/#r-pNathanT"&gt;$3.99 PDB&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Upgrade-NAZE32-SP-Racing-F3-Flight-Control-6-DOF-10-DOF-for-Milticopter-p-1010232.html?p=1G09211226617201502J"&gt;&lt;a id="assets-images-blog-flight-controllers-sprf-a-c-jpg" href="../../../../../assets/images/blog/flight_controllers/sprf3-a6573c82.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.0' data-src='../../../../../assets/images/blog/flight_controllers/sprf3-a6573c82.jpg' class='resize-ratio lazyload ' width='600' height='600'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Upgrade-NAZE32-SP-Racing-F3-Flight-Control-6-DOF-10-DOF-for-Milticopter-p-1010232.html?p=1G09211226617201502J"&gt;$26.99 SPRACINGF3&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1125.html?p=1G09211226617201502J"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-comparable-power-module-ebafd-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/comparable-power-module-84ebafd6.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/flight_controllers/brf3/comparable-power-module-84ebafd6.jpg' class='resize-ratio lazyload ' width='563' height='422'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1125.html?p=1G09211226617201502J"&gt;$10.99 Power Module&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;This totals up to $49.96. Plus, you&amp;#39;re stuck trying to figure out where to put that giant MinimOSD and the power module with the current sensor. It&amp;#39;s so much nicer having it all in one place, ready to go.&lt;/p&gt;
+
+&lt;p&gt;At $34.99 for the BRF3 and $5.99 for the BRPDB, the Beerotor setup is $40.98. Not only is it smaller and lighter than buying discrete components, it&amp;#39;s cheaper too!&lt;/p&gt;
+
+&lt;h2 id="hardware"&gt;Hardware&lt;/h2&gt;
+
+&lt;p&gt;The build quality and hardware layout on this board is great.&lt;/p&gt;
+
+&lt;p&gt;The USB is on the size, so no need to mess with the board orientation in the configurator. &lt;/p&gt;
+
+&lt;p&gt;The baro is on the top of the board, so be sure to cover that with some open cell foam, or mount it upside-down and put a piece of open cell foam between the frame and the baro. Wind passing over the top of the baro can significantly decrease it&amp;#39;s accuracy.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-baro-a-c-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-baro-2a88769c.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.0009775171065494' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-baro-2a88769c.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2046'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id="motor-outputs"&gt;Motor outputs&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#39;m a big fan of the small DF (also called SH) connectors, these are the long white plugs. They save space and are much easier to work with than the 2.54mm JST servo-style pins. Plus it makes stack-mounting multiple 35x35mm boards possible. The connectors on the BRF3 have been upgraded from SH1.0 to SH1.25, meaning the pins are ever so slightly larger and more robust, but the connector size is still tiny. Plus, this is the same pin spacing as the PixHawk, which means you can start re-using cables between some projects!&lt;/p&gt;
+
+&lt;p&gt;They even put a boot-button on the board! This is awesome, no more getting out the tweezers every time I want to short the boot pins to upgrade BetaFlight!&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-boot-button-e-ecbff-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-boot-button-e90ecbff.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.0009775171065494' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-boot-button-e90ecbff.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2046'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The motor output pins are through-hole vias, ready for some male 2.54mm headers. Motor 1 is on the left, 8 is on the right.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-motor-outputs-e-b-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-motor-outputs-469e48b4.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.0009775171065494' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-motor-outputs-469e48b4.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2046'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;If you want to use pin headers, grab some right angle 2.54mm pins, my board didn&amp;#39;t come with any. I think it will save weight and space to just solder the ESC leads right onto the flight controller, so I&amp;#39;ll skip the pin headers. At some point, I hope all the flight controllers standardize to SH1.25 connectors and ESCs ship either without signal wires or with signal wires that terminate in a single female connector that fits into a SH1.25 connector.&lt;/p&gt;
+
+&lt;p&gt;You&amp;#39;ll also want to wire your ESC signal ground wires to the board.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-ground-c-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-ground-c475091a.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.0009775171065494' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-ground-c475091a.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2046'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id="receiver"&gt;Receiver&lt;/h3&gt;
+
+&lt;p&gt;The Spektrum Satellite port is here:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-spektrum-d-ee-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-spektrum-d1ee1076.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.1858714533873769' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-spektrum-d1ee1076.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1727'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;S.Bus, SUMD:&lt;/p&gt;
+
+&lt;p&gt;Although I don&amp;#39;t have an S.Bus RX to confirm this, it looks like an external inverter is not necessary. It should work fine plugged in directly to UART3. Make sure you take either 5v from the same port or 3.3v from the Spektrum port, depending on what voltage your receiver can handle.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-rx-bfda-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-rx-bfda58a0.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.1838150289017342' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-rx-bfda58a0.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1730'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The RSSI analog to digital converter (ADC) is on the &lt;code&gt;SB&lt;/code&gt; port as well, along with PPM input.&lt;/p&gt;
+
+&lt;p&gt;Note that UART3 RX is on both ports &lt;code&gt;SA&lt;/code&gt; an &lt;code&gt;SB&lt;/code&gt;. Either port can be used since both these pins are connected to the same wire.&lt;/p&gt;
+
+&lt;h2 id="flashing"&gt;Flashing&lt;/h2&gt;
+
+&lt;p&gt;Like all F3 chips, make sure you set the manual baud rate to &lt;code&gt;25600&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-cf-f-manual-baud-fb-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-89fb67a0.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.1348651348651349' data-src='../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-89fb67a0.jpg' class='resize-ratio lazyload trailing-space' width='1136' height='1001'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Download the latest version of &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;BetaFlight&lt;/a&gt; from the github.com release page &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;https://github.com/borisbstyle/betaflight/releases/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Click the &lt;code&gt;Load local firmware&lt;/code&gt; button and pick the SPRF3 hex file.&lt;/p&gt;
+
+&lt;p&gt;Click &lt;code&gt;Flash Firmware&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;If for some reason that doesn&amp;#39;t work, flashing via bootloader mode is amazingly easy. Just unplug the BRF3, hold the boot button down while you power it on by plugging it into USB. Choose &amp;quot;no reboot&amp;quot; and hit flash.&lt;/p&gt;
+
+&lt;h2 id="configuration"&gt;Configuration&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;#39;re using the BRPDB, after flashing you&amp;#39;ll want to set these options. Paste them in the cli:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;set vbat_scale = 110
+set current_meter_scale = 380
+save
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will calibrate the flight controller to the PDB&amp;#39;s voltage and current sensor hardware.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>BlHeli ESCs</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2015/12/06/blheli-esc-identification/"/>
+    <id>http://nathan.vertile.com/blog/2015/12/06/blheli-esc-identification/</id>
+    <published>2015-12-06T15:00:00-08:00</published>
+    <updated>2016-02-03T19:04:56-08:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This guide will show you how to flash BlHeli and the BlHeli bootloader so they can be programed via CleanFlight or BetaFlight pass through programming in BlHeli Suite.&lt;/p&gt;
+
+&lt;h2 id="what-is-blheli"&gt;What is BlHeli?&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;BlHeli&lt;/code&gt; is firmware that runs on some Atmel and SiLabs ESCs, supports OneShot 125, and is designed for multi-copter performance.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;BlHeli Suite&lt;/code&gt; is the companion application (windows only) that allows one to flash and configure BlHeli ESCs.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;BlHeli Bootloader&lt;/code&gt; is part of the BlHeli firmware that is installed on all SiLabs ESCs and optionally on Atmel ESCs. &lt;code&gt;BlHeli Bootloader&lt;/code&gt; is required for &lt;code&gt;CleanFlight Passthrough Programming&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;CleanFlight (and BetaFlight) passthrough programming allows one to update and configure BlHeli ESCs while leaving them plugged into the flight controller, essentially turning the flight controller into a programming adapter.&lt;/p&gt;
+
+&lt;p&gt;Note that even if you bought &lt;code&gt;BlHeli&lt;/code&gt; ESCs, they may not have the &lt;code&gt;BlHeli Bootloader&lt;/code&gt; installed.&lt;/p&gt;
+
+&lt;p&gt;As for the two different types of ESCs currently compatible with BlHeli -- one type is based on an Atmel microcontroller and the other is based on a SiLabs microcontroller. In general, Atmel based ESCs are less expensive and slightly less performant. High end SiLabs ESCs have dedicated driver chips and fast switching FETs. You&amp;#39;ll notice a performance difference in flight if you go with the better ESCs, I promise.&lt;/p&gt;
+
+&lt;h2 id="identify-your-esc-micro-controller"&gt;Identify your ESC micro controller&lt;/h2&gt;
+
+&lt;p&gt;Read on for the short version or for an in depth look at ESCs and how the hardware works, checkout &lt;a href="https://github.com/sim-/tgy/wiki/Identifying-ESC-pin-configuration"&gt;this awesome guide to identifying ESCs on the SimonK wiki&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="atmel-based-escs"&gt;Atmel Based ESCs&lt;/h3&gt;
+
+&lt;h4 id="guide"&gt;Guide&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/"&gt;BlHeli on the Atmel based F20 ESC&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id="atmel-micro-controller"&gt;Atmel micro-controller&lt;/h4&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-ubec-a-b-ed-jpg" href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/" class="linked-img "&gt;&lt;img data-ratio='2.671974522292994' data-src='../../../../../assets/images/blog/blheli/ubec-20a-b021ed72.jpg' class='resize-ratio lazyload trailing-space' width='839' height='314'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that the Atmel firmware does not always include the BlHeli bootloader. Be sure to check the box to install the BlHeli bootloader when flashing, described in detail in the guide, &lt;a href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/"&gt;BlHeli on the Atmel based F20 ESC&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s OK if you&amp;#39;re working with a different ESC, the difference will be the pads to which you connect the ISP programmer. You can find those pads and if your Atmel ESC is supported here: &lt;a href="https://github.com/bitdump/BLHeli/raw/master/Atmel/BLHeli%20supported%20Atmel%20ESCs.pdf"&gt;BLHeli supported Atmel ESCs.pdf&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="silabs-based-escs"&gt;SiLabs Based ESCs&lt;/h3&gt;
+
+&lt;h4 id="guide"&gt;Guide&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if"&gt;BlHeli on the SiLabs xRotor 20a ESC&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id="silabs-micro-controller"&gt;SiLabs micro-controller&lt;/h4&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-xrotor-a-jpg" href="/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if" class="linked-img "&gt;&lt;img data-ratio='2.720779220779221' data-src='../../../../../assets/images/blog/blheli/xrotor-20a-71996397.jpg' class='resize-ratio lazyload trailing-space' width='838' height='308'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The SiLabs firmware includes the bootloader by default. No need to click any boxes, just flash the SiLab firmware and you&amp;#39;ll have the bootloader. Follow this guide on for flashing &lt;a href="/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/"&gt;BlHeli on the SiLabs xRotor 20a ESC&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The only difference will be the pads to which you connect the C2 programmer. You can find those pads and if your SiLabs ESC is supported here: &lt;a href="https://github.com/bitdump/BLHeli/raw/master/SiLabs/BLHeli%20supported%20SiLabs%20ESCs.pdf"&gt;BLHeli supported SiLabs ESCs.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="configuration"&gt;Configuration&lt;/h3&gt;
+
+&lt;p&gt;Once you&amp;#39;ve flashed the BlHeli bootloader, you can update and configure your ESCs via CleanFlight/BetaFlight passthrough.
+You can do it here, while connected with the 4w programmer or use &lt;a href="/blog/2015/12/06/blheli-configuration/"&gt;CleanFlight/BetaFlight pass-through programming and configuration&lt;/a&gt; once you&amp;#39;ve installed the ESCs in your copter.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="/blog/2015/12/06/blheli-configuration/"&gt;Check out the configuration guide for more&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id="calibration"&gt;Calibration&lt;/h4&gt;
+
+&lt;p&gt;After configuring your ESCs, before you fly, make sure you &lt;a href="/blog/2015/12/06/blheli-calibration/"&gt;calibrate your ESCs&lt;/a&gt; so the throttle range of each ESC matches the others.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="/blog/2015/12/06/blheli-calibration/"&gt;Read the guide on throttle calibration here&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>BlHeli ESC Upgrading and Configuration</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2015/12/06/blheli-configuration/"/>
+    <id>http://nathan.vertile.com/blog/2015/12/06/blheli-configuration/</id>
+    <published>2015-12-06T14:00:00-08:00</published>
+    <updated>2016-02-03T19:04:56-08:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This guide will show you how to configure your ESCs with the optimal settings for use with OneShot125, CleanFlight or BetaFlight.&lt;/p&gt;
+
+&lt;p&gt;Download the latest BlHeli Suite from here: &lt;a href="http://blhelisuite.wordpress.com"&gt;blhelisuite.wordpress.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="interface"&gt;Interface&lt;/h2&gt;
+
+&lt;p&gt;It is possible to connect to your ESCs in a variety of ways. I think the easiest way to connect, if you&amp;#39;ve already &lt;a href="/blog/2015/12/06/blheli-esc-identification/"&gt;identified the microprocessor and flashed BlHeli (with the bootloader)&lt;/a&gt; is pass-through programming via CleanFlight or BetaFlight.&lt;/p&gt;
+
+&lt;p&gt;If you don&amp;#39;t have the bootloader installed, flash that first by following the &lt;a href="/blog/2015/12/06/blheli-esc-identification/"&gt;BlHeli ESCs Identification and Flashing Guide&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The other option, if you don&amp;#39;t have a flight controller handy, is to configure them via 1-wire interface. For this you&amp;#39;ll need an &lt;a href="http://www.banggood.com/ATmega328P-Arduino-Compatible-Nano-V3-Improved-Version-No-Cable-p-959231.html?p=1G09211226617201502J"&gt;Arduino Nano (or clone)&lt;/a&gt; that we&amp;#39;ll flash to make it a &lt;code&gt;4w&lt;/code&gt; or 4 way programmer.&lt;/p&gt;
+
+&lt;h3 id="cleanflight-pass-through"&gt;CleanFlight Pass Through&lt;/h3&gt;
+
+&lt;p&gt;Plug your ESCs into the flight controller, as you normally would, and your ESC into a battery. Make sure the props have been removed.&lt;/p&gt;
+
+&lt;p&gt;During testing I use a current-limiting voltage regulator:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-passthrough-connection-a-c-jpg" href="../../../../../assets/images/blog/blheli/passthrough-connection-5a211c45.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/blheli/passthrough-connection-5a211c45.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Pick the &lt;code&gt;(Cleanflight)&lt;/code&gt; interface for either SiLabs or Atmel, depending on your &lt;a href="/blog/2015/12/06/blheli-esc-identification/"&gt;flight controller type&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-interface-d-ac-ed-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-1-interface-8d1ac9ed.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-1-interface-8d1ac9ed.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Choose the correct serial port:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-serial-d-f-c-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-2-serial-03d83f5c.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-2-serial-03d83f5c.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Hit &lt;code&gt;Connect&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-connect-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-3-connect-93789354.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-3-connect-93789354.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Hit &lt;code&gt;Read Setup&lt;/code&gt;, then hit &lt;code&gt;OK&lt;/code&gt;. I only have 1 ESC plugged in, but there would be more on this list if you had more plugged in:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-read-c-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-4-read-37c29457.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-4-read-37c29457.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;You&amp;#39;ll see the default values for your ESC appear:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-read-default-xm-a-faedf-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-5-read-default-xm10a-faedf761.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-5-read-default-xm10a-faedf761.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Skip to the &lt;a href="#update-blheli"&gt;Update BlHeli&lt;/a&gt; section.&lt;/p&gt;
+
+&lt;h3 id="1-wire-4-way-interface"&gt;1-wire 4-way interface&lt;/h3&gt;
+
+&lt;h4 id="connection"&gt;Connection&lt;/h4&gt;
+
+&lt;p&gt;Connect your ESC servo connector to an &lt;a href="http://www.banggood.com/ATmega328P-Arduino-Compatible-Nano-V3-Improved-Version-No-Cable-p-959231.html?p=1G09211226617201502J"&gt;Arduino Nano&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;Arduino GND &amp;lt;-&amp;gt; ESC GND
+Arduino D3 &amp;lt;-&amp;gt; ESC Signal
+No Connection &amp;lt;-&amp;gt; ESC 5v Power
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you&amp;#39;re using the cheap Arduino Nano clone, you&amp;#39;ll need the &lt;a href="http://www.wch.cn/downfile/65"&gt;ch340g usb chip driver&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id="flash-the-arduino"&gt;Flash the Arduino&lt;/h4&gt;
+
+&lt;p&gt;Switch to the &lt;code&gt;Make Interfaces&lt;/code&gt; tab.&lt;/p&gt;
+
+&lt;p&gt;Click &lt;code&gt;Make Arduino General&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-guide-w-afff-bc-jpg" href="../../../../../assets/images/blog/blheli_guide/4w-1-afff4bc9.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.1570621468926554' data-src='../../../../../assets/images/blog/blheli_guide/4w-1-afff4bc9.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='885'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Click &lt;code&gt;OK&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-guide-w-c-ad-jpg" href="../../../../../assets/images/blog/blheli_guide/4w-2-c915ad06.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.1557562076749435' data-src='../../../../../assets/images/blog/blheli_guide/4w-2-c915ad06.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='886'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Pick the first hex file, the one, with the word &lt;code&gt;MULTI&lt;/code&gt; in it.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-guide-w-ce-jpg" href="../../../../../assets/images/blog/blheli_guide/4w-3-570ce538.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.4027397260273973' data-src='../../../../../assets/images/blog/blheli_guide/4w-3-570ce538.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='730'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id="update-blheli"&gt;Update BlHeli&lt;/h3&gt;
+
+&lt;p&gt;To update to the latest version of BlHeli, click &lt;code&gt;Flash BLHeli&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-click-flash-a-f-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-6-click-flash-4770a78f.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-6-click-flash-4770a78f.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;If BlHeli is already installed, it should pick the right firmware for you, verify this the name matches your ESC then click&lt;code&gt;OK&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-pick-firmware-a-d-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-7-pick-firmware-65743a3d.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-7-pick-firmware-65743a3d.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;It will write:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-write-firmware-bb-b-df-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-8-write-firmware-bb3b4df8.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-8-write-firmware-bb3b4df8.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Then read:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-writing-firmware-f-b-fa-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-9-writing-firmware-f8b36fa8.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-9-writing-firmware-f8b36fa8.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Then give a success message. Click &lt;code&gt;OK&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-flashed-eb-e-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-10-flashed-731eb80e.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-10-flashed-731eb80e.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;It will ask you if you want to write your current settings. Say yes to keep the same settings that you had on the ESC previously:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-write-settings-c-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-11-write-settings-016c4242.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-11-write-settings-016c4242.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;After writing the settings, it will read the settings from the ESC again. Click &lt;code&gt;OK&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-reading-settings-c-b-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-12-reading-settings-2c65076b.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-12-reading-settings-2c65076b.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally, you should see the updated &lt;code&gt;BLHeli Revision&lt;/code&gt;. Click &lt;code&gt;Disconnect&lt;/code&gt; and you&amp;#39;re done.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-disconnect-d-a-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-13-disconnect-22d855a5.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-13-disconnect-22d855a5.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id="configure-blheli"&gt;Configure BlHeli&lt;/h3&gt;
+
+&lt;p&gt;If your ESCs support it, you will see an option for Damped Light. Turn this on to make your ESCs do active braking. You want this. Turn it on.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-damped-light-e-b-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-14-damped-light-3e23b601.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-14-damped-light-3e23b601.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;When using BetaFlight, you&amp;#39;ll want to turn off &lt;code&gt;Enable PWM&lt;/code&gt;, this is the default in BlHeli 14.3.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-disable-pwm-edf-d-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-15-disable-pwm-5edf997d.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-15-disable-pwm-5edf997d.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;That&amp;#39;s it, you&amp;#39;re done with configuration. Be sure to &lt;a href="/blog/2015/12/06/blheli-calibration/"&gt;calibrate your ESCs&lt;/a&gt; before you fly!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>BlHeli CleanFlight ESC Calibration</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2015/12/06/blheli-calibration/"/>
+    <id>http://nathan.vertile.com/blog/2015/12/06/blheli-calibration/</id>
+    <published>2015-12-06T13:00:00-08:00</published>
+    <updated>2016-02-03T19:04:56-08:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This quick guide will explain how to calibrate your ESCs so they throttle up evenly.&lt;/p&gt;
+
+&lt;h3 id="why-calibrate-escs"&gt;Why Calibrate ESCs?&lt;/h3&gt;
+
+&lt;p&gt;Joshua Bardwell Explains in these two videos why this is important&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="853" height="480" src="https://www.youtube.com/embed/WFU3VewGbbA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="853" height="480" src="https://www.youtube.com/embed/YNRl0OTKRGA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h3 id="how-to-calibrate"&gt;How to Calibrate&lt;/h3&gt;
+
+&lt;p&gt;The general idea is to &amp;quot;program&amp;quot; the ESCs via the flight controller to tell them what the minimum and maximum pulse width is that they should be expecting.&lt;/p&gt;
+
+&lt;h4 id="programming-by-tx"&gt;Programming by TX&lt;/h4&gt;
+
+&lt;p&gt;This will only work if you left the &lt;code&gt;Programming by TX&lt;/code&gt; option turned on in BlHeli. If you turned this off, you&amp;#39;ll need to enable it first. If you&amp;#39;re running a recent version of CleanFight or BetaFlight, you can do this via your flight controller without unplugging the ESCs!&lt;/p&gt;
+
+&lt;p&gt;Checkout the &lt;a href="/blog/2015/12/06/blheli-configuration/"&gt;Configuration Guide&lt;/a&gt; if you need to on &lt;code&gt;Programming by Tx&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id="calibrate"&gt;Calibrate&lt;/h4&gt;
+
+&lt;p&gt;Open CleanFlight Configurator or BlHeli suite. I will use BlHeli suite in my example, but they both do the same thing.&lt;/p&gt;
+
+&lt;p&gt;Connect to the flight controller to your computer, but don&amp;#39;t plug in the flight battery yet. We want the flight controller turned on and the ESCs turned off.&lt;/p&gt;
+
+&lt;p&gt;Click on the Motors tab&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-calibration-b-jpg" href="../../../../../assets/images/blog/blheli/calibration-1-538b4864.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2603174603174603' data-src='../../../../../assets/images/blog/blheli/calibration-1-538b4864.jpg' class='resize-ratio lazyload trailing-space' width='794' height='630'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Click the switch or checkbox to enable motor outputs&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-calibration-cd-a-jpg" href="../../../../../assets/images/blog/blheli/calibration-2-11cd29a9.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2603174603174603' data-src='../../../../../assets/images/blog/blheli/calibration-2-11cd29a9.jpg' class='resize-ratio lazyload trailing-space' width='794' height='630'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Drag the far right slider all the way up to output max throttle to all motors.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-calibration-ac-c-e-jpg" href="../../../../../assets/images/blog/blheli/calibration-3-ac3c16e6.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2603174603174603' data-src='../../../../../assets/images/blog/blheli/calibration-3-ac3c16e6.jpg' class='resize-ratio lazyload trailing-space' width='794' height='630'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Turn the motors by plugging in your flight battery and wait for the series of 3 sets of ascending beeps to change to constant-tone beeping. This indicates max throttle has been stored:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-guide-bfacde-b-jpg" href="../../../../../assets/images/blog/blheli_guide/7-bfacde2b.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='0.7880859375' data-src='../../../../../assets/images/blog/blheli_guide/7-bfacde2b.jpg' class='resize-ratio lazyload trailing-space' width='807' height='1024'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Drag the all-motors slider on the far right side of the configurator down to the bottom and wait for the set of 3 descending beep sequences to end indicating a saved min throttle.&lt;/p&gt;
+
+&lt;p&gt;Turn off the quad and you&amp;#39;re all set!&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re looking for the optimal settings, checkout &lt;a href="/blog/2015/12/06/blheli-configuration/#configure-blheli"&gt;the configuration guide&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Rctimer Micro 160 BeeRotor Build, Setup and Review</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"/>
+    <id>http://nathan.vertile.com/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/</id>
+    <published>2015-12-04T20:15:00-08:00</published>
+    <updated>2016-02-03T19:04:56-08:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This is a review and build guide for the BeeRotor 160mm from Rctimer.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-beerotor-br-complete-front-db-d-jpg" href="http://www.rctimer.com/product-1525.html/#r-pNathanT" class="linked-img "&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/br-complete-front-db273d48.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;It hovers at a 1/3 throttle&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-beerotor-flying-e-ce-e-jpg" href="http://www.rctimer.com/product-1525.html/#r-pNathanT" class="linked-img "&gt;&lt;img data-ratio='1.5036710719530102' data-src='../../../../../assets/images/blog/beerotor/flying-1-e08ce3e7.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1362'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-beerotor-br-complete-front-down-b-ddd-jpg" href="http://www.rctimer.com/product-1525.html/#r-pNathanT" class="linked-img "&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/br-complete-front-down-73b03ddd.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-beerotor-br-complete-side-f-af-d-c-jpg" href="http://www.rctimer.com/product-1525.html/#r-pNathanT" class="linked-img "&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/br-complete-side-f3af6d6c.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-beerotor-br-complete-back-f-cf-jpg" href="http://www.rctimer.com/product-1525.html/#r-pNathanT" class="linked-img "&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/br-complete-back-f939cf53.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-beerotor-br-complete-bottom-bf-jpg" href="http://www.rctimer.com/product-1525.html/#r-pNathanT" class="linked-img "&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/br-complete-bottom-34715bf7.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;158g without a battery&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-beerotor-br-all-up-weight-f-cb-jpg" href="http://www.rctimer.com/product-1525.html/#r-pNathanT" class="linked-img "&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/br-all-up-weight-f00116cb.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id="parts"&gt;Parts&lt;/h2&gt;
+
+&lt;p&gt;Here are the parts used in this build. The &lt;a href="#review"&gt;review section&lt;/a&gt; below goes over each component in much more detail, so consider reading on before choosing what parts you want to use in your build.&lt;/p&gt;
+
+&lt;table class="small-img"&gt;
+  &lt;tbody&gt;
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1525.html/#r-pNathanT"&gt;&lt;a id="assets-images-blog-beerotor-parts-frame-cae-jpg" href="../../../../../assets/images/blog/beerotor/parts/frame-312cae20.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/beerotor/parts/frame-312cae20.jpg' class='resize-ratio lazyload ' width='563' height='422'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1525.html/#r-pNathanT"&gt;Frame: BeeRotor 160 - 1x $15.99 &lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1503.html/#r-pNathanT"&gt;&lt;a id="assets-images-blog-beerotor-parts-escs-e-a-jpg" href="../../../../../assets/images/blog/beerotor/parts/escs-56e4a390.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5467032967032968' data-src='../../../../../assets/images/blog/beerotor/parts/escs-56e4a390.jpg' class='resize-ratio lazyload ' width='563' height='364'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1503.html/#r-pNathanT"&gt;ESCs: X-Drone 10A - 4x $9.99&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1245.html/#r-pNathanT"&gt;&lt;a id="assets-images-blog-beerotor-parts-motors-b-f-jpg" href="../../../../../assets/images/blog/beerotor/parts/motors-b407f005.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/beerotor/parts/motors-b407f005.jpg' class='resize-ratio lazyload ' width='563' height='422'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1245.html/#r-pNathanT"&gt;Motors: Rctimer SL1306/3100KV - 2x $19.99 &lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1485.html/#r-pNathanT"&gt;&lt;a id="assets-images-blog-beerotor-parts-props-bea-bd-jpg" href="../../../../../assets/images/blog/beerotor/parts/props-1bea7bd2.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/beerotor/parts/props-1bea7bd2.jpg' class='resize-ratio lazyload ' width='563' height='422'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1485.html/#r-pNathanT"&gt;Props: Gemfan 3x3 - 1x $4.45&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1508.html/#r-pNathanT"&gt;&lt;a id="assets-images-blog-beerotor-parts-flight-controller-d-jpg" href="../../../../../assets/images/blog/beerotor/parts/flight-controller-0004d587.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/beerotor/parts/flight-controller-0004d587.jpg' class='resize-ratio lazyload ' width='563' height='422'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1508.html/#r-pNathanT"&gt;Flight Controller: ACRO OZE32 - 1x $39.99&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1275.html/#r-pNathanT"&gt;&lt;a id="assets-images-blog-beerotor-parts-camera-vtx-f-jpg" href="../../../../../assets/images/blog/beerotor/parts/camera-vtx-2f341879.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/beerotor/parts/camera-vtx-2f341879.jpg' class='resize-ratio lazyload ' width='563' height='422'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1275.html/#r-pNathanT"&gt;Camera and VTX: ELGAE 127° micro CMOS camera and 200mw VTX - 1x $26.55&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://world.taobao.com/item/41135096705.htm?fromSite=main&amp;spm=a312a.7700824.w4002-1191940708.34.JFkey1"&gt;&lt;a id="assets-images-blog-beerotor-parts-rx-fcbd-ab-jpg" href="../../../../../assets/images/blog/beerotor/parts/rx-fcbd85ab.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.4598540145985401' data-src='../../../../../assets/images/blog/beerotor/parts/rx-fcbd85ab.jpg' class='resize-ratio lazyload ' width='600' height='411'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://world.taobao.com/item/41135096705.htm?fromSite=main&amp;spm=a312a.7700824.w4002-1191940708.34.JFkey1"&gt;Receiver: Micro OpenLRS from Taobao running SUMD (leave a comment if you know where in the US get these...) - 1x $12&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/20pcs-M3-Black-Round-Pillips-Pan-Head-Plastic-Nylon-Screw-Bolt-5681012152025mm-Length-p-1002976.html?p=1G09211226617201502J"&gt;&lt;a id="assets-images-blog-beerotor-parts-nylon-m-bolt-bd-jpg" href="../../../../../assets/images/blog/beerotor/parts/nylon-m3-bolt-99bd9949.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.0' data-src='../../../../../assets/images/blog/beerotor/parts/nylon-m3-bolt-99bd9949.jpg' class='resize-ratio lazyload ' width='361' height='361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/20pcs-M3-Black-Round-Pillips-Pan-Head-Plastic-Nylon-Screw-Bolt-5681012152025mm-Length-p-1002976.html?p=1G09211226617201502J"&gt;(optional) 8 nylon M3x5mm bolts to hold on the flight controller -- 1x $1.30&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Total QuadCopter Cost: &lt;code&gt;$180.22&lt;/code&gt; + batteries&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h3 id="unboxing"&gt;Unboxing&lt;/h3&gt;
+
+&lt;p&gt;Here&amp;#39;s everything that came in the box:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-all-parts-f-e-a-jpg" href="../../../../../assets/images/blog/beerotor/all-parts-1f364e5a.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/all-parts-1f364e5a.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id="batteries"&gt;Batteries&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#39;ve been testing with several different batteries, but any 3s battery with a height of less than 25mm and length less than 100mm should work fine.&lt;/p&gt;
+
+&lt;table class="small-img"&gt;
+  &lt;tbody&gt;
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=59088&amp;aff=1624906"&gt;&lt;a id="assets-images-blog-batteries-N-S-dc-db-jpg" href="../../../../../assets/images/blog/batteries/N850-3S-25-4dc980db.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.463902787705504' data-src='../../../../../assets/images/blog/batteries/N850-3S-25-4dc980db.jpg' class='resize-ratio lazyload ' width='2048' height='1399'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=59088&amp;aff=1624906"&gt;Turnigy nano-tech 850mah 3S 25~40C from HobbyKing&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://shrsl.com/?~araq"&gt;&lt;a id="assets-images-blog-batteries-lion-power-mah-s-c-ab-jpg" href="../../../../../assets/images/blog/batteries/lion-power-900mah-3s-25c-81508ab2.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/batteries/lion-power-900mah-3s-25c-81508ab2.jpg' class='resize-ratio lazyload ' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://shrsl.com/?~araq"&gt;Lion Power 900mah 25c 3S from CNDirect's US Warehouse -- 224g AUW (without HD Cam)&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://shrsl.com/?~aras"&gt;&lt;a id="assets-images-blog-batteries-lion-power-mah-s-c-ede-e-f-jpg" href="../../../../../assets/images/blog/batteries/lion-power-1500mah-3s-40c-ede4e40f.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/batteries/lion-power-1500mah-3s-40c-ede4e40f.jpg' class='resize-ratio lazyload ' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://shrsl.com/?~aras"&gt;Lion Power 1500mah 40c 3S from CNDirect's US Warehouse -- 268g AUW (without HD Cam)&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;So far the best size/weight/capacity seems to be in the 900mah range.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-mah-acafb-e-jpg" href="../../../../../assets/images/blog/beerotor/900mah-1-5acafb8e.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/900mah-1-5acafb8e.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The 1500mah barely fits.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-mah-a-c-jpg" href="../../../../../assets/images/blog/beerotor/1500mah-1-908a560c.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/1500mah-1-908a560c.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Actually, it doesn&amp;#39;t really fit, but it can be crammed in there.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-mah-fec-jpg" href="../../../../../assets/images/blog/beerotor/1500mah-2-fec84832.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/1500mah-2-fec84832.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id="goggles-and-transmitter"&gt;Goggles and Transmitter&lt;/h3&gt;
+
+&lt;p&gt;If you&amp;#39;re just getting into this, you&amp;#39;ll also need &lt;a href="/blog/2015/05/21/go-fpv-goggles/"&gt;FPV Goggles&lt;/a&gt; and a radio control transmitter, the most popular of which among mini-quad pilots is the &lt;a href="http://shrsl.com/?~apz3"&gt;FrSky Taranis&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="hd-camera"&gt;HD Camera&lt;/h3&gt;
+
+&lt;p&gt;I also fly the &lt;a href="http://shrsl.com/?~apzm"&gt;Xiaomi Yi&lt;/a&gt; Camera on this thing, which bright the all up weight to 295g with a 900mah battery.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-br-xiaomi-yi-b-f-jpg" href="../../../../../assets/images/blog/beerotor/br-xiaomi-yi-1-1311b0f5.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/br-xiaomi-yi-1-1311b0f5.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;This go-pro clone looks laughably large on this tiny quad. Even with the camera, it hovers at %50 throttle.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-br-xiaomi-yi-d-jpg" href="../../../../../assets/images/blog/beerotor/br-xiaomi-yi-2-2490d194.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/br-xiaomi-yi-2-2490d194.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id="review"&gt;Review&lt;/h2&gt;
+
+&lt;p&gt;I haven&amp;#39;t seen another 150-160mm size frame that can hold a normal 35x35mm flight controller while keeping the battery protected inside the frame. Combined with the OZE32 it is possible to cram give an OSD, current sensor and PDB, plus VTX, RX and Camera all into this awesome little frame and still have room in the body for a battery. Awesome!&lt;/p&gt;
+
+&lt;p&gt;It wasn&amp;#39;t even that hard to build -- maybe not the best first-project, since everything fits so tightly, but definitely doable with some patience. Just follow the &lt;a href="#build"&gt;build guide&lt;/a&gt; below!&lt;/p&gt;
+
+&lt;h3 id="beerotor-160mm-frame"&gt;BeeRotor 160mm Frame&lt;/h3&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-frame-parts-bd-fe-jpg" href="http://rctimer.com/product-1525.html/#r-pNathanT" class="linked-img "&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/frame-parts-3bd16fe5.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Rctimer has release &lt;a href="http://www.rctimer.com/gallery-291.html/#r-pNathanT"&gt;a whole line of new mini-quads dubbed the &amp;quot;BeeRotor&amp;quot; series&lt;/a&gt;. This build is the smallest of the available sizes -- 250mm, 210mm, 180mm and 160mm.&lt;/p&gt;
+
+&lt;p&gt;It is designed for the battery to sit in the main section and the flight controller to sit below. This is great, as it should allow more mass to sit closer to the center of gravity, making flips and rolls easier.&lt;/p&gt;
+
+&lt;p&gt;It comes with two sets of standoffs so you can pick the spacing you want in each section.&lt;/p&gt;
+
+&lt;h4 id="function"&gt;Function&lt;/h4&gt;
+
+&lt;p&gt;Body plates are 1mm and arms are 2mm. Relative to the quad size, these look insanely thick. Given the total mass of the quad, this seems like more than enough carbon fiber to keep the quad intact during a crash.&lt;/p&gt;
+
+&lt;p&gt;No rough edges on the carbon fiber, the build quality looks good.&lt;/p&gt;
+
+&lt;p&gt;Unlike my Diatone 150mm quad, the motors are exactly symmetrical (even though it doesn&amp;#39;t appear so). This is great -- we won&amp;#39;t need any custom motor mixes.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-frame-width-aa-bd-jpg" href="../../../../../assets/images/blog/beerotor/frame-width-82aa5bd0.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/frame-width-82aa5bd0.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-frame-height-c-a-jpg" href="../../../../../assets/images/blog/beerotor/frame-height-9579c3a7.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/frame-height-9579c3a7.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The only downside of any frame this small is that it barely fits the Gemfan 3x3 props. I wonder how this thing would fly with arms that could take 4x4.5 props.&lt;/p&gt;
+
+&lt;p&gt;I also haven&amp;#39;t figured out an efficient way to get the battery into the main compartment. I only had &lt;a href="http://shrsl.com/?~aqgm"&gt;giant Velcro straps&lt;/a&gt; sitting around; perhaps some &lt;a href="http://shrsl.com/?~aqgl"&gt;smaller Velcro straps&lt;/a&gt; are in order.&lt;/p&gt;
+
+&lt;h4 id="value"&gt;Value&lt;/h4&gt;
+
+&lt;p&gt;Versus a non-carbon fiber frame, it is only $7 more than &lt;a href="http://www.banggood.com/Diatone-Blade-150-Glass-Fiber-PCB-Frame-Kit-w-LED-Decoration-Board-p-976128.html?p=1G09211226617201502J"&gt;the cheapest Diatone 160mm frame&lt;/a&gt; available, and it is way, way, way more durable.&lt;/p&gt;
+
+&lt;p&gt;The durability is totally worth the $6.&lt;/p&gt;
+
+&lt;p&gt;Versus other carbon fiber frames, not only is it less expensive than the &lt;a href="http://www.banggood.com/Diatone-Blade-150-Carbon-Fiber-Quadcopter-Frame-Kit-Only-20g-p-982271.html?p=1G09211226617201502J"&gt;Diatone Blade 150&lt;/a&gt;, the layout is much better, as it protects the battery inside the frame instead of on the bottom. Plus, there is landing gear.&lt;/p&gt;
+
+&lt;p&gt;This is the only sub 160mm frame I&amp;#39;ve seen that has a vibration dampening mount for an HD camera. Surprisingly, it has no trouble lifting the &lt;a href="http://shrsl.com/?~apzm"&gt;Xiaomi Yi&lt;/a&gt;, still hovering at 1/2 throttle.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-frame-vibration-dampening-ee-a-jpg" href="../../../../../assets/images/blog/beerotor/frame-vibration-dampening-1ee6595a.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/beerotor/frame-vibration-dampening-1ee6595a.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1360'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id="x-drone-10a-escs"&gt;X-Drone 10A ESCs&lt;/h3&gt;
+
+&lt;p&gt;X-Drone 10A are re-branded DYS XM10A. According to the manual, these support Damped Light and the switching speed is somewhat fast. &lt;/p&gt;
+
+&lt;p&gt;The only downside is that they don&amp;#39;t support 4s, so you&amp;#39;ll be at a max of 3s on your micro quad. I&amp;#39;m not sure how this will effect performance, but stay tuned for a 4s micro quad build and I&amp;#39;ll give you a comparison.&lt;/p&gt;
+
+&lt;p&gt;Out of the box, they weigh in at 5g.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-xm-a-weight-e-jpg" href="../../../../../assets/images/blog/beerotor/xm10a-weight-9723e401.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/xm10a-weight-9723e401.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Removing the heat shrink and wires, we&amp;#39;re down to 2g.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-xm-a-weight-c-ec-jpg" href="../../../../../assets/images/blog/beerotor/xm10a-weight-2-c8ec4215.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/xm10a-weight-2-c8ec4215.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;If I built another one of these, I would consider upgrading to xm20a ESCs that support 4S, LittleBee 20A ESCs also support 4S, or the upcoming &lt;a href="http://www.rcgroups.com/forums/showpost.php?p=33393087&amp;amp;postcount=6625"&gt;LittleBee 30A ESCs&lt;/a&gt; that will support 6S!&lt;/p&gt;
+
+&lt;p&gt;That said, 3S probably makes the most sense. If you do decide to go 4S, you might have to fly smaller batteries as a 3S barely fits in the main compartment.&lt;/p&gt;
+
+&lt;h3 id="rctimer-1306-motors"&gt;Rctimer 1306 Motors&lt;/h3&gt;
+
+&lt;p&gt;The Rctimer SL1306/3100KV motors come with mounting screws, 2mm bullet connectors (which we won&amp;#39;t use) and pre-epoxied wires, sweet!&lt;/p&gt;
+
+&lt;p&gt;Build quality seems really good, they spin smoothly, bearings feel nice and the magnets are strong.&lt;/p&gt;
+
+&lt;p&gt;Spinning them up, one sounds a little chunky, nothing to worry about, but definitely not a perfectly smooth sound. At almost 40,000rpm, this isn&amp;#39;t surprising.&lt;/p&gt;
+
+&lt;p&gt;Compared to the MayTech 1306 motors I&amp;#39;ve seen, they&amp;#39;re significantly more robust, so hopefully they&amp;#39;ll be fairly durable.&lt;/p&gt;
+
+&lt;p&gt;I did have to trim down the shrink wrap to get them to lay flat on the arms with the frame legs attached, but better to have too much heat shrink rather than not enough.&lt;/p&gt;
+
+&lt;h3 id="oze32-flight-controller"&gt;OZE32 Flight Controller&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#39;m a huge fan of the OZE32 all in one flight controller, checkout the &lt;a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"&gt;OZE32 post&lt;/a&gt; for a full review.&lt;/p&gt;
+
+&lt;h3 id="gemfan-3x3-props"&gt;Gemfan 3x3 Props&lt;/h3&gt;
+
+&lt;p&gt;These things are sharp! You can see the translucency in the edge of the prop when held against a light.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-gf-x-ea-f-jpg" href="../../../../../assets/images/blog/beerotor/gf-3x3-5ea5103f.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/gf-3x3-5ea5103f.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;After flying &amp;quot;indestructible&amp;quot; DAL props on my 250mm quad for a while, these feel flimsy, but comparing some Diatone 5x3, they&amp;#39;re basically the same, just cut down to 3&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;Props smaller than 4cm are hard to find, but I have a bunch of 5&amp;quot; props for my 250 size quad sitting around. Checkout Paul&amp;#39;s prop cutter if you are in the same situation.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="853" height="480" src="https://www.youtube.com/embed/MxHMUbuMAYs" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;3x3x3 tri-blade props would also be interesting to try, maybe I&amp;#39;ll try cutting down &lt;a href="https://www.banggood.com/search/3-leaf-propeller.html?p=1G09211226617201502J"&gt;some tri-blades...&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="elgae-camera-and-video-transmitter"&gt;ELGAE Camera and Video Transmitter&lt;/h3&gt;
+
+&lt;p&gt;The transmitter works great. The channel can be changed by pressing a button on the side, which is much easier than flipping dipswitches.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-vtx-box-edba-e-jpg" href="../../../../../assets/images/blog/beerotor/vtx-box-edba54e8.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/vtx-box-edba54e8.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;In terms of low light performance and latency, the camera to beat is the &lt;a href="http://bit.ly/1Y8HbeE"&gt;Sony Super HAD CCD 600tvl&lt;/a&gt;, which survelizone now has in &lt;a href="http://bit.ly/1Y8H3vt"&gt;an even smaller 17x17mm package&lt;/a&gt;. However, without a video transmitter, this camera is $40.&lt;/p&gt;
+
+&lt;p&gt;The Sony Super HAD isn&amp;#39;t super high resolution, but it has a super wide dynamic range, making it possible to look straight into the sun and still see the shaded ground. Also, there is no lag, which makes it perfect for FPV.&lt;/p&gt;
+
+&lt;p&gt;This is pretty extreme, but here is some footage of the Super HAD at night:&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="640" height="480" src="https://www.youtube.com/embed/Ks4Xx1QK_Hc" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;In general CCD cameras have better low-light properties than CMOS cameras. The ELGAE camera however, performs quite well. I took some photos inside with most of the lights turned off and it was very bright.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-camera-low-light-fc-e-jpg" href="../../../../../assets/images/blog/beerotor/camera-low-light-639fc8e6.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/camera-low-light-639fc8e6.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Usually you see field of view measured by the lens focal length, in millimeters, so for reference a 2.8mm lens has about a 130 degree field of view, which is right in line with this camera.&lt;/p&gt;
+
+&lt;p&gt;Note also, that the small &lt;a href="http://bit.ly/1Y8H3vt"&gt;Sony Super HAD&lt;/a&gt; is the same size, so it should be a drop in replacement for the included CMOS camera, if you ever want to upgrade.&lt;/p&gt;
+
+&lt;p&gt;With great performance from the ELGAE set, for less than $30 for both the camera and VTX, this setup is amazing value.&lt;/p&gt;
+
+&lt;h2 id="build"&gt;Build&lt;/h2&gt;
+
+&lt;p&gt;Time to build!&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s start by prepping the ESCs to attach to the arms.&lt;/p&gt;
+
+&lt;h3 id="arms-and-escs"&gt;Arms and ESCs&lt;/h3&gt;
+
+&lt;p&gt;Take off the shrink wrap. Note to manufacturers, it would be rad if you would send mini-quad ESCs without the shrink wrap and motor leads.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-xm-a-b-de-jpg" href="../../../../../assets/images/blog/beerotor/xm10a-1-11b0de96.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/xm10a-1-11b0de96.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;If you want you can leave the signal / servo line soldered on. I&amp;#39;ll remove it and solder the OZE32 wire right to the ESC; this way we avoid soldering wire-to-wire which is prone to failure (wire to PCB is always better).&lt;/p&gt;
+
+&lt;p&gt;Scrape away the white silicone with a toothpick to expose the servo solder points. Don&amp;#39;t use a metal instrument if you value your ESC, as it would be easy to damage the coating on the board with a metal instrument.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-xm-a-bc-jpg" href="../../../../../assets/images/blog/beerotor/xm10a-3-39bc2799.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/xm10a-3-39bc2799.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;De-solder the motor wires. It helps to put a touch of solder on the iron then touch the wire you&amp;#39;re removing.&lt;/p&gt;
+
+&lt;p&gt;If you have a temperature controlled iron, I like to de-solder at about 750 degrees Fahrenheit.&lt;/p&gt;
+
+&lt;p&gt;Here I&amp;#39;m using helping hands, but padding the ESC with a rubber band.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-xm-a-fb-f-fe-jpg" href="../../../../../assets/images/blog/beerotor/xm10a-4-3fb5f6fe.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/xm10a-4-3fb5f6fe.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;If you don&amp;#39;t have helping hands, just tape the ESC down while you de-solder.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Find the M2x6mm bag of screws. We&amp;#39;ll use these to attach all of the standoffs.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m going to use the M2x14mm standoffs as legs, and the M2x10mm standoffs to hold on the bottom plate. This is possible because the OZE32 doesn&amp;#39;t have any vertical pins. It barely fits, mounted upside-down.&lt;/p&gt;
+
+&lt;p&gt;Check if your flight controller fits with the 10mm standoffs on the bottom. If it doesn&amp;#39;t fit, use the 14mm or 20mm standoffs instead.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-arms-ea-jpg" href="../../../../../assets/images/blog/beerotor/arms-1-6418ea56.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/arms-1-6418ea56.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;My motors wouldn&amp;#39;t lay flat with the leg mounted.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-arms-e-d-f-jpg" href="../../../../../assets/images/blog/beerotor/arms-2-3e2d2f28.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/arms-2-3e2d2f28.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;So I trimmed back the shrink wrap.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-arms-jpg" href="../../../../../assets/images/blog/beerotor/arms-3-45579187.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/arms-3-45579187.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Then cut the motor wires to length, I cut mine to 15mm.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-arms-f-jpg" href="../../../../../assets/images/blog/beerotor/arms-4-7980f150.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/arms-4-7980f150.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Strip the motor wire leads about 2mm down and tin them. It helps to have a hot iron. 750 degrees Fahrenheit will do the trick.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-arms-dc-b-a-jpg" href="../../../../../assets/images/blog/beerotor/arms-5-dc04b2a2.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/arms-5-dc04b2a2.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Solder on the ESC to the motor.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-arms-d-jpg" href="../../../../../assets/images/blog/beerotor/arms-6-8d339826.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/arms-6-8d339826.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Grab a bag of M2x5mm screws, included with the motors and with thread-lock, attach the motors to the arms.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-arms-d-jpg" href="../../../../../assets/images/blog/beerotor/arms-7-05350d92.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/arms-7-05350d92.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id="frame"&gt;Frame&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;#39;s build the frame up a bit so we can mount the arms.&lt;/p&gt;
+
+&lt;p&gt;Start by mounting the standoffs for the flight controller. I&amp;#39;m using nylon screws, but the included M3x4mm screws will be fine as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-frame-c-f-b-jpg" href="../../../../../assets/images/blog/beerotor/frame-1-c02f3b03.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/frame-1-c02f3b03.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-frame-cd-f-jpg" href="../../../../../assets/images/blog/beerotor/frame-2-57cd27f0.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/frame-2-57cd27f0.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Attach the standoffs. Put thread lock on all the metal screws. Don&amp;#39;t use it on nylon bolts or nylock nuts, as it will corrode the plastic.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-frame-e-ceb-jpg" href="../../../../../assets/images/blog/beerotor/frame-3-3e0ceb23.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/frame-3-3e0ceb23.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;I decided to use the 25mm standoffs on the body after checking my battery height.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-frame-b-jpg" href="../../../../../assets/images/blog/beerotor/frame-4-59b78258.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/frame-4-59b78258.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id="camera"&gt;Camera&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;#39;s install the camera.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-camera-fe-jpg" href="../../../../../assets/images/blog/beerotor/camera-1-2fe06692.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/camera-1-2fe06692.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The ring only fits on one way.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-camera-af-a-jpg" href="../../../../../assets/images/blog/beerotor/camera-2-af45025a.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/camera-2-af45025a.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Put the nut in the side with the hex shaped recess.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-camera-f-e-jpg" href="../../../../../assets/images/blog/beerotor/camera-3-3f33e673.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/camera-3-3f33e673.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Install the camera bracket on the front of the top plate.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-camera-c-d-jpg" href="../../../../../assets/images/blog/beerotor/camera-4-40c25d53.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/camera-4-40c25d53.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Install the camera into the bracket.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-camera-e-cf-jpg" href="../../../../../assets/images/blog/beerotor/camera-5-9e0568cf.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/camera-5-9e0568cf.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id="video-transmitter-and-camera"&gt;Video Transmitter and Camera&lt;/h3&gt;
+
+&lt;p&gt;Ok, time to wire up the camera and video transmitter (&lt;code&gt;VTX&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Remember that carbon fiber is conductive, so make sure you put some electrical tape or shrink wrap on anything touching the frame. I removed the sticker from the VTX and put a piece of electrical tape over the ground cage.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-vtx-ac-a-jpg" href="../../../../../assets/images/blog/beerotor/vtx-1-8ac9a080.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/vtx-1-8ac9a080.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s check the plan the layout of all our components, so we can figure out the lengths to which our wires should be cut. I think mine will fit best like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-vtx-f-f-jpg" href="../../../../../assets/images/blog/beerotor/vtx-2-f86782f1.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/vtx-2-f86782f1.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;If you were wondering, that&amp;#39;s an OpenLRS micro receiver. The only place I&amp;#39;ve found to get them is straight from the guy who makes them in China. If anyone is interested, I can look into importing a bunch. Email me or leave a comment.&lt;/p&gt;
+
+&lt;p&gt;The transmitter included in the &lt;a href="http://rctimer.com/product-1275.html/#r-pNathanT"&gt;ELGAE FOV127 FPV200-set&lt;/a&gt; has a LC filter, so we&amp;#39;ll wire &lt;code&gt;VCC&lt;/code&gt; on the OZE32 to the &lt;code&gt;VTX&lt;/code&gt; &lt;code&gt;V+&lt;/code&gt; power in, then power out from the &lt;code&gt;VTX&lt;/code&gt; to the camera.&lt;/p&gt;
+
+&lt;p&gt;The only other thing that needs to pass through the board is video, so at a minimum, clip the video wire and solder the camera side to the OZE32 &lt;code&gt;VIN&lt;/code&gt; and VTX to the &lt;code&gt;VOUT&lt;/code&gt; pin.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-oze-diagram-top-ebb-be-jpg" href="../../../../../assets/images/blog/oze32/diagram-top-ebb83be6.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.238210399032648' data-src='../../../../../assets/images/blog/oze32/diagram-top-ebb83be6.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='827'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;I don&amp;#39;t like soldering wires directly to other wires as these connections tend to break, so instead of cutting down the &lt;code&gt;VTX&lt;/code&gt; &amp;lt;-&amp;gt; &lt;code&gt;Camera&lt;/code&gt; V+ and &lt;code&gt;GND&lt;/code&gt; wire and soldering them together, I removed this resistor on the OZE32, which disconnects the &lt;code&gt;12v&lt;/code&gt; pins on the video headers from the OZE32, but leaves both &lt;code&gt;12v&lt;/code&gt; pins connected together, and soldered both sides to the board. This just allows the power and ground to pass through OZE32, without making any connections to it.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-oze-remove-resistor-c-c-e-jpg" href="../../../../../assets/images/blog/oze32/remove-resistor-3c3c9e31.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/oze32/remove-resistor-3c3c9e31.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Alternatively, since the camera takes 3.6V to 5.5V, you could take 5v from any 5v output on the OZE32 and send that to the camera. The OZE32 also has a LC filter, so the power will be clean. I&amp;#39;m wiring it the other way since it looks a little prettier, but it might be easier for you to take 5v from an unused serial port like I did on &lt;a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/#hardware-setup-camera-and-vtx"&gt;my first OZE32 Build&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can pull the resistor off easily by heating one side and using a pair of tweeters to pull that side down a bit. Switch sides and repeat to &amp;quot;walk&amp;quot; the resistor off the board.&lt;/p&gt;
+
+&lt;p&gt;Check the connection between &lt;code&gt;VCC&lt;/code&gt; and the &lt;code&gt;12v&lt;/code&gt; pin with a multi-meter in continuity mode, to make sure that these pins are no longer connected.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve removed the audio cable, cut the cables to length and soldered all but the power leads onto the board. I&amp;#39;ll solder on the power leads when I solder on the ESCs in a minute.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-oze-resistor-removed-c-jpg" href="../../../../../assets/images/blog/oze32/resistor-removed-c1513735.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/oze32/resistor-removed-c1513735.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;I ended up cutting the camera wires at 55mm and the power leads at 75mm.&lt;/p&gt;
+
+&lt;p&gt;Remember when you&amp;#39;re soldering, the VTX goes on the pins closest to the edge of the board.&lt;/p&gt;
+
+&lt;p&gt;When soldering, tin the wires, flux the pads/holes and then hold the wires in the holes, add a bit of solder to your iron and touch the hole. Solder should flow into the hole filling it up, locking in the wire.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-vtx-b-a-de-jpg" href="../../../../../assets/images/blog/beerotor/vtx-3-9b5a0de6.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/vtx-3-9b5a0de6.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Done!&lt;/p&gt;
+
+&lt;h3 id="flight-controller"&gt;Flight controller&lt;/h3&gt;
+
+&lt;p&gt;Before installing the flight controller, I&amp;#39;m going to connect the IMU interrupt pin to the STM32. This will allow us to run a flight control loop sync&amp;#39;d gyro with BetaFlight. This helps increase the copter response by eliminating aliasing in the control loop.&lt;/p&gt;
+
+&lt;p&gt;It does require some fine soldering skills and nerves of steel, so weigh the risks against the modest, but not crucial, performance gain.&lt;/p&gt;
+
+&lt;p&gt;See the short guide in &lt;a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/#connect-imu-interrupt-pin"&gt;the OZE32 article&lt;/a&gt; to learn how to connect these pins.&lt;/p&gt;
+
+&lt;h4 id="layout"&gt;Layout&lt;/h4&gt;
+
+&lt;p&gt;The flight controller seems to fit best upside down. Just make sure you remember to set roll = 180 in CleanFlight. I&amp;#39;ll cover this more in the configuration section below.&lt;/p&gt;
+
+&lt;p&gt;Another advantage of mounting the OZE32 upside down is that the dipswitches are accessible, with a pin or something long and pointy, from the bottom of the quad.&lt;/p&gt;
+
+&lt;p&gt;Measure and cut the ESC signal wire length by holding an arm in place.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-c-fc-f-jpg" href="../../../../../assets/images/blog/beerotor/fc-1-c0fc207f.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-1-c0fc207f.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve removed all the extra wires from the JST connector.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-oze-header-pin-removal-abed-jpg" href="../../../../../assets/images/blog/oze32/header-pin-removal-1-1945abed.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/header-pin-removal-1-1945abed.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-oze-header-pin-removal-bfd-b-c-jpg" href="../../../../../assets/images/blog/oze32/header-pin-removal-2-bfd9b1c5.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/header-pin-removal-2-bfd9b1c5.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The front left ESC needed longer power wires, so I removed these and soldered on longer ones.&lt;/p&gt;
+
+&lt;h4 id="power-and-ground"&gt;Power and Ground&lt;/h4&gt;
+
+&lt;p&gt;Time to solder all the power and ground connections&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Battery leads&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I&amp;#39;ll use a JST. Tin these wires really well, trying to get as much solder as you can up under the silicon casing, as these wires are prone to fray.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;VTX power&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Motors&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here I&amp;#39;ve soldered the JST connector and the VTX power and ground.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-cc-jpg" href="../../../../../assets/images/blog/beerotor/fc-2-cc606108.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-2-cc606108.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Now the motor leads are soldered.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-f-a-b-f-jpg" href="../../../../../assets/images/blog/beerotor/fc-3-f18a4b6f.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-3-f18a4b6f.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Do the same for the ground lines on the other side of the board.&lt;/p&gt;
+
+&lt;h4 id="mount-the-board"&gt;Mount the board&lt;/h4&gt;
+
+&lt;p&gt;Mount the board on the frame then plug in the receiver to the flight controller.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ll do a quick test to make sure the receiver is working by plugging the OZE32 into my computer and turning on my transmitter and checking the RX tab in CleanFlight.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-c-c-jpg" href="../../../../../assets/images/blog/beerotor/fc-4-0c202c70.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-4-0c202c70.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The receiver tab should look like this if working properly.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-cleanflight-working-rx-f-c-png" href="../../../../../assets/images/blog/beerotor/cleanflight-working-rx-f32223c2.png" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3459715639810426' data-src='../../../../../assets/images/blog/beerotor/cleanflight-working-rx-f32223c2.png' class='resize-ratio lazyload trailing-space' width='1136' height='844'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;I zip-tied on the RX, then I mounted the VTX.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-e-eb-jpg" href="../../../../../assets/images/blog/beerotor/fc-5-e6309eb7.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-5-e6309eb7.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Install the top plate and arms. I started with the un-soldered ESC. Wow that is a tight fit.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-c-b-jpg" href="../../../../../assets/images/blog/beerotor/fc-6-338c883b.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-6-338c883b.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Protect the bottom side of each ESC with a piece of tape.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-f-jpg" href="../../../../../assets/images/blog/beerotor/fc-7-56f51241.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-7-56f51241.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Then tape it on.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-fd-jpg" href="../../../../../assets/images/blog/beerotor/fc-8-108fd093.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-8-108fd093.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;In hindsight the ESC with re-soldered power leads looked the cleanest and was the easiest to work with. I might consider un-soldering all the power leads next time, mounting the arms, then soldering them back on the right direction next time.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-f-jpg" href="../../../../../assets/images/blog/beerotor/fc-9-51583f00.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-9-51583f00.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-e-eae-e-jpg" href="../../../../../assets/images/blog/beerotor/fc-10-e03eae9e.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-10-e03eae9e.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Test each motor direction by plugging the flight controller into your computer and using the motors tab in the CleanFlight configuration tool. Unsolder from the ESC and swap any two of the three motor leads on motors that rotate the wrong way. Be sure to plug in an antenna to your FPV VTX if it is powered up.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-bbc-daf-jpg" href="../../../../../assets/images/blog/beerotor/fc-11-bbc08daf.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-11-bbc08daf.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;My CCW motors were backwards. After re-soldering, check them again and tape the ESCs down to the arms.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-c-ad-jpg" href="../../../../../assets/images/blog/beerotor/fc-12-c3057ad6.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-12-c3057ad6.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Wow, it&amp;#39;s lookin&amp;#39; pretty clean!&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-ff-a-df-jpg" href="../../../../../assets/images/blog/beerotor/fc-13-ff0a1df4.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-13-ff0a1df4.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-b-c-aa-jpg" href="../../../../../assets/images/blog/beerotor/fc-14-5b0c46aa.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-14-5b0c46aa.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-jpg" href="../../../../../assets/images/blog/beerotor/fc-15-70118908.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-15-70118908.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Quick camera test, video looks awesome! The picture is super bright, even though the room is dimly lit.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-fd-jpg" href="../../../../../assets/images/blog/beerotor/fc-16-fd650443.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-16-fd650443.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally, attach the top plate standoffs.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-ec-jpg" href="../../../../../assets/images/blog/beerotor/fc-17-5686ec32.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-17-5686ec32.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Then attach the vibration dampening camera mount and screw on in the top plate. Don&amp;#39;t forget the thread lock!&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-fc-d-c-jpg" href="../../../../../assets/images/blog/beerotor/fc-18-d351c327.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5047759000734753' data-src='../../../../../assets/images/blog/beerotor/fc-18-d351c327.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1361'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id="configuration"&gt;Configuration&lt;/h2&gt;
+
+&lt;h3 id="blheli"&gt;BlHeli&lt;/h3&gt;
+
+&lt;p&gt;The Rctimer X-Drone 10A ESCs come pre-flashed with BLHeli 14.0. I like to live on the bleeding edge, so I immediately upgraded them to the latest BlHeli. The defaults will work fine as well. They come with Damped Light turned on, which is really nice. Also PWM is turned off, which means they&amp;#39;ll work with BetaFlight no problem.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-read-default-xm-a-faedf-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-5-read-default-xm10a-faedf761.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2586750788643533' data-src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-5-read-default-xm10a-faedf761.jpg' class='resize-ratio lazyload trailing-space' width='798' height='634'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Be sure to &lt;a href="/blog/2015/12/06/blheli-calibration/"&gt;calibrate your escs&lt;/a&gt; before you fly.&lt;/p&gt;
+
+&lt;h3 id="oze32"&gt;OZE32&lt;/h3&gt;
+
+&lt;p&gt;Mine came with CleanFlight 1.10&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-oze-oze-pre-betaflight-eecb-jpg" href="../../../../../assets/images/blog/oze32/oze32-pre-betaflight-871eecb4.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3455978975032852' data-src='../../../../../assets/images/blog/oze32/oze32-pre-betaflight-871eecb4.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='761'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;But BetaFlight is way better, so let&amp;#39;s flash that.&lt;/p&gt;
+
+&lt;h4 id="flash-betaflight"&gt;Flash BetaFlight&lt;/h4&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-oze-oze-flashing-betaflight-fa-d-f-jpg" href="../../../../../assets/images/blog/oze32/oze32-flashing-betaflight-fa3d3f57.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3455978975032852' data-src='../../../../../assets/images/blog/oze32/oze32-flashing-betaflight-fa3d3f57.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='761'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;See &lt;a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/#flash-betaflight"&gt;the OZE32 BetaFlight flashing guide&lt;/a&gt; for details.&lt;/p&gt;
+
+&lt;p&gt;If you connected the IMU interrupt pin, you&amp;#39;ll get a 1khz loop time. Otherwise this will be 1.1khz&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-oze-oze-post-betaflight-edf-jpg" href="../../../../../assets/images/blog/oze32/oze32-post-betaflight-edf14775.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3455978975032852' data-src='../../../../../assets/images/blog/oze32/oze32-post-betaflight-edf14775.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='761'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Enable your receiver type, current sensor, and set the orientation if you mounted it upside-down (roll = 180).&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-cleanflight-config-ca-b-png" href="../../../../../assets/images/blog/beerotor/cleanflight-config-ca008b07.png" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3459715639810426' data-src='../../../../../assets/images/blog/beerotor/cleanflight-config-ca008b07.png' class='resize-ratio lazyload trailing-space' width='1136' height='844'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Make sure you turn on &lt;code&gt;Serial RX&lt;/code&gt; on the receiver tab as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-beerotor-cleanflight-enable-serialrx-ca-png" href="../../../../../assets/images/blog/beerotor/cleanflight-enable-serialrx-0ca14873.png" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3459715639810426' data-src='../../../../../assets/images/blog/beerotor/cleanflight-enable-serialrx-0ca14873.png' class='resize-ratio lazyload trailing-space' width='1136' height='844'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h4 id="flash-scarab-osd"&gt;Flash Scarab OSD&lt;/h4&gt;
+
+&lt;p&gt;See &lt;a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/#flash-scarab-osd"&gt;the OZE32 ScarabOSD flashing guide&lt;/a&gt; for details.&lt;/p&gt;
+
+&lt;p&gt;Be sure to check your failsafe before you fly.&lt;/p&gt;
+
+&lt;p&gt;Read the whole &lt;a href="/blog/2015/10/29/multirotor-setup-checklist/"&gt;pre-flight checklist here&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/"/>
+    <id>http://nathan.vertile.com/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/</id>
+    <published>2015-11-16T11:22:00-08:00</published>
+    <updated>2016-02-03T19:04:56-08:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This guide describes how to flash the BlHeli and the BlHeli Bootloader to XRotor 20a ESCs so that they can be updated via CleanFlight and BetaFlight after installing them in your multi-rotor, without unplugging them from the flight controller!&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-xrotor-a-xrotor-a-size-ed-e-jpg" href="http://www.banggood.com/Hobbywing-XRotor-20A-APAC-Brushless-ESC-3-4S-For-RC-Multicopters-p-945929.html?p=1G09211226617201502J" class="linked-img "&gt;&lt;img data-ratio='1.3333333333333333' data-src='../../../../../assets/images/blog/xrotor20a/xrotor20a-size-ed90696e.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='768'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;There are two types microprocessors used on ESCS, one is made by Atmel and the other by SiLabs. Since the XRotor 20a uses a SiLabs processor, these instructions are generally applicable to other SiLabs based ESCs. You&amp;#39;ll just need to identify the C2 interface pads on the circuit board. These pads are described in the documentation here: &lt;a href="https://github.com/bitdump/BLHeli/raw/master/SiLabs/BLHeli%20supported%20SiLabs%20ESCs.pdf"&gt;Supported SiLabs ESCs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="hardware"&gt;Hardware&lt;/h3&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-xrotor-a-xrotor-a-packaged-a-e-jpg" href="http://www.banggood.com/Hobbywing-XRotor-20A-APAC-Brushless-ESC-3-4S-For-RC-Multicopters-p-945929.html?p=1G09211226617201502J" class="linked-img "&gt;&lt;img data-ratio='1.3333333333333333' data-src='../../../../../assets/images/blog/xrotor20a/xrotor20a-packaged-92a7e764.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='768'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;At 15g weight, with wires, these things aren&amp;#39;t super light.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-xrotor-a-xrotor-a-weight-d-ab-jpg" href="http://www.banggood.com/Hobbywing-XRotor-20A-APAC-Brushless-ESC-3-4S-For-RC-Multicopters-p-945929.html?p=1G09211226617201502J" class="linked-img "&gt;&lt;img data-ratio='1.3333333333333333' data-src='../../../../../assets/images/blog/xrotor20a/xrotor20a-weight-d9088ab5.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='768'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Take off the heatsink to save 2g, no idea how this will effect performance and reliability so do this at your own risk.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-xrotor-a-xrotor-a-heatsink-d-af-jpg" href="../../../../../assets/images/blog/xrotor20a/xrotor20a-heatsink-d532af10.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='0.75' data-src='../../../../../assets/images/blog/xrotor20a/xrotor20a-heatsink-d532af10.jpg' class='resize-ratio lazyload trailing-space' width='768' height='1024'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id="tools"&gt;Tools&lt;/h3&gt;
+
+&lt;h4 id="arduino"&gt;Arduino&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You&amp;#39;ll need a &lt;a href="http://www.banggood.com/ATmega328P-Arduino-Compatible-Nano-V3-Improved-Version-No-Cable-p-959231.html?p=1G09211226617201502J"&gt;$3.60 Chinese Arduino Nano Clone&lt;/a&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span class="center img-quarter-width"&gt;&lt;a id="assets-images-blog-nano-clone-pins-c-f-jpg" href="http://www.banggood.com/ATmega328P-Arduino-Compatible-Nano-V3-Improved-Version-No-Cable-p-959231.html?p=1G09211226617201502J" class="linked-img "&gt;&lt;img data-ratio='2.5536159600997506' data-src='../../../../../assets/images/blog/nano_clone/pins-213c49f8.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='401'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;If you use this specific Nano clone, it uses a ch340g usb chip, the driver for which is here: &lt;a href="http://www.wch.cn/downfile/65"&gt;http://www.wch.cn/downfile/65&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I also tried this process with a bunch of different Arduino including the Pro Mini and Uno. I couldn&amp;#39;t get it to work. My guess is that there might be an issue with the hex files for other Arduino versions. Your best bet is to use a nano.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="windows"&gt;Windows&lt;/h4&gt;
+
+&lt;p&gt;Since we&amp;#39;ll be using BlHeliSuite, which is Windows only, we&amp;#39;ll need a VM for Linux or Mac, skip this if you already have a Windows computer. I used Vmware Fusion and &lt;a href="https://www.modern.ie/en-us/virtualization-tools"&gt;this free Windows XP VM&lt;/a&gt;, straight from Microsoft:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;curl -O -L "https://www.modern.ie/vmdownload?browserOS=IE6-XP&amp;amp;parts=2&amp;amp;platform=Mac&amp;amp;virtPlatform=vmware&amp;amp;filename=VMBuild_20141027/VMware/IE6/Mac/IE6.XP.For.Mac.VMware.zip{.001,.002}"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id="blheli-suite"&gt;BlHeli Suite&lt;/h4&gt;
+
+&lt;p&gt;Download the latest BlHeli Suite: &lt;a href="http://blhelisuite.wordpress.com"&gt;blhelisuite.wordpress.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id="wiring"&gt;Wiring&lt;/h4&gt;
+
+&lt;p&gt;The xrotor 20a escs come with these solder pads exposed to access the C2 interface we&amp;#39;ll be using to flash them:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-xrotor-a-c-pads-d-d-a-jpg" href="../../../../../assets/images/blog/xrotor20a/c2-pads-d0d7604a.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3781965006729475' data-src='../../../../../assets/images/blog/xrotor20a/c2-pads-d0d7604a.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='743'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;They connect to your Arduino Nano like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-xrotor-a-nano-c-pinout-fb-d-cc-jpg" href="../../../../../assets/images/blog/xrotor20a/nano-c2-pinout-fb8d35cc.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.292929292929293' data-src='../../../../../assets/images/blog/xrotor20a/nano-c2-pinout-fb8d35cc.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='792'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-xrotor-a-nano-pins-ab-f-d-jpg" href="../../../../../assets/images/blog/xrotor20a/nano-pins-40ab9f1d.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/xrotor20a/nano-pins-40ab9f1d.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re unsure where to solder the leads onto your ESC, you can verify the solder pad connections to the pins on the F330 microcontroller with a multi-meter in continuity mode.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-xrotor-a-f-pinout-e-jpg" href="../../../../../assets/images/blog/xrotor20a/f330-pinout-494e4023.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.080168776371308' data-src='../../../../../assets/images/blog/xrotor20a/f330-pinout-494e4023.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='948'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;First, I made a programming cable that matches these pads, but there appears to be a thin layer of epoxy or something covering the board. I tried cleaning the pads with alcohol, but it didn&amp;#39;t help. &lt;/p&gt;
+
+&lt;p&gt;Since I couldn&amp;#39;t get good contact just holding the pins against the ESC, I ended up soldering leads onto each ESC. Soldering worked fine. It doesn&amp;#39;t take too long, so consider just soldering temporary leads before building a cable.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-xrotor-a-soldered-ad-b-jpg" href="../../../../../assets/images/blog/xrotor20a/soldered-296ad17b.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/xrotor20a/soldered-296ad17b.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id="flash"&gt;Flash&lt;/h3&gt;
+
+&lt;h4 id="install-the-driver"&gt;Install the driver&lt;/h4&gt;
+
+&lt;p&gt;Boot your &lt;a href="https://www.modern.ie/en-us/virtualization-tools"&gt;VM&lt;/a&gt; (if you&amp;#39;re on a Mac), unzip BlHeliSuite, install the &lt;a href="http://www.wch.cn/downfile/65"&gt;Arduino USB Driver&lt;/a&gt; and plug in the Arduino.&lt;/p&gt;
+
+&lt;h4 id="find-the-com-port"&gt;Find the COM port&lt;/h4&gt;
+
+&lt;p&gt;Find the COM port in use by your adapter by looking in the Computer Management (Right-Click &amp;quot;My Computer&amp;quot; -&amp;gt; &amp;quot;Manage&amp;quot;) under Device Manager, COM ports. Mine is &lt;code&gt;COM6&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id="make-the-4-way-interface"&gt;Make the 4 way interface&lt;/h4&gt;
+
+&lt;p&gt;Open the &lt;code&gt;Make Interfaces&lt;/code&gt; tab, pick the Arduino Board: &lt;code&gt;Nano W/ ATmega328&lt;/code&gt; choose your COM port and click &amp;quot;Arduino 4way-interface&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-xrotor-a-bl-b-e-f-jpg" href="../../../../../assets/images/blog/xrotor20a/bl-1-2b8e5f03.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2688971499380421' data-src='../../../../../assets/images/blog/xrotor20a/bl-1-2b8e5f03.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='807'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Pick the &lt;code&gt;4wArduino_Nano__16_MULTIv[lates version number].hex&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-xrotor-a-bl-d-a-jpg" href="../../../../../assets/images/blog/xrotor20a/bl-2-7969d92a.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2657601977750308' data-src='../../../../../assets/images/blog/xrotor20a/bl-2-7969d92a.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='809'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Hit &lt;code&gt;open&lt;/code&gt; and it will start flashing your Arduino, making it into a SiLabs C2 programming stick.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-xrotor-a-bl-c-faf-e-jpg" href="../../../../../assets/images/blog/xrotor20a/bl-3-c65faf2e.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2704714640198511' data-src='../../../../../assets/images/blog/xrotor20a/bl-3-c65faf2e.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='806'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;It will say &amp;quot;Thank you&amp;quot; when done -- you&amp;#39;re welcome!&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-xrotor-a-bl-ebb-jpg" href="../../../../../assets/images/blog/xrotor20a/bl-4-ebb86984.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2641975308641975' data-src='../../../../../assets/images/blog/xrotor20a/bl-4-ebb86984.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='810'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h4 id="connect-your-programmer"&gt;Connect your programmer&lt;/h4&gt;
+
+&lt;p&gt;Connect your programmer to the ESC as described in the &lt;a href="#wiring"&gt;wiring&lt;/a&gt; section.&lt;/p&gt;
+
+&lt;p&gt;Plug the ESC into a battery, preferably with a current limiting device like a light bulb or voltage regulator. So if something goes terribly wrong, your ESC isn&amp;#39;t damaged.&lt;/p&gt;
+
+&lt;h4 id="flashing"&gt;Flashing&lt;/h4&gt;
+
+&lt;p&gt;Once your ESC is plugged in, hit &amp;quot;Connect&amp;quot; then &amp;quot;Read Setup,&amp;quot; you should get a prompt like this, to flash BlHeli.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-xrotor-a-bl-eae-fb-jpg" href="../../../../../assets/images/blog/xrotor20a/bl-5-eae7fb46.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2595325953259533' data-src='../../../../../assets/images/blog/xrotor20a/bl-5-eae7fb46.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='813'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Pick the version of BlHeli that corresponds to your ESC, in this example we&amp;#39;re using the &lt;code&gt;XROTOR 20A MULTI&lt;/code&gt; code. There are 3 versions of BlHeli. You&amp;#39;ll always want multi, unless you&amp;#39;re doing something weird like flying a helicopter (not a multi-copter).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Main: Intended for helicopter main motor&lt;/li&gt;
+&lt;li&gt;Tail: Intended for helicopter tail motor&lt;/li&gt;
+&lt;li&gt;Multi: Intended for multirotor motors&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-xrotor-a-bl-f-a-jpg" href="../../../../../assets/images/blog/xrotor20a/bl-6-3944f79a.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2673267326732673' data-src='../../../../../assets/images/blog/xrotor20a/bl-6-3944f79a.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='808'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Confirm that you want to flash BlHeli, erasing the original firmware.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-xrotor-a-bl-c-b-b-jpg" href="../../../../../assets/images/blog/xrotor20a/bl-7-9c0b3b10.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2595325953259533' data-src='../../../../../assets/images/blog/xrotor20a/bl-7-9c0b3b10.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='813'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;You&amp;#39;ll see a confirmation box like this, click OK&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-xrotor-a-bl-ecb-da-jpg" href="../../../../../assets/images/blog/xrotor20a/bl-8-3ecb58da.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.2606635071090047' data-src='../../../../../assets/images/blog/xrotor20a/bl-8-3ecb58da.jpg' class='resize-ratio lazyload trailing-space' width='798' height='633'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;That&amp;#39;s it. You&amp;#39;re ready to configure your ESCs. &lt;/p&gt;
+
+&lt;h4 id="configuration"&gt;Configuration&lt;/h4&gt;
+
+&lt;p&gt;You can do it here, while connected with the 4w programmer or use &lt;a href="/blog/2015/12/06/blheli-configuration/#cleanflight-pass-through"&gt;CleanFlight/BetaFlight pass-through programming and configuration&lt;/a&gt; once you&amp;#39;ve installed the ESCs in your copter.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="/blog/2015/12/06/blheli-configuration/"&gt;Check out the configuration guide for more&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id="calibration"&gt;Calibration&lt;/h4&gt;
+
+&lt;p&gt;After configuring your ESCs, before you fly, make sure you &lt;a href="/blog/2015/12/06/blheli-calibration/"&gt;calibrate your ESCs&lt;/a&gt; so the throttle range of each ESC matches the others.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="/blog/2015/12/06/blheli-calibration/"&gt;Read the guide on throttle calibration here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="reading"&gt;Reading&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/bitdump/BLHeli/raw/master/SiLabs/BLHeli%20programming%20adapters.pdf"&gt;Programming Adapters&lt;/a&gt; guide.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href="https://raw.githubusercontent.com/bitdump/BLHeli/master/SiLabs/BLHeli%20manual%20SiLabs%20Rev14.x.pdf"&gt;manual&lt;/a&gt; to learn more.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://buildandcrash.blogspot.com/2015/01/oneshot125-quantitative-testing.html"&gt;OneShot125 Testing&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/TauLabs/TauLabs/wiki/User-Guide:-OneShot125"&gt;TauLabs 125 Explanation&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+</feed>

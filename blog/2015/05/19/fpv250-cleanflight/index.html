@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<title>
+FPV250 with Cleanflight, Minimosd, OpenLRSng and a Xiaomi Yi GoPro Clone
+</title>
+<link href="../../../../../assets/stylesheets/all-278564ea.css" rel="stylesheet" />
+<script src="../../../../../assets/javascripts/all-384bf4b4.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-7406390-2', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  
+    // outbound link tracking
+    // http://www.sitepoint.com/track-outbound-links-google-analytics/
+    (function($) {
+      "use strict";
+      // current page host
+      var baseURI = window.location.host;
+      // click event on body
+      $("body").on("click", function(e) {
+        // abandon if link already aborted or analytics is not available
+        if (e.isDefaultPrevented() || typeof ga !== "function") return;
+        // abandon if no active link or link within domain
+        var link = $(e.target).closest("a");
+        if (link.length != 1 || baseURI == link[0].host) return;
+        // cancel event and record outbound link
+        e.preventDefault();
+        var href = link[0].href;
+        ga('send', {
+          'hitType': 'event',
+          'eventCategory': 'outbound',
+          'eventAction': 'link',
+          'eventLabel': href,
+          'hitCallback': loadPage
+        });
+        // redirect after one second if recording takes too long
+        setTimeout(loadPage, 1000);
+        // redirect to outbound page
+        function loadPage() {
+          document.location = href;
+        }
+      });
+    })(jQuery);
+</script>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+</head>
+<body>
+<nav class='navbar navbar-default' id='top' role='navigation'>
+<div class='container'>
+<div class='navbar-header'>
+<div class='navbar-brand'>
+<a href='/blog/'>
+<img src="../../../../../assets/images/home/smile-0a95f89f.jpg" />
+</a>
+<span>FPV250 with Cleanflight, Minimosd, OpenLRSng and a Xiaomi Yi GoPro Clone</span>
+</div>
+<button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<div class='navbar-right collapse navbar-collapse' id='bs-nav-collapse'>
+<ul class='nav navbar-nav'>
+<li>
+<form class='search navbar-form' role='search'>
+<div class='form-group'>
+<input class='form-control bloodhound typeahead' data-articles='[["Rctimer BeerotorF3 Flight Controller","/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"],["BlHeli ESCs","/blog/2015/12/06/blheli-esc-identification/"],["BlHeli ESC Upgrading and Configuration","/blog/2015/12/06/blheli-configuration/"],["BlHeli CleanFlight ESC Calibration","/blog/2015/12/06/blheli-calibration/"],["Rctimer Micro 160 BeeRotor Build, Setup and Review","/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"],["Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if","/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/"],["Rctimer OZE32 / RTFQ Flip32 AIO Integrated Flight Controller Review and Setup","/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"],["Rooting Marshmellow, keeping SELinux","/blog/2015/11/03/rooting-marshmellow-keeping-selinux/"],["MultiRotor Setup Checklist","/blog/2015/10/29/multirotor-setup-checklist/"],["ST-LINK flash and debug on the SPRacingF3","/blog/2015/10/24/st-link-flash-and-debug-on-the-spracingf3-discovery/"],["Debugging Android Native (NDK) Apps","/blog/2015/09/27/debugging-android-native-ndk-apps/"],["Fixing an Arduino 0x000000 Error","/blog/2015/09/16/fixing-an-arduino-0x000000-error/"],["GPS VK16U6 CleanFlight Setup","/blog/2015/08/26/gps-vk16u6-cleanflight-setup/"],["Go FPV Latency Testing","/blog/2015/08/24/go-fpv-latency-testing/"],["Building Android on Ubuntu 14.04","/blog/2015/07/23/building-android-on-ubuntu-14-04/"],["Migrating to Amazon Elastic Map Reduce (EMR)","/blog/2015/07/15/migrating-to-amazon-elastic-map-reduce-emr/"],["Naze32 ST-Link Debugging","/blog/2015/07/06/naze32-st-link-debugging/"],["Decompiling an APK","/blog/2015/06/30/decompiling-an-apk/"],["Nexpose Community Edition copy Scan Template","/blog/2015/06/17/nexpose-community-edition-copy-scan-template/"],["Wireless Video Tx/Rx FPV Channels","/blog/2015/06/17/boscam-tx-rx-fpv-channels/"],["Making a UHF 433mhz Inverted Vee Antenna Set","/blog/2015/06/15/making-a-uhf-433mhz-inverted-vee-antenna-set/"],["Setup OrangeLRS with OpenLRSng","/blog/2015/05/21/setup-orangelrs-with-openlrsng/"],["Go FPV Goggles","/blog/2015/05/21/go-fpv-goggles/"],["FPV250 with Cleanflight, Minimosd, OpenLRSng and a Xiaomi Yi GoPro Clone","/blog/2015/05/19/fpv250-cleanflight/"],["Flashing BlHeli on HobbyKing BlueSeries 12a ESCs With a Chinese Arduino Nano Clone","/blog/2015/05/15/flashing-blheli-on-hobbyking-blueseries-12a-escs-with-a-chinese-arduino-nano-clone/"],["Flashing NodeMCU on the ESP8266","/blog/2015/05/14/flashing-nodemcu-on-the-esp8266/"],["Ebay HC-05 Bluetooth Setup Guide","/blog/2015/05/12/ebay-hc-05-bluetooth-setup-guide/"],["3D Camera on the Tricopter","/blog/2015/05/12/3d-camera-on-the-tricopter/"],["ProRes editing in Photoshop","/blog/2015/05/11/prores-editing-in-photoshop/"],["Xiaomi Yi -- The Ant Camera","/blog/2015/05/08/xiaomi-yi-the-ant-camera/"],["Minim OSD","/blog/2015/04/22/minim-osd/"],["Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone","/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/"],["Handling Dates in Hadoop Pig","/blog/2015/04/17/handling-dates-in-hadoop-pig/"],["LiPo Battery Price Analysis","/blog/2015/04/10/lipo-battery-price-analysis/"],["ADB over WiFi (aka, how do I debug when using USB host mode?)","/blog/2015/03/27/adb-over-wifi-aka-how-do-i-debug-when-using-usb-host-mode/"],["Shrink a linux VM on OSX","/blog/2015/03/18/shrink-a-linux-vm-on-osx/"],["Mounting a VHD NTFS image on Ubuntu","/blog/2015/02/27/mounting-a-vhd-ntfs-image-on-ubuntu/"],["Ubuntu on the Beaglebone Black","/blog/2015/01/16/ubuntu-on-the-beaglebone-black/"],["Configuring the HK-T6A for a Flight Simulator","/blog/2015/01/02/configuring-the-hk-t6a-for-a-flight-simulator/"],["A complete noob&#x0027;s guide to RC","/blog/2015/01/02/a-complete-noobs-guide-to-rc/"],["DropCam on a Captive Portal","/blog/2014/11/17/dropcam-on-a-captive-portal/"],["Java reversing tips","/blog/2014/09/18/java-reversing-tips/"],["Ooize Data Pipeline Done-Flag","/blog/2014/09/02/oozie-data-pipeline-done-flag/"],["Time Machine on exFat","/blog/2014/08/06/Time_Machine_on_exFat/"],["Optimizing Postgresql","/blog/2014/01/31/Optimizing_Postgresql/"],["Mail Maker","/blog/2014/01/24/Mail_Maker/"],["Angularjs and Rails","/blog/2013/07/12/Angularjs_and_Rails/"],["nginx ssl chained certs","/blog/2013/04/24/nginx_ssl_chained_certs/"],["rails log tagging","/blog/2013/04/24/rails_log_tagging/"],["Converting an Android Project to Maven","/blog/2013/04/16/Converting_an_Android_Project_to_Maven/"],["Oh! Map my rails!","/blog/2013/04/09/Oh_Map_my_rails/"],["mysql permissions","/blog/2013/04/09/mysql_permissions/"],["reset mysql slave","/blog/2013/03/29/reset_mysql_slave/"],["installing rmagick on 10.8 with homebrew","/blog/2013/02/14/installing_rmagick_on_108_with_homebrew/"],["NP-Completeness","/blog/2013/02/08/NP-Completeness/"],["Find and replace non-breaking spaces in vim","/blog/2013/02/01/Find_and_replace_non-breaking_spaces_in_vim/"],["Open Resty the Prebuilt Reverse Proxy","/blog/2013/02/01/Open_Resty_the_Prebuilt_Reverse_Proxy/"],["Sublime Text 2 Tweaks","/blog/2012/12/17/Sublime_Text_2_Tweaks/"],["Batch Convert CR2 to JPG","/blog/2012/12/01/Batch_Convert_CR2_to_JPG/"],["Androids in the wild","/blog/2012/06/30/Androids_in_the_wild/"],["Why you need database_cleaner","/blog/2012/06/11/Why_you_need_database_cleaner/"],["Find and replace in files on linux/unix","/blog/2012/05/12/Find_and_replace_in_files_on_linuxunix/"],["a pithy guide to railsconf 2012","/blog/2012/04/26/a_pithy_guide_to_railsconf_2012/"],["faster rails boot ruby 1.9.3 + debugger","/blog/2012/04/12/faster_rails_boot_ruby_193_debugger/"],["homebrew -- fix that nasty mysql.server start segfault","/blog/2012/03/29/homebrew_--_fix_that_nasty_mysqlserver_start_segfault/"],["read/write filesystem on rooted android for an ad-free android experience","/blog/2012/02/14/readwrite_filesystem_on_rooted_android_for_an_ad-free_android_experience/"],["Turn Wikipedia Back On","/blog/2012/01/17/Turn_Wikipedia_Back_On/"],["compiling qt4 on centos 5","/blog/2012/01/06/compiling_qt4_on_centos_5/"],["pip install pymongo with xcode 4","/blog/2011/08/09/pip_install_pymongo_with_xcode_4/"],["interactive python history -- better titled \"gimme some up arrow love\"","/blog/2011/08/05/interactive_python_history_--_better_titled_gimme_some_up_arrow_love/"],["Centos 5.5 yum repo sha256 fix","/blog/2011/07/27/Centos_55_yum_repo_sha256_fix/"],["Apple Keyboard for Android!","/blog/2011/07/15/Apple_Keyboard_for_Android/"],["jQuery Everywhere","/blog/2011/05/24/jQuery_Everywhere/"],["Django Migrations","/blog/2011/05/11/Django_Migrations/"],["RVM + Rails + Git + HTML5 Boiler Plate... What more could you possibly want?","/blog/2011/02/22/RVM_Rails_Git_HTML5_Boiler_Plate_What_more_could_you_possibly_want/"],["OneCast 2.0 - downloadable podcasts for androids of every color","/blog/2011/02/18/OneCast_20_-_downloadable_podcasts_for_androids_of_every_color/"],["Default Android Menu Icons in Your App","/blog/2011/02/17/Default_Android_Menu_Icons_in_Your_App/"],["Windows 7 x64 Android Development (ADB)","/blog/2010/11/06/Windows_7_x64_Android_Development_ADB/"],["Firefox Plugin - Watching for an Application Exit Event","/blog/2010/05/03/Firefox_Plugin_-_Watching_for_an_Application_Exit_Event/"],["Stop Redrawing a Fixed Orientation Android App","/blog/2010/03/08/Stop_Redrawing_a_Fixed_Orientation_Android_App/"]]' placeholder='Search' type='text'>
+</div>
+</form>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+
+<div class='container'>
+<div class='row row-offcanvas row-offcanvas-left'>
+<!-- sidebar -->
+<div class='col-xs-3 col-sm-3 sidebar-offcanvas'>
+<div id='sidebar' role='navigation'>
+<div class='sidebar-contents'>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+<a href='#top'>Contents</a>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 table-of-contents'>
+<ul class="nav"><li><a class="type-h2" href="#hardware"><h2>Hardware</h2></a></li>
+<li><a class="type-h2" href="#assembly"><h2>Assembly
+
+</h2></a></li><ul><li><a class="type-h3" href="#blheli"><h3>Flash ESCs with BlHeli</h3></a></li>
+<li><a class="type-h3" href="#cleanflight"><h3>Flash flight controller with CleanFlight</h3></a></li>
+<li><a class="type-h3" href="#openlrsng"><h3>Flash radio receiver and transmitter modules with OpenLRSng</h3></a></li>
+<li><a class="type-h3" href="#lc-filter"><h3>LC Filter</h3></a></li>
+<li><a class="type-h3" href="#power"><h3>Power</h3></a></li></ul>
+<li><a class="type-h2" href="#setup"><h2>Setup
+
+</h2></a></li><ul><li><a class="type-h3" href="#osd"><h3>OSD</h3></a></li>
+<li><a class="type-h3" href="#failsafe"><h3>Failsafe</h3></a></li>
+<li><a class="type-h3" href="#tuning"><h3>Tuning</h3></a></li></ul>
+<li><a class="type-h2" href="#fly"><h2>Fly
+
+</h2></a></li></ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+Related Articles
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 related'>
+<ul>
+<li><a href="/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/">Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if</a></li>
+<li><a href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/">Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone</a></li>
+<li><a href="/blog/2015/12/06/blheli-configuration/">BlHeli ESC Upgrading and Configuration</a></li>
+<li><a href="/blog/2015/05/21/go-fpv-goggles/">Go FPV Goggles</a></li>
+<li><a href="/blog/2015/05/21/setup-orangelrs-with-openlrsng/">Setup OrangeLRS with OpenLRSng</a></li>
+</ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header text-center'>
+<div class='drawer-footer'>
+<small>
+©
+<a href='mailto:nathan@vertile.com'>Nathan Tsoi</a>
+</small>
+</div>
+</div>
+</div>
+<div class='row connect'>
+<div class='col-lg-12 text-center'>
+<a class='btn-sm btn-default' href='https://github.com/nathantsoi' target='_blank'>
+<i class='fa fa-github'></i>
+</a>
+<a class='btn-sm btn-default' href='https://bitbucket.org/nathantsoi' target='_blank'>
+<i class='fa fa-bitbucket'></i>
+</a>
+<a class='btn-sm btn-default' href='https://twitter.com/nathantsoi/' target='_blank'>
+<i class='fa fa-twitter'></i>
+</a>
+<a class='btn-sm btn-default' href='https://angel.co/nathantsoi' target='_blank'>
+<i class='fa fa-angellist'></i>
+</a>
+<a class='btn-sm btn-default' href='https://linkedin.com/in/nattsoi/' target='_blank'>
+<i class='fa fa-linkedin'></i>
+</a>
+<a class='btn-sm btn-default' href='https://facebook.com/nathantsoi' target='_blank'>
+<i class='fa fa-facebook'></i>
+</a>
+<a class='btn-sm btn-default' href='https://plus.google.com/112518806102274696668' target='_blank'>
+<i class='fa fa-google-plus'></i>
+</a>
+<a class='btn-sm btn-default' href='https://news.ycombinator.com/user?id=natvert' target='_blank'>
+<i class='fa fa-hacker-news'></i>
+</a>
+<a class='btn-sm btn-default' href='https://trello.com/nathantsoi' target='_blank'>
+<i class='fa fa-trello'></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- main area -->
+<div class='col-sm-9 col-xs-12' id='mainbar'>
+<article>
+<p>I&#39;ve just got the last few bits of my first FPV250 working. Here&#39;s how to build your own FPV250 for under $200 (not including the camera). First a few photos of what you&#39;ll end up with at the end of this article.</p>
+
+<p>Even though this post is titled &quot;CleanFlight,&quot; you should definitely use the new CleanFlight fork &quot;BetaFlight.&quot; It isn&#39;t actually a &quot;beta&quot; product as the name would suggest, but a massive improvement in flight performance from CleanFlight.</p>
+
+<p><span class="center img-half-width"><img alt="fpv250" src="../../../../../assets/images/blog/fpv250/DSC05990.JPG" /></span></p>
+
+<p>&nbsp;</p>
+
+<p><span class="center img-half-width"><img alt="fpv250" src="../../../../../assets/images/blog/fpv250/DSC05986.JPG" /></span></p>
+
+<p>&nbsp;</p>
+
+<p><span class="center img-half-width"><img alt="fpv250" src="../../../../../assets/images/blog/fpv250/DSC05984.JPG" /></span></p>
+
+<p>&nbsp;</p>
+
+<p><span class="center img-half-width"><img alt="fpv250" src="../../../../../assets/images/blog/fpv250/DSC05988.JPG" /></span></p>
+
+<p>&nbsp;</p>
+
+<p>It&#39;s so awesome, even your grandpa will want to fly it!</p>
+
+<p><span class="center img-half-width"><img alt="fpv250" src="../../../../../assets/images/blog/fpv250/IMG_20150509_201416-2ffc12c1.jpg" /></span></p>
+
+<p>&nbsp;</p>
+
+<h2 id="hardware">Hardware</h2>
+
+<p>Stuff that goes on the quad copter:</p>
+
+<ul>
+<li><p><a href="http://www.banggood.com/OpenPilot-CC3D-Flight-Controller-STM32-32-bit-Flexiport-p-937044.html?p=1G09211226617201502J">CC3D Flight Controller</a></p>
+
+<ul>
+<li>Get a <a href="http://www.banggood.com/Naze32-Flight-Controller-With-32-bit-STM32-for-Multicopter-10Dof-p-953849.html?p=1G09211226617201502J">Flip32</a> if you want a compass, which is required to add GPS later.</li>
+<li>Or a <a href="#">SP Racing</a> or <a href="#">Dodo</a> board if you want a board with the faster &quot;F3&quot; processor.</li>
+</ul></li>
+<li><p>Checkout my flight controller overview for more details on picking the right flight controller.</p></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<ul>
+<li><p><a href="http://www.banggood.com/ZMR250-H250-250mm-Fiberglass-Mini-Quadcopter-Multicopter-Frame-Kit-p-933189.html?p=1G09211226617201502J">ZMR250 Frame</a> or the nicer <a href="http://www.banggood.com/Diatone-37-Silver-Blade-PCB-250-Glass-Carbon-Unfolded-Frame-Kit-p-958014.html?p=1G09211226617201502J">Diatone 37</a>, which has a power distribution board.</p></li>
+<li><p><a href="http://www.ebay.com/itm/191204275269?_trksid=p2057872.m2749.l2649&amp;ssPageName=STRK%3AMEBIDX%3AIT">12mm M3 Nylon Screws</a>, that&#39;s 12mm long, 3mm diameter shaft.</p>
+
+<ul>
+<li>The frame comes with steel screws, but we&#39;ll use these nylon ones instead. This allows the screws to break instead of the frame. It&#39;s already saved my frame, more than once.</li>
+</ul></li>
+</ul>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/JdqxTn231As" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>&nbsp;</p>
+
+<ul>
+<li><p><a href="http://www.banggood.com/DYS-BE1806-2300KV-Brushless-Motor-2-3S-for-Mini-Multicopters-p-933192.html?p=1G09211226617201502J">DYSBE1804 Motors</a>, these are awesome. Running on a 4s battery, they generate about 570g of thrust per motor at around 11amps according to the internet. Checkout my full motor comparison here in <a href="https://docs.google.com/spreadsheets/d/1tFrN66sBEYIFEAZhz7rc_JJZdebzzi4OyKX7vdKQPHc/edit?usp=sharing">this Google sheet</a>.</p></li>
+<li><p>I used <a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=26496&amp;aff=1624906">12a Blueseries ESCs</a>, but the next build I&#39;m going to use <a href="http://www.banggood.com/FVT-LittleBee-20A-ESC-BLHeli-OPTO-2-4S-Supports-OneShot125-For-RC-Multirotors-p-1007740.html?p=1G09211226617201502J">LittleBee ESCs</a>, which are light, have a dedicated driver chip and come preloaded with BlHeli bootloader.</p></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<ul>
+<li><p><a href="http://www.banggood.com/KINGKONG-5040-Propellers-CW-CCW-10-Pairs-For-QAV250-RC-Multirotors-p-1000415.html?p=1G09211226617201502J">Super durable KingKong props</a>, get a bunch, they&#39;re cheap, work great and you&#39;ll go through quite a few learning to fly.</p></li>
+<li><p><a href="http://www.banggood.com/Diatone-5030-Propeller-For-250-Frame-Kit-QAV-250-17-18-p-941156.html?p=1G09211226617201502J">Diatone 5030 Clear Props</a>, get a bunch, they&#39;re cheap, work great and you&#39;ll go through quite a few. I ordered 10 sets of 4, but I think I&#39;ll get some more shortly.</p></li>
+</ul>
+
+<p><span class="center img-half-width"><img alt="box-o-props" src="../../../../../assets/images/blog/fpv250/the-box-o-props-c1c6064d.jpg" /></span></p>
+
+<ul>
+<li><p>If you&#39;ve got your HAM license, get a OrangeLRS. If not, go for a standard 2.4Ghz system that has PPM and RSSI.</p>
+
+<ul>
+<li><a href="http://www.banggood.com/REDCON-2_4G-6CH-Microlite-DSM2-DSMX-Full-Range-Receiver-CM621-p-1007463.html?p=1G09211226617201502J">DSMX RX</a></li>
+<li><a href="http://www.hobbyking.com/hobbyking/store/__27095__OrangeRx_Open_LRS_433MHz_TX_Module_JR_Turnigy_compatible_.html?aff=1624906">OrangeLRS Tx</a></li>
+<li><a href="http://www.hobbyking.com/hobbyking/store/__27095__OrangeRx_Open_LRS_433MHz_TX_Module_JR_Turnigy_compatible_.html?aff=1624906">OrangeLRS Rx</a> which we&#39;ll flash with OpenLRSng.</li>
+<li>You won&#39;t need the <a href="http://www.hobbyking.com/hobbyking/store/__38395__OrangeRX_USB_Firmware_Update_Kit_for_JR_Futaba_Style_Transmitter_Module.html?aff=1624906">OrangeRX USB Update Kit</a> if you have a USB/UART adapter already.</li>
+<li>Or if you want to save yourself a few bucks and open up your transmitter to install the module (it just needs power + PPM out from the transmitter) try these <a href="http://www.banggood.com/OpenLRS-Open-Source-433MHZ-433-PPM-PWM-Input-p-975408.html?p=1G09211226617201502J">DIY TX and RX modules</a>. They just don&#39;t come with the fancy case.</li>
+<li>PPM is where all the channels are output on one wire</li>
+<li>RSSI is signal strength indicator. It tells you how well your copter can hear your controller.</li>
+</ul></li>
+<li><p><a href="http://www.banggood.com/MinimOSD-MAVLink-OSD-APM-APM2-Flight-Control-Board-p-73436.html?p=1G09211226617201502J">MinimOSD</a> -- Optional, but highly useful. Displays text over your video feed showing you current orientation, battery and radio signal strength data. Also, it makes you feel like a fighter pilot.</p></li>
+<li><p><a href="http://www.banggood.com/MICRO-MinimOSD-Minim-OSD-Mini-OSD-W-KV-Team-MOD-For-Naze32-Flight-Controller-p-990556.html?p=1G09211226617201502J">Micro MinimOSD</a> -- A more compact version of the minimosd above.</p></li>
+<li><p>1x 10k resistor and 1x 2.2k resistor for the voltage divider on the battery monitor input. Necessary for the CC3D, not for the Naze/Flip32 -- Optional, but highly useful. This allows you to see the current voltage of your battery in your OSD.</p></li>
+<li><p>Current Sensor</p>
+
+<ul>
+<li><a href="http://www.banggood.com/APM-2_6-2_5-2_52-Power-Module-With-5_3V-DC-BEC-p-925901.html?p=1G09211226617201502J">APM power module and current sensor</a> -- this has a built in battery elimiation circut to provide power to your board and a current sensor. Optional, but useful. Let&#39;s you see your current battery consumption in your OSD.</li>
+<li><a href="http://www.digikey.com/product-detail/en/ACS758LCB-100U-PFF-T/620-1354-ND/2415199">ACS758LCB-100U Hall Effect Current Sensor</a>, also available <a href="http://www.ebay.com/sch/i.html?_from=R40&amp;_trksid=p2050601.m570.l1313.TR12.TRC2.A0.H0.Xosd.TRS0&amp;_nkw=ACS758LCB-100U&amp;_sacat=0">on eBay</a> -- An alternative to the APM power module</li>
+</ul></li>
+<li><p>For the LC Filter, an <a href="http://www.banggood.com/10pcs-Toroid-Core-Inductor-Wire-Wind-Wound-mah-100uH-6A-RoHS-cc-p-943873.html?p=1G09211226617201502J">Inductor</a>, <a href="http://www.banggood.com/1Pcs-63V-10V-16V-25V-35V-3300uF-Radial-Electrolytic-Capacitor-p-928977.html?p=1G09211226617201502J">25v 3300uf Capacitor</a> and <a href="http://www.banggood.com/1-Pc-10A10-10A-1000V-General-Purpose-Plastic-Rectifier-Diodes-p-914004.html?p=1G09211226617201502J">diode</a>.</p>
+
+<ul>
+<li>You&#39;ll need 1 diode, a capacitor or two totaling around 1000uF, a ferrite ring or pre-wound inductor and two more ferrite beads. Some notes online say you can skip the diode, DO NOT OMIT THE DIODE! There is a risk that the motors could draw enough amperage to drain the capacitors and potentially cause a degradation in video quality, possibly making it impossible to see when you&#39;re flying.</li>
+<li>The two extra ferrite beads are for reducing interference on the camera cable and the cable between osd and transmitter, these may be safely omitted if you don&#39;t get any interference on these lines.</li>
+</ul></li>
+</ul>
+
+<p>Fpv Gear:</p>
+
+<ul>
+<li><p>The <a href="http://www.banggood.com/Original-XiaoYi-Ambarella-A7LS-BSI-CMOS-WIFI-Sports-Action-Camera-p-969228.html?p=1G09211226617201502J">Xiaomi Yi camera</a>, literally translated &quot;small ant,&quot; got great reviews and it can record 1080p60, which is a higher frame rate than a Go Pro at that resolution. Awesome!</p></li>
+<li><p><a href="http://www.banggood.com/TS5828-FPV-5_8G-32CH-600mW-8g-Transmitter-TX-for-DJI-Multicopter-p-975910.html?p=1G09211226617201502J">Ts5828 600mw Video Transmitter</a> or the less expensive <a href="http://www.banggood.com/Boscam-FPV-5_8G-200mW-AV-Wireless-Transmitter-TS351-p-73198.html?p=1G09211226617201502J">200mw version</a></p></li>
+<li><p>This <a href="http://www.banggood.com/FPV-5_8G-8CH-200mW-AV-Wireless-Receiver-RC805-p-73202.html?p=1G09211226617201502J">Boscam RC805 Video Receiver</a> is what I use on <a href="/blog/2015/05/21/go-fpv-goggles/">my DIY Go FPV Goggles</a></p></li>
+<li><p>Though not strictly necessary, <a href="http://www.banggood.com/5_8Ghz-Mushroom-Omnidirectional-Antenna-For-transmitter-p-942317.html?p=1G09211226617201502J">Circular Polarized Antennas</a> are totally worth the money. Note these are Left Hand polarized, which I prefer since most people fly Right Hand polarized. The polarization should match on the receiver and transmitter. This only matters if you already have Right Hand polarized gear, maybe you want to keep it all the same?</p></li>
+</ul>
+
+<p><span class="center img-half-width"><img alt="cp-antennas" src="../../../../../assets/images/blog/fpv250/cp-antennas-af4b65f5.jpg" /></span></p>
+
+<p>Note, to make your own antenna grab some .023-.025&quot; copper clad steel mig welding wire.</p>
+
+<p>&nbsp;</p>
+
+<p>Tools:</p>
+
+<ul>
+<li><p><a href="http://www.banggood.com/ATmega328P-Arduino-Compatible-Nano-V3-Improved-Version-No-Cable-p-959231.html?p=1G09211226617201502J">Arduino Pro Mini</a> for programming the ESCs with BlHeli</p></li>
+<li><p><a href="http://www.banggood.com/CJMCU-CP2102-USB-To-TTLSerial-Module-UART-STC-Downloader-p-970993.html?p=1G09211226617201502J">USB to UART/Serial Adapter</a> for flashing anything without a USB plug. I prefer the CP2102 over the FTDI since they&#39;re cheaper and over the Chinese FTDI clones, since the driver is less sketchy.</p></li>
+</ul>
+
+<p>Here&#39;s the full list:</p>
+
+<div class="videoWrapper">
+  <iframe src="https://docs.google.com/spreadsheets/d/1tFrN66sBEYIFEAZhz7rc_JJZdebzzi4OyKX7vdKQPHc/pubhtml?widget=true&amp;headers=false"></iframe>
+</div>
+
+<p><h2 id="assembly">Assembly</h3></p>
+
+<p>Let&#39;s build it!</p>
+
+<h3 id="blheli">Flash ESCs with BlHeli</h3>
+
+<ul>
+<li><p><a href="/blog/2015/05/15/flashing-blheli-on-hobbyking-blueseries-12a-escs-with-a-chinese-arduino-nano-clone/">Flashing Instructions for HobbyKing BlueSeries 12a ESCs</a></p></li>
+<li><p><a href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/">Flashing Instructions for HobbyKing F20 ESCs</a></p></li>
+</ul>
+
+<h3 id="cleanflight">Flash flight controller with CleanFlight</h3>
+
+<ul>
+<li><p>For either method, my PIDS in the configuration section are for the PID controller 1 (MultiWii Rewrite) version 1.9, which is currently a release candidate.</p></li>
+<li><p><a href="https://chrome.google.com/webstore/detail/cleanflight-configurator/enacoimjcgeinfnnnpajinjgmkahmfgb?hl=en">Download the configurator</a>, plugin the board, pick the latest version and flash.</p></li>
+</ul>
+
+<p><span class="center img-half-width"><img alt="fpv250" src="../../../../../assets/images/blog/fpv250/cleanflight_flashing-10014d9a.png" /></span></p>
+
+<h3 id="openlrsng">Flash radio receiver and transmitter modules with OpenLRSng</h3>
+
+<p>Read <a href="/blog/2015/05/21/setup-orangelrs-with-openlrsng/">this guide on setting up OpenLRSng and re-flashing the bootloader if necessary</a>.</p>
+
+<h3 id="lc-filter">LC Filter</h3>
+
+<p>Grab your inductor and capacitor(s), I pulled mine off this old NetGear router:</p>
+
+<p><span class="center img-half-width"><img alt="inductor" src="../../../../../assets/images/blog/minimosd/torrid-5e9b8950.jpg" /></span></p>
+
+<p>If you&#39;re using multiple capacitors, wire them in parallel.</p>
+
+<p>This is what you want to wire:</p>
+
+<p><span class="center img-half-width"><img alt="full" src="../../../../../assets/images/blog/fpv250/lc_filter_schematic-4b722ed1.png" /></span></p>
+
+<p>So, wire a positive wire from the battery XT-60 plug, solder that to your inductor, then wire that to the positive side of the capacitor (the side without the white stripe), then solder that to the plug V-in on the linear voltage regulator and to the plug for your video TX (or solder it straight to the video TX).</p>
+
+<p>The ground from the batter goes to the negative side of the capacitor, to the ground on the linear voltage regulator then to the video TX</p>
+
+<p>The Vout of the 5v linear voltage regulator goes to the flight controller, OpenLRS receiver and to the minimosd.</p>
+
+<p>I&#39;m using an LM7805 linear voltage regulator from eBay. This should output about 1am, which is plenty.</p>
+
+<p>Note that my video transmitter takes 12v+ so I do not send it through the LM7805, but wire it in straight after the LC filter.</p>
+
+<p>The original rcgroups post on Sander&#39;s LC filter is here, if you want to read more: <a href="http://www.rcgroups.com/forums/showthread.php?t=1339007">http://www.rcgroups.com/forums/showthread.php?t=1339007</a></p>
+
+<h3 id="power">Power</h3>
+
+<ul>
+<li><p>Solder the ESCs to your motors, cutting the motor wires to the proper length. I left mine a little too long, so I had to twist the wires a bit to get the ESCs to fit comfortably on the arms.</p></li>
+<li><p>This is what my wiring harness looked like before I attached it to the frame. Measure against the frame to make sure you get the lengths right:</p></li>
+</ul>
+
+<p><span class="center img-half-width"><img alt="wiring harness" src="../../../../../assets/images/blog/fpv250/wiring-harness-32072800.jpg" /></span></p>
+
+<ul>
+<li><p>Wire all the ESCs and your LC filter into your favorite battery plug. Maybe an XT-60?</p></li>
+<li><p>Next, we&#39;ll build the frame. It starts like this.</p></li>
+</ul>
+
+<p><span class="center img-half-width"><img alt="wiring harness" src="../../../../../assets/images/blog/fpv250/frame-assembly-1-6f30a0c8.jpg" /></span></p>
+
+<ul>
+<li>I found it easiest to solder the ESCS while attached to the arms</li>
+</ul>
+
+<p><span class="center img-half-width"><img alt="wiring harness" src="../../../../../assets/images/blog/fpv250/frame-assembly-2-19a81209.jpg" /></span></p>
+
+<p>&nbsp;</p>
+
+<p><span class="center img-half-width"><img alt="wiring harness" src="../../../../../assets/images/blog/fpv250/frame-assembly-3-820a9dd3.jpg" /></span></p>
+
+<ul>
+<li>Yes, it&#39;s 4am</li>
+</ul>
+
+<p><span class="center img-half-width"><img alt="wiring harness" src="../../../../../assets/images/blog/fpv250/frame-assembly-4-6edc277e.jpg" /></span></p>
+
+<ul>
+<li>Once you&#39;ve got it all wired, hook it up to the frame. Use your nylon bolts and nuts to attach the frame. When assembling the frame, I attached the arms by putting the bolt through the bottom plate, then through the arm, then attaching a nut, then the second bottom plate, then another nut. Using a nut sandwiched between the bottom plates ensures the arms will stay attached to one of the place in case of a crash and it allows room for wiring to pass between the plates.</li>
+</ul>
+
+<p><span class="center img-half-width"><img alt="frame assembly" src="../../../../../assets/images/blog/fpv250/hooking-up-the-frame-dacdd1fe.jpg" /></span></p>
+
+<p>&nbsp;</p>
+
+<p><span class="center img-half-width"><img alt="wiring harness" src="../../../../../assets/images/blog/fpv250/frame-assembly-5-b78435eb.jpg" /></span></p>
+
+<p>&nbsp;</p>
+
+<ul>
+<li>Done! This version had my old board camera on it</li>
+</ul>
+
+<p><span class="center img-half-width"><img alt="wiring harness" src="../../../../../assets/images/blog/fpv250/frame-assembly-6-b17a7bb3.jpg" /></span></p>
+
+<p><h2 id="setup">Setup</h3></p>
+
+<p>First ensure your receiver sends the proper minimum and maximum commands, and is centered, on the</p>
+
+<p>For every channel: <code>min = 1000us</code>, <code>max = 2000us</code> and <code>middle = 1500</code></p>
+
+<p>This config assume you&#39;ve configured OpenLRS to send rssi and channel 9 of the PPM stream, you&#39;ve got BlHeli installed on your ESCs and you&#39;re using the 10k/2.2k voltage divider to run a 3s or 4s battery.</p>
+
+<ul>
+<li>Cleanflight CLI, open the CLI tab and paste this in.</li>
+</ul>
+<pre class="highlight plaintext"><code># make the loop time faster
+set looptime = 1600
+
+# we'll  configure rssi on channel 9
+set rssi_channel = 9
+# from the calculation we did
+set vbat_scale = 54
+
+# set min_check and max_check very close to the endpoints to avoid entering stick commands while flying
+set min_check = 1020
+set max_check = 1980
+
+# set disarm_kill_switch to false, so we don't fall out of the sky
+#  throttle down if you really want to kill it
+set disarm_kill_switch = 0
+
+# turn the failsafe delay up to 3 sec, we'll wait this long before going into failsafe mode
+set failsafe_delay = 30
+
+# turn the failsafe run time down to 10 seconds, plenty of time to get on the ground with a fast decel
+set failsafe_off_delay = 100
+
+# figure out your safe descent speed
+set failsafe_throttle = 1200
+
+save
+</code></pre>
+
+<ul>
+<li><p>With a 10k:2.2k voltage divider, the vbat_scale is 54 the reason for this is in my <a href="/blog/2015/04/22/minim-osd/#voltage-divider">minimosd post</a></p></li>
+<li><p>Using the ACS758-100U sensor, the current sensor offset is 600mV (.6V) and the scale is 400mV (40mV/A). More info in my <a href="/blog/2015/04/22/minim-osd/#current-sensor">minimosd post</a></p></li>
+<li><p>Cleanflight config</p></li>
+</ul>
+
+<p><span class="center img-full-width"><img alt="cleanflight config" src="../../../../../assets/images/blog/fpv250/cleanflight_config-3636ab9f.png" /></span></p>
+
+<ul>
+<li><p>Cleanflight pids</p>
+
+<ul>
+<li>Turn <code>level</code> down to <code>45</code></li>
+</ul></li>
+</ul>
+
+<p><span class="center img-full-width"><img alt="cleanflight pids" src="../../../../../assets/images/blog/fpv250/cleanflight_pids-e149067d.png" /></span></p>
+
+<ul>
+<li>Cleanflight mode setup, setup your switches however you see fit. I rarely fly in horizon or angle mode as I don&#39;t have them tuned well yet.</li>
+</ul>
+
+<p><span class="center img-full-width"><img alt="cleanflight radio" src="../../../../../assets/images/blog/fpv250/cleanflight_modes-c22e2a93.png" /></span></p>
+
+<h3 id="osd">OSD</h3>
+
+<p>Checkout the <a href="/blog/2015/04/22/minim-osd">Minim OSD setup guide</a>. The OSD was the most time-consuming portion of the build as it included the most technical things to get right. I hope the Minim OSD setup guide will help you avoid these issues and get flying quickly.</p>
+
+<p>You can also fly without an OSD, but I find the artificial horizon, battery monitoring and RSSI features extremely helpful when flying.</p>
+
+<h3 id="failsafe">Failsafe</h3>
+
+<ul>
+<li><p>To ensure your craft does not disarm during flight, ensure your transmitter does not transmit any signals less than <code>rx_min_usec</code> (default: 985) or greater than <code>rx_max_usec</code> (default: 2115).</p></li>
+<li><p>On my OpenTx 9x, I use the <code>servos</code> settings page to adjust the endpoints to 1000 -&gt; 2000</p></li>
+<li><p>Be sure to bench test the whole right, but most importantly the failsafe. If the failsafe doesn&#39;t work, you could have a fly-away as most receivers continue transmit the last signal received when the connection is lost. Say you throttle up and lose signal, it will just keep flying :)</p>
+
+<ul>
+<li>Remove the props. Serious. Don&#39;t do this with the props on. Your copter could kill something.</li>
+<li>Start the copter, arm and throttle up. Ensure your signal is good by checking the RSSI in your goggles or via the configurator.</li>
+<li>Turn off your transmitter. Yep. Turn it off.</li>
+<li>You should see the led on the OpenLRS RX switch and the motors should power down to their failsafe level (1200 by default). The motors should then turn off after the defined <code>failsafe_off_delay</code> (200 by default).</li>
+<li>Turn your transmitter back on and try to re-arm. It should refuse to re-arm until it is power-cycled.</li>
+<li>Next, test the <code>failsafe_delay</code> to ensure a momentary glitch doesn&#39;t trigger a failsafe by starting the coptor, throttleing up then turning your transmitter off and then turning it back on immediatly. The copter should not go into failsafe mode. Ensure this by waiting longer than <code>failsafe_off_delay</code> and powering/up down, looking for a response from the motors.</li>
+</ul></li>
+</ul>
+
+<h3 id="tuning">Tuning</h3>
+
+<p>If you want to tune your PIDS, follow Oscar&#39;s directions: <a href="http://blog.oscarliang.net/quadcopter-pid-explained-tuning/">http://blog.oscarliang.net/quadcopter-pid-explained-tuning/</a></p>
+<pre class="highlight plaintext"><code>For P gain, I first start low and work my way up, until i notice it’s producing oscillation. Fine tune it until you get to a point it’s not sluggish and there is not oscillation.
+
+For the I gain, again start low, and increase slowly. Roll and pitch your quad left and right, pay attention to the how long does it take to stop and stabilize. You want to get to a point where it stabilize very quickly as you release the stick and it doesn’t wander around for too long. You might also want to test it under windy condition to get a reliable I-value.
+
+For D gain, it can get into a complicated interaction with P and I values. When using D gain, you need to go back and fine tune P and I to keep the plant well stabilized.
+
+Quadcopters are symmetric so you can set the same PID Gain values for Pitch, and Roll. The value for Yaw is not as important as those of Pitch and Roll so it’s probably OK to set the same values as for Pitch/Roll to start with (even it might not be the best).After your multicopter is relatively stable, you can start alter the Yaw gains. For non-symmetric multicopter like hexacopter or tricopter, you might want to fine tune the pitch and roll separately, after you have some flight experience.
+
+</code></pre>
+
+<p><h2 id="fly">Fly</h3></p>
+
+<p>Start with a low hover, make sure your PIDs are good and the solders are all solid. I had lots of random power-off issues. They seem to be solved now after ensuring my transmitter lower limits were between 1000 and 2000 and re-soldering my current sensor (I think if the solder was torqued enough, it would power down for a split second).</p>
+
+<p><a href="http://blog.oscarliang.net/quadcopter-tutorial-how-to-fly-drone/">Oscar has some great tips here.</a></p>
+
+<p>Finally a shout out to FliteTest, the folks that originally got me into this. They have a great video on learning to fly. Mad awesome work.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/6btEFJJD4_o" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+//<![CDATA[
+                  var disqus_shortname = 'vertile';
+          
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+//]]>
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</article>
+
+</div>
+</div>
+</div>
+<script>
+  var vglnk = { key: 'ddedf6f00d454f08b923376f1cb1cfbf' };
+  
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = '//cdn.viglink.com/api/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
+
+</body>
+</html>

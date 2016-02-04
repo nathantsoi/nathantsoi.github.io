@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<title>
+Rctimer OZE32 / RTFQ Flip32 AIO Integrated Flight Controller Review and Setup
+</title>
+<link href="../../../../../assets/stylesheets/all-278564ea.css" rel="stylesheet" />
+<script src="../../../../../assets/javascripts/all-384bf4b4.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-7406390-2', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  
+    // outbound link tracking
+    // http://www.sitepoint.com/track-outbound-links-google-analytics/
+    (function($) {
+      "use strict";
+      // current page host
+      var baseURI = window.location.host;
+      // click event on body
+      $("body").on("click", function(e) {
+        // abandon if link already aborted or analytics is not available
+        if (e.isDefaultPrevented() || typeof ga !== "function") return;
+        // abandon if no active link or link within domain
+        var link = $(e.target).closest("a");
+        if (link.length != 1 || baseURI == link[0].host) return;
+        // cancel event and record outbound link
+        e.preventDefault();
+        var href = link[0].href;
+        ga('send', {
+          'hitType': 'event',
+          'eventCategory': 'outbound',
+          'eventAction': 'link',
+          'eventLabel': href,
+          'hitCallback': loadPage
+        });
+        // redirect after one second if recording takes too long
+        setTimeout(loadPage, 1000);
+        // redirect to outbound page
+        function loadPage() {
+          document.location = href;
+        }
+      });
+    })(jQuery);
+</script>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+</head>
+<body>
+<nav class='navbar navbar-default' id='top' role='navigation'>
+<div class='container'>
+<div class='navbar-header'>
+<div class='navbar-brand'>
+<a href='/blog/'>
+<img src="../../../../../assets/images/home/smile-0a95f89f.jpg" />
+</a>
+<span>Rctimer OZE32 / RTFQ Flip32 AIO Integrated Flight Controller Review and Setup</span>
+</div>
+<button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<div class='navbar-right collapse navbar-collapse' id='bs-nav-collapse'>
+<ul class='nav navbar-nav'>
+<li>
+<form class='search navbar-form' role='search'>
+<div class='form-group'>
+<input class='form-control bloodhound typeahead' data-articles='[["Rctimer BeerotorF3 Flight Controller","/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"],["BlHeli ESCs","/blog/2015/12/06/blheli-esc-identification/"],["BlHeli ESC Upgrading and Configuration","/blog/2015/12/06/blheli-configuration/"],["BlHeli CleanFlight ESC Calibration","/blog/2015/12/06/blheli-calibration/"],["Rctimer Micro 160 BeeRotor Build, Setup and Review","/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"],["Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if","/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/"],["Rctimer OZE32 / RTFQ Flip32 AIO Integrated Flight Controller Review and Setup","/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"],["Rooting Marshmellow, keeping SELinux","/blog/2015/11/03/rooting-marshmellow-keeping-selinux/"],["MultiRotor Setup Checklist","/blog/2015/10/29/multirotor-setup-checklist/"],["ST-LINK flash and debug on the SPRacingF3","/blog/2015/10/24/st-link-flash-and-debug-on-the-spracingf3-discovery/"],["Debugging Android Native (NDK) Apps","/blog/2015/09/27/debugging-android-native-ndk-apps/"],["Fixing an Arduino 0x000000 Error","/blog/2015/09/16/fixing-an-arduino-0x000000-error/"],["GPS VK16U6 CleanFlight Setup","/blog/2015/08/26/gps-vk16u6-cleanflight-setup/"],["Go FPV Latency Testing","/blog/2015/08/24/go-fpv-latency-testing/"],["Building Android on Ubuntu 14.04","/blog/2015/07/23/building-android-on-ubuntu-14-04/"],["Migrating to Amazon Elastic Map Reduce (EMR)","/blog/2015/07/15/migrating-to-amazon-elastic-map-reduce-emr/"],["Naze32 ST-Link Debugging","/blog/2015/07/06/naze32-st-link-debugging/"],["Decompiling an APK","/blog/2015/06/30/decompiling-an-apk/"],["Nexpose Community Edition copy Scan Template","/blog/2015/06/17/nexpose-community-edition-copy-scan-template/"],["Wireless Video Tx/Rx FPV Channels","/blog/2015/06/17/boscam-tx-rx-fpv-channels/"],["Making a UHF 433mhz Inverted Vee Antenna Set","/blog/2015/06/15/making-a-uhf-433mhz-inverted-vee-antenna-set/"],["Setup OrangeLRS with OpenLRSng","/blog/2015/05/21/setup-orangelrs-with-openlrsng/"],["Go FPV Goggles","/blog/2015/05/21/go-fpv-goggles/"],["FPV250 with Cleanflight, Minimosd, OpenLRSng and a Xiaomi Yi GoPro Clone","/blog/2015/05/19/fpv250-cleanflight/"],["Flashing BlHeli on HobbyKing BlueSeries 12a ESCs With a Chinese Arduino Nano Clone","/blog/2015/05/15/flashing-blheli-on-hobbyking-blueseries-12a-escs-with-a-chinese-arduino-nano-clone/"],["Flashing NodeMCU on the ESP8266","/blog/2015/05/14/flashing-nodemcu-on-the-esp8266/"],["Ebay HC-05 Bluetooth Setup Guide","/blog/2015/05/12/ebay-hc-05-bluetooth-setup-guide/"],["3D Camera on the Tricopter","/blog/2015/05/12/3d-camera-on-the-tricopter/"],["ProRes editing in Photoshop","/blog/2015/05/11/prores-editing-in-photoshop/"],["Xiaomi Yi -- The Ant Camera","/blog/2015/05/08/xiaomi-yi-the-ant-camera/"],["Minim OSD","/blog/2015/04/22/minim-osd/"],["Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone","/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/"],["Handling Dates in Hadoop Pig","/blog/2015/04/17/handling-dates-in-hadoop-pig/"],["LiPo Battery Price Analysis","/blog/2015/04/10/lipo-battery-price-analysis/"],["ADB over WiFi (aka, how do I debug when using USB host mode?)","/blog/2015/03/27/adb-over-wifi-aka-how-do-i-debug-when-using-usb-host-mode/"],["Shrink a linux VM on OSX","/blog/2015/03/18/shrink-a-linux-vm-on-osx/"],["Mounting a VHD NTFS image on Ubuntu","/blog/2015/02/27/mounting-a-vhd-ntfs-image-on-ubuntu/"],["Ubuntu on the Beaglebone Black","/blog/2015/01/16/ubuntu-on-the-beaglebone-black/"],["Configuring the HK-T6A for a Flight Simulator","/blog/2015/01/02/configuring-the-hk-t6a-for-a-flight-simulator/"],["A complete noob&#x0027;s guide to RC","/blog/2015/01/02/a-complete-noobs-guide-to-rc/"],["DropCam on a Captive Portal","/blog/2014/11/17/dropcam-on-a-captive-portal/"],["Java reversing tips","/blog/2014/09/18/java-reversing-tips/"],["Ooize Data Pipeline Done-Flag","/blog/2014/09/02/oozie-data-pipeline-done-flag/"],["Time Machine on exFat","/blog/2014/08/06/Time_Machine_on_exFat/"],["Optimizing Postgresql","/blog/2014/01/31/Optimizing_Postgresql/"],["Mail Maker","/blog/2014/01/24/Mail_Maker/"],["Angularjs and Rails","/blog/2013/07/12/Angularjs_and_Rails/"],["nginx ssl chained certs","/blog/2013/04/24/nginx_ssl_chained_certs/"],["rails log tagging","/blog/2013/04/24/rails_log_tagging/"],["Converting an Android Project to Maven","/blog/2013/04/16/Converting_an_Android_Project_to_Maven/"],["Oh! Map my rails!","/blog/2013/04/09/Oh_Map_my_rails/"],["mysql permissions","/blog/2013/04/09/mysql_permissions/"],["reset mysql slave","/blog/2013/03/29/reset_mysql_slave/"],["installing rmagick on 10.8 with homebrew","/blog/2013/02/14/installing_rmagick_on_108_with_homebrew/"],["NP-Completeness","/blog/2013/02/08/NP-Completeness/"],["Find and replace non-breaking spaces in vim","/blog/2013/02/01/Find_and_replace_non-breaking_spaces_in_vim/"],["Open Resty the Prebuilt Reverse Proxy","/blog/2013/02/01/Open_Resty_the_Prebuilt_Reverse_Proxy/"],["Sublime Text 2 Tweaks","/blog/2012/12/17/Sublime_Text_2_Tweaks/"],["Batch Convert CR2 to JPG","/blog/2012/12/01/Batch_Convert_CR2_to_JPG/"],["Androids in the wild","/blog/2012/06/30/Androids_in_the_wild/"],["Why you need database_cleaner","/blog/2012/06/11/Why_you_need_database_cleaner/"],["Find and replace in files on linux/unix","/blog/2012/05/12/Find_and_replace_in_files_on_linuxunix/"],["a pithy guide to railsconf 2012","/blog/2012/04/26/a_pithy_guide_to_railsconf_2012/"],["faster rails boot ruby 1.9.3 + debugger","/blog/2012/04/12/faster_rails_boot_ruby_193_debugger/"],["homebrew -- fix that nasty mysql.server start segfault","/blog/2012/03/29/homebrew_--_fix_that_nasty_mysqlserver_start_segfault/"],["read/write filesystem on rooted android for an ad-free android experience","/blog/2012/02/14/readwrite_filesystem_on_rooted_android_for_an_ad-free_android_experience/"],["Turn Wikipedia Back On","/blog/2012/01/17/Turn_Wikipedia_Back_On/"],["compiling qt4 on centos 5","/blog/2012/01/06/compiling_qt4_on_centos_5/"],["pip install pymongo with xcode 4","/blog/2011/08/09/pip_install_pymongo_with_xcode_4/"],["interactive python history -- better titled \"gimme some up arrow love\"","/blog/2011/08/05/interactive_python_history_--_better_titled_gimme_some_up_arrow_love/"],["Centos 5.5 yum repo sha256 fix","/blog/2011/07/27/Centos_55_yum_repo_sha256_fix/"],["Apple Keyboard for Android!","/blog/2011/07/15/Apple_Keyboard_for_Android/"],["jQuery Everywhere","/blog/2011/05/24/jQuery_Everywhere/"],["Django Migrations","/blog/2011/05/11/Django_Migrations/"],["RVM + Rails + Git + HTML5 Boiler Plate... What more could you possibly want?","/blog/2011/02/22/RVM_Rails_Git_HTML5_Boiler_Plate_What_more_could_you_possibly_want/"],["OneCast 2.0 - downloadable podcasts for androids of every color","/blog/2011/02/18/OneCast_20_-_downloadable_podcasts_for_androids_of_every_color/"],["Default Android Menu Icons in Your App","/blog/2011/02/17/Default_Android_Menu_Icons_in_Your_App/"],["Windows 7 x64 Android Development (ADB)","/blog/2010/11/06/Windows_7_x64_Android_Development_ADB/"],["Firefox Plugin - Watching for an Application Exit Event","/blog/2010/05/03/Firefox_Plugin_-_Watching_for_an_Application_Exit_Event/"],["Stop Redrawing a Fixed Orientation Android App","/blog/2010/03/08/Stop_Redrawing_a_Fixed_Orientation_Android_App/"]]' placeholder='Search' type='text'>
+</div>
+</form>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+
+<div class='container'>
+<div class='row row-offcanvas row-offcanvas-left'>
+<!-- sidebar -->
+<div class='col-xs-3 col-sm-3 sidebar-offcanvas'>
+<div id='sidebar' role='navigation'>
+<div class='sidebar-contents'>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+<a href='#top'>Contents</a>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 table-of-contents'>
+<ul class="nav"><li><a class="type-h3" href="#overview"><h3>Overview</h3></a></li>
+<li><a class="type-h3" href="#updates"><h3>Updates</h3></a></li><ul><li><a class="type-h4" href="#january-2016"><h4>January 2016</h4></a></li>
+<li><a class="type-h4" href="#december-2015"><h4>December 2015</h4></a></li></ul>
+<li><a class="type-h3" href="#identifying-your-board"><h3>Identifying your board</h3></a></li>
+<li><a class="type-h3" href="#review"><h3>Review</h3></a></li><ul><li><a class="type-h4" href="#construction-and-components"><h4>Construction and Components</h4></a></li>
+<li><a class="type-h4" href="#function-and-layout"><h4>Function and Layout</h4></a></li><ul><li><a class="type-h5" href="#battery-and-pdb"><h5>Battery and PDB</h5></a></li>
+<li><a class="type-h5" href="#video-headers"><h5>Video Headers</h5></a></li>
+<li><a class="type-h5" href="#dip-switches"><h5>DIP Switches</h5></a></li>
+<li><a class="type-h5" href="#buzzer"><h5>Buzzer</h5></a></li>
+<li><a class="type-h5" href="#serial-ports"><h5>Serial Ports</h5></a></li></ul>
+<li><a class="type-h4" href="#imu-interrupt"><h4>IMU Interrupt</h4></a></li>
+<li><a class="type-h4" href="#value"><h4>Value</h4></a></li></ul>
+<li><a class="type-h3" href="#hardware-setup"><h3>Hardware Setup</h3></a></li><ul><li><a class="type-h4" href="#hardware-setup-parts"><h4>Hardware Setup - Parts</h4></a></li><ul><li><a class="type-h5" href="#power"><h5>Power</h5></a></li>
+<li><a class="type-h5" href="#connect-imu-interrupt-pin"><h5>Connect IMU Interrupt Pin</h5></a></li>
+<li><a class="type-h5" href="#escs"><h5>ESCs</h5></a></li></ul></ul>
+<li><a class="type-h4" href="#hardware-setup-camera-and-vtx"><h4>Hardware Setup - Camera and VTX</h4></a></li>
+<li><a class="type-h3" href="#firmware-setup"><h3>Firmware Setup</h3></a></li><ul><li><a class="type-h4" href="#flash-betaflight"><h4>Flash BetaFlight</h4></a></li>
+<li><a class="type-h4" href="#flash-scarab-osd"><h4>Flash Scarab OSD</h4></a></li><ul><li><a class="type-h5" href="#osd-configuration"><h5>OSD Configuration</h5></a></li></ul>
+<li><a class="type-h4" href="#test"><h4>Test</h4></a></li></ul></ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+Related Articles
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 related'>
+<ul>
+<li><a href="/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/">Rctimer Micro 160 BeeRotor Build, Setup and Review</a></li>
+<li><a href="/blog/2015/04/22/minim-osd/">Minim OSD</a></li>
+<li><a href="/blog/2015/01/02/a-complete-noobs-guide-to-rc/">A complete noob's guide to RC</a></li>
+<li><a href="/blog/2016/02/03/rctimer-beerotorf3-flight-controller/">Rctimer BeerotorF3 Flight Controller</a></li>
+<li><a href="/blog/2015/05/19/fpv250-cleanflight/">FPV250 with Cleanflight, Minimosd, OpenLRSng and a Xiaomi Yi GoPro Clone</a></li>
+</ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header text-center'>
+<div class='drawer-footer'>
+<small>
+©
+<a href='mailto:nathan@vertile.com'>Nathan Tsoi</a>
+</small>
+</div>
+</div>
+</div>
+<div class='row connect'>
+<div class='col-lg-12 text-center'>
+<a class='btn-sm btn-default' href='https://github.com/nathantsoi' target='_blank'>
+<i class='fa fa-github'></i>
+</a>
+<a class='btn-sm btn-default' href='https://bitbucket.org/nathantsoi' target='_blank'>
+<i class='fa fa-bitbucket'></i>
+</a>
+<a class='btn-sm btn-default' href='https://twitter.com/nathantsoi/' target='_blank'>
+<i class='fa fa-twitter'></i>
+</a>
+<a class='btn-sm btn-default' href='https://angel.co/nathantsoi' target='_blank'>
+<i class='fa fa-angellist'></i>
+</a>
+<a class='btn-sm btn-default' href='https://linkedin.com/in/nattsoi/' target='_blank'>
+<i class='fa fa-linkedin'></i>
+</a>
+<a class='btn-sm btn-default' href='https://facebook.com/nathantsoi' target='_blank'>
+<i class='fa fa-facebook'></i>
+</a>
+<a class='btn-sm btn-default' href='https://plus.google.com/112518806102274696668' target='_blank'>
+<i class='fa fa-google-plus'></i>
+</a>
+<a class='btn-sm btn-default' href='https://news.ycombinator.com/user?id=natvert' target='_blank'>
+<i class='fa fa-hacker-news'></i>
+</a>
+<a class='btn-sm btn-default' href='https://trello.com/nathantsoi' target='_blank'>
+<i class='fa fa-trello'></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- main area -->
+<div class='col-sm-9 col-xs-12' id='mainbar'>
+<article>
+<p>This article is an in-depth review and setup guide for the <a href="http://www.rctimer.com/product-1508.html/#r-pNathanT" target="_blank">Rctimer OZE32</a> aka <a href="http://www.readytoflyquads.com/flip32-aio">RTFQ Flip32 AIO</a>.</p>
+
+<p><span class="center img-quarter-width"><a id="assets-images-blog-flight-controllers-oze-bc-fb-jpg" href="http://www.rctimer.com/product-1508.html/#r-pNathanT" class="linked-img "><img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/flight_controllers/oze32-3bc48fb9.jpg' class='resize-ratio lazyload trailing-space' width='563' height='422'></img></a></span></p>
+
+<h3 id="overview">Overview</h3>
+
+<p>Rctimer has just released a new flight controller (FC), the OZE32. This flight controller has all the hardware on a normal Naze32, plus the two components I add to all of my multi-rotors -- a current sensor and MinimOSD. Also included is a switch that changes the connection of the on board CP2102 UART/USB adapter between the flight controller and the OSD. This means you don&#39;t need to buy an external CP2102 USB/UART adapter.</p>
+
+<p>A current sensor measures the exact amount of battery that has been used and the OSD displays this information as text overlaid on your video feed. Here&#39;s an example video I recorded with my <a href="https://plus.google.com/communities/118127535984046831266">Go FPV Goggles app for Android</a>.</p>
+
+<div class="videoWrapper">
+  <iframe width="853" height="480" src="https://www.youtube.com/embed/93xxpqDxojE" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>Useful stats shown on the OSD are RSSI, Voltage, mA in use and total mAh, flight mode and an artificial horizon.</p>
+
+<h3 id="updates">Updates</h3>
+
+<h4 id="january-2016">January 2016</h4>
+
+<p>The <a href="http://rctimer.com/product-1592.html#r-pNathanT">BeerotorF3</a> flight controller and it&#39;s companion <a href="http://www.rctimer.com/product-1593.html#r-pNathanT">PDB with a build-in current sensor</a> are the latest AIO setup by Rctimer. With this package you get a minim OSD and an F3 processor in a tiny package. Though the F3 processor runs at the same speed as the F1, the F3 has a floating point coprocessor, meaning you can run the LuxFloat pid controller at 1khz, which is a huge advantage as Boris&#39; BetaFlight firmware has an amazing default tune on LuxFloat.</p>
+
+<p>Read the <a href="/blog/2016/02/03/rctimer-beerotorf3-flight-controller/">BeerotorF3 review and hardware guide here</a>.</p>
+
+<p>If you are interested in a FPV racing new quad, but don&#39;t want to research and build from scratch, you should checkout the <a href="http://rctimer.com/product-1585.html#r-pNathanT">Victory230</a> from Rctimer, which will be running the BeerotorF3. This thing is a hyper-performant beast with amazing value. Plus, it&#39;s ready to fly.</p>
+
+<h4 id="december-2015">December 2015</h4>
+
+<p>The first two versions of the OZE32 suffered from power management issues that could cause the OSD to cut out when plugging in a battery. Though possible, it is highly unlikely the OSD would cut out while in flight. This has been fixed in version 1.02.</p>
+
+<p>Version 1.02 is available from <a href="http://www.readytoflyquads.com/flip32-aio?from=vertile">ready to fly quads</a> or <a href="http://shop.myairbot.com/index.php/flip32aiov1-0.html">myairbot.com</a>. Rctimer will carry the F3 version noted above, as a replacement.</p>
+
+<p>If you already have an OZE32 and are wondering what version you have, you can identify it with the guide below.</p>
+
+<p>Also, if you have an older version don&#39;t be afraid to run with in, all the suppliers know about the issues, so if the OSD does go outit&#39;s easy to drop in a replacement if you run into trouble with aon o</p>
+
+<h3 id="identifying-your-board">Identifying your board</h3>
+
+<p>There are currently 3 iterations of the OZE32 / FLIP32 AIO in the wild.</p>
+
+<table class="small-img">
+  <thead class="text-center">
+    <tr>
+      <th></th>
+      <th>Version</th>
+      <th>How to Identify</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a id="assets-images-blog-oze-spektrum-rx-c-b-a-jpg" href="../../../../../assets/images/blog/oze32/spektrum-rx-40c4b8a8.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/spektrum-rx-40c4b8a8.jpg' class='resize-ratio lazyload ' width='1024' height='680'></img></a>
+        <a id="assets-images-blog-oze-cf-bootpins-aa-b-b-jpg" href="../../../../../assets/images/blog/oze32/cf-bootpins-9aa90b6b.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/cf-bootpins-9aa90b6b.jpg' class='resize-ratio lazyload ' width='1024' height='680'></img></a>
+      </td>
+      <td>
+        1.0
+      </td>
+      <td>
+        There is a large vertically oriented Spektrum satellite receiver plug. The boot pins are only on the bottom and do not go through to the other side. 
+      </td>
+      <td>
+        Some folks have reported issues with the OSD going out after plugging in a battery, possibly due to a problem with the on board voltage regulator powering the OSD's MAX chip.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a id="assets-images-blog-flight-controllers-oze-oze-v-bottom-bedb-e-jpg" href="../../../../../assets/images/blog/flight_controllers/oze32/oze32-v1.01-bottom-1bedb21e.jpg" class="linked-img colorbox"><img data-ratio='1.0009775171065494' data-src='../../../../../assets/images/blog/flight_controllers/oze32/oze32-v1.01-bottom-1bedb21e.jpg' class='resize-ratio lazyload ' width='1024' height='1023'></img></a>
+      </td>
+      <td>
+        1.01 (RTFQ 1.5)
+      </td>
+      <td>
+        Identifiable by the text `0ze32` on the bottom of the board.
+      </td>
+      <td>
+        Voltage regulator to OSD is replaced with a higher quality component, but the OSD issue persists.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a id="assets-images-blog-flight-controllers-oze-oze-v-top-c-ba-jpg" href="../../../../../assets/images/blog/flight_controllers/oze32/oze32-v1.02-top-c4911ba6.jpg" class="linked-img colorbox"><img data-ratio='1.0' data-src='../../../../../assets/images/blog/flight_controllers/oze32/oze32-v1.02-top-c4911ba6.jpg' class='resize-ratio lazyload ' width='1024' height='1024'></img></a>
+      </td>
+      <td>
+        1.02 (RTFQ 2.0)
+      </td>
+      <td>
+        The large Spektrum satellite receiver plug has been replaced with a smaller JST plug to match the rest of the board. The bootloader pins have been moved further from the edge and made into vias, which pass through the board onto the top. 
+      </td>
+      <td>
+        Proper USB / Battery voltage regulation is in place. The OSD issue has been solved.
+
+        Also, the OSD is now powered by USB, so no need to plug in a battery while working with the OSD.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="review">Review</h3>
+
+<p>This will review focus on 3 parts: construction and component quality, function and layout, and value. I&#39;ll briefly cover flight performance, since it should perform exactly like a Naze32, if it functions properly and flight performance is almost entirely a function of the firmware, which is open source and up to the user. If you&#39;re ready to flash the best firmware, skip to the <a href="#firmware-setup">firmware setup section</a>.</p>
+
+<h4 id="construction-and-components">Construction and Components</h4>
+
+<p>Overall the construction looks good. The PCB is gold plated and the components are the same as on the Naze32 and MinimOSD. Because of their low profile and compact nature, I prefer the JST connectors over the more ubiquitous 2.54mm pin headers. It might be worth epoxying the JST connectors down if you tend to be rough on flight controllers. It would be nice if all the JST connectors on the board were the same number of pins and the same width, so there were only 1 type of JST plug to keep on hand and we could easily re-use connectors the connectors on different ports.</p>
+
+<p>Here is everything that comes in the package: flight controller and 3 JST to 2.54mm cables. The wires are nice, they appear to be silicone. The PPM out JST connector doesn&#39;t have 2.54mm female pin headers, so we&#39;ll need to solder these to our ESC data lines.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-package-a-jpg" href="../../../../../assets/images/blog/oze32/package-6008a620.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/package-6008a620.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>The front of the board:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-front-c-c-a-jpg" href="../../../../../assets/images/blog/oze32/front-3c92c7a2.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/front-3c92c7a2.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>The back of the board:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-back-e-bf-bfc-jpg" href="../../../../../assets/images/blog/oze32/back-e9bf9bfc.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/back-e9bf9bfc.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<h4 id="function-and-layout">Function and Layout</h4>
+
+<p>The small <code>bat+</code> pad and large <code>vcc</code> pad labeling is a bit confusing, but the <code>bat+</code> pad should be wired to your <a href="http://www.banggood.com/XT60-Male-Plug-10AWG-10cm-With-Wire-p-77537.html?p=1G09211226617201502J">XT-60</a>or Deans connector from the battery and the <code>vcc</code> should be connected to your power distribution board. The current sensor will measure everything wired into the <code>vcc</code> pad. It would be nice if there were a ground pad on the opposite side of the board as the <code>bat+</code> pad so that we could minimize the size of any loops, eliminating EMI. As it is you&#39;ll have to use the ground pad on the opposite side of the <code>vcc</code> pad when wiring the battery connector.</p>
+
+<p>Here are the layout diagrams, top:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-diagram-top-ebb-be-jpg" href="../../../../../assets/images/blog/oze32/diagram-top-ebb83be6.jpg" class="linked-img colorbox"><img data-ratio='1.238210399032648' data-src='../../../../../assets/images/blog/oze32/diagram-top-ebb83be6.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='827'></img></a></span></p>
+
+<p>The bottom:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-diagram-bottom-jpg" href="../../../../../assets/images/blog/oze32/diagram-bottom-77587605.jpg" class="linked-img colorbox"><img data-ratio='1.1106290672451193' data-src='../../../../../assets/images/blog/oze32/diagram-bottom-77587605.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='922'></img></a></span></p>
+
+<h5 id="battery-and-pdb">Battery and PDB</h5>
+
+<p>The <a href="http://datasheet.octopart.com/MP1593DN-LF-Z-Monolithic-Power-Systems-datasheet-13697222.pdf">MP1593 Voltage Regulator</a> (aka. BEC) can take up to 28v, so you&#39;re safe running up to a 6s. The biggest battery I had sitting around was a 4s, but here it is plugged in. Don&#39;t get confused by the two battery connectors. The red JST connector will hook into my <a href="http://www.banggood.com/30x30-35x35-PCB-ESC-Power-Distribution-Board-For-MINI-Quadcopter-Multicopter-p-984686.html?p=1G09211226617201502J">PDB</a>.</p>
+
+<p>Note, in board versions prior to 1.02, it was thought that plugging in a high cell count battery can cause a voltage spike that could kill the MinimOSD on the board. This turned out to not be true. The issue killing the OSD chip was entirely different. Don&#39;t worry about using an <a href="http://www.banggood.com/Amass-Anti-Spark-Sparkproof-Connector-Plug-XT90-S-For-Batttery-p-946409.html?p=1G09211226617201502J">anti-spark</a> plug to your setup, you don&#39;t need it.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-bat-s-dac-jpg" href="../../../../../assets/images/blog/oze32/bat-4s-70dac256.jpg" class="linked-img colorbox"><img data-ratio='1.3333333333333333' data-src='../../../../../assets/images/blog/oze32/bat-4s-70dac256.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='768'></img></a></span></p>
+
+<p>The <a href="http://www.banggood.com/XT60-Male-Plug-10AWG-10cm-With-Wire-p-77537.html?p=1G09211226617201502J">XT-60</a> or Deans battery connector <code>+</code>positive (red) lead should be soldered here, to <code>bat+</code>:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-bat-acca-jpg" href="../../../../../assets/images/blog/oze32/bat-6acca289.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/bat-6acca289.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>The <code>+</code>positive connection to your power distribution board (<a href="http://www.banggood.com/30x30-35x35-PCB-ESC-Power-Distribution-Board-For-MINI-Quadcopter-Multicopter-p-984686.html?p=1G09211226617201502J">PDB</a>) and ESCs will be soldered here, to <code>vcc</code>:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-vcc-a-e-jpg" href="../../../../../assets/images/blog/oze32/vcc-31249a4e.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/vcc-31249a4e.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>The ground for both the <a href="http://www.banggood.com/XT60-Male-Plug-10AWG-10cm-With-Wire-p-77537.html?p=1G09211226617201502J">XT-60</a> and the <a href="http://www.banggood.com/30x30-35x35-PCB-ESC-Power-Distribution-Board-For-MINI-Quadcopter-Multicopter-p-984686.html?p=1G09211226617201502J">PDB</a> will be soldered to <code>gnd</code> here:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-gnd-cfe-c-jpg" href="../../../../../assets/images/blog/oze32/gnd-cfe6c068.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/gnd-cfe6c068.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<h5 id="video-headers">Video Headers</h5>
+
+<p>The <code>12v</code> pins on the video headers, appear to be directly wired to the <code>vcc</code> pad. This means you&#39;ll get the full battery voltage on these <code>12v</code> pins, which is fine if you&#39;re running <code>3s</code>, but on <code>4s</code> you&#39;ll get almost 17 volts, which is not healthy for your camera. I suggest you avoid these pins and use only the video and ground pins when wiring in your camera and VTX.</p>
+
+<p>Note that if you get <a href="http://www.banggood.com/600TVL-8_0MP-14-2_8mm-CMOS-FPV-170-Degree-Wide-Anlge-Lens-Camera-PALNTSC-p-984345.html?p=1G09211226617201502J">a camera that can run off 5v</a>, you could use a 5v line from one of the unused <a href="#serial-ports">Serial Ports</a>. This will give nice, clean power from the OZE32 to your camera and possibly avoid the need for an external <a href="http://rctimer.com/product-1522.html/#r-pNathanT">LC filter</a>.</p>
+
+<p>You&#39;ll connect your transmitter to the video out pins, keeping in mind that the 12v pin could have more than 12v, up to whatever the max voltage of your battery is, 12.6v on 3S and 16.8 on 4S:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-video-out-f-bea-jpg" href="../../../../../assets/images/blog/oze32/video-out-f4bea940.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/video-out-f4bea940.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>Plug your camera in here, again keeping in mind the 12v pin may actually more than 12v:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-video-in-ced-f-b-jpg" href="../../../../../assets/images/blog/oze32/video-in-ced7f95b.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/video-in-ced7f95b.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>I decided to solder some 2.54mm headers left over from an Arduino onto the video pins, these aren&#39;t included. If you plan on flying 4S or with a non-12v camera or transmitter, I suggest you leave out the center pin.</p>
+
+<p>Here&#39;s my board with the leads to the PDB and the video headers soldered on.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-pdb-and-video-headers-b-f-jpg" href="../../../../../assets/images/blog/oze32/pdb-and-video-headers-60b538f8.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/pdb-and-video-headers-60b538f8.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>Here&#39;s my board with the leads to the <a href="http://www.banggood.com/30x30-35x35-PCB-ESC-Power-Distribution-Board-For-MINI-Quadcopter-Multicopter-p-984686.html?p=1G09211226617201502J">PDB</a> (red JST), Battery (yellow <a href="http://www.banggood.com/XT60-Male-Plug-10AWG-10cm-With-Wire-p-77537.html?p=1G09211226617201502J">XT-60</a>) and the video headers soldered on.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-pdb-and-video-and-batt-headers-front-edb-b-jpg" href="../../../../../assets/images/blog/oze32/pdb-and-video-and-batt-headers-front-edb6681b.jpg" class="linked-img colorbox"><img data-ratio='1.3333333333333333' data-src='../../../../../assets/images/blog/oze32/pdb-and-video-and-batt-headers-front-edb6681b.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='768'></img></a></span></p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-pdb-and-video-and-batt-headers-back-d-e-c-jpg" href="../../../../../assets/images/blog/oze32/pdb-and-video-and-batt-headers-back-d7039e4c.jpg" class="linked-img colorbox"><img data-ratio='1.3333333333333333' data-src='../../../../../assets/images/blog/oze32/pdb-and-video-and-batt-headers-back-d7039e4c.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='768'></img></a></span></p>
+
+<h5 id="dip-switches">DIP Switches</h5>
+
+<p>The 6 pin dip switch is used to change the USB connection between the flight controller and the OSD or connect the flight controller and OSD during flight. It appears that the documentation is wrong for &quot;flight mode&quot;, I needed to switch the left 2 pins off and the right 4 pins on to get the OSD to display.</p>
+
+<p>This is what the documentation says:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-dip-positions-d-a-jpg" href="../../../../../assets/images/blog/oze32/dip-positions-1d8a2425.jpg" class="linked-img colorbox"><img data-ratio='5.91907514450867' data-src='../../../../../assets/images/blog/oze32/dip-positions-1d8a2425.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='173'></img></a></span></p>
+
+<p>And this is how I had to set the dip switches to get the OSD to display in &quot;flight mode&quot;:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-dip-switch-flight-mode-a-fa-jpg" href="../../../../../assets/images/blog/oze32/dip-switch-flight-mode-a71fa790.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/dip-switch-flight-mode-a71fa790.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>Interestingly, you can leave the dip switches in this configuration and when you plug it into your computer, it will connect to CleanFlight. I think this only works if you do not power the board via the flight battery, as that would turn on the MinimOSD. This means you won&#39;t need to flip the dip switches around once the quad is assembled, to change CleanFlight configuration options. Whoohoo!</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-dip-switch-connected-to-pc-aa-jpg" href="../../../../../assets/images/blog/oze32/dip-switch-connected-to-pc-9127aa43.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/dip-switch-connected-to-pc-9127aa43.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<h5 id="buzzer">Buzzer</h5>
+
+<p>Here is where you would solder on a buzzer:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-buzzer-pads-cc-d-jpg" href="../../../../../assets/images/blog/oze32/buzzer-pads-61cc790d.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/buzzer-pads-61cc790d.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>It would be great if the battery pads on the bottom of the board were broken out into 2.54mm headers or a JST connector. I tried to solder some 2.54 mm pin headers to the solder pads, but it was too flimsy so I took them off. I guess I&#39;ll have to solder on a beeper, but it&#39;s much nicer to be able to remove this when working on the quad.</p>
+
+<h5 id="serial-ports">Serial Ports</h5>
+
+<p>This port is <code>UART1</code> in CleanFlight and is shared with the USB port and MinimOSD, depending on how the dip switches are set. Assuming you want to use the integrated MinimOSD (and if you don&#39;t want that, why did you buy this board?), I don&#39;t think you&#39;ll ever use this header:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-uart-c-e-jpg" href="../../../../../assets/images/blog/oze32/uart1-6c43122e.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/uart1-6c43122e.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>This port has <code>SDA</code> and <code>SCL</code>, which are the I2C communication lines for an external magnetometer, <code>5v vcc</code>, <code>gnd</code> and <code>UART2 TX</code> and <code>UART2 RX</code>. The idea behind this is that this port will be used for <code>GPS</code>, so I&#39;ll call it the <code>GPS</code> port.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-i-c-uart-abaf-b-jpg" href="../../../../../assets/images/blog/oze32/i2c-uart2-40abaf2b.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/i2c-uart2-40abaf2b.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>You could of course ignore the I2C lines use just the UART2 pins for an external <a href="http://www.banggood.com/OpenLog-Serial-Data-Logger-9660bps-PPZ-Flight-Control-Record-FAT16-FAT32-MicroSD-Cards-p-993844.html?p=1G09211226617201502J">OpenLog blackbox data logger</a> or a <a href="http://www.banggood.com/HC-05-Wireless-Bluetooth-Serial-Transceiver-Module-Slave-And-Master-p-908621.html?p=1G09211226617201502J">bluetooth serial module</a> (<a href="/blog/2015/05/12/ebay-hc-05-bluetooth-setup-guide/">checkout my bluetooth setup guide</a>) for configuration from your phone.</p>
+
+<p>Don&#39;t go crazy yet though, if you&#39;re using a PPM receiver, UART2 will be available. However, if you plan to use Serial RX (DSUM, Spektrum satellite, etc), that will take UART2 and you&#39;ll be out of UARTs. Folks claim that Serial RX is about 50ms faster than PPM, but I have yet to try this as I prefer to use PPM and keep the extra serial free for a blackbox or GPS.</p>
+
+<p>This Spektrum satellite receiver shares the UART2 RX pin with the above header, so make sure you only use one at a time.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-spektrum-rx-c-b-a-jpg" href="../../../../../assets/images/blog/oze32/spektrum-rx-40c4b8a8.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/spektrum-rx-40c4b8a8.jpg' class='resize-ratio lazyload ' width='1024' height='680'></img></a></span></p>
+
+<p>If you don&#39;t have a receiver that can do Serial Rx or PPM, get a <a href="http://www.banggood.com/Mini-PPM-Encoder-For-Pixhawk-PPZ-MK-MWC-Flight-Controller-p-946194.html?p=1G09211226617201502J">PWM to PPM Converter</a>.</p>
+
+<p>If you&#39;re going to use PPM, you can simply plug in the supplied header to your receiver and the FC will receive data and power the receiver:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-ppm-rx-cdcca-jpg" href="../../../../../assets/images/blog/oze32/ppm-rx-5cdcca32.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/ppm-rx-5cdcca32.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>The bottom 6 wires on the header above are your motor outputs. Motor 1 is on the bottom, yellow, wire in the photo. You&#39;ll need to solder each motor wire to the data line on the respective ESC. You should also be sure to solder all the ground wires from your ESCs data connection (usually the data and ground wires are twisted together) to the closest ground on the flight controller, probably the big ground pad on the top of the board.</p>
+
+<p>Finally, he following header is for an LED strip. From top to bottom the pins are: <code>RGB Data</code>, <code>5v</code>, <code>GND</code>:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-led-header-a-f-a-jpg" href="../../../../../assets/images/blog/oze32/led-header-2a591f4a.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/led-header-2a591f4a.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>In summary:</p>
+
+<ul>
+<li><p>UART1 is used by the CP2102, flight controller and MinimOSD. We shouldn&#39;t need to connect anything to this port.</p></li>
+<li><p>UART2 is broken out to both the Spektrum Satellite Receiver and the GPS pins.</p></li>
+<li><p>Motor outputs are on the big JST plug along with the PPM and v5 out for the receiver.</p></li>
+</ul>
+
+<p>For the next version, it would be nice to have a single JST header for UART2 and a cable to adapt the JST to the Spektrum Satellite plug, since we won&#39;t be using both together anyway.</p>
+
+<p>There is 5v input on the PWM header, which seems strange, since there is an on-board BEC, why would we want to supply 5v?</p>
+
+<p>As for the PWM outputs, having the compact JST plug is nice, but it will require soldering the motor pwm leads, which is unfortunate. It would be nice if just this one header used 2.54mm headers, so we could just plug the ESC connectors straight into the board.</p>
+
+<p>I do appreciate the I2C headers, which makes it easy to connect an external magnetometer. The ISP headers for the MinimOSD on the bottom of the board are also useful, in case something happens when flashing the MinimOSD, a new bootloader can always be written after soldering some leads onto these:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-isp-pads-adcb-jpg" href="../../../../../assets/images/blog/oze32/isp-pads-7adcb951.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/isp-pads-7adcb951.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<h4 id="imu-interrupt">IMU Interrupt</h4>
+
+<p>BetaFlight uses the MPU6050 interrupt pin to notify the flight controller when it has new data. This helps avoid aliasing in the control loop and make for a more response quad.</p>
+
+<p>Unfortunately, this pin is not connected on the OZE32, however it can be connected with steady hands and a small wire. I used a normal size soldering iron tip.</p>
+
+<p>Before you choose to do this, though. Know that the while not ideal, your quad will function fine without this pin connected. If you want the absolute best performance, then you&#39;ll want to proceed to <a href="#connect-imu-interrupt-pin">the guide section</a> explaining how to connect pin 12 on the <a href="http://www.seeedstudio.com/wiki/images/b/b1/MPU6050.pdf">MPU6050</a> IMU to pin 26 on the <a href="http://www.st.com/web/en/resource/technical/document/datasheet/CD00161566.pdf">STM32F103-CBT6</a>.</p>
+
+<h4 id="value">Value</h4>
+
+<p>The OZE32 actually costs slightly less than the individual parts and it requires way less soldering to get all the bits connected.</p>
+
+<p>Here&#39;s a breakdown of what you would need to order to get an equivalent setup, albeit, in a bigger package.</p>
+
+<ul>
+<li><p>~$20 <a href="http://www.banggood.com/Afro-Naze32-10DOF-Rev5-MPU6050-Flight-controller-p-1007113.html?p=1G09211226617201502J">Naze32</a> or clone (<a href="http://www.banggood.com/Naze32-Flight-Controller-With-32-bit-STM32-for-Multicopter-10Dof-p-953849.html?p=1G09211226617201502J">Flip32</a>)</p>
+
+<ul>
+<li>Note that these are actually &quot;full&quot; boards, with magnetometer and barometer, whereas the OZE32 is an acro board, without these extra sensors.</li>
+<li>Also note that one can purchase an acro <a href="http://www.banggood.com/Upgrade-NAZE32-SP-Racing-F3-Flight-Control-6-DOF-10-DOF-for-Milticopter-p-1010232.html?p=1G09211226617201502J">SPRF3</a> for about $25. This board has a faster &quot;F3&quot; processor as opposed to the NAZE32 and OZE32&#39;s &quot;F1&quot; processor. In practice, this makes very little difference as long as you run BetaFlight, which makes large flight performance improvements over CleanFlight. You will want to run PID controller 1 (rewrite) on F1 boards and PIDC 2 (LuxFloat) on F3 boards as the F1 is missing the floating point unit on the F3. The SPRF3 also has a 3rd hardware serial port, which is super handy.</li>
+</ul></li>
+<li><p>~$10 <a href="http://www.banggood.com/APM-CurrentVoltage-Sensors-For-APM2_52_62_8-PX4-Flight-Control-3-In-1-p-976599.html?p=1G09211226617201502J">Current sensor and Battery Elimination Circuit</a></p></li>
+<li><p>~$8 <a href="http://www.banggood.com/MinimOSD-MAVLink-OSD-APM-APM2-Flight-Control-Board-p-73436.html?p=1G09211226617201502J">MinimOSD</a> or <a href="http://www.banggood.com/MICRO-MinimOSD-Minim-OSD-Mini-OSD-W-KV-Team-MOD-For-Naze32-Flight-Controller-p-990556.html?p=1G09211226617201502J">MicroMinimOSD</a></p></li>
+<li><p>~$3 <a href="http://www.banggood.com/CJMCU-CP2102-USB-To-TTLSerial-Module-UART-STC-Downloader-p-970993.html?p=1G09211226617201502J">CP2102 USB/UART Adapter</a> to program the MinimOSD</p></li>
+</ul>
+
+<p>The real value comes from the fact that all the components are in one nice compact package. It is unfortunate we must choose between the latest F3 processor and the nice small package with an integrated OSD. If the OZE32 had an F3 processor, there would be no reason to fly anything else.</p>
+
+<p>The hardware setup listed below is 20% lighter than my ZMR250 with discrete OSD and current sensor, this thing flies hard, crashes hard and even got taken down by a dog,but it doesn&#39;t flinch. I just flip it right-side-up and it keeps running. I&#39;m still on the first set of props.</p>
+
+<h3 id="hardware-setup">Hardware Setup</h3>
+
+<p>Skip to the <a href="#firmware">firmware setup</a> section if you want to setup the firmware before soldering it on, this isn&#39;t required as all the firmware setup can be done while installed, but if you don&#39;t have your other parts yet, this is a good way to kill some time while they find their way through the mail.</p>
+
+<p>If you skipped the review section on hardware <a href="#function-and-layout">Function and Layout</a>, read that first for a walk through of the board, pins and available features.</p>
+
+<h4 id="hardware-setup-parts">Hardware Setup - Parts</h4>
+
+<p>Here are the other parts I used in this build:</p>
+
+<table class="small-img">
+  <tbody>
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/QAV250-Carbon-Fiber-250mm-MINI-FPV-Quadcopter-Multi-Rotor-Frame-Kit-p-978915.html?p=1G09211226617201502J"><a id="assets-images-blog-oze-parts-fcmodel-rc-aa-c-jpg" href="../../../../../assets/images/blog/oze32/parts/fcmodel-rc250-aa8351c8.jpg" class="linked-img colorbox"><img data-ratio='1.0' data-src='../../../../../assets/images/blog/oze32/parts/fcmodel-rc250-aa8351c8.jpg' class='resize-ratio lazyload ' width='361' height='361'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/QAV250-Carbon-Fiber-250mm-MINI-FPV-Quadcopter-Multi-Rotor-Frame-Kit-p-978915.html?p=1G09211226617201502J">FCMODEL RC250 frame</a>
+        </td>
+      </tr>
+
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Description-p-992336.html?p=1G09211226617201502J"><a id="assets-images-blog-oze-parts-nylon-m-nut-b-bf-jpg" href="../../../../../assets/images/blog/oze32/parts/nylon-m3-nut-b1344bf1.jpg" class="linked-img colorbox"><img data-ratio='1.0' data-src='../../../../../assets/images/blog/oze32/parts/nylon-m3-nut-b1344bf1.jpg' class='resize-ratio lazyload ' width='361' height='361'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Description-p-992336.html?p=1G09211226617201502J">Assembled with Nylon m3 nuts</a>
+        </td>
+      </tr>
+
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/20pcs-M3-Black-Round-Pillips-Pan-Head-Plastic-Nylon-Screw-Bolt-5681012152025mm-Length-p-1002976.html?p=1G09211226617201502J"><a id="assets-images-blog-oze-parts-nylon-m-bolt-af-a-jpg" href="../../../../../assets/images/blog/oze32/parts/nylon-m3-bolt-af6a3200.jpg" class="linked-img colorbox"><img data-ratio='1.0' data-src='../../../../../assets/images/blog/oze32/parts/nylon-m3-bolt-af6a3200.jpg' class='resize-ratio lazyload ' width='361' height='361'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/20pcs-M3-Black-Round-Pillips-Pan-Head-Plastic-Nylon-Screw-Bolt-5681012152025mm-Length-p-1002976.html?p=1G09211226617201502J">And Nylon 12mm x M3 Bolts</a>
+        </td>
+      </tr>
+
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Hobbywing-XRotor-20A-APAC-Brushless-ESC-3-4S-For-RC-Multicopters-p-945929.html?p=1G09211226617201502J"><a id="assets-images-blog-oze-parts-xrotor-a-a-bb-jpg" href="../../../../../assets/images/blog/oze32/parts/xrotor-20a-05a1bb70.jpg" class="linked-img colorbox"><img data-ratio='1.0' data-src='../../../../../assets/images/blog/oze32/parts/xrotor-20a-05a1bb70.jpg' class='resize-ratio lazyload ' width='361' height='361'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Hobbywing-XRotor-20A-APAC-Brushless-ESC-3-4S-For-RC-Multicopters-p-945929.html?p=1G09211226617201502J">xRotor 20a ESCs flashed w/ BlHeli</a>
+        </td>
+      </tr>
+
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/DYS-BE1806-2300KV-Brushless-Motor-Black-Edition-for-Multicopters-p-946416.html?p=1G09211226617201502J"><a id="assets-images-blog-oze-parts-be-black-be-b-jpg" href="../../../../../assets/images/blog/oze32/parts/be1806-black-2be06b24.jpg" class="linked-img colorbox"><img data-ratio='1.0' data-src='../../../../../assets/images/blog/oze32/parts/be1806-black-2be06b24.jpg' class='resize-ratio lazyload ' width='361' height='361'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/DYS-BE1806-2300KV-Brushless-Motor-Black-Edition-for-Multicopters-p-946416.html?p=1G09211226617201502J">DYS BE1806 2300kv Motors</a>
+        </td>
+      </tr>
+
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/2-Pairs-DAL-5045-5x4_5-Inch-PC-Fiberglass-Multicolor-Propeller-CWCCW-For-QAV250-Series-Frame-p-999328.html?p=1G09211226617201502J"><a id="assets-images-blog-oze-parts-dal-ad-b-cd-jpg" href="../../../../../assets/images/blog/oze32/parts/dal-5045-ad00b2cd.jpg" class="linked-img colorbox"><img data-ratio='1.0' data-src='../../../../../assets/images/blog/oze32/parts/dal-5045-ad00b2cd.jpg' class='resize-ratio lazyload ' width='361' height='361'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/2-Pairs-DAL-5045-5x4_5-Inch-PC-Fiberglass-Multicolor-Propeller-CWCCW-For-QAV250-Series-Frame-p-999328.html?p=1G09211226617201502J">Dal 5045 Bullnose "indestructible" Props</a>
+        </td>
+      </tr>
+
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1508.html/#r-pNathanT"><a id="assets-images-blog-flight-controllers-oze-bc-fb-jpg" href="http://www.rctimer.com/product-1508.html/#r-pNathanT" class="linked-img "><img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/flight_controllers/oze32-3bc48fb9.jpg' class='resize-ratio lazyload trailing-space' width='563' height='422'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1508.html/#r-pNathanT">OZE32 Acro Flight Controller flashed with BetaFlight</a>
+        </td>
+      </tr>
+
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=21347&aff=1624906"><a id="assets-images-blog-oze-parts-s-fa-jpg" href="../../../../../assets/images/blog/oze32/parts/4s-2200-709fa387.jpg" class="linked-img colorbox"><img data-ratio='1.3647342995169083' data-src='../../../../../assets/images/blog/oze32/parts/4s-2200-709fa387.jpg' class='resize-ratio lazyload ' width='565' height='414'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=21347&aff=1624906">4S 2200mah Battery</a>
+        </td>
+      </tr>
+
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Boscam-TX5826-FPV-5_8G-400mW-Wireless-Audio-Video-Transmitter-Module-p-977222.html?p=1G09211226617201502J"><a id="assets-images-blog-oze-parts-mw-vtx-ffc-cb-jpg" href="../../../../../assets/images/blog/oze32/parts/400mw-vtx-7ffc8cb1.jpg" class="linked-img colorbox"><img data-ratio='1.0' data-src='../../../../../assets/images/blog/oze32/parts/400mw-vtx-7ffc8cb1.jpg' class='resize-ratio lazyload ' width='361' height='361'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Boscam-TX5826-FPV-5_8G-400mW-Wireless-Audio-Video-Transmitter-Module-p-977222.html?p=1G09211226617201502J">5v Boscam 400mw Micro Video Transmitter</a>
+        </td>
+      </tr>
+
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/600TVL-8_0MP-14-2_8mm-CMOS-FPV-170-Degree-Wide-Anlge-Lens-Camera-PALNTSC-p-984345.html?p=1G09211226617201502J"><a id="assets-images-blog-oze-parts-g-camera-e-e-jpg" href="../../../../../assets/images/blog/oze32/parts/1g-camera-8e75e739.jpg" class="linked-img colorbox"><img data-ratio='1.0' data-src='../../../../../assets/images/blog/oze32/parts/1g-camera-8e75e739.jpg' class='resize-ratio lazyload ' width='361' height='361'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/600TVL-8_0MP-14-2_8mm-CMOS-FPV-170-Degree-Wide-Anlge-Lens-Camera-PALNTSC-p-984345.html?p=1G09211226617201502J">5v 600TVL 1 gram CMOS camera</a>
+        </td>
+      </tr>
+
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Original-XiaoYi-Ambarella-A7LS-BSI-CMOS-WIFI-Sports-Action-Camera-p-969228.html?p=1G09211226617201502J"><a id="assets-images-blog-oze-parts-xiaomi-yi-fd-b-jpg" href="../../../../../assets/images/blog/oze32/parts/xiaomi-yi-fd521b15.jpg" class="linked-img colorbox"><img data-ratio='1.0' data-src='../../../../../assets/images/blog/oze32/parts/xiaomi-yi-fd521b15.jpg' class='resize-ratio lazyload ' width='361' height='361'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Original-XiaoYi-Ambarella-A7LS-BSI-CMOS-WIFI-Sports-Action-Camera-p-969228.html?p=1G09211226617201502J">XiaoMi Yi HD Camera recording 1080p at 60 FPS</a>
+        </td>
+      </tr>
+
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J"><a id="assets-images-blog-oze-parts-x-ddd-ed-jpg" href="../../../../../assets/images/blog/oze32/parts/9x-1ddd07ed.jpg" class="linked-img colorbox"><img data-ratio='1.0' data-src='../../../../../assets/images/blog/oze32/parts/9x-1ddd07ed.jpg' class='resize-ratio lazyload ' width='361' height='361'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J">9x Transmitter</a>
+        </td>
+      </tr>
+
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=43852&aff=1624906"><a id="assets-images-blog-oze-parts-tx-e-jpg" href="../../../../../assets/images/blog/oze32/parts/443-tx-702449e7.jpg" class="linked-img colorbox"><img data-ratio='1.3647342995169083' data-src='../../../../../assets/images/blog/oze32/parts/443-tx-702449e7.jpg' class='resize-ratio lazyload ' width='565' height='414'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=43852&aff=1624906">433mhz LRS Transmitter Module</a>
+        </td>
+      </tr>
+
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=27096&aff=1624906"><a id="assets-images-blog-oze-parts-rx-b-ab-a-jpg" href="../../../../../assets/images/blog/oze32/parts/443-rx-b4ab565a.jpg" class="linked-img colorbox"><img data-ratio='1.3647342995169083' data-src='../../../../../assets/images/blog/oze32/parts/443-rx-b4ab565a.jpg' class='resize-ratio lazyload ' width='565' height='414'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=27096&aff=1624906">433mhz LRS Receiver Module, set to PPM injecting RSSI on ch 9</a>
+        </td>
+      </tr>
+
+  </tbody>
+</table>
+
+<h5 id="power">Power</h5>
+
+<p>I started by soldering a little red JST connector to the large VCC and GND pads. I haven&#39;t soldered it on in this picture yet, but the <a href="http://www.banggood.com/XT60-Male-Plug-10AWG-10cm-With-Wire-p-77537.html?p=1G09211226617201502J">XT-60</a> for the battery will be
+connect to <code>bat+</code>:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-jst-power-aee-e-jpg" href="../../../../../assets/images/blog/oze32/jst-power-04aee82e.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/jst-power-04aee82e.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>This JST plug will connect this to the power distribution board (<a href="http://www.banggood.com/30x30-35x35-PCB-ESC-Power-Distribution-Board-For-MINI-Quadcopter-Multicopter-p-984686.html?p=1G09211226617201502J">PDB</a>) on the quad frame. This will allow us to choose if we want to power the MinimOSD (by plugging a battery into the JST directly) or the flight controller and ESCS (by plugging a battery into the <a href="http://www.banggood.com/XT60-Male-Plug-10AWG-10cm-With-Wire-p-77537.html?p=1G09211226617201502J">XT-60</a> and plugging the JST into the PDB).</p>
+
+<p>Alternatively, if you don&#39;t have a PDB, you could solder your ESC power lines straight to the big VCC and GND pads on the flight controller.</p>
+
+<h5 id="connect-imu-interrupt-pin">Connect IMU Interrupt Pin</h5>
+
+<p>Connecting the IMU pin takes some fine soldering skill. Anyone can do it with some patience and a normal iron, but proceed at your own risk or skip to the <a href="#escs">ESCs</a> section, if you&#39;d rather not tempt fate. Also, connecting this pin will only help if you&#39;re flying BetaFlight (which you should be), CleanFlight doesn&#39;t have Gyro Sync, which is the whole reason we&#39;re connecting the pin.</p>
+
+<p>I&#39;ve flown one quad with the IMU pin soldered and one without the pin connected. The one without the connection flies fine, so don&#39;t feel like you have to do this, but if you do, it will feel a bit more locked in.</p>
+
+<p>You&#39;ll notice in the configurator that if this IMU pin is not connected your looptime will be around 1100 and around 1000 if you choose to solder the connection. The big difference though is not 100ms in loop time, but reducing <a href="https://en.wikipedia.org/wiki/Aliasing">aliasing</a>.</p>
+
+<p>Remove the solder mask from the IMU interrupt pin via. I used the tip of a pin:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-imu-via-c-a-jpg" href="../../../../../assets/images/blog/oze32/imu-via-3c433a36.jpg" class="linked-img colorbox"><img data-ratio='1.5036710719530102' data-src='../../../../../assets/images/blog/oze32/imu-via-3c433a36.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='681'></img></a></span></p>
+
+<p>Optionally, use a <a href="http://shrsl.com/?~apzh">flux pen</a> to tin the pad you just exposed, get a small blob of solder on your iron then touch the via. Solder should flow into the via and tin the pad.</p>
+
+<p>Cut, strip and tin a small guage wire then touch the wire to the tinned via and then touch your iron. It should flow together and stick nicely.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-imu-via-wire-f-f-a-jpg" href="../../../../../assets/images/blog/oze32/imu-via-wire-06f4f22a.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/imu-via-wire-06f4f22a.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>Flux the STM32 pin with your pen, tin your wire then hold the wire against the STM32 pin. Touch your tinned iron to the wire and let the solder flow.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-imu-via-done-c-jpg" href="../../../../../assets/images/blog/oze32/imu-via-done-26c53850.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/imu-via-done-26c53850.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>Don&#39;t worry if you get a little extra solder on something, just use some <a href="http://shrsl.com/?~apzj">solder wick</a> to clean up then wipe everything down with rubbing alcohol.</p>
+
+<h5 id="escs">ESCs</h5>
+
+<p>First though, flash your ESCs with BlHeli and the BlHeli bootloader so you can configure them via pass through programming after you&#39;ve assembled your copter.</p>
+
+<p>Follow the guide here to <a href="/blog/2015/12/06/blheli-esc-identification/">identify and flash BlHeli and the BlHeli Bootloader</a></p>
+
+<p>Twist your wires first, open loops between ground and power create magnetic fields which could throw off your magnetometer, if you have one (or decide to add one later via the I2C port).</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-twisted-eb-jpg" href="../../../../../assets/images/blog/oze32/twisted-eb331498.jpg" class="linked-img colorbox"><img data-ratio='1.5036710719530102' data-src='../../../../../assets/images/blog/oze32/twisted-eb331498.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='681'></img></a></span></p>
+
+<p>It helps to use some helping hands.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-helping-hands-ee-jpg" href="../../../../../assets/images/blog/oze32/helping-hands-607ee973.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/helping-hands-607ee973.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>Tin the <code>GND</code> and <code>VCC</code> pads with some solder. Tin the wires and then heat the wire and hold it against the board. As soon as you see it all liquefy, remove your iron and wait a second for it to cool.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-half-way-there-c-a-jpg" href="../../../../../assets/images/blog/oze32/half-way-there-03c980a9.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/half-way-there-03c980a9.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>They&#39;ll all fit and there is enough mass so that soldering on another doesn&#39;t release the already-attached wires.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-last-one-efddf-jpg" href="../../../../../assets/images/blog/oze32/last-one-39efddf4.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/last-one-39efddf4.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>Done! The wires fit perfectly.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-soldered-a-e-jpg" href="../../../../../assets/images/blog/oze32/soldered-2a164e12.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/soldered-2a164e12.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>Connect your RX as described in the section on <a href="#serial-ports">Serial Ports</a>. I&#39;m using PPM, so I&#39;ll use this plug.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-rx-wire-a-jpg" href="../../../../../assets/images/blog/oze32/rx-wire-4a775660.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/rx-wire-4a775660.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>Wires look neater braided.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-rx-braided-e-dde-jpg" href="../../../../../assets/images/blog/oze32/rx-braided-e3379dde.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/rx-braided-e3379dde.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>I also removed the extra <code>VCC IN</code> pin from the JST plug. Pop up the tooth with an blade and pull out the wire. Hold onto it though, you can always put it back in if you need it later.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-header-pin-removal-abed-jpg" href="../../../../../assets/images/blog/oze32/header-pin-removal-1-1945abed.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/header-pin-removal-1-1945abed.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-header-pin-removal-bfd-b-c-jpg" href="../../../../../assets/images/blog/oze32/header-pin-removal-2-bfd9b1c5.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/header-pin-removal-2-bfd9b1c5.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>You&#39;ll wire the ESCs like this:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-connection-example-jpg" href="../../../../../assets/images/blog/oze32/connection-example-74593082.jpg" class="linked-img colorbox"><img data-ratio='1.1838150289017342' data-src='../../../../../assets/images/blog/oze32/connection-example-74593082.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='865'></img></a></span></p>
+
+<p>I made a little breakout board for the ESC signal and ground lines. This isn&#39;t necessary if you&#39;re using an ESC without signal cables pre-soldered (<a href="http://rctimer.com/product-1320.html/#r-pNathanT">like these</a>). If you&#39;re using ESCs without pre-soldered signal cables, the OZE32 cable leads are long enough to solder them straight to the ESC. Awesome!</p>
+
+<p>I used some leftover pins from an Arduino and some <a href="http://www.banggood.com/12pcs-PCB-Prototyping-Printed-Circuit-Board-Stripboard-Prototype-Breadboard-With-4-Sizes-p-982713.html?p=1G09211226617201502J">prototyping board</a>.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-header-parts-c-e-jpg" href="../../../../../assets/images/blog/oze32/header-parts-0553c68e.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/header-parts-0553c68e.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>Here&#39;s how I soldered up the headers:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-header-soldering-d-jpg" href="../../../../../assets/images/blog/oze32/header-soldering-1-760d7730.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/header-soldering-1-760d7730.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-header-soldering-c-a-jpg" href="../../../../../assets/images/blog/oze32/header-soldering-2-c80a6331.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/header-soldering-2-c80a6331.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-header-twisted-a-bf-d-jpg" href="../../../../../assets/images/blog/oze32/header-twisted-a9bf1d86.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/header-twisted-a9bf1d86.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-header-installed-ba-jpg" href="../../../../../assets/images/blog/oze32/header-installed-9682ba94.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/header-installed-9682ba94.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<h4 id="hardware-setup-camera-and-vtx">Hardware Setup - Camera and VTX</h4>
+
+<p>Since there is no on board 12v power regulator, you should consider getting a 5v camera and video transmitter.</p>
+
+<p>I used this <a href="http://www.banggood.com/600TVL-8_0MP-14-2_8mm-CMOS-FPV-170-Degree-Wide-Anlge-Lens-Camera-PALNTSC-p-984345.html?p=1G09211226617201502J">1 gram CMOS Camera</a>: </p>
+
+<p><span class="center img-quarter-width">
+  <a href="http://www.banggood.com/600TVL-8_0MP-14-2_8mm-CMOS-FPV-170-Degree-Wide-Anlge-Lens-Camera-PALNTSC-p-984345.html?p=1G09211226617201502J"><img alt="1 gram CMOS Camera" src="../../../../../assets/images/blog/oze32/1g-camera-fecb0a24.jpg" /></a>
+</span></p>
+
+<p>and this <a href="http://www.banggood.com/Boscam-TX5826-FPV-5_8G-400mW-Wireless-Audio-Video-Transmitter-Module-p-977222.html?p=1G09211226617201502J">400mw Video Transmitter</a>:</p>
+
+<p><span class="center img-quarter-width">
+  <a href="http://www.banggood.com/Boscam-TX5826-FPV-5_8G-400mW-Wireless-Audio-Video-Transmitter-Module-p-977222.html?p=1G09211226617201502J"><img alt="$400mw Video Transmitter" src="../../../../../assets/images/blog/oze32/400mw-vtx-b8dcda0d.jpg" /></a>
+</span></p>
+
+<p>The video isn&#39;t quite as good as my <a href="http://www.banggood.com/700TVL-FPV-HD-Ultralight-SONY-Camera-With-2_1mm-Lens-NTSCPLA-For-FPV-RC-Multicopter-p-1000385.html?p=1G09211226617201502J">CCD Camera</a>, but I have yet to find a CCD camera that will run off 5v. If anyone know of one, please let me know!</p>
+
+<p>Solder on a cloverleaf and a set of dip switches and you&#39;ll end up with something like this:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-camera-vtx-d-c-jpg" href="../../../../../assets/images/blog/oze32/camera-vtx-8d44c275.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/camera-vtx-8d44c275.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>You could solder the power leads straight onto the camera/vtx. I&#39;ve also removed the extra wires from the JST plug.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-camera-vtx-installed-ec-c-d-c-jpg" href="../../../../../assets/images/blog/oze32/camera-vtx-installed-ec4c7d2c.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/camera-vtx-installed-ec4c7d2c.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>Remember that the <code>Video Out</code> pin is on the outside of the board. Don&#39;t plug your 5v setup into the middle, 12v pins!</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-camera-vtx-wiring-cf-fe-jpg" href="../../../../../assets/images/blog/oze32/camera-vtx-wiring-2cf991fe.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/camera-vtx-wiring-2cf991fe.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>Checkout the OSD overlay and the camera video quality:</p>
+
+<p><span class="center">
+  <iframe width="480" height="360" src="https://www.youtube.com/embed/CVIDPzIC6yI" frameborder="0" allowfullscreen></iframe>
+</span></p>
+
+<h3 id="firmware-setup">Firmware Setup</h3>
+
+<p>First, I just got an update from Paul at <a href="http://www.readytoflyquads.com/?from=vertile">Ready To Fly Quads</a> that they&#39;re shipping the <a href="http://www.readytoflyquads.com/flip32-aio-702?from=vertile">OZE32</a> with CleanFlight 1.10.0 and ScarabOSD with all the right flags set. So feel free to fly this stock. For those that want BetaFlight (you should want it, it&#39;s awesome) or like to live on the bleeding edge (myself included), read on and flash away!</p>
+
+<p>Since this board is essentially two different pieces of hardware smashed together onto the same board, we&#39;ll need to update both the flight controller and the MinimOSD independently.</p>
+
+<p>Before you get started flashing, make sure you have <a href="https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx">the latest CP2102 USB/UART driver</a> installed.</p>
+
+<h4 id="flash-betaflight">Flash BetaFlight</h4>
+
+<p>Let&#39;s flash the FC with BetaFlight first. The same applies if you want to use CleanFlight, just use the appropriate hex file.</p>
+
+<p>Download the Naze32 hex from the BetaFlight Release Page: <a href="https://github.com/borisbstyle/betaflight/releases">https://github.com/borisbstyle/betaflight/releases</a>.</p>
+
+<p>Unplug the FC if it is plugged in.</p>
+
+<p>Switch the dip switches into the USB &lt;-&gt; Flight Controller mode, like so:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-fc-dip-eab-a-jpg" href="../../../../../assets/images/blog/oze32/fc-dip-09eab40a.jpg" class="linked-img colorbox"><img data-ratio='0.8681640625' data-src='../../../../../assets/images/blog/oze32/fc-dip-09eab40a.jpg' class='resize-ratio lazyload trailing-space' width='889' height='1024'></img></a></span></p>
+
+<p>Plug in the FC via USB.</p>
+
+<p>Open the <a href="https://chrome.google.com/webstore/detail/cleanflight-configurator/enacoimjcgeinfnnnpajinjgmkahmfgb?hl=en">CleanFlight configuration tool</a> from <a href="https://www.google.com/chrome/">Google Chrome</a> and switch to the <code>Firmware Flasher</code> tab.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-cf-flash-firmware-e-cc-jpg" href="../../../../../assets/images/blog/oze32/cf-flash-firmware-e51401cc.jpg" class="linked-img colorbox"><img data-ratio='1.3598937583001327' data-src='../../../../../assets/images/blog/oze32/cf-flash-firmware-e51401cc.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='753'></img></a></span></p>
+
+<p>Click <code>Load Local</code> and pick the Naze32 hex file you downloaded.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-cf-load-local-firmware-fa-f-jpg" href="../../../../../assets/images/blog/oze32/cf-load-local-firmware-fa24f273.jpg" class="linked-img colorbox"><img data-ratio='1.3598937583001327' data-src='../../../../../assets/images/blog/oze32/cf-load-local-firmware-fa24f273.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='753'></img></a></span></p>
+
+<p>Click <code>Flash Firmware</code></p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-cf-flashing-aee-jpg" href="../../../../../assets/images/blog/oze32/cf-flashing-5aee1754.jpg" class="linked-img colorbox"><img data-ratio='1.3598937583001327' data-src='../../../../../assets/images/blog/oze32/cf-flashing-5aee1754.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='753'></img></a></span></p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-cf-flashed-dbc-e-f-jpg" href="../../../../../assets/images/blog/oze32/cf-flashed-5dbc3e1f.jpg" class="linked-img colorbox"><img data-ratio='1.3598937583001327' data-src='../../../../../assets/images/blog/oze32/cf-flashed-5dbc3e1f.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='753'></img></a></span></p>
+
+<p>If you get a message that CleanFlight can&#39;t connect to the bootloader, you may need to unplug power from the FC, place a jumper across the tiny boot pads while plugging in the power. It&#39;s kinda tricky to jump those pads, so don&#39;t give up on the first try.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-cf-bootpins-aa-b-b-jpg" href="../../../../../assets/images/blog/oze32/cf-bootpins-9aa90b6b.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/cf-bootpins-9aa90b6b.jpg' class='resize-ratio lazyload ' width='1024' height='680'></img></a></span></p>
+
+<p>You&#39;ll know it worked if you get a solid blue light. I used a pair of tweezers to jump the pins while I plugged in the USB cable.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-cf-bootloader-e-ce-jpg" href="../../../../../assets/images/blog/oze32/cf-bootloader-6e437ce0.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/cf-bootloader-6e437ce0.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>Once you get the solid blue light, hit <code>Flash Firmware</code> again and it should work.</p>
+
+<p>When flashing completes, click <code>Connect</code>, then we&#39;ll configure the current sensor:</p>
+
+<ul>
+<li><p>Switch the receiver configuration to Spektrum satellite or PPM depending on your RX</p></li>
+<li><p>Enable the current sensor feature</p></li>
+<li><p>Hit save</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-cf-config-f-e-jpg" href="../../../../../assets/images/blog/oze32/cf-config-2733f8e1.jpg" class="linked-img colorbox"><img data-ratio='1.2752179327521793' data-src='../../../../../assets/images/blog/oze32/cf-config-2733f8e1.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='803'></img></a></span></p></li>
+</ul>
+
+<p>You should now see the total capacity drawn and instantaneous current draw:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-cf-connected-e-dcb-f-jpg" href="../../../../../assets/images/blog/oze32/cf-connected-e2dcb41f.jpg" class="linked-img colorbox"><img data-ratio='1.2752179327521793' data-src='../../../../../assets/images/blog/oze32/cf-connected-e2dcb41f.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='803'></img></a></span></p>
+
+<h4 id="flash-scarab-osd">Flash Scarab OSD</h4>
+
+<p>Let&#39;s update the firmware on the MinimOSD with the most actively maintained fork of MinimOSD -- Scarab OSD</p>
+
+<p>Hit &quot;Download Source&quot; on the release page for ScarabOSD: <a href="https://github.com/ShikOfTheRa/scarab-osd/releases">https://github.com/ShikOfTheRa/scarab-osd/releases</a>. Extract the zip file.</p>
+
+<p>Open Arduino, <a href="https://www.arduino.cc/en/Main/Software">download</a> it first, if you don&#39;t already have it. From Arduino, open the <code>MW_OSD</code> folder in the extracted Scarab OSD source and from that folder open <code>MW_OSD.ino</code>.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-osd-arduino-bfaad-jpg" href="../../../../../assets/images/blog/oze32/osd-arduino-571bfaad.jpg" class="linked-img colorbox"><img data-ratio='1.0427698574338085' data-src='../../../../../assets/images/blog/oze32/osd-arduino-571bfaad.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='982'></img></a></span></p>
+
+<p>Switch to the <code>Config.h</code> tab and scroll through the file or use the find function to change the following settings.</p>
+
+<p>Lines that start with <code>//</code> are &quot;commented out&quot; or turned off and lines that start with <code>#define</code> (no <code>//</code>) are turned on.</p>
+
+<p>For example, to change the <code>CONTROLLER SOFTWARE</code> from MultiWii to CleanFlight, change this section to <code>#define CLEANFLIGHT</code></p>
+<pre class="highlight plaintext"><code>//#define MULTIWII                  // Uncomment this if you are using latest MULTIWII version from repository (2.4 at time of this MWOSD release)
+...
+#define BETAFLIGHT                // Uncomment this if you are using BETAFLIGHT (same as CLEANFLIGHT t time of this MWOSD release)
+</code></pre>
+
+<p>It starts like this:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-osd-multiwii-config-c-d-c-jpg" href="../../../../../assets/images/blog/oze32/osd-multiwii-config-c30d02c2.jpg" class="linked-img colorbox"><img data-ratio='1.0448979591836736' data-src='../../../../../assets/images/blog/oze32/osd-multiwii-config-c30d02c2.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='980'></img></a></span></p>
+
+<p>And should be changed to this:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-osd-cleanflight-config-b-a-a-jpg" href="../../../../../assets/images/blog/oze32/osd-cleanflight-config-57b4a2a7.jpg" class="linked-img colorbox"><img data-ratio='1.0427698574338085' data-src='../../../../../assets/images/blog/oze32/osd-cleanflight-config-57b4a2a7.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='982'></img></a></span></p>
+
+<p>Set the MSP Speed Setting to <code>MSP_SPEED_HIGH</code> to make the artificial horizon update faster:</p>
+<pre class="highlight plaintext"><code>//#define MSP_SPEED_MED       // Default
+...
+#define MSP_SPEED_HIGH    // Enable for faster AHI and speed updates. Requires higher baud rates and increases overhead on the FC to process
+</code></pre>
+
+<p>Set the Voltage Warning Setting to use the vbat configuration from CleanFlight:</p>
+<pre class="highlight plaintext"><code>#define FC_VOLTAGE_CONFIG           // Additionally uncomment this if you want to use the vbat voltage config with BASEFLIGHT and CLEANFLIGHT on the flight controller (include: min cell voltage, max cell voltage and warning cell voltage)
+</code></pre>
+
+<p>Unplug the FC if it is plugged in.</p>
+
+<p id="minimosd-flash-settings">Switch the dip switches into the USB <-> OSD mode, like so:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-osd-dip-ce-e-jpg" href="../../../../../assets/images/blog/oze32/osd-dip-ce57e684.jpg" class="linked-img colorbox"><img data-ratio='0.8603515625' data-src='../../../../../assets/images/blog/oze32/osd-dip-ce57e684.jpg' class='resize-ratio lazyload trailing-space' width='881' height='1024'></img></a></span></p>
+
+<p>Plug in the FC via USB.</p>
+
+<p>If you have an OZE version 1.0 or 1.01, plug in a battery to the OZE32, the MinimOSD is not powered via USB. On version 1.02 and beyond, the MinimOSD is powered over USB, so no need to plug in a battery.</p>
+
+<p>Set the board to <code>Arduino to Arudino Pro Mini</code></p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-osd-board-f-f-jpg" href="../../../../../assets/images/blog/oze32/osd-board-2628f01f.jpg" class="linked-img colorbox"><img data-ratio='1.4143646408839778' data-src='../../../../../assets/images/blog/oze32/osd-board-2628f01f.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='724'></img></a></span></p>
+
+<p>Set the processor to <code>ATmega328 (5v, 16MHz)</code>.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-osd-processor-c-d-jpg" href="../../../../../assets/images/blog/oze32/osd-processor-0c3d4851.jpg" class="linked-img colorbox"><img data-ratio='3.1507692307692308' data-src='../../../../../assets/images/blog/oze32/osd-processor-0c3d4851.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='325'></img></a></span></p>
+
+<p>Pick the serial port you&#39;re using:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-osd-port-c-eef-jpg" href="../../../../../assets/images/blog/oze32/osd-port-26c00eef.jpg" class="linked-img colorbox"><img data-ratio='2.409411764705882' data-src='../../../../../assets/images/blog/oze32/osd-port-26c00eef.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='425'></img></a></span></p>
+
+<p>You can ignore the programmer setting unless you&#39;re using an ISP programmer to install a new bootloader. If you are using an ISP programmer (you would have had to soldered leads onto the ISP pads to connect to your ISP programmer), you probably want to set this to <code>&quot;USBasp&quot;</code>. This setting will be ignored if you&#39;re flashing via the usb port.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-osd-programmer-eddf-jpg" href="../../../../../assets/images/blog/oze32/osd-programmer-8032eddf.jpg" class="linked-img colorbox"><img data-ratio='1.8384201077199283' data-src='../../../../../assets/images/blog/oze32/osd-programmer-8032eddf.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='557'></img></a></span></p>
+
+<p>Click the arrow in Arduino to upload the new firmware. The arrow turns orange when the upload starts.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-osd-upload-e-e-jpg" href="../../../../../assets/images/blog/oze32/osd-upload-9414e36e.jpg" class="linked-img colorbox"><img data-ratio='1.0427698574338085' data-src='../../../../../assets/images/blog/oze32/osd-upload-9414e36e.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='982'></img></a></span></p>
+
+<p>The bottom of the Arduino window will look something like this when it completes:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-osd-flashed-e-aa-c-jpg" href="../../../../../assets/images/blog/oze32/osd-flashed-1e85aa9c.jpg" class="linked-img colorbox"><img data-ratio='1.9393939393939394' data-src='../../../../../assets/images/blog/oze32/osd-flashed-1e85aa9c.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='528'></img></a></span></p>
+
+<p>Open up the configuration tool. It is in a folder for your platform in the <code>MW_OSD_GUI</code> folder in the zip file you downloaded.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-osd-config-tool-b-jpg" href="../../../../../assets/images/blog/oze32/osd-config-tool-3276521b.jpg" class="linked-img colorbox"><img data-ratio='2.0357852882703775' data-src='../../../../../assets/images/blog/oze32/osd-config-tool-3276521b.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='503'></img></a></span></p>
+
+<p>Click the name of your COM port on the left to connect. If you don&#39;t see the COM port, unplug the flight controller, plug it back in and restart the configuration tool.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-osd-config-tool-com-fa-b-jpg" href="../../../../../assets/images/blog/oze32/osd-config-tool-com-5fa1b930.jpg" class="linked-img colorbox"><img data-ratio='2.0357852882703775' data-src='../../../../../assets/images/blog/oze32/osd-config-tool-com-5fa1b930.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='503'></img></a></span></p>
+
+<p>You should see the preview window on the right populate and you can configure your settings. You&#39;ll probably want to turn on Voltage and Amperage settings like so, the number don&#39;t matter, just the switches. This should configure the OSD to display the voltage and amperage from the flight controller.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-minimosd-scarab-osd-config-dd-fc-png" href="../../../../../assets/images/blog/minimosd/scarab-osd-config-19dd57fc.png" class="linked-img colorbox"><img data-ratio='1.6193820224719102' data-src='../../../../../assets/images/blog/minimosd/scarab-osd-config-19dd57fc.png' class='resize-ratio lazyload trailing-space' width='1153' height='712'></img></a></span></p>
+
+<p>I also like to update the font. Under the font section select a font, I use the one from the downloaded zip: <code>OTHER/MW_OSD_GUI_SOURCE/MW_OSD_GUI/data/default.mcm</code>. Once you&#39;ve picked a font, hit upload to save the font to the MinimOSD. It will take a minute.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-osd-config-tool-font-cc-d-jpg" href="../../../../../assets/images/blog/oze32/osd-config-tool-font-cc3283d8.jpg" class="linked-img colorbox"><img data-ratio='2.0357852882703775' data-src='../../../../../assets/images/blog/oze32/osd-config-tool-font-cc3283d8.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='503'></img></a></span></p>
+
+<h5 id="osd-configuration">OSD Configuration</h5>
+
+<p>Here is my OSD config. Basically we want to take all the values from the flight controller. The <code>adjust</code> values don&#39;t matter, they won&#39;t be used.</p>
+
+<p>Download the <a href="https://gist.githubusercontent.com/nathantsoi/8a5cdb60c0590cd537f0/raw/4c4e7fc6dc1e2da45f5fff6ec8721d817dfe97a8/nathans-scarb-osd-config.osd">config file</a> then click <code>load</code>, pick the file you saved and then click <code>write</code>, or set the settings like this:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-osd-config-set-d-c-jpg" href="../../../../../assets/images/blog/oze32/osd-config-set-908d144c.jpg" class="linked-img colorbox"><img data-ratio='1.8584392014519056' data-src='../../../../../assets/images/blog/oze32/osd-config-set-908d144c.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='551'></img></a></span></p>
+
+<p>When this is all done, you can safely disconnect via the configuration tool and unplug the USB.</p>
+
+<h4 id="test">Test</h4>
+
+<p>Unplug the FC if it is plugged in.</p>
+
+<p>Switch the dip switches into the OSD &lt;-&gt; Flight Controller mode, like so:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-dip-switch-flight-mode-a-fa-jpg" href="../../../../../assets/images/blog/oze32/dip-switch-flight-mode-a71fa790.jpg" class="linked-img colorbox"><img data-ratio='1.5058823529411764' data-src='../../../../../assets/images/blog/oze32/dip-switch-flight-mode-a71fa790.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='680'></img></a></span></p>
+
+<p>Plug a video transmitter into the video pins on the outer edge of the flight controller. Optionally, plug in a camera to the input side of the video headers as well. We can test without this, so I&#39;ll leave the camera disconnect for now.</p>
+
+<p>Plug in a battery, be careful if you have plugged in the middle &quot;12v&quot; pin on the video header. Be sure your vtx can handle the full battery voltage. I&#39;m using a 2s, so I&#39;m safe. Plus, my vtx can take up to 18 volts or so.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-oze-oze-vtx-d-f-jpg" href="../../../../../assets/images/blog/oze32/oze32-vtx-0d41f319.jpg" class="linked-img colorbox"><img data-ratio='1.7624784853700517' data-src='../../../../../assets/images/blog/oze32/oze32-vtx-0d41f319.jpg' class='resize-ratio lazyload trailing-space' width='1024' height='581'></img></a></span></p>
+
+<p>Checkout the awesome text overlay on your video, shown on my phone in the photo.</p>
+
+<p>Time to hook the flight controller up to your receiver and ESCs then go fly!</p>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+//<![CDATA[
+                  var disqus_shortname = 'vertile';
+          
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+//]]>
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</article>
+
+</div>
+</div>
+</div>
+<script>
+  var vglnk = { key: 'ddedf6f00d454f08b923376f1cb1cfbf' };
+  
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = '//cdn.viglink.com/api/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
+
+</body>
+</html>

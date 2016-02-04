@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>gobot - welcome to the web</title>
+<meta content='A game in go for learning html' name='description'>
+<meta content='Nathan Tsoi' name='author'>
+<meta content='yes' name='apple-mobile-web-app-capable'>
+<meta content='black-translucent' name='apple-mobile-web-app-status-bar-style'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport'>
+<link href="../../assets/stylesheets/slides/reveal-12909d57.css" rel="stylesheet" />
+<link href="../../assets/stylesheets/slides/theme/green-1db50b8d.css" rel="stylesheet" />
+<link href="../../assets/stylesheets/slides/lib/zenburn-c17bd975.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+<script src="../../assets/javascripts/vendor/html5shiv-7e074556.js"></script>
+<![endif]-->
+</head>
+<body style='-webkit-transition: -webkit-transform 0.8s ease; transition: -webkit-transform 0.8s ease;'>
+<div class='reveal center' data-background-transition='default' data-transition-speed='default'>
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class='slides'>
+<section>
+<section data-background='#5BB85F'>
+<h1>gobot</h1>
+<h3>welcome to http</h3>
+<p style='text-align:center;color:#fefefe;'>
+<a href='http://nathan.vertile.com' style='color:#fefefe;'>Nathan Tsoi</a>
+/
+<a href='http://twitter.com/nathantsoi' style='color:#fefefe;'>@nathantsoi</a>
+</p>
+</section>
+<section>
+<h2>prerequisites</h2>
+<p style='text-align:center;'>from your terminal</p>
+<ul>
+<li>
+install
+<a href='http://brew.sh/#install'>homebrew</a>
+<pre><code contenteditable='' data-trim=''>ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"</code></pre>
+</li>
+<li>
+install git
+<pre><code contenteditable='' data-trim=''>brew install git</code></pre>
+</li>
+<li>
+install
+<a href='http://golang.org'>golang</a>
+<pre><code contenteditable='' data-trim=''>brew install go</code></pre>
+</li>
+<li>
+create a github account
+<a href='https://github.com/join'>https://github.com/join</a>
+</li>
+<li>
+add your ssh key to github
+<a href='https://help.github.com/articles/generating-ssh-keys'>https://help.github.com/articles/generating-ssh-keys</a>
+</li>
+</ul>
+</section>
+</section>
+<section>
+<h2>goals</h2>
+<ol>
+<li class='fragment'>architecture</li>
+<li class='fragment'>tools</li>
+<li class='fragment'>code</li>
+</ol>
+<aside class='notes'>
+- Assumes no knowledge of programming.
+- My aplogies if some points are obvious.
+- I want to ensure we all share the same definitions of the terms we'll be using.
+- Interrupt me at any point with questions, this presentation is a work in progress.
+</aside>
+</section>
+<section>
+<section>
+<h2>architecture</h2>
+<a class='image navigate-down' href='#'>
+<img alt='Down arrow' height='238' src='https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png' width='178'>
+</a>
+</section>
+<section>
+<h2>language</h2>
+<ul>
+<li class='fragment'>formalized interface to a computer's functionality</li>
+<li class='fragment'>e.g. JavaScript</li>
+</ul>
+<aside class='notes'>
+- To talk about web technologies and frameworks, first we have to have a shared understanding of computer languages.
+- It let's you tell the computer what to do.
+- Language is not a limitation, since it is only a way to express a computer's capabilities.
+</aside>
+</section>
+<section>
+<h2>program</h2>
+<ul>
+<li class='fragment'>written in a programming language</li>
+<li class='fragment'>composed of a set of instructions</li>
+<li class='fragment'>
+e.g. helloworld
+<pre class='fragment'><code contenteditable='' data-trim=''>console.log("hello world");</code></pre>
+</li>
+</ul>
+</section>
+<section>
+<h2>instruction</h2>
+<ul>
+<li class='fragment'>
+control structure
+<pre class='fragment'><code contenteditable='' data-trim=''>if( somethingIsTrue ) {&#x000A;  // do something&#x000A;}</code></pre>
+</li>
+<li class='fragment'>
+read or write data
+<pre class='fragment'><code contenteditable='' data-trim=''>var name = "Nathan";</code></pre>
+</li>
+<li class='fragment'>
+do something nice: comment, function, object etc.
+</li>
+</ul>
+<aside class='notes'>
+- Comments are meant to clarify code. Functions and objects, from which functional and object oriented programming derive their names provide nice ways of changing the control flow or mutating data.
+</aside>
+</section>
+<section>
+<h2>library</h2>
+<ul>
+<li class='fragment'>a collection of instructions that allow a user to perform a set of standard operations</li>
+<li class='fragment'>
+e.g. jQuery
+<pre class='fragment'><code contenteditable='' data-trim=''>$('body').css({opacity: '.5', 'background-color': 'green'});</code></pre>
+</li>
+</ul>
+</section>
+<section>
+<h2>framework</h2>
+<ul>
+<li class='fragment'>a subset of or all of the components needed to create a web app, from the operating system to the web interface</li>
+<li class='fragment'>e.g. Ruby On Rails, Laravel, Django</li>
+</ul>
+</section>
+<section>
+<h2>stack</h2>
+<ul>
+<li class='fragment'>a set of frameworks, libraries, idioms and best practices to solve a particular class of problem</li>
+<li class='fragment'>technologies run on the server</li>
+<li class='fragment'>may or may not include a framework</li>
+<li class='fragment'>e.g. LAMP</li>
+</ul>
+</section>
+<section>
+<h2>protocol</h2>
+<ul>
+<li class='fragment'>http</li>
+<li class='fragment'>request/response</li>
+<li class='fragment'>client/server</li>
+<li class='fragment'>osi layer 7</li>
+<li class='fragment'>usually on tcp transport</li>
+</ul>
+<aside class='notes'>
+- All webapps speak HTTP.
+- To be called a webserver or web client it is sufficent that the program communicate in HTTP.
+</aside>
+</section>
+<section>
+<h2>clients</h2>
+<ul>
+<li class='fragment'>html/css/javascript</li>
+</ul>
+</section>
+</section>
+<section>
+<section>
+<h2>tools</h2>
+<a class='image navigate-down' href='#'>
+<img alt='Down arrow' height='238' src='https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png' width='178'>
+</a>
+</section>
+<section>
+<h2>chrome</h2>
+<ul>
+<li class='fragment'>
+<code>CMD</code>
++
+<code>OPT</code>
++
+<code>i</code>
+</li>
+<li class='image fragment' style='text-align:center;'>
+or
+<a class='image' href='#' style='text-align:center;'>
+<img src='https://s3-us-west-1.amazonaws.com/nathantsoi.github.io/slides/gobot/inspect-element.png' style='display:block;margin:0 auto;'>
+</a>
+</li>
+<li class='fragment'>
+<code>ESC</code>
+</li>
+<li class='fragment'>you're in a JavaScript console</li>
+</ul>
+<aside class='notes'>
+- The power to edit any webpage.
+</aside>
+</section>
+<section>
+<h2>terminal</h2>
+<ul>
+<li class='fragment'>runs bash</li>
+<li class='fragment'>
+bash can run bash
+<pre class='fragment'><code contenteditable='' data-trim=''>bash</code></pre>
+</li>
+<li class='fragment'>
+bash can run standard unix commands
+<pre class='fragment'><code contenteditable='' data-trim=''>ls ~</code></pre>
+</li>
+<li class='fragment'>
+bash can run other programming languages
+<pre class='fragment'><code contenteditable='' data-trim=''>python&#x000A;print "hi"</code></pre>
+</li>
+<li class='fragment'>
+bash commands are always in the format
+<pre><code contenteditable='' data-trim=''>command [arguments]</code></pre>
+e.g. to run the git command
+<pre><code contenteditable='' data-trim=''>git</code></pre>
+</li>
+</ul>
+<aside class='notes'>
+- The power to efficiently control your computer.
+- Runs the BASH programming language as an interactive shell.
+- Bash gives you the power of automation.
+- Anything that can be done in the GUI can be done in bash, repeatably.
+</aside>
+</section>
+<section>
+<h2>git</h2>
+<ul>
+<li class='fragment'>a source code repository or version control system</li>
+<li class='fragment'>tracks changes made to code</li>
+<li class='fragment'>easily add (commit) or remove (revert) changes</li>
+<li class='fragment'>allows many programmers to make changes at the same time</li>
+</ul>
+</section>
+<section>
+<pre><code contenteditable='' data-trim=''>$ git&#x000A;usage: git [--version] [--help] [-C &lt;path&gt;] [-c name=value]&#x000A;           [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]&#x000A;           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]&#x000A;           [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;]&#x000A;           &lt;command&gt; [&lt;args&gt;]
+The most commonly used git commands are:&#x000A;  add        Add file contents to the index&#x000A;  bisect     Find by binary search the change that introduced a bug&#x000A;  branch     List, create, or delete branches&#x000A;  checkout   Checkout a branch or paths to the working tree&#x000A;  clone      Clone a repository into a new directory&#x000A;  commit     Record changes to the repository&#x000A;  diff       Show changes between commits, commit and working tree, etc&#x000A;  fetch      Download objects and refs from another repository&#x000A;  grep       Print lines matching a pattern&#x000A;  init       Create an empty Git repository or reinitialize an existing one&#x000A;  log        Show commit logs&#x000A;  merge      Join two or more development histories together&#x000A;  mv         Move or rename a file, a directory, or a symlink&#x000A;  pull       Fetch from and integrate with another repository or a local branch&#x000A;  push       Update remote refs along with associated objects&#x000A;  rebase     Forward-port local commits to the updated upstream head&#x000A;  reset      Reset current HEAD to the specified state&#x000A;  rm         Remove files from the working tree and from the index&#x000A;  show       Show various types of objects&#x000A;  status     Show the working tree status&#x000A;  tag        Create, list, delete or verify a tag object signed with GPG&#x000A;&#x000A;'git help -a' and 'git help -g' lists available subcommands and some&#x000A;concept guides. See 'git help &lt;command&gt;' or 'git help &lt;concept&gt;'&#x000A;to read about a specific subcommand or concept.</code></pre>
+</section>
+<section>
+<h2>text editor</h2>
+<ul>
+<li class='fragment'>notepad, notepad++</li>
+<li class='fragment'>vim</li>
+<li class='fragment'>emacs</li>
+<li class='fragment'>sublime</li>
+</ul>
+</section>
+<section>
+<h2>programs are just text</h2>
+<h2 class='fragment'>that an interpreter or compiler can read</h2>
+<aside class='notes'>
+- Therefore, you can program on any type of device that can create text files.
+</aside>
+</section>
+</section>
+<section>
+<section>
+<h2>code</h2>
+<a href='http://damp-garden-9215.herokuapp.com/' style='display:block;'>what we're making</a>
+<a class='image navigate-down' href='#'>
+<img alt='Down arrow' height='238' src='https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png' width='178'>
+</a>
+</section>
+<section>
+<h2>gobot library</h2>
+<p style='text-align:center;'>
+fork the library on
+<a href='https://github.com/nathantsoi/gobotlib'>github.com/nathantsoi/gobotlib</a>
+</p>
+<img alt='Click &amp;quot;Fork&amp;quot;' src='https://github-images.s3.amazonaws.com/help/bootcamp/Bootcamp-Fork.png'>
+<p style='text-align:center;'>clone the fork, replace [username] with your username:</p>
+<pre><code contenteditable='' data-trim=''>git clone https://github.com/[username]/gobotlib.git</code></pre>
+</section>
+<section>
+<h2>index.html</h2>
+<pre><code contenteditable='' data-trim=''>&lt;html&gt;&#x000A;  &lt;head&gt;&#x000A;    &lt;title&gt;Hi&lt;/title&gt;&#x000A;    &lt;link href=&quot;/css/all.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&#x000A;  &lt;/head&gt;&#x000A;  &lt;body&gt;&#x000A;    &lt;div class=&quot;status&quot;&gt;&#x000A;      &lt;div class=&quot;score-container&quot;&gt;&lt;/div&gt;&#x000A;      &lt;div class=&quot;message-container&quot;&gt;&lt;/div&gt;&#x000A;    &lt;/div&gt;&#x000A;    &lt;div class=&quot;game-container&quot;&gt;&#x000A;    &lt;/div&gt;&#x000A;    &lt;script src=&quot;/js/vendor/d3.v3.min.js&quot;&gt;&lt;/script&gt;&#x000A;    &lt;script src=&quot;/js/vendor/jquery-2.1.0.js&quot;&gt;&lt;/script&gt;&#x000A;    &lt;script src=&quot;/js/vendor/socket.io.js&quot;&gt;&lt;/script&gt;&#x000A;    &lt;script src=&quot;/js/ui.js&quot;&gt;&lt;/script&gt;&#x000A;    &lt;script src=&quot;/js/game.js&quot;&gt;&lt;/script&gt;&#x000A;    &lt;script src=&quot;/js/tank.js&quot;&gt;&lt;/script&gt;&#x000A;    &lt;script src=&quot;/js/main.js&quot;&gt;&lt;/script&gt;&#x000A;  &lt;/body&gt;&#x000A;&lt;/html&gt;&#x000A;</code></pre>
+</section>
+<section>
+<h2>run it</h2>
+<pre><code contenteditable='' data-trim=''>PORT=3000 go run main.go</code></pre>
+</section>
+<section>
+<h2>main.js</h2>
+<pre><code contenteditable='' data-trim=''>$(function(){&#x000A;  var ui = new Ui($('.game-container'), $('.message-container'));&#x000A;  var game = null;&#x000A;  var socket = io.connect();&#x000A;&#x000A;  socket.on("connect", function(){&#x000A;    console.log('connected');&#x000A;    socket.emit('command', 'set_name', 'Nathan');&#x000A;  });&#x000A;  socket.on("gamestate", function(state){&#x000A;    var GameState = JSON.parse(state);&#x000A;    ui.resizeContainer(GameState);&#x000A;    if (!game) {&#x000A;      game = new Game(GameState.Constants, ui.getGameContainer(), $('.score-container'), socket);&#x000A;    }&#x000A;    game.draw(GameState);&#x000A;    game.score(GameState);&#x000A;  });&#x000A;  socket.on("disconnect", function() {&#x000A;    console.log("disconnected");&#x000A;  });&#x000A;  socket.on("gameevent", function(type, info){&#x000A;    var json = JSON.parse(info);&#x000A;    console.log("gameevent", type, JSON.stringify(json));&#x000A;    switch (type) {&#x000A;      case 'crash':&#x000A;        ui.showMessage(json.player1.Name + ' and ' + json.player2.Name + ' had a crash');&#x000A;        break;&#x000A;      case 'kill':&#x000A;        ui.showMessage(json.player1.Name + ' took out ' + json.player2.Name);&#x000A;        break;&#x000A;    }&#x000A;  });&#x000A;});</code></pre>
+</section>
+<section>
+<h2>all.css</h2>
+<pre><code contenteditable='' data-trim=''>html, body {&#x000A;  height: 100%;&#x000A;  width: 100%;&#x000A;  margin: 0;&#x000A;}&#x000A;.status {&#x000A;  height: 0;&#x000A;  width: 100%;&#x000A;  position: fixed;&#x000A;}&#x000A;.game-container {&#x000A;  height: 300px;&#x000A;  width: 300px;&#x000A;  margin: 0 auto;&#x000A;}</code></pre>
+</section>
+</section>
+<section data-background='rgba(91, 184, 95, 0.5)'>
+<h2>congrats</h2>
+<h2 class='fragment'>you're a programmer</h2>
+<h2 class='fragment'>but we can do even better</h2>
+<aside class='notes'>
+- More ideas: make it possible for a user to set their name.
+- Make the UI look fantastic.
+- Make it possible to play on a phone (hint: add event listeners for touch events in Game.bindEvents)
+</aside>
+</section>
+<section>
+<section>
+<h2>deploy</h2>
+<a class='image navigate-down' href='#'>
+<img alt='Down arrow' height='238' src='https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png' width='178'>
+</a>
+</section>
+<section>
+<h2>commit</h2>
+<pre><code contenteditable='' data-trim=''>git status&#x000A;git add .&#x000A;git commit -m "added html, css and javascript"&#x000A;git push</code></pre>
+</section>
+<section>
+<h2>sign up</h2>
+<a href='https://id.heroku.com/signup'>id.heroku.com/signup</a>
+</section>
+<section>
+<h2>download</h2>
+<a href='https://toolbelt.heroku.com/'>toolbelt.heroku.com</a>
+</section>
+<section>
+<h2>login</h2>
+<pre><code contenteditable='' data-trim=''>heroku login</code></pre>
+</section>
+<section>
+<h2>create the app</h2>
+<pre><code contenteditable='' data-trim=''>heroku create -b https://github.com/kr/heroku-buildpack-go.git</code></pre>
+</section>
+<section>
+<h2>enable websockets</h2>
+<pre><code contenteditable='' data-trim=''>heroku labs:enable websockets</code></pre>
+</section>
+<section>
+<h2>deploy the app</h2>
+<pre><code contenteditable='' data-trim=''>git push heroku master</code></pre>
+</section>
+<section>
+<h2>open your app</h2>
+<pre><code contenteditable='' data-trim=''>heroku open</code></pre>
+</section>
+</section>
+<section data-background='#5BB85F'>
+<h2>congrats</h2>
+<h2 class='fragment'>you're a full stack developer</h2>
+<h2 class='fragment'>that can take an idea and make a product</h2>
+<aside class='notes'>
+- More ideas: make it possible for a user to set their name.
+- Make the UI look fantastic.
+- Make it possible to play on a phone (hint: add event listeners for touch events in Game.bindEvents)
+</aside>
+</section>
+<section>
+<h2></h2>
+<pre><code contenteditable='' data-trim=''>exit</code></pre>
+</section>
+</div>
+</div>
+<script src="../../assets/javascripts/slides-a8a690a9.js"></script>
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+  
+    theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+  
+    // Parallax scrolling
+    // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+    // parallaxBackgroundSize: '2100px 900px',
+  
+    // Optional libraries used to extend on reveal.js
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+    ]
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+$(function(){$("img.resize-ratio").each(function(a,i){var t=$(i);t.height(t.width()/parseFloat(t.data("ratio")))})});

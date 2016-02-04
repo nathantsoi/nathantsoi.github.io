@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<title>
+Rctimer BeerotorF3 Flight Controller
+</title>
+<link href="../../../../../assets/stylesheets/all-278564ea.css" rel="stylesheet" />
+<script src="../../../../../assets/javascripts/all-384bf4b4.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-7406390-2', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  
+    // outbound link tracking
+    // http://www.sitepoint.com/track-outbound-links-google-analytics/
+    (function($) {
+      "use strict";
+      // current page host
+      var baseURI = window.location.host;
+      // click event on body
+      $("body").on("click", function(e) {
+        // abandon if link already aborted or analytics is not available
+        if (e.isDefaultPrevented() || typeof ga !== "function") return;
+        // abandon if no active link or link within domain
+        var link = $(e.target).closest("a");
+        if (link.length != 1 || baseURI == link[0].host) return;
+        // cancel event and record outbound link
+        e.preventDefault();
+        var href = link[0].href;
+        ga('send', {
+          'hitType': 'event',
+          'eventCategory': 'outbound',
+          'eventAction': 'link',
+          'eventLabel': href,
+          'hitCallback': loadPage
+        });
+        // redirect after one second if recording takes too long
+        setTimeout(loadPage, 1000);
+        // redirect to outbound page
+        function loadPage() {
+          document.location = href;
+        }
+      });
+    })(jQuery);
+</script>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+</head>
+<body>
+<nav class='navbar navbar-default' id='top' role='navigation'>
+<div class='container'>
+<div class='navbar-header'>
+<div class='navbar-brand'>
+<a href='/blog/'>
+<img src="../../../../../assets/images/home/smile-0a95f89f.jpg" />
+</a>
+<span>Rctimer BeerotorF3 Flight Controller</span>
+</div>
+<button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<div class='navbar-right collapse navbar-collapse' id='bs-nav-collapse'>
+<ul class='nav navbar-nav'>
+<li>
+<form class='search navbar-form' role='search'>
+<div class='form-group'>
+<input class='form-control bloodhound typeahead' data-articles='[["Rctimer BeerotorF3 Flight Controller","/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"],["BlHeli ESCs","/blog/2015/12/06/blheli-esc-identification/"],["BlHeli ESC Upgrading and Configuration","/blog/2015/12/06/blheli-configuration/"],["BlHeli CleanFlight ESC Calibration","/blog/2015/12/06/blheli-calibration/"],["Rctimer Micro 160 BeeRotor Build, Setup and Review","/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"],["Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if","/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/"],["Rctimer OZE32 / RTFQ Flip32 AIO Integrated Flight Controller Review and Setup","/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"],["Rooting Marshmellow, keeping SELinux","/blog/2015/11/03/rooting-marshmellow-keeping-selinux/"],["MultiRotor Setup Checklist","/blog/2015/10/29/multirotor-setup-checklist/"],["ST-LINK flash and debug on the SPRacingF3","/blog/2015/10/24/st-link-flash-and-debug-on-the-spracingf3-discovery/"],["Debugging Android Native (NDK) Apps","/blog/2015/09/27/debugging-android-native-ndk-apps/"],["Fixing an Arduino 0x000000 Error","/blog/2015/09/16/fixing-an-arduino-0x000000-error/"],["GPS VK16U6 CleanFlight Setup","/blog/2015/08/26/gps-vk16u6-cleanflight-setup/"],["Go FPV Latency Testing","/blog/2015/08/24/go-fpv-latency-testing/"],["Building Android on Ubuntu 14.04","/blog/2015/07/23/building-android-on-ubuntu-14-04/"],["Migrating to Amazon Elastic Map Reduce (EMR)","/blog/2015/07/15/migrating-to-amazon-elastic-map-reduce-emr/"],["Naze32 ST-Link Debugging","/blog/2015/07/06/naze32-st-link-debugging/"],["Decompiling an APK","/blog/2015/06/30/decompiling-an-apk/"],["Nexpose Community Edition copy Scan Template","/blog/2015/06/17/nexpose-community-edition-copy-scan-template/"],["Wireless Video Tx/Rx FPV Channels","/blog/2015/06/17/boscam-tx-rx-fpv-channels/"],["Making a UHF 433mhz Inverted Vee Antenna Set","/blog/2015/06/15/making-a-uhf-433mhz-inverted-vee-antenna-set/"],["Setup OrangeLRS with OpenLRSng","/blog/2015/05/21/setup-orangelrs-with-openlrsng/"],["Go FPV Goggles","/blog/2015/05/21/go-fpv-goggles/"],["FPV250 with Cleanflight, Minimosd, OpenLRSng and a Xiaomi Yi GoPro Clone","/blog/2015/05/19/fpv250-cleanflight/"],["Flashing BlHeli on HobbyKing BlueSeries 12a ESCs With a Chinese Arduino Nano Clone","/blog/2015/05/15/flashing-blheli-on-hobbyking-blueseries-12a-escs-with-a-chinese-arduino-nano-clone/"],["Flashing NodeMCU on the ESP8266","/blog/2015/05/14/flashing-nodemcu-on-the-esp8266/"],["Ebay HC-05 Bluetooth Setup Guide","/blog/2015/05/12/ebay-hc-05-bluetooth-setup-guide/"],["3D Camera on the Tricopter","/blog/2015/05/12/3d-camera-on-the-tricopter/"],["ProRes editing in Photoshop","/blog/2015/05/11/prores-editing-in-photoshop/"],["Xiaomi Yi -- The Ant Camera","/blog/2015/05/08/xiaomi-yi-the-ant-camera/"],["Minim OSD","/blog/2015/04/22/minim-osd/"],["Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone","/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/"],["Handling Dates in Hadoop Pig","/blog/2015/04/17/handling-dates-in-hadoop-pig/"],["LiPo Battery Price Analysis","/blog/2015/04/10/lipo-battery-price-analysis/"],["ADB over WiFi (aka, how do I debug when using USB host mode?)","/blog/2015/03/27/adb-over-wifi-aka-how-do-i-debug-when-using-usb-host-mode/"],["Shrink a linux VM on OSX","/blog/2015/03/18/shrink-a-linux-vm-on-osx/"],["Mounting a VHD NTFS image on Ubuntu","/blog/2015/02/27/mounting-a-vhd-ntfs-image-on-ubuntu/"],["Ubuntu on the Beaglebone Black","/blog/2015/01/16/ubuntu-on-the-beaglebone-black/"],["Configuring the HK-T6A for a Flight Simulator","/blog/2015/01/02/configuring-the-hk-t6a-for-a-flight-simulator/"],["A complete noob&#x0027;s guide to RC","/blog/2015/01/02/a-complete-noobs-guide-to-rc/"],["DropCam on a Captive Portal","/blog/2014/11/17/dropcam-on-a-captive-portal/"],["Java reversing tips","/blog/2014/09/18/java-reversing-tips/"],["Ooize Data Pipeline Done-Flag","/blog/2014/09/02/oozie-data-pipeline-done-flag/"],["Time Machine on exFat","/blog/2014/08/06/Time_Machine_on_exFat/"],["Optimizing Postgresql","/blog/2014/01/31/Optimizing_Postgresql/"],["Mail Maker","/blog/2014/01/24/Mail_Maker/"],["Angularjs and Rails","/blog/2013/07/12/Angularjs_and_Rails/"],["nginx ssl chained certs","/blog/2013/04/24/nginx_ssl_chained_certs/"],["rails log tagging","/blog/2013/04/24/rails_log_tagging/"],["Converting an Android Project to Maven","/blog/2013/04/16/Converting_an_Android_Project_to_Maven/"],["Oh! Map my rails!","/blog/2013/04/09/Oh_Map_my_rails/"],["mysql permissions","/blog/2013/04/09/mysql_permissions/"],["reset mysql slave","/blog/2013/03/29/reset_mysql_slave/"],["installing rmagick on 10.8 with homebrew","/blog/2013/02/14/installing_rmagick_on_108_with_homebrew/"],["NP-Completeness","/blog/2013/02/08/NP-Completeness/"],["Find and replace non-breaking spaces in vim","/blog/2013/02/01/Find_and_replace_non-breaking_spaces_in_vim/"],["Open Resty the Prebuilt Reverse Proxy","/blog/2013/02/01/Open_Resty_the_Prebuilt_Reverse_Proxy/"],["Sublime Text 2 Tweaks","/blog/2012/12/17/Sublime_Text_2_Tweaks/"],["Batch Convert CR2 to JPG","/blog/2012/12/01/Batch_Convert_CR2_to_JPG/"],["Androids in the wild","/blog/2012/06/30/Androids_in_the_wild/"],["Why you need database_cleaner","/blog/2012/06/11/Why_you_need_database_cleaner/"],["Find and replace in files on linux/unix","/blog/2012/05/12/Find_and_replace_in_files_on_linuxunix/"],["a pithy guide to railsconf 2012","/blog/2012/04/26/a_pithy_guide_to_railsconf_2012/"],["faster rails boot ruby 1.9.3 + debugger","/blog/2012/04/12/faster_rails_boot_ruby_193_debugger/"],["homebrew -- fix that nasty mysql.server start segfault","/blog/2012/03/29/homebrew_--_fix_that_nasty_mysqlserver_start_segfault/"],["read/write filesystem on rooted android for an ad-free android experience","/blog/2012/02/14/readwrite_filesystem_on_rooted_android_for_an_ad-free_android_experience/"],["Turn Wikipedia Back On","/blog/2012/01/17/Turn_Wikipedia_Back_On/"],["compiling qt4 on centos 5","/blog/2012/01/06/compiling_qt4_on_centos_5/"],["pip install pymongo with xcode 4","/blog/2011/08/09/pip_install_pymongo_with_xcode_4/"],["interactive python history -- better titled \"gimme some up arrow love\"","/blog/2011/08/05/interactive_python_history_--_better_titled_gimme_some_up_arrow_love/"],["Centos 5.5 yum repo sha256 fix","/blog/2011/07/27/Centos_55_yum_repo_sha256_fix/"],["Apple Keyboard for Android!","/blog/2011/07/15/Apple_Keyboard_for_Android/"],["jQuery Everywhere","/blog/2011/05/24/jQuery_Everywhere/"],["Django Migrations","/blog/2011/05/11/Django_Migrations/"],["RVM + Rails + Git + HTML5 Boiler Plate... What more could you possibly want?","/blog/2011/02/22/RVM_Rails_Git_HTML5_Boiler_Plate_What_more_could_you_possibly_want/"],["OneCast 2.0 - downloadable podcasts for androids of every color","/blog/2011/02/18/OneCast_20_-_downloadable_podcasts_for_androids_of_every_color/"],["Default Android Menu Icons in Your App","/blog/2011/02/17/Default_Android_Menu_Icons_in_Your_App/"],["Windows 7 x64 Android Development (ADB)","/blog/2010/11/06/Windows_7_x64_Android_Development_ADB/"],["Firefox Plugin - Watching for an Application Exit Event","/blog/2010/05/03/Firefox_Plugin_-_Watching_for_an_Application_Exit_Event/"],["Stop Redrawing a Fixed Orientation Android App","/blog/2010/03/08/Stop_Redrawing_a_Fixed_Orientation_Android_App/"]]' placeholder='Search' type='text'>
+</div>
+</form>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+
+<div class='container'>
+<div class='row row-offcanvas row-offcanvas-left'>
+<!-- sidebar -->
+<div class='col-xs-3 col-sm-3 sidebar-offcanvas'>
+<div id='sidebar' role='navigation'>
+<div class='sidebar-contents'>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+<a href='#top'>Contents</a>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 table-of-contents'>
+<ul class="nav"><li><a class="type-h2" href="#pinouts"><h2>Pinouts</h2></a></li>
+<li><a class="type-h2" href="#why-choose-the-brf3"><h2>Why choose the BRF3?</h2></a></li><ul><li><a class="type-h3" href="#flight-performance"><h3>Flight Performance</h3></a></li>
+<li><a class="type-h3" href="#features"><h3>Features</h3></a></li><ul><li><a class="type-h4" href="#magnetometer-and-gps"><h4>Magnetometer and GPS</h4></a></li>
+<li><a class="type-h4" href="#minimosd"><h4>MinimOSD</h4></a></li>
+<li><a class="type-h4" href="#dataflash"><h4>DataFlash</h4></a></li></ul>
+<li><a class="type-h3" href="#value"><h3>Value</h3></a></li></ul>
+<li><a class="type-h2" href="#hardware"><h2>Hardware</h2></a></li><ul><li><a class="type-h3" href="#motor-outputs"><h3>Motor outputs</h3></a></li>
+<li><a class="type-h3" href="#receiver"><h3>Receiver</h3></a></li></ul>
+<li><a class="type-h2" href="#flashing"><h2>Flashing</h2></a></li>
+<li><a class="type-h2" href="#configuration"><h2>Configuration</h2></a></li></ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+Related Articles
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 related'>
+<ul>
+<li><a href="/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/">Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if</a></li>
+<li><a href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/">Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone</a></li>
+<li><a href="/blog/2015/12/06/blheli-configuration/">BlHeli ESC Upgrading and Configuration</a></li>
+<li><a href="/blog/2015/05/21/go-fpv-goggles/">Go FPV Goggles</a></li>
+<li><a href="/blog/2015/05/21/setup-orangelrs-with-openlrsng/">Setup OrangeLRS with OpenLRSng</a></li>
+</ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header text-center'>
+<div class='drawer-footer'>
+<small>
+©
+<a href='mailto:nathan@vertile.com'>Nathan Tsoi</a>
+</small>
+</div>
+</div>
+</div>
+<div class='row connect'>
+<div class='col-lg-12 text-center'>
+<a class='btn-sm btn-default' href='https://github.com/nathantsoi' target='_blank'>
+<i class='fa fa-github'></i>
+</a>
+<a class='btn-sm btn-default' href='https://bitbucket.org/nathantsoi' target='_blank'>
+<i class='fa fa-bitbucket'></i>
+</a>
+<a class='btn-sm btn-default' href='https://twitter.com/nathantsoi/' target='_blank'>
+<i class='fa fa-twitter'></i>
+</a>
+<a class='btn-sm btn-default' href='https://angel.co/nathantsoi' target='_blank'>
+<i class='fa fa-angellist'></i>
+</a>
+<a class='btn-sm btn-default' href='https://linkedin.com/in/nattsoi/' target='_blank'>
+<i class='fa fa-linkedin'></i>
+</a>
+<a class='btn-sm btn-default' href='https://facebook.com/nathantsoi' target='_blank'>
+<i class='fa fa-facebook'></i>
+</a>
+<a class='btn-sm btn-default' href='https://plus.google.com/112518806102274696668' target='_blank'>
+<i class='fa fa-google-plus'></i>
+</a>
+<a class='btn-sm btn-default' href='https://news.ycombinator.com/user?id=natvert' target='_blank'>
+<i class='fa fa-hacker-news'></i>
+</a>
+<a class='btn-sm btn-default' href='https://trello.com/nathantsoi' target='_blank'>
+<i class='fa fa-trello'></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- main area -->
+<div class='col-sm-9 col-xs-12' id='mainbar'>
+<article>
+<p>This is a review and hardware guide for the new <a href="http://www.rctimer.com/product-1592.html/#r-pNathanT">BeerotorF3</a> all-in-one (AIO) flight controller from Rctimer.</p>
+
+<p>Before the Beerotor, to get all my stats to display on an OSD, I had to build something like this:</p>
+
+<p><span class="center img-half-width"><a id="assets-images-blog-flight-controllers-brf-brf-mess-ba-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess-32ba0762.jpg" class="linked-img colorbox"><img data-ratio='1.5049019607843137' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess-32ba0762.jpg' class='resize-ratio lazyload trailing-space' width='4912' height='3264'></img></a></span></p>
+
+<p>With the <a href="http://www.rctimer.com/product-1592.html/#r-pNathanT">BeerotorF3 (BRF3)</a>, the current sensor, dataflash logger, pdb and OSD look like this:</p>
+
+<p><span class="center img-half-width"><a id="assets-images-blog-flight-controllers-brf-brf-clean-f-de-aa-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "><img data-ratio='1.5049019607843137' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-clean-f2de1aa6.jpg' class='resize-ratio lazyload trailing-space' width='4912' height='3264'></img></a></span></p>
+
+<p>The bottom board shown in the photo above is the companion <a href="http://www.rctimer.com/product-1593.html/#r-pNathanT">Beerotor PDB (BRPDB)</a>, which carries a shunt resistor current sensor and 28v (6s) compatible MP1593DN voltage regulator.</p>
+
+<p>BRF3 and PDB weigh only 13g, compared to 22g for 3 discrete components: PDB, NAZE32 and MinimOSD. Plus you would need to get a current sensor if you went with the discrete setup.</p>
+
+<p><span class="center img-half-width"><a id="assets-images-blog-flight-controllers-brf-brf-weight-b-a-b-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-b9a2119b.jpg" class="linked-img colorbox"><img data-ratio='0.8605042016806723' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-b9a2119b.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2380'></img></a></span></p>
+
+<p>You probably know why having an OSD that displays current consumption is so important, but I&#39;ll reiterate it anyway. A current sensor measures the exact amount of battery that has been used and the OSD displays this information as text overlaid on your video feed along with other data like RSSI, Voltage, mA in use and total mAh, flight mode and an artificial horizon.</p>
+
+<p>The BRF3 adds a barometer which will give you altitude information as you fly.</p>
+
+<p>Other F1-based AIO boards don&#39;t have the processing power to run LuxFloat at 2KHz while consuming all available sensor data, plus GPS. The on-board MinimOSD will display all the data from these sensors.</p>
+
+<h2 id="pinouts">Pinouts</h2>
+
+<p>Top:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-flight-controllers-brf-brf-top-schematic-cdf-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-top-schematic-cdf10220.jpg" class="linked-img colorbox"><img data-ratio='1.1858714533873769' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-top-schematic-cdf10220.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1727'></img></a></span></p>
+
+<p>Bottom:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-flight-controllers-brf-brf-bottom-schematic-bee-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-bottom-schematic-0534bee6.jpg" class="linked-img colorbox"><img data-ratio='0.9879401833092137' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-bottom-schematic-0534bee6.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2073'></img></a></span></p>
+
+<p>The full manual is here: <a href="http://www.rctimer.com/download/BeeRotorF3Manual.pdf">http://www.rctimer.com/download/BeeRotorF3Manual.pdf</a></p>
+
+<h2 id="why-choose-the-brf3">Why choose the BRF3?</h2>
+
+<p>You&#39;re probably thinking, why should I buy a BeerotorF3 when there are so many flight controllers on the market.</p>
+
+<p>The advantages over a Naze32, SpracingF3 or Oze32 are numerous but the decision when choosing any flight controller boils down to three things:</p>
+
+<ul>
+<li><p><a href="#flight-performance">Flight Performance</a></p></li>
+<li><p><a href="#features">Features</a></p></li>
+<li><p><a href="#value">Value</a></p></li>
+</ul>
+
+<h3 id="flight-performance">Flight Performance</h3>
+
+<p>Without flight performance, none of the other things matter, so let&#39;s look at that first. This section is kinda boring, so if you believe me when I say that F3 is better than F1, just skip to <a href="#features">features</a>.</p>
+
+<p>If you&#39;re not already, you should be flying <a href="https://github.com/borisbstyle/betaflight/releases/">BetaFlight</a>. Unlike the name sounds, BetaFlight is actually very stable.</p>
+
+<p>The un-tuned flight performance of BetaFlight is amazing. It also implements many features that may or may not make it into CleanFlight such as filters that will allow 2khz and possibly 8khz loop times, AirMode and a task scheduler.</p>
+
+<p>We&#39;ll use that final feature, the task scheduler, to compare performance between a Naze32 (running an STM32F1) and the BRF3 which runs a STM32F3.</p>
+
+<p>The F3 and the F1 run at the same clock speed, 72MHz, but the F3 has a floating point co-processor which allows it to do floating point math off-cpu. This means that it can run the LuxFloat PID controller, which is much more accurate and feels more &quot;locked in&quot; than the normal &quot;Rewrite&quot; PID controller.</p>
+
+<p>Using the <code>status</code> CLI command in BetaFlight, we can ask the task scheduler how busy the CPU is and it will tell us <code>System load</code>. 1 is equal to 100%, so if we&#39;re above 1.0, the copter will not arm. It just can&#39;t do everything we&#39;ve asked it to do within the looptime specified.</p>
+
+<p>Here&#39;s what my NAZE32 says when I try to run LuxFloat, even after disabling the manometer:</p>
+<pre class="highlight plaintext"><code>System Uptime: 20 seconds, Voltage: 0 * 0.1V (1S battery - NOT PRESENT), System load: 4.08
+CPU Clock=72MHz, GYRO=MPU6050, ACC=MPU6050.n, BARO=MS5611
+Cycle Time: 993, I2C Errors: 0, config size: 2020
+</code></pre>
+
+<p>Notice the load of 4.08, that&#39;s means the system load is 408%, which just not going to work...</p>
+
+<p>Here&#39;s what the BRF3 says:</p>
+<pre class="highlight plaintext"><code>System Uptime: 816 seconds, Voltage: 0 * 0.1V (1S battery - NOT PRESENT), System load: 0.07
+CPU Clock=72MHz, GYRO=MPU6050, ACC=MPU6050.n, BARO=BMP085
+Cycle Time: 1012, I2C Errors: 2, config size: 2060
+</code></pre>
+
+<p>Wow. 7% load.</p>
+
+<p>In terms of performance, as long as system load is under 90% or so, it really doesn&#39;t matter. Once it runs, less load doesn&#39;t make it faster. What it does mean though is that 93% of CPU time is available for other processing. With 93% CPU time left, we should have no problem running GPS, MSP, LEDs, etc.</p>
+
+<p>You&#39;ll notice from the Beerotor system status that we don&#39;t have a magnetometer on the board. Perhaps surprisingly, this is ideal.</p>
+
+<h3 id="features">Features</h3>
+
+<p>Like all F3 boards, we have 3 hardware UARTS.</p>
+
+<p>On the BRF3 they&#39;re mapped as follows.</p>
+
+<ul>
+<li><p><code>UART1</code> - wired to the onboard OSD&#39;s ATMEGA328p</p></li>
+<li><p><code>UART2</code> - GPS, next to the I2C pins</p></li>
+<li><p><code>UART3</code> - Serial RX, wired into the Spektrum Satellite port, also next to RSSI on the SB port.</p></li>
+</ul>
+
+<h4 id="magnetometer-and-gps">Magnetometer and GPS</h4>
+
+<p>As we can see from the status output in the performance section, you get an IMU and Barometer on the board, but no magnetometer (e.g. compass).</p>
+
+<p>If you&#39;ve faced issues with a noisy compass, you know it&#39;s always better to have a magnetometer you can move away from any magnetic-field-generating current loops (e.g. PDB and motor leads). Even a few inches can make a big difference.</p>
+
+<p>The problem with having a built-in magnetometer goes back to how the I2C bus works. I2C is the protocol used by the magnetometer to talk to the flight controller. I2C expects every device on the bus (a bus is just a bunch of sensors all connected on the same set of wires) to have a unique ID. However, every device does not have a unique ID, the ID is tied to a particular type of sensor. For example, the HMC5883 magnetometer on the NAZE32 has a unique address, but if you attach another HMC5883 to the I2C bus, they both have the same address and neither will work.</p>
+
+<p>For flight controllers that have an on-board compass, the traces to the on board magnetometer can be cut, then plugging in an external magnetometer will work, but with the BRF3, you won&#39;t need to do this!</p>
+
+<p>Just get a GPS with a magnetometer, like this <a href="http://www.rctimer.com/product-1287.html/#r-pNathanT">NEO-M8N with a compass</a> and plug it in here:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-flight-controllers-brf-brf-gps-e-e-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-gps-e869676e.jpg" class="linked-img colorbox"><img data-ratio='0.9879401833092137' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-gps-e869676e.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2073'></img></a></span></p>
+
+<p><code>I2C</code> ports are for the compass</p>
+
+<p><code>UART2</code> is for the GPS. Be sure to enable GPS for UART2 in the configurator</p>
+
+<h4 id="minimosd">MinimOSD</h4>
+
+<p>The really exciting part about this board is the on-board MinimOSD. A minim osd is basically two chips: the MAX7456 chip and ATMEGA328p, which you can see on the bottom of the board:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-flight-controllers-brf-brf-offset-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg" class="linked-img colorbox"><img data-ratio='1.3161953727506426' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1556'></img></a></span></p>
+
+<p>The MAX chip is in charge of drawing characters onto the video signal and the ATMEGA chip tells the MAX chip what characters to draw.</p>
+
+<p>For this to work, the MAX chip needs the video signal to pass through it, in one pin and out another, so you&#39;ll need to wire the <code>SD</code> port in-line with your camera and video transmitter:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-flight-controllers-brf-brf-video-pins-f-f-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-video-pins-f465666f.jpg" class="linked-img colorbox"><img data-ratio='1.1858714533873769' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-video-pins-f465666f.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1727'></img></a></span></p>
+
+<p><code>VIDEO_IN</code> is the yellow line from the camera (video signal)</p>
+
+<p><code>VIDEO_OUT</code> goes to your video transmitter</p>
+
+<p>Back to how the MinimOSD works: the ATMEGA chip decides what to tell the MAX chip to write. The way it does this is by asking the flight controller what is going on. It communicates with the BRF3 in this case, over UART1. It talks the same protocol as the configurator: multiwii serial protocol (MSP).</p>
+
+<p>This is important because it means that on the BRF3 UART1 is wired to the ATMEGA&#39;s UART port. Therefore, to talk to the MinimOSD for upgrading and configuration, we need to make sure the BRF3&#39;s STM32F3 is turned off and the ATMEGA is turned on. To power just the ATMEGA, connected the provided FTDI cable to your handy <a href="http://www.banggood.com/CJMCU-CP2102-USB-To-TTLSerial-Module-UART-STC-Downloader-p-970993.html?p=1G09211226617201502J">UART/USB adapter</a> and use the <a href="https://github.com/ShikOfTheRa/scarab-osd/releases">Scarab OSD</a> configuration tool to configure the MinimOSD.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-flight-controllers-brf-brf-ftdi-c-b-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-ftdi-c7442b3a.jpg" class="linked-img colorbox"><img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-ftdi-c7442b3a.jpg' class='resize-ratio lazyload trailing-space' width='563' height='422'></img></a></span></p>
+
+<p>The colors in the photo correspond to:</p>
+
+<ul>
+<li><p><code>black</code> - ground</p></li>
+<li><p><code>red</code> - 5v</p></li>
+<li><p><code>orange</code> - TX</p></li>
+<li><p><code>yellow</code> - RX</p></li>
+<li><p><code>green</code> - DTR (e.g. reset)</p></li>
+</ul>
+
+<p>Remember that when connecting UARTs, one TX goes to the other RX, so in this case orange will go to RX on the UART/USB adapter.</p>
+
+<p>Unlike the OZE32, there are no dip-switches, which is a great improvement.</p>
+
+<p>When working with the on-board MinimOSD, remember:</p>
+
+<ul>
+<li><p>UART1 must have MSP assigned in the configurator to communicate with your computer via USB and with the ATMEGA chip</p></li>
+<li><p>The board is designed such that when a USB cable is plugged in, the ATMEGA chip will be turned off, so we can communicate with the BRF3&#39;s STM32 chip</p>
+
+<ul>
+<li>The MinimOSD can only be configured or updated when the USB and battery are unplugged</li>
+<li>Connect only the FTDI adapter cable to the <code>SE</code> port to upgrade or configure the OSD</li>
+</ul></li>
+<li><p>Powering the board via a battery or any 5v lead will turn both the ATMEGA and STM32, this is &quot;Flight Mode&quot; and the OSD should show data.</p></li>
+</ul>
+
+<p>Also, there is an open pull request against CleanFlight that makes it possible to configure the MinimOSD by communicating through the STM32: <a href="https://github.com/cleanflight/cleanflight/pull/1620">https://github.com/cleanflight/cleanflight/pull/1620</a>. When this feature is finished, we won&#39;t need to go through all this to configure the MinimOSD, we&#39;ll be able to do it all via the normal USB connection.</p>
+
+<h4 id="dataflash">DataFlash</h4>
+
+<p>The BRF3 has 8MB of flash for blackbox logging. This is way more than the 2MB included on the CC3D and full NAZE32. Flash, by the way, is way faster than an SDCard-based OpenLog device, so you&#39;ll never miss a frame of data.</p>
+
+<p>Run this in the configurator CLI to enable it:</p>
+<pre class="highlight plaintext"><code>feature BLACKBOX
+set blackbox_device=SPIFLASH
+save
+</code></pre>
+
+<h3 id="value">Value</h3>
+
+<p>To get a comparable setup, in discrete components, we would need:</p>
+
+<table class="small-img">
+  <tbody>
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/MinimOSD-MAVLink-OSD-APM-APM2-Flight-Control-Board-p-73436.html?p=1G09211226617201502J"><a id="assets-images-blog-minimosd-devices-minimosd-b-e-jpg" href="../../../../../assets/images/blog/minimosd/devices/minimosd-b6e42636.jpg" class="linked-img colorbox"><img data-ratio='1.0' data-src='../../../../../assets/images/blog/minimosd/devices/minimosd-b6e42636.jpg' class='resize-ratio lazyload ' width='361' height='361'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/MinimOSD-MAVLink-OSD-APM-APM2-Flight-Control-Board-p-73436.html?p=1G09211226617201502J">$7.99 MinimOSD</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1526.html/#r-pNathanT"><a id="assets-images-blog-flight-controllers-brf-comparable-pdb-f-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/comparable-pdb-908f1448.jpg" class="linked-img colorbox"><img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/flight_controllers/brf3/comparable-pdb-908f1448.jpg' class='resize-ratio lazyload ' width='563' height='422'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1526.html/#r-pNathanT">$3.99 PDB</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Upgrade-NAZE32-SP-Racing-F3-Flight-Control-6-DOF-10-DOF-for-Milticopter-p-1010232.html?p=1G09211226617201502J"><a id="assets-images-blog-flight-controllers-sprf-a-c-jpg" href="../../../../../assets/images/blog/flight_controllers/sprf3-a6573c82.jpg" class="linked-img colorbox"><img data-ratio='1.0' data-src='../../../../../assets/images/blog/flight_controllers/sprf3-a6573c82.jpg' class='resize-ratio lazyload ' width='600' height='600'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Upgrade-NAZE32-SP-Racing-F3-Flight-Control-6-DOF-10-DOF-for-Milticopter-p-1010232.html?p=1G09211226617201502J">$26.99 SPRACINGF3</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1125.html?p=1G09211226617201502J"><a id="assets-images-blog-flight-controllers-brf-comparable-power-module-ebafd-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/comparable-power-module-84ebafd6.jpg" class="linked-img colorbox"><img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/flight_controllers/brf3/comparable-power-module-84ebafd6.jpg' class='resize-ratio lazyload ' width='563' height='422'></img></a></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1125.html?p=1G09211226617201502J">$10.99 Power Module</a>
+        </td>
+      </tr>
+
+  </tbody>
+</table>
+
+<p><br/></p>
+
+<p>This totals up to $49.96. Plus, you&#39;re stuck trying to figure out where to put that giant MinimOSD and the power module with the current sensor. It&#39;s so much nicer having it all in one place, ready to go.</p>
+
+<p>At $34.99 for the BRF3 and $5.99 for the BRPDB, the Beerotor setup is $40.98. Not only is it smaller and lighter than buying discrete components, it&#39;s cheaper too!</p>
+
+<h2 id="hardware">Hardware</h2>
+
+<p>The build quality and hardware layout on this board is great.</p>
+
+<p>The USB is on the size, so no need to mess with the board orientation in the configurator. </p>
+
+<p>The baro is on the top of the board, so be sure to cover that with some open cell foam, or mount it upside-down and put a piece of open cell foam between the frame and the baro. Wind passing over the top of the baro can significantly decrease it&#39;s accuracy.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-flight-controllers-brf-brf-baro-a-c-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-baro-2a88769c.jpg" class="linked-img colorbox"><img data-ratio='1.0009775171065494' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-baro-2a88769c.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2046'></img></a></span></p>
+
+<h3 id="motor-outputs">Motor outputs</h3>
+
+<p>I&#39;m a big fan of the small DF (also called SH) connectors, these are the long white plugs. They save space and are much easier to work with than the 2.54mm JST servo-style pins. Plus it makes stack-mounting multiple 35x35mm boards possible. The connectors on the BRF3 have been upgraded from SH1.0 to SH1.25, meaning the pins are ever so slightly larger and more robust, but the connector size is still tiny. Plus, this is the same pin spacing as the PixHawk, which means you can start re-using cables between some projects!</p>
+
+<p>They even put a boot-button on the board! This is awesome, no more getting out the tweezers every time I want to short the boot pins to upgrade BetaFlight!</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-flight-controllers-brf-brf-boot-button-e-ecbff-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-boot-button-e90ecbff.jpg" class="linked-img colorbox"><img data-ratio='1.0009775171065494' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-boot-button-e90ecbff.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2046'></img></a></span></p>
+
+<p>The motor output pins are through-hole vias, ready for some male 2.54mm headers. Motor 1 is on the left, 8 is on the right.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-flight-controllers-brf-brf-motor-outputs-e-b-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-motor-outputs-469e48b4.jpg" class="linked-img colorbox"><img data-ratio='1.0009775171065494' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-motor-outputs-469e48b4.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2046'></img></a></span></p>
+
+<p>If you want to use pin headers, grab some right angle 2.54mm pins, my board didn&#39;t come with any. I think it will save weight and space to just solder the ESC leads right onto the flight controller, so I&#39;ll skip the pin headers. At some point, I hope all the flight controllers standardize to SH1.25 connectors and ESCs ship either without signal wires or with signal wires that terminate in a single female connector that fits into a SH1.25 connector.</p>
+
+<p>You&#39;ll also want to wire your ESC signal ground wires to the board.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-flight-controllers-brf-brf-ground-c-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-ground-c475091a.jpg" class="linked-img colorbox"><img data-ratio='1.0009775171065494' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-ground-c475091a.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2046'></img></a></span></p>
+
+<h3 id="receiver">Receiver</h3>
+
+<p>The Spektrum Satellite port is here:</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-flight-controllers-brf-brf-spektrum-d-ee-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-spektrum-d1ee1076.jpg" class="linked-img colorbox"><img data-ratio='1.1858714533873769' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-spektrum-d1ee1076.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1727'></img></a></span></p>
+
+<p>S.Bus, SUMD:</p>
+
+<p>Although I don&#39;t have an S.Bus RX to confirm this, it looks like an external inverter is not necessary. It should work fine plugged in directly to UART3. Make sure you take either 5v from the same port or 3.3v from the Spektrum port, depending on what voltage your receiver can handle.</p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-flight-controllers-brf-brf-rx-bfda-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-rx-bfda58a0.jpg" class="linked-img colorbox"><img data-ratio='1.1838150289017342' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-rx-bfda58a0.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='1730'></img></a></span></p>
+
+<p>The RSSI analog to digital converter (ADC) is on the <code>SB</code> port as well, along with PPM input.</p>
+
+<p>Note that UART3 RX is on both ports <code>SA</code> an <code>SB</code>. Either port can be used since both these pins are connected to the same wire.</p>
+
+<h2 id="flashing">Flashing</h2>
+
+<p>Like all F3 chips, make sure you set the manual baud rate to <code>25600</code></p>
+
+<p><span class="center img-three-quarters-width"><a id="assets-images-blog-flight-controllers-brf-cf-f-manual-baud-fb-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-89fb67a0.jpg" class="linked-img colorbox"><img data-ratio='1.1348651348651349' data-src='../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-89fb67a0.jpg' class='resize-ratio lazyload trailing-space' width='1136' height='1001'></img></a></span></p>
+
+<p>Download the latest version of <a href="https://github.com/borisbstyle/betaflight/releases/">BetaFlight</a> from the github.com release page <a href="https://github.com/borisbstyle/betaflight/releases/">https://github.com/borisbstyle/betaflight/releases/</a>.</p>
+
+<p>Click the <code>Load local firmware</code> button and pick the SPRF3 hex file.</p>
+
+<p>Click <code>Flash Firmware</code></p>
+
+<p>If for some reason that doesn&#39;t work, flashing via bootloader mode is amazingly easy. Just unplug the BRF3, hold the boot button down while you power it on by plugging it into USB. Choose &quot;no reboot&quot; and hit flash.</p>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>If you&#39;re using the BRPDB, after flashing you&#39;ll want to set these options. Paste them in the cli:</p>
+<pre class="highlight plaintext"><code>set vbat_scale = 110
+set current_meter_scale = 380
+save
+</code></pre>
+
+<p>This will calibrate the flight controller to the PDB&#39;s voltage and current sensor hardware.</p>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+//<![CDATA[
+                  var disqus_shortname = 'vertile';
+          
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+//]]>
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</article>
+
+</div>
+</div>
+</div>
+<script>
+  var vglnk = { key: 'ddedf6f00d454f08b923376f1cb1cfbf' };
+  
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = '//cdn.viglink.com/api/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
+
+</body>
+</html>

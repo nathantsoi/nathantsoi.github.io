@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<title></title>
+<link href="assets/stylesheets/home-782bda44.css" rel="stylesheet" />
+<script src="assets/javascripts/all-384bf4b4.js"></script>
+<script src="assets/javascripts/vendor/ace-221a9aa8.js"></script>
+<script src="assets/javascripts/vendor/theme-pastel_on_dark-f22de7e6.js"></script>
+<script src="assets/javascripts/vendor/mode-coffee-186341fc.js"></script>
+<script src="assets/javascripts/vendor/worker-coffee-f1f97487.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-7406390-2', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  
+    // outbound link tracking
+    // http://www.sitepoint.com/track-outbound-links-google-analytics/
+    (function($) {
+      "use strict";
+      // current page host
+      var baseURI = window.location.host;
+      // click event on body
+      $("body").on("click", function(e) {
+        // abandon if link already aborted or analytics is not available
+        if (e.isDefaultPrevented() || typeof ga !== "function") return;
+        // abandon if no active link or link within domain
+        var link = $(e.target).closest("a");
+        if (link.length != 1 || baseURI == link[0].host) return;
+        // cancel event and record outbound link
+        e.preventDefault();
+        var href = link[0].href;
+        ga('send', {
+          'hitType': 'event',
+          'eventCategory': 'outbound',
+          'eventAction': 'link',
+          'eventLabel': href,
+          'hitCallback': loadPage
+        });
+        // redirect after one second if recording takes too long
+        setTimeout(loadPage, 1000);
+        // redirect to outbound page
+        function loadPage() {
+          document.location = href;
+        }
+      });
+    })(jQuery);
+</script>
+
+</head>
+<body class='home'>
+<main>
+<div id='skrollr-body'>
+<section class='homeSlide' id='slide-home'>
+<div class='bcg' data-anchor-target='#slide-home' data-center='background-position: 50% 0px;' data-top-bottom='background-position: 50% -100px; background: rgba(0,0,0,0);' data-top='background: rgba(40,40,40,.5);' style='background-position: 50% 0px;'>
+<div class='hsContainer'>
+<div class='hsContent' data-anchor-target='#slide-home img' data-center='opacity: 1' data-top='opacity: 0' style='opacity: 1;'>
+<div class='nathan'>
+<h1>Nathan Tsoi</h1>
+<img src="assets/images/home/smile-0a95f89f.jpg" />
+</div>
+<div class='links'>
+<a href='/blog'>
+<span class='btn btn-default round'>
+Blog
+</span>
+</a>
+<a href='/bio'>
+<span class='btn btn-default round'>
+Bio
+</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id='slide-cs'>
+<div class='powerbar' data-anchor-target='#slide-cs' data-bottom-top='width: 0%' data-top-top='width: 100%'></div>
+<div class='mac'>
+<div class='screen'>
+<div class='terminal' data--50-bottom-top='' data-anchor-target='#slide-cs-terminal' data-emit-events data-message="# the comment&#x000A;readers = -&gt;&#x000A;console.log('all your parallax r belong to us')&#x000A;true" id='slide-cs-terminal'></div>
+</div>
+</div>
+<div class='table-holder'>
+<div class='wood'></div>
+</div>
+</section>
+<section class='homeSlide homeSlideTall' id='slide-buda'>
+<div class='bcg' data-anchor-target='#slide-buda' data-bottom-top='background-position: 50% 100px;' data-center='background-position: 50% 0px;' data-top-bottom='background-position: 50% -100px;'></div>
+</section>
+<section id='slide-tie'>
+<div class='row'>
+<div class='col-lg-12 text-center'>
+<div class='caption'>
+<h1>#nicetie</h1>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-6 text-center'>
+<div class='twitter'>
+<div class='embed'>
+<a class='twitter-timeline' data-chrome='noscrollbar transparent noborders nofooter noheader' data-dnt data-tweet-limit='4' data-widget-id='477602792924643328' height='400' href='https://twitter.com/search?q=%23nicetie' width='300'></a>
+<script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+</div>
+</div>
+</div>
+<div class='col-xs-6 text-center'>
+<div class='tie-pic'></div>
+</div>
+</div>
+</section>
+<section class='homeSlide homeSlideTall' id='slide-jump'>
+<div class='bcg' data-anchor-target='#slide-jump' data-bottom-top='background-position: 50% 100px;' data-center='background-position: 50% 0px;' data-top-bottom='background-position: 50% -100px;'></div>
+</section>
+<section id='slide-onecast'>
+<div class='row'>
+<div class='col-lg-12 text-center'>
+<div class='caption'>
+<h1>#onecast</h1>
+<h4>
+podcast simply - available on
+<a href='https://play.google.com/store/apps/details?id=com.vertile.onecast'>google play</a>
+</h4>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 text-center'>
+<div class='onecast-pic'></div>
+</div>
+</div>
+</section>
+<section class='homeSlide homeSlideTall' id='slide-fishing'>
+<div class='bcg' data-anchor-target='#slide-fishing' data-bottom-top='background-position: 50% 100px;' data-center='background-position: 50% 0px;' data-top-bottom='background-position: 50% -100px;'></div>
+</section>
+</div>
+
+</main>
+<script src="assets/javascripts/home-826b6cda.js"></script>
+</body>
+</html>
