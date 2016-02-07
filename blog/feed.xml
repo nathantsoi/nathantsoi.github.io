@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"/>
     <id>http://nathan.vertile.com/blog/2016/02/03/rctimer-beerotorf3-flight-controller/</id>
     <published>2016-02-02T19:56:00-08:00</published>
-    <updated>2016-02-03T21:19:34-08:00</updated>
+    <updated>2016-02-06T21:26:06-08:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -42,6 +42,8 @@
 
 &lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-weight-b-a-b-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-b9a2119b.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='0.8605042016806723' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-b9a2119b.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2380'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
+&lt;p&gt;Stacked together, the boards are 16mm tall. With two sets of 5mm standoffs, which allows for a little bit more comfortable mounting, it&amp;#39;s 22mm tall.&lt;/p&gt;
+
 &lt;h2 id="pinouts"&gt;Pinouts&lt;/h2&gt;
 
 &lt;p&gt;Top:&lt;/p&gt;
@@ -68,7 +70,7 @@
 
 &lt;h3 id="flight-performance"&gt;Flight Performance&lt;/h3&gt;
 
-&lt;p&gt;Without flight performance, none of the other things matter, so let&amp;#39;s look at that first. This section is kinda boring, so if you believe me when I say that F3 is better than F1, just skip to &lt;a href="#features"&gt;features&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Without flight performance, none of the other things matter, so let&amp;#39;s look at that first. If you&amp;#39;re already convinced that F3 processors are better than F1, just skip to &lt;a href="#features"&gt;features&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;If you&amp;#39;re not already, you should be flying &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;BetaFlight&lt;/a&gt;. Unlike the name sounds, BetaFlight is actually very stable.&lt;/p&gt;
 
@@ -80,7 +82,7 @@
 
 &lt;p&gt;Using the &lt;code&gt;status&lt;/code&gt; CLI command in BetaFlight, we can ask the task scheduler how busy the CPU is and it will tell us &lt;code&gt;System load&lt;/code&gt;. 1 is equal to 100%, so if we&amp;#39;re above 1.0, the copter will not arm. It just can&amp;#39;t do everything we&amp;#39;ve asked it to do within the looptime specified.&lt;/p&gt;
 
-&lt;p&gt;Here&amp;#39;s what my NAZE32 says when I try to run LuxFloat, even after disabling the manometer:&lt;/p&gt;
+&lt;p&gt;Here&amp;#39;s what my NAZE32 says when I try to run LuxFloat, even after disabling the magnetometer:&lt;/p&gt;
 &lt;pre class="highlight plaintext"&gt;&lt;code&gt;System Uptime: 20 seconds, Voltage: 0 * 0.1V (1S battery - NOT PRESENT), System load: 4.08
 CPU Clock=72MHz, GYRO=MPU6050, ACC=MPU6050.n, BARO=MS5611
 Cycle Time: 993, I2C Errors: 0, config size: 2020
@@ -96,7 +98,15 @@ Cycle Time: 1012, I2C Errors: 2, config size: 2060
 
 &lt;p&gt;Wow. 7% load.&lt;/p&gt;
 
+&lt;p&gt;I did some further testing, taking the average free processing time for both the F1 and F3 processors. These were taken with the following sensors enabled: GYRO:MPU6050, ACC:MPU6050, BARO:BMP085. There are no data points for 2khz on the F1, since it is not possible to run 2khz with these sensors enabled. The closer a value is to 100%, the better.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-free-processing-time-f-dc-png" href="../../../../../assets/images/blog/flight_controllers/free-processing-time-f04173dc.png" class="linked-img colorbox"&gt;&lt;img data-ratio='1.6172506738544474' data-src='../../../../../assets/images/blog/flight_controllers/free-processing-time-f04173dc.png' class='resize-ratio lazyload trailing-space' width='600' height='371'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
 &lt;p&gt;In terms of performance, as long as system load is under 90% or so, it really doesn&amp;#39;t matter. Once it runs, less load doesn&amp;#39;t make it faster. What it does mean though is that 93% of CPU time is available for other processing. With 93% CPU time left, we should have no problem running GPS, MSP, LEDs, etc.&lt;/p&gt;
+
+&lt;p&gt;That&amp;#39;s what it really comes down to: free processor capacity. The F3 will allow you to run so many more features, like when the &lt;a href="https://github.com/iNavFlight/inav"&gt;iNav&lt;/a&gt; fork is ready (it&amp;#39;s still under development), adding GPS will allow autonomous flight, but you&amp;#39;ll need a board with enough free processor capacity.&lt;/p&gt;
+
+&lt;p&gt;The other thing you&amp;#39;ll want, to enable more features and sensors, are more UARTs. There are only 2 on the F1 processor and 3 on the F3 processor. These are considered &amp;quot;Hardware Serial&amp;quot; ports, which don&amp;#39;t take extra processor time. The F3 processor is fast enough to support a few more &amp;quot;Software Serial&amp;quot; ports, which do take extra processor time and therefore are probably not usable on the F1 board. You&amp;#39;ll never want to put a critical component, like a serial receiver on a software serial port. Same goes for GPS if you&amp;#39;re using it to navigate. OSD might be OK on software serial, but it&amp;#39;s already wired to a hardware UART on the AIO boards (like the &lt;a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"&gt;OZE32&lt;/a&gt;), so the OZE32 won&amp;#39;t support GPS navigation.&lt;/p&gt;
 
 &lt;p&gt;You&amp;#39;ll notice from the Beerotor system status that we don&amp;#39;t have a magnetometer on the board. Perhaps surprisingly, this is ideal.&lt;/p&gt;
 
@@ -120,7 +130,7 @@ Cycle Time: 1012, I2C Errors: 2, config size: 2060
 
 &lt;p&gt;The problem with having a built-in magnetometer goes back to how the I2C bus works. I2C is the protocol used by the magnetometer to talk to the flight controller. I2C expects every device on the bus (a bus is just a bunch of sensors all connected on the same set of wires) to have a unique ID. However, every device does not have a unique ID, the ID is tied to a particular type of sensor. For example, the HMC5883 magnetometer on the NAZE32 has a unique address, but if you attach another HMC5883 to the I2C bus, they both have the same address and neither will work.&lt;/p&gt;
 
-&lt;p&gt;For flight controllers that have an on-board compass, the traces to the on board magnetometer can be cut, then plugging in an external magnetometer will work, but with the BRF3, you won&amp;#39;t need to do this!&lt;/p&gt;
+&lt;p&gt;For flight controllers that have an on-board compass, the traces to the can be cut. Then, plugging in an external magnetometer will work, but with the BRF3, you won&amp;#39;t need to do this!&lt;/p&gt;
 
 &lt;p&gt;Just get a GPS with a magnetometer, like this &lt;a href="http://www.rctimer.com/product-1287.html/#r-pNathanT"&gt;NEO-M8N with a compass&lt;/a&gt; and plug it in here:&lt;/p&gt;
 
@@ -146,9 +156,11 @@ Cycle Time: 1012, I2C Errors: 2, config size: 2060
 
 &lt;p&gt;&lt;code&gt;VIDEO_OUT&lt;/code&gt; goes to your video transmitter&lt;/p&gt;
 
+&lt;p&gt;Use the ground, if you have a lead from the camera and to the transmitter available, to minimize as much noise as possible.&lt;/p&gt;
+
 &lt;p&gt;Back to how the MinimOSD works: the ATMEGA chip decides what to tell the MAX chip to write. The way it does this is by asking the flight controller what is going on. It communicates with the BRF3 in this case, over UART1. It talks the same protocol as the configurator: multiwii serial protocol (MSP).&lt;/p&gt;
 
-&lt;p&gt;This is important because it means that on the BRF3 UART1 is wired to the ATMEGA&amp;#39;s UART port. Therefore, to talk to the MinimOSD for upgrading and configuration, we need to make sure the BRF3&amp;#39;s STM32F3 is turned off and the ATMEGA is turned on. To power just the ATMEGA, connected the provided FTDI cable to your handy &lt;a href="http://www.banggood.com/CJMCU-CP2102-USB-To-TTLSerial-Module-UART-STC-Downloader-p-970993.html?p=1G09211226617201502J"&gt;UART/USB adapter&lt;/a&gt; and use the &lt;a href="https://github.com/ShikOfTheRa/scarab-osd/releases"&gt;Scarab OSD&lt;/a&gt; configuration tool to configure the MinimOSD.&lt;/p&gt;
+&lt;p&gt;This is important because it means that on the BRF3 UART1 is wired to the ATMEGA&amp;#39;s UART port. Therefore, to talk to the MinimOSD for upgrading and configuration, we need to make sure the BRF3&amp;#39;s STM32F3 is turned off and the ATMEGA is turned on. To power just the ATMEGA, connect the provided FTDI cable to your handy &lt;a href="http://www.banggood.com/CJMCU-CP2102-USB-To-TTLSerial-Module-UART-STC-Downloader-p-970993.html?p=1G09211226617201502J"&gt;UART/USB adapter&lt;/a&gt; and use the &lt;a href="https://github.com/ShikOfTheRa/scarab-osd/releases"&gt;Scarab OSD&lt;/a&gt; configuration tool to configure the MinimOSD.&lt;/p&gt;
 
 &lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-ftdi-c-b-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-ftdi-c7442b3a.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-ftdi-c7442b3a.jpg' class='resize-ratio lazyload trailing-space' width='563' height='422'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
@@ -176,7 +188,7 @@ Cycle Time: 1012, I2C Errors: 2, config size: 2060
 &lt;li&gt;The MinimOSD can only be configured or updated when the USB and battery are unplugged&lt;/li&gt;
 &lt;li&gt;Connect only the FTDI adapter cable to the &lt;code&gt;SE&lt;/code&gt; port to upgrade or configure the OSD&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Powering the board via a battery or any 5v lead will turn both the ATMEGA and STM32, this is &amp;quot;Flight Mode&amp;quot; and the OSD should show data.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Powering the board via a battery or any 5v lead will turn both the ATMEGA and STM32 on. This is &amp;quot;Flight Mode.&amp;quot; When both are powered, the OSD should show data from the flight controller on your display.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Also, there is an open pull request against CleanFlight that makes it possible to configure the MinimOSD by communicating through the STM32: &lt;a href="https://github.com/cleanflight/cleanflight/pull/1620"&gt;https://github.com/cleanflight/cleanflight/pull/1620&lt;/a&gt;. When this feature is finished, we won&amp;#39;t need to go through all this to configure the MinimOSD, we&amp;#39;ll be able to do it all via the normal USB connection.&lt;/p&gt;
@@ -226,10 +238,10 @@ save
 
           &lt;tr&gt;
         &lt;td&gt;
-          &lt;a target="_blank" href="http://www.rctimer.com/product-1125.html?p=1G09211226617201502J"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-comparable-power-module-ebafd-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/comparable-power-module-84ebafd6.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/flight_controllers/brf3/comparable-power-module-84ebafd6.jpg' class='resize-ratio lazyload ' width='563' height='422'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1125.html/#r-pNathanT"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-comparable-power-module-ebafd-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/comparable-power-module-84ebafd6.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.3341232227488151' data-src='../../../../../assets/images/blog/flight_controllers/brf3/comparable-power-module-84ebafd6.jpg' class='resize-ratio lazyload ' width='563' height='422'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/a&gt;
         &lt;/td&gt;
         &lt;td&gt;
-          &lt;a target="_blank" href="http://www.rctimer.com/product-1125.html?p=1G09211226617201502J"&gt;$10.99 Power Module&lt;/a&gt;
+          &lt;a target="_blank" href="http://www.rctimer.com/product-1125.html/#r-pNathanT"&gt;$10.99 Power Module&lt;/a&gt;
         &lt;/td&gt;
       &lt;/tr&gt;
 
@@ -254,9 +266,9 @@ save
 
 &lt;h3 id="motor-outputs"&gt;Motor outputs&lt;/h3&gt;
 
-&lt;p&gt;I&amp;#39;m a big fan of the small DF (also called SH) connectors, these are the long white plugs. They save space and are much easier to work with than the 2.54mm JST servo-style pins. Plus it makes stack-mounting multiple 35x35mm boards possible. The connectors on the BRF3 have been upgraded from SH1.0 to SH1.25, meaning the pins are ever so slightly larger and more robust, but the connector size is still tiny. Plus, this is the same pin spacing as the PixHawk, which means you can start re-using cables between some projects!&lt;/p&gt;
+&lt;p&gt;I&amp;#39;m a big fan of the small DF (also called SH) connectors. These are the long white plugs. They save space and are much easier to work with than the 2.54mm JST servo-style pins. Plus it makes stack-mounting multiple 35x35mm boards possible. The connectors on the BRF3 have been upgraded from SH1.0 to SH1.25, meaning the pins are ever so slightly larger and more robust, but the connector size is still tiny. Plus, this is the same pin spacing as the PixHawk, which means you can start re-using cables between some projects!&lt;/p&gt;
 
-&lt;p&gt;They even put a boot-button on the board! This is awesome, no more getting out the tweezers every time I want to short the boot pins to upgrade BetaFlight!&lt;/p&gt;
+&lt;p&gt;They even put a boot-button on the board! This is awesome. No more getting out the tweezers every time I want to short the boot pins to upgrade BetaFlight!&lt;/p&gt;
 
 &lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-boot-button-e-ecbff-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-boot-button-e90ecbff.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.0009775171065494' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-boot-button-e90ecbff.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2046'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
@@ -284,11 +296,11 @@ save
 
 &lt;p&gt;The RSSI analog to digital converter (ADC) is on the &lt;code&gt;SB&lt;/code&gt; port as well, along with PPM input.&lt;/p&gt;
 
-&lt;p&gt;Note that UART3 RX is on both ports &lt;code&gt;SA&lt;/code&gt; an &lt;code&gt;SB&lt;/code&gt;. Either port can be used since both these pins are connected to the same wire.&lt;/p&gt;
+&lt;p&gt;Note that the UART3 RX pin is available on both port &lt;code&gt;SA&lt;/code&gt; and port &lt;code&gt;SB&lt;/code&gt;. Either can be used.&lt;/p&gt;
 
 &lt;h2 id="flashing"&gt;Flashing&lt;/h2&gt;
 
-&lt;p&gt;Like all F3 chips, make sure you set the manual baud rate to &lt;code&gt;25600&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Like all F3 chips, make sure you set the manual baud rate to &lt;code&gt;256000&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;span class="center img-three-quarters-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-cf-f-manual-baud-fb-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-89fb67a0.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.1348651348651349' data-src='../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-89fb67a0.jpg' class='resize-ratio lazyload trailing-space' width='1136' height='1001'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
