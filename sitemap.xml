@@ -1297,7 +1297,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/selinux</loc>
+    <loc>http://nathan.vertile.com/blog/2014/08/06</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1309,7 +1309,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2014/08/06</loc>
+    <loc>http://nathan.vertile.com/blog/tags/sprf3</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1581,7 +1581,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/sprf3</loc>
+    <loc>http://nathan.vertile.com/blog/tags/selinux</loc>
     <priority>0.7</priority>
   </url>
 </urlset>

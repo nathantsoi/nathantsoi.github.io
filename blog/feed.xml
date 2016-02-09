@@ -30,17 +30,17 @@
 
 &lt;p&gt;Before the BRF3, to get all my stats to display on an OSD, I had to build something like this, with a mess of different wires and 4 discrete components:&lt;/p&gt;
 
-&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-mess-ba-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess-32ba0762.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5049019607843137' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess-32ba0762.jpg' class='resize-ratio lazyload trailing-space' width='4912' height='3264'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-mess-cb-c-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess-0cb9c426.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='1.5049019607843137' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess-0cb9c426.jpg' class='resize-ratio lazyload trailing-space' width='4912' height='3264'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;With the &lt;a href="http://www.rctimer.com/product-1592.html/#r-pNathanT"&gt;BeerotorF3&lt;/a&gt;, those 4 components (current sensor, Blackbox, PDB and OSD) look like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-clean-f-de-aa-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "&gt;&lt;img data-ratio='1.5049019607843137' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-clean-f2de1aa6.jpg' class='resize-ratio lazyload trailing-space' width='4912' height='3264'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-clean-b-e-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "&gt;&lt;img data-ratio='1.5049019607843137' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-clean-b699e418.jpg' class='resize-ratio lazyload trailing-space' width='4912' height='3264'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;The bottom board shown in the photo above is the companion &lt;a href="http://www.rctimer.com/product-1593.html/#r-pNathanT"&gt;Beerotor PDB (BRPDB)&lt;/a&gt;, which carries a shunt resistor current sensor and 28v (6s) compatible MP1593DN voltage regulator.&lt;/p&gt;
 
 &lt;p&gt;BRF3 and PDB weigh only 13g, compared to 22g for 3 discrete components: PDB, NAZE32 and MinimOSD. Plus you would need to get a current sensor if you went with the discrete setup.&lt;/p&gt;
 
-&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-weight-b-a-b-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-b9a2119b.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='0.8605042016806723' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-b9a2119b.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2380'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="center img-half-width"&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-weight-b-ce-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-72b768ce.jpg" class="linked-img colorbox"&gt;&lt;img data-ratio='0.8605042016806723' data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-72b768ce.jpg' class='resize-ratio lazyload trailing-space' width='2048' height='2380'&gt;&lt;/img&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Stacked together, the boards are 16mm tall. With two sets of 5mm standoffs, which allows for a little bit more comfortable mounting, it&amp;#39;s 22mm tall.&lt;/p&gt;
 
@@ -525,7 +525,7 @@ No Connection &amp;lt;-&amp;gt; ESC 5v Power
     <link rel="alternate" href="http://nathan.vertile.com/blog/2015/12/06/blheli-calibration/"/>
     <id>http://nathan.vertile.com/blog/2015/12/06/blheli-calibration/</id>
     <published>2015-12-06T13:00:00-08:00</published>
-    <updated>2016-02-03T19:04:56-08:00</updated>
+    <updated>2016-02-06T22:30:23-08:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -533,7 +533,7 @@ No Connection &amp;lt;-&amp;gt; ESC 5v Power
 
 &lt;h3 id="why-calibrate-escs"&gt;Why Calibrate ESCs?&lt;/h3&gt;
 
-&lt;p&gt;Joshua Bardwell Explains in these two videos why this is important&lt;/p&gt;
+&lt;p&gt;Joshua Bardwell explains in these two videos why this is important&lt;/p&gt;
 
 &lt;div class="videoWrapper"&gt;
   &lt;iframe width="853" height="480" src="https://www.youtube.com/embed/WFU3VewGbbA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
