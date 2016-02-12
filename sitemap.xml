@@ -257,14 +257,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013/04</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2013/07/12</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>http://nathan.vertile.com/bio</loc>
     <priority>0.7</priority>
   </url>
@@ -441,6 +433,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/02/10/rctimer-victory230-fpv-miniquad</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog</loc>
     <priority>0.7</priority>
   </url>
@@ -465,7 +461,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013/07</loc>
+    <loc>http://nathan.vertile.com/blog/2013/04</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -477,7 +473,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013</loc>
+    <loc>http://nathan.vertile.com/blog/2013/07/12</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -485,15 +481,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2013/07</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2013</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2014/01/24</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2014/01/31</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2014/01</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1269,7 +1265,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/stm32f3discovery</loc>
+    <loc>http://nathan.vertile.com/blog/2014/01/31</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1297,7 +1293,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2014/08/06</loc>
+    <loc>http://nathan.vertile.com/blog/tags/selinux</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1357,11 +1353,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/tags/230mm</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/vortex250</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/carbon-fiber</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016</loc>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2016/02</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/02/10</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1581,7 +1593,15 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/selinux</loc>
+    <loc>http://nathan.vertile.com/blog/2014/08/06</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2014/01</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/stm32f3discovery</loc>
     <priority>0.7</priority>
   </url>
 </urlset>
