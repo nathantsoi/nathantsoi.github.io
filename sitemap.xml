@@ -253,10 +253,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013/04/24</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>http://nathan.vertile.com/bio</loc>
     <priority>0.7</priority>
   </url>
@@ -461,23 +457,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2013/04/24</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2013/04</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <loc>http://nathan.vertile.com/slides/notes</loc>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2013/07/12</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/slides/notes</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -486,10 +486,6 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2013</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2014/01/24</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1237,7 +1233,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/arduinoisp</loc>
+    <loc>http://nathan.vertile.com/blog/2014/01/24</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1265,7 +1261,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2014/01/31</loc>
+    <loc>http://nathan.vertile.com/blog/tags/stm32f3discovery</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1601,7 +1597,11 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/stm32f3discovery</loc>
+    <loc>http://nathan.vertile.com/blog/2014/01/31</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/arduinoisp</loc>
     <priority>0.7</priority>
   </url>
 </urlset>

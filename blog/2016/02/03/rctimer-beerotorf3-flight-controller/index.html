@@ -28,7 +28,7 @@
 Rctimer BeerotorF3 Flight Controller
 </title>
 <link href="../../../../../assets/stylesheets/all-ca47499b.css" rel="stylesheet" />
-<script src="../../../../../assets/javascripts/all-c450b07a.js"></script>
+<script src="../../../../../assets/javascripts/all-f0e3b20f.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -196,7 +196,7 @@ Related Articles
 <article>
 <p>This is a review and setup guide for the new <a href="http://www.rctimer.com/product-1592.html/#r-pNathanT">BeerotorF3 (BRF3)</a> all-in-one (AIO) flight controller from Rctimer.</p>
 
-<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 75.9765625%;'><a id="assets-images-blog-flight-controllers-brf-brf-offset-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 75.9765625%;'><a id="assets-images-blog-flight-controllers-brf-brf-offset-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg' class='trailing-space' ></img></a></div></div>
 
 <h2 id="overview">Overview</h2>
 
@@ -206,17 +206,17 @@ Related Articles
 
 <p>Before the BRF3, to get all my stats to display on an OSD, I had to build something like this, with a mess of different wires and 4 discrete components:</p>
 
-<div class='ratio-box-resizer img-half-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-flight-controllers-brf-brf-mess-cb-c-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess-0cb9c426.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess-0cb9c426.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-half-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-flight-controllers-brf-brf-mess-cb-c-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess-0cb9c426.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess_prev-ebdde045.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>With the <a href="http://www.rctimer.com/product-1592.html/#r-pNathanT">BeerotorF3</a>, those 4 components (current sensor, Blackbox, PDB and OSD) look like this:</p>
 
-<div class='ratio-box-resizer img-half-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-flight-controllers-brf-brf-clean-b-e-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-clean-b699e418.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-half-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-flight-controllers-brf-brf-clean-b-e-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-clean_prev-56a86946.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>The bottom board shown in the photo above is the companion <a href="http://www.rctimer.com/product-1593.html/#r-pNathanT">Beerotor PDB (BRPDB)</a>, which carries a shunt resistor current sensor and 28v (6s) compatible MP1593DN voltage regulator.</p>
 
 <p>BRF3 and PDB weigh only 13g, compared to 22g for 3 discrete components: PDB, NAZE32 and MinimOSD. Plus you would need to get a current sensor if you went with the discrete setup.</p>
 
-<div class='ratio-box-resizer img-half-width'><div class='ratio-box' style='padding-bottom: 116.2109375%;'><a id="assets-images-blog-flight-controllers-brf-brf-weight-b-ce-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-72b768ce.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-72b768ce.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-half-width'><div class='ratio-box' style='padding-bottom: 116.2109375%;'><a id="assets-images-blog-flight-controllers-brf-brf-weight-b-ce-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-72b768ce.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-72b768ce.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>Stacked together, the boards are 16mm tall. With two sets of 5mm standoffs, which allows for a little bit more comfortable mounting, it&#39;s 22mm tall.</p>
 
@@ -224,11 +224,11 @@ Related Articles
 
 <p>Top:</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 84.326171875%;'><a id="assets-images-blog-flight-controllers-brf-brf-top-schematic-cdf-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-top-schematic-cdf10220.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-top-schematic-cdf10220.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 84.326171875%;'><a id="assets-images-blog-flight-controllers-brf-brf-top-schematic-cdf-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-top-schematic-cdf10220.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-top-schematic-cdf10220.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>Bottom:</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 101.220703125%;'><a id="assets-images-blog-flight-controllers-brf-brf-bottom-schematic-bee-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-bottom-schematic-0534bee6.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-bottom-schematic-0534bee6.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 101.220703125%;'><a id="assets-images-blog-flight-controllers-brf-brf-bottom-schematic-bee-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-bottom-schematic-0534bee6.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-bottom-schematic-0534bee6.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>The full manual is here: <a href="http://www.rctimer.com/download/BeeRotorF3Manual.pdf">http://www.rctimer.com/download/BeeRotorF3Manual.pdf</a></p>
 
@@ -276,7 +276,7 @@ Cycle Time: 1012, I2C Errors: 2, config size: 2060
 
 <p>I did some further testing, taking the average free processing time for both the F1 and F3 processors. These were taken with the following sensors enabled: GYRO:MPU6050, ACC:MPU6050, BARO:BMP085. There are no data points for 2khz on the F1, since it is not possible to run 2khz with these sensors enabled. The closer a value is to 100%, the better.</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 61.83333333333333%;'><a id="assets-images-blog-flight-controllers-free-processing-time-f-dc-png" href="../../../../../assets/images/blog/flight_controllers/free-processing-time-f04173dc.png" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/free-processing-time-f04173dc.png' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 61.83333333333333%;'><a id="assets-images-blog-flight-controllers-free-processing-time-f-dc-png" href="../../../../../assets/images/blog/flight_controllers/free-processing-time-f04173dc.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/free-processing-time-f04173dc.png' class='trailing-space' ></img></a></div></div>
 
 <p>In terms of performance, as long as system load is under 90% or so, it really doesn&#39;t matter. Once it runs, less load doesn&#39;t make it faster. What it does mean though is that 93% of CPU time is available for other processing. With 93% CPU time left, we should have no problem running GPS, MSP, LEDs, etc.</p>
 
@@ -310,7 +310,7 @@ Cycle Time: 1012, I2C Errors: 2, config size: 2060
 
 <p>Just get a GPS with a magnetometer, like this <a href="http://www.rctimer.com/product-1287.html/#r-pNathanT">NEO-M8N with a compass</a> and plug it in here:</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 101.220703125%;'><a id="assets-images-blog-flight-controllers-brf-brf-gps-e-e-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-gps-e869676e.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-gps-e869676e.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 101.220703125%;'><a id="assets-images-blog-flight-controllers-brf-brf-gps-e-e-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-gps-e869676e.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-gps-e869676e.jpg' class='trailing-space' ></img></a></div></div>
 
 <p><code>I2C</code> ports are for the compass</p>
 
@@ -320,13 +320,13 @@ Cycle Time: 1012, I2C Errors: 2, config size: 2060
 
 <p>The really exciting part about this board is the on-board MinimOSD. A minim osd is basically two chips: the MAX7456 chip and ATMEGA328p, which you can see on the bottom of the board:</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.9765625%;'><a id="assets-images-blog-flight-controllers-brf-brf-offset-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.9765625%;'><a id="assets-images-blog-flight-controllers-brf-brf-offset-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>The MAX chip is in charge of drawing characters onto the video signal and the ATMEGA chip tells the MAX chip what characters to draw.</p>
 
 <p>For this to work, the MAX chip needs the video signal to pass through it, in one pin and out another, so you&#39;ll need to wire the <code>SD</code> port in-line with your camera and video transmitter:</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 84.326171875%;'><a id="assets-images-blog-flight-controllers-brf-brf-video-pins-f-f-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-video-pins-f465666f.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-video-pins-f465666f.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 84.326171875%;'><a id="assets-images-blog-flight-controllers-brf-brf-video-pins-f-f-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-video-pins-f465666f.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-video-pins-f465666f.jpg' class='trailing-space' ></img></a></div></div>
 
 <p><code>VIDEO_IN</code> is the yellow line from the camera (video signal)</p>
 
@@ -338,7 +338,7 @@ Cycle Time: 1012, I2C Errors: 2, config size: 2060
 
 <p>This is important because it means that on the BRF3 UART1 is wired to the ATMEGA&#39;s UART port. Therefore, to talk to the MinimOSD for upgrading and configuration, we need to make sure the BRF3&#39;s STM32F3 is turned off and the ATMEGA is turned on. To power just the ATMEGA, connect the provided FTDI cable to your handy <a href="http://www.banggood.com/CJMCU-CP2102-USB-To-TTLSerial-Module-UART-STC-Downloader-p-970993.html?p=1G09211226617201502J">UART/USB adapter</a> and use the <a href="https://github.com/ShikOfTheRa/scarab-osd/releases">Scarab OSD</a> configuration tool to configure the MinimOSD.</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-flight-controllers-brf-brf-ftdi-c-b-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-ftdi-c7442b3a.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-ftdi-c7442b3a.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-flight-controllers-brf-brf-ftdi-c-b-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-ftdi-c7442b3a.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-ftdi-c7442b3a.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>The colors in the photo correspond to:</p>
 
@@ -387,7 +387,7 @@ save
   <tbody>
           <tr>
         <td>
-          <a target="_blank" href="http://www.banggood.com/MinimOSD-MAVLink-OSD-APM-APM2-Flight-Control-Board-p-73436.html?p=1G09211226617201502J"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 100.0%;'><a id="assets-images-blog-minimosd-devices-minimosd-b-e-jpg" href="../../../../../assets/images/blog/minimosd/devices/minimosd-b6e42636.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/minimosd/devices/minimosd-b6e42636.jpg' class='lazyload ' ></img></a></div></div></a>
+          <a target="_blank" href="http://www.banggood.com/MinimOSD-MAVLink-OSD-APM-APM2-Flight-Control-Board-p-73436.html?p=1G09211226617201502J"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 100.0%;'><a id="assets-images-blog-minimosd-devices-minimosd-b-e-jpg" href="../../../../../assets/images/blog/minimosd/devices/minimosd-b6e42636.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/minimosd/devices/minimosd-b6e42636.jpg' class='' ></img></a></div></div></a>
         </td>
         <td>
           <a target="_blank" href="http://www.banggood.com/MinimOSD-MAVLink-OSD-APM-APM2-Flight-Control-Board-p-73436.html?p=1G09211226617201502J">$7.99 MinimOSD</a>
@@ -396,7 +396,7 @@ save
 
           <tr>
         <td>
-          <a target="_blank" href="http://www.rctimer.com/product-1526.html/#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-flight-controllers-brf-comparable-pdb-f-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/comparable-pdb-908f1448.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/comparable-pdb-908f1448.jpg' class='lazyload ' ></img></a></div></div></a>
+          <a target="_blank" href="http://www.rctimer.com/product-1526.html/#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-flight-controllers-brf-comparable-pdb-f-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/comparable-pdb-908f1448.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/comparable-pdb-908f1448.jpg' class='' ></img></a></div></div></a>
         </td>
         <td>
           <a target="_blank" href="http://www.rctimer.com/product-1526.html/#r-pNathanT">$3.99 PDB</a>
@@ -405,7 +405,7 @@ save
 
           <tr>
         <td>
-          <a target="_blank" href="http://www.banggood.com/Upgrade-NAZE32-SP-Racing-F3-Flight-Control-6-DOF-10-DOF-for-Milticopter-p-1010232.html?p=1G09211226617201502J"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 100.0%;'><a id="assets-images-blog-flight-controllers-sprf-a-c-jpg" href="../../../../../assets/images/blog/flight_controllers/sprf3-a6573c82.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/sprf3-a6573c82.jpg' class='lazyload ' ></img></a></div></div></a>
+          <a target="_blank" href="http://www.banggood.com/Upgrade-NAZE32-SP-Racing-F3-Flight-Control-6-DOF-10-DOF-for-Milticopter-p-1010232.html?p=1G09211226617201502J"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 100.0%;'><a id="assets-images-blog-flight-controllers-sprf-a-c-jpg" href="../../../../../assets/images/blog/flight_controllers/sprf3-a6573c82.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/sprf3-a6573c82.jpg' class='' ></img></a></div></div></a>
         </td>
         <td>
           <a target="_blank" href="http://www.banggood.com/Upgrade-NAZE32-SP-Racing-F3-Flight-Control-6-DOF-10-DOF-for-Milticopter-p-1010232.html?p=1G09211226617201502J">$26.99 SPRACINGF3</a>
@@ -414,7 +414,7 @@ save
 
           <tr>
         <td>
-          <a target="_blank" href="http://www.rctimer.com/product-1125.html/#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-flight-controllers-brf-comparable-power-module-ebafd-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/comparable-power-module-84ebafd6.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/comparable-power-module-84ebafd6.jpg' class='lazyload ' ></img></a></div></div></a>
+          <a target="_blank" href="http://www.rctimer.com/product-1125.html/#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-flight-controllers-brf-comparable-power-module-ebafd-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/comparable-power-module-84ebafd6.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/comparable-power-module-84ebafd6.jpg' class='' ></img></a></div></div></a>
         </td>
         <td>
           <a target="_blank" href="http://www.rctimer.com/product-1125.html/#r-pNathanT">$10.99 Power Module</a>
@@ -438,7 +438,7 @@ save
 
 <p>The baro is on the top of the board, so be sure to cover that with some open cell foam, or mount it upside-down and put a piece of open cell foam between the frame and the baro. Wind passing over the top of the baro can significantly decrease it&#39;s accuracy.</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 99.90234375%;'><a id="assets-images-blog-flight-controllers-brf-brf-baro-a-c-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-baro-2a88769c.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-baro-2a88769c.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 99.90234375%;'><a id="assets-images-blog-flight-controllers-brf-brf-baro-a-c-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-baro-2a88769c.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-baro-2a88769c.jpg' class='trailing-space' ></img></a></div></div>
 
 <h3 id="motor-outputs">Motor outputs</h3>
 
@@ -446,29 +446,29 @@ save
 
 <p>They even put a boot-button on the board! This is awesome. No more getting out the tweezers every time I want to short the boot pins to upgrade BetaFlight!</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 99.90234375%;'><a id="assets-images-blog-flight-controllers-brf-brf-boot-button-e-ecbff-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-boot-button-e90ecbff.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-boot-button-e90ecbff.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 99.90234375%;'><a id="assets-images-blog-flight-controllers-brf-brf-boot-button-e-ecbff-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-boot-button-e90ecbff.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-boot-button-e90ecbff.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>The motor output pins are through-hole vias, ready for some male 2.54mm headers. Motor 1 is on the left, 8 is on the right.</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 99.90234375%;'><a id="assets-images-blog-flight-controllers-brf-brf-motor-outputs-e-b-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-motor-outputs-469e48b4.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-motor-outputs-469e48b4.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 99.90234375%;'><a id="assets-images-blog-flight-controllers-brf-brf-motor-outputs-e-b-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-motor-outputs-469e48b4.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-motor-outputs-469e48b4.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>If you want to use pin headers, grab some right angle 2.54mm pins, my board didn&#39;t come with any. I think it will save weight and space to just solder the ESC leads right onto the flight controller, so I&#39;ll skip the pin headers. At some point, I hope all the flight controllers standardize to SH1.25 connectors and ESCs ship either without signal wires or with signal wires that terminate in a single female connector that fits into a SH1.25 connector.</p>
 
 <p>You&#39;ll also want to wire your ESC signal ground wires to the board.</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 99.90234375%;'><a id="assets-images-blog-flight-controllers-brf-brf-ground-c-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-ground-c475091a.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-ground-c475091a.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 99.90234375%;'><a id="assets-images-blog-flight-controllers-brf-brf-ground-c-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-ground-c475091a.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-ground-c475091a.jpg' class='trailing-space' ></img></a></div></div>
 
 <h3 id="receiver">Receiver</h3>
 
 <p>The Spektrum Satellite port is here:</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 84.326171875%;'><a id="assets-images-blog-flight-controllers-brf-brf-spektrum-d-ee-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-spektrum-d1ee1076.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-spektrum-d1ee1076.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 84.326171875%;'><a id="assets-images-blog-flight-controllers-brf-brf-spektrum-d-ee-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-spektrum-d1ee1076.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-spektrum-d1ee1076.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>S.Bus, SUMD:</p>
 
 <p>Although I don&#39;t have an S.Bus RX to confirm this, it looks like an external inverter is not necessary. It should work fine plugged in directly to UART3. Make sure you take either 5v from the same port or 3.3v from the Spektrum port, depending on what voltage your receiver can handle.</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 84.47265625%;'><a id="assets-images-blog-flight-controllers-brf-brf-rx-bfda-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-rx-bfda58a0.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-rx-bfda58a0.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 84.47265625%;'><a id="assets-images-blog-flight-controllers-brf-brf-rx-bfda-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-rx-bfda58a0.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-rx-bfda58a0.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>The RSSI analog to digital converter (ADC) is on the <code>SB</code> port as well, along with PPM input.</p>
 
@@ -480,7 +480,7 @@ save
 
 <p>Like all F3 chips, make sure you set the manual baud rate to <code>256000</code>. I also set <code>Full chip erase</code> when switching to BetaFlight.</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 60.2112676056338%;'><a id="assets-images-blog-flight-controllers-brf-cf-f-manual-baud-afe-fd-png" href="../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-afe571fd.png" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-afe571fd.png' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 60.2112676056338%;'><a id="assets-images-blog-flight-controllers-brf-cf-f-manual-baud-afe-fd-png" href="../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-afe571fd.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-afe571fd.png' class='trailing-space' ></img></a></div></div>
 
 <p>Download the latest version of <a href="https://github.com/borisbstyle/betaflight/releases/">BetaFlight</a> from the github.com release page <a href="https://github.com/borisbstyle/betaflight/releases/">https://github.com/borisbstyle/betaflight/releases/</a>. You want the file: <code>betaflight_SPRACINGF3.hex</code></p>
 
@@ -490,7 +490,7 @@ save
 
 <p>If for some reason that doesn&#39;t work, flashing via bootloader mode is amazingly easy. Just unplug the BRF3, hold the boot button down while you power it on by plugging it into USB. Choose <code>No reboot</code> and hit flash.</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 60.2112676056338%;'><a id="assets-images-blog-flight-controllers-brf-cf-boot-button-ce-png" href="../../../../../assets/images/blog/flight_controllers/brf3/cf-boot-button-0794ce02.png" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/flight_controllers/brf3/cf-boot-button-0794ce02.png' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 60.2112676056338%;'><a id="assets-images-blog-flight-controllers-brf-cf-boot-button-ce-png" href="../../../../../assets/images/blog/flight_controllers/brf3/cf-boot-button-0794ce02.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/flight_controllers/brf3/cf-boot-button-0794ce02.png' class='trailing-space' ></img></a></div></div>
 
 <h2 id="configuration">Configuration</h2>
 

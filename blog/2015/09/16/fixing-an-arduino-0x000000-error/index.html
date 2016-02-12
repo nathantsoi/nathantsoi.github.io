@@ -28,7 +28,7 @@
 Fixing an Arduino 0x000000 Error
 </title>
 <link href="../../../../../assets/stylesheets/all-ca47499b.css" rel="stylesheet" />
-<script src="../../../../../assets/javascripts/all-c450b07a.js"></script>
+<script src="../../../../../assets/javascripts/all-f0e3b20f.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -122,7 +122,7 @@ Related Articles
 <li><a href="/blog/2015/12/06/blheli-esc-identification/">BlHeli ESCs</a></li>
 <li><a href="/blog/2015/05/21/go-fpv-goggles/">Go FPV Goggles</a></li>
 <li><a href="/blog/2015/12/06/blheli-configuration/">BlHeli ESC Upgrading and Configuration</a></li>
-<li><a href="/blog/2016/02/03/rctimer-beerotorf3-flight-controller/">Rctimer BeerotorF3 Flight Controller</a></li>
+<li><a href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/">Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone</a></li>
 </ul>
 </div>
 </div>
@@ -180,7 +180,7 @@ Related Articles
 
 <p>As a first step, I would remove the ATMEGA chip from the circuit and try again. If you need a clock, you can try to use the <a href="https://github.com/adafruit/ArduinoISP">ArduinoISP2 project from Adafruit</a> (the repo is named ArduinoISP but I rename it to ISP2 so I can distinguish between this and the original). ArduinoISP2 outputs an 8MHz clock on <code>pin #9</code>. Simply wire pin 9 of your Arduino running the ISP2 sketech a 16MHz clock to XTAL1. You check XTAL2 to make sure you see a square 16MHz wave.</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 71.79236043095005%;'><a id="assets-images-blog-atmega-p-atmega-p-pinout-da-png" href="../../../../../assets/images/blog/atmega328p/atmega328p-pinout-3da94489.png" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/atmega328p/atmega328p-pinout-3da94489.png' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 71.79236043095005%;'><a id="assets-images-blog-atmega-p-atmega-p-pinout-da-png" href="../../../../../assets/images/blog/atmega328p/atmega328p-pinout-3da94489.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/atmega328p/atmega328p-pinout-3da94489.png' class='trailing-space' ></img></a></div></div>
 
 <p>Once you have this, flash your fuses.</p>
 

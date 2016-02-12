@@ -28,7 +28,7 @@
 Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone
 </title>
 <link href="../../../../../assets/stylesheets/all-ca47499b.css" rel="stylesheet" />
-<script src="../../../../../assets/javascripts/all-c450b07a.js"></script>
+<script src="../../../../../assets/javascripts/all-f0e3b20f.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -135,11 +135,11 @@ Related Articles
 <div class='col-lg-12 related'>
 <ul>
 <li><a href="/blog/2015/12/06/blheli-configuration/">BlHeli ESC Upgrading and Configuration</a></li>
+<li><a href="/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/">Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if</a></li>
+<li><a href="/blog/2015/05/21/setup-orangelrs-with-openlrsng/">Setup OrangeLRS with OpenLRSng</a></li>
 <li><a href="/blog/2015/05/21/go-fpv-goggles/">Go FPV Goggles</a></li>
 <li><a href="/blog/2015/12/06/blheli-esc-identification/">BlHeli ESCs</a></li>
-<li><a href="/blog/2015/12/06/blheli-calibration/">BlHeli CleanFlight ESC Calibration</a></li>
-<li><a href="/blog/2015/10/29/multirotor-setup-checklist/">MultiRotor Setup Checklist</a></li>
-<li><a href="/blog/2016/02/03/rctimer-beerotorf3-flight-controller/">Rctimer BeerotorF3 Flight Controller</a></li>
+<li><a href="/blog/2015/01/02/configuring-the-hk-t6a-for-a-flight-simulator/">Configuring the HK-T6A for a Flight Simulator</a></li>
 </ul>
 </div>
 </div>
@@ -197,7 +197,7 @@ Related Articles
 
 <p>Arduino Here is the <a href="http://www.banggood.com/ATmega328P-Arduino-Compatible-Nano-V3-Improved-Version-No-Cable-p-959231.html?p=1G09211226617201502J">$3.60 Chinese Arduino Nano Clone</a> I used:</p>
 
-<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 39.16015625%;'><a id="assets-images-blog-nano-clone-pins-c-f-jpg" href="http://www.banggood.com/ATmega328P-Arduino-Compatible-Nano-V3-Improved-Version-No-Cable-p-959231.html?p=1G09211226617201502J" class="linked-img "><img data-src='../../../../../assets/images/blog/nano_clone/pins-213c49f8.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 39.16015625%;'><a id="assets-images-blog-nano-clone-pins-c-f-jpg" href="http://www.banggood.com/ATmega328P-Arduino-Compatible-Nano-V3-Improved-Version-No-Cable-p-959231.html?p=1G09211226617201502J" class="linked-img "><img src='../../../../../assets/images/blog/nano_clone/pins-213c49f8.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>If you use this specific Nano clone, it uses a ch340g usb chip, the driver for which is here: <a href="http://www.wch.cn/downfile/65">http://www.wch.cn/downfile/65</a></p>
 
@@ -227,25 +227,25 @@ Related Articles
 
 <p>There were a few issues with this. First, the ISP header on the Arduino Nano is for programming the Arduino, not the ESC. So then I re-wired the ISP header to paint stick to the Arduino&#39;s MOSI/MISO/SS(Reset)/SCK/+5V/GND from the Nano&#39;s Pinout table. Notice the blue labels:</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 70.80078125%;'><a id="assets-images-blog-nano-clone-nano-pinout-ecbf-jpg" href="../../../../../assets/images/blog/nano_clone/nano_pinout-049ecbf1.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/nano_clone/nano_pinout-049ecbf1.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 70.80078125%;'><a id="assets-images-blog-nano-clone-nano-pinout-ecbf-jpg" href="../../../../../assets/images/blog/nano_clone/nano_pinout-049ecbf1.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/nano_clone/nano_pinout-049ecbf1.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>&nbsp; </p>
 
 <p>For example, physical pin (dark grey in the chart above) 15 (MOSI) should go to MOSI on the ESC. SS on the Nano pinout goes to Reset on the ESC:</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.2109375%;'><a id="assets-images-blog-nano-clone-esc-pins-e-c-jpg" href="../../../../../assets/images/blog/nano_clone/esc_pins-3051e7c2.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/nano_clone/esc_pins-3051e7c2.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.2109375%;'><a id="assets-images-blog-nano-clone-esc-pins-e-c-jpg" href="../../../../../assets/images/blog/nano_clone/esc_pins-3051e7c2.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/nano_clone/esc_pins-3051e7c2.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>&nbsp; </p>
 
 <p>Since I thought the Nano&#39;s ISP header could be used to program the ESC, I had already wired up this 6 pin adapter, so I just jumped it to the right pins on the Arduino, but you could skip this and wire straight from the Arduino to the programmer (ie. paint stick):</p>
 
-<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 95.60546875%;'><a id="assets-images-blog-nano-clone-isp-header-fd-b-e-jpg" href="../../../../../assets/images/blog/nano_clone/isp_header-4fd56b8e.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/nano_clone/isp_header-4fd56b8e.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 95.60546875%;'><a id="assets-images-blog-nano-clone-isp-header-fd-b-e-jpg" href="../../../../../assets/images/blog/nano_clone/isp_header-4fd56b8e.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/nano_clone/isp_header-4fd56b8e.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>&nbsp; </p>
 
 <p>Here&#39;s what I ended up with:</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 79.78515625%;'><a id="assets-images-blog-nano-clone-programmer-aa-b-jpg" href="../../../../../assets/images/blog/nano_clone/programmer-60aa9b93.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/nano_clone/programmer-60aa9b93.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 79.78515625%;'><a id="assets-images-blog-nano-clone-programmer-aa-b-jpg" href="../../../../../assets/images/blog/nano_clone/programmer-60aa9b93.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/nano_clone/programmer-60aa9b93.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>&nbsp; </p>
 
@@ -257,45 +257,45 @@ Related Articles
 
 <p>Open the Interfaces for Atmel tab and pick the Nano W/ ATmega328 Arduino Board, your COM port and click &quot;Make ArduinoISP Programmer&quot;</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 76.46484375%;'><a id="assets-images-blog-blheli-guide-b-bd-ef-jpg" href="../../../../../assets/images/blog/blheli_guide/1-1b1bd9ef.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/blheli_guide/1-1b1bd9ef.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 76.46484375%;'><a id="assets-images-blog-blheli-guide-b-bd-ef-jpg" href="../../../../../assets/images/blog/blheli_guide/1-1b1bd9ef.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/blheli_guide/1-1b1bd9ef.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>It will tell you what to do next, just click OK</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 32.51953125%;'><a id="assets-images-blog-blheli-guide-d-d-jpg" href="../../../../../assets/images/blog/blheli_guide/1.5-d704d466.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/blheli_guide/1.5-d704d466.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 32.51953125%;'><a id="assets-images-blog-blheli-guide-d-d-jpg" href="../../../../../assets/images/blog/blheli_guide/1.5-d704d466.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/blheli_guide/1.5-d704d466.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>&nbsp; </p>
 
 <p>Select the ISP interface from the ATMEL/SILABS menu option</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 76.46484375%;'><a id="assets-images-blog-blheli-guide-b-fb-jpg" href="../../../../../assets/images/blog/blheli_guide/2-9b64fb38.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/blheli_guide/2-9b64fb38.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 76.46484375%;'><a id="assets-images-blog-blheli-guide-b-fb-jpg" href="../../../../../assets/images/blog/blheli_guide/2-9b64fb38.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/blheli_guide/2-9b64fb38.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>&nbsp; </p>
 
 <p>Switch to the Atmel BESC Setup tab and pick the ArduinoISP (Arduino as ISP Interface) ISP programmer in the dropdown at the bottom along with your COM port and Baud: 19200</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 76.46484375%;'><a id="assets-images-blog-blheli-guide-eefb-d-jpg" href="../../../../../assets/images/blog/blheli_guide/3-eefb37d2.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/blheli_guide/3-eefb37d2.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 76.46484375%;'><a id="assets-images-blog-blheli-guide-eefb-d-jpg" href="../../../../../assets/images/blog/blheli_guide/3-eefb37d2.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/blheli_guide/3-eefb37d2.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>&nbsp; </p>
 
 <p>Connect your programmer</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 54.78515625%;'><a id="assets-images-blog-nano-clone-connect-programmer-ce-d-jpg" href="../../../../../assets/images/blog/nano_clone/connect_programmer-7ce04d96.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/nano_clone/connect_programmer-7ce04d96.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 54.78515625%;'><a id="assets-images-blog-nano-clone-connect-programmer-ce-d-jpg" href="../../../../../assets/images/blog/nano_clone/connect_programmer-7ce04d96.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/nano_clone/connect_programmer-7ce04d96.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>&nbsp; </p>
 
 <p>Press &quot;Read setup&quot;</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 76.46484375%;'><a id="assets-images-blog-blheli-guide-d-jpg" href="../../../../../assets/images/blog/blheli_guide/4-d3817667.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/blheli_guide/4-d3817667.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 76.46484375%;'><a id="assets-images-blog-blheli-guide-d-jpg" href="../../../../../assets/images/blog/blheli_guide/4-d3817667.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/blheli_guide/4-d3817667.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>Note, If this fails, check to make sure your programmer is properly connected and try again. If the programmer is connected, you may need to reset the Arduino ISP programmer by pressing the button on the Arduino. I found that even after pressing the button, it would sometimes fail to read. In this case, clicking &quot;Read setup&quot; again, without changing anything appeared to work.</p>
 
-<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 39.16015625%;'><a id="assets-images-blog-nano-clone-button-b-jpg" href="../../../../../assets/images/blog/nano_clone/button-b2106474.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/nano_clone/button-b2106474.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 39.16015625%;'><a id="assets-images-blog-nano-clone-button-b-jpg" href="../../../../../assets/images/blog/nano_clone/button-b2106474.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/nano_clone/button-b2106474.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>&nbsp; </p>
 
 <p>You&#39;ll see a confirmation box like this, click OK</p>
 
-<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 46.19140625%;'><a id="assets-images-blog-blheli-guide-d-e-jpg" href="../../../../../assets/images/blog/blheli_guide/5-d85528e5.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/blheli_guide/5-d85528e5.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 46.19140625%;'><a id="assets-images-blog-blheli-guide-d-e-jpg" href="../../../../../assets/images/blog/blheli_guide/5-d85528e5.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/blheli_guide/5-d85528e5.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>&nbsp;</p>
 
@@ -311,7 +311,7 @@ Related Articles
 
 <p>It will ask you to confirm you want to flash. Something like this, I was too busy holding the programming cable to take a screen shot to get one of my config, but I didn&#39;t change anything, left the bootloader pin on the servo cable, locked the bootloader and installed the BlHeli Bootloader -- just hit Yes. (This screenshot is obviously for an Afro 20a ESC)</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 69.82421875%;'><a id="assets-images-blog-blheli-guide-c-c-jpg" href="../../../../../assets/images/blog/blheli_guide/6-33c2385c.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/blheli_guide/6-33c2385c.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 69.82421875%;'><a id="assets-images-blog-blheli-guide-c-c-jpg" href="../../../../../assets/images/blog/blheli_guide/6-33c2385c.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/blheli_guide/6-33c2385c.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>&nbsp;</p>
 
@@ -323,15 +323,15 @@ Related Articles
 
 <p>Turn on light damping, if you&#39;re into that. This setting will actively slow down your props when you throttle down, which gives you even better control. A word of warning though, this can potentially burn out your ESCs and my motors twitch with this turned on. Some of my motors even continue running very slowly when the throttle is at 0%.</p>
 
-<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 31.34765625%;'><a id="assets-images-blog-blheli-guide-dampening-a-aa-jpg" href="../../../../../assets/images/blog/blheli_guide/dampening-a18aa411.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/blheli_guide/dampening-a18aa411.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 31.34765625%;'><a id="assets-images-blog-blheli-guide-dampening-a-aa-jpg" href="../../../../../assets/images/blog/blheli_guide/dampening-a18aa411.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/blheli_guide/dampening-a18aa411.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>Set PWM Min and MAX to 1000 and 2000 respectively, this will obviate the need to calibrate -- if you do this, you can skip step 3.</p>
 
-<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 61.62109375%;'><a id="assets-images-blog-blheli-guide-pulse-width-d-f-jpg" href="../../../../../assets/images/blog/blheli_guide/pulse_width-d23858f2.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/blheli_guide/pulse_width-d23858f2.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 61.62109375%;'><a id="assets-images-blog-blheli-guide-pulse-width-d-f-jpg" href="../../../../../assets/images/blog/blheli_guide/pulse_width-d23858f2.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/blheli_guide/pulse_width-d23858f2.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>I like to turn down the beep volume, so I don&#39;t wake up the family when I&#39;m working on this late at night.</p>
 
-<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 31.54296875%;'><a id="assets-images-blog-blheli-guide-beep-volume-ef-jpg" href="../../../../../assets/images/blog/blheli_guide/beep_volume-2784ef67.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/blheli_guide/beep_volume-2784ef67.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 31.54296875%;'><a id="assets-images-blog-blheli-guide-beep-volume-ef-jpg" href="../../../../../assets/images/blog/blheli_guide/beep_volume-2784ef67.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/blheli_guide/beep_volume-2784ef67.jpg' class='trailing-space' ></img></a></div></div>
 
 <h3 id="calibrate">Calibrate</h3>
 
@@ -341,7 +341,7 @@ Related Articles
 
 <p>Plugin your ESC and a motor to test it out. You&#39;ll want to calibrate your throttle on first boot. For a PPM receiver (I use a FlySky), power it on and when you hear the three tones, push the throttle to the max. Wait for the ascending beeps to finish and then pull the throttle to the bottom. You&#39;ll hear some descending beeps when calibration is finished. Unplug the ESC and wait a sec. Plug it back and and you&#39;re good to go. You should hear a series of about 3 fast beeps then two more beeps -- you&#39;re ready to go!</p>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 126.88971499380422%;'><a id="assets-images-blog-blheli-guide-bfacde-b-jpg" href="../../../../../assets/images/blog/blheli_guide/7-bfacde2b.jpg" class="linked-img colorbox"><img data-src='../../../../../assets/images/blog/blheli_guide/7-bfacde2b.jpg' class='lazyload trailing-space' ></img></a></div></div>
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 126.88971499380422%;'><a id="assets-images-blog-blheli-guide-bfacde-b-jpg" href="../../../../../assets/images/blog/blheli_guide/7-bfacde2b.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/blheli_guide/7-bfacde2b.jpg' class='trailing-space' ></img></a></div></div>
 
 <h3 id="light-dampening-upgrading-and-changing-settings">Light Dampening, Upgrading and Changing settings</h3>
 
