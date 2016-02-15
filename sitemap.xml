@@ -29,6 +29,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/page/10</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/page/9</loc>
     <priority>0.7</priority>
   </url>
@@ -249,10 +253,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013/04/16</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>http://nathan.vertile.com/bio</loc>
     <priority>0.7</priority>
   </url>
@@ -429,6 +429,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/02/06/hmdvr-fpv-video-recorder</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016/02/10/rctimer-victory230-fpv-miniquad</loc>
     <priority>0.7</priority>
   </url>
@@ -457,23 +461,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2013/04/16</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2013/04/24</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <loc>http://nathan.vertile.com/slides/notes</loc>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2013/04</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/slides/notes</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -482,10 +490,6 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2013/07</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2013</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1217,7 +1221,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/gps</loc>
+    <loc>http://nathan.vertile.com/blog/2013</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1233,7 +1237,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2014/01/24</loc>
+    <loc>http://nathan.vertile.com/blog/tags/arduinoisp</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1349,6 +1353,14 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/tags/hmdvr</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/record</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/tags/230mm</loc>
     <priority>0.7</priority>
   </url>
@@ -1370,6 +1382,10 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2016/02/10</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/02/06</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1601,7 +1617,11 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/arduinoisp</loc>
+    <loc>http://nathan.vertile.com/blog/2014/01/24</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/gps</loc>
     <priority>0.7</priority>
   </url>
 </urlset>
