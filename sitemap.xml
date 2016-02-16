@@ -433,6 +433,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/02/09/airwolf-diy-frsky-rx-sbus</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016/02/10/rctimer-victory230-fpv-miniquad</loc>
     <priority>0.7</priority>
   </url>
@@ -1221,7 +1225,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013</loc>
+    <loc>http://nathan.vertile.com/blog/tags/gps</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1249,7 +1253,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/stack-traces</loc>
+    <loc>http://nathan.vertile.com/blog/2013</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1361,6 +1365,30 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/tags/frsky</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/sbus</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/djt</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/transmitter</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/receiver</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/2-4ghz</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/tags/230mm</loc>
     <priority>0.7</priority>
   </url>
@@ -1382,6 +1410,10 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2016/02/10</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/02/09</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1621,7 +1653,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/gps</loc>
+    <loc>http://nathan.vertile.com/blog/tags/stack-traces</loc>
     <priority>0.7</priority>
   </url>
 </urlset>

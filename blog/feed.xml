@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"/>
     <id>http://nathan.vertile.com/blog/2016/02/10/rctimer-victory230-fpv-miniquad/</id>
     <published>2016-02-09T16:00:00-08:00</published>
-    <updated>2016-02-14T22:54:24-08:00</updated>
+    <updated>2016-02-16T00:30:16-08:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -144,15 +144,19 @@
 
 &lt;p&gt;The flight controller has all the same components as a &lt;a href="/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"&gt;BeerotorF3&lt;/a&gt;, it&amp;#39;s just been reformatted to fit inside of the Victory230&amp;#39;s frame.&lt;/p&gt;
 
-&lt;p&gt;Notice the plug on the top of the board. That&amp;#39;s how it came installed for me. This is plugged into the serial RX (e.g. SBUS/Spektrum Satellite) port. The two pin header just above it is where you would plug in the included cable for RSSI.&lt;/p&gt;
+&lt;p&gt;The pinout:&lt;/p&gt;
 
-&lt;p&gt;Those solder joints look awesome.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.5071707953064%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-pinout-a-c-jpg" href="../../../../../assets/images/blog/beerotor/victory230/pinout-7a16799c.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/pinout-7a16799c.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note the S.BUS / PPM cable and RSSI cables are included. The Spektrum satellite port is a normal Spektrum plug, so if you&amp;#39;re using a Spektrum radio setup, you can plug that in without doing any soldering.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#39;s explore under the flight controller.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-pdb-jpg" href="../../../../../assets/images/blog/beerotor/victory230/pdb-14477047.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/pdb_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The 32 channel video transmitter is on the right.&lt;/p&gt;
 
 &lt;p&gt;I see an MP1593DN, 28v 3A voltage regulator on the PDB. You could run this on 6s, assuming the ESCs can handle it.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-pdb-jpg" href="../../../../../assets/images/blog/beerotor/victory230/pdb-14477047.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/pdb_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Speaking of ESCs, I spent a while looking for them, when I finally realized, they&amp;#39;re are in the arms!&lt;/p&gt;
 
@@ -161,6 +165,8 @@
 &lt;p&gt;How is that possible!? The inner diameter of the carbon arms is 10mm. Those are some skinny ESCs!&lt;/p&gt;
 
 &lt;p&gt;The trick to re-assembly is to get all your arms ready to go, with the plastic U connectors (4 per arm) attached, then flip the arms up, one at a time, and drop a screw or two into each, then work the bottom plate on.&lt;/p&gt;
+
+&lt;p&gt;Also, make sure you securely tighten the gold SMA plug on the back. It&amp;#39;s bad news for your video transmitter if this plug comes un-screwed and your antenna doesn&amp;#39;t make full contact with the connector. Use the same socket wrench as you used to remove your props, 8mm, to tighten.&lt;/p&gt;
 
 &lt;h2 id="installation"&gt;Installation&lt;/h2&gt;
 
@@ -506,7 +512,134 @@ save
 
 &lt;p&gt;I didn&amp;#39;t upgrade my ESCS, since they come with BlHeli 14.3, but checkout the &lt;a href="/blog/2015/12/06/blheli-configuration/"&gt;BlHeli ESC Upgrading and Configuration&lt;/a&gt; guide for more details on updating your ESCs or changing settings.&lt;/p&gt;
 
+&lt;h2 id="further-reading"&gt;Further Reading&lt;/h2&gt;
+
+&lt;p&gt;Victory230 Manual: &lt;a href="http://www.rctimer.com/download/BeeRotor230Manual.pdf"&gt;http://www.rctimer.com/download/BeeRotor230Manual.pdf&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Post if you have any questions, comments or corrections. Thanks for reading and happy flying!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>AirWolf DIY FrSky RX SBUS and Frsky DJT Module</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"/>
+    <id>http://nathan.vertile.com/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/</id>
+    <published>2016-02-08T23:10:00-08:00</published>
+    <updated>2016-02-16T00:22:19-08:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This is a review and setup guide of the Airwolf DIY FrSKY Receiver and DJT Transmitter module.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-radio-rx-jpg" href="../../../../../assets/images/blog/frsky-diy/radio-rx-40464990.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/radio-rx_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="form-and-fit"&gt;Form and Fit&lt;/h2&gt;
+
+&lt;p&gt;Turns out, it doesn&amp;#39;t quite fit in all the way into the back of my &lt;a href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J"&gt;9x&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To get it to fit, I removed the grill on the back of the module.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-module-before-d-aaf-jpg" href="../../../../../assets/images/blog/frsky-diy/module-before-d7aaf521.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/module-before_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-module-after-a-cc-jpg" href="../../../../../assets/images/blog/frsky-diy/module-after-30a006cc.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/module-after_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="flashing"&gt;Flashing&lt;/h2&gt;
+
+&lt;p&gt;Download the latest firmware from here: &lt;a href="http://www.rcgroups.com/forums/showpost.php?p=32959023&amp;amp;postcount=1147"&gt;http://www.rcgroups.com/forums/showpost.php?p=32959023&amp;amp;postcount=1147&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;or from my dropbox share here: &lt;a href="https://www.dropbox.com/sh/4y5rp9gfloq0omc/AACV9dLz_KQ10WbdgFfsNNzga?dl=0"&gt;https://www.dropbox.com/sh/4y5rp9gfloq0omc/AACV9dLz_KQ10WbdgFfsNNzga?dl=0&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Make sure use use the right firmware, for the &lt;code&gt;F801&lt;/code&gt; or &lt;code&gt;F802&lt;/code&gt;, depending on which hardware you have.&lt;/p&gt;
+
+&lt;p&gt;Use an &lt;a href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/#program"&gt;Arduino Nano as an ISP programmer&lt;/a&gt; or get a &lt;a href="http://www.banggood.com/USBASP-USBISP-3_3-5V-AVR-Downloader-Programmer-With-ATMEGA8-ATMEGA128-p-934425.html?p=1G09211226617201502J"&gt;USP ASP&lt;/a&gt; programmer.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-arduino-usbasp-jpg" href="http://www.banggood.com/USBASP-USBISP-3_3-5V-AVR-Downloader-Programmer-With-ATMEGA8-ATMEGA128-p-934425.html?p=1G09211226617201502J" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/arduino/usbasp-05250791.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You won&amp;#39;t need to solder anything, since the PWM signal out pins are wired to the programming lines. Connect it like this:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;RX - ISP
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;CH5 - MOSI
+CH6 - MISO
+CH7 - SCK
+VCC - 3V3
+GND - GND
+RESET - SS
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For example, the MOSI (pin 11 on the Arduino Nano) line should connect to Channel 5 on the DIY RX.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 70.80078125%;'&gt;&lt;a id="assets-images-blog-nano-clone-nano-pinout-ecbf-jpg" href="../../../../../assets/images/blog/nano_clone/nano_pinout-049ecbf1.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/nano_clone/nano_pinout-049ecbf1.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here&amp;#39;s how I wired mine:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-frsky-diy-flashing-wiring-afa-eec-jpg" href="../../../../../assets/images/blog/frsky-diy/flashing-wiring-afa2eec2.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/flashing-wiring-afa2eec2.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The reset pad is is on the PCB here:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 88.88888888888889%;'&gt;&lt;a id="assets-images-blog-frsky-diy-reset-pin-ce-c-jpg" href="../../../../../assets/images/blog/frsky-diy/reset-pin-55ce9c82.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/reset-pin-55ce9c82.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Touch the RESET pad to your ISP programmer during programming like so:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-frsky-diy-flashing-touch-f-jpg" href="../../../../../assets/images/blog/frsky-diy/flashing-touch-8f867064.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/flashing-touch_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now you have two options to flash, use the Burn-O-Mat gui or use the command line &lt;code&gt;avrdude&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Download Burn-O-Mat: &lt;a href="http://avr8-burn-o-mat.aaabbb.de/avr8_burn_o_mat_avrdude_gui_en.php"&gt;http://avr8-burn-o-mat.aaabbb.de/avr8_burn_o_mat_avrdude_gui_en.php&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I also needed a Java Runtime for my VM. I used 1.5 &lt;a href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html#jre-1.5.0_22-oth-JPR"&gt;http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html#jre-1.5.0_22-oth-JPR&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;avrdude -b 19200 -c avrisp -p m328p -P COM3 -u -U flash:w:FrskyRx_F801_TELEMETRY__PFS_SBUS_310116.hex
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="fuses"&gt;Fuses&lt;/h3&gt;
+
+&lt;p&gt;I read the default fuses from my F801 module, in case you need to reset them. If you don&amp;#39;t know what these do, don&amp;#39;t mess with them. It should work fine without changing them.&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;avrdude -b 19200 -c avrisp -p m328p -P COM3 -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;avrdude: safemode: lfuse reads as FF
+avrdude: safemode: hfuse reads as DA
+avrdude: safemode: efuse reads as 5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="config"&gt;Config&lt;/h2&gt;
+
+&lt;p&gt;The latest version supports PFS and SBUS.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;SBUS, bridge CH5 and CH7&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;PPM, before CH1 and CH3&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that you cannot use both at the same time. If you bridge both 5&amp;amp;7 and 1&amp;amp;3 at the same time, there will be no output.&lt;/p&gt;
+
+&lt;p&gt;PFS description on posts 1105 and first page second post.&lt;/p&gt;
+
+&lt;h3 id="rssi"&gt;RSSI&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;In SBUS mode: RSSI-PWM on CH3&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;IN PPM mode: RSSI-PWM on CH5&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="binding"&gt;Binding&lt;/h3&gt;
+
+&lt;p&gt;Switch both switches on the DJT module off (down).&lt;/p&gt;
+
+&lt;p&gt;Turn on your transmitter while holding the button on the DJT module.&lt;/p&gt;
+
+&lt;p&gt;It will start beeping&lt;/p&gt;
+
+&lt;p&gt;Plug in the bind plug on port 8 or hold the bind button and power on the receiver.&lt;/p&gt;
+
+&lt;p&gt;The transmitter should stop beeping shortly and it&amp;#39;s bound!&lt;/p&gt;
+
+&lt;p&gt;Power off both the transmitter and receiver.&lt;/p&gt;
+
+&lt;h3 id="further-reading"&gt;Further Reading&lt;/h3&gt;
+
+&lt;p&gt;Original Thread: &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=2124647"&gt;http://www.rcgroups.com/forums/showthread.php?t=2124647&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Wiring: &lt;a href="http://www.rcgroups.com/forums/showpost.php?p=32756034&amp;amp;postcount=999"&gt;http://www.rcgroups.com/forums/showpost.php?p=32756034&amp;amp;postcount=999&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.rcgroups.com/forums/showpost.php?p=33046356&amp;amp;postcount=1217"&gt;http://www.rcgroups.com/forums/showpost.php?p=33046356&amp;amp;postcount=1217&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -1098,72 +1231,6 @@ No Connection &amp;lt;-&amp;gt; ESC 5v Power
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-disable-pwm-edf-d-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-15-disable-pwm-5edf997d.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-15-disable-pwm-5edf997d.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;That&amp;#39;s it, you&amp;#39;re done with configuration. Be sure to &lt;a href="/blog/2015/12/06/blheli-calibration/"&gt;calibrate your ESCs&lt;/a&gt; before you fly!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>BlHeli CleanFlight ESC Calibration</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2015/12/06/blheli-calibration/"/>
-    <id>http://nathan.vertile.com/blog/2015/12/06/blheli-calibration/</id>
-    <published>2015-12-06T13:00:00-08:00</published>
-    <updated>2016-02-12T22:23:14-08:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;This quick guide will explain how to calibrate your ESCs so they throttle up evenly.&lt;/p&gt;
-
-&lt;h3 id="why-calibrate-escs"&gt;Why Calibrate ESCs?&lt;/h3&gt;
-
-&lt;p&gt;Joshua Bardwell explains in these two videos why this is important&lt;/p&gt;
-
-&lt;div class="videoWrapper"&gt;
-  &lt;iframe width="853" height="480" src="https://www.youtube.com/embed/WFU3VewGbbA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;div class="videoWrapper"&gt;
-  &lt;iframe width="853" height="480" src="https://www.youtube.com/embed/YNRl0OTKRGA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;h3 id="how-to-calibrate"&gt;How to Calibrate&lt;/h3&gt;
-
-&lt;p&gt;The general idea is to &amp;quot;program&amp;quot; the ESCs via the flight controller to tell them what the minimum and maximum pulse width is that they should be expecting.&lt;/p&gt;
-
-&lt;h4 id="programming-by-tx"&gt;Programming by TX&lt;/h4&gt;
-
-&lt;p&gt;This will only work if you left the &lt;code&gt;Programming by TX&lt;/code&gt; option turned on in BlHeli. If you turned this off, you&amp;#39;ll need to enable it first. If you&amp;#39;re running a recent version of CleanFight or BetaFlight, you can do this via your flight controller without unplugging the ESCs!&lt;/p&gt;
-
-&lt;p&gt;Checkout the &lt;a href="/blog/2015/12/06/blheli-configuration/"&gt;Configuration Guide&lt;/a&gt; if you need to on &lt;code&gt;Programming by Tx&lt;/code&gt;&lt;/p&gt;
-
-&lt;h4 id="calibrate"&gt;Calibrate&lt;/h4&gt;
-
-&lt;p&gt;Open CleanFlight Configurator or BlHeli suite. I will use BlHeli suite in my example, but they both do the same thing.&lt;/p&gt;
-
-&lt;p&gt;Connect to the flight controller to your computer, but don&amp;#39;t plug in the flight battery yet. We want the flight controller turned on and the ESCs turned off.&lt;/p&gt;
-
-&lt;p&gt;Click on the Motors tab&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.34508816120906%;'&gt;&lt;a id="assets-images-blog-blheli-calibration-b-jpg" href="../../../../../assets/images/blog/blheli/calibration-1-538b4864.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/calibration-1-538b4864.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Click the switch or checkbox to enable motor outputs&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.34508816120906%;'&gt;&lt;a id="assets-images-blog-blheli-calibration-cd-a-jpg" href="../../../../../assets/images/blog/blheli/calibration-2-11cd29a9.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/calibration-2-11cd29a9.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Drag the far right slider all the way up to output max throttle to all motors.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.34508816120906%;'&gt;&lt;a id="assets-images-blog-blheli-calibration-ac-c-e-jpg" href="../../../../../assets/images/blog/blheli/calibration-3-ac3c16e6.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/calibration-3-ac3c16e6.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Turn the motors by plugging in your flight battery and wait for the series of 3 sets of ascending beeps to change to constant-tone beeping. This indicates max throttle has been stored:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 126.88971499380422%;'&gt;&lt;a id="assets-images-blog-blheli-guide-bfacde-b-jpg" href="../../../../../assets/images/blog/blheli_guide/7-bfacde2b.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli_guide/7-bfacde2b.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Drag the all-motors slider on the far right side of the configurator down to the bottom and wait for the set of 3 descending beep sequences to end indicating a saved min throttle.&lt;/p&gt;
-
-&lt;p&gt;Turn off the quad and you&amp;#39;re all set!&lt;/p&gt;
-
-&lt;p&gt;If you&amp;#39;re looking for the optimal settings, checkout &lt;a href="/blog/2015/12/06/blheli-configuration/#configure-blheli"&gt;the configuration guide&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
 </feed>
