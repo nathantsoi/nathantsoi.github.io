@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link href='/favicon/apple-touch-icon-57x57-8e6554ae.png' rel='apple-touch-icon-precomposed' sizes='57x57'>
+<link href='/favicon/apple-touch-icon-114x114-e0cb1072.png' rel='apple-touch-icon-precomposed' sizes='114x114'>
+<link href='/favicon/apple-touch-icon-72x72-a86b7103.png' rel='apple-touch-icon-precomposed' sizes='72x72'>
+<link href='/favicon/apple-touch-icon-144x144-bd50bc10.png' rel='apple-touch-icon-precomposed' sizes='144x144'>
+<link href='/favicon/apple-touch-icon-60x60-ca47953b.png' rel='apple-touch-icon-precomposed' sizes='60x60'>
+<link href='/favicon/apple-touch-icon-120x120-068de821.png' rel='apple-touch-icon-precomposed' sizes='120x120'>
+<link href='/favicon/apple-touch-icon-76x76-2bd34869.png' rel='apple-touch-icon-precomposed' sizes='76x76'>
+<link href='/favicon/apple-touch-icon-152x152-da7652e0.png' rel='apple-touch-icon-precomposed' sizes='152x152'>
+<link href='/favicon/favicon-196x196-569e78d9.png' rel='icon' sizes='196x196' type='image/png'>
+<link href='/favicon/favicon-96x96-d809406c.png' rel='icon' sizes='96x96' type='image/png'>
+<link href='/favicon/favicon-32x32-162b5c6d.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/favicon/favicon-16x16-d0c2b051.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/favicon/favicon-128-2f649ba2.png' rel='icon' sizes='128x128' type='image/png'>
+<meta content=' ' name='application-name'>
+<meta content='#FFFFFF' name='msapplication-TileColor'>
+<meta content='/favicon/mstile-144x144-bd50bc10.png' name='msapplication-TileImage'>
+<meta content='/favicon/mstile-70x70-2f649ba2.png' name='msapplication-square70x70logo'>
+<meta content='/favicon/mstile-150x150-999c62ba.png' name='msapplication-square150x150logo'>
+<meta content='/favicon/mstile-310x150-37756fac.png' name='msapplication-wide310x150logo'>
+<meta content='/favicon/mstile-310x310-6bd894f0.png' name='msapplication-square310x310logo'>
+<title>
+PixHawk Flashing and Setup
+</title>
+<link href="../../../../../assets/stylesheets/all-ca47499b.css" rel="stylesheet" />
+<script src="../../../../../assets/javascripts/all-f0e3b20f.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-7406390-2', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  
+    // outbound link tracking
+    // http://www.sitepoint.com/track-outbound-links-google-analytics/
+    (function($) {
+      "use strict";
+      // current page host
+      var baseURI = window.location.host;
+      // click event on body
+      $("body").on("click", function(e) {
+        // abandon if link already aborted or analytics is not available
+        if (e.isDefaultPrevented() || typeof ga !== "function") return;
+        // abandon if no active link or link within domain
+        var link = $(e.target).closest("a");
+        if (link.length != 1 || baseURI == link[0].host) return;
+        // cancel event and record outbound link
+        e.preventDefault();
+        var href = link[0].href;
+        ga('send', {
+          'hitType': 'event',
+          'eventCategory': 'outbound',
+          'eventAction': 'link',
+          'eventLabel': href,
+          'hitCallback': loadPage
+        });
+        // redirect after one second if recording takes too long
+        setTimeout(loadPage, 1000);
+        // redirect to outbound page
+        function loadPage() {
+          document.location = href;
+        }
+      });
+    })(jQuery);
+</script>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+</head>
+<body>
+<nav class='navbar navbar-default' id='top' role='navigation'>
+<div class='container'>
+<div class='navbar-header'>
+<div class='navbar-brand'>
+<a href='/blog/'>
+<img src="../../../../../assets/images/home/smile-0a95f89f.jpg" />
+</a>
+<span>PixHawk Flashing and Setup</span>
+</div>
+<button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<div class='navbar-right collapse navbar-collapse' id='bs-nav-collapse'>
+<ul class='nav navbar-nav'>
+<li>
+<form class='search navbar-form' role='search'>
+<div class='form-group'>
+<input class='form-control bloodhound typeahead' data-articles='[["AVR Dissassembly","/blog/2016/02/25/avr-dissassembly/"],["Victory230 FPV Mini-quad Setup and Review","/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"],["FrSky RX SBUS and Frsky DJT Module","/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"],["HMDVR FPV Video Recorder","/blog/2016/02/06/hmdvr-fpv-video-recorder/"],["Rctimer BeerotorF3 Flight Controller","/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"],["Flying Sony NEX Micro 4/3rds Camera","/blog/2016/01/29/flying-micro-4-3rds-camera/"],["Q600 Quadcopter","/blog/2016/01/29/rctimer-q600-quadcopter/"],["ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller","/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/"],["PixHawk Flashing and Setup","/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/"],["BlHeli ESCs","/blog/2015/12/06/blheli-esc-identification/"],["BlHeli ESC Upgrading and Configuration","/blog/2015/12/06/blheli-configuration/"],["BlHeli CleanFlight ESC Calibration","/blog/2015/12/06/blheli-calibration/"],["Rctimer Micro 160 BeeRotor Build, Setup and Review","/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"],["Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if","/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/"],["Rctimer OZE32 / RTFQ Flip32 AIO Integrated Flight Controller Review and Setup","/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"],["Rooting Marshmellow, keeping SELinux","/blog/2015/11/03/rooting-marshmellow-keeping-selinux/"],["MultiRotor Setup Checklist","/blog/2015/10/29/multirotor-setup-checklist/"],["ST-LINK flash and debug on the SPRacingF3","/blog/2015/10/24/st-link-flash-and-debug-on-the-spracingf3-discovery/"],["Debugging Android Native (NDK) Apps","/blog/2015/09/27/debugging-android-native-ndk-apps/"],["Fixing an Arduino 0x000000 Error","/blog/2015/09/16/fixing-an-arduino-0x000000-error/"],["GPS VK16U6 CleanFlight Setup","/blog/2015/08/26/gps-vk16u6-cleanflight-setup/"],["Go FPV Latency Testing","/blog/2015/08/24/go-fpv-latency-testing/"],["Building Android on Ubuntu 14.04","/blog/2015/07/23/building-android-on-ubuntu-14-04/"],["Migrating to Amazon Elastic Map Reduce (EMR)","/blog/2015/07/15/migrating-to-amazon-elastic-map-reduce-emr/"],["Naze32 ST-Link Debugging","/blog/2015/07/06/naze32-st-link-debugging/"],["Decompiling an APK","/blog/2015/06/30/decompiling-an-apk/"],["Nexpose Community Edition copy Scan Template","/blog/2015/06/17/nexpose-community-edition-copy-scan-template/"],["Wireless Video Tx/Rx FPV Channels","/blog/2015/06/17/boscam-tx-rx-fpv-channels/"],["Making a UHF 433mhz Inverted Vee Antenna Set","/blog/2015/06/15/making-a-uhf-433mhz-inverted-vee-antenna-set/"],["Setup OrangeLRS with OpenLRSng","/blog/2015/05/21/setup-orangelrs-with-openlrsng/"],["Go FPV Goggles","/blog/2015/05/21/go-fpv-goggles/"],["FPV250 with Cleanflight, Minimosd, OpenLRSng and a Xiaomi Yi GoPro Clone","/blog/2015/05/19/fpv250-cleanflight/"],["Flashing BlHeli on HobbyKing BlueSeries 12a ESCs With a Chinese Arduino Nano Clone","/blog/2015/05/15/flashing-blheli-on-hobbyking-blueseries-12a-escs-with-a-chinese-arduino-nano-clone/"],["Flashing NodeMCU on the ESP8266","/blog/2015/05/14/flashing-nodemcu-on-the-esp8266/"],["Ebay HC-05 Bluetooth Setup Guide","/blog/2015/05/12/ebay-hc-05-bluetooth-setup-guide/"],["3D Camera on the Tricopter","/blog/2015/05/12/3d-camera-on-the-tricopter/"],["ProRes editing in Premier","/blog/2015/05/11/prores-editing-in-photoshop/"],["Xiaomi Yi -- The Ant Camera","/blog/2015/05/08/xiaomi-yi-the-ant-camera/"],["Minim OSD","/blog/2015/04/22/minim-osd/"],["Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone","/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/"],["Handling Dates in Hadoop Pig","/blog/2015/04/17/handling-dates-in-hadoop-pig/"],["LiPo Battery Price Analysis","/blog/2015/04/10/lipo-battery-price-analysis/"],["ADB over WiFi (aka, how do I debug when using USB host mode?)","/blog/2015/03/27/adb-over-wifi-aka-how-do-i-debug-when-using-usb-host-mode/"],["Shrink a linux VM on OSX","/blog/2015/03/18/shrink-a-linux-vm-on-osx/"],["Mounting a VHD NTFS image on Ubuntu","/blog/2015/02/27/mounting-a-vhd-ntfs-image-on-ubuntu/"],["Ubuntu on the Beaglebone Black","/blog/2015/01/16/ubuntu-on-the-beaglebone-black/"],["Configuring the HK-T6A for a Flight Simulator","/blog/2015/01/02/configuring-the-hk-t6a-for-a-flight-simulator/"],["A complete noob&#x0027;s guide to RC","/blog/2015/01/02/a-complete-noobs-guide-to-rc/"],["DropCam on a Captive Portal","/blog/2014/11/17/dropcam-on-a-captive-portal/"],["Java reversing tips","/blog/2014/09/18/java-reversing-tips/"],["Ooize Data Pipeline Done-Flag","/blog/2014/09/02/oozie-data-pipeline-done-flag/"],["Time Machine on exFat","/blog/2014/08/06/Time_Machine_on_exFat/"],["Optimizing Postgresql","/blog/2014/01/31/Optimizing_Postgresql/"],["Mail Maker","/blog/2014/01/24/Mail_Maker/"],["Angularjs and Rails","/blog/2013/07/12/Angularjs_and_Rails/"],["nginx ssl chained certs","/blog/2013/04/24/nginx_ssl_chained_certs/"],["rails log tagging","/blog/2013/04/24/rails_log_tagging/"],["Converting an Android Project to Maven","/blog/2013/04/16/Converting_an_Android_Project_to_Maven/"],["Oh! Map my rails!","/blog/2013/04/09/Oh_Map_my_rails/"],["mysql permissions","/blog/2013/04/09/mysql_permissions/"],["reset mysql slave","/blog/2013/03/29/reset_mysql_slave/"],["installing rmagick on 10.8 with homebrew","/blog/2013/02/14/installing_rmagick_on_108_with_homebrew/"],["NP-Completeness","/blog/2013/02/08/NP-Completeness/"],["Find and replace non-breaking spaces in vim","/blog/2013/02/01/Find_and_replace_non-breaking_spaces_in_vim/"],["Open Resty the Prebuilt Reverse Proxy","/blog/2013/02/01/Open_Resty_the_Prebuilt_Reverse_Proxy/"],["Sublime Text 2 Tweaks","/blog/2012/12/17/Sublime_Text_2_Tweaks/"],["Batch Convert CR2 to JPG","/blog/2012/12/01/Batch_Convert_CR2_to_JPG/"],["Androids in the wild","/blog/2012/06/30/Androids_in_the_wild/"],["Why you need database_cleaner","/blog/2012/06/11/Why_you_need_database_cleaner/"],["Find and replace in files on linux/unix","/blog/2012/05/12/Find_and_replace_in_files_on_linuxunix/"],["a pithy guide to railsconf 2012","/blog/2012/04/26/a_pithy_guide_to_railsconf_2012/"],["faster rails boot ruby 1.9.3 + debugger","/blog/2012/04/12/faster_rails_boot_ruby_193_debugger/"],["homebrew -- fix that nasty mysql.server start segfault","/blog/2012/03/29/homebrew_--_fix_that_nasty_mysqlserver_start_segfault/"],["read/write filesystem on rooted android for an ad-free android experience","/blog/2012/02/14/readwrite_filesystem_on_rooted_android_for_an_ad-free_android_experience/"],["Turn Wikipedia Back On","/blog/2012/01/17/Turn_Wikipedia_Back_On/"],["compiling qt4 on centos 5","/blog/2012/01/06/compiling_qt4_on_centos_5/"],["pip install pymongo with xcode 4","/blog/2011/08/09/pip_install_pymongo_with_xcode_4/"],["interactive python history -- better titled \"gimme some up arrow love\"","/blog/2011/08/05/interactive_python_history_--_better_titled_gimme_some_up_arrow_love/"],["Centos 5.5 yum repo sha256 fix","/blog/2011/07/27/Centos_55_yum_repo_sha256_fix/"],["Apple Keyboard for Android!","/blog/2011/07/15/Apple_Keyboard_for_Android/"],["jQuery Everywhere","/blog/2011/05/24/jQuery_Everywhere/"],["Django Migrations","/blog/2011/05/11/Django_Migrations/"],["RVM + Rails + Git + HTML5 Boiler Plate... What more could you possibly want?","/blog/2011/02/22/RVM_Rails_Git_HTML5_Boiler_Plate_What_more_could_you_possibly_want/"],["OneCast 2.0 - downloadable podcasts for androids of every color","/blog/2011/02/18/OneCast_20_-_downloadable_podcasts_for_androids_of_every_color/"],["Default Android Menu Icons in Your App","/blog/2011/02/17/Default_Android_Menu_Icons_in_Your_App/"],["Windows 7 x64 Android Development (ADB)","/blog/2010/11/06/Windows_7_x64_Android_Development_ADB/"],["Firefox Plugin - Watching for an Application Exit Event","/blog/2010/05/03/Firefox_Plugin_-_Watching_for_an_Application_Exit_Event/"],["Stop Redrawing a Fixed Orientation Android App","/blog/2010/03/08/Stop_Redrawing_a_Fixed_Orientation_Android_App/"]]' placeholder='Search' type='text'>
+</div>
+</form>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+
+<div class='container'>
+<div class='row row-offcanvas row-offcanvas-left'>
+<!-- sidebar -->
+<div class='col-xs-3 col-sm-3 sidebar-offcanvas'>
+<div id='sidebar' role='navigation'>
+<div class='sidebar-contents'>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+<a href='#top'>Contents</a>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 table-of-contents'>
+<ul class="nav"><li><a class="type-h2" href="#overview"><h2>Overview</h2></a></li><ul><li><a class="type-h3" href="#open-source-designs"><h3>Open source designs</h3></a></li></ul>
+<li><a class="type-h2" href="#ground-station-program"><h2>Ground Station Program</h2></a></li>
+<li><a class="type-h2" href="#radio-transmitter-setup"><h2>Radio Transmitter Setup</h2></a></li>
+<li><a class="type-h2" href="#flashing-and-setup"><h2>Flashing and Setup</h2></a></li><ul><li><a class="type-h3" href="#px4-firmware"><h3>PX4 Firmware</h3></a></li>
+<li><a class="type-h3" href="#apm-copter-firmware"><h3>APM:Copter Firmware</h3></a></li>
+<li><a class="type-h3" href="#mavlink-radio"><h3>MavLink Radio</h3></a></li>
+<li><a class="type-h3" href="#voltage-and-current-monitor"><h3>Voltage and Current Monitor</h3></a></li>
+<li><a class="type-h3" href="#radio-control-setup"><h3>Radio Control Setup</h3></a></li>
+<li><a class="type-h3" href="#rssi"><h3>RSSI</h3></a></li><ul><li><a class="type-h4" href="#throttle-failsafe"><h4>Throttle Failsafe</h4></a></li>
+<li><a class="type-h4" href="#immediate-disarm-failsafe"><h4>Immediate Disarm Failsafe</h4></a></li>
+<li><a class="type-h4" href="#land-or-rth-failsafe"><h4>Land or RTH Failsafe</h4></a></li>
+<li><a class="type-h4" href="#retake-control-after-failsafe"><h4>Retake Control After Failsafe</h4></a></li>
+<li><a class="type-h4" href="#other-failsafes"><h4>Other Failsafes</h4></a></li>
+<li><a class="type-h4" href="#landing"><h4>Landing</h4></a></li></ul>
+<li><a class="type-h3" href="#gps-setup"><h3>GPS Setup</h3></a></li>
+<li><a class="type-h3" href="#compass"><h3>Compass</h3></a></li>
+<li><a class="type-h3" href="#gimbal"><h3>Gimbal</h3></a></li></ul></ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+Related Articles
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 related'>
+<ul>
+<li><a href="/blog/2016/01/29/rctimer-q600-quadcopter/">Q600 Quadcopter</a></li>
+<li><a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/">ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller</a></li>
+<li><a href="/blog/2016/01/29/flying-micro-4-3rds-camera/">Flying Sony NEX Micro 4/3rds Camera</a></li>
+<li><a href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/">Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone</a></li>
+<li><a href="/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/">Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if</a></li>
+<li><a href="/blog/2015/12/06/blheli-configuration/">BlHeli ESC Upgrading and Configuration</a></li>
+</ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header text-center'>
+<div class='drawer-footer'>
+<small>
+©
+<a href='mailto:nathan@vertile.com'>Nathan Tsoi</a>
+</small>
+</div>
+</div>
+</div>
+<div class='row connect'>
+<div class='col-lg-12 text-center'>
+<a class='btn-sm btn-default' href='https://github.com/nathantsoi' target='_blank'>
+<i class='fa fa-github'></i>
+</a>
+<a class='btn-sm btn-default' href='https://bitbucket.org/nathantsoi' target='_blank'>
+<i class='fa fa-bitbucket'></i>
+</a>
+<a class='btn-sm btn-default' href='https://twitter.com/nathantsoi/' target='_blank'>
+<i class='fa fa-twitter'></i>
+</a>
+<a class='btn-sm btn-default' href='https://angel.co/nathantsoi' target='_blank'>
+<i class='fa fa-angellist'></i>
+</a>
+<a class='btn-sm btn-default' href='https://linkedin.com/in/nattsoi/' target='_blank'>
+<i class='fa fa-linkedin'></i>
+</a>
+<a class='btn-sm btn-default' href='https://facebook.com/nathantsoi' target='_blank'>
+<i class='fa fa-facebook'></i>
+</a>
+<a class='btn-sm btn-default' href='https://plus.google.com/112518806102274696668' target='_blank'>
+<i class='fa fa-google-plus'></i>
+</a>
+<a class='btn-sm btn-default' href='https://news.ycombinator.com/user?id=natvert' target='_blank'>
+<i class='fa fa-hacker-news'></i>
+</a>
+<a class='btn-sm btn-default' href='https://trello.com/nathantsoi' target='_blank'>
+<i class='fa fa-trello'></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- main area -->
+<div class='col-sm-9 col-xs-12' id='mainbar'>
+<article>
+<p>This guide will show you how to install, flash and configure the PixHawk. I&#39;ll be using Rctimer&#39;s distribution of the PixHawk, which is called the FixHawk. From now on, I&#39;ll use these terms interchangeably. The FixHawk will be installed and configured in an Rctimer <a href="/blog/2016/01/29/rctimer-q600-quadcopter/">Q600</a> quad-copter, which I highly recommend if you&#39;re looking for an awesome frame, but these directions should apply to any quad-copter installation and configuration.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-fixhawk-open-eef-jpg" href="../../../../../assets/images/blog/q600/fixhawk/open-eef92851.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/fixhawk/open_prev-d6f24059.jpg' class='trailing-space' ></img></a></div></div>
+
+<h2 id="overview">Overview</h2>
+
+<p>The PixHawk hardware and software is an open source project. The original development and current maintainers are led by Lorenz Meier at ETH Zurich.</p>
+
+<h3 id="open-source-designs">Open source designs</h3>
+
+<p>The open source hardware design means that anyone can produce the Pixhawk hardware and the boards are fundamentally the same. There is no such thing as a &quot;clone&quot; when the plans are freely available via open source. They can be made by anyone and Rctimer has done a great job building their &quot;FixHawk&quot;, which is one of these boards.</p>
+
+<p>You&#39;ll want to wire it up like this. The ports are all labeled, so you shouldn&#39;t have much trouble:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-pixhawk-c-fc-jpg" href="../../../../../assets/images/blog/q600/frame/pixhawk-1-c11fc702.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/pixhawk-1_prev-88bf2a11.jpg' class='trailing-space' ></img></a></div></div>
+
+<h2 id="ground-station-program">Ground Station Program</h2>
+
+<p>There are 3 different ground station programs you can use to flash and configure your flight controller. The ground station program you use will determine the firmware that is installed on the flight controller.</p>
+
+<ul>
+<li><p>QGroundControl</p>
+
+<ul>
+<li>Newest ground station program, maintained by Lorenz Meier at ETH Zurich. Not as complete, time tested or robust as APM, but new features like position hold via lidar and other cool things are coming to this software stack</li>
+<li>Installs the newest firmware (px4)</li>
+<li>Download from the github release page: <a href="https://github.com/mavlink/qgroundcontrol/releases/">https://github.com/mavlink/qgroundcontrol/releases/</a></li>
+</ul></li>
+<li><p>Mission Planner</p>
+
+<ul>
+<li>Has the most guides / documentation online</li>
+<li>Windows Only</li>
+<li>It has the most features</li>
+<li>Installs the older but more robust, APM firmware</li>
+<li>[Download](<a href="http://ardupilot.com/wp-content/plugins/download-monitor/download.php?id=82">http://ardupilot.com/wp-content/plugins/download-monitor/download.php?id=82</a></li>
+</ul></li>
+<li><p>APM Planner 2.0</p>
+
+<ul>
+<li>Cross Platform, I use this ground station program on my mac</li>
+<li>It does not have all the features of Mission Planner, but it has almost all of them</li>
+<li>Installs the APM firmware, which is the same as Mission Planner</li>
+<li>Go to <a href="http://ardupilot.com/downloads/?category=35">Downloads</a> and scroll to the bottom of the page.</li>
+</ul></li>
+</ul>
+
+<h2 id="radio-transmitter-setup">Radio Transmitter Setup</h2>
+
+<p>Before we configure the flight controller, let&#39;s setup our radio. I&#39;m using 9x with OpenTX on it. My radio doesn&#39;t have a 6 position switch, so I&#39;ll make one.</p>
+
+<p>We&#39;ll configure a 6 position switch by mixing a 2 position switch with a 3 position switch.</p>
+
+<ul>
+<li><p>go to channel 5 on the mixer tab, assign <code>Source</code> to the 3 position switch <code>3POS</code> and the <code>CURVE</code> to <code>CV3</code>, hit exit to go back to the menu tab</p></li>
+<li><p>press menu to highlight the row for channel 5, then press down to add a mixed input to channel 5</p></li>
+<li><p>click and hold menu on the new row and set the input to <code>AIL</code>, change the curve back to the default, <code>Diff 0</code></p></li>
+<li><p>go to the curves tab and pick curve 3, change the type to 3 point and set the points to 81, 48 and 15. hold exit to get out of the curves edit page</p></li>
+</ul>
+
+<p>checkout Mark&#39;s awesome guide for a full explanation: <a href="http://eastbay-rc.blogspot.com/2013/06/opentx-setting-six-position-switch.html">http://eastbay-rc.blogspot.com/2013/06/opentx-setting-six-position-switch.html</a></p>
+
+<p>You should get this when you&#39;re done:</p>
+<pre class="highlight plaintext"><code>CH05
+   +100%3POS Curve(Curve 1) 
+ * +100%AIL
+</code></pre>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-fixhawk-rc-b-jpg" href="../../../../../assets/images/blog/q600/fixhawk/rc-88b00092.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/fixhawk/rc_prev-db71aeae.jpg' class='trailing-space' ></img></a></div></div>
+
+<h2 id="flashing-and-setup">Flashing and Setup</h2>
+
+<p>If you want to use the newer PX4 firmware, the only docs are for &quot;developers&quot; over at <a href="http://dev.px4.io">dev.px4.io</a>, but they are applicable to users as well.</p>
+
+<h3 id="px4-firmware">PX4 Firmware</h3>
+
+<p>For initial setup, you should follow this video guide:</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/91VGmdSlbo4" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="apm-copter-firmware">APM:Copter Firmware</h3>
+
+<p>Since APM is time tested and proven, I&#39;ll be using that. I hope that PX4 will be as usable and well documented soon and I can switch over.</p>
+
+<p>Start by <a href="http://ardupilot.com/wp-content/plugins/download-monitor/download.php?id=82">downloading</a>, installing and running mission planner. <a href="http://ardupilot.com/wp-content/plugins/download-monitor/download.php?id=82">http://ardupilot.com/wp-content/plugins/download-monitor/download.php?id=82</a>.</p>
+
+<p>Pick the <code>Initial Setup</code> tab, go to <code>Install Firmware</code> Pick <code>APM:Copter V[some numbers] Quad</code></p>
+
+<p>Click <code>Yes</code> when it asks if we&#39;re sure we want to upload the firmware.</p>
+
+<p>When it asks to unplug the board, unplug the board, then hit <code>OK</code> after you plug it back in.</p>
+
+<p>I had some trouble flashing the board with my mac and VMWare Fusion, so I had to switch to my windows laptop.</p>
+
+<p>Eventually, you&#39;ll get a success message and it will tell you that if this is the first time flashing 3.2, you&#39;ll need to re-calibrate your compass.</p>
+
+<p>Disconnect the USB cable and connect the Radio Telemetry. Pick the COM port, set the baud to 57600 and hit connect.</p>
+
+<p>Pick <code>Wizard</code> tab on the left and follow the guide. This will walk you through the copter configuration.</p>
+
+<p>When you get to the RC calibration screen, disable the <code>CURVE</code> you set on channel 5 by setting it back to the default value while you set the endpoints on all channels. When you&#39;re done, turn <code>CURVE 3</code> back on.</p>
+
+<h3 id="mavlink-radio">MavLink Radio</h3>
+
+<p>It should download and install the drivers automatically, if not, download this <a href="http://www.ftdichip.com/Drivers/VCP.htm">FT232R VPC driver</a> (scroll to the bottom of the page).</p>
+
+<p>Pick the COM port and set the baud to <code>57600</code></p>
+
+<p>If your telemetry won&#39;t connect, and you&#39;ve re-wired your own cable like I have, try swapping the RX and TX pins. That worked for me :)</p>
+
+<h3 id="voltage-and-current-monitor">Voltage and Current Monitor</h3>
+
+<p>Voltage and current monitor configuration can be found under <code>Inital Setup</code> -&gt; <code>Optional Hardware</code> -&gt; <code>Battery Monitor</code> -&gt; <code>Advanced</code></p>
+
+<p>If you&#39;re using the <a href="http://rctimer.com/product-1125.html/#r-pNathanT">Rctimer 90A, 7S Power Module</a>, you&#39;ll want to use these settings:</p>
+<pre class="highlight plaintext"><code># Pins are from the pixhawk pinout description
+Voltage Pin: 2
+Current Pin: 3
+
+# I found this value by adjusting it while measuring the battery voltage with an external battery checker
+Voltage Divider (calced): 10.35
+
+# This is a 0-offset, 90A sensor that outputs up to 3.3V, so 90A/3.3V gives about 27 Amps per Volt
+Amperes per volt: 27
+</code></pre>
+
+<p>Here&#39;s what the settings look like in APM Planner 2.0</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 36.209150326797385%;'><a id="assets-images-blog-q-fixhawk-power-ee-f-png" href="../../../../../assets/images/blog/q600/fixhawk/power-250ee1f2.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/fixhawk/power-250ee1f2.png' class='trailing-space' ></img></a></div></div>
+
+<p>You can read about the current sensor specs here: <a href="http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Sensors/Current/DC%20Voltage%20and%20Current%20Sense%20PCB%20with%20Analog%20Output.pdf">http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Sensors/Current/DC%20Voltage%20and%20Current%20Sense%20PCB%20with%20Analog%20Output.pdf</a></p>
+
+<h3 id="radio-control-setup">Radio Control Setup</h3>
+
+<p>Check on the radio calibration tab, that when you move the rudder stick (left stick in my case) the YAW channel moves left and right.</p>
+
+<p>Flying PPM on mode 2, I needed to swap my <code>RCMAP_ROLL</code> and <code>RCMAP_YAW</code>. You can find these under the <code>Config/Tuning</code> tab -&gt; <code>All Settings</code> </p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 12.077702702702704%;'><a id="assets-images-blog-q-fixhawk-rc-map-fc-d-ff-png" href="../../../../../assets/images/blog/q600/fixhawk/rc_map-fc4d18ff.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/fixhawk/rc_map-fc4d18ff.png' class='trailing-space' ></img></a></div></div>
+
+<p>Once configured, <a href="http://copter.ardupilot.com/wiki/throttle-failsafe/#Testing">test your failsafe settings</a> as described in the APM guide and below. If you do not configure and test your failsafe, your copter could fly away. Do not skip this!</p>
+
+<h3 id="rssi">RSSI</h3>
+
+<p>Using ArduPilot, your receiver must output analog RSSI, with any voltage range (e.g. 0-3.3v or 0.5.0v). Unfortunately, reading RSSI injected into a RC channel is not supported. Connect:</p>
+<pre class="highlight plaintext"><code>Receiver Out -&gt; PixHawk In
+</code></pre>
+<pre class="highlight plaintext"><code>PWM or SBUS Output -&gt; RC Pin
+RSSI Out -&gt; SB Pin
+</code></pre>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 34.35114503816794%;'><a id="assets-images-blog-q-fixhawk-pixhawk-pinout-png" href="../../../../../assets/images/blog/q600/fixhawk/pixhawk-pinout-35979616.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/fixhawk/pixhawk-pinout-35979616.png' class='trailing-space' ></img></a></div></div>
+
+<p>Then set</p>
+<pre class="highlight plaintext"><code>RSSI_PIN = 103
+RSSI_RANGE = 3.3v, 5v, or the max voltage your receiver outputs
+</code></pre>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 29.380053908355798%;'><a id="assets-images-blog-q-fixhawk-rssi-pin-e-e-png" href="../../../../../assets/images/blog/q600/fixhawk/rssi-pin-e530e418.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/fixhawk/rssi-pin-e530e418.png' class='trailing-space' ></img></a></div></div>
+
+<h4 id="throttle-failsafe">Throttle Failsafe</h4>
+
+<p>Start by testing your throttle channel. When you turn off the radio, it must go at least 10 points lower than the Throttle Failsafe PWM value. I increased the Throttle PWM value to 980 to ensure this happens. This test makes sure that the Throttle Failsafe action occurs when the radio link is lost.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 58.620689655172406%;'><a id="assets-images-blog-q-fixhawk-fs-test-dc-f-b-png" href="../../../../../assets/images/blog/q600/fixhawk/fs-test-1-dc92f35b.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/fixhawk/fs-test-1-dc92f35b.png' class='trailing-space' ></img></a></div></div>
+
+<h4 id="immediate-disarm-failsafe">Immediate Disarm Failsafe</h4>
+
+<p>Next test that the copter is disarmed from stabilize or Acro mode when the throttle is 0 and the radio link is lost. Turn on everything, with props removed, arm the copter in stabilize or acro mode then turn off your transmitter. The copter should disarm immediately.</p>
+
+<h4 id="land-or-rth-failsafe">Land or RTH Failsafe</h4>
+
+<p>Test that the copter returns to home (if there is a GPS lock and there was a GPS lock when armed) or lands (if no GPS lock or home position was set). Connect to the copter via Telemetry. Turn everything on, with props removed, arm and throttle up. Turn off the transmitter. Watch your ground station, the flight mode should switch to LAND or RTH.</p>
+
+<p>If you can, test once without a GPS lock and then test with a GPS lock and ensure the mode changes to LAND the first time and RTH the second time.</p>
+
+<h4 id="retake-control-after-failsafe">Retake Control After Failsafe</h4>
+
+<p>Ensure you can re-take control after a failsafe event. Trigger a failsafe with the throttle up, as in the test above, but immediately turn your transmitter back on. Then try changing flight modes. You should regain control and be able to switch flight modes.</p>
+
+<h4 id="other-failsafes">Other Failsafes</h4>
+
+<p>There are a few other failsafes that do not require configuration, but you should be aware of:</p>
+
+<ul>
+<li><p><a href="http://copter.ardupilot.com/wiki/ekf-inav-failsafe/">EKF / DCM Check &amp; Failsafe</a></p>
+
+<ul>
+<li>This is essentially GPS failsafe. If the copter&#39;s IMU estimates do not match the GPS position. EKF will be triggered. By default the action is to LAND when this happens, you can change it to AltHold with the <a href="http://copter.ardupilot.com/wiki/arducopter-parameters/#ekf_failsafe_action_arducopterfs_ekf_action"><code>FS_EKF_ACTION</code></a> setting.</li>
+</ul></li>
+</ul>
+
+<p><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 4.761904761904762%;'><a id="assets-images-blog-q-fixhawk-fs-ekf-action-fc-d-png" href="../../../../../assets/images/blog/q600/fixhawk/fs-ekf-action-3fc97d24.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/fixhawk/fs-ekf-action-3fc97d24.png' class='trailing-space' ></img></a></div></div></p>
+
+<ul>
+<li>More details here: <a href="http://copter.ardupilot.com/wiki/gps-failsafe-glitch-protection/">GPS Failsafe and Glitch Protection</a></li>
+</ul>
+
+<h4 id="landing">Landing</h4>
+
+<p>By default, after returning home, the copter will land. Change this with the <code>RTL_ALT_FINAL</code> parameter, if you want it to over instead of land.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 20.566318926974663%;'><a id="assets-images-blog-q-fixhawk-rtl-alt-final-e-png" href="../../../../../assets/images/blog/q600/fixhawk/rtl-alt-final-1e517442.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/fixhawk/rtl-alt-final-1e517442.png' class='trailing-space' ></img></a></div></div>
+
+<h3 id="gps-setup">GPS Setup</h3>
+
+<p>Once you get your firmware installed and configured, sit the copter by a window or outside and plug in the USB or a battery and wait until it has a 3D GPS lock.</p>
+
+<ul>
+<li><p>Mission Planner&#39;s main screen will show you the GPS lock status</p></li>
+<li><p>For PX4, if you open QGroundControl and under <code>Widgets</code> pick the <code>MAVLink Inspector</code>, you can monitor the raw GPS data.</p></li>
+</ul>
+
+<h3 id="compass">Compass</h3>
+
+<p>Before you fly, you should verify that the magnetic interference from your motors will not disorient your copter. If you fail to do this and your motors generate too much magnetic interference, your copter will behave highly erratically or even fly away. Do not skip this!</p>
+
+<p>To do this, strap down your quadcopter (or put the props on the wrong way, so that when turned on, they push the copter towards the ground).</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-secured-f-c-e-jpg" href="../../../../../assets/images/blog/q600/secured-174f2c1e.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/secured_prev-838a11ce.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Always use threadlock when securing your prop nuts or use nylock nuts.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-threadlock-d-f-jpg" href="../../../../../assets/images/blog/q600/threadlock-620d363f.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/threadlock_prev-63b893af.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Then launch the <code>Compass Motor Configuration</code> from the <code>Initial Setup</code> -&gt; <code>Manditory Hardware</code> -&gt; <code>Compass</code>.</p>
+
+<p>With props on, and the copter secured, press and hold the arm button. Click <code>start</code> in the ground control app on the <code>Compass Motor Configuration</code> page.</p>
+
+<p>Slowly and smoothly throttle up to 75%, wait 5 to 10 seconds and cut the throttle quickly. You&#39;ll see a chart like this. The screenshot below is from APM Planner 2.0:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 64.63878326996198%;'><a id="assets-images-blog-q-fixhawk-throttle-compass-calibration-c-f-png" href="../../../../../assets/images/blog/q600/fixhawk/throttle-compass-calibration-1c965f74.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/fixhawk/throttle-compass-calibration-1c965f74.png' class='trailing-space' ></img></a></div></div>
+
+<p>Interference under 15% is safe. 15-30% is probably OK. If you see interference go over 30%, you should move your magnetometer (usually attached to the external GPS) further away from any ESC power wires.</p>
+
+<h3 id="gimbal">Gimbal</h3>
+
+<p>Let&#39;s configure the <a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/">ASP Gimbal</a> to allow extra RC channels to control Pitch and Yaw.</p>
+
+<p>First, I mapped channels 6 and 7 to the potentiometers (nobs) on my transmitter. I also assigned a single switch to the channels. I used the same switch for both channels, so that when the switch is off, the two channels are set to their mid-point, 1500, and when they switch is on, both channels get values from the potentiometers. I also mapped this switch to channel 8 on my transmitter and will configure it to pass through to the gimbal controller.</p>
+
+<p>Then I enabled RC pass-through on the PixHawk by setting:</p>
+<pre class="highlight plaintext"><code>RC6_FUNCTION=1
+RC7_FUNCTION=1
+RC8_FUNCTION=1
+</code></pre>
+
+<p>This will allow the values from the transmitter to pass-through the PixHawk. Connect the gimbal&#39;s <code>RC_PITCH</code> and <code>RC_YAW</code> to channels 6 and 7 in the <code>OUTPUT</code> pin group. I also connected channel 8 to the <code>RC_ROLL</code> channel, however I&#39;ll be using this to control the gimbal mode, not the roll, see the configuration below.</p>
+
+<p>Then configure the gimbal using SimpleBGC:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 78.62523540489642%;'><a id="assets-images-blog-q-asp-simplebgc-gimbal-abc-b-png" href="../../../../../assets/images/blog/q600/asp/simplebgc-gimbal-1-abc1834b.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/simplebgc-gimbal-1-abc1834b.png' class='trailing-space' ></img></a></div></div>
+
+<p>Note that I&#39;ve set the <code>Low</code> command to <code>Level Roll and Pitch to Horizon</code>, this is so the camera keeps it&#39;s normal orientation when the transmitter switch is off. If this were not enabled, the gimbal would stop wherever it was when the switch was flipped from on to off, instead of returning home.</p>
+
+<p>Set pitch and yaw limits along with any channel reversing you want. I also set the expo to 70 and doubled the <code>limit acceleration</code> value, for finer grain control:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 78.62523540489642%;'><a id="assets-images-blog-q-asp-simplebgc-gimbal-b-d-b-png" href="../../../../../assets/images/blog/q600/asp/simplebgc-gimbal-2-4b070d2b.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/simplebgc-gimbal-2-4b070d2b.png' class='trailing-space' ></img></a></div></div>
+
+<p><br/></p>
+
+<p>At this point, you can put on your ABS props and test fly or head back to the <a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/">ASP Gimbal Build and Setup guide</a> or the <a href="/blog/2016/01/29/rctimer-q600-quadcopter/">Q600 Build</a>.</p>
+
+<div class='text-center' style='margin: 1em'>
+Checkout my other guides at
+<a href='/blog'>nathan.vertile.com/blog</a>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+//<![CDATA[
+                  var disqus_shortname = 'vertile';
+          
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+//]]>
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</article>
+
+</div>
+</div>
+</div>
+<script>
+  var vglnk = { key: 'ddedf6f00d454f08b923376f1cb1cfbf' };
+  
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = '//cdn.viglink.com/api/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
+
+</body>
+</html>

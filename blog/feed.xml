@@ -5,16 +5,53 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-02-09T16:00:00-08:00</updated>
+  <updated>2016-02-25T01:15:00-08:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
   <entry>
-    <title>Rctimer Victory230 FPV Mini-quad Setup and Review</title>
+    <title>AVR Dissassembly</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/25/avr-dissassembly/"/>
+    <id>http://nathan.vertile.com/blog/2016/02/25/avr-dissassembly/</id>
+    <published>2016-02-25T01:15:00-08:00</published>
+    <updated>2016-02-25T18:20:13-08:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;h2 id="setup"&gt;Setup&lt;/h2&gt;
+
+&lt;p&gt;Install avr-libc via homebrew on mac:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;brew tap osx-cross/avr
+brew install avr-libc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install radare2&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;brew install radare2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="disassemble"&gt;Disassemble&lt;/h2&gt;
+
+&lt;p&gt;Convert the hex to bin&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;avr-objcopy –I ihex –O binary hello.hex hello.bin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;load with radare2&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;r2 -a avr hello.bin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or output assembly, for the atmega328p:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;avr-objdump -j .sec1 -d -m avr5 test.hex
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;where &lt;code&gt;-m&lt;/code&gt; specifies the architecture of your chip from: &lt;a href="http://www.nongnu.org/avr-libc/user-manual/using_tools.html"&gt;http://www.nongnu.org/avr-libc/user-manual/using_tools.html&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Victory230 FPV Mini-quad Setup and Review</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"/>
     <id>http://nathan.vertile.com/blog/2016/02/10/rctimer-victory230-fpv-miniquad/</id>
     <published>2016-02-09T16:00:00-08:00</published>
-    <updated>2016-02-16T00:30:16-08:00</updated>
+    <updated>2016-02-29T23:44:00-08:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -23,6 +60,8 @@
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-victory-a-edef-jpg" href="../../../../../assets/images/blog/beerotor/victory230/victory230-a045edef.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/victory230_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;#39;re thinking about getting a Vortex Pro 250, think again. The Victory230 will out-fly and out-perform the Vortex any day of the week. Though it&amp;#39;s prop-span is 20mm smaller, the Victory230 has bigger motors, ESCs that handle more current, an open source flight control board and OSD that can be easily upgraded. Plus, it&amp;#39;s almost half the cost. This is amazing.&lt;/p&gt;
 
 &lt;p&gt;That&amp;#39;s one fine lookin&amp;#39; box.&lt;/p&gt;
 
@@ -98,11 +137,11 @@
 
 &lt;p&gt;Basically, the only thing you need is a &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html?p=1G09211226617201502J"&gt;radio (buy a Taranis if you need a good one)&lt;/a&gt;, receiver and a battery. More on &lt;a href="#batteries"&gt;batteries&lt;/a&gt; in a minute.&lt;/p&gt;
 
-&lt;p&gt;I was going to use this &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.html?p=1G09211226617201502J"&gt;FrSky DJT module&lt;/a&gt; in my &lt;a href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J"&gt;FlySky 9x&lt;/a&gt; and a &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;DIY FrSKY RX&lt;/a&gt;, but they won&amp;#39;t bind without updating the RX firmware.&lt;/p&gt;
+&lt;p&gt;I was going to use this &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.html?p=1G09211226617201502J"&gt;FrSky DJT module&lt;/a&gt; in my &lt;a href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J"&gt;FlySky 9x&lt;/a&gt; and a &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;DIY FrSKY RX&lt;/a&gt;, but they won&amp;#39;t bind without updating the RX firmware. If you want to go this route, checkout &lt;a href="/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"&gt;my guide here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-radio-rx-jpg" href="../../../../../assets/images/blog/frsky-diy/radio-rx-40464990.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/radio-rx_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;If you&amp;#39;re looking for the best possible setup, just get a &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html?p=1G09211226617201502J"&gt;Taranis Transmitter&lt;/a&gt; and an &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-X4R-4CH-Telemetry-Receiver-p-947631.html?p=1G09211226617201502J"&gt;X4R receiver&lt;/a&gt;. This setup is the mini-quad racing standard as it&amp;#39;s super reliable, responsive and easy to use.&lt;/p&gt;
+&lt;p&gt;If you&amp;#39;re looking for the best possible setup, just get a &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html?p=1G09211226617201502J"&gt;Taranis Transmitter&lt;/a&gt; and an &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-X4R-4CH-Telemetry-Receiver-p-947631.html?p=1G09211226617201502J"&gt;X4R receiver&lt;/a&gt; or a &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony&amp;amp;p=1G09211226617201502J"&gt;naked X4R&lt;/a&gt;. This setup is the mini-quad racing standard as it&amp;#39;s super reliable, responsive and easy to use.&lt;/p&gt;
 
 &lt;p&gt;If you have a HAM license, in the US, you can run a 433mhz radio control link. You&amp;#39;ll see me mount an OpenLRS 433mhz RX below. This will give a little more range than the X4R, but I&amp;#39;m using this mostly because it&amp;#39;s what I have on hand.&lt;/p&gt;
 
@@ -421,10 +460,11 @@ save
 &lt;p&gt;I like to setup my failsafe so that:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;In stage 1, hold throttle position, to keep doing whatever was going on before the link was lost. This will make sure the quad doesn&amp;#39;t fall out of the sky. The downside is that it could continue running at full throttle for a few milliseconds.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;In stage 1, hold throttle position, to keep doing whatever was going on before the link was lost. This will make sure the quad doesn&amp;#39;t fall out of the sky. The downside is that it could continue running at full throttle for a few milliseconds. I also turn down &lt;code&gt;failsafe_delay&lt;/code&gt; from 1 second to 500ms. This is the amount of time the throttle will be held at its last position with &lt;code&gt;rxfailsafe 3 h&lt;/code&gt; before stage two takes effect.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;rxfail 3 h&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;set failsafe_delay = 5&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;In stage 2, throttle down. Stage 2 is when the quad goes into autolevel and descends. This value will make sure the quad falls fast. I&amp;#39;d rather come down quickly and crash instead of potentially running into someone or something with the motors throttled up.&lt;/p&gt;
 
@@ -520,21 +560,55 @@ save
 </content>
   </entry>
   <entry>
-    <title>AirWolf DIY FrSky RX SBUS and Frsky DJT Module</title>
+    <title>FrSky RX SBUS and Frsky DJT Module</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"/>
     <id>http://nathan.vertile.com/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/</id>
     <published>2016-02-08T23:10:00-08:00</published>
-    <updated>2016-02-16T00:22:19-08:00</updated>
+    <updated>2016-03-06T22:53:55-08:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
-    <content type="html">&lt;p&gt;This is a review and setup guide of the Airwolf DIY FrSKY Receiver and DJT Transmitter module.&lt;/p&gt;
+    <content type="html">&lt;p&gt;This is a review, setup guide and comparison of the two Airwolf DIY FrSKY Receivers (&lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt; and &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt;), both paired with the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.htmlp=1G09211226617201502J"&gt;DJT Transmitter module&lt;/a&gt; in my &lt;a href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J"&gt;9x&lt;/a&gt;. This article also takes a look at the &lt;a href="http://www.banggood.com/FrSky-2_4G-JR-Graupner-Type-16ch-Duplex-Telemetry-Module-p-88772.html?p=1G09211226617201502J"&gt;Naked X4R receiver&lt;/a&gt; from FrSky.&lt;/p&gt;
+
+&lt;p&gt;Note that the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.htmlp=1G09211226617201502J"&gt;DJT module&lt;/a&gt; will not bind with the &lt;a href="http://www.banggood.com/FrSky-2_4G-JR-Graupner-Type-16ch-Duplex-Telemetry-Module-p-88772.html?p=1G09211226617201502J"&gt;X4R&lt;/a&gt; since it uses the newer D16 mode. You&amp;#39;ll need to get the &lt;a href="http://www.banggood.com/FrSky-2_4G-JR-Graupner-Type-16ch-Duplex-Telemetry-Module-p-88772.html?p=1G09211226617201502J"&gt;XJT module&lt;/a&gt; or a &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html?p=1G09211226617201502J"&gt;Taranis&lt;/a&gt;, both of which support D8 and D16 modes, to bind with the &lt;a href="http://www.banggood.com/FrSky-2_4G-JR-Graupner-Type-16ch-Duplex-Telemetry-Module-p-88772.html?p=1G09211226617201502J"&gt;X4R&lt;/a&gt;. See the &lt;a href="#compatibility"&gt;compatibility&lt;/a&gt; section for details.&lt;/p&gt;
+
+&lt;h2 id="comparison"&gt;Comparison&lt;/h2&gt;
+
+&lt;p&gt;Here is the less expensive of the Airwolf modules, the &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801 DIY&lt;/a&gt; module, which runs about &lt;code&gt;$11.50&lt;/code&gt;.&lt;/p&gt;
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-radio-rx-jpg" href="../../../../../assets/images/blog/frsky-diy/radio-rx-40464990.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/radio-rx_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;p&gt;I have tested both the &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt; and &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt;modules with updated firmware and found that the &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt; performs significantly worse than the &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt;. With the &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt; I get several fail-safes per flight, when flying only 50m up and 50m away laterally. The &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt; and &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt; appear to use the same wireless transceiver, however the &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt; includes a &lt;a href="http://www.seeedstudio.com/wiki/images/e/e7/RFX2401C_Data_Sheet_R2p6.pdf"&gt;RFX2401C&lt;/a&gt;. If you plan on flying more thank several meters away, you should definitely pay a few dollars more for the &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt; or &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;X4R&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-vs-x-r-ff-bd-jpg" href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;utm_content=mony&amp;p=1G09211226617201502J" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/vs-x4r_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you&amp;#39;re looking for something small, light, with diversity and ready to go without flashing, get a &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;naked X4R&lt;/a&gt; instead. The X4R uses the more powerful STM32F1 processor, instead of the Airwolf modules&amp;#39; Atmega328p (8-bit) microcontroller. The downside of the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;X4R&lt;/a&gt; is that it costs about 30% to 50% more, depending on if you get the &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt; or &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt; DIY module, but the range and reliability is totally worth it.&lt;/p&gt;
+
+&lt;p&gt;As you can see from the above photo with the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;naked X4R&lt;/a&gt; on the top and DIY &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt; on the bottom, the X4R is smaller and lighter, while adding diversity. You could also get the &lt;a href="http://www.banggood.com/FrSky-X4RSB-316-Channel-Telemetry-Receiver-p-955643.html?p=1G09211226617201502J"&gt;X4R&lt;/a&gt; with pins.&lt;/p&gt;
+
+&lt;p&gt;Speaking of the &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt;, it breaks out a few more pins, including SBUS, and significantly improves the range over the &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt;. It runs about &lt;code&gt;$18.00&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id="compatibility"&gt;Compatibility&lt;/h2&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;transmitter -&amp;gt; compatible receivers
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;Taranis -&amp;gt; F801, F802, X4R or any other FrSky reciever
+XJT -&amp;gt; F801, F802, X4R or any FrSky reciever
+DJT -&amp;gt; F801, F802 or any 8 channel receiver. No X-series recievers will bind with this module.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.htmlp=1G09211226617201502J"&gt;DJT&lt;/a&gt; module is compatible with the DIY F801 and F802 but not compatible with the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;naked XR4&lt;/a&gt;. You&amp;#39;ll need to get the &lt;a href="http://www.banggood.com/FrSky-2_4G-JR-Graupner-Type-16ch-Duplex-Telemetry-Module-p-88772.html?p=1G09211226617201502J"&gt;XJT&lt;/a&gt; to use the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;X4R&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Besides the compatibility as noted above, the difference between the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.htmlp=1G09211226617201502J"&gt;DJT&lt;/a&gt; module and the &lt;a href="http://www.banggood.com/FrSky-2_4G-JR-Graupner-Type-16ch-Duplex-Telemetry-Module-p-88772.html?p=1G09211226617201502J"&gt;XJT&lt;/a&gt; module is the number of channels. the &lt;a href="http://www.banggood.com/FrSky-2_4G-JR-Graupner-Type-16ch-Duplex-Telemetry-Module-p-88772.html?p=1G09211226617201502J"&gt;XJT&lt;/a&gt; is 16 channels and the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.html?p=1G09211226617201502J"&gt;DJT&lt;/a&gt; is 8 channels.&lt;/p&gt;
+
+&lt;p&gt;Behind the scenes there are two different FrSKY protocols that the two modules use. The DJT uses the 8 channel D8 protocol and the XJT speaks the 16 channel D16 protocol or the D8 protocol. Just be sure you have the right firmware, the version I used is here &lt;a href="https://www.dropbox.com/sh/341ycykh3fnrr0g/AAAchxBDsR7gFzQbdpCSadzma?dl=0"&gt;https://www.dropbox.com/sh/341ycykh3fnrr0g/AAAchxBDsR7gFzQbdpCSadzma?dl=0&lt;/a&gt; or download from the offical website here: &lt;a href="http://www.frsky-rc.com/download/view.php?sort=&amp;amp;down=232&amp;amp;file=Firmware-XJT"&gt;http://www.frsky-rc.com/download/view.php?sort=&amp;amp;down=232&amp;amp;file=Firmware-XJT&lt;/a&gt;. If you need a transmitter, get the &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html?p=1G09211226617201502J"&gt;Taranis&lt;/a&gt;, which also supports both protocols and either D8 or D16 receivers.&lt;/p&gt;
+
+&lt;p&gt;If you need a receiver and don&amp;#39;t want to shell out for a Taranis, it&amp;#39;s also possible to modify the less expensive &lt;a href="http://www.banggood.com/Wholesale-Walkera-Devo-7E-7CH-Transmitter-Mode-2-Without-Receiver-p-48117.html?p=1G09211226617201502J"&gt;Devo 7e&lt;/a&gt; to bind with the F801 and F802 modules. The Devo does not support binding the XR4. Checkout &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=2477581"&gt;these guides for modding your Devo 7e&lt;/a&gt;.&lt;/p&gt;
+
 &lt;h2 id="form-and-fit"&gt;Form and Fit&lt;/h2&gt;
 
-&lt;p&gt;Turns out, it doesn&amp;#39;t quite fit in all the way into the back of my &lt;a href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J"&gt;9x&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;First, let&amp;#39;s fit the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.htmlp=1G09211226617201502J"&gt;DJT module&lt;/a&gt;. It turns out, it doesn&amp;#39;t quite fit in all the way into the back of my &lt;a href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J"&gt;9x&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If your radio doesn&amp;#39;t have a module slot, get a &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html?p=1G09211226617201502J"&gt;Taranis&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;To get it to fit, I removed the grill on the back of the module.&lt;/p&gt;
 
@@ -543,6 +617,8 @@ save
 &lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-module-after-a-cc-jpg" href="../../../../../assets/images/blog/frsky-diy/module-after-30a006cc.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/module-after_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id="flashing"&gt;Flashing&lt;/h2&gt;
+
+&lt;p&gt;To enable SBUS, you&amp;#39;ll need to install the latest firmware. This will require a bit of work, so if you&amp;#39;re looking for something a bit more plug and play, grab an &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony&amp;amp;p=1G09211226617201502J"&gt;X4R&lt;/a&gt; instead.&lt;/p&gt;
 
 &lt;p&gt;Download the latest firmware from here: &lt;a href="http://www.rcgroups.com/forums/showpost.php?p=32959023&amp;amp;postcount=1147"&gt;http://www.rcgroups.com/forums/showpost.php?p=32959023&amp;amp;postcount=1147&lt;/a&gt;&lt;/p&gt;
 
@@ -586,6 +662,12 @@ RESET - SS
 &lt;p&gt;Download Burn-O-Mat: &lt;a href="http://avr8-burn-o-mat.aaabbb.de/avr8_burn_o_mat_avrdude_gui_en.php"&gt;http://avr8-burn-o-mat.aaabbb.de/avr8_burn_o_mat_avrdude_gui_en.php&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I also needed a Java Runtime for my VM. I used 1.5 &lt;a href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html#jre-1.5.0_22-oth-JPR"&gt;http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html#jre-1.5.0_22-oth-JPR&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;For the F801:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;avrdude -b 19200 -c avrisp -p m328p -P COM3 -u -U flash:w:FrskyRx_F801_TELEMETRY__PFS_SBUS_310116.hex
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For the F802:&lt;/p&gt;
 &lt;pre class="highlight plaintext"&gt;&lt;code&gt;avrdude -b 19200 -c avrisp -p m328p -P COM3 -u -U flash:w:FrskyRx_F801_TELEMETRY__PFS_SBUS_310116.hex
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -604,8 +686,12 @@ avrdude: safemode: efuse reads as 5
 &lt;p&gt;The latest version supports PFS and SBUS.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;SBUS, bridge CH5 and CH7&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;PPM, before CH1 and CH3&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;SBUS, bridge CH5 and CH7&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SBUS is NOT inverted. If you&amp;#39;re using CleanFlight or BetaFlight with an F3 flight controller, you&amp;#39;ll need to &lt;code&gt;set sbus_inversion=OFF&lt;/code&gt; in the CLI.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;PPM, bridge CH1 and CH3&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Note that you cannot use both at the same time. If you bridge both 5&amp;amp;7 and 1&amp;amp;3 at the same time, there will be no output.&lt;/p&gt;
@@ -615,15 +701,27 @@ avrdude: safemode: efuse reads as 5
 &lt;h3 id="rssi"&gt;RSSI&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;In SBUS mode: RSSI-PWM on CH3&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;IN PPM mode: RSSI-PWM on CH5&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In SBUS mode: RSSI-PWM on CH3&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the UART TX pin is the SBUS out&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;IN PPM mode: RSSI-PWM on CH5&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;channel 4 is PPM out&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id="failsafe"&gt;Failsafe&lt;/h3&gt;
+
+&lt;p&gt;When signal is lost, the receiver waits about 1sec then the throttle is set to 960 and all other channels to neutral (1500).&lt;/p&gt;
 
 &lt;h3 id="binding"&gt;Binding&lt;/h3&gt;
 
-&lt;p&gt;Switch both switches on the DJT module off (down).&lt;/p&gt;
+&lt;p&gt;Switch both switches on the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.htmlp=1G09211226617201502J"&gt;DJT module&lt;/a&gt; off (down).&lt;/p&gt;
 
-&lt;p&gt;Turn on your transmitter while holding the button on the DJT module.&lt;/p&gt;
+&lt;p&gt;Turn on your transmitter while holding the button on the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.htmlp=1G09211226617201502J"&gt;DJT module&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;It will start beeping&lt;/p&gt;
 
@@ -633,6 +731,34 @@ avrdude: safemode: efuse reads as 5
 
 &lt;p&gt;Power off both the transmitter and receiver.&lt;/p&gt;
 
+&lt;h3 id="design"&gt;Design&lt;/h3&gt;
+
+&lt;p&gt;Hardware design:&lt;/p&gt;
+
+&lt;p&gt;pinouts:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;SI ; D5
+SO; D6
+SCLK ; D4
+CS ; D2
+GDO0;D3
+
+***************************
+Servo1_OUT 7 //Servo1(D7)
+Servo2_OUT 8 //Servo2(B0)
+Servo3_OUT 9 //Servo3(B1)
+Servo4_OUT 10 //Servo4(B2)//PPM pin
+Servo5_OUT 11 //Servo5(B3)//RSSI PWM only on PPM mode
+Servo6_OUT 12 //Servo6(B4)
+Servo7_OUT 13 //Servo7(B5)
+Servo8_OUT A0 //Servo8(C0)//bind plug
+************************************
+
+LED ; C3(A3 promini)
+Vcc ; VCC 3.3v
+Gnd ; Gnd
+
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;h3 id="further-reading"&gt;Further Reading&lt;/h3&gt;
 
 &lt;p&gt;Original Thread: &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=2124647"&gt;http://www.rcgroups.com/forums/showthread.php?t=2124647&lt;/a&gt;&lt;/p&gt;
@@ -640,6 +766,8 @@ avrdude: safemode: efuse reads as 5
 &lt;p&gt;Wiring: &lt;a href="http://www.rcgroups.com/forums/showpost.php?p=32756034&amp;amp;postcount=999"&gt;http://www.rcgroups.com/forums/showpost.php?p=32756034&amp;amp;postcount=999&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="http://www.rcgroups.com/forums/showpost.php?p=33046356&amp;amp;postcount=1217"&gt;http://www.rcgroups.com/forums/showpost.php?p=33046356&amp;amp;postcount=1217&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Naked D4R manual: &lt;a href="http://imgmgr.banggood.com/images/upload/2014/07/D4R-II.pdf"&gt;http://imgmgr.banggood.com/images/upload/2014/07/D4R-II.pdf&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -647,7 +775,7 @@ avrdude: safemode: efuse reads as 5
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/06/hmdvr-fpv-video-recorder/"/>
     <id>http://nathan.vertile.com/blog/2016/02/06/hmdvr-fpv-video-recorder/</id>
     <published>2016-02-05T22:09:00-08:00</published>
-    <updated>2016-02-14T01:04:02-08:00</updated>
+    <updated>2016-02-29T21:52:44-08:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -665,7 +793,7 @@ avrdude: safemode: efuse reads as 5
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 86.43617021276596%;'&gt;&lt;a id="assets-images-blog-hmdvr-ntsc-c-e-e-png" href="../../../../../assets/images/blog/hmdvr/ntsc-c62e1e72.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/hmdvr/ntsc-c62e1e72.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;And this is PAL video output from my &lt;a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"&gt;Victory 230&lt;/a&gt;, note that the video is cropped (there should be another line of text from my OSD, which I can see in my goggles, but not on the recording).&lt;/p&gt;
+&lt;p&gt;And this is PAL video output from my &lt;a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"&gt;Victory 230&lt;/a&gt;, note that the video is cropped (there should be another line of text from my OSD, which I can see in my goggles, but not on the recording). Unfortunately, the video is still cropped, even after updating as described below.&lt;/p&gt;
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 86.43617021276596%;'&gt;&lt;a id="assets-images-blog-hmdvr-pal-f-c-b-png" href="../../../../../assets/images/blog/hmdvr/pal-33f68c6b.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/hmdvr/pal-33f68c6b.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -690,6 +818,8 @@ avrdude: safemode: efuse reads as 5
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hmdvr-goggles-b-fb-jpg" href="../../../../../assets/images/blog/hmdvr/goggles-b681fb30.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/hmdvr/goggles_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id="firmware-update"&gt;Firmware Update&lt;/h2&gt;
+
+&lt;p&gt;This firmware update fixes an issue where the HMDVR does not save settings between power-cycles. The PAL cropping issue still exists.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Download the firmware update: &lt;a href="https://www.dropbox.com/s/hc1glpuucma9cn3/CRESFW.BIN?dl=1"&gt;https://www.dropbox.com/s/hc1glpuucma9cn3/CRESFW.BIN?dl=1&lt;/a&gt;&lt;/p&gt;
@@ -721,13 +851,13 @@ avrdude: safemode: efuse reads as 5
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"/>
     <id>http://nathan.vertile.com/blog/2016/02/03/rctimer-beerotorf3-flight-controller/</id>
     <published>2016-02-02T19:56:00-08:00</published>
-    <updated>2016-02-12T22:23:14-08:00</updated>
+    <updated>2016-02-26T08:13:11-08:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
     <content type="html">&lt;p&gt;This is a review and setup guide for the new &lt;a href="http://www.rctimer.com/product-1592.html/#r-pNathanT"&gt;BeerotorF3 (BRF3)&lt;/a&gt; all-in-one (AIO) flight controller from Rctimer.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.9765625%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-offset-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.9765625%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-offset-f-e-e-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-9f366e4e.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
 
@@ -851,7 +981,7 @@ Cycle Time: 1012, I2C Errors: 2, config size: 2060
 
 &lt;p&gt;The really exciting part about this board is the on-board MinimOSD. A minim osd is basically two chips: the MAX7456 chip and ATMEGA328p, which you can see on the bottom of the board:&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.9765625%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-offset-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-61147778.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.9765625%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-offset-f-e-e-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-9f366e4e.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-9f366e4e.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The MAX chip is in charge of drawing characters onto the video signal and the ATMEGA chip tells the MAX chip what characters to draw.&lt;/p&gt;
 
@@ -1034,203 +1164,241 @@ save
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This will calibrate the flight controller to the PDB&amp;#39;s voltage and current sensor hardware.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>BlHeli ESCs</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2015/12/06/blheli-esc-identification/"/>
-    <id>http://nathan.vertile.com/blog/2015/12/06/blheli-esc-identification/</id>
-    <published>2015-12-06T15:00:00-08:00</published>
-    <updated>2016-02-12T22:23:14-08:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;This guide will show you how to flash BlHeli and the BlHeli bootloader so they can be programed via CleanFlight or BetaFlight pass through programming in BlHeli Suite.&lt;/p&gt;
 
-&lt;h2 id="what-is-blheli"&gt;What is BlHeli?&lt;/h2&gt;
+&lt;h3 id="receiver"&gt;Receiver&lt;/h3&gt;
 
-&lt;p&gt;&lt;code&gt;BlHeli&lt;/code&gt; is firmware that runs on some Atmel and SiLabs ESCs, supports OneShot 125, and is designed for multi-copter performance.&lt;/p&gt;
+&lt;h4 id="serial-rx"&gt;Serial RX&lt;/h4&gt;
 
-&lt;p&gt;&lt;code&gt;BlHeli Suite&lt;/code&gt; is the companion application (windows only) that allows one to flash and configure BlHeli ESCs.&lt;/p&gt;
+&lt;p&gt;The Serial RX connection looks like this. I&amp;#39;m using SBUS. The white wire is the SBUS signal and the grey wire is the RSSI-ADC. We&amp;#39;ll actually get RSSI on SBUS channel 9 with this &lt;a href="/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"&gt;DIY FrSky module&lt;/a&gt;, so they grey wire is actually not necessary with this receiver. You may or may not need the grey RSSI-ADC wire attached, depending on your RX.&lt;/p&gt;
 
-&lt;p&gt;The &lt;code&gt;BlHeli Bootloader&lt;/code&gt; is part of the BlHeli firmware that is installed on all SiLabs ESCs and optionally on Atmel ESCs. &lt;code&gt;BlHeli Bootloader&lt;/code&gt; is required for &lt;code&gt;CleanFlight Passthrough Programming&lt;/code&gt;&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-sbus-f-e-jpg" href="../../../../../assets/images/blog/frsky-diy/sbus-f76e9778.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/sbus_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;CleanFlight (and BetaFlight) passthrough programming allows one to update and configure BlHeli ESCs while leaving them plugged into the flight controller, essentially turning the flight controller into a programming adapter.&lt;/p&gt;
+&lt;p&gt;Enable Serial RX for UART3 on the &lt;code&gt;Ports&lt;/code&gt; tab then hit &lt;code&gt;Save and Reboot&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Note that even if you bought &lt;code&gt;BlHeli&lt;/code&gt; ESCs, they may not have the &lt;code&gt;BlHeli Bootloader&lt;/code&gt; installed.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.66901408450704%;'&gt;&lt;a id="assets-images-blog-cleanflight-config-serial-rx-port-bb-bd-png" href="../../../../../assets/images/blog/cleanflight_config/serial-rx-port-bb780bd2.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/cleanflight_config/serial-rx-port-bb780bd2.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;As for the two different types of ESCs currently compatible with BlHeli -- one type is based on an Atmel microcontroller and the other is based on a SiLabs microcontroller. In general, Atmel based ESCs are less expensive and slightly less performant. High end SiLabs ESCs have dedicated driver chips and fast switching FETs. You&amp;#39;ll notice a performance difference in flight if you go with the better ESCs, I promise.&lt;/p&gt;
+&lt;p&gt;On the Configuration Tab set &lt;code&gt;Receiver Mode&lt;/code&gt; to &lt;code&gt;Serial RX&lt;/code&gt; and choose your Serial Receiver Provider, I&amp;#39;m using &lt;code&gt;SBUS&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2 id="identify-your-esc-micro-controller"&gt;Identify your ESC micro controller&lt;/h2&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.66901408450704%;'&gt;&lt;a id="assets-images-blog-cleanflight-config-serial-rx-sbus-f-png" href="../../../../../assets/images/blog/cleanflight_config/serial-rx-sbus-998f4886.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/cleanflight_config/serial-rx-sbus-998f4886.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Read on for the short version or for an in depth look at ESCs and how the hardware works, checkout &lt;a href="https://github.com/sim-/tgy/wiki/Identifying-ESC-pin-configuration"&gt;this awesome guide to identifying ESCs on the SimonK wiki&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id="atmel-based-escs"&gt;Atmel Based ESCs&lt;/h3&gt;
-
-&lt;h4 id="guide"&gt;Guide&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/"&gt;BlHeli on the Atmel based F20 ESC&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id="atmel-micro-controller"&gt;Atmel micro-controller&lt;/h4&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 37.42550655542312%;'&gt;&lt;a id="assets-images-blog-blheli-ubec-a-b-ed-jpg" href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/blheli/ubec-20a-b021ed72.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Note that the Atmel firmware does not always include the BlHeli bootloader. Be sure to check the box to install the BlHeli bootloader when flashing, described in detail in the guide, &lt;a href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/"&gt;BlHeli on the Atmel based F20 ESC&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It&amp;#39;s OK if you&amp;#39;re working with a different ESC, the difference will be the pads to which you connect the ISP programmer. You can find those pads and if your Atmel ESC is supported here: &lt;a href="https://github.com/bitdump/BLHeli/raw/master/Atmel/BLHeli%20supported%20Atmel%20ESCs.pdf"&gt;BLHeli supported Atmel ESCs.pdf&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id="silabs-based-escs"&gt;SiLabs Based ESCs&lt;/h3&gt;
-
-&lt;h4 id="guide"&gt;Guide&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href="/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if"&gt;BlHeli on the SiLabs xRotor 20a ESC&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id="silabs-micro-controller"&gt;SiLabs micro-controller&lt;/h4&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 36.754176610978526%;'&gt;&lt;a id="assets-images-blog-blheli-xrotor-a-jpg" href="/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/blheli/xrotor-20a-71996397.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The SiLabs firmware includes the bootloader by default. No need to click any boxes, just flash the SiLab firmware and you&amp;#39;ll have the bootloader. Follow this guide on for flashing &lt;a href="/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/"&gt;BlHeli on the SiLabs xRotor 20a ESC&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The only difference will be the pads to which you connect the C2 programmer. You can find those pads and if your SiLabs ESC is supported here: &lt;a href="https://github.com/bitdump/BLHeli/raw/master/SiLabs/BLHeli%20supported%20SiLabs%20ESCs.pdf"&gt;BLHeli supported SiLabs ESCs.pdf&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id="configuration"&gt;Configuration&lt;/h3&gt;
-
-&lt;p&gt;Once you&amp;#39;ve flashed the BlHeli bootloader, you can update and configure your ESCs via CleanFlight/BetaFlight passthrough.
-You can do it here, while connected with the 4w programmer or use &lt;a href="/blog/2015/12/06/blheli-configuration/"&gt;CleanFlight/BetaFlight pass-through programming and configuration&lt;/a&gt; once you&amp;#39;ve installed the ESCs in your copter.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="/blog/2015/12/06/blheli-configuration/"&gt;Check out the configuration guide for more&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id="calibration"&gt;Calibration&lt;/h4&gt;
-
-&lt;p&gt;After configuring your ESCs, before you fly, make sure you &lt;a href="/blog/2015/12/06/blheli-calibration/"&gt;calibrate your ESCs&lt;/a&gt; so the throttle range of each ESC matches the others.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="/blog/2015/12/06/blheli-calibration/"&gt;Read the guide on throttle calibration here&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>BlHeli ESC Upgrading and Configuration</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2015/12/06/blheli-configuration/"/>
-    <id>http://nathan.vertile.com/blog/2015/12/06/blheli-configuration/</id>
-    <published>2015-12-06T14:00:00-08:00</published>
-    <updated>2016-02-12T22:23:14-08:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;This guide will show you how to configure your ESCs with the optimal settings for use with OneShot125, CleanFlight or BetaFlight.&lt;/p&gt;
-
-&lt;p&gt;Download the latest BlHeli Suite from here: &lt;a href="http://blhelisuite.wordpress.com"&gt;blhelisuite.wordpress.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id="interface"&gt;Interface&lt;/h2&gt;
-
-&lt;p&gt;It is possible to connect to your ESCs in a variety of ways. I think the easiest way to connect, if you&amp;#39;ve already &lt;a href="/blog/2015/12/06/blheli-esc-identification/"&gt;identified the microprocessor and flashed BlHeli (with the bootloader)&lt;/a&gt; is pass-through programming via CleanFlight or BetaFlight.&lt;/p&gt;
-
-&lt;p&gt;If you don&amp;#39;t have the bootloader installed, flash that first by following the &lt;a href="/blog/2015/12/06/blheli-esc-identification/"&gt;BlHeli ESCs Identification and Flashing Guide&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The other option, if you don&amp;#39;t have a flight controller handy, is to configure them via 1-wire interface. For this you&amp;#39;ll need an &lt;a href="http://www.banggood.com/ATmega328P-Arduino-Compatible-Nano-V3-Improved-Version-No-Cable-p-959231.html?p=1G09211226617201502J"&gt;Arduino Nano (or clone)&lt;/a&gt; that we&amp;#39;ll flash to make it a &lt;code&gt;4w&lt;/code&gt; or 4 way programmer.&lt;/p&gt;
-
-&lt;h3 id="cleanflight-pass-through"&gt;CleanFlight Pass Through&lt;/h3&gt;
-
-&lt;p&gt;Plug your ESCs into the flight controller, as you normally would, and your ESC into a battery. Make sure the props have been removed.&lt;/p&gt;
-
-&lt;p&gt;During testing I use a current-limiting voltage regulator:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.40625%;'&gt;&lt;a id="assets-images-blog-blheli-passthrough-connection-a-c-jpg" href="../../../../../assets/images/blog/blheli/passthrough-connection-5a211c45.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/passthrough-connection-5a211c45.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Pick the &lt;code&gt;(Cleanflight)&lt;/code&gt; interface for either SiLabs or Atmel, depending on your &lt;a href="/blog/2015/12/06/blheli-esc-identification/"&gt;flight controller type&lt;/a&gt;:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-interface-d-ac-ed-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-1-interface-8d1ac9ed.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-1-interface-8d1ac9ed.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Choose the correct serial port:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-serial-d-f-c-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-2-serial-03d83f5c.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-2-serial-03d83f5c.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Hit &lt;code&gt;Connect&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-connect-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-3-connect-93789354.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-3-connect-93789354.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Hit &lt;code&gt;Read Setup&lt;/code&gt;, then hit &lt;code&gt;OK&lt;/code&gt;. I only have 1 ESC plugged in, but there would be more on this list if you had more plugged in:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-read-c-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-4-read-37c29457.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-4-read-37c29457.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;You&amp;#39;ll see the default values for your ESC appear:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-read-default-xm-a-faedf-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-5-read-default-xm10a-faedf761.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-5-read-default-xm10a-faedf761.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Skip to the &lt;a href="#update-blheli"&gt;Update BlHeli&lt;/a&gt; section.&lt;/p&gt;
-
-&lt;h3 id="1-wire-4-way-interface"&gt;1-wire 4-way interface&lt;/h3&gt;
-
-&lt;h4 id="connection"&gt;Connection&lt;/h4&gt;
-
-&lt;p&gt;Connect your ESC servo connector to an &lt;a href="http://www.banggood.com/ATmega328P-Arduino-Compatible-Nano-V3-Improved-Version-No-Cable-p-959231.html?p=1G09211226617201502J"&gt;Arduino Nano&lt;/a&gt;.&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;Arduino GND &amp;lt;-&amp;gt; ESC GND
-Arduino D3 &amp;lt;-&amp;gt; ESC Signal
-No Connection &amp;lt;-&amp;gt; ESC 5v Power
+&lt;p&gt;To get RSSI on SBUS channel 9, set:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;set rssi_channel = 9
+set max_aux_channels = 5
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;If you&amp;#39;re using the cheap Arduino Nano clone, you&amp;#39;ll need the &lt;a href="http://www.wch.cn/downfile/65"&gt;ch340g usb chip driver&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you&amp;#39;re using OpenLRS or a DIY FrSky module, set sbus_inversion off&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;set sbus_inversion=OFF
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Flying Sony NEX Micro 4/3rds Camera</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/01/29/flying-micro-4-3rds-camera/"/>
+    <id>http://nathan.vertile.com/blog/2016/01/29/flying-micro-4-3rds-camera/</id>
+    <published>2016-01-29T12:45:00-08:00</published>
+    <updated>2016-03-01T08:40:22-08:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;So, you want a flying camera to take videos of you and your awesome friends doing amazing things. You&amp;#39;ve thought about getting one of those pre-built drones by DJI or 3D Robotics, but those are expensive little drones that only carry weak little cameras.&lt;/p&gt;
 
-&lt;h4 id="flash-the-arduino"&gt;Flash the Arduino&lt;/h4&gt;
+&lt;p&gt;Building a giant rig to carry your full frame DSLR isn&amp;#39;t ideal either, because it will need to be huge and therefore less portable.&lt;/p&gt;
 
-&lt;p&gt;Switch to the &lt;code&gt;Make Interfaces&lt;/code&gt; tab.&lt;/p&gt;
+&lt;p&gt;So what should we do? Build something to carry our &lt;a href="http://amzn.to/1TCifYo"&gt;NEX-5T&lt;/a&gt; micro 4/3rds camera! This camera weighs 397g with the standard lens and the video can be viewed and the camera controlled over Wi-Fi, ideal for when we&amp;#39;re in the air.&lt;/p&gt;
 
-&lt;p&gt;Click &lt;code&gt;Make Arduino General&lt;/code&gt;&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-q-q-c-a-jpg" href="http://rctimer.com/product-1456.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/q600-c88a2913.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 86.42578125%;'&gt;&lt;a id="assets-images-blog-blheli-guide-w-afff-bc-jpg" href="../../../../../assets/images/blog/blheli_guide/4w-1-afff4bc9.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli_guide/4w-1-afff4bc9.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;We could just strap the camera straight to a quad-copter that is big enough to carry a 397g payload, but the video would be pretty shaky. For silky smooth footage, we&amp;#39;ll carry the camera with the best brushless motor gimbal available for this size camera, an &lt;a href="http://rctimer.com/product-980.html/#r-pNathanT"&gt;Rctimer ASP Brushless Gimbal&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Click &lt;code&gt;OK&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Since we&amp;#39;ll want to be able to let go of our RC remote control and do a bit of filming once in the air, we&amp;#39;ll use the best autonomous flight controller on the market, the &lt;a href="http://rctimer.com/product-980.html/#r-pNathanT"&gt;PixHawk&lt;/a&gt;. This is the same flight controller used by 3D Robotics&amp;#39; Solo quad-copter, but the Solo could never carry a micro 4/3rds size camera.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 86.5234375%;'&gt;&lt;a id="assets-images-blog-blheli-guide-w-c-ad-jpg" href="../../../../../assets/images/blog/blheli_guide/4w-2-c915ad06.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli_guide/4w-2-c915ad06.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;This guide will show you how to fly around your Sony NEX camera. First we&amp;#39;ll talk about the components and why we&amp;#39;ve chosen the ones in this guide. Then we&amp;#39;ll go over how to assemble the quadcopter and gimbal. Finally, we&amp;#39;ll flash and configure all the components.&lt;/p&gt;
 
-&lt;p&gt;Pick the first hex file, the one, with the word &lt;code&gt;MULTI&lt;/code&gt; in it.&lt;/p&gt;
+&lt;p&gt;This guide should always be considered a work in progress. I&amp;#39;ll do my best to keep it up to date, but if you notice something out of date or missing, just leave a comment and I&amp;#39;ll follow up!&lt;/p&gt;
 
-&lt;p&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 71.2890625%;'&gt;&lt;a id="assets-images-blog-blheli-guide-w-ce-jpg" href="../../../../../assets/images/blog/blheli_guide/4w-3-570ce538.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli_guide/4w-3-570ce538.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Let&amp;#39;s get started.&lt;/p&gt;
 
-&lt;h3 id="update-blheli"&gt;Update BlHeli&lt;/h3&gt;
+&lt;h3 id="trooper-q600"&gt;&lt;a href="http://rctimer.com/product-1456.html/#r-pNathanT"&gt;Trooper Q600&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;To update to the latest version of BlHeli, click &lt;code&gt;Flash BLHeli&lt;/code&gt;:&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-q-q-gimballess-d-b-jpg" href="../../../../../assets/images/blog/q600/q600-gimballess-6940d66b.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/q600-gimballess_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-click-flash-a-f-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-6-click-flash-4770a78f.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-6-click-flash-4770a78f.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The Q600 from Rctimer is an all-carbon fiber 600mm size quad-copter. It comes with a set of awesome 13x6.5 carbon fiber props, landing gear, a huge pdb, a gimble-ready under-body plate, plastic body cover, 40a ESCs and some awesome 3510-350kv motors.&lt;/p&gt;
 
-&lt;p&gt;If BlHeli is already installed, it should pick the right firmware for you, verify this the name matches your ESC then click&lt;code&gt;OK&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;If a 600 size isn&amp;#39;t big enough for you, pickup the &lt;a href="http://rctimer.com/product-1243.html/#r-pNathanT"&gt;longer-armed Q850 kit&lt;/a&gt; or &lt;a href="http://rctimer.com/product-1155.html/#r-pNathanT"&gt;850mm arms for the Q600&lt;/a&gt; and turn it into an 850mm size quad. Using the Q600 + 850mm arms is slightly better, because of the updated PDB on the Q600.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-pick-firmware-a-d-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-7-pick-firmware-65743a3d.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-7-pick-firmware-65743a3d.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-q-arms-d-c-jpg" href="../../../../../assets/images/blog/q600/parts-q850-arms-981d0c69.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-q850-arms-981d0c69.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;It will write:&lt;/p&gt;
+&lt;p&gt;You should also get some &lt;a href="http://www.rctimer.com/product-528.html/#r-pNathanT"&gt;plastic props&lt;/a&gt; and &lt;a href="http://www.rctimer.com/product-1513.html/#r-pNathanT"&gt;locknuts&lt;/a&gt; to hold them on, so you have something less dangerous than carbon fiber props to test with. Once you have everything tuned in, then switch to the carbon props.
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-abs-props-d-eb-jpg" href="../../../../../assets/images/blog/q600/parts-abs-props-d97eb943.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-abs-props-d97eb943.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-write-firmware-bb-b-df-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-8-write-firmware-bb3b4df8.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-8-write-firmware-bb3b4df8.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The 3510 size, 350kv motors are basically the same motor that is used on the DJI inspire 1. DJI rates their motors for a suggested 800g/motor takeoff weight which is right in line with Rctimer&amp;#39;s &lt;a href="http://rctimer.com/product-1456.html/#r-pNathanT"&gt;&lt;code&gt;3.5kg&lt;/code&gt; suggested takeoff weight&lt;/a&gt;. The quad-copter itself weights 1734g and the camera and gimbal weigh 918g leaving us 848g for batteries.&lt;/p&gt;
 
-&lt;p&gt;Then read:&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-motor-f-jpg" href="http://rctimer.com/product-1434.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-motor-160f2472.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-writing-firmware-f-b-fa-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-9-writing-firmware-f8b36fa8.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-9-writing-firmware-f8b36fa8.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The best value &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=38515&amp;amp;aff=1624906"&gt;5000mah 6s battery&lt;/a&gt; weighs about 864g, which puts us almost exactly at Rctimer&amp;#39;s suggested takeoff weight of &lt;code&gt;3.5kg&lt;/code&gt;. I&amp;#39;ll be testing with &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=8851&amp;amp;aff=1624906"&gt;two 239g 300mah 3s batteries&lt;/a&gt; run in parallel. Together these weigh 478g.&lt;/p&gt;
 
-&lt;p&gt;Then give a success message. Click &lt;code&gt;OK&lt;/code&gt;:&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-q-parts-battery-mah-bece-jpg" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=38515&amp;aff=1624906" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-battery-5000mah-8225bece.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-flashed-eb-e-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-10-flashed-731eb80e.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-10-flashed-731eb80e.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The build quality is fantastic. The arms come with pre-installed 3510/305kv motors and T40A ESCs, which makes assembly super easy.&lt;/p&gt;
 
-&lt;p&gt;It will ask you if you want to write your current settings. Say yes to keep the same settings that you had on the ESC previously:&lt;/p&gt;
+&lt;p&gt;This frame is comparable to a DJI Inspire 1, as it shares the same motors. The only thing it lacks relative to the Inspire 1 is retractable landing gear, which can easily be added on later.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-write-settings-c-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-11-write-settings-016c4242.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-11-write-settings-016c4242.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;You&amp;#39;ll notice I picked a quad-copter over a hexa-copter or octa-copter. Some folks might prefer one of these configurations for redundancy. I would argue that the benefit of reduced complexity in a quad-copter, e.g. less failure points, out weights the benefits of a machine with more motors, as long as it can lift the payload you want to carry.&lt;/p&gt;
 
-&lt;p&gt;After writing the settings, it will read the settings from the ESC again. Click &lt;code&gt;OK&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;If you need more lifting power, get something with more motors like a &lt;a href="http://rctimer.com/product-1152.html/#r-pNathanT"&gt;Y-6 hex&lt;/a&gt;. You could also consider turning the Q600 into an octo-copter using these &lt;a href="http://rctimer.com/product-1428.html#r-pNathanT"&gt;dual-motor mounts&lt;/a&gt; and another set of &lt;a href="http://rctimer.com/product-1435.html/#r-pNathanT"&gt;motors&lt;/a&gt;. The PDB supports up to 8 motors.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-reading-settings-c-b-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-12-reading-settings-2c65076b.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-12-reading-settings-2c65076b.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-q-parts-pdb-e-e-jpg" href="../../../../../assets/images/blog/q600/parts-pdb-16e630e1.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-pdb_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Finally, you should see the updated &lt;code&gt;BLHeli Revision&lt;/code&gt;. Click &lt;code&gt;Disconnect&lt;/code&gt; and you&amp;#39;re done.&lt;/p&gt;
+&lt;p&gt;Cost: &lt;code&gt;$389.99&lt;/code&gt; &lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-disconnect-d-a-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-13-disconnect-22d855a5.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-13-disconnect-22d855a5.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id="pixhawk-flight-controller"&gt;&lt;a href="http://rctimer.com/product-1166.html/#r-pNathanT"&gt;PixHawk Flight Controller&lt;/a&gt;&lt;/h3&gt;
 
-&lt;h3 id="configure-blheli"&gt;Configure BlHeli&lt;/h3&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 58.934634974533104%;'&gt;&lt;a id="assets-images-blog-q-fixhawk-parts-f-f-c-jpg" href="http://rctimer.com/product-1166.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/fixhawk/parts_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;If your ESCs support it, you will see an option for Damped Light. Turn this on to make your ESCs do active braking. You want this. Turn it on.&lt;/p&gt;
+&lt;p&gt;The brain of any multi-rotor is the flight controller and you have a wide variety of features and different price point when it comes to choosing one. There are two main open source firmware projects that all flight controllers run: MultiWii and ArduPilot.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-damped-light-e-b-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-14-damped-light-3e23b601.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-14-damped-light-3e23b601.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;You won&amp;#39;t hear the names of these much, since they have, through the course of their open source lives, been renamed by their current maintainers. The MultiWii code has become CleanFlight, which has turned into BetaFlight and RaceFlight. The ArduPilot code had evolved into &lt;a href="http://copter.ardupilot.com/"&gt;APM&lt;/a&gt; then &lt;a href="https://github.com/PX4/Firmware"&gt;PX4&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;When using BetaFlight, you&amp;#39;ll want to turn off &lt;code&gt;Enable PWM&lt;/code&gt;, this is the default in BlHeli 14.3.&lt;/p&gt;
+&lt;p&gt;APM and PX4&amp;#39;s autopilot features are far more reliable, safer, actively maintained and improved than the MultiWii derivatives&amp;#39; autopilot features. However, the focus on autonomous flight over manual mode negatively impacts acro flight performance. So, you should use BetaFlight when you intend to fly in acro mode (like on a racing quad) and APM or PX4 on a craft that needs reliable GPS navigation and return to home.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.4486215538847%;'&gt;&lt;a id="assets-images-blog-blheli-cleanflight-passthrough-disable-pwm-edf-d-jpg" href="../../../../../assets/images/blog/blheli/cleanflight-passthrough-15-disable-pwm-5edf997d.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/blheli/cleanflight-passthrough-15-disable-pwm-5edf997d.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The PixHawk hardware and software is an open source project. The original development and current maintainers are led by Lorenz Meier at ETH Zurich.&lt;/p&gt;
 
-&lt;p&gt;That&amp;#39;s it, you&amp;#39;re done with configuration. Be sure to &lt;a href="/blog/2015/12/06/blheli-calibration/"&gt;calibrate your ESCs&lt;/a&gt; before you fly!&lt;/p&gt;
+&lt;p&gt;The open source hardware design means that anyone can produce the Pixhawk hardware and the boards are fundamentally the same. There is no such thing as a &amp;quot;Clone&amp;quot; when the plans are freely available via open source. They can be made by anyone and Rctimer has done a great job building their &amp;quot;FixHawk&amp;quot;, which is one of these boards.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-q-parts-fixhawk-c-ce-jpg" href="../../../../../assets/images/blog/q600/parts-fixhawk-1-4c0ce086.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-fixhawk-1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You may be tempted to buy an APM, but don&amp;#39;t do it. The APM uses an 8-bit arduino flight controller and the PixHawk/FixHawk uses 32bit STM32F4, which is much more powerful.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-q-parts-fixhawk-eff-jpg" href="../../../../../assets/images/blog/q600/parts-fixhawk-2-43eff157.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-fixhawk-2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;a href="http://rctimer.com/product-1125.html/#r-pNathanT"&gt;included power module&lt;/a&gt; is safe to use with batteries up to 7S. This is much better than the standard PixHawk power module that only supports up to 4S.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-q-parts-power-module-a-d-jpg" href="../../../../../assets/images/blog/q600/parts-power-module-a5319d06.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-power-module_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You&amp;#39;ll definitely want a &lt;a href="http://www.rctimer.com/product-834.html/#r-pNathanT"&gt;Telemetry Radio&lt;/a&gt; for in-flight command and control from a computer.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-telem-c-e-bd-jpg" href="http://www.rctimer.com/product-834.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-telem-c73e5bd1.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Another must-have is GPS. Pickup an &lt;a href="http://www.rctimer.com/product-1287.html/#r-pNathanT"&gt;M8N&lt;/a&gt; module with a built-in compass to get the best accuracy and update speeds.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-gps-da-a-d-jpg" href="http://www.rctimer.com/product-1287.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-gps-7da68a8d.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To add more devices to the I2C bus, pickup &lt;a href="http://www.rctimer.com/product-1169.html/#r-pNathanT"&gt;a splitter&lt;/a&gt;. Note, this is required for the external USB module.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-i-c-f-f-jpg" href="http://www.rctimer.com/product-1169.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-i2c-f550465f.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you plan on running an onboard computer, pickup an &lt;a href="http://www.rctimer.com/product-1322.html/#r-pNathanT"&gt;external USB module&lt;/a&gt;. This adds a USB port for reliable in-flight use. It is not necessary to connect the PixHawk to a computer.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-usb-ef-jpg" href="http://www.rctimer.com/product-1322.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-usb-31ef8032.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To get a data overlay on your FPV camera, pickup an &lt;a href="http://www.rctimer.com/product-862.html/#r-pNathanT"&gt;OSD&lt;/a&gt;. Checkout the full &lt;a href="/blog/2015/04/22/minim-osd/"&gt;MinimOSD guide here&lt;/a&gt;, any of these OSDs will work.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-minimosd-devices-rctimer-minimosd-e-a-jpg" href="http://www.rctimer.com/product-862.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/minimosd/devices/rctimer-minimosd-e95958a1.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Cost: &lt;code&gt;$213.97&lt;/code&gt; (including Telemetry and GPS) &lt;/p&gt;
+
+&lt;h3 id="brushless-gimbal"&gt;&lt;a href="http://rctimer.com/product-980.html/#r-pNathanT"&gt;Brushless Gimbal&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;We&amp;#39;ll be using the Rctimer simplebgc 3 Axis Nex-GH5 Brushless Gimbal. This is the best gimbal for a micro 4/3rds size camera.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-asp-e-caaed-jpg" href="http://rctimer.com/product-980.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-asp-e69caaed.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The gimbal includes some awesome 22 pole brushless gimbal motors:&lt;/p&gt;
+
+&lt;p&gt;GBM4114 (24N22P) for YAW&lt;/p&gt;
+
+&lt;p&gt;GBM4108 (24N22P) for ROLL and PITCH&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-q-asp-gimbal-motor-comparison-c-b-ab-jpg" href="../../../../../assets/images/blog/q600/asp/gimbal-motor-comparison-c7b8ab66.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/asp/gimbal-motor-comparison_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Cost: &lt;code&gt;$226.68&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id="simplebgc"&gt;&lt;a href="http://rctimer.com/product-1107.html/#r-pNathanT"&gt;SimpleBGC&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;The industry standard, used in Hollywood and on your drone, is the AlexMos SimpleBGC 32-bit Brushless Gimbal Controller (BGC).&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-q-parts-simplebgc-abb-b-jpg" href="http://rctimer.com/product-1107.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-simplebgc_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This runs AlexMos&amp;#39; fantastic SimpleBGC firmware. The design is licensed out to hardware manufacturers, like Rctimer.&lt;/p&gt;
+
+&lt;p&gt;You&amp;#39;ll want the 32-bit version with 2 IMUs. This is much better than the 8-bit version with 1 IMU. Especially at extreme angles.&lt;/p&gt;
+
+&lt;p&gt;I got the one with the plastic case. It makes mounting the sensors much easier, you may need to take the controller board out of the case or get some longer screws to mount it. Read the &lt;a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/"&gt;gimbal guide&lt;/a&gt; for more info.&lt;/p&gt;
+
+&lt;p&gt;Brushless Gimbal Controller Cost: &lt;code&gt;$170.99&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id="radio-transmitter-and-receiver"&gt;Radio Transmitter and Receiver&lt;/h3&gt;
+
+&lt;p&gt;If you don&amp;#39;t already have a radio transmitter, I suggest you invest in a &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html"&gt;Taranis&lt;/a&gt; or the slightly cheaper &lt;a href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J"&gt;FS-TH9X&lt;/a&gt; and &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.html?p=1G09211226617201502J"&gt;DJT transmitter module&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-q-parts-taranis-ec-jpg" href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html?p=1G09211226617201502J" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-taranis-961ec552.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that FrSky and FlySky are different brands, so their transmitters and receivers are not compatible. Pickup a &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;DIY FrSky&lt;/a&gt; receiver or a ready to go &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-X4R-4CH-Telemetry-Receiver-p-947631.html"&gt;X4R-SBUS&lt;/a&gt; receiver. I prefer the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony&amp;amp;p=1G09211226617201502J"&gt;one without pins&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Checkout my article on the &lt;a href="/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"&gt;DIY FrSky Receiver&lt;/a&gt; for a full receiver setup guide.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-radio-rx-jpg" href="../../../../../assets/images/blog/frsky-diy/radio-rx-40464990.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/radio-rx_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Receiver Cost: &lt;code&gt;$11 to $30&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id="batteries"&gt;Batteries&lt;/h3&gt;
+
+&lt;p&gt;I did some price analysis of 6s batteries and found that an entry level pack will run around $70 for &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=38515&amp;amp;aff=1624906"&gt;a 5000mah 6s&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-q-parts-battery-mah-bece-jpg" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=38515&amp;aff=1624906" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-battery-5000mah-8225bece.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Alternatively, get &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=8851&amp;amp;aff=1624906"&gt;two 239g 3000mah 3s batteries&lt;/a&gt; for &lt;code&gt;$14.80&lt;/code&gt; each and run them in parallel.&lt;/p&gt;
+
+&lt;p&gt;For example, here&amp;#39;s how you wire a parallel battery:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-q-parallel-battery-a-jpg" href="../../../../../assets/images/blog/q600/parallel-battery-336605a7.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/parallel-battery_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here&amp;#39;s the battery to buy:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.30973451327434%;'&gt;&lt;a id="assets-images-blog-q-parts-battery-mah-df-e-jpg" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=8851&amp;aff=1624906" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-battery-3000mah-4701df3e.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Cost: &lt;code&gt;$29.60&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id="value"&gt;Value&lt;/h3&gt;
+
+&lt;p&gt;The total cost, excluding your radio setup, NEX camera and batteries, is about: &lt;code&gt;$871.24&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Compared to a DJI Inspire 1 Pro, which runs &lt;code&gt;$4,499&lt;/code&gt;, (remember, the Inspire 1 uses the same type of motors as the Q600, so the lifting power should be close to equivalent), this is amazing value. Plus, it&amp;#39;s tons of fun to build yourself.&lt;/p&gt;
+
+&lt;h2 id="tools"&gt;Tools&lt;/h2&gt;
+
+&lt;p&gt;Before we get started make sure you have the following tools and misc parts on hand&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;A &lt;a href="http://www.banggood.com/8-in-1-Hex-socket-driver-Hexagon-screwdriver-Set-For-RC-Models-p-1002287.html?p=1G09211226617201502J"&gt;proper hex driver set&lt;/a&gt;. You&amp;#39;ll need something that fits a 2.0mm hex socket head. I broke two right angle allen wrenches trying to screw the carbon plate to the plastic pieces of the quad-copter frame.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://www.banggood.com/Universal-0-14mm-Professional-Reaming-Knife-Drill-Tool-Edge-Reamer-p-922461.html?p=1G09211226617201502J"&gt;Reamer&lt;/a&gt; or &lt;a href="http://www.banggood.com/3-13MM-Titanium-Coated-Step-Drill-14-Inch-Hex-Shank-Stepped-Drill-p-964596.html?p=1G09211226617201502J"&gt;Step Drill&lt;/a&gt; for cutting precise holes in plastic. Personally, I prefer the step drill.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Soldering Iron. I have a Weller &lt;a href="http://amzn.to/1QWfalA"&gt;WES51&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://www.banggood.com/Wholesale-19_1mm-Adhesive-Dual-Wall-3-1-Heat-Shrink-Tube-Sleeve-50cm-Metre-p-47226.html?p=1G09211226617201502J"&gt;20mm&lt;/a&gt; to &lt;a href="http://www.banggood.com/Wholesale-25_4mm-Adhesive-Polyolefin-31-Heat-Shrink-Tubing-Tube-Sleeve-Sleeving-Wrap-p-47233.html?p=1G09211226617201502J"&gt;25mm&lt;/a&gt; heatshrink tubing, for covering various electronic components.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://www.banggood.com/3M-Ultrathin-Waterproof-Protect-ESC-board-Double-Sided-Tape-p-1006021.html?p=1G09211226617201502J"&gt;Double Sided Foam Tape&lt;/a&gt; to mount the flight controller.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Blue Threadlocker. The cheapest place I&amp;#39;ve found to get this is &lt;a href="http://www.harborfreight.com/threadlocker-no-42-10-ml-medium-strength-65192.html"&gt;Harbor Freight&lt;/a&gt;, if you have one locally.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="build"&gt;Build&lt;/h2&gt;
+
+&lt;p&gt;Here are the guides for each component of the build:&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h3 id="q600-quadcopter"&gt;Q600 Quadcopter&lt;/h3&gt;
+
+&lt;p&gt;Assemble the &lt;a href="/blog/2016/01/29/rctimer-q600-quadcopter/"&gt;Q600 quadcopter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h3 id="asp-gimbal"&gt;ASP Gimbal&lt;/h3&gt;
+
+&lt;p&gt;Follow the guide on &lt;a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/"&gt;building the and tuning the gimbal&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h3 id="pixhawk-flight-controller"&gt;PixHawk Flight Controller&lt;/h3&gt;
+
+&lt;p&gt;Finally, &lt;a href="/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/"&gt;install and configure the PixHawk flight controller&lt;/a&gt;, then go fly!&lt;/p&gt;
 </content>
   </entry>
 </feed>

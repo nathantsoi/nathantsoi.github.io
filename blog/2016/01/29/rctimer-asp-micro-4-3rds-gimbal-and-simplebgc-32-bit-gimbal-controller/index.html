@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link href='/favicon/apple-touch-icon-57x57-8e6554ae.png' rel='apple-touch-icon-precomposed' sizes='57x57'>
+<link href='/favicon/apple-touch-icon-114x114-e0cb1072.png' rel='apple-touch-icon-precomposed' sizes='114x114'>
+<link href='/favicon/apple-touch-icon-72x72-a86b7103.png' rel='apple-touch-icon-precomposed' sizes='72x72'>
+<link href='/favicon/apple-touch-icon-144x144-bd50bc10.png' rel='apple-touch-icon-precomposed' sizes='144x144'>
+<link href='/favicon/apple-touch-icon-60x60-ca47953b.png' rel='apple-touch-icon-precomposed' sizes='60x60'>
+<link href='/favicon/apple-touch-icon-120x120-068de821.png' rel='apple-touch-icon-precomposed' sizes='120x120'>
+<link href='/favicon/apple-touch-icon-76x76-2bd34869.png' rel='apple-touch-icon-precomposed' sizes='76x76'>
+<link href='/favicon/apple-touch-icon-152x152-da7652e0.png' rel='apple-touch-icon-precomposed' sizes='152x152'>
+<link href='/favicon/favicon-196x196-569e78d9.png' rel='icon' sizes='196x196' type='image/png'>
+<link href='/favicon/favicon-96x96-d809406c.png' rel='icon' sizes='96x96' type='image/png'>
+<link href='/favicon/favicon-32x32-162b5c6d.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/favicon/favicon-16x16-d0c2b051.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/favicon/favicon-128-2f649ba2.png' rel='icon' sizes='128x128' type='image/png'>
+<meta content=' ' name='application-name'>
+<meta content='#FFFFFF' name='msapplication-TileColor'>
+<meta content='/favicon/mstile-144x144-bd50bc10.png' name='msapplication-TileImage'>
+<meta content='/favicon/mstile-70x70-2f649ba2.png' name='msapplication-square70x70logo'>
+<meta content='/favicon/mstile-150x150-999c62ba.png' name='msapplication-square150x150logo'>
+<meta content='/favicon/mstile-310x150-37756fac.png' name='msapplication-wide310x150logo'>
+<meta content='/favicon/mstile-310x310-6bd894f0.png' name='msapplication-square310x310logo'>
+<title>
+ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller
+</title>
+<link href="../../../../../assets/stylesheets/all-ca47499b.css" rel="stylesheet" />
+<script src="../../../../../assets/javascripts/all-f0e3b20f.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-7406390-2', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  
+    // outbound link tracking
+    // http://www.sitepoint.com/track-outbound-links-google-analytics/
+    (function($) {
+      "use strict";
+      // current page host
+      var baseURI = window.location.host;
+      // click event on body
+      $("body").on("click", function(e) {
+        // abandon if link already aborted or analytics is not available
+        if (e.isDefaultPrevented() || typeof ga !== "function") return;
+        // abandon if no active link or link within domain
+        var link = $(e.target).closest("a");
+        if (link.length != 1 || baseURI == link[0].host) return;
+        // cancel event and record outbound link
+        e.preventDefault();
+        var href = link[0].href;
+        ga('send', {
+          'hitType': 'event',
+          'eventCategory': 'outbound',
+          'eventAction': 'link',
+          'eventLabel': href,
+          'hitCallback': loadPage
+        });
+        // redirect after one second if recording takes too long
+        setTimeout(loadPage, 1000);
+        // redirect to outbound page
+        function loadPage() {
+          document.location = href;
+        }
+      });
+    })(jQuery);
+</script>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+</head>
+<body>
+<nav class='navbar navbar-default' id='top' role='navigation'>
+<div class='container'>
+<div class='navbar-header'>
+<div class='navbar-brand'>
+<a href='/blog/'>
+<img src="../../../../../assets/images/home/smile-0a95f89f.jpg" />
+</a>
+<span>ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller</span>
+</div>
+<button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<div class='navbar-right collapse navbar-collapse' id='bs-nav-collapse'>
+<ul class='nav navbar-nav'>
+<li>
+<form class='search navbar-form' role='search'>
+<div class='form-group'>
+<input class='form-control bloodhound typeahead' data-articles='[["AVR Dissassembly","/blog/2016/02/25/avr-dissassembly/"],["Victory230 FPV Mini-quad Setup and Review","/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"],["FrSky RX SBUS and Frsky DJT Module","/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"],["HMDVR FPV Video Recorder","/blog/2016/02/06/hmdvr-fpv-video-recorder/"],["Rctimer BeerotorF3 Flight Controller","/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"],["Flying Sony NEX Micro 4/3rds Camera","/blog/2016/01/29/flying-micro-4-3rds-camera/"],["Q600 Quadcopter","/blog/2016/01/29/rctimer-q600-quadcopter/"],["ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller","/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/"],["PixHawk Flashing and Setup","/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/"],["BlHeli ESCs","/blog/2015/12/06/blheli-esc-identification/"],["BlHeli ESC Upgrading and Configuration","/blog/2015/12/06/blheli-configuration/"],["BlHeli CleanFlight ESC Calibration","/blog/2015/12/06/blheli-calibration/"],["Rctimer Micro 160 BeeRotor Build, Setup and Review","/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"],["Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if","/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/"],["Rctimer OZE32 / RTFQ Flip32 AIO Integrated Flight Controller Review and Setup","/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"],["Rooting Marshmellow, keeping SELinux","/blog/2015/11/03/rooting-marshmellow-keeping-selinux/"],["MultiRotor Setup Checklist","/blog/2015/10/29/multirotor-setup-checklist/"],["ST-LINK flash and debug on the SPRacingF3","/blog/2015/10/24/st-link-flash-and-debug-on-the-spracingf3-discovery/"],["Debugging Android Native (NDK) Apps","/blog/2015/09/27/debugging-android-native-ndk-apps/"],["Fixing an Arduino 0x000000 Error","/blog/2015/09/16/fixing-an-arduino-0x000000-error/"],["GPS VK16U6 CleanFlight Setup","/blog/2015/08/26/gps-vk16u6-cleanflight-setup/"],["Go FPV Latency Testing","/blog/2015/08/24/go-fpv-latency-testing/"],["Building Android on Ubuntu 14.04","/blog/2015/07/23/building-android-on-ubuntu-14-04/"],["Migrating to Amazon Elastic Map Reduce (EMR)","/blog/2015/07/15/migrating-to-amazon-elastic-map-reduce-emr/"],["Naze32 ST-Link Debugging","/blog/2015/07/06/naze32-st-link-debugging/"],["Decompiling an APK","/blog/2015/06/30/decompiling-an-apk/"],["Nexpose Community Edition copy Scan Template","/blog/2015/06/17/nexpose-community-edition-copy-scan-template/"],["Wireless Video Tx/Rx FPV Channels","/blog/2015/06/17/boscam-tx-rx-fpv-channels/"],["Making a UHF 433mhz Inverted Vee Antenna Set","/blog/2015/06/15/making-a-uhf-433mhz-inverted-vee-antenna-set/"],["Setup OrangeLRS with OpenLRSng","/blog/2015/05/21/setup-orangelrs-with-openlrsng/"],["Go FPV Goggles","/blog/2015/05/21/go-fpv-goggles/"],["FPV250 with Cleanflight, Minimosd, OpenLRSng and a Xiaomi Yi GoPro Clone","/blog/2015/05/19/fpv250-cleanflight/"],["Flashing BlHeli on HobbyKing BlueSeries 12a ESCs With a Chinese Arduino Nano Clone","/blog/2015/05/15/flashing-blheli-on-hobbyking-blueseries-12a-escs-with-a-chinese-arduino-nano-clone/"],["Flashing NodeMCU on the ESP8266","/blog/2015/05/14/flashing-nodemcu-on-the-esp8266/"],["Ebay HC-05 Bluetooth Setup Guide","/blog/2015/05/12/ebay-hc-05-bluetooth-setup-guide/"],["3D Camera on the Tricopter","/blog/2015/05/12/3d-camera-on-the-tricopter/"],["ProRes editing in Premier","/blog/2015/05/11/prores-editing-in-photoshop/"],["Xiaomi Yi -- The Ant Camera","/blog/2015/05/08/xiaomi-yi-the-ant-camera/"],["Minim OSD","/blog/2015/04/22/minim-osd/"],["Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone","/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/"],["Handling Dates in Hadoop Pig","/blog/2015/04/17/handling-dates-in-hadoop-pig/"],["LiPo Battery Price Analysis","/blog/2015/04/10/lipo-battery-price-analysis/"],["ADB over WiFi (aka, how do I debug when using USB host mode?)","/blog/2015/03/27/adb-over-wifi-aka-how-do-i-debug-when-using-usb-host-mode/"],["Shrink a linux VM on OSX","/blog/2015/03/18/shrink-a-linux-vm-on-osx/"],["Mounting a VHD NTFS image on Ubuntu","/blog/2015/02/27/mounting-a-vhd-ntfs-image-on-ubuntu/"],["Ubuntu on the Beaglebone Black","/blog/2015/01/16/ubuntu-on-the-beaglebone-black/"],["Configuring the HK-T6A for a Flight Simulator","/blog/2015/01/02/configuring-the-hk-t6a-for-a-flight-simulator/"],["A complete noob&#x0027;s guide to RC","/blog/2015/01/02/a-complete-noobs-guide-to-rc/"],["DropCam on a Captive Portal","/blog/2014/11/17/dropcam-on-a-captive-portal/"],["Java reversing tips","/blog/2014/09/18/java-reversing-tips/"],["Ooize Data Pipeline Done-Flag","/blog/2014/09/02/oozie-data-pipeline-done-flag/"],["Time Machine on exFat","/blog/2014/08/06/Time_Machine_on_exFat/"],["Optimizing Postgresql","/blog/2014/01/31/Optimizing_Postgresql/"],["Mail Maker","/blog/2014/01/24/Mail_Maker/"],["Angularjs and Rails","/blog/2013/07/12/Angularjs_and_Rails/"],["nginx ssl chained certs","/blog/2013/04/24/nginx_ssl_chained_certs/"],["rails log tagging","/blog/2013/04/24/rails_log_tagging/"],["Converting an Android Project to Maven","/blog/2013/04/16/Converting_an_Android_Project_to_Maven/"],["Oh! Map my rails!","/blog/2013/04/09/Oh_Map_my_rails/"],["mysql permissions","/blog/2013/04/09/mysql_permissions/"],["reset mysql slave","/blog/2013/03/29/reset_mysql_slave/"],["installing rmagick on 10.8 with homebrew","/blog/2013/02/14/installing_rmagick_on_108_with_homebrew/"],["NP-Completeness","/blog/2013/02/08/NP-Completeness/"],["Find and replace non-breaking spaces in vim","/blog/2013/02/01/Find_and_replace_non-breaking_spaces_in_vim/"],["Open Resty the Prebuilt Reverse Proxy","/blog/2013/02/01/Open_Resty_the_Prebuilt_Reverse_Proxy/"],["Sublime Text 2 Tweaks","/blog/2012/12/17/Sublime_Text_2_Tweaks/"],["Batch Convert CR2 to JPG","/blog/2012/12/01/Batch_Convert_CR2_to_JPG/"],["Androids in the wild","/blog/2012/06/30/Androids_in_the_wild/"],["Why you need database_cleaner","/blog/2012/06/11/Why_you_need_database_cleaner/"],["Find and replace in files on linux/unix","/blog/2012/05/12/Find_and_replace_in_files_on_linuxunix/"],["a pithy guide to railsconf 2012","/blog/2012/04/26/a_pithy_guide_to_railsconf_2012/"],["faster rails boot ruby 1.9.3 + debugger","/blog/2012/04/12/faster_rails_boot_ruby_193_debugger/"],["homebrew -- fix that nasty mysql.server start segfault","/blog/2012/03/29/homebrew_--_fix_that_nasty_mysqlserver_start_segfault/"],["read/write filesystem on rooted android for an ad-free android experience","/blog/2012/02/14/readwrite_filesystem_on_rooted_android_for_an_ad-free_android_experience/"],["Turn Wikipedia Back On","/blog/2012/01/17/Turn_Wikipedia_Back_On/"],["compiling qt4 on centos 5","/blog/2012/01/06/compiling_qt4_on_centos_5/"],["pip install pymongo with xcode 4","/blog/2011/08/09/pip_install_pymongo_with_xcode_4/"],["interactive python history -- better titled \"gimme some up arrow love\"","/blog/2011/08/05/interactive_python_history_--_better_titled_gimme_some_up_arrow_love/"],["Centos 5.5 yum repo sha256 fix","/blog/2011/07/27/Centos_55_yum_repo_sha256_fix/"],["Apple Keyboard for Android!","/blog/2011/07/15/Apple_Keyboard_for_Android/"],["jQuery Everywhere","/blog/2011/05/24/jQuery_Everywhere/"],["Django Migrations","/blog/2011/05/11/Django_Migrations/"],["RVM + Rails + Git + HTML5 Boiler Plate... What more could you possibly want?","/blog/2011/02/22/RVM_Rails_Git_HTML5_Boiler_Plate_What_more_could_you_possibly_want/"],["OneCast 2.0 - downloadable podcasts for androids of every color","/blog/2011/02/18/OneCast_20_-_downloadable_podcasts_for_androids_of_every_color/"],["Default Android Menu Icons in Your App","/blog/2011/02/17/Default_Android_Menu_Icons_in_Your_App/"],["Windows 7 x64 Android Development (ADB)","/blog/2010/11/06/Windows_7_x64_Android_Development_ADB/"],["Firefox Plugin - Watching for an Application Exit Event","/blog/2010/05/03/Firefox_Plugin_-_Watching_for_an_Application_Exit_Event/"],["Stop Redrawing a Fixed Orientation Android App","/blog/2010/03/08/Stop_Redrawing_a_Fixed_Orientation_Android_App/"]]' placeholder='Search' type='text'>
+</div>
+</form>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+
+<div class='container'>
+<div class='row row-offcanvas row-offcanvas-left'>
+<!-- sidebar -->
+<div class='col-xs-3 col-sm-3 sidebar-offcanvas'>
+<div id='sidebar' role='navigation'>
+<div class='sidebar-contents'>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+<a href='#top'>Contents</a>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 table-of-contents'>
+<ul class="nav"><li><a class="type-h3" href="#overview"><h3>Overview</h3></a></li>
+<li><a class="type-h3" href="#review"><h3>Review</h3></a></li>
+<li><a class="type-h3" href="#frame-build"><h3>Frame Build</h3></a></li><ul><li><a class="type-h4" href="#gimbal-balance-and-calibration"><h4>Gimbal Balance and Calibration</h4></a></li></ul>
+<li><a class="type-h3" href="#gimbal-controller-setup"><h3>Gimbal Controller Setup</h3></a></li><ul><li><a class="type-h4" href="#windows"><h4>Windows</h4></a></li>
+<li><a class="type-h4" href="#mac"><h4>Mac</h4></a></li>
+<li><a class="type-h4" href="#simplebgc-flashing"><h4>SimpleBGC Flashing</h4></a></li>
+<li><a class="type-h4" href="#simplebgc-setup"><h4>SimpleBGC Setup</h4></a></li>
+<li><a class="type-h4" href="#calibration"><h4>Calibration</h4></a></li>
+<li><a class="type-h4" href="#tuning"><h4>Tuning</h4></a></li>
+<li><a class="type-h4" href="#gimbal-troubleshooting"><h4>Gimbal Troubleshooting</h4></a></li>
+<li><a class="type-h4" href="#further-reading"><h4>Further Reading</h4></a></li></ul></ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+Related Articles
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 related'>
+<ul>
+<li><a href="/blog/2016/01/29/rctimer-q600-quadcopter/">Q600 Quadcopter</a></li>
+<li><a href="/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/">PixHawk Flashing and Setup</a></li>
+<li><a href="/blog/2016/01/29/flying-micro-4-3rds-camera/">Flying Sony NEX Micro 4/3rds Camera</a></li>
+<li><a href="/blog/2015/04/22/minim-osd/">Minim OSD</a></li>
+<li><a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/">Victory230 FPV Mini-quad Setup and Review</a></li>
+<li><a href="/blog/2016/02/03/rctimer-beerotorf3-flight-controller/">Rctimer BeerotorF3 Flight Controller</a></li>
+</ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header text-center'>
+<div class='drawer-footer'>
+<small>
+©
+<a href='mailto:nathan@vertile.com'>Nathan Tsoi</a>
+</small>
+</div>
+</div>
+</div>
+<div class='row connect'>
+<div class='col-lg-12 text-center'>
+<a class='btn-sm btn-default' href='https://github.com/nathantsoi' target='_blank'>
+<i class='fa fa-github'></i>
+</a>
+<a class='btn-sm btn-default' href='https://bitbucket.org/nathantsoi' target='_blank'>
+<i class='fa fa-bitbucket'></i>
+</a>
+<a class='btn-sm btn-default' href='https://twitter.com/nathantsoi/' target='_blank'>
+<i class='fa fa-twitter'></i>
+</a>
+<a class='btn-sm btn-default' href='https://angel.co/nathantsoi' target='_blank'>
+<i class='fa fa-angellist'></i>
+</a>
+<a class='btn-sm btn-default' href='https://linkedin.com/in/nattsoi/' target='_blank'>
+<i class='fa fa-linkedin'></i>
+</a>
+<a class='btn-sm btn-default' href='https://facebook.com/nathantsoi' target='_blank'>
+<i class='fa fa-facebook'></i>
+</a>
+<a class='btn-sm btn-default' href='https://plus.google.com/112518806102274696668' target='_blank'>
+<i class='fa fa-google-plus'></i>
+</a>
+<a class='btn-sm btn-default' href='https://news.ycombinator.com/user?id=natvert' target='_blank'>
+<i class='fa fa-hacker-news'></i>
+</a>
+<a class='btn-sm btn-default' href='https://trello.com/nathantsoi' target='_blank'>
+<i class='fa fa-trello'></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- main area -->
+<div class='col-sm-9 col-xs-12' id='mainbar'>
+<article>
+<p>This is a detailed build and setup guide for the Rctimer ASP 3-Axis Brushless Gimbal.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-asp-built-c-c-f-jpg" href="http://rctimer.com/product-977.html/#r-pNathanT" class="linked-img "><img src='../../../../../assets/images/blog/q600/asp/built_prev-c99c52d3.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Here are the parts I used:</p>
+
+<table class="small-img">
+  <tbody>
+          <tr>
+        <td>
+          <a target="_blank" href="http://rctimer.com/product-977.html#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-q-asp-d-e-ec-a-b-f-jpg" href="../../../../../assets/images/blog/q600/asp/8044d529e632ec96-0a4b4f01.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/8044d529e632ec96-0a4b4f01.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://rctimer.com/product-977.html#r-pNathanT">Rctimer simplebgc 3 Axis Nex-GH5 Brushless Gimbal - $200</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://rctimer.com/product-1107.html#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-q-asp-c-b-a-d-d-a-jpg" href="../../../../../assets/images/blog/q600/asp/21503c3b73a9d72d-39654a40.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/21503c3b73a9d72d-39654a40.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://rctimer.com/product-1107.html#r-pNathanT">AlexMos SimpleBGC 32-bit Brushless Gimbal Controller w/ Plastic case - $171</a>
+        </td>
+      </tr>
+
+  </tbody>
+</table>
+
+<p>Total Cost: <code>$371</code></p>
+
+<p><br/></p>
+
+<p>I&#39;ll be mounting this on a <a href="http://rctimer.com/product-1456.html#r-pNathanT">Q600 quad-copter</a>.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.0%;'><a id="assets-images-blog-q-q-c-a-jpg" href="http://rctimer.com/product-1456.html/#r-pNathanT" class="linked-img "><img src='../../../../../assets/images/blog/q600/q600-c88a2913.jpg' class='trailing-space' ></img></a></div></div>
+
+<h3 id="overview">Overview</h3>
+
+<p>Here&#39;s everything that comes in the package from Rctimer:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 61.23642439431913%;'><a id="assets-images-blog-q-asp-all-parts-b-dc-bf-jpg" href="../../../../../assets/images/blog/q600/asp/all-parts-b85dc0bf.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/all-parts_prev-cad597dc.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Overall, I&#39;m impressed with the quality of both the gimbal frame and the brushless gimbal controller.</p>
+
+<p>Gimbal assembly is straightforward, but the brushless gimbal controller setup is rather challenging. Don&#39;t worry, I&#39;ll walk you through the setup in the <a href="#gimbal-controller-setup">Gimbal Controller Setup</a> section.</p>
+
+<h3 id="review">Review</h3>
+
+<p>Parts are all machined and finished well. Everything fit together nicely and there was no play after assembly.</p>
+
+<p>The motors are extremely well built, have 22 poles (the more poles, the better, for a gimbal) and are huge. Checkout this photo next to an 1806 motor:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-asp-gimbal-motor-comparison-c-b-ab-jpg" href="../../../../../assets/images/blog/q600/asp/gimbal-motor-comparison-c7b8ab66.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/gimbal-motor-comparison_prev-94992025.jpg' class='trailing-space' ></img></a></div></div>
+
+<h3 id="frame-build">Frame Build</h3>
+
+<p>I measured the included screws and here&#39;s what I found. I&#39;m not convinced the M2x8 are actually M2, they&#39;re maybe 2.5M? Either way, I&#39;ll call them M2x8 in the guide.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-asp-screws-e-f-c-jpg" href="../../../../../assets/images/blog/q600/asp/screws-e5f2522c.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/screws_prev-2a0bce96.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Note the M3x7 have countersink heads and the M3x6 are silver.</p>
+
+<p>There are two mounting options here. On the top left, the standard mounting plates for a rail system. There&#39;s no rail system on the Q600, so I&#39;ll set these aside.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 61.23046875%;'><a id="assets-images-blog-q-asp-mount-standard-ea-c-jpg" href="../../../../../assets/images/blog/q600/asp/mount-standard-375ea49c.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/mount-standard-375ea49c.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Here&#39;s the mounting kit for the Q600 we&#39;ll be using.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 61.23046875%;'><a id="assets-images-blog-q-asp-q-mount-cd-f-jpg" href="../../../../../assets/images/blog/q600/asp/q600-mount-25cd100f.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/q600-mount-25cd100f.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Lay out the pieces like this. The motors, gimbal controllers and thumb screws will be mounted approximately in these locations.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 94.08619062598301%;'><a id="assets-images-blog-q-asp-frame-layout-be-jpg" href="../../../../../assets/images/blog/q600/asp/frame-layout-96623be4.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/frame-layout_prev-2f6101c0.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Start from the top and work down, beginning with the carbon fiber mounting plates.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 111.5971515768057%;'><a id="assets-images-blog-q-asp-mounting-plate-parts-b-e-jpg" href="../../../../../assets/images/blog/q600/asp/mounting-plate-parts-1b1e0453.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/mounting-plate-parts_prev-50f1bdd5.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Begin by using the large vibration dampeners to connect the two circular carbon fiber plates.</p>
+
+<p>Insert them into the one with the larger hole first, three per side.</p>
+
+<p>Protip: wrap a short piece of string around the top of the vibration dampener and loop it through the hole.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 76.95338148391333%;'><a id="assets-images-blog-q-asp-thread-trick-fb-b-jpg" href="../../../../../assets/images/blog/q600/asp/thread-trick-fb774b65.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/thread-trick_prev-3d483fa6.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Pull the string (don&#39;t be afraid to pull hard) and the whole thing will pop through.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 80.27337682510097%;'><a id="assets-images-blog-q-asp-thread-trick-b-jpg" href="../../../../../assets/images/blog/q600/asp/thread-trick-2-b0065767.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/thread-trick-2_prev-a6daf9c8.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>You may not need to do this on the first side, but it really helps when connecting the second plate.</p>
+
+<p>Here&#39;s how you connect the large <code>017-100T</code> motor to the top plate.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-asp-T-holes-e-d-jpg" href="../../../../../assets/images/blog/q600/asp/017-100T-holes-e439d011.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/017-100T-holes_prev-43c68834.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>All the parts are facing forward in this picture, also notice the position of the servo lead solder points. We want those facing toward the back, out of the way.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 81.79002787240631%;'><a id="assets-images-blog-q-asp-servo-wires-daa-a-jpg" href="../../../../../assets/images/blog/q600/asp/servo-wires-1daa2a86.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/servo-wires_prev-8719e06d.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 81.74695298897272%;'><a id="assets-images-blog-q-asp-servo-wires-cc-bd-jpg" href="../../../../../assets/images/blog/q600/asp/servo-wires-2-5cc24bd3.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/servo-wires-2_prev-a8025093.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Let&#39;s go ahead and solder those on now. Tin the pads and the leads on each, then hold the pad and lead together while you touch the iron to the lead. The leads can be attached in any order. We can change the direction the gimbal turns in the software configuration step.</p>
+
+<p>Ok, time to bust out the thread lock. I like blue, but use whatever you prefer.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.43894107600342%;'><a id="assets-images-blog-q-asp-threadlocker-d-b-c-jpg" href="../../../../../assets/images/blog/q600/asp/threadlocker-40d4b7c8.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/threadlocker_prev-e30bf541.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Screw the standoffs onto the vibration dampening plate using the silver M3 screws. Don&#39;t worry you may have an extra standoff.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-asp-standoffs-e-cd-jpg" href="../../../../../assets/images/blog/q600/asp/standoffs-e97cd670.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/standoffs_prev-3cce3c45.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Now let&#39;s start building the actual gimbal. We&#39;ll work from the top right of our parts layout, down and to the left.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-asp-assembly-cfe-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-1-39cfe560.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-1_prev-818751c3.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Attach the top frame piece to the bottom of the top motor. The side with the bevelled cut should go away from the motor. Use the countersink screws.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.37307329348852%;'><a id="assets-images-blog-q-asp-assembly-c-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-2-516c0093.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-2_prev-de8840b1.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Slide the arm that says ASP onto the piece you just installed, making sure the side with the large screw hole is closest to the &quot;L&quot; shape.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-asp-assembly-b-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-3-3b676234.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-3_prev-f04f6c1c.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Use some threadlock and install the thumb screw.</p>
+
+<p>Install the next frame component on the back of the next motor. Use the M2x8 screws and threadlock.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.50464919695689%;'><a id="assets-images-blog-q-asp-assembly-b-ee-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-4-7b2ee932.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-4_prev-8045d29e.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Install the next frame component on the front of the same motor. Use the countersink screws.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-asp-assembly-a-f-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-5-a4f66904.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-5_prev-f79c5520.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>On the third and final motor, install the prop adaptor on the front, using the countersink screws.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-asp-assembly-bd-bbf-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-6-7bd8bbf3.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-6_prev-897f0bc9.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Install the arm on the back using M2x8 screws. I&#39;ve oriented the motor wires up so they&#39;re out of the way in case of a hard landing.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-asp-assembly-c-f-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-7-c8600f96.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-7_prev-c383c606.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Slide the remaining two pieces together and install the thumb screw through the bottom.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-asp-assembly-e-b-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-8-e32670b8.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-8_prev-6fa57972.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-asp-assembly-ab-f-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-9-7ab5733f.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-9_prev-67b72cf7.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Connect the two sensors like this.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.42724128757649%;'><a id="assets-images-blog-q-asp-assembly-e-b-a-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-10-e9b0a084.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-10_prev-4ffb4539.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>The sensor with two wires will connect to the frame and the other connects to the plate to the left of the camera. Just so you can plan ahead, this is how it will look.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.45552916336764%;'><a id="assets-images-blog-q-asp-assembly-cd-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-11-941cd453.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-11_prev-a186e842.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Install the SimpleBGC sensor with the single lead using M2x8 screws. Use threadlock and don&#39;t over tighten these.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.49782923299566%;'><a id="assets-images-blog-q-asp-assembly-a-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-12-8092a208.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-12_prev-44b9d858.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Now, just use the remaining thumb screws to connect it all together.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 150.58284762697753%;'><a id="assets-images-blog-q-asp-assembly-ed-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-13-1ed02308.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-13_prev-799edfb0.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 150.52846914422094%;'><a id="assets-images-blog-q-asp-assembly-b-d-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-14-0b26402d.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-14_prev-668a1ff2.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 150.56288195561274%;'><a id="assets-images-blog-q-asp-assembly-aab-ed-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-15-3aab6ed3.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-15_prev-7f019935.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.52114597544339%;'><a id="assets-images-blog-q-asp-assembly-d-d-e-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-16-d7d5e938.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-16_prev-88e395e1.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Install the Gimbal Controller. I needed to modify the case a little to use the shorter screws I had on hand. I used a hand reamer to open the top screw holes up to 5mm. Alternatively, get longer screws or just take off the plastic case.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.47919010123734%;'><a id="assets-images-blog-q-asp-assembly-b-b-c-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-17-b7b5c056.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-17_prev-600717cd.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>If you do take apart the plastic case, don&#39;t lose the tiny button.  Re-assemble it, upside-down, so you can get the button back in properly.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.51711924439198%;'><a id="assets-images-blog-q-asp-assembly-fa-dc-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-18-841fa6dc.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-18_prev-355cb455.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Screw the SimpleBGC controller onto the frame.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-asp-assembly-b-a-ca-f-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-19-b7a9ca9f.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-19_prev-d45e82b4.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>I had to shorten the wire on the sensor with a single lead down to 30mm. Just cut and re-solder.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.5157292659676%;'><a id="assets-images-blog-q-asp-assembly-d-bdd-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-20-d450bdd3.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-20_prev-a5f56aed.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>I&#39;ll mount this one to the quadcopter frame so the yaw axis can be controlled by the SimpleBGC controller without any input from the Flight Controller.</p>
+
+<p>If you mount it to the gimbal frame, it will help correct dift instead.</p>
+
+<p>I installed the single-wire sensor on the carbon fiber under body of the Q600 using a piece of double sided tape and a zip tie.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.47286821705426%;'><a id="assets-images-blog-q-asp-assembly-b-fb-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-21-65b065fb.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-21_prev-6d0f44d4.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Whoops, broke the white zip tie. I&#39;ll use a black one instead.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.53422982885085%;'><a id="assets-images-blog-q-asp-assembly-a-c-ea-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-22-1a1c0ea3.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-22_prev-065a22fb.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Install the mounting plates with the sensor to the standoffs on the assembled gimbal using the M2x8 screws.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.45384410747539%;'><a id="assets-images-blog-q-asp-assembly-a-c-e-eb-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-23-a2c5e0eb.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-23_prev-d82d4ff3.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Clean up your wires with some zip ties, while ensuring that the gimbal can rotate to the endpoints you want to be able to reach. Coiling up the wire also helps keep things neat.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.53061224489795%;'><a id="assets-images-blog-q-asp-assembly-e-d-jpg" href="../../../../../assets/images/blog/q600/asp/assembly-24-e23227d9.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/assembly-24_prev-9ed1cc56.jpg' class='trailing-space' ></img></a></div></div>
+
+<h4 id="gimbal-balance-and-calibration">Gimbal Balance and Calibration</h4>
+
+<p>The first step to getting good performance out of your gimbal is to ensure that it is well balanced. The basic idea is to mount the camera to the gimbal and turn on the camera, so the lens is extended. Then, check that each axis rests easily when placed level, much like balancing a propeller.</p>
+
+<p>Here&#39;s a good video guide:</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/1tdABSbXGpM" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="gimbal-controller-setup">Gimbal Controller Setup</h3>
+
+<p>You&#39;ll want to update your SimpleBGC to the latest firmware.</p>
+
+<p>Download the latest version of the <a href="https://www.basecamelectronics.com/downloads/32bit/">SimpleBGC GUI</a> from this page <a href="https://www.basecamelectronics.com/downloads/32bit/">https://www.basecamelectronics.com/downloads/32bit/</a>.</p>
+
+<p>Extract the zip file.</p>
+
+<h4 id="windows">Windows</h4>
+
+<p>On Windows, just run the <code>.exe</code> file.</p>
+
+<p>Skip to <a href="#simplebgc-flashing">SimpleBGC Flashing</a>.</p>
+
+<h4 id="mac">Mac</h4>
+
+<p>On my mac I had to open terminal, cd into the extracted folder and edit <code>run.sh</code> in a text editor, replacing the <code>javaw</code> command with <code>java</code>.</p>
+
+<p>In the SimpleBGC readme, it says to create a lock file directory. Do not skip this, if you do, flashing could fail. In a terminal window, run: </p>
+<pre class="highlight plaintext"><code>sudo mkdir /var/lock
+</code></pre>
+
+<p>Enter your password when prompted, then set the permissions on the directory to allow SimpleBGC to use it with:</p>
+<pre class="highlight plaintext"><code>sudo chmod 777 /var/lock
+</code></pre>
+
+<p>Change permissions on <code>run.sh</code> to allow it to be run with:</p>
+<pre class="highlight plaintext"><code>chmod +x run.sh
+</code></pre>
+
+<p>Then run the program with: <code>./run.sh</code></p>
+
+<h4 id="simplebgc-flashing">SimpleBGC Flashing</h4>
+
+<p>Find a micro USB cable you have lying around and plug in the Basecam SimpleBGC 32-bit gimbal controller.</p>
+
+<p>Under <code>Connection:</code> find your serial port and hit connect</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 78.62523540489642%;'><a id="assets-images-blog-q-simplebgc-c-fa-png" href="../../../../../assets/images/blog/q600/simplebgc/1-2229c1fa.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/1-2229c1fa.png' class='trailing-space' ></img></a></div></div>
+
+<p>If you get a message saying the firmware is out of date, hit <code>OK</code></p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 34.30321592649311%;'><a id="assets-images-blog-q-simplebgc-a-png" href="../../../../../assets/images/blog/q600/simplebgc/2-214401a3.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/2-214401a3.png' class='trailing-space' ></img></a></div></div>
+
+<p>Go to the upgrade tab</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 78.62523540489642%;'><a id="assets-images-blog-q-simplebgc-f-ccb-png" href="../../../../../assets/images/blog/q600/simplebgc/3-72f95ccb.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/3-72f95ccb.png' class='trailing-space' ></img></a></div></div>
+
+<p>Click <code>Check</code> for a new version</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 78.62523540489642%;'><a id="assets-images-blog-q-simplebgc-b-png" href="../../../../../assets/images/blog/q600/simplebgc/4-05b27639.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/4-05b27639.png' class='trailing-space' ></img></a></div></div>
+
+<p>Hit <code>Go to upgrade</code></p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 78.04642166344294%;'><a id="assets-images-blog-q-simplebgc-d-d-png" href="../../../../../assets/images/blog/q600/simplebgc/5-5604d58d.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/5-5604d58d.png' class='trailing-space' ></img></a></div></div>
+
+<p>I hit skip when prompted for my email</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 78.04642166344294%;'><a id="assets-images-blog-q-simplebgc-e-db-png" href="../../../../../assets/images/blog/q600/simplebgc/6-399e79db.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/6-399e79db.png' class='trailing-space' ></img></a></div></div>
+
+<p>Then I hit <code>Upgrade!</code> and it failed. Oh no, &quot;Failed to upload: Error writing firmware: ... Permission denied&quot; :(</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 18.651124063280598%;'><a id="assets-images-blog-q-simplebgc-deae-c-e-png" href="../../../../../assets/images/blog/q600/simplebgc/7-deae3c8e.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/7-deae3c8e.png' class='trailing-space' ></img></a></div></div>
+
+<p>I didn&#39;t create the lock file before I ran SimpleBGC the first time. If you&#39;re like me, unplug your board, close SimpleBGC, create the lock file directory with <code>sudo mkdir /var/lock</code> then set the permissions with <code>sudo chmod 777 /var/lock</code></p>
+
+<p>Now start over at <a href="#simplebgc-flashing">SimpleBGC Flashing</a></p>
+
+<p>When you get back to this step, after configuring SimpleBGC in the terminal, you should see a message that says flashing then a message that says the firmware updated successfully.</p>
+
+<p>Time to configure the gimbal controller.</p>
+
+<h4 id="simplebgc-setup">SimpleBGC Setup</h4>
+
+<p>After flashing, I had to unplug the USB to the board, close SimpleBGC and re-open it by running <code>./run.sh</code> in my terminal.</p>
+
+<p>Under <code>Connection:</code> find your serial port and hit connect.</p>
+
+<p>The beeper is really annoying when working on the SimpleBGC, so I turned it off. Just uncheck the <code>Buzzer</code> boxes on the Service tab and hit <code>write</code>.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 10.957004160887656%;'><a id="assets-images-blog-q-simplebgc-disable-beeper-ebbf-faf-png" href="../../../../../assets/images/blog/q600/simplebgc/disable-beeper-ebbf6faf.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/disable-beeper-ebbf6faf.png' class='trailing-space' ></img></a></div></div>
+
+<p>On the <code>Basic</code> tab, click <code>Swap frame and main sensor</code>, then click <code>write</code></p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 78.62523540489642%;'><a id="assets-images-blog-q-simplebgc-swap-sensors-f-f-fe-png" href="../../../../../assets/images/blog/q600/simplebgc/swap-sensors-34f3f6fe.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/swap-sensors-34f3f6fe.png' class='trailing-space' ></img></a></div></div>
+
+<p>Let&#39;s tell the controller how our sensors are oriented.</p>
+
+<p>Camera IMU is set to Axis TOP: <code>Z</code>, RIGHT: <code>-Y</code></p>
+
+<p>Frame IMU is set to Axis TOP: <code>-Z</code>, RIGHT: <code>X</code></p>
+
+<div class='ratio-box-resizer img-half-width'><div class='ratio-box' style='padding-bottom: 41.5%;'><a id="assets-images-blog-q-simplebgc-sensor-frame-b-d-png" href="../../../../../assets/images/blog/q600/simplebgc/sensor-frame-0b30878d.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/sensor-frame-0b30878d.png' class='trailing-space' ></img></a></div></div>
+
+<p>If you mounted yours differently, just hit AUTO for each sensor and follow the guide.</p>
+
+<p>Make sure that you tell SimpleBGC the Frame IMU is on the quad-copter frame by setting Frame IMU: <code>Above YAW</code></p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 54.860186418109194%;'><a id="assets-images-blog-q-simplebgc-above-yaw-c-c-d-f-png" href="../../../../../assets/images/blog/q600/simplebgc/above-yaw-c2c54d3f.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/above-yaw-c2c54d3f.png' class='trailing-space' ></img></a></div></div>
+
+<p>Also, make sure that on the <code>RC</code> tab, the <code>Input Mappings</code> are all set to <code>no input</code> you can adjust this later if you&#39;re using a remote control to steer the gimbal.</p>
+
+<div class='ratio-box-resizer img-half-width'><div class='ratio-box' style='padding-bottom: 57.599999999999994%;'><a id="assets-images-blog-q-simplebgc-no-rc-input-b-e-ab-png" href="../../../../../assets/images/blog/q600/simplebgc/no-rc-input-b56e1ab1.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/no-rc-input-b56e1ab1.png' class='trailing-space' ></img></a></div></div>
+
+<p>Next, turn down all the PIDS values to 0. E.g. to P: <code>0</code>, I: <code>0</code>, D: <code>0</code> for all three axis.</p>
+
+<p>Then turn down the motor power. See the screenshot below of what worked for me.</p>
+
+<p>Next, we&#39;ll figure out if any of the motors need to be inverted. Plug a battery into the back of the camera. I used a little 3S battery. Then hit <code>AUTO</code> under the Motor settings.</p>
+
+<p>Make sure the poles are set to 22 on all motors and hit <code>Write</code> at the bottom of the app.</p>
+
+<div class='ratio-box-resizer img-half-width'><div class='ratio-box' style='padding-bottom: 43.03178484107579%;'><a id="assets-images-blog-q-simplebgc-motor-power-cacf-e-png" href="../../../../../assets/images/blog/q600/simplebgc/motor-power-0cacf35e.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/motor-power-0cacf35e.png' class='trailing-space' ></img></a></div></div>
+
+<h4 id="calibration">Calibration</h4>
+
+<p>In SimpleBGC GUI, go to the <code>basic</code> tab and hit the <code>IMU Calibration Help</code> button.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 78.62523540489642%;'><a id="assets-images-blog-q-simplebgc-edf-png" href="../../../../../assets/images/blog/q600/simplebgc/8-7878edf5.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/8-7878edf5.png' class='trailing-space' ></img></a></div></div>
+
+<p>You&#39;ll see this screen:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 78.04642166344294%;'><a id="assets-images-blog-q-simplebgc-f-ece-png" href="../../../../../assets/images/blog/q600/simplebgc/9-f1ece291.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/9-f1ece291.png' class='trailing-space' ></img></a></div></div>
+
+<p>Make sure you&#39;ve powered down the board and re-started it since swapping the <code>Frame IMU</code> and <code>Camera IMU</code>. If the board has been power cycled, the sensors should now have the right names (Frame IMU on the frame and Camera IMU on the camera).</p>
+
+<p>Hold the camera mount in place, I used a table, pick <code>Frame IMU</code> and hit calibrate. It&#39;s crucial the IMU is as still as possible while calibrating.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.8%;'><a id="assets-images-blog-q-asp-imu-e-ff-jpg" href="../../../../../assets/images/blog/q600/asp/imu-1-04e5ff70.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/imu-1_prev-505886ee.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Repeat the process, moving the IMU to every 90-degree orientation.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.8%;'><a id="assets-images-blog-q-asp-imu-b-jpg" href="../../../../../assets/images/blog/q600/asp/imu-2-093b6731.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/imu-2_prev-e6387f6e.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Then do the same with the frame IMU, but pick <code>Camera IMU</code> in the configuration tool.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 133.6898395721925%;'><a id="assets-images-blog-q-asp-imu-d-jpg" href="../../../../../assets/images/blog/q600/asp/imu-3-501104d1.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/imu-3_prev-0e6fad34.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>When you&#39;re done, set the gimbal on a steady surface, go to the monitoring tab and make sure the traces look stable.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 50.87956698240866%;'><a id="assets-images-blog-q-simplebgc-monitoring-a-de-b-png" href="../../../../../assets/images/blog/q600/simplebgc/monitoring-a9de2b86.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/monitoring-a9de2b86.png' class='trailing-space' ></img></a></div></div>
+
+<p>In SimpleBGC GUI, you&#39;ll notice these gauges on the right:</p>
+
+<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 277.8894472361809%;'><a id="assets-images-blog-q-simplebgc-orientation-fc-d-e-png" href="../../../../../assets/images/blog/q600/simplebgc/orientation-8fc40d4e.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/orientation-8fc40d4e.png' class='trailing-space' ></img></a></div></div>
+
+<p>There is one gauge for each axis. The red ball tells you which way the gimbal is trying to point.</p>
+
+<p>The red balls on several axes were spinning, so I set the camera on a chair like this. I then calibrated the gyro again (<code>Basic</code> tab -&gt; <code>Sensor</code> section -&gt; <code>IMU Calibration Help...</code>)</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.0%;'><a id="assets-images-blog-q-asp-camera-books-chair-bf-jpg" href="../../../../../assets/images/blog/q600/asp/camera-books-chair-9090bf05.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/asp/camera-books-chair-9090bf05.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>When the gimbal is completely still, hit <code>Reset</code> then <code>Calibrate</code> in the <code>Gyroscope</code> section. It will calibrate both gyros at once.</p>
+
+<div class='ratio-box-resizer img-quarter-width'><div class='ratio-box' style='padding-bottom: 92.98245614035088%;'><a id="assets-images-blog-q-simplebgc-gyro-calibration-c-ca-e-png" href="../../../../../assets/images/blog/q600/simplebgc/gyro-calibration-c2ca17e2.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/gyro-calibration-c2ca17e2.png' class='trailing-space' ></img></a></div></div>
+
+<p>Make sure the camera is level and perfectly still while calibrating.</p>
+
+<p>If, under the basic tab, you set <code>Sensor</code> -&gt; <code>Gyro calibration</code> -&gt; <code>Calibrate on system start</code> this will do the same thing every time you power on the gimbal.</p>
+
+<h4 id="tuning">Tuning</h4>
+
+<p>Note that to get good PID values during tuning, your setup must be as close as possible to what you&#39;ll be flying with, so use the same power supply that you&#39;ll be using during normal operation.</p>
+
+<p>Make sure the power settings and the PIDS are all turned down to 0. On the roll axis, set power to <code>150</code>, hit <code>write</code>, then click <code>AUTO</code> pick only the roll axis and <code>start from 0</code>.</p>
+
+<p>My final values for roll are:</p>
+<pre class="highlight plaintext"><code>P: 25
+I: .13
+D: 10
+</code></pre>
+
+<p>Now turn on the camera so the lens extends (this is how the gimbal should have been balanced), then set the power to <code>90</code> on the pitch, hit <code>write</code> and auto tune the pitch axis.</p>
+
+<p>Pitch values are:</p>
+<pre class="highlight plaintext"><code>P: 8
+I: .13
+D: 4
+</code></pre>
+
+<p>Finally, set the power to <code>90</code> on the yaw axis, <code>write</code> and autotune the yaw axis.</p>
+
+<p>The yaw values autotune found are:</p>
+<pre class="highlight plaintext"><code>P: 19
+I: .05
+D: 15
+</code></pre>
+
+<p>I had a little bit of buzzing, so I then went back and re-tuned roll using the same steps as above.</p>
+
+<p>The roll values autotune found the second time are:</p>
+<pre class="highlight plaintext"><code>P: 25
+I: .13
+D: 10
+</code></pre>
+
+<p>If you still have a bit of buzzing, retune the problem axis. You may try moving the gimbal into the position that causes the vibration and then re-tuning again. The autotune feature works by adjusting the PIDs until they vibrate, then turns them down a bit. So, putting it in the condition that makes it vibrate may help.</p>
+
+<p>My power settings are:</p>
+<pre class="highlight plaintext"><code>Roll:  145 + 0
+Pitch: 95 + 0
+Yaw:   95 + 0
+</code></pre>
+
+<p>Finally, I checked the box next to <code>Follow YAW</code> and turned <code>YAW</code> <code>SPEED</code> up to <code>25</code>. This will make the camera turn when I turn the quad-copter.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 78.62523540489642%;'><a id="assets-images-blog-q-simplebgc-follow-yaw-e-ad-fe-png" href="../../../../../assets/images/blog/q600/simplebgc/follow-yaw-e8ad35fe.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/simplebgc/follow-yaw-e8ad35fe.png' class='trailing-space' ></img></a></div></div>
+
+<h4 id="gimbal-troubleshooting">Gimbal Troubleshooting</h4>
+
+<p>If the gimbal isn&#39;t performing properly, here are some troubleshooting tips.</p>
+
+<ul>
+<li><p>High-frequency vibrating</p>
+
+<ul>
+<li>The power for a given motor could be too high</li>
+<li>Check <code>D</code> for the axis you think is vibrating, it could be too high</li>
+<li>Check <code>P</code> for the axis you think is vibrating, it could be too high</li>
+</ul></li>
+<li><p>Camera is jumping around wildly</p>
+
+<ul>
+<li>P is too high for the power</li>
+</ul></li>
+<li><p>Buzzing</p>
+
+<ul>
+<li>A motor has too much power</li>
+<li>Check the <code>Advanced</code> tab <code>Timings</code> setting, make sure <code>PWM frequency</code> is set to <code>High</code></li>
+</ul></li>
+</ul>
+
+<h4 id="further-reading">Further Reading</h4>
+
+<p>For more gimbal controller fun, download the latest manual here: <a href="https://www.basecamelectronics.com/downloads/32bit/">https://www.basecamelectronics.com/downloads/32bit/</a></p>
+
+<p>Here is an awesome gimbal configuration and setup guide. Even better, the music is awesome: <a href="https://www.youtube.com/watch?v=NWj7EojEVnA">https://www.youtube.com/watch?v=NWj7EojEVnA</a></p>
+
+<p><br/></p>
+
+<p>Continue onto the <a href="/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/">PixHawk Flashing and Setup guide</a> or back to the <a href="/blog/2016/01/29/rctimer-q600-quadcopter/">Q600 Build</a>.</p>
+
+<div class='text-center' style='margin: 1em'>
+Checkout my other guides at
+<a href='/blog'>nathan.vertile.com/blog</a>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+//<![CDATA[
+                  var disqus_shortname = 'vertile';
+          
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+//]]>
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</article>
+
+</div>
+</div>
+</div>
+<script>
+  var vglnk = { key: 'ddedf6f00d454f08b923376f1cb1cfbf' };
+  
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = '//cdn.viglink.com/api/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
+
+</body>
+</html>

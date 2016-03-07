@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link href='/favicon/apple-touch-icon-57x57-8e6554ae.png' rel='apple-touch-icon-precomposed' sizes='57x57'>
+<link href='/favicon/apple-touch-icon-114x114-e0cb1072.png' rel='apple-touch-icon-precomposed' sizes='114x114'>
+<link href='/favicon/apple-touch-icon-72x72-a86b7103.png' rel='apple-touch-icon-precomposed' sizes='72x72'>
+<link href='/favicon/apple-touch-icon-144x144-bd50bc10.png' rel='apple-touch-icon-precomposed' sizes='144x144'>
+<link href='/favicon/apple-touch-icon-60x60-ca47953b.png' rel='apple-touch-icon-precomposed' sizes='60x60'>
+<link href='/favicon/apple-touch-icon-120x120-068de821.png' rel='apple-touch-icon-precomposed' sizes='120x120'>
+<link href='/favicon/apple-touch-icon-76x76-2bd34869.png' rel='apple-touch-icon-precomposed' sizes='76x76'>
+<link href='/favicon/apple-touch-icon-152x152-da7652e0.png' rel='apple-touch-icon-precomposed' sizes='152x152'>
+<link href='/favicon/favicon-196x196-569e78d9.png' rel='icon' sizes='196x196' type='image/png'>
+<link href='/favicon/favicon-96x96-d809406c.png' rel='icon' sizes='96x96' type='image/png'>
+<link href='/favicon/favicon-32x32-162b5c6d.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/favicon/favicon-16x16-d0c2b051.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/favicon/favicon-128-2f649ba2.png' rel='icon' sizes='128x128' type='image/png'>
+<meta content=' ' name='application-name'>
+<meta content='#FFFFFF' name='msapplication-TileColor'>
+<meta content='/favicon/mstile-144x144-bd50bc10.png' name='msapplication-TileImage'>
+<meta content='/favicon/mstile-70x70-2f649ba2.png' name='msapplication-square70x70logo'>
+<meta content='/favicon/mstile-150x150-999c62ba.png' name='msapplication-square150x150logo'>
+<meta content='/favicon/mstile-310x150-37756fac.png' name='msapplication-wide310x150logo'>
+<meta content='/favicon/mstile-310x310-6bd894f0.png' name='msapplication-square310x310logo'>
+<title>
+Q600 Quadcopter
+</title>
+<link href="../../../../../assets/stylesheets/all-ca47499b.css" rel="stylesheet" />
+<script src="../../../../../assets/javascripts/all-f0e3b20f.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-7406390-2', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  
+    // outbound link tracking
+    // http://www.sitepoint.com/track-outbound-links-google-analytics/
+    (function($) {
+      "use strict";
+      // current page host
+      var baseURI = window.location.host;
+      // click event on body
+      $("body").on("click", function(e) {
+        // abandon if link already aborted or analytics is not available
+        if (e.isDefaultPrevented() || typeof ga !== "function") return;
+        // abandon if no active link or link within domain
+        var link = $(e.target).closest("a");
+        if (link.length != 1 || baseURI == link[0].host) return;
+        // cancel event and record outbound link
+        e.preventDefault();
+        var href = link[0].href;
+        ga('send', {
+          'hitType': 'event',
+          'eventCategory': 'outbound',
+          'eventAction': 'link',
+          'eventLabel': href,
+          'hitCallback': loadPage
+        });
+        // redirect after one second if recording takes too long
+        setTimeout(loadPage, 1000);
+        // redirect to outbound page
+        function loadPage() {
+          document.location = href;
+        }
+      });
+    })(jQuery);
+</script>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+</head>
+<body>
+<nav class='navbar navbar-default' id='top' role='navigation'>
+<div class='container'>
+<div class='navbar-header'>
+<div class='navbar-brand'>
+<a href='/blog/'>
+<img src="../../../../../assets/images/home/smile-0a95f89f.jpg" />
+</a>
+<span>Q600 Quadcopter</span>
+</div>
+<button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<div class='navbar-right collapse navbar-collapse' id='bs-nav-collapse'>
+<ul class='nav navbar-nav'>
+<li>
+<form class='search navbar-form' role='search'>
+<div class='form-group'>
+<input class='form-control bloodhound typeahead' data-articles='[["AVR Dissassembly","/blog/2016/02/25/avr-dissassembly/"],["Victory230 FPV Mini-quad Setup and Review","/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"],["FrSky RX SBUS and Frsky DJT Module","/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"],["HMDVR FPV Video Recorder","/blog/2016/02/06/hmdvr-fpv-video-recorder/"],["Rctimer BeerotorF3 Flight Controller","/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"],["Flying Sony NEX Micro 4/3rds Camera","/blog/2016/01/29/flying-micro-4-3rds-camera/"],["Q600 Quadcopter","/blog/2016/01/29/rctimer-q600-quadcopter/"],["ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller","/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/"],["PixHawk Flashing and Setup","/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/"],["BlHeli ESCs","/blog/2015/12/06/blheli-esc-identification/"],["BlHeli ESC Upgrading and Configuration","/blog/2015/12/06/blheli-configuration/"],["BlHeli CleanFlight ESC Calibration","/blog/2015/12/06/blheli-calibration/"],["Rctimer Micro 160 BeeRotor Build, Setup and Review","/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"],["Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if","/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/"],["Rctimer OZE32 / RTFQ Flip32 AIO Integrated Flight Controller Review and Setup","/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"],["Rooting Marshmellow, keeping SELinux","/blog/2015/11/03/rooting-marshmellow-keeping-selinux/"],["MultiRotor Setup Checklist","/blog/2015/10/29/multirotor-setup-checklist/"],["ST-LINK flash and debug on the SPRacingF3","/blog/2015/10/24/st-link-flash-and-debug-on-the-spracingf3-discovery/"],["Debugging Android Native (NDK) Apps","/blog/2015/09/27/debugging-android-native-ndk-apps/"],["Fixing an Arduino 0x000000 Error","/blog/2015/09/16/fixing-an-arduino-0x000000-error/"],["GPS VK16U6 CleanFlight Setup","/blog/2015/08/26/gps-vk16u6-cleanflight-setup/"],["Go FPV Latency Testing","/blog/2015/08/24/go-fpv-latency-testing/"],["Building Android on Ubuntu 14.04","/blog/2015/07/23/building-android-on-ubuntu-14-04/"],["Migrating to Amazon Elastic Map Reduce (EMR)","/blog/2015/07/15/migrating-to-amazon-elastic-map-reduce-emr/"],["Naze32 ST-Link Debugging","/blog/2015/07/06/naze32-st-link-debugging/"],["Decompiling an APK","/blog/2015/06/30/decompiling-an-apk/"],["Nexpose Community Edition copy Scan Template","/blog/2015/06/17/nexpose-community-edition-copy-scan-template/"],["Wireless Video Tx/Rx FPV Channels","/blog/2015/06/17/boscam-tx-rx-fpv-channels/"],["Making a UHF 433mhz Inverted Vee Antenna Set","/blog/2015/06/15/making-a-uhf-433mhz-inverted-vee-antenna-set/"],["Setup OrangeLRS with OpenLRSng","/blog/2015/05/21/setup-orangelrs-with-openlrsng/"],["Go FPV Goggles","/blog/2015/05/21/go-fpv-goggles/"],["FPV250 with Cleanflight, Minimosd, OpenLRSng and a Xiaomi Yi GoPro Clone","/blog/2015/05/19/fpv250-cleanflight/"],["Flashing BlHeli on HobbyKing BlueSeries 12a ESCs With a Chinese Arduino Nano Clone","/blog/2015/05/15/flashing-blheli-on-hobbyking-blueseries-12a-escs-with-a-chinese-arduino-nano-clone/"],["Flashing NodeMCU on the ESP8266","/blog/2015/05/14/flashing-nodemcu-on-the-esp8266/"],["Ebay HC-05 Bluetooth Setup Guide","/blog/2015/05/12/ebay-hc-05-bluetooth-setup-guide/"],["3D Camera on the Tricopter","/blog/2015/05/12/3d-camera-on-the-tricopter/"],["ProRes editing in Premier","/blog/2015/05/11/prores-editing-in-photoshop/"],["Xiaomi Yi -- The Ant Camera","/blog/2015/05/08/xiaomi-yi-the-ant-camera/"],["Minim OSD","/blog/2015/04/22/minim-osd/"],["Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone","/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/"],["Handling Dates in Hadoop Pig","/blog/2015/04/17/handling-dates-in-hadoop-pig/"],["LiPo Battery Price Analysis","/blog/2015/04/10/lipo-battery-price-analysis/"],["ADB over WiFi (aka, how do I debug when using USB host mode?)","/blog/2015/03/27/adb-over-wifi-aka-how-do-i-debug-when-using-usb-host-mode/"],["Shrink a linux VM on OSX","/blog/2015/03/18/shrink-a-linux-vm-on-osx/"],["Mounting a VHD NTFS image on Ubuntu","/blog/2015/02/27/mounting-a-vhd-ntfs-image-on-ubuntu/"],["Ubuntu on the Beaglebone Black","/blog/2015/01/16/ubuntu-on-the-beaglebone-black/"],["Configuring the HK-T6A for a Flight Simulator","/blog/2015/01/02/configuring-the-hk-t6a-for-a-flight-simulator/"],["A complete noob&#x0027;s guide to RC","/blog/2015/01/02/a-complete-noobs-guide-to-rc/"],["DropCam on a Captive Portal","/blog/2014/11/17/dropcam-on-a-captive-portal/"],["Java reversing tips","/blog/2014/09/18/java-reversing-tips/"],["Ooize Data Pipeline Done-Flag","/blog/2014/09/02/oozie-data-pipeline-done-flag/"],["Time Machine on exFat","/blog/2014/08/06/Time_Machine_on_exFat/"],["Optimizing Postgresql","/blog/2014/01/31/Optimizing_Postgresql/"],["Mail Maker","/blog/2014/01/24/Mail_Maker/"],["Angularjs and Rails","/blog/2013/07/12/Angularjs_and_Rails/"],["nginx ssl chained certs","/blog/2013/04/24/nginx_ssl_chained_certs/"],["rails log tagging","/blog/2013/04/24/rails_log_tagging/"],["Converting an Android Project to Maven","/blog/2013/04/16/Converting_an_Android_Project_to_Maven/"],["Oh! Map my rails!","/blog/2013/04/09/Oh_Map_my_rails/"],["mysql permissions","/blog/2013/04/09/mysql_permissions/"],["reset mysql slave","/blog/2013/03/29/reset_mysql_slave/"],["installing rmagick on 10.8 with homebrew","/blog/2013/02/14/installing_rmagick_on_108_with_homebrew/"],["NP-Completeness","/blog/2013/02/08/NP-Completeness/"],["Find and replace non-breaking spaces in vim","/blog/2013/02/01/Find_and_replace_non-breaking_spaces_in_vim/"],["Open Resty the Prebuilt Reverse Proxy","/blog/2013/02/01/Open_Resty_the_Prebuilt_Reverse_Proxy/"],["Sublime Text 2 Tweaks","/blog/2012/12/17/Sublime_Text_2_Tweaks/"],["Batch Convert CR2 to JPG","/blog/2012/12/01/Batch_Convert_CR2_to_JPG/"],["Androids in the wild","/blog/2012/06/30/Androids_in_the_wild/"],["Why you need database_cleaner","/blog/2012/06/11/Why_you_need_database_cleaner/"],["Find and replace in files on linux/unix","/blog/2012/05/12/Find_and_replace_in_files_on_linuxunix/"],["a pithy guide to railsconf 2012","/blog/2012/04/26/a_pithy_guide_to_railsconf_2012/"],["faster rails boot ruby 1.9.3 + debugger","/blog/2012/04/12/faster_rails_boot_ruby_193_debugger/"],["homebrew -- fix that nasty mysql.server start segfault","/blog/2012/03/29/homebrew_--_fix_that_nasty_mysqlserver_start_segfault/"],["read/write filesystem on rooted android for an ad-free android experience","/blog/2012/02/14/readwrite_filesystem_on_rooted_android_for_an_ad-free_android_experience/"],["Turn Wikipedia Back On","/blog/2012/01/17/Turn_Wikipedia_Back_On/"],["compiling qt4 on centos 5","/blog/2012/01/06/compiling_qt4_on_centos_5/"],["pip install pymongo with xcode 4","/blog/2011/08/09/pip_install_pymongo_with_xcode_4/"],["interactive python history -- better titled \"gimme some up arrow love\"","/blog/2011/08/05/interactive_python_history_--_better_titled_gimme_some_up_arrow_love/"],["Centos 5.5 yum repo sha256 fix","/blog/2011/07/27/Centos_55_yum_repo_sha256_fix/"],["Apple Keyboard for Android!","/blog/2011/07/15/Apple_Keyboard_for_Android/"],["jQuery Everywhere","/blog/2011/05/24/jQuery_Everywhere/"],["Django Migrations","/blog/2011/05/11/Django_Migrations/"],["RVM + Rails + Git + HTML5 Boiler Plate... What more could you possibly want?","/blog/2011/02/22/RVM_Rails_Git_HTML5_Boiler_Plate_What_more_could_you_possibly_want/"],["OneCast 2.0 - downloadable podcasts for androids of every color","/blog/2011/02/18/OneCast_20_-_downloadable_podcasts_for_androids_of_every_color/"],["Default Android Menu Icons in Your App","/blog/2011/02/17/Default_Android_Menu_Icons_in_Your_App/"],["Windows 7 x64 Android Development (ADB)","/blog/2010/11/06/Windows_7_x64_Android_Development_ADB/"],["Firefox Plugin - Watching for an Application Exit Event","/blog/2010/05/03/Firefox_Plugin_-_Watching_for_an_Application_Exit_Event/"],["Stop Redrawing a Fixed Orientation Android App","/blog/2010/03/08/Stop_Redrawing_a_Fixed_Orientation_Android_App/"]]' placeholder='Search' type='text'>
+</div>
+</form>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+
+<div class='container'>
+<div class='row row-offcanvas row-offcanvas-left'>
+<!-- sidebar -->
+<div class='col-xs-3 col-sm-3 sidebar-offcanvas'>
+<div id='sidebar' role='navigation'>
+<div class='sidebar-contents'>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+<a href='#top'>Contents</a>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 table-of-contents'>
+<ul class="nav"><li><a class="type-h2" href="#review"><h2>Review</h2></a></li><ul><li><a class="type-h3" href="#escs"><h3>ESCs</h3></a></li></ul>
+<li><a class="type-h2" href="#build"><h2>Build</h2></a></li><ul><li><a class="type-h4" href="#pcb"><h4>PCB</h4></a></li>
+<li><a class="type-h4" href="#landing-gear"><h4>Landing Gear</h4></a></li>
+<li><a class="type-h4" href="#power"><h4>Power</h4></a></li>
+<li><a class="type-h4" href="#telemetry"><h4>Telemetry</h4></a></li>
+<li><a class="type-h4" href="#compass"><h4>Compass</h4></a></li>
+<li><a class="type-h4" href="#arms"><h4>Arms</h4></a></li></ul>
+<li><a class="type-h2" href="#pixhawk"><h2>Pixhawk</h2></a></li></ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+Related Articles
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 related'>
+<ul>
+<li><a href="/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/">PixHawk Flashing and Setup</a></li>
+<li><a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/">ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller</a></li>
+<li><a href="/blog/2016/01/29/flying-micro-4-3rds-camera/">Flying Sony NEX Micro 4/3rds Camera</a></li>
+<li><a href="/blog/2016/02/03/rctimer-beerotorf3-flight-controller/">Rctimer BeerotorF3 Flight Controller</a></li>
+<li><a href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/">Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone</a></li>
+<li><a href="/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/">Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if</a></li>
+</ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header text-center'>
+<div class='drawer-footer'>
+<small>
+©
+<a href='mailto:nathan@vertile.com'>Nathan Tsoi</a>
+</small>
+</div>
+</div>
+</div>
+<div class='row connect'>
+<div class='col-lg-12 text-center'>
+<a class='btn-sm btn-default' href='https://github.com/nathantsoi' target='_blank'>
+<i class='fa fa-github'></i>
+</a>
+<a class='btn-sm btn-default' href='https://bitbucket.org/nathantsoi' target='_blank'>
+<i class='fa fa-bitbucket'></i>
+</a>
+<a class='btn-sm btn-default' href='https://twitter.com/nathantsoi/' target='_blank'>
+<i class='fa fa-twitter'></i>
+</a>
+<a class='btn-sm btn-default' href='https://angel.co/nathantsoi' target='_blank'>
+<i class='fa fa-angellist'></i>
+</a>
+<a class='btn-sm btn-default' href='https://linkedin.com/in/nattsoi/' target='_blank'>
+<i class='fa fa-linkedin'></i>
+</a>
+<a class='btn-sm btn-default' href='https://facebook.com/nathantsoi' target='_blank'>
+<i class='fa fa-facebook'></i>
+</a>
+<a class='btn-sm btn-default' href='https://plus.google.com/112518806102274696668' target='_blank'>
+<i class='fa fa-google-plus'></i>
+</a>
+<a class='btn-sm btn-default' href='https://news.ycombinator.com/user?id=natvert' target='_blank'>
+<i class='fa fa-hacker-news'></i>
+</a>
+<a class='btn-sm btn-default' href='https://trello.com/nathantsoi' target='_blank'>
+<i class='fa fa-trello'></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- main area -->
+<div class='col-sm-9 col-xs-12' id='mainbar'>
+<article>
+<p>In this review, build and setup guide we will walk through building and configuring the Q600 quadcopter from Rctimer.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-flying-a-b-f-jpg" href="http://rctimer.com/product-1456.html/#r-pNathanT" class="linked-img "><img src='../../../../../assets/images/blog/q600/flying_prev-bd775759.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Later, I&#39;ll mount an <a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/">ASP Gimbal</a> on the Q600 to carry my NEX-5T.</p>
+
+<h2 id="review">Review</h2>
+
+<p>For the full review, checkout the <a href="/blog/2016/01/29/flying-micro-4-3rds-camera/#trooper-q600">Flying Sony NEX Micro 4/3rds Camera</a> article.</p>
+
+<p>Overall, the build quality is great. The integrated PCB / PDB body makes assembly a breeze.</p>
+
+<p>The 30mm OD carbon tubes are super robust. The landing gear is tall enough to accommodate the ASP gimbal and a <a href="http://amzn.to/1TCifYo">NEX-5T</a>.</p>
+
+<p>Since there are already good +5v and +12v power supplies on the board, it would be nice if there were also a high-amperage (200a) current sensor built into the PCB instead of having to add one, no big deal though, since we&#39;re using the included <a href="http://rctimer.com/product-1125.html/#r-pNathanT">Rctimer power module</a>, which supports up to 7S, 90A.</p>
+
+<p>It would also be nice if there were a GPS mount, but that&#39;s not a big deal. You&#39;ll see how I mounted it in the canopy later in this guide. You could probably also use one of these <a href="http://rctimer.com/product-1250.html/#r-pNathanT">GPS standoffs</a>, but I&#39;m not sure how well it would fit under the canopy.</p>
+
+<h3 id="escs">ESCs</h3>
+
+<p>Before we start building, let&#39;s take a look inside the arms at the ESCs.</p>
+
+<p>The ESCs come pre-soldered and pre-installed in the arms. I took an arm apart to find out what kind of ESCs are included.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-arm-esc-e-f-c-jpg" href="../../../../../assets/images/blog/q600/frame/arm-esc-e184f0c0.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/arm-esc_prev-97ad0ecc.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>It turns out the Q600 comes with T40A ESCs, which support blheli and damped light, which could be great for this.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-rctimer-t-a-esc-front-c-jpg" href="../../../../../assets/images/blog/q600/frame/rctimer-t40a-esc-front-84558c65.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/rctimer-t40a-esc-front_prev-f51d930a.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>The dimensions, including the capacitor, are 25mm x 53mm x 11mm. They each have a heat sink.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-rctimer-t-a-esc-back-ea-b-jpg" href="../../../../../assets/images/blog/q600/frame/rctimer-t40a-esc-back-68ea19b0.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/rctimer-t40a-esc-back_prev-8c71be08.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Though it seems unlikely that it will be necessary, you can get replacements here: <a href="http://rctimer.com/product-1220.html/#r-pNathanT">http://rctimer.com/product-1220.html</a>.</p>
+
+<h2 id="build">Build</h2>
+
+<p>Take note of the included screws, I&#39;ll be mentioning the various types and sizes throughout the build.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 43.241127348643005%;'><a id="assets-images-blog-q-frame-screws-a-f-jpg" href="../../../../../assets/images/blog/q600/frame/screws-6a00f564.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/screws_prev-b885e13e.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Here&#39;s how it will all go together. The shorter arms are in the front.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 52.80944625407166%;'><a id="assets-images-blog-q-frame-layout-f-b-jpg" href="../../../../../assets/images/blog/q600/frame/layout-f58b9371.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/layout_prev-e136ee07.jpg' class='trailing-space' ></img></a></div></div>
+
+<h4 id="pcb">PCB</h4>
+
+<p>The PCB is the main plate. Everything will build off of this.</p>
+
+<p>The PDB has two <code>MP2307DN</code> 3A, 23V, 340kHz switching voltage regulators. They&#39;re coupled with two 22 microfarad 25v Tantalum capacitors.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.38280616382805%;'><a id="assets-images-blog-q-frame-pdb-power-b-b-e-jpg" href="../../../../../assets/images/blog/q600/frame/pdb-power-b42b54e4.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/pdb-power_prev-401fb699.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>I&#39;m told this setup can support 6s (25.2v), which seems ok with a nominal voltage of <code>6 * 3.7 = 22.2</code> however, when fully charged, this could be pushing the limits with a voltage of <code>6 * 4.2v = 25.2v</code>.</p>
+
+<p>Install the gray vibration dampening balls onto the side opposite of the yellow XT-60 connector.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-vibration-dampeners-e-ab-jpg" href="../../../../../assets/images/blog/q600/frame/vibration-dampeners-1-1e0033ab.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/vibration-dampeners-1_prev-b2ddc95c.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Install the black and silver vibration dampeners on the same side as the XT-60 connector. Use the silver M4x6mm screws and blue threadlock!</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-vibration-dampeners-d-jpg" href="../../../../../assets/images/blog/q600/frame/vibration-dampeners-2-20920d43.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/vibration-dampeners-2_prev-1564b2e1.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-vibration-dampeners-d-c-jpg" href="../../../../../assets/images/blog/q600/frame/vibration-dampeners-4-29d176c9.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/vibration-dampeners-4_prev-53385e26.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Install the 5 curved white plates on the same side as the gray vibration dampening balls. Use the coarse thread, sharp tipped, M3x8mm screws. Don&#39;t use threadlock on these.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-body-pieces-bfa-jpg" href="../../../../../assets/images/blog/q600/frame/body-pieces-1-36969bfa.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/body-pieces-1_prev-7a1bdd10.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Notice the injection moulded text, make sure it&#39;s facing up.</p>
+
+<p>Having a <a href="http://www.banggood.com/8-in-1-Hex-socket-driver-Hexagon-screwdriver-Set-For-RC-Models-p-1002287.html?p=1G09211226617201502J">proper 2.0mm hex driver</a> helps a lot as well. I broke 2 right angle allen wrenches before getting out my hex driver.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-body-pieces-aff-c-jpg" href="../../../../../assets/images/blog/q600/frame/body-pieces-2-aff2c368.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/body-pieces-2_prev-c57cb2a6.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.50067904028973%;'><a id="assets-images-blog-q-frame-body-pieces-c-ce-e-jpg" href="../../../../../assets/images/blog/q600/frame/body-pieces-3-90c4ce4e.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/body-pieces-3_prev-2349b380.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Let&#39;s mount the carbon fiber flight controller mounting plate. I like to use a piece of string to pull the top of the vibration dampening balls through the holes.</p>
+
+<p>Wrap the string around the vibration dampening ball and thread it through the hole in the carbon plate. I use tweezers for this. Pull the string and the thing should pop through.</p>
+
+<div class="videoWrapper">
+  <iframe width="853" height="480" src="https://www.youtube.com/embed/L1-T63W9UfM" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h4 id="landing-gear">Landing Gear</h4>
+
+<p>Next, install the landing gear. Retractable gear would go at the same location, if you&#39;ve purchased those. I&#39;m using the fixed landing gear included in the kit. They should angle out. Use the black M3x10mm bolts and silver M3 nylock nuts. Remember, no threadlock when using nylock nuts.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-landing-gear-a-jpg" href="../../../../../assets/images/blog/q600/frame/landing-gear-1-766a2018.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/landing-gear-1_prev-0b103ff5.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>These were a tight fit going through the PCB, so I suggest inserting the screws from the side with the landing gear. Once you thread through the PCB hold the nut on the other side with a pair of pliers and tighten it down. If you can&#39;t get the nut tight, back out the screw letting the nut spin freely until the nut is snugly against the PCB, then hold the nut with pliers and tighten the screw.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-landing-gear-dd-jpg" href="../../../../../assets/images/blog/q600/frame/landing-gear-2-666dd818.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/landing-gear-2_prev-e2a569ed.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Install the large white nuts on the landing gear mount points. No need to tighten, we&#39;ll install the legs in a sec.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-landing-gear-dab-d-jpg" href="../../../../../assets/images/blog/q600/frame/landing-gear-3-dab6667d.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/landing-gear-3_prev-e49ca5e4.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>To assemble the legs, use the T joins and M3x16mm screws.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-landing-gear-e-f-jpg" href="../../../../../assets/images/blog/q600/frame/landing-gear-4-72265e0f.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/landing-gear-4_prev-46ad197a.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>It&#39;s easiest to insert the larger-diameter rod first, then pull the white piece apart a bit and slide in the smaller-diameter rod. There will be 100mm on each side of the &quot;foot&quot; piece. When you&#39;re tightening the two screws, alternate between them, doing a 1/2 or 1/4 turn at a time to ensure a nice even fit.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-landing-gear-ef-f-jpg" href="../../../../../assets/images/blog/q600/frame/landing-gear-5-6ef0373f.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/landing-gear-5_prev-06ce823e.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Put on the rubber feet.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-landing-gear-db-ca-jpg" href="../../../../../assets/images/blog/q600/frame/landing-gear-6-96db6ca4.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/landing-gear-6_prev-ceb8ad80.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Then repeat for the other leg.</p>
+
+<p>Note the text on the leg, you&#39;ll want this on the outside of the quad-copter when mounted to the main frame.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-landing-gear-ddf-jpg" href="../../../../../assets/images/blog/q600/frame/landing-gear-7-3ddf6044.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/landing-gear-7_prev-ba58337a.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>I installed the legs then screwed the final two screws into the landing gear. Use the pointed screws.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.455078125%;'><a id="assets-images-blog-q-frame-landing-gear-ccd-jpg" href="../../../../../assets/images/blog/q600/frame/landing-gear-8-9342ccd1.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/landing-gear-8-9342ccd1.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Let&#39;s assemble the parts that will hold the main body to the cover.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-cover-a-jpg" href="../../../../../assets/images/blog/q600/frame/cover-1-90042a09.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/cover-1_prev-54b2958c.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>The rubber grommet goes in the white piece.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-cover-a-jpg" href="../../../../../assets/images/blog/q600/frame/cover-2-3159657a.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/cover-2_prev-e4fd464c.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Use an M4x6mm screw and some locktite to secure the black post. It goes in this hole.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-cover-b-aa-c-jpg" href="../../../../../assets/images/blog/q600/frame/cover-3-b86aa1c1.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/cover-3_prev-e46bf9e4.jpg' class='trailing-space' ></img></a></div></div>
+
+<h4 id="power">Power</h4>
+
+<p>Since the Q600 PDB doesn&#39;t have a built in current sensor, you&#39;ll want to use a power module to get current consumption (in milliamps). I&#39;m using <a href="http://rctimer.com/product-1125.html/#r-pNathanT">this power moudle</a> which supports 7S.</p>
+
+<p>Tin the pads on the PDB.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/TQs6RmDDoYE" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>Prepare your power module by removing the female XT-60 plug.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-power-cc-e-c-jpg" href="../../../../../assets/images/blog/q600/frame/power-1-cc143e2c.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/power-1_prev-10a0659b.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Then solder the power module onto the battery pads.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-power-f-e-d-jpg" href="../../../../../assets/images/blog/q600/frame/power-2-f0e8d298.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/power-2_prev-0014980b.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Use some 2mm heat shrink to protect the wires, then thread it through the frame and zip-tie it down.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-power-f-f-jpg" href="../../../../../assets/images/blog/q600/frame/power-3-871f363f.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/power-3_prev-441ce858.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Mount the buzzer. I put mine here. I couldn&#39;t find two screw holes that fit, so I only used one. The other side rests against the sidewall. I put a dot of hot glue to hold it there.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-buzzer-b-a-ca-jpg" href="../../../../../assets/images/blog/q600/frame/buzzer-b7a5ca01.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/buzzer_prev-dcd6c9e6.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>The safety switch fits in this hole in the top carbon plate.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-safety-switch-da-jpg" href="../../../../../assets/images/blog/q600/frame/safety-switch-1-68056da4.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/safety-switch-1_prev-7df3f475.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>I&#39;ll put it back here, so we can arm without opening the cover.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-safety-switch-e-d-dc-jpg" href="../../../../../assets/images/blog/q600/frame/safety-switch-2-0e66d6dc.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/safety-switch-2_prev-61950622.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Drill a pilot hole, I used an 1/8&quot; bit, then use your reamer to make an 8mm opening.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-safety-switch-c-a-e-jpg" href="../../../../../assets/images/blog/q600/frame/safety-switch-3-18c1a7e6.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/safety-switch-3_prev-56b27ae6.jpg' class='trailing-space' ></img></a></div></div>
+
+<h4 id="telemetry">Telemetry</h4>
+
+<p>While I was there, I made another 8mm hole for the telemetry. Make sure you ream this hole out large enough to get a solid connection between the antenna and the module&#39;s SMA plug. If you don&#39;t you may notice your ground station will disconnect and re-connect intermittently.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-telemetry-bb-a-e-jpg" href="../../../../../assets/images/blog/q600/frame/telemetry-1-bb714a0e.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/telemetry-1_prev-8d6d3a9f.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Since we&#39;re going to install the telemetry, now would be a good time to swap the cable. The right cable will fit into <code>TELEM 1</code> on the PixHawk. Here is how it should be plugged in:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-telemetry-f-d-f-jpg" href="../../../../../assets/images/blog/q600/frame/telemetry-2-6f3d288f.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/telemetry-2_prev-7ea69143.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Use some 20mm heatshrink to protect the telemetry module and install it. Though the antenna is up in this picture, I suggest orienting your antenna down so that it is out of the way of the props during flight.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-telemetry-b-c-de-jpg" href="../../../../../assets/images/blog/q600/frame/telemetry-3-b0c4de05.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/telemetry-3_prev-4dd68b13.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Grab your MinimOSD (MavLink-OSD) and solder these two sets of pads together to make the whole thing run off 5v instead of 12.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.87890625%;'><a id="assets-images-blog-q-frame-minim-osd-edab-jpg" href="../../../../../assets/images/blog/q600/frame/minim-osd-edab5194.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/minim-osd-edab5194.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>You&#39;ll want this cable to connect the MinimOSD to the PixHawk&#39;s <code>TELEM 2</code> port</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-telemetry-b-d-jpg" href="../../../../../assets/images/blog/q600/frame/telemetry-4-47b611d8.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/telemetry-4_prev-69c0de95.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Cover the MinimOSD with some heat shrink tube or electrical tape to ensure it doesn&#39;t short on the conductive carbon fiber.</p>
+
+<p>I like to make sure the UART ports are easily accessible, so I can upgrade the MinimOSD firmware w/o taking it out of the quad.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-minimosd-installed-dd-d-jpg" href="../../../../../assets/images/blog/q600/frame/minimosd-installed-317dd4d9.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/minimosd-installed_prev-9ca3c27e.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Plugin the motor signal wire extension to the back of the PDB. You only need 4 wires, for motor outputs 1-4. Leave <code>GND</code> and <code>+5V</code> disconnected.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.455078125%;'><a id="assets-images-blog-q-frame-motor-pins-aaa-f-jpg" href="../../../../../assets/images/blog/q600/frame/motor-pins-35aaa42f.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/motor-pins-35aaa42f.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Here&#39;s what the other end of the wire looks like:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-motor-signal-connected-b-jpg" href="../../../../../assets/images/blog/q600/frame/motor-signal-connected-b8791772.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/motor-signal-connected_prev-6b40a447.jpg' class='trailing-space' ></img></a></div></div>
+
+<h4 id="compass">Compass</h4>
+
+<p>To mount the compass, I removed the compass&#39; plastic case.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-compass-ed-jpg" href="../../../../../assets/images/blog/q600/frame/compass-1-72199ed0.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/compass-1_prev-0c62ed86.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>I drilled out holes in the canopy with a 7/64ths drill bit (I don&#39;t have a metric set, but a 3mm bit would be better). I reamed out the last little bit with a 3mm notch on my reamer.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-compass-e-e-b-c-jpg" href="../../../../../assets/images/blog/q600/frame/compass-2-e1e4b8c9.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/compass-2_prev-fdff5af9.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>I then used some M3x10mm screws to install the compass. You can use the included black steel screws, this works fine, but I decided it would be a little easier on the board if I used nylon screws. These are M3x12mm screws I had lying around from a mini-quad.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-compass-d-a-jpg" href="../../../../../assets/images/blog/q600/frame/compass-3-2d43903a.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/compass-3_prev-5b15eb92.jpg' class='trailing-space' ></img></a></div></div>
+
+<h4 id="arms">Arms</h4>
+
+<p>This is how the motors will be mounted.</p>
+
+<div class='ratio-box-resizer img-half-width'><div class='ratio-box' style='padding-bottom: 113.72549019607843%;'><a id="assets-images-blog-q-motor-order-a-d-png" href="../../../../../assets/images/blog/q600/motor-order-86a237d4.png" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/motor-order-86a237d4.png' class='trailing-space' ></img></a></div></div>
+
+<p>Motor direction is what is important, so the numbers on the arms don&#39;t need to match the diagram, just the arrows on the circles. The shorter arms go on the front. Props spin towards the middle when looking down the length of the quad-copter.</p>
+
+<p>If your landing gear is already installed, it helps to remove it for this step.</p>
+
+<p>I trimmed the longer arms&#39; motor wires to 10mm then soldered them on. Plug in the ESCs. It will look like this when you&#39;re done.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-arms-e-f-d-jpg" href="../../../../../assets/images/blog/q600/frame/arms-1-5e3f131d.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/arms-1_prev-0c3e4b93.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Start with the front arms, shove the servo wire as far into the tube as you can get it, twist the arm several times to get a nice twist in the ESC wires, to minimize interference with the magnetometer. Insert the white block and put a screw in place. You&#39;ll need to put each screw through the top carbon plate first.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.455078125%;'><a id="assets-images-blog-q-frame-arms-e-ab-d-jpg" href="../../../../../assets/images/blog/q600/frame/arms-2-e4ab389d.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/arms-2-e4ab389d.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Pull the top plate down.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-arms-de-d-b-jpg" href="../../../../../assets/images/blog/q600/frame/arms-3-de2d267b.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/arms-3_prev-a9d57d36.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Once you have the front arms in, or at least one screw on each and the thumbscrew on the bottom. Put the rear motor arms in place.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-arms-b-b-jpg" href="../../../../../assets/images/blog/q600/frame/arms-4-05b5b300.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/arms-4_prev-0373b1b7.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Just make sure you put them in with the motor up!</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-arms-f-a-jpg" href="../../../../../assets/images/blog/q600/frame/arms-5-02f763a2.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/arms-5_prev-872e0981.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>If you have trouble getting a white block to stay in place, tape it there for a moment while you get it all assembled then remove the tape.</p>
+
+<p>At this point, I re-installed the landing gear, put all the plastic screws into place around the frame and test-fit the canopy.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-arms-afa-e-jpg" href="../../../../../assets/images/blog/q600/frame/arms-6-afa6311e.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/arms-6_prev-7ab40f5b.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>I also installed the underbody plate without the gimbal mount for testing.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-battery-plate-acbb-cb-jpg" href="../../../../../assets/images/blog/q600/frame/battery-plate-acbb5cb3.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/battery-plate_prev-8d627720.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>I also installed the prop adapters, because I&#39;ll be using plastic props for testing. You won&#39;t need these for the carbon props.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-prop-adapter-bd-a-jpg" href="../../../../../assets/images/blog/q600/frame/prop-adapter-81bd58a3.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/prop-adapter_prev-9583460d.jpg' class='trailing-space' ></img></a></div></div>
+
+<h2 id="pixhawk">Pixhawk</h2>
+
+<p>Plug in the flight controller. Everything is labeled well. You only need to connect the motor signal pins, leaving the power and ground ESC lines disconnected.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-pixhawk-c-fc-jpg" href="../../../../../assets/images/blog/q600/frame/pixhawk-1-c11fc702.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/pixhawk-1_prev-88bf2a11.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Use some double sided sticky tape and mount the flight controller. Make sure the arrow points forward.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-pixhawk-cc-jpg" href="../../../../../assets/images/blog/q600/frame/pixhawk-2-97cc9440.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/pixhawk-2_prev-158d55fb.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>I zip-tied all the wires and velcro-mounted the receiver.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-q-frame-pixhawk-a-b-d-jpg" href="../../../../../assets/images/blog/q600/frame/pixhawk-3-a01b33d6.jpg" class="linked-img colorbox"><img src='../../../../../assets/images/blog/q600/frame/pixhawk-3_prev-a2fe8d32.jpg' class='trailing-space' ></img></a></div></div>
+
+<p><br/></p>
+
+<p>Continue onto the <a href="/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/">PixHawk Flashing and Setup guide</a> or skip to the <a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/">ASP Gimbal Build and Setup guide</a>.</p>
+
+<div class='text-center' style='margin: 1em'>
+Checkout my other guides at
+<a href='/blog'>nathan.vertile.com/blog</a>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+//<![CDATA[
+                  var disqus_shortname = 'vertile';
+          
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+//]]>
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</article>
+
+</div>
+</div>
+</div>
+<script>
+  var vglnk = { key: 'ddedf6f00d454f08b923376f1cb1cfbf' };
+  
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = '//cdn.viglink.com/api/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
+
+</body>
+</html>
