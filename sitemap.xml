@@ -21,6 +21,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/page/2</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/tags/technology/page/2</loc>
     <priority>0.7</priority>
   </url>
@@ -249,10 +253,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013/04/09</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>http://nathan.vertile.com/bio</loc>
     <priority>0.7</priority>
   </url>
@@ -461,6 +461,14 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/03/23/drone-building-at-maker-faire-bay-area-2016</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/03/24/betaflight-in-flight-pid-tuning</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog</loc>
     <priority>0.7</priority>
   </url>
@@ -485,23 +493,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2013/04/09</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2013/04/16</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <loc>http://nathan.vertile.com/slides/notes</loc>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2013/04/24</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/slides/notes</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -510,10 +522,6 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2013/07/12</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2013/07</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1213,7 +1221,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013</loc>
+    <loc>http://nathan.vertile.com/blog/tags/amazon-emr</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1221,7 +1229,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/hive</loc>
+    <loc>http://nathan.vertile.com/blog/2013/07</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1469,7 +1477,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/tags/makerfaire-2016</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/maker-faire</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/mini-quad-building</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/03</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/03/24</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/03/23</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1733,7 +1765,11 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/amazon-emr</loc>
+    <loc>http://nathan.vertile.com/blog/2013</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/hive</loc>
     <priority>0.7</priority>
   </url>
 </urlset>

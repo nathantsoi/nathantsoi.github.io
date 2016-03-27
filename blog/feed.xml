@@ -5,10 +5,86 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-02-25T01:15:00-08:00</updated>
+  <updated>2016-03-23T23:12:00-07:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
+  <entry>
+    <title>BetaFlight in-flight PID tuning</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/03/24/betaflight-in-flight-pid-tuning/"/>
+    <id>http://nathan.vertile.com/blog/2016/03/24/betaflight-in-flight-pid-tuning/</id>
+    <published>2016-03-23T23:12:00-07:00</published>
+    <updated>2016-03-26T12:34:37-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;I&amp;#39;ve setup my &lt;a href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J"&gt;9x&lt;/a&gt; for in-flight-adjustments, allowing me to tune my PIDs while flying. I have &lt;a href="http://www.open-tx.org/"&gt;OpenTX&lt;/a&gt; installed on my 9x.&lt;/p&gt;
+
+&lt;p&gt;Since my only 3 position switch is already in use, I&amp;#39;ve setup the dial like a 3 position switch. Moving the dial will switch between adjusting P, I and D. I only adjust the roll and pitch axis, yaw will need to be tuned separately.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-inflight-adjustments-radio-bf-b-jpg" href="../../../../../assets/images/blog/inflight-adjustments/radio-68bf0b95.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/inflight-adjustments/radio-68bf0b95.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I&amp;#39;ve mixed the &lt;code&gt;TRN&lt;/code&gt; and &lt;code&gt;GEAR&lt;/code&gt; switch in my radio so that when the &lt;code&gt;GEAR&lt;/code&gt; switch is down, flipping on &lt;code&gt;TRN&lt;/code&gt; send the channel high and when &lt;code&gt;GEAR&lt;/code&gt; is up, flipping &lt;code&gt;TRN&lt;/code&gt; sends the channel low. This way, I can control the direction of PID value (up or down) with &lt;code&gt;GEAR&lt;/code&gt; then make a small adjustment by flipping the momentary &lt;code&gt;TRN&lt;/code&gt; switch on and off.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s how I mixed the switches in OpenTX:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.048828125%;'&gt;&lt;a id="assets-images-blog-inflight-adjustments-mixer-c-fa-e-jpg" href="../../../../../assets/images/blog/inflight-adjustments/mixer-c83fa38e.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/inflight-adjustments/mixer-c83fa38e.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 54.1015625%;'&gt;&lt;a id="assets-images-blog-inflight-adjustments-curve-f-bd-jpg" href="../../../../../assets/images/blog/inflight-adjustments/curve-f159bd83.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/inflight-adjustments/curve-f159bd83.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The PID specified by the dial are only adjusted up or down according to the direction of the &lt;code&gt;GEAR&lt;/code&gt; switch when &lt;code&gt;TRN&lt;/code&gt; is flicked on for a moment. No adjustment takes place until &lt;code&gt;TRN&lt;/code&gt; is flipped on.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href="https://github.com/cleanflight/cleanflight/blob/master/docs/Inflight%20Adjustments.md"&gt;adjrange command&lt;/a&gt; is:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;adjrange index slot range-channel range-start range-end adj-function adj-channel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To configure BetaFlight, paste this into the CLI:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;# adjrange
+adjrange 0 0 3 900 1300 6 1
+adjrange 1 0 3 1300 1700 7 1
+adjrange 2 0 3 1700 2100 8 1
+
+save
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will make AUX2 (channel 7 on my radio, which is the &lt;code&gt;HOV THR&lt;/code&gt; dial) control which parameter to tune &lt;code&gt;P&lt;/code&gt;, &lt;code&gt;I&lt;/code&gt; or &lt;code&gt;D&lt;/code&gt;, when the &lt;code&gt;TRN&lt;/code&gt; switch (channel 6 on my radio) is flipped on. Recall that by mixing the &lt;code&gt;GEAR&lt;/code&gt; switch in, we can control which direction the signal goes (high or low) when `TRN is flipped.&lt;/p&gt;
+
+&lt;p&gt;You can test your setup by going to the PID tuning tab in the CleanFlight Configurator and using your radio to adjust the PIDs. Hit refresh in the configurator and you should see new values.&lt;/p&gt;
+
+&lt;p&gt;Note that the PIDs are not saved after disarming. To save my PIDS, I plug the multirotor into a computer, open the PID Tuning tab and hit save.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Drone Building at Maker Faire Bay Area 2016</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/03/23/drone-building-at-maker-faire-bay-area-2016/"/>
+    <id>http://nathan.vertile.com/blog/2016/03/23/drone-building-at-maker-faire-bay-area-2016/</id>
+    <published>2016-03-23T09:47:00-07:00</published>
+    <updated>2016-03-26T12:58:43-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-MF-BA-Badge-ebf-png" href="http://goo.gl/forms/djCWo2l39G" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/MF16BA_Badge_255-83ebf429.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you live in the SF Bay Area, come to Make Faire on May 20-22 and build a drone with me!&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ll be hosting an exhibit called &lt;code&gt;Drone Building 101&lt;/code&gt; where I&amp;#39;ll be helping folks build their own FPV mini-quad. We&amp;#39;ll be building stuff like this little 160mm FPV racing drone: &lt;a href="/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"&gt;BeeRotor160 Build&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-beerotor-fc-c-c-jpg" href="/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/beerotor/fc-4-0c202c70.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Fill out this google form so I know you&amp;#39;re coming: &lt;a href="http://goo.gl/forms/djCWo2l39G"&gt;http://goo.gl/forms/djCWo2l39G&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here are some ways you can join in on the fun:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;If you&amp;#39;re into drone building and would like to help others with their builds, fill out the above form and I&amp;#39;ll add you to the schedule!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If you have a mini-quad you&amp;#39;re working on building, bring it and we&amp;#39;ll help you get it setup and flying! Wondering what else you need to bring or what day to come? Fill out the form and I&amp;#39;ll coordinate!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If you&amp;#39;re new to the scene, order all the parts for a mini-quad, bring it to Maker Faire and we&amp;#39;ll help you build it! Wondering what parts to order? Fill out the form and I&amp;#39;ll help you out!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If you&amp;#39;re a supplier, I&amp;#39;m looking for sponsors to help other Maker&amp;#39;s make drones. Let me know, fill out the form!&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can see the profile page for my exhibit on the Maker Faire website here: &lt;a href="http://makerfaire.com/maker/entry/55522/"&gt;http://makerfaire.com/maker/entry/55522/&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>AVR Dissassembly</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/25/avr-dissassembly/"/>
@@ -844,561 +920,6 @@ Gnd ; Gnd
 &lt;li&gt;&lt;p&gt;k2: press and hold for the menu&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;k3: press and hold for playback mode&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Rctimer BeerotorF3 Flight Controller</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"/>
-    <id>http://nathan.vertile.com/blog/2016/02/03/rctimer-beerotorf3-flight-controller/</id>
-    <published>2016-02-02T19:56:00-08:00</published>
-    <updated>2016-02-26T08:13:11-08:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;This is a review and setup guide for the new &lt;a href="http://www.rctimer.com/product-1592.html/#r-pNathanT"&gt;BeerotorF3 (BRF3)&lt;/a&gt; all-in-one (AIO) flight controller from Rctimer.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.9765625%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-offset-f-e-e-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-9f366e4e.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;You probably know why having an OSD that displays current consumption is so important, but I&amp;#39;ll reiterate it anyway. A current sensor measures the exact amount of battery that has been used and the OSD displays this information as text overlaid on your video feed along with all the other available sensor data like RSSI, Voltage, mA currently in use, total mAh consumed, flight mode, an artificial horizon and GPS coordinates. This way you know exactly when you&amp;#39;re going to run out of battery.&lt;/p&gt;
-
-&lt;p&gt;The BRF3 adds a barometer which will give you altitude information as you fly.&lt;/p&gt;
-
-&lt;p&gt;Before the BRF3, to get all my stats to display on an OSD, I had to build something like this, with a mess of different wires and 4 discrete components:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-mess-cb-c-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess-0cb9c426.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-mess_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;With the &lt;a href="http://www.rctimer.com/product-1592.html/#r-pNathanT"&gt;BeerotorF3&lt;/a&gt;, those 4 components (current sensor, Blackbox, PDB and OSD) look like this:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-clean-b-e-jpg" href="http://www.rctimer.com/product-1592.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-clean_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The bottom board shown in the photo above is the companion &lt;a href="http://www.rctimer.com/product-1593.html/#r-pNathanT"&gt;Beerotor PDB (BRPDB)&lt;/a&gt;, which carries a shunt resistor current sensor and 28v (6s) compatible MP1593DN voltage regulator.&lt;/p&gt;
-
-&lt;p&gt;BRF3 and PDB weigh only 13g, compared to 22g for 3 discrete components: PDB, NAZE32 and MinimOSD. Plus you would need to get a current sensor if you went with the discrete setup.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 116.2109375%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-weight-b-ce-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-72b768ce.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-weight-72b768ce.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Stacked together, the boards are 16mm tall. With two sets of 5mm standoffs, which allows for a little bit more comfortable mounting, it&amp;#39;s 22mm tall.&lt;/p&gt;
-
-&lt;h2 id="pinouts"&gt;Pinouts&lt;/h2&gt;
-
-&lt;p&gt;Top:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 84.326171875%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-top-schematic-cdf-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-top-schematic-cdf10220.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-top-schematic-cdf10220.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Bottom:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 101.220703125%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-bottom-schematic-bee-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-bottom-schematic-0534bee6.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-bottom-schematic-0534bee6.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The full manual is here: &lt;a href="http://www.rctimer.com/download/BeeRotorF3Manual.pdf"&gt;http://www.rctimer.com/download/BeeRotorF3Manual.pdf&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id="why-choose-the-brf3"&gt;Why choose the BRF3?&lt;/h2&gt;
-
-&lt;p&gt;You&amp;#39;re probably thinking, why should I buy a BeerotorF3 when there are so many flight controllers on the market.&lt;/p&gt;
-
-&lt;p&gt;The advantages over a Naze32, SpracingF3 or Oze32 are numerous but the decision when choosing any flight controller boils down to three things:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="#flight-performance"&gt;Flight Performance&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="#features"&gt;Features&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="#value"&gt;Value&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="flight-performance"&gt;Flight Performance&lt;/h3&gt;
-
-&lt;p&gt;Without flight performance, none of the other things matter, so let&amp;#39;s look at that first. If you&amp;#39;re already convinced that F3 processors are better than F1, just skip to &lt;a href="#features"&gt;features&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;If you&amp;#39;re not already, you should be flying &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;BetaFlight&lt;/a&gt;. Unlike the name sounds, BetaFlight is actually very stable.&lt;/p&gt;
-
-&lt;p&gt;The un-tuned flight performance of BetaFlight is amazing. It also implements many features that may or may not make it into CleanFlight such as filters that will allow 2khz and possibly 8khz loop times, AirMode and a task scheduler.&lt;/p&gt;
-
-&lt;p&gt;We&amp;#39;ll use that final feature, the task scheduler, to compare performance between a Naze32 (running an STM32F1) and the BRF3 which runs a STM32F3.&lt;/p&gt;
-
-&lt;p&gt;The F3 and the F1 run at the same clock speed, 72MHz, but the F3 has a floating point co-processor which allows it to do floating point math off-cpu. This means that it can run the LuxFloat PID controller, which is much more accurate and feels more &amp;quot;locked in&amp;quot; than the normal &amp;quot;Rewrite&amp;quot; PID controller.&lt;/p&gt;
-
-&lt;p&gt;Using the &lt;code&gt;status&lt;/code&gt; CLI command in BetaFlight, we can ask the task scheduler how busy the CPU is and it will tell us &lt;code&gt;System load&lt;/code&gt;. 1 is equal to 100%, so if we&amp;#39;re above 1.0, the copter will not arm. It just can&amp;#39;t do everything we&amp;#39;ve asked it to do within the looptime specified.&lt;/p&gt;
-
-&lt;p&gt;Here&amp;#39;s what my NAZE32 says when I try to run LuxFloat, even after disabling the magnetometer:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;System Uptime: 20 seconds, Voltage: 0 * 0.1V (1S battery - NOT PRESENT), System load: 4.08
-CPU Clock=72MHz, GYRO=MPU6050, ACC=MPU6050.n, BARO=MS5611
-Cycle Time: 993, I2C Errors: 0, config size: 2020
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Notice the load of 4.08, that&amp;#39;s means the system load is 408%, which just not going to work...&lt;/p&gt;
-
-&lt;p&gt;Here&amp;#39;s what the BRF3 says:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;System Uptime: 816 seconds, Voltage: 0 * 0.1V (1S battery - NOT PRESENT), System load: 0.07
-CPU Clock=72MHz, GYRO=MPU6050, ACC=MPU6050.n, BARO=BMP085
-Cycle Time: 1012, I2C Errors: 2, config size: 2060
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Wow. 7% load.&lt;/p&gt;
-
-&lt;p&gt;I did some further testing, taking the average free processing time for both the F1 and F3 processors. These were taken with the following sensors enabled: GYRO:MPU6050, ACC:MPU6050, BARO:BMP085. There are no data points for 2khz on the F1, since it is not possible to run 2khz with these sensors enabled. The closer a value is to 100%, the better.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 61.83333333333333%;'&gt;&lt;a id="assets-images-blog-flight-controllers-free-processing-time-f-dc-png" href="../../../../../assets/images/blog/flight_controllers/free-processing-time-f04173dc.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/free-processing-time-f04173dc.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;In terms of performance, as long as system load is under 90% or so, it really doesn&amp;#39;t matter. Once it runs, less load doesn&amp;#39;t make it faster. What it does mean though is that 93% of CPU time is available for other processing. With 93% CPU time left, we should have no problem running GPS, MSP, LEDs, etc.&lt;/p&gt;
-
-&lt;p&gt;That&amp;#39;s what it really comes down to: free processor capacity. The F3 will allow you to run so many more features, like when the &lt;a href="https://github.com/iNavFlight/inav"&gt;iNav&lt;/a&gt; fork is ready (it&amp;#39;s still under development), adding GPS will allow autonomous flight, but you&amp;#39;ll need a board with enough free processor capacity.&lt;/p&gt;
-
-&lt;p&gt;The other thing you&amp;#39;ll want, to enable more features and sensors, are more UARTs. There are only 2 on the F1 processor and 3 on the F3 processor. These are considered &amp;quot;Hardware Serial&amp;quot; ports, which don&amp;#39;t take extra processor time. The F3 processor is fast enough to support a few more &amp;quot;Software Serial&amp;quot; ports, which do take extra processor time and therefore are probably not usable on the F1 board. You&amp;#39;ll never want to put a critical component, like a serial receiver on a software serial port. Same goes for GPS if you&amp;#39;re using it to navigate. OSD might be OK on software serial, but it&amp;#39;s already wired to a hardware UART on the AIO boards (like the &lt;a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"&gt;OZE32&lt;/a&gt;), so the OZE32 won&amp;#39;t support GPS navigation.&lt;/p&gt;
-
-&lt;p&gt;You&amp;#39;ll notice from the Beerotor system status that we don&amp;#39;t have a magnetometer on the board. Perhaps surprisingly, this is ideal.&lt;/p&gt;
-
-&lt;h3 id="features"&gt;Features&lt;/h3&gt;
-
-&lt;p&gt;Like all F3 boards, we have 3 hardware UARTS.&lt;/p&gt;
-
-&lt;p&gt;On the BRF3 they&amp;#39;re mapped as follows.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;UART1&lt;/code&gt; - wired to the onboard OSD&amp;#39;s ATMEGA328p&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;UART2&lt;/code&gt; - GPS, next to the I2C pins&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;UART3&lt;/code&gt; - Serial RX, wired into the Spektrum Satellite port, also next to RSSI on the SB port.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id="magnetometer-and-gps"&gt;Magnetometer and GPS&lt;/h4&gt;
-
-&lt;p&gt;As we can see from the status output in the performance section, you get an IMU and Barometer on the board, but no magnetometer (e.g. compass).&lt;/p&gt;
-
-&lt;p&gt;If you&amp;#39;ve faced issues with a noisy compass, you know it&amp;#39;s always better to have a magnetometer you can move away from any magnetic-field-generating current loops (e.g. PDB and motor leads). Even a few inches can make a big difference.&lt;/p&gt;
-
-&lt;p&gt;The problem with having a built-in magnetometer goes back to how the I2C bus works. I2C is the protocol used by the magnetometer to talk to the flight controller. I2C expects every device on the bus (a bus is just a bunch of sensors all connected on the same set of wires) to have a unique ID. However, every device does not have a unique ID, the ID is tied to a particular type of sensor. For example, the HMC5883 magnetometer on the NAZE32 has a unique address, but if you attach another HMC5883 to the I2C bus, they both have the same address and neither will work.&lt;/p&gt;
-
-&lt;p&gt;For flight controllers that have an on-board compass, the traces to the can be cut. Then, plugging in an external magnetometer will work, but with the BRF3, you won&amp;#39;t need to do this!&lt;/p&gt;
-
-&lt;p&gt;Just get a GPS with a magnetometer, like this &lt;a href="http://www.rctimer.com/product-1287.html/#r-pNathanT"&gt;NEO-M8N with a compass&lt;/a&gt; and plug it in here:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 101.220703125%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-gps-e-e-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-gps-e869676e.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-gps-e869676e.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code&gt;I2C&lt;/code&gt; ports are for the compass&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;UART2&lt;/code&gt; is for the GPS. Be sure to enable GPS for UART2 in the configurator&lt;/p&gt;
-
-&lt;h4 id="minimosd"&gt;MinimOSD&lt;/h4&gt;
-
-&lt;p&gt;The really exciting part about this board is the on-board MinimOSD. A minim osd is basically two chips: the MAX7456 chip and ATMEGA328p, which you can see on the bottom of the board:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.9765625%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-offset-f-e-e-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-9f366e4e.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-offset-9f366e4e.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The MAX chip is in charge of drawing characters onto the video signal and the ATMEGA chip tells the MAX chip what characters to draw.&lt;/p&gt;
-
-&lt;p&gt;For this to work, the MAX chip needs the video signal to pass through it, in one pin and out another, so you&amp;#39;ll need to wire the &lt;code&gt;SD&lt;/code&gt; port in-line with your camera and video transmitter:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 84.326171875%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-video-pins-f-f-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-video-pins-f465666f.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-video-pins-f465666f.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code&gt;VIDEO_IN&lt;/code&gt; is the yellow line from the camera (video signal)&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;VIDEO_OUT&lt;/code&gt; goes to your video transmitter&lt;/p&gt;
-
-&lt;p&gt;Use the ground, if you have a lead from the camera and to the transmitter available, to minimize as much noise as possible.&lt;/p&gt;
-
-&lt;p&gt;Back to how the MinimOSD works: the ATMEGA chip decides what to tell the MAX chip to write. The way it does this is by asking the flight controller what is going on. It communicates with the BRF3 in this case, over UART1. It talks the same protocol as the configurator: multiwii serial protocol (MSP).&lt;/p&gt;
-
-&lt;p&gt;This is important because it means that on the BRF3 UART1 is wired to the ATMEGA&amp;#39;s UART port. Therefore, to talk to the MinimOSD for upgrading and configuration, we need to make sure the BRF3&amp;#39;s STM32F3 is turned off and the ATMEGA is turned on. To power just the ATMEGA, connect the provided FTDI cable to your handy &lt;a href="http://www.banggood.com/CJMCU-CP2102-USB-To-TTLSerial-Module-UART-STC-Downloader-p-970993.html?p=1G09211226617201502J"&gt;UART/USB adapter&lt;/a&gt; and use the &lt;a href="https://github.com/ShikOfTheRa/scarab-osd/releases"&gt;Scarab OSD&lt;/a&gt; configuration tool to configure the MinimOSD.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-ftdi-c-b-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-ftdi-c7442b3a.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-ftdi-c7442b3a.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The colors in the photo correspond to:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;black&lt;/code&gt; - ground&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;red&lt;/code&gt; - 5v&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;orange&lt;/code&gt; - TX&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;yellow&lt;/code&gt; - RX&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;green&lt;/code&gt; - DTR (e.g. reset)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Remember that when connecting UARTs, one TX goes to the other RX, so in this case orange will go to RX on the UART/USB adapter.&lt;/p&gt;
-
-&lt;p&gt;Unlike the OZE32, there are no dip-switches, which is a great improvement.&lt;/p&gt;
-
-&lt;p&gt;When working with the on-board MinimOSD, remember:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;UART1 must have MSP assigned in the configurator to communicate with your computer via USB and with the ATMEGA chip&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The board is designed such that when a USB cable is plugged in, the ATMEGA chip will be turned off, so we can communicate with the BRF3&amp;#39;s STM32 chip&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The MinimOSD can only be configured or updated when the USB and battery are unplugged&lt;/li&gt;
-&lt;li&gt;Connect only the FTDI adapter cable to the &lt;code&gt;SE&lt;/code&gt; port to upgrade or configure the OSD&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Powering the board via a battery or any 5v lead will turn both the ATMEGA and STM32 on. This is &amp;quot;Flight Mode.&amp;quot; When both are powered, the OSD should show data from the flight controller on your display.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Also, there is an open pull request against CleanFlight that makes it possible to configure the MinimOSD by communicating through the STM32: &lt;a href="https://github.com/cleanflight/cleanflight/pull/1620"&gt;https://github.com/cleanflight/cleanflight/pull/1620&lt;/a&gt;. When this feature is finished, we won&amp;#39;t need to go through all this to configure the MinimOSD, we&amp;#39;ll be able to do it all via the normal USB connection.&lt;/p&gt;
-
-&lt;h4 id="dataflash"&gt;DataFlash&lt;/h4&gt;
-
-&lt;p&gt;The BRF3 has 8MB of flash for blackbox logging. This is way more than the 2MB included on the CC3D and full NAZE32. Flash, by the way, is way faster than an SDCard-based OpenLog device, so you&amp;#39;ll never miss a frame of data.&lt;/p&gt;
-
-&lt;p&gt;Run this in the configurator CLI to enable it:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;feature BLACKBOX
-set blackbox_device=SPIFLASH
-save
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id="value"&gt;Value&lt;/h3&gt;
-
-&lt;p&gt;To get a comparable setup, in discrete components, we would need:&lt;/p&gt;
-
-&lt;table class="small-img"&gt;
-  &lt;tbody&gt;
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/MinimOSD-MAVLink-OSD-APM-APM2-Flight-Control-Board-p-73436.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-minimosd-devices-minimosd-b-e-jpg" href="../../../../../assets/images/blog/minimosd/devices/minimosd-b6e42636.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/minimosd/devices/minimosd-b6e42636.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/MinimOSD-MAVLink-OSD-APM-APM2-Flight-Control-Board-p-73436.html?p=1G09211226617201502J"&gt;$7.99 MinimOSD&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.rctimer.com/product-1526.html/#r-pNathanT"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-comparable-pdb-f-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/comparable-pdb-908f1448.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/comparable-pdb-908f1448.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.rctimer.com/product-1526.html/#r-pNathanT"&gt;$3.99 PDB&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Upgrade-NAZE32-SP-Racing-F3-Flight-Control-6-DOF-10-DOF-for-Milticopter-p-1010232.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-flight-controllers-sprf-a-c-jpg" href="../../../../../assets/images/blog/flight_controllers/sprf3-a6573c82.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/sprf3-a6573c82.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Upgrade-NAZE32-SP-Racing-F3-Flight-Control-6-DOF-10-DOF-for-Milticopter-p-1010232.html?p=1G09211226617201502J"&gt;$26.99 SPRACINGF3&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.rctimer.com/product-1125.html/#r-pNathanT"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-comparable-power-module-ebafd-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/comparable-power-module-84ebafd6.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/comparable-power-module-84ebafd6.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.rctimer.com/product-1125.html/#r-pNathanT"&gt;$10.99 Power Module&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;p&gt;This totals up to $49.96. Plus, you&amp;#39;re stuck trying to figure out where to put that giant MinimOSD and the power module with the current sensor. It&amp;#39;s so much nicer having it all in one place, ready to go.&lt;/p&gt;
-
-&lt;p&gt;At $34.99 for the BRF3 and $5.99 for the BRPDB, the Beerotor setup is $40.98. Not only is it smaller and lighter than buying discrete components, it&amp;#39;s cheaper too!&lt;/p&gt;
-
-&lt;h2 id="hardware"&gt;Hardware&lt;/h2&gt;
-
-&lt;p&gt;The build quality and hardware layout on this board is great.&lt;/p&gt;
-
-&lt;p&gt;The USB is on the size, so no need to mess with the board orientation in the configurator. &lt;/p&gt;
-
-&lt;p&gt;The baro is on the top of the board, so be sure to cover that with some open cell foam, or mount it upside-down and put a piece of open cell foam between the frame and the baro. Wind passing over the top of the baro can significantly decrease it&amp;#39;s accuracy.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 99.90234375%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-baro-a-c-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-baro-2a88769c.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-baro-2a88769c.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="motor-outputs"&gt;Motor outputs&lt;/h3&gt;
-
-&lt;p&gt;I&amp;#39;m a big fan of the small DF (also called SH) connectors. These are the long white plugs. They save space and are much easier to work with than the 2.54mm JST servo-style pins. Plus it makes stack-mounting multiple 35x35mm boards possible. The connectors on the BRF3 have been upgraded from SH1.0 to SH1.25, meaning the pins are ever so slightly larger and more robust, but the connector size is still tiny. Plus, this is the same pin spacing as the PixHawk, which means you can start re-using cables between some projects!&lt;/p&gt;
-
-&lt;p&gt;They even put a boot-button on the board! This is awesome. No more getting out the tweezers every time I want to short the boot pins to upgrade BetaFlight!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 99.90234375%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-boot-button-e-ecbff-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-boot-button-e90ecbff.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-boot-button-e90ecbff.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The motor output pins are through-hole vias, ready for some male 2.54mm headers. Motor 1 is on the left, 8 is on the right.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 99.90234375%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-motor-outputs-e-b-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-motor-outputs-469e48b4.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-motor-outputs-469e48b4.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you want to use pin headers, grab some right angle 2.54mm pins, my board didn&amp;#39;t come with any. I think it will save weight and space to just solder the ESC leads right onto the flight controller, so I&amp;#39;ll skip the pin headers. At some point, I hope all the flight controllers standardize to SH1.25 connectors and ESCs ship either without signal wires or with signal wires that terminate in a single female connector that fits into a SH1.25 connector.&lt;/p&gt;
-
-&lt;p&gt;You&amp;#39;ll also want to wire your ESC signal ground wires to the board.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 99.90234375%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-ground-c-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-ground-c475091a.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-ground-c475091a.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="receiver"&gt;Receiver&lt;/h3&gt;
-
-&lt;p&gt;The Spektrum Satellite port is here:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 84.326171875%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-spektrum-d-ee-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-spektrum-d1ee1076.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-spektrum-d1ee1076.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;S.Bus, SUMD:&lt;/p&gt;
-
-&lt;p&gt;Although I don&amp;#39;t have an S.Bus RX to confirm this, it looks like an external inverter is not necessary. It should work fine plugged in directly to UART3. Make sure you take either 5v from the same port or 3.3v from the Spektrum port, depending on what voltage your receiver can handle.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 84.47265625%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-brf-rx-bfda-a-jpg" href="../../../../../assets/images/blog/flight_controllers/brf3/brf3-rx-bfda58a0.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/brf3-rx-bfda58a0.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The RSSI analog to digital converter (ADC) is on the &lt;code&gt;SB&lt;/code&gt; port as well, along with PPM input.&lt;/p&gt;
-
-&lt;p&gt;Note that the UART3 RX pin is available on both port &lt;code&gt;SA&lt;/code&gt; and port &lt;code&gt;SB&lt;/code&gt;. Either can be used.&lt;/p&gt;
-
-&lt;h2 id="flashing"&gt;Flashing&lt;/h2&gt;
-
-&lt;p&gt;For the complete flashing guide, see the &lt;a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/#flashing-betaflight"&gt;Victory230 Flashing Guide&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Like all F3 chips, make sure you set the manual baud rate to &lt;code&gt;256000&lt;/code&gt;. I also set &lt;code&gt;Full chip erase&lt;/code&gt; when switching to BetaFlight.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.2112676056338%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-cf-f-manual-baud-afe-fd-png" href="../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-afe571fd.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-afe571fd.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Download the latest version of &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;BetaFlight&lt;/a&gt; from the github.com release page &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;https://github.com/borisbstyle/betaflight/releases/&lt;/a&gt;. You want the file: &lt;code&gt;betaflight_SPRACINGF3.hex&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Click the &lt;code&gt;Load local firmware&lt;/code&gt; button and pick the SPRF3 hex file.&lt;/p&gt;
-
-&lt;p&gt;Click &lt;code&gt;Flash Firmware&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;If for some reason that doesn&amp;#39;t work, flashing via bootloader mode is amazingly easy. Just unplug the BRF3, hold the boot button down while you power it on by plugging it into USB. Choose &lt;code&gt;No reboot&lt;/code&gt; and hit flash.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.2112676056338%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-cf-boot-button-ce-png" href="../../../../../assets/images/blog/flight_controllers/brf3/cf-boot-button-0794ce02.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/cf-boot-button-0794ce02.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="configuration"&gt;Configuration&lt;/h2&gt;
-
-&lt;p&gt;For the complete configuration guide, see the &lt;a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/#configuring-betaflight"&gt;Victory230 Configuration Guide&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;If you&amp;#39;re using the BRPDB, after flashing you&amp;#39;ll want to set these options. Paste them in the cli:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;set vbat_scale = 110
-set current_meter_scale = 380
-save
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This will calibrate the flight controller to the PDB&amp;#39;s voltage and current sensor hardware.&lt;/p&gt;
-
-&lt;h3 id="receiver"&gt;Receiver&lt;/h3&gt;
-
-&lt;h4 id="serial-rx"&gt;Serial RX&lt;/h4&gt;
-
-&lt;p&gt;The Serial RX connection looks like this. I&amp;#39;m using SBUS. The white wire is the SBUS signal and the grey wire is the RSSI-ADC. We&amp;#39;ll actually get RSSI on SBUS channel 9 with this &lt;a href="/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"&gt;DIY FrSky module&lt;/a&gt;, so they grey wire is actually not necessary with this receiver. You may or may not need the grey RSSI-ADC wire attached, depending on your RX.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-sbus-f-e-jpg" href="../../../../../assets/images/blog/frsky-diy/sbus-f76e9778.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/sbus_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Enable Serial RX for UART3 on the &lt;code&gt;Ports&lt;/code&gt; tab then hit &lt;code&gt;Save and Reboot&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.66901408450704%;'&gt;&lt;a id="assets-images-blog-cleanflight-config-serial-rx-port-bb-bd-png" href="../../../../../assets/images/blog/cleanflight_config/serial-rx-port-bb780bd2.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/cleanflight_config/serial-rx-port-bb780bd2.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;On the Configuration Tab set &lt;code&gt;Receiver Mode&lt;/code&gt; to &lt;code&gt;Serial RX&lt;/code&gt; and choose your Serial Receiver Provider, I&amp;#39;m using &lt;code&gt;SBUS&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.66901408450704%;'&gt;&lt;a id="assets-images-blog-cleanflight-config-serial-rx-sbus-f-png" href="../../../../../assets/images/blog/cleanflight_config/serial-rx-sbus-998f4886.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/cleanflight_config/serial-rx-sbus-998f4886.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;To get RSSI on SBUS channel 9, set:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;set rssi_channel = 9
-set max_aux_channels = 5
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you&amp;#39;re using OpenLRS or a DIY FrSky module, set sbus_inversion off&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;set sbus_inversion=OFF
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Flying Sony NEX Micro 4/3rds Camera</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/01/29/flying-micro-4-3rds-camera/"/>
-    <id>http://nathan.vertile.com/blog/2016/01/29/flying-micro-4-3rds-camera/</id>
-    <published>2016-01-29T12:45:00-08:00</published>
-    <updated>2016-03-01T08:40:22-08:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;So, you want a flying camera to take videos of you and your awesome friends doing amazing things. You&amp;#39;ve thought about getting one of those pre-built drones by DJI or 3D Robotics, but those are expensive little drones that only carry weak little cameras.&lt;/p&gt;
-
-&lt;p&gt;Building a giant rig to carry your full frame DSLR isn&amp;#39;t ideal either, because it will need to be huge and therefore less portable.&lt;/p&gt;
-
-&lt;p&gt;So what should we do? Build something to carry our &lt;a href="http://amzn.to/1TCifYo"&gt;NEX-5T&lt;/a&gt; micro 4/3rds camera! This camera weighs 397g with the standard lens and the video can be viewed and the camera controlled over Wi-Fi, ideal for when we&amp;#39;re in the air.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-q-q-c-a-jpg" href="http://rctimer.com/product-1456.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/q600-c88a2913.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;We could just strap the camera straight to a quad-copter that is big enough to carry a 397g payload, but the video would be pretty shaky. For silky smooth footage, we&amp;#39;ll carry the camera with the best brushless motor gimbal available for this size camera, an &lt;a href="http://rctimer.com/product-980.html/#r-pNathanT"&gt;Rctimer ASP Brushless Gimbal&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Since we&amp;#39;ll want to be able to let go of our RC remote control and do a bit of filming once in the air, we&amp;#39;ll use the best autonomous flight controller on the market, the &lt;a href="http://rctimer.com/product-980.html/#r-pNathanT"&gt;PixHawk&lt;/a&gt;. This is the same flight controller used by 3D Robotics&amp;#39; Solo quad-copter, but the Solo could never carry a micro 4/3rds size camera.&lt;/p&gt;
-
-&lt;p&gt;This guide will show you how to fly around your Sony NEX camera. First we&amp;#39;ll talk about the components and why we&amp;#39;ve chosen the ones in this guide. Then we&amp;#39;ll go over how to assemble the quadcopter and gimbal. Finally, we&amp;#39;ll flash and configure all the components.&lt;/p&gt;
-
-&lt;p&gt;This guide should always be considered a work in progress. I&amp;#39;ll do my best to keep it up to date, but if you notice something out of date or missing, just leave a comment and I&amp;#39;ll follow up!&lt;/p&gt;
-
-&lt;p&gt;Let&amp;#39;s get started.&lt;/p&gt;
-
-&lt;h3 id="trooper-q600"&gt;&lt;a href="http://rctimer.com/product-1456.html/#r-pNathanT"&gt;Trooper Q600&lt;/a&gt;&lt;/h3&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-q-q-gimballess-d-b-jpg" href="../../../../../assets/images/blog/q600/q600-gimballess-6940d66b.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/q600-gimballess_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The Q600 from Rctimer is an all-carbon fiber 600mm size quad-copter. It comes with a set of awesome 13x6.5 carbon fiber props, landing gear, a huge pdb, a gimble-ready under-body plate, plastic body cover, 40a ESCs and some awesome 3510-350kv motors.&lt;/p&gt;
-
-&lt;p&gt;If a 600 size isn&amp;#39;t big enough for you, pickup the &lt;a href="http://rctimer.com/product-1243.html/#r-pNathanT"&gt;longer-armed Q850 kit&lt;/a&gt; or &lt;a href="http://rctimer.com/product-1155.html/#r-pNathanT"&gt;850mm arms for the Q600&lt;/a&gt; and turn it into an 850mm size quad. Using the Q600 + 850mm arms is slightly better, because of the updated PDB on the Q600.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-q-arms-d-c-jpg" href="../../../../../assets/images/blog/q600/parts-q850-arms-981d0c69.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-q850-arms-981d0c69.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;You should also get some &lt;a href="http://www.rctimer.com/product-528.html/#r-pNathanT"&gt;plastic props&lt;/a&gt; and &lt;a href="http://www.rctimer.com/product-1513.html/#r-pNathanT"&gt;locknuts&lt;/a&gt; to hold them on, so you have something less dangerous than carbon fiber props to test with. Once you have everything tuned in, then switch to the carbon props.
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-abs-props-d-eb-jpg" href="../../../../../assets/images/blog/q600/parts-abs-props-d97eb943.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-abs-props-d97eb943.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;The 3510 size, 350kv motors are basically the same motor that is used on the DJI inspire 1. DJI rates their motors for a suggested 800g/motor takeoff weight which is right in line with Rctimer&amp;#39;s &lt;a href="http://rctimer.com/product-1456.html/#r-pNathanT"&gt;&lt;code&gt;3.5kg&lt;/code&gt; suggested takeoff weight&lt;/a&gt;. The quad-copter itself weights 1734g and the camera and gimbal weigh 918g leaving us 848g for batteries.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-motor-f-jpg" href="http://rctimer.com/product-1434.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-motor-160f2472.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The best value &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=38515&amp;amp;aff=1624906"&gt;5000mah 6s battery&lt;/a&gt; weighs about 864g, which puts us almost exactly at Rctimer&amp;#39;s suggested takeoff weight of &lt;code&gt;3.5kg&lt;/code&gt;. I&amp;#39;ll be testing with &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=8851&amp;amp;aff=1624906"&gt;two 239g 300mah 3s batteries&lt;/a&gt; run in parallel. Together these weigh 478g.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-q-parts-battery-mah-bece-jpg" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=38515&amp;aff=1624906" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-battery-5000mah-8225bece.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The build quality is fantastic. The arms come with pre-installed 3510/305kv motors and T40A ESCs, which makes assembly super easy.&lt;/p&gt;
-
-&lt;p&gt;This frame is comparable to a DJI Inspire 1, as it shares the same motors. The only thing it lacks relative to the Inspire 1 is retractable landing gear, which can easily be added on later.&lt;/p&gt;
-
-&lt;p&gt;You&amp;#39;ll notice I picked a quad-copter over a hexa-copter or octa-copter. Some folks might prefer one of these configurations for redundancy. I would argue that the benefit of reduced complexity in a quad-copter, e.g. less failure points, out weights the benefits of a machine with more motors, as long as it can lift the payload you want to carry.&lt;/p&gt;
-
-&lt;p&gt;If you need more lifting power, get something with more motors like a &lt;a href="http://rctimer.com/product-1152.html/#r-pNathanT"&gt;Y-6 hex&lt;/a&gt;. You could also consider turning the Q600 into an octo-copter using these &lt;a href="http://rctimer.com/product-1428.html#r-pNathanT"&gt;dual-motor mounts&lt;/a&gt; and another set of &lt;a href="http://rctimer.com/product-1435.html/#r-pNathanT"&gt;motors&lt;/a&gt;. The PDB supports up to 8 motors.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-q-parts-pdb-e-e-jpg" href="../../../../../assets/images/blog/q600/parts-pdb-16e630e1.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-pdb_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Cost: &lt;code&gt;$389.99&lt;/code&gt; &lt;/p&gt;
-
-&lt;h3 id="pixhawk-flight-controller"&gt;&lt;a href="http://rctimer.com/product-1166.html/#r-pNathanT"&gt;PixHawk Flight Controller&lt;/a&gt;&lt;/h3&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 58.934634974533104%;'&gt;&lt;a id="assets-images-blog-q-fixhawk-parts-f-f-c-jpg" href="http://rctimer.com/product-1166.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/fixhawk/parts_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The brain of any multi-rotor is the flight controller and you have a wide variety of features and different price point when it comes to choosing one. There are two main open source firmware projects that all flight controllers run: MultiWii and ArduPilot.&lt;/p&gt;
-
-&lt;p&gt;You won&amp;#39;t hear the names of these much, since they have, through the course of their open source lives, been renamed by their current maintainers. The MultiWii code has become CleanFlight, which has turned into BetaFlight and RaceFlight. The ArduPilot code had evolved into &lt;a href="http://copter.ardupilot.com/"&gt;APM&lt;/a&gt; then &lt;a href="https://github.com/PX4/Firmware"&gt;PX4&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;APM and PX4&amp;#39;s autopilot features are far more reliable, safer, actively maintained and improved than the MultiWii derivatives&amp;#39; autopilot features. However, the focus on autonomous flight over manual mode negatively impacts acro flight performance. So, you should use BetaFlight when you intend to fly in acro mode (like on a racing quad) and APM or PX4 on a craft that needs reliable GPS navigation and return to home.&lt;/p&gt;
-
-&lt;p&gt;The PixHawk hardware and software is an open source project. The original development and current maintainers are led by Lorenz Meier at ETH Zurich.&lt;/p&gt;
-
-&lt;p&gt;The open source hardware design means that anyone can produce the Pixhawk hardware and the boards are fundamentally the same. There is no such thing as a &amp;quot;Clone&amp;quot; when the plans are freely available via open source. They can be made by anyone and Rctimer has done a great job building their &amp;quot;FixHawk&amp;quot;, which is one of these boards.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-q-parts-fixhawk-c-ce-jpg" href="../../../../../assets/images/blog/q600/parts-fixhawk-1-4c0ce086.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-fixhawk-1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;You may be tempted to buy an APM, but don&amp;#39;t do it. The APM uses an 8-bit arduino flight controller and the PixHawk/FixHawk uses 32bit STM32F4, which is much more powerful.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-q-parts-fixhawk-eff-jpg" href="../../../../../assets/images/blog/q600/parts-fixhawk-2-43eff157.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-fixhawk-2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The &lt;a href="http://rctimer.com/product-1125.html/#r-pNathanT"&gt;included power module&lt;/a&gt; is safe to use with batteries up to 7S. This is much better than the standard PixHawk power module that only supports up to 4S.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-q-parts-power-module-a-d-jpg" href="../../../../../assets/images/blog/q600/parts-power-module-a5319d06.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-power-module_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;You&amp;#39;ll definitely want a &lt;a href="http://www.rctimer.com/product-834.html/#r-pNathanT"&gt;Telemetry Radio&lt;/a&gt; for in-flight command and control from a computer.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-telem-c-e-bd-jpg" href="http://www.rctimer.com/product-834.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-telem-c73e5bd1.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Another must-have is GPS. Pickup an &lt;a href="http://www.rctimer.com/product-1287.html/#r-pNathanT"&gt;M8N&lt;/a&gt; module with a built-in compass to get the best accuracy and update speeds.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-gps-da-a-d-jpg" href="http://www.rctimer.com/product-1287.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-gps-7da68a8d.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;To add more devices to the I2C bus, pickup &lt;a href="http://www.rctimer.com/product-1169.html/#r-pNathanT"&gt;a splitter&lt;/a&gt;. Note, this is required for the external USB module.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-i-c-f-f-jpg" href="http://www.rctimer.com/product-1169.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-i2c-f550465f.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you plan on running an onboard computer, pickup an &lt;a href="http://www.rctimer.com/product-1322.html/#r-pNathanT"&gt;external USB module&lt;/a&gt;. This adds a USB port for reliable in-flight use. It is not necessary to connect the PixHawk to a computer.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-usb-ef-jpg" href="http://www.rctimer.com/product-1322.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-usb-31ef8032.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;To get a data overlay on your FPV camera, pickup an &lt;a href="http://www.rctimer.com/product-862.html/#r-pNathanT"&gt;OSD&lt;/a&gt;. Checkout the full &lt;a href="/blog/2015/04/22/minim-osd/"&gt;MinimOSD guide here&lt;/a&gt;, any of these OSDs will work.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-minimosd-devices-rctimer-minimosd-e-a-jpg" href="http://www.rctimer.com/product-862.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/minimosd/devices/rctimer-minimosd-e95958a1.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Cost: &lt;code&gt;$213.97&lt;/code&gt; (including Telemetry and GPS) &lt;/p&gt;
-
-&lt;h3 id="brushless-gimbal"&gt;&lt;a href="http://rctimer.com/product-980.html/#r-pNathanT"&gt;Brushless Gimbal&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;We&amp;#39;ll be using the Rctimer simplebgc 3 Axis Nex-GH5 Brushless Gimbal. This is the best gimbal for a micro 4/3rds size camera.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-q-parts-asp-e-caaed-jpg" href="http://rctimer.com/product-980.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-asp-e69caaed.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The gimbal includes some awesome 22 pole brushless gimbal motors:&lt;/p&gt;
-
-&lt;p&gt;GBM4114 (24N22P) for YAW&lt;/p&gt;
-
-&lt;p&gt;GBM4108 (24N22P) for ROLL and PITCH&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-q-asp-gimbal-motor-comparison-c-b-ab-jpg" href="../../../../../assets/images/blog/q600/asp/gimbal-motor-comparison-c7b8ab66.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/asp/gimbal-motor-comparison_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Cost: &lt;code&gt;$226.68&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id="simplebgc"&gt;&lt;a href="http://rctimer.com/product-1107.html/#r-pNathanT"&gt;SimpleBGC&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;The industry standard, used in Hollywood and on your drone, is the AlexMos SimpleBGC 32-bit Brushless Gimbal Controller (BGC).&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-q-parts-simplebgc-abb-b-jpg" href="http://rctimer.com/product-1107.html/#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-simplebgc_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This runs AlexMos&amp;#39; fantastic SimpleBGC firmware. The design is licensed out to hardware manufacturers, like Rctimer.&lt;/p&gt;
-
-&lt;p&gt;You&amp;#39;ll want the 32-bit version with 2 IMUs. This is much better than the 8-bit version with 1 IMU. Especially at extreme angles.&lt;/p&gt;
-
-&lt;p&gt;I got the one with the plastic case. It makes mounting the sensors much easier, you may need to take the controller board out of the case or get some longer screws to mount it. Read the &lt;a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/"&gt;gimbal guide&lt;/a&gt; for more info.&lt;/p&gt;
-
-&lt;p&gt;Brushless Gimbal Controller Cost: &lt;code&gt;$170.99&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id="radio-transmitter-and-receiver"&gt;Radio Transmitter and Receiver&lt;/h3&gt;
-
-&lt;p&gt;If you don&amp;#39;t already have a radio transmitter, I suggest you invest in a &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html"&gt;Taranis&lt;/a&gt; or the slightly cheaper &lt;a href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J"&gt;FS-TH9X&lt;/a&gt; and &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.html?p=1G09211226617201502J"&gt;DJT transmitter module&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-q-parts-taranis-ec-jpg" href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html?p=1G09211226617201502J" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-taranis-961ec552.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Note that FrSky and FlySky are different brands, so their transmitters and receivers are not compatible. Pickup a &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;DIY FrSky&lt;/a&gt; receiver or a ready to go &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-X4R-4CH-Telemetry-Receiver-p-947631.html"&gt;X4R-SBUS&lt;/a&gt; receiver. I prefer the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony&amp;amp;p=1G09211226617201502J"&gt;one without pins&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Checkout my article on the &lt;a href="/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"&gt;DIY FrSky Receiver&lt;/a&gt; for a full receiver setup guide.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-radio-rx-jpg" href="../../../../../assets/images/blog/frsky-diy/radio-rx-40464990.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/radio-rx_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Receiver Cost: &lt;code&gt;$11 to $30&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id="batteries"&gt;Batteries&lt;/h3&gt;
-
-&lt;p&gt;I did some price analysis of 6s batteries and found that an entry level pack will run around $70 for &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=38515&amp;amp;aff=1624906"&gt;a 5000mah 6s&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-q-parts-battery-mah-bece-jpg" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=38515&amp;aff=1624906" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-battery-5000mah-8225bece.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Alternatively, get &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=8851&amp;amp;aff=1624906"&gt;two 239g 3000mah 3s batteries&lt;/a&gt; for &lt;code&gt;$14.80&lt;/code&gt; each and run them in parallel.&lt;/p&gt;
-
-&lt;p&gt;For example, here&amp;#39;s how you wire a parallel battery:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-q-parallel-battery-a-jpg" href="../../../../../assets/images/blog/q600/parallel-battery-336605a7.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/q600/parallel-battery_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here&amp;#39;s the battery to buy:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.30973451327434%;'&gt;&lt;a id="assets-images-blog-q-parts-battery-mah-df-e-jpg" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=8851&amp;aff=1624906" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/q600/parts-battery-3000mah-4701df3e.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Cost: &lt;code&gt;$29.60&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id="value"&gt;Value&lt;/h3&gt;
-
-&lt;p&gt;The total cost, excluding your radio setup, NEX camera and batteries, is about: &lt;code&gt;$871.24&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Compared to a DJI Inspire 1 Pro, which runs &lt;code&gt;$4,499&lt;/code&gt;, (remember, the Inspire 1 uses the same type of motors as the Q600, so the lifting power should be close to equivalent), this is amazing value. Plus, it&amp;#39;s tons of fun to build yourself.&lt;/p&gt;
-
-&lt;h2 id="tools"&gt;Tools&lt;/h2&gt;
-
-&lt;p&gt;Before we get started make sure you have the following tools and misc parts on hand&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;A &lt;a href="http://www.banggood.com/8-in-1-Hex-socket-driver-Hexagon-screwdriver-Set-For-RC-Models-p-1002287.html?p=1G09211226617201502J"&gt;proper hex driver set&lt;/a&gt;. You&amp;#39;ll need something that fits a 2.0mm hex socket head. I broke two right angle allen wrenches trying to screw the carbon plate to the plastic pieces of the quad-copter frame.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="http://www.banggood.com/Universal-0-14mm-Professional-Reaming-Knife-Drill-Tool-Edge-Reamer-p-922461.html?p=1G09211226617201502J"&gt;Reamer&lt;/a&gt; or &lt;a href="http://www.banggood.com/3-13MM-Titanium-Coated-Step-Drill-14-Inch-Hex-Shank-Stepped-Drill-p-964596.html?p=1G09211226617201502J"&gt;Step Drill&lt;/a&gt; for cutting precise holes in plastic. Personally, I prefer the step drill.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Soldering Iron. I have a Weller &lt;a href="http://amzn.to/1QWfalA"&gt;WES51&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="http://www.banggood.com/Wholesale-19_1mm-Adhesive-Dual-Wall-3-1-Heat-Shrink-Tube-Sleeve-50cm-Metre-p-47226.html?p=1G09211226617201502J"&gt;20mm&lt;/a&gt; to &lt;a href="http://www.banggood.com/Wholesale-25_4mm-Adhesive-Polyolefin-31-Heat-Shrink-Tubing-Tube-Sleeve-Sleeving-Wrap-p-47233.html?p=1G09211226617201502J"&gt;25mm&lt;/a&gt; heatshrink tubing, for covering various electronic components.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="http://www.banggood.com/3M-Ultrathin-Waterproof-Protect-ESC-board-Double-Sided-Tape-p-1006021.html?p=1G09211226617201502J"&gt;Double Sided Foam Tape&lt;/a&gt; to mount the flight controller.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Blue Threadlocker. The cheapest place I&amp;#39;ve found to get this is &lt;a href="http://www.harborfreight.com/threadlocker-no-42-10-ml-medium-strength-65192.html"&gt;Harbor Freight&lt;/a&gt;, if you have one locally.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="build"&gt;Build&lt;/h2&gt;
-
-&lt;p&gt;Here are the guides for each component of the build:&lt;/p&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h3 id="q600-quadcopter"&gt;Q600 Quadcopter&lt;/h3&gt;
-
-&lt;p&gt;Assemble the &lt;a href="/blog/2016/01/29/rctimer-q600-quadcopter/"&gt;Q600 quadcopter&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h3 id="asp-gimbal"&gt;ASP Gimbal&lt;/h3&gt;
-
-&lt;p&gt;Follow the guide on &lt;a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/"&gt;building the and tuning the gimbal&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h3 id="pixhawk-flight-controller"&gt;PixHawk Flight Controller&lt;/h3&gt;
-
-&lt;p&gt;Finally, &lt;a href="/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/"&gt;install and configure the PixHawk flight controller&lt;/a&gt;, then go fly!&lt;/p&gt;
 </content>
   </entry>
 </feed>
