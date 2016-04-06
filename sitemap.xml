@@ -33,6 +33,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/page/11</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/page/10</loc>
     <priority>0.7</priority>
   </url>
@@ -246,10 +250,6 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2013/03/29</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2013/03</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -469,6 +469,14 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/03/25/hobbyking-graphene-battery-analysis</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/04/02/turnigy-reaktor-250w-charger</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog</loc>
     <priority>0.7</priority>
   </url>
@@ -493,23 +501,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2013/03</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2013/04/09</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <loc>http://nathan.vertile.com/slides/notes</loc>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2013/04/16</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/slides/notes</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -518,10 +530,6 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2013/04</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2013/07/12</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1229,7 +1237,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013/07</loc>
+    <loc>http://nathan.vertile.com/blog/tags/hive</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1257,7 +1265,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/betaflight</loc>
+    <loc>http://nathan.vertile.com/blog/2013/07/12</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1489,11 +1497,47 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/tags/hobbyking</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/turnigy</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/battery</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/charger</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/parallel</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/balance</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016</loc>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/04</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/04/02</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016/03</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/03/25</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1769,7 +1813,11 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/hive</loc>
+    <loc>http://nathan.vertile.com/blog/2013/07</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/betaflight</loc>
     <priority>0.7</priority>
   </url>
 </urlset>

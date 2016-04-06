@@ -5,10 +5,180 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-03-23T23:12:00-07:00</updated>
+  <updated>2016-04-01T19:09:00-07:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
+  <entry>
+    <title>Turnigy Reaktor 250W Charger</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/04/02/turnigy-reaktor-250w-charger/"/>
+    <id>http://nathan.vertile.com/blog/2016/04/02/turnigy-reaktor-250w-charger/</id>
+    <published>2016-04-01T19:09:00-07:00</published>
+    <updated>2016-04-04T22:24:06-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This is a review and user guide for the &lt;a href="http://www.hobbyking.com/hobbyking/store/__66718__Turnigy_Reaktor_250W_10A_1_6S_Balance_Charger.html?aff=1624906"&gt;Turnigy Reaktor 250W 10A 1-6S Balance Charger&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-batteries-reaktor-ddffdce-jpg" href="../../../../../assets/images/blog/batteries/reaktor-ddffdce1.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/reaktor_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;Here&amp;#39;s everything that comes in the box:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-batteries-reaktor-box-f-def-jpg" href="../../../../../assets/images/blog/batteries/reaktor-box-65f6def3.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/reaktor-box_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Features include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;IR measurement&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Automatic cell count detection&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Temperature based fan control&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Configurable max voltage per lipo cell, up to 4.3v&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="value"&gt;Value&lt;/h2&gt;
+
+&lt;p&gt;The Reaktor 250w is an amazing deal at $39.99, given it&amp;#39;s features are comparable to the much more expensive &lt;a href="http://amzn.to/25Di70v"&gt;iCharger 106B&lt;/a&gt; which runs $89.99.&lt;/p&gt;
+
+&lt;h2 id="serial-data"&gt;Serial Data&lt;/h2&gt;
+
+&lt;p&gt;Download &lt;a href="http://www.logview.info/forum/index.php?resources/logview-studio.9/"&gt;LogView&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Select the device: &lt;code&gt;iCharger 106B&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Then click the &lt;code&gt;Source&lt;/code&gt; tab and pick &lt;code&gt;Silicone&lt;/code&gt; from the drop down.&lt;/p&gt;
+
+&lt;h2 id="charging-high-voltage-lipos"&gt;Charging High Voltage Lipos&lt;/h2&gt;
+
+&lt;p&gt;The Reaktor Charger can be configured to charge up to 4.3 volts per cell for lipo batteries.&lt;/p&gt;
+
+&lt;p&gt;Configure the Reaktor Charger for high voltage charging by powering on the charger then:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;click the left button, &lt;code&gt;Batt Type&lt;/code&gt;, until you get to settings&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;click the second to the left button, &lt;code&gt;Dec&lt;/code&gt;, until you get to &lt;code&gt;LiPo Termination&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;click the far right button to increase the &lt;code&gt;LiPo Termination&lt;/code&gt; value to it&amp;#39;s max value &lt;code&gt;4.3&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HobbyKing Graphene and Bolt High Voltage LiPo Battery Analysis</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/03/25/hobbyking-graphene-battery-analysis/"/>
+    <id>http://nathan.vertile.com/blog/2016/03/25/hobbyking-graphene-battery-analysis/</id>
+    <published>2016-03-24T21:49:00-07:00</published>
+    <updated>2016-04-04T22:08:55-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;Hobbyking sent me some &lt;a href="http://www.hobbyking.com/hobbyking/store/__91183__Turnigy_Graphene_2200mAh_3S_45C_LiPo_Pack_w_XT60.html?aff=1624906"&gt;3s 2200mah Graphene&lt;/a&gt; and &lt;a href="http://www.hobbyking.com/hobbyking/store/__87989__Turnigy_Bolt_1300mAh_4S_15_2V_65_130C_High_Voltage_Lipoly_Pack_LiHV_.html?aff=1624906"&gt;4s 1300mah Turnigy Bolt&lt;/a&gt; batteries for testing and review. I flew them along with some of my other batteries and compared the data. Here&amp;#39;s what I found.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-batteries-all-compared-de-c-b-jpg" href="../../../../../assets/images/blog/batteries/all-compared-de3c285b.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/all-compared_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="batteries-tested"&gt;Batteries Tested&lt;/h3&gt;
+
+&lt;p&gt;Shown in the photo above from left to right, these are the batteries I tested:&lt;/p&gt;
+
+&lt;p&gt;1x &lt;a href="http://www.banggood.com/Wholesale-Lion-Power-11_1V-1500mAh-40C-LiPo-Battery-BT695-p-65641.html?p=1G09211226617201502J"&gt;Lion Power 1500mah 40c 3S&lt;/a&gt; $13.59&lt;/p&gt;
+
+&lt;p&gt;2x &lt;a href="https://world.taobao.com/item/40573956829.htm?fromSite=main&amp;amp;_u=12br6phic92d"&gt;TBC 2200mah 25c 3S&lt;/a&gt; ~$8.20&lt;/p&gt;
+
+&lt;p&gt;2x &lt;a href="http://www.hobbyking.com/hobbyking/store/__91183__Turnigy_Graphene_2200mAh_3S_45C_LiPo_Pack_w_XT60.html?aff=1624906"&gt;Turnigy Graphene 2200mAh 3S 45C LiPo Pack w/ XT60&lt;/a&gt; $23.94&lt;/p&gt;
+
+&lt;p&gt;4x &lt;a href="http://www.hobbyking.com/hobbyking/store/__87989__Turnigy_Bolt_1300mAh_4S_15_2V_65_130C_High_Voltage_Lipoly_Pack_LiHV_.html?aff=1624906"&gt;Turnigy Bolt 1300mAh 4S 15.2V 65~130C High Voltage Lipoly Pack (LiHV)&lt;/a&gt; $$24.73&lt;/p&gt;
+
+&lt;p&gt;2x &lt;a href="https://world.taobao.com/item/40573956829.htm?fromSite=main&amp;amp;_u=12br6phic92d"&gt;TBC 2200mah 25c 4S&lt;/a&gt; ~$11&lt;/p&gt;
+
+&lt;h3 id="wirecutter-version"&gt;Wirecutter Version&lt;/h3&gt;
+
+&lt;p&gt;In short, the &lt;a href="http://www.hobbyking.com/hobbyking/store/__87989__Turnigy_Bolt_1300mAh_4S_15_2V_65_130C_High_Voltage_Lipoly_Pack_LiHV_.html?aff=1624906"&gt;Turnigy Bolt&lt;/a&gt; batteries are the most powerful (&lt;code&gt;P=IV&lt;/code&gt;). This chart shows the maximum power output (in Watts) by each battery. 4s batteries will always be more powerful than 3s batteries, I&amp;#39;ll explain more in a minute, but don&amp;#39;t discount the Graphene battery yet.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-batteries-power-c-f-c-png" href="../../../../../assets/images/blog/batteries/power-c2563f7c.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/power-c2563f7c.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="test-method"&gt;Test Method&lt;/h3&gt;
+
+&lt;p&gt;You can read all about lab tests that look at Internal Resistance (IR) and power curves &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=2592234"&gt;here&lt;/a&gt;, which is awesome as it provides a solid basis of comparison, but at the end of the day, it doesn&amp;#39;t matter how well a battery performs in the lab if it doesn&amp;#39;t deliver in the field.&lt;/p&gt;
+
+&lt;p&gt;Therefore my goal in this article is to minimize all other variables with testing the batteries under real conditions -- flying at the field.&lt;/p&gt;
+
+&lt;p&gt;After charging each battery with my &lt;a href="/blog/2016/04/02/turnigy-reaktor-250w-charger/"&gt;Turnigy Reaktor 250W Charger&lt;/a&gt; I flew them with a &lt;a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"&gt;Victory230&lt;/a&gt; mini quad, recording the battery data via onboard blackbox logger.&lt;/p&gt;
+
+&lt;p&gt;While flying, my goal was to push each battery to it&amp;#39;s limit. I attempted to draw as much power as possible by flying straight up on 100% throttle, letting the quadcopter drop and then repeating the 100% throttle climb.&lt;/p&gt;
+
+&lt;p&gt;From this data, I choose the best flight for each battery type, where the &amp;quot;best&amp;quot; flight was the one in which the max power delivered was the highest. There were no flights that had significant outliers on this data point.&lt;/p&gt;
+
+&lt;p&gt;I then analyzed the blackbox data by programmatically calculating trough to peak amperage change on the biggest spikes. I then correlated this with the voltage data and computed mean IR per cell.&lt;/p&gt;
+
+&lt;p&gt;Along with this, I computed max C-rating tested (which is amp draw normalized to capacity), absolute max amps drawn, max point-in-time power drawn throughout the flight and the voltage curves.&lt;/p&gt;
+
+&lt;h3 id="results"&gt;Results&lt;/h3&gt;
+
+&lt;p&gt;Here are the results:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 62.43417203042715%;'&gt;&lt;a id="assets-images-blog-batteries-analysis-f-ac-d-jpg" href="../../../../../assets/images/blog/batteries/analysis-f10ac84d.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/analysis-f10ac84d.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;First, look at the &lt;code&gt;max c tested&lt;/code&gt; chart in the top right. This is calculated by taking the max amps drawn and normalizing to the battery capacity. Since more amps will be drawn as the prop speed goes up and prop speed is a function of motor &lt;code&gt;KV&lt;/code&gt; rating, where &lt;code&gt;KV&lt;/code&gt;&amp;#39;s units are revolutions per volt, it makes sense that high voltage batteries will draw more current. Therefore, a higher voltage battery with a comparable c rating to a lower voltage battery will always output more power. This also means we should compare 3s and 4s batteries independently.&lt;/p&gt;
+
+&lt;p&gt;On the bottom half of the same chart we see the mean IR from each trough to peak measurement. Using peak detection, we identify the low and high points, then compute the IR by looking at the millivolt drop over the time periods where there are large positive increases in current consumption. Those points are shown on the following chart as the times between a turquoise dot followed by a red dot.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 115.69060773480663%;'&gt;&lt;a id="assets-images-blog-batteries-amps-ir-dc-d-png" href="../../../../../assets/images/blog/batteries/amps-ir-9dc78d54.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/amps-ir-9dc78d54.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I normalized IR to a per-cell value to compare batteries of different voltage. My flight test results suggest that the Bolt batteries out-perform the Graphene batteries since they have a lower IR.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 98.59550561797754%;'&gt;&lt;a id="assets-images-blog-batteries-ir-d-f-jpg" href="../../../../../assets/images/blog/batteries/ir-9531d1f4.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/ir-9531d1f4.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;These results were interesting, as I would expect the two new batteries to have a similar IR. I therefore decided to measure the IR on the bench with my Turnigy Reaktor charger.&lt;/p&gt;
+
+&lt;p&gt;IR varies by discharge level and temperature, so before measuring the IR with my charger, I charged each battery to it&amp;#39;s storage voltage and measured the temperature using my infrared thermometer. I kept the batteries out in the same place for a few hours and thankfully all batteries measured 74.4 degrees Fahrenheit.&lt;/p&gt;
+
+&lt;p&gt;Here are the results of the bench measurements vs. the field measurements. Recall this is &lt;code&gt;IR * -1&lt;/code&gt;, so the lower a bar extends, the higher IR, and therefore worse expected performance. Again, I normalized IR per cell so we can compare across different battery sizes:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.18691588785047%;'&gt;&lt;a id="assets-images-blog-batteries-bench-vs-field-cadf-png" href="../../../../../assets/images/blog/batteries/bench-vs-field-64cadf12.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/bench-vs-field-64cadf12.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The Graphene battery performs better on the bench than the Bolt battery. So which number do we believe?&lt;/p&gt;
+
+&lt;p&gt;Recall why I wanted to measure on the bench: the difference in IR between the two new sets of battery packs (Graphene and Bolt). It&amp;#39;s interesting that the bench measurements show the opposite result of the field testing. My guess is that this is because of the difference in load. On the bench the charger can only sink a few amps, whereas in the field, average IR for a flight is calculated using changes in amps drawn up to 80amps or more.&lt;/p&gt;
+
+&lt;p&gt;Therefore, I would tend to favor flight test data over bench test data, as it give a more realistic view of IR, that is IR under higher loads.&lt;/p&gt;
+
+&lt;h3 id="understanding-ir"&gt;Understanding IR&lt;/h3&gt;
+
+&lt;p&gt;Taking a step back, let&amp;#39;s look at how IR per cell relates to the voltage curve. A low IR battery&amp;#39;s voltage will drop less, when put under an equal load, than a battery with a higher IR. The batteries in the voltage curve with the smallest voltage drops (e.g. smallest troughs) should have the highest IR.&lt;/p&gt;
+
+&lt;p&gt;For example, the 4s chart shows that the Bolt battery outperforms my old TBC battery. The voltage drops on the new Bolt battery are much less severe than the voltage drops on the TBC battery. Note that these are from different flights, so the time at which the voltage drops is irrelevant in this comparison.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 36.89320388349515%;'&gt;&lt;a id="assets-images-blog-batteries-s-voltage-ee-a-jpg" href="../../../../../assets/images/blog/batteries/4s-voltage-0ee6a533.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/4s-voltage-0ee6a533.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A small IR (e.g. minimal voltage drop) is crucial because, as voltage drops, prop speed and thrust decrease as well. Then this happens:&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="420" height="315" src="https://www.youtube.com/embed/yVA_LR6F3BQ?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h3 id="test-method-limitations"&gt;Test Method Limitations&lt;/h3&gt;
+
+&lt;p&gt;While I flew several batteries of each kind, I only tested one capacity of each type: 1300mah Bolt and 2200mah Graphene. It would be interesting to see if this changes for different capacity Graphene and Bolt batteries.&lt;/p&gt;
+
+&lt;p&gt;It is also interesting how well the IR rating corresponds to battery age. My TBC batteries are the oldest, the lionpower battery is fairly new and these were the first flights with the Bolt and Graphene Batteries.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ll need to get some new, low C-rated batteries to compare to the Graphene and Bolt batteries&amp;#39; IR and max power delivered.&lt;/p&gt;
+
+&lt;p&gt;Other limitations of my testing method include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Internal resistance changes at different temperatures. I intentionally stored the batteries in the same location before flying and flew these all on the same beautiful California day, close to the same time, with consistent weather throughout. They could however, have been slightly different temperatures.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;There are physical limitations to the amount of current I can demand from the battery with the &lt;a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"&gt;Victory230&lt;/a&gt;. It is equipped with 20a ESCs that are rated up to 4s, 2205 motors and 5&amp;quot; bullnose props. During testing I was able to pull a maximum of 86.84 amps, 6.84amps more than the ESCs can handle, but less than the 198 amps the Graphene batteries are rated for and less than the 169 amps for which the Bolt batteries are rated.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The 50 ohm shut resistor current sensor is rated to 90 amps. In the course of testing, the max amperage drawn from any battery was 86.84 amps, so I think this is a non-issue.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The 12 bit current sensor ADC on the STM32 has a fixed resolution of 1/4096. With a voltage range of 0-90 amps this implies we can measure down to .021972656 amps, which should be more than accurate enough for our purposes.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;My sensors could be improperly calibrated. While this doesn&amp;#39;t really matter for the purposes of this test, so long I&amp;#39;m within their range, it does mean that unless you have configured the exact same setup, my numbers may not be directly comparable to yours.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Battery age. My &lt;code&gt;TBC&lt;/code&gt; batteries are old. They&amp;#39;re almost exactly 1 year old. I didn&amp;#39;t record the exact number of flights on each one, but if I flew each once a week (on the weekend) they would have about 52 cycles. It will be interesting to see how the Graphene and Bolt batteries compare when they hit this age. It would also be nice to compare to some other new, performance batteries.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With these considerations in mind, I still think that flight test data is more useful in practice than bench IR tests.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>BetaFlight in-flight PID tuning</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/03/24/betaflight-in-flight-pid-tuning/"/>
@@ -127,7 +297,7 @@ brew install avr-libc
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"/>
     <id>http://nathan.vertile.com/blog/2016/02/10/rctimer-victory230-fpv-miniquad/</id>
     <published>2016-02-09T16:00:00-08:00</published>
-    <updated>2016-02-29T23:44:00-08:00</updated>
+    <updated>2016-04-01T10:28:48-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -343,7 +513,7 @@ brew install avr-libc
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.2112676056338%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-cf-f-manual-baud-afe-fd-png" href="../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-afe571fd.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-afe571fd.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Download the latest version of &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;BetaFlight&lt;/a&gt; from the github.com release page &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;https://github.com/borisbstyle/betaflight/releases/&lt;/a&gt;. You want the file: &lt;code&gt;betaflight_SPRACINGF3.hex&lt;/code&gt;. I&amp;#39;m using version &lt;code&gt;2.3.5&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Download the latest version of &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;BetaFlight&lt;/a&gt; from the github.com release page &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;https://github.com/borisbstyle/betaflight/releases/&lt;/a&gt;. You want the file: &lt;code&gt;betaflight_SPRACINGF3.hex&lt;/code&gt;. If you&amp;#39;re going to be using my config from here &lt;a href="https://gist.github.com/nathantsoi/8e5cac9dbec4d901ab8d"&gt;https://gist.github.com/nathantsoi/8e5cac9dbec4d901ab8d&lt;/a&gt;, check the version at the top of the config file and make sure it matches the release version you download.&lt;/p&gt;
 
 &lt;p&gt;Click the &lt;code&gt;Load local firmware&lt;/code&gt; button and pick the &lt;code&gt;betaflight_SPRACINGF3.hex&lt;/code&gt; file.&lt;/p&gt;
 
@@ -633,293 +803,6 @@ save
 &lt;p&gt;Victory230 Manual: &lt;a href="http://www.rctimer.com/download/BeeRotor230Manual.pdf"&gt;http://www.rctimer.com/download/BeeRotor230Manual.pdf&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Post if you have any questions, comments or corrections. Thanks for reading and happy flying!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>FrSky RX SBUS and Frsky DJT Module</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"/>
-    <id>http://nathan.vertile.com/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/</id>
-    <published>2016-02-08T23:10:00-08:00</published>
-    <updated>2016-03-09T20:51:39-08:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;This is a review, setup guide and comparison of the two Airwolf DIY FrSKY Receivers (&lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt; and &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt;), both paired with the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.htmlp=1G09211226617201502J"&gt;DJT Transmitter module&lt;/a&gt; in my &lt;a href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J"&gt;9x&lt;/a&gt;. This article also takes a look at the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;Naked X4R receiver&lt;/a&gt; from FrSky.&lt;/p&gt;
-
-&lt;p&gt;Note that the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.htmlp=1G09211226617201502J"&gt;DJT module&lt;/a&gt; will not bind with the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;X4R&lt;/a&gt; since it uses the newer D16 mode. You&amp;#39;ll need to get the &lt;a href="http://www.banggood.com/FrSky-2_4G-JR-Graupner-Type-16ch-Duplex-Telemetry-Module-p-88772.html?p=1G09211226617201502J"&gt;XJT module&lt;/a&gt; or a &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html?p=1G09211226617201502J"&gt;Taranis&lt;/a&gt;, both of which support D8 and D16 modes, to bind with the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;X4R&lt;/a&gt;. See the &lt;a href="#compatibility"&gt;compatibility&lt;/a&gt; section for details.&lt;/p&gt;
-
-&lt;h2 id="comparison"&gt;Comparison&lt;/h2&gt;
-
-&lt;p&gt;Here is the less expensive of the Airwolf modules, the &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801 DIY&lt;/a&gt; module, which runs about &lt;code&gt;$11.50&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-radio-rx-jpg" href="../../../../../assets/images/blog/frsky-diy/radio-rx-40464990.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/radio-rx_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I have tested both the &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt; and &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt;modules with updated firmware and found that the &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt; performs significantly worse than the &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt;. With the &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt; I get several fail-safes per flight, when flying only 50m up and 50m away laterally. The &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt; and &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt; appear to use the same wireless transceiver, however the &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt; includes a &lt;a href="http://www.seeedstudio.com/wiki/images/e/e7/RFX2401C_Data_Sheet_R2p6.pdf"&gt;RFX2401C&lt;/a&gt;. If you plan on flying more thank several meters away, you should definitely pay a few dollars more for the &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt; or &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;X4R&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-vs-x-r-ff-bd-jpg" href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;utm_content=mony&amp;p=1G09211226617201502J" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/vs-x4r_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you&amp;#39;re looking for something small, light, with diversity and ready to go without flashing, get a &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;naked X4R&lt;/a&gt; instead. The &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;X4R&lt;/a&gt; uses the more powerful STM32F1 processor, instead of the Airwolf modules&amp;#39; Atmega328p (8-bit) microcontroller. The downside of the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;X4R&lt;/a&gt; is that it costs about 30% to 50% more, depending on if you get the &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt; or &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt; DIY module, but the range and reliability is totally worth it.&lt;/p&gt;
-
-&lt;p&gt;As you can see from the above photo with the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;naked X4R&lt;/a&gt; on the top and DIY &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt; on the bottom, the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;X4R&lt;/a&gt; is smaller and lighter, while adding diversity. You could also get the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;X4R&lt;/a&gt; with pins.&lt;/p&gt;
-
-&lt;p&gt;Speaking of the &lt;a href="http://www.banggood.com/DIY-RX-F802-8CH-Receiver-for-FRSKY-X9D-X9D-Plus-DJI-DFT-DHT-p-989610.html?p=1G09211226617201502J"&gt;F802&lt;/a&gt;, it breaks out a few more pins, including SBUS, and significantly improves the range over the &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt;. It runs about &lt;code&gt;$18.00&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id="compatibility"&gt;Compatibility&lt;/h2&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;transmitter -&amp;gt; compatible receivers
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;Taranis -&amp;gt; F801, F802, X4R or any other FrSky reciever
-XJT -&amp;gt; F801, F802, X4R or any FrSky reciever
-DJT -&amp;gt; F801, F802 or any 8 channel receiver. No X-series recievers will bind with this module.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note that the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.htmlp=1G09211226617201502J"&gt;DJT&lt;/a&gt; module is compatible with the DIY F801 and F802 but not compatible with the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;naked XR4&lt;/a&gt;. You&amp;#39;ll need to get the &lt;a href="http://www.banggood.com/FrSky-2_4G-JR-Graupner-Type-16ch-Duplex-Telemetry-Module-p-88772.html?p=1G09211226617201502J"&gt;XJT&lt;/a&gt; to use the &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;X4R&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Besides the compatibility as noted above, the difference between the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.htmlp=1G09211226617201502J"&gt;DJT&lt;/a&gt; module and the &lt;a href="http://www.banggood.com/FrSky-2_4G-JR-Graupner-Type-16ch-Duplex-Telemetry-Module-p-88772.html?p=1G09211226617201502J"&gt;XJT&lt;/a&gt; module is the number of channels. the &lt;a href="http://www.banggood.com/FrSky-2_4G-JR-Graupner-Type-16ch-Duplex-Telemetry-Module-p-88772.html?p=1G09211226617201502J"&gt;XJT&lt;/a&gt; is 16 channels and the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.html?p=1G09211226617201502J"&gt;DJT&lt;/a&gt; is 8 channels.&lt;/p&gt;
-
-&lt;p&gt;Behind the scenes there are two different FrSKY protocols that the two modules use. The DJT uses the 8 channel D8 protocol and the XJT speaks the 16 channel D16 protocol or the D8 protocol. Just be sure you have the right firmware, the version I used is here &lt;a href="https://www.dropbox.com/sh/341ycykh3fnrr0g/AAAchxBDsR7gFzQbdpCSadzma?dl=0"&gt;https://www.dropbox.com/sh/341ycykh3fnrr0g/AAAchxBDsR7gFzQbdpCSadzma?dl=0&lt;/a&gt; or download from the offical website here: &lt;a href="http://www.frsky-rc.com/download/view.php?sort=&amp;amp;down=232&amp;amp;file=Firmware-XJT"&gt;http://www.frsky-rc.com/download/view.php?sort=&amp;amp;down=232&amp;amp;file=Firmware-XJT&lt;/a&gt;. If you need a transmitter, get the &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html?p=1G09211226617201502J"&gt;Taranis&lt;/a&gt;, which also supports both protocols and either D8 or D16 receivers.&lt;/p&gt;
-
-&lt;p&gt;If you need a receiver and don&amp;#39;t want to shell out for a Taranis, it&amp;#39;s also possible to modify the less expensive &lt;a href="http://www.banggood.com/Wholesale-Walkera-Devo-7E-7CH-Transmitter-Mode-2-Without-Receiver-p-48117.html?p=1G09211226617201502J"&gt;Devo 7e&lt;/a&gt; to bind with the F801 and F802 modules. The Devo does not support binding the XR4. Checkout &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=2477581"&gt;these guides for modding your Devo 7e&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id="form-and-fit"&gt;Form and Fit&lt;/h2&gt;
-
-&lt;p&gt;First, let&amp;#39;s fit the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.htmlp=1G09211226617201502J"&gt;DJT module&lt;/a&gt;. It turns out, it doesn&amp;#39;t quite fit in all the way into the back of my &lt;a href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J"&gt;9x&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;If your radio doesn&amp;#39;t have a module slot, get a &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html?p=1G09211226617201502J"&gt;Taranis&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;To get it to fit, I removed the grill on the back of the module.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-module-before-d-aaf-jpg" href="../../../../../assets/images/blog/frsky-diy/module-before-d7aaf521.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/module-before_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-module-after-a-cc-jpg" href="../../../../../assets/images/blog/frsky-diy/module-after-30a006cc.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/module-after_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="flashing"&gt;Flashing&lt;/h2&gt;
-
-&lt;p&gt;To enable SBUS, you&amp;#39;ll need to install the latest firmware. This will require a bit of work, so if you&amp;#39;re looking for something a bit more plug and play, grab an &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony?p=1G09211226617201502J"&gt;X4R&lt;/a&gt; instead.&lt;/p&gt;
-
-&lt;p&gt;Download the latest firmware from here: &lt;a href="http://www.rcgroups.com/forums/showpost.php?p=32959023&amp;amp;postcount=1147"&gt;http://www.rcgroups.com/forums/showpost.php?p=32959023&amp;amp;postcount=1147&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;or from my dropbox share here: &lt;a href="https://www.dropbox.com/sh/4y5rp9gfloq0omc/AACV9dLz_KQ10WbdgFfsNNzga?dl=0"&gt;https://www.dropbox.com/sh/4y5rp9gfloq0omc/AACV9dLz_KQ10WbdgFfsNNzga?dl=0&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Make sure use use the right firmware, for the &lt;code&gt;F801&lt;/code&gt; or &lt;code&gt;F802&lt;/code&gt;, depending on which hardware you have.&lt;/p&gt;
-
-&lt;p&gt;Use an &lt;a href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/#program"&gt;Arduino Nano as an ISP programmer&lt;/a&gt; or get a &lt;a href="http://www.banggood.com/USBASP-USBISP-3_3-5V-AVR-Downloader-Programmer-With-ATMEGA8-ATMEGA128-p-934425.html?p=1G09211226617201502J"&gt;USP ASP&lt;/a&gt; programmer.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-arduino-usbasp-jpg" href="http://www.banggood.com/USBASP-USBISP-3_3-5V-AVR-Downloader-Programmer-With-ATMEGA8-ATMEGA128-p-934425.html?p=1G09211226617201502J" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/arduino/usbasp-05250791.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;You won&amp;#39;t need to solder anything, since the PWM signal out pins are wired to the programming lines. Connect it like this:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;RX - ISP
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;CH5 - MOSI
-CH6 - MISO
-CH7 - SCK
-VCC - 3V3
-GND - GND
-RESET - SS
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For example, the MOSI (pin 11 on the Arduino Nano) line should connect to Channel 5 on the DIY RX.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 70.80078125%;'&gt;&lt;a id="assets-images-blog-nano-clone-nano-pinout-ecbf-jpg" href="../../../../../assets/images/blog/nano_clone/nano_pinout-049ecbf1.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/nano_clone/nano_pinout-049ecbf1.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here&amp;#39;s how I wired mine:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-frsky-diy-flashing-wiring-afa-eec-jpg" href="../../../../../assets/images/blog/frsky-diy/flashing-wiring-afa2eec2.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/flashing-wiring-afa2eec2.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The reset pad is is on the PCB here:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 88.88888888888889%;'&gt;&lt;a id="assets-images-blog-frsky-diy-reset-pin-ce-c-jpg" href="../../../../../assets/images/blog/frsky-diy/reset-pin-55ce9c82.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/reset-pin-55ce9c82.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Touch the RESET pad to your ISP programmer during programming like so:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-frsky-diy-flashing-touch-f-jpg" href="../../../../../assets/images/blog/frsky-diy/flashing-touch-8f867064.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/flashing-touch_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now you have two options to flash, use the Burn-O-Mat gui or use the command line &lt;code&gt;avrdude&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Download Burn-O-Mat: &lt;a href="http://avr8-burn-o-mat.aaabbb.de/avr8_burn_o_mat_avrdude_gui_en.php"&gt;http://avr8-burn-o-mat.aaabbb.de/avr8_burn_o_mat_avrdude_gui_en.php&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I also needed a Java Runtime for my VM. I used 1.5 &lt;a href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html#jre-1.5.0_22-oth-JPR"&gt;http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html#jre-1.5.0_22-oth-JPR&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;For the F801:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;avrdude -b 19200 -c avrisp -p m328p -P COM3 -u -U flash:w:FrskyRx_F801_TELEMETRY__PFS_SBUS_310116.hex
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For the F802:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;avrdude -b 19200 -c avrisp -p m328p -P COM3 -u -U flash:w:FrskyRx_F801_TELEMETRY__PFS_SBUS_310116.hex
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id="fuses"&gt;Fuses&lt;/h3&gt;
-
-&lt;p&gt;I read the default fuses from my F801 module, in case you need to reset them. If you don&amp;#39;t know what these do, don&amp;#39;t mess with them. It should work fine without changing them.&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;avrdude -b 19200 -c avrisp -p m328p -P COM3 -v
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;avrdude: safemode: lfuse reads as FF
-avrdude: safemode: hfuse reads as DA
-avrdude: safemode: efuse reads as 5
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id="config"&gt;Config&lt;/h2&gt;
-
-&lt;p&gt;The latest version supports PFS and SBUS.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;SBUS, bridge CH5 and CH7&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;SBUS is NOT inverted. If you&amp;#39;re using CleanFlight or BetaFlight with an F3 flight controller, you&amp;#39;ll need to &lt;code&gt;set sbus_inversion=OFF&lt;/code&gt; in the CLI.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;PPM, bridge CH1 and CH3&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Note that you cannot use both at the same time. If you bridge both 5&amp;amp;7 and 1&amp;amp;3 at the same time, there will be no output.&lt;/p&gt;
-
-&lt;p&gt;PFS description on posts 1105 and first page second post.&lt;/p&gt;
-
-&lt;h3 id="rssi"&gt;RSSI&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;In SBUS mode: RSSI-PWM on CH3&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;the UART TX pin is the SBUS out&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;IN PPM mode: RSSI-PWM on CH5&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;channel 4 is PPM out&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="failsafe"&gt;Failsafe&lt;/h3&gt;
-
-&lt;p&gt;When signal is lost, the receiver waits about 1sec then the throttle is set to 960 and all other channels to neutral (1500).&lt;/p&gt;
-
-&lt;h3 id="binding"&gt;Binding&lt;/h3&gt;
-
-&lt;p&gt;Switch both switches on the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.htmlp=1G09211226617201502J"&gt;DJT module&lt;/a&gt; off (down).&lt;/p&gt;
-
-&lt;p&gt;Turn on your transmitter while holding the button on the &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.htmlp=1G09211226617201502J"&gt;DJT module&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It will start beeping&lt;/p&gt;
-
-&lt;p&gt;Plug in the bind plug on port 8 or hold the bind button and power on the receiver.&lt;/p&gt;
-
-&lt;p&gt;The transmitter should stop beeping shortly and it&amp;#39;s bound!&lt;/p&gt;
-
-&lt;p&gt;Power off both the transmitter and receiver.&lt;/p&gt;
-
-&lt;h3 id="design"&gt;Design&lt;/h3&gt;
-
-&lt;p&gt;Hardware design:&lt;/p&gt;
-
-&lt;p&gt;pinouts:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;SI ; D5
-SO; D6
-SCLK ; D4
-CS ; D2
-GDO0;D3
-
-***************************
-Servo1_OUT 7 //Servo1(D7)
-Servo2_OUT 8 //Servo2(B0)
-Servo3_OUT 9 //Servo3(B1)
-Servo4_OUT 10 //Servo4(B2)//PPM pin
-Servo5_OUT 11 //Servo5(B3)//RSSI PWM only on PPM mode
-Servo6_OUT 12 //Servo6(B4)
-Servo7_OUT 13 //Servo7(B5)
-Servo8_OUT A0 //Servo8(C0)//bind plug
-************************************
-
-LED ; C3(A3 promini)
-Vcc ; VCC 3.3v
-Gnd ; Gnd
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id="further-reading"&gt;Further Reading&lt;/h3&gt;
-
-&lt;p&gt;Original Thread: &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=2124647"&gt;http://www.rcgroups.com/forums/showthread.php?t=2124647&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Wiring: &lt;a href="http://www.rcgroups.com/forums/showpost.php?p=32756034&amp;amp;postcount=999"&gt;http://www.rcgroups.com/forums/showpost.php?p=32756034&amp;amp;postcount=999&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://www.rcgroups.com/forums/showpost.php?p=33046356&amp;amp;postcount=1217"&gt;http://www.rcgroups.com/forums/showpost.php?p=33046356&amp;amp;postcount=1217&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Naked D4R manual: &lt;a href="http://imgmgr.banggood.com/images/upload/2014/07/D4R-II.pdf"&gt;http://imgmgr.banggood.com/images/upload/2014/07/D4R-II.pdf&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>HMDVR FPV Video Recorder</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/06/hmdvr-fpv-video-recorder/"/>
-    <id>http://nathan.vertile.com/blog/2016/02/06/hmdvr-fpv-video-recorder/</id>
-    <published>2016-02-05T22:09:00-08:00</published>
-    <updated>2016-02-29T21:52:44-08:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;This is a review of the new &lt;a href="http://www.banggood.com/Mini-DVR-Video-Audio-Recorder-For-FPV-Multicopters-p-1021117.html?p=1G09211226617201502J"&gt;HMDVR FPV&lt;/a&gt; Video Recorder.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-hmdvr-banggood-hmdvr-bf-d-cf-jpg" href="http://www.banggood.com/Mini-DVR-Video-Audio-Recorder-For-FPV-Multicopters-p-1021117.html?p=1G09211226617201502J" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/hmdvr/banggood-hmdvr-bf9d4cf2.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you&amp;#39;re looking for a recording device, I suggest you also checkout my &lt;a href="https://plus.google.com/u/0/communities/118127535984046831266"&gt;GO FPV project&lt;/a&gt;, which turns your Android phone into FPV goggles and a DVR.&lt;/p&gt;
-
-&lt;h2 id="review"&gt;Review&lt;/h2&gt;
-
-&lt;p&gt;Here are some videos. I recorded both on the lowest resolution (640x480) to roughly match the video quality being transmitted of the 5.8ghz link.&lt;/p&gt;
-
-&lt;p&gt;Here&amp;#39;s a screenshot of some NTSC video output from my &lt;a href="/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"&gt;Beerotor 160&lt;/a&gt;, note that the video is not cropped.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 86.43617021276596%;'&gt;&lt;a id="assets-images-blog-hmdvr-ntsc-c-e-e-png" href="../../../../../assets/images/blog/hmdvr/ntsc-c62e1e72.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/hmdvr/ntsc-c62e1e72.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;And this is PAL video output from my &lt;a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"&gt;Victory 230&lt;/a&gt;, note that the video is cropped (there should be another line of text from my OSD, which I can see in my goggles, but not on the recording). Unfortunately, the video is still cropped, even after updating as described below.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 86.43617021276596%;'&gt;&lt;a id="assets-images-blog-hmdvr-pal-f-c-b-png" href="../../../../../assets/images/blog/hmdvr/pal-33f68c6b.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/hmdvr/pal-33f68c6b.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Changing recording resolutions did not fix the video cropping.&lt;/p&gt;
-
-&lt;p&gt;Here&amp;#39;s what it looks like inside:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hmdvr-inside-f-e-f-jpg" href="../../../../../assets/images/blog/hmdvr/inside-f0368e4f.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/hmdvr/inside_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hmdvr-inside-flipped-ab-jpg" href="../../../../../assets/images/blog/hmdvr/inside-flipped-894ab897.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/hmdvr/inside-flipped_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Sadly, it&amp;#39;s not plug and play. It comes with an un-soldered cable, so you&amp;#39;ll need to wire it up.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hmdvr-hmdvr-c-a-jpg" href="../../../../../assets/images/blog/hmdvr/hmdvr-82997c8a.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/hmdvr/hmdvr_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I suggest you get a receiver with two outputs (like the &lt;a href="http://www.banggood.com/FPV-5_8G-8CH-200mW-AV-Wireless-Receiver-RC805-p-73202.html?p=1G09211226617201502J"&gt;Boscam RC805&lt;/a&gt;) and wire one output to the HMDVR and the other output to your monitor or goggles. This way you don&amp;#39;t get the video feed to your viewing device from the HMDVR, since there is a significant delay added by the recorder.&lt;/p&gt;
-
-&lt;p&gt;Also, the MicroSD card requires a tool to insert and remove. The case is too large, I can&amp;#39;t get my finger in the slot to pop out the SD card.&lt;/p&gt;
-
-&lt;p&gt;I set it up so the HMDVR always gets the second video output on my receiver. Then I used two servo extension plugs. One on the first output on my receiver and one on the output from the HMDVR. This way, my goggles, which also have a servo plug, can be switched between the receiver and the HMDVR output.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hmdvr-goggles-b-fb-jpg" href="../../../../../assets/images/blog/hmdvr/goggles-b681fb30.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/hmdvr/goggles_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="firmware-update"&gt;Firmware Update&lt;/h2&gt;
-
-&lt;p&gt;This firmware update fixes an issue where the HMDVR does not save settings between power-cycles. The PAL cropping issue still exists.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Download the firmware update: &lt;a href="https://www.dropbox.com/s/hc1glpuucma9cn3/CRESFW.BIN?dl=1"&gt;https://www.dropbox.com/s/hc1glpuucma9cn3/CRESFW.BIN?dl=1&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;(optional, but recommended), validate that the MD5SUM of &lt;code&gt;CRESFW.BIN&lt;/code&gt; is &lt;code&gt;c4c0902558fe10358925be7fe4267cea&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;to do this on a mac, open terminal and run &lt;code&gt;gmd5sum CRESFW.BIN&lt;/code&gt; the output value should be the same as above&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;reformat a MicroSD card and put &lt;code&gt;CRESFW.BIN&lt;/code&gt; on the card&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;we&amp;#39;re about to put the put the card in the HMDVR and power on, but first make sure you know what you need to do next&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;the red led will flash slowly, then quickly, then turn off.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;make sure you unplug the power to the HMDVR as soon as the light turns off. do not turn off the power while upgrading&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;remove the sdcard and using your computer, check that &lt;code&gt;CRESFW.BIN&lt;/code&gt; has been deleted&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="usage"&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;There are 3 buttons:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;k1: start recording, the red led will flash, press it again to stop recording&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;k2: press and hold for the menu&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;k3: press and hold for playback mode&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
 </feed>
