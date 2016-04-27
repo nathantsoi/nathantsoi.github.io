@@ -5,16 +5,167 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-04-01T19:09:00-07:00</updated>
+  <updated>2016-04-24T18:14:00-07:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
+  <entry>
+    <title>Eachine VR-007 Goggle Review</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/04/25/eachine-vr-007-goggle-review/"/>
+    <id>http://nathan.vertile.com/blog/2016/04/25/eachine-vr-007-goggle-review/</id>
+    <published>2016-04-24T18:14:00-07:00</published>
+    <updated>2016-04-24T18:14:58-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html"></content>
+  </entry>
+  <entry>
+    <title>AirBot Flip32 F3 AIO Lite and Typhoon 4-in-1 ESC</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/04/11/airbot-flip32-f3-aio-lite-and-typhoon-4-in-1-esc/"/>
+    <id>http://nathan.vertile.com/blog/2016/04/11/airbot-flip32-f3-aio-lite-and-typhoon-4-in-1-esc/</id>
+    <published>2016-04-11T13:56:00-07:00</published>
+    <updated>2016-04-25T11:01:36-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This article is a review and guide for the following components:&lt;/p&gt;
+
+&lt;h3 id="overview"&gt;Overview&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://shop.myairbot.com/index.php/flip32f3aio-lite.html" target="_blank"&gt;Airbot F3AIO-LITE&lt;/a&gt; F3 flight controller with 16MB of flash.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.80981595092024%;'&gt;&lt;a id="assets-images-blog-airbot-xf-aio-lite-f-bc-jpg" href="http://shop.myairbot.com/index.php/flip32f3aio-lite.html#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/airbot/xf3aio_lite_1200-f38322bc.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href="http://shop.myairbot.com/index.php/typhoon4x20a4in1esc.html" target="_blank"&gt;Airbot Typhoon 4x20A 4in1 ESC&lt;/a&gt; which is 4 littlebee ESCs on a single 35x35mm PCB.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.96676737160121%;'&gt;&lt;a id="assets-images-blog-airbot-typhoon-x-a-in-escreleaseversion-f-fb-jpg" href="http://shop.myairbot.com/index.php/flip32f3aio-lite.html#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/airbot/typhoon4x20a4in1escreleaseversion_1-f21fb267.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href="http://www.readytoflyquads.com/mini-power-distribution-board-with-2-bec-apmsensor" target="_blank"&gt;RTFQ Power Distribution Board&lt;/a&gt; which works in tadem with the flight controller to provide power along with voltage and current sensing.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 84.36185133239832%;'&gt;&lt;a id="assets-images-blog-airbot-pdb-xbec-pm-fab-f-jpg" href="http://www.readytoflyquads.com/mini-power-distribution-board-with-2-bec-apmsensor#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/airbot/3535pdb_2xbec_pm-1-fab8f214.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="f3aio-lite"&gt;F3AIO-LITE&lt;/h3&gt;
+
+&lt;p&gt;The key differentiator between the &lt;a href="/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"&gt;BeeRotorF3&lt;/a&gt; F3AIO-LITE is the 16MB of flash and the full size, 2.54mm pin headers, as opposed to the SH1.25 connectors on the &lt;a href="/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"&gt;BeeRotorF3&lt;/a&gt;. Mounting holes are the standard 30.5x30.5mm but one edge of the pdb extends slightly beyond the standard 35x35mm outline.&lt;/p&gt;
+
+&lt;p&gt;It comes with the manual, pin headers and jumpers for the OSD / Flight controller selection&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-box-f-f-e-e-jpg" href="../../../../../assets/images/blog/airbot/box-f3-f32e527e.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/box-f3_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;On the front we see the Spektrum Satellite receiver port, USB port, STM32 ST-LINK debugging pins (broken out as pads) and the various 2.54mm header holes which are described in detail below in the &lt;a href="#f3aio-connection-diagram"&gt;connection diagram&lt;/a&gt; section.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 92.57692307692308%;'&gt;&lt;a id="assets-images-blog-airbot-f-front-e-a-ae-e-jpg" href="../../../../../assets/images/blog/airbot/f3-front-e2a0ae9e.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-front_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 91.6923076923077%;'&gt;&lt;a id="assets-images-blog-airbot-f-back-f-ef-jpg" href="../../../../../assets/images/blog/airbot/f3-back-42f267ef.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-back_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id="f3aio-pinouts"&gt;F3AIO Pinouts&lt;/h4&gt;
+
+&lt;p&gt;Here are the pinouts. Note that &lt;code&gt;video in&lt;/code&gt; (&lt;code&gt;VIN&lt;/code&gt;) is on the top of the board and &lt;code&gt;video out&lt;/code&gt; (&lt;code&gt;VOUT&lt;/code&gt;) is on the bottom.&lt;/p&gt;
+
+&lt;p&gt;Both &lt;code&gt;RAM&lt;/code&gt; pins are connected, allowing power to pass from the video transmitter to the camera. This is also connected to the &lt;code&gt;V_sense&lt;/code&gt; line by a 0ohm resistor, which can be removed if you want. I prefer to leave these pins unused and power the camera and &lt;code&gt;VTX&lt;/code&gt; separately.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 89.92248062015504%;'&gt;&lt;a id="assets-images-blog-airbot-f-pinout-top-b-jpg" href="../../../../../assets/images/blog/airbot/f3-pinout-top-b8625379.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-pinout-top-b8625379.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 89.69258589511753%;'&gt;&lt;a id="assets-images-blog-airbot-f-pinout-bottom-d-jpg" href="../../../../../assets/images/blog/airbot/f3-pinout-bottom-2950d660.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-pinout-bottom-2950d660.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id="f3aio-jumper-settings"&gt;F3AIO Jumper Settings&lt;/h4&gt;
+
+&lt;p&gt;There are 3 jumper settings available on the board. The different modes are for: &lt;code&gt;OSD flashing and configuration&lt;/code&gt;, &lt;code&gt;Flight Controller flashing and configuration&lt;/code&gt; and &lt;code&gt;Flight Mode&lt;/code&gt; where the OSD and flight controller are connected.&lt;/p&gt;
+
+&lt;h5 id="osd-flashing-and-configuration-mode"&gt;OSD Flashing and configuration mode&lt;/h5&gt;
+
+&lt;p&gt;With the jumpers in this position, the USB port is connected to the OSD.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44938650306749%;'&gt;&lt;a id="assets-images-blog-airbot-f-osd-mode-b-ed-jpg" href="../../../../../assets/images/blog/airbot/f3-osd-mode-8055b5ed.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-osd-mode_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id="flight-controller-flashing-and-configuration-mode"&gt;Flight Controller Flashing and configuration mode&lt;/h5&gt;
+
+&lt;p&gt;With the jumpers in this position, the USB port is connected to the flight controller.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.45029039972668%;'&gt;&lt;a id="assets-images-blog-airbot-f-fc-mode-e-b-d-e-jpg" href="../../../../../assets/images/blog/airbot/f3-fc-mode-e0b4d9e9.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-fc-mode_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id="flight-mode"&gt;Flight Mode&lt;/h5&gt;
+
+&lt;p&gt;With the jumpers in this position, the USB port is disconnected and the OSD is connected to the flight controller.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.45890144137125%;'&gt;&lt;a id="assets-images-blog-airbot-f-osd-fc-mode-d-c-e-jpg" href="../../../../../assets/images/blog/airbot/f3-osd-fc-mode-d8c6046e.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-osd-fc-mode_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id="f3aio-connection-diagram"&gt;F3AIO connection diagram&lt;/h4&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 61.1380985426787%;'&gt;&lt;a id="assets-images-blog-airbot-f-connection-f-cf-jpg" href="../../../../../assets/images/blog/airbot/f3-connection-711f17cf.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-connection_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here&amp;#39;s how I chose to populate mine. I&amp;#39;m using a SBUS receiver: &lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-populated-ba-b-cb-jpg" href="../../../../../assets/images/blog/airbot/f3-populated-ba2b9cb3.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-populated_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id="f3aio-flash-scarabosd"&gt;F3AIO Flash ScarabOSD&lt;/h4&gt;
+
+&lt;p&gt;If you plug in the board and see this when you launch the Scarab OSD configuration tool, it means you&amp;#39;ll need to update the Scarab OSD firmware:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 40.28950542822678%;'&gt;&lt;a id="assets-images-blog-airbot-f-scarabosd-mismatching-version-dcf-d-png" href="../../../../../assets/images/blog/airbot/f3-scarabosd-mismatching-version-dcf7765d.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-scarabosd-mismatching-version-dcf7765d.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Flash and configure it the same way as described in the &lt;a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/#flash-scarab-osd"&gt;the OZE32 ScarabOSD flashing guide&lt;/a&gt;. My configuration files are available below.&lt;/p&gt;
+
+&lt;p&gt;My &lt;code&gt;Config.h&lt;/code&gt; is available here: &lt;a href="https://gist.githubusercontent.com/nathantsoi/0db1b3933bfcf9b5653edbcf3239724b/raw/Config.h"&gt;https://gist.githubusercontent.com/nathantsoi/0db1b3933bfcf9b5653edbcf3239724b/raw/Config.h&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;to use, click &lt;code&gt;Raw&lt;/code&gt; and then save as Config.h in the &lt;code&gt;MW_OSD&lt;/code&gt; folder you extracted from the ScarabOSD release page.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My &lt;code&gt;scarab-osd.osd&lt;/code&gt; is available here: &lt;a href="https://gist.githubusercontent.com/nathantsoi/1ba3c5cc4892022b04ab/raw/scarab-osd.osd"&gt;https://gist.githubusercontent.com/nathantsoi/1ba3c5cc4892022b04ab/raw/scarab-osd.osd&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;to use, open the GUI, connect and click the little &lt;code&gt;LOAD&lt;/code&gt; button on the left, under &lt;code&gt;DISK&lt;/code&gt;. Then hit &lt;code&gt;WRITE&lt;/code&gt; under &lt;code&gt;OSD CONTROLS&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="f3aio-flash-betaflight"&gt;F3AIO Flash BetaFlight&lt;/h4&gt;
+
+&lt;p&gt;Flashing and configuration is basically the sameas described in the &lt;a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/#flashing-betaflight"&gt;the Victory230 article&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Download the &lt;a href="https://chrome.google.com/webstore/detail/cleanflight-configurator/enacoimjcgeinfnnnpajinjgmkahmfgb?hl=en"&gt;CleanFlight configurator&lt;/a&gt; (yes, it works with BetaFlight) and &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;the latest release of BetaFlight&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Switch the jumpers to the Flight Controller Flashing setting and plug in the USB and you should be good to go!&lt;/p&gt;
+
+&lt;p&gt;Before you fly, remember to switch the jumper back to flight mode.&lt;/p&gt;
+
+&lt;h3 id="typhoon-4x20a-4in1-esc"&gt;Typhoon 4x20A 4in1 ESC&lt;/h3&gt;
+
+&lt;p&gt;I have the beta edition, expecting a few of the v1 in the mail. Here is what comes in the box:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-box-typhoon-cbced-jpg" href="../../../../../assets/images/blog/airbot/box-typhoon-8cbced31.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/box-typhoon_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You won&amp;#39;t need an extra capacitor to handle voltage spikes, like on the original LittleBee ESCs, since the Typhoon is engineered to handle the back-current.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 110.74698795180721%;'&gt;&lt;a id="assets-images-blog-airbot-typhoon-beta-front-c-jpg" href="../../../../../assets/images/blog/airbot/typhoon-beta-front-965c6773.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/typhoon-beta-front_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 109.5067264573991%;'&gt;&lt;a id="assets-images-blog-airbot-typhoon-beta-back-d-b-jpg" href="../../../../../assets/images/blog/airbot/typhoon-beta-back-2d744b51.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/typhoon-beta-back_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="rtfq-power-distribution-board"&gt;RTFQ Power Distribution Board&lt;/h3&gt;
+
+&lt;p&gt;It has 2 voltage regulators, one adjustable and one set to 5v. The little screw on the left is how the voltage on the variable regulator can be adjusted.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-flip-deluxe-pdb-top-ef-jpg" href="../../../../../assets/images/blog/flip-deluxe/pdb-top-ef154180.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flip-deluxe/pdb-top-ef154180.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-flip-deluxe-pdb-bottom-a-jpg" href="../../../../../assets/images/blog/flip-deluxe/pdb-bottom-02a92189.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flip-deluxe/pdb-bottom-02a92189.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It is cool the voltage can be adjusted, but I&amp;#39;m not sure when this is useful. Having some 12v and some 5v taps would cover 99% of all cases. Plus, the voltage regulator should be checked with a voltmeter before using it, so you&amp;#39;ll need to do the extra step of wiring a battery to the PDB and checking (and adjusting) the variable output before hooking up your gear.&lt;/p&gt;
+
+&lt;p&gt;The PDB build quality is good. It includes a 50a shut resistor which functions as a current sensor and should handle up to about 90 amps.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.43487563519658%;'&gt;&lt;a id="assets-images-blog-flip-deluxe-pdb-bottom-shunt-a-jpg" href="../../../../../assets/images/blog/flip-deluxe/pdb-bottom-shunt-a7187182.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flip-deluxe/pdb-bottom-shunt_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You&amp;#39;ll want to connect the current sensor output &lt;code&gt;C_Sens&lt;/code&gt; from the PDB to the &lt;code&gt;CRNT&lt;/code&gt; pin on the F3AIO and the battery voltage &lt;code&gt;V_Sens&lt;/code&gt; output to the &lt;code&gt;BAT&lt;/code&gt; pin.&lt;/p&gt;
+
+&lt;p&gt;Alternatively, if you&amp;#39;re not using a PDB, the &lt;code&gt;RAM&lt;/code&gt; pin is also connected to &lt;code&gt;V_Sens&lt;/code&gt;.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Turnigy Reaktor 250W Charger</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/04/02/turnigy-reaktor-250w-charger/"/>
     <id>http://nathan.vertile.com/blog/2016/04/02/turnigy-reaktor-250w-charger/</id>
     <published>2016-04-01T19:09:00-07:00</published>
-    <updated>2016-04-04T22:24:06-07:00</updated>
+    <updated>2016-04-16T00:01:18-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -40,6 +191,17 @@
 &lt;h2 id="value"&gt;Value&lt;/h2&gt;
 
 &lt;p&gt;The Reaktor 250w is an amazing deal at $39.99, given it&amp;#39;s features are comparable to the much more expensive &lt;a href="http://amzn.to/25Di70v"&gt;iCharger 106B&lt;/a&gt; which runs $89.99.&lt;/p&gt;
+
+&lt;h2 id="parallel-charging"&gt;Parallel Charging&lt;/h2&gt;
+
+&lt;p&gt;Parallel charging makes it possible to charge multiple batteries of the same cell count and capacity all at once.&lt;/p&gt;
+
+&lt;p&gt;When parallel charging, remember to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Only charge batteries of the same voltage (cell count) and capacity&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Plug in the main power plug (XT-60) before the balance plug&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id="serial-data"&gt;Serial Data&lt;/h2&gt;
 
@@ -253,556 +415,6 @@ save
 &lt;/ul&gt;
 
 &lt;p&gt;You can see the profile page for my exhibit on the Maker Faire website here: &lt;a href="http://makerfaire.com/maker/entry/55522/"&gt;http://makerfaire.com/maker/entry/55522/&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>AVR Dissassembly</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/25/avr-dissassembly/"/>
-    <id>http://nathan.vertile.com/blog/2016/02/25/avr-dissassembly/</id>
-    <published>2016-02-25T01:15:00-08:00</published>
-    <updated>2016-02-25T18:20:13-08:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;h2 id="setup"&gt;Setup&lt;/h2&gt;
-
-&lt;p&gt;Install avr-libc via homebrew on mac:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;brew tap osx-cross/avr
-brew install avr-libc
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Install radare2&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;brew install radare2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id="disassemble"&gt;Disassemble&lt;/h2&gt;
-
-&lt;p&gt;Convert the hex to bin&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;avr-objcopy –I ihex –O binary hello.hex hello.bin
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;load with radare2&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;r2 -a avr hello.bin
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;or output assembly, for the atmega328p:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;avr-objdump -j .sec1 -d -m avr5 test.hex
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;where &lt;code&gt;-m&lt;/code&gt; specifies the architecture of your chip from: &lt;a href="http://www.nongnu.org/avr-libc/user-manual/using_tools.html"&gt;http://www.nongnu.org/avr-libc/user-manual/using_tools.html&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Victory230 FPV Mini-quad Setup and Review</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"/>
-    <id>http://nathan.vertile.com/blog/2016/02/10/rctimer-victory230-fpv-miniquad/</id>
-    <published>2016-02-09T16:00:00-08:00</published>
-    <updated>2016-04-01T10:28:48-07:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;This is a setup guide and review of the &lt;a href="http://rctimer.com/product-1585.html/#r-pNathanT"&gt;Rctimer Victor230&lt;/a&gt; FPV mini-quad.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-victory-a-edef-jpg" href="../../../../../assets/images/blog/beerotor/victory230/victory230-a045edef.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/victory230_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;If you&amp;#39;re thinking about getting a Vortex Pro 250, think again. The Victory230 will out-fly and out-perform the Vortex any day of the week. Though it&amp;#39;s prop-span is 20mm smaller, the Victory230 has bigger motors, ESCs that handle more current, an open source flight control board and OSD that can be easily upgraded. Plus, it&amp;#39;s almost half the cost. This is amazing.&lt;/p&gt;
-
-&lt;p&gt;That&amp;#39;s one fine lookin&amp;#39; box.&lt;/p&gt;
-
-&lt;h3 id="unboxing"&gt;Unboxing&lt;/h3&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-box-a-b-b-jpg" href="../../../../../assets/images/blog/beerotor/victory230/box-a1901b1b.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/box_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Oooh, fancy case! I&amp;#39;m sooo excited!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-case-e-dc-d-jpg" href="../../../../../assets/images/blog/beerotor/victory230/case-3e0dc4d1.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/case_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-unboxing-f-a-jpg" href="../../../../../assets/images/blog/beerotor/victory230/unboxing-73978f1a.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/unboxing_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Look at all those extra parts!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-unboxinging-b-dcdd-jpg" href="../../../../../assets/images/blog/beerotor/victory230/unboxinging-b3dcdd11.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/unboxinging_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I didn&amp;#39;t even need to solder anything and it looks awesome!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-unboxed-f-cbe-jpg" href="../../../../../assets/images/blog/beerotor/victory230/unboxed-4f16cbe5.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/unboxed_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="weight"&gt;Weight&lt;/h3&gt;
-
-&lt;p&gt;It&amp;#39;s 383 grams with the antenna.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-weight-f-e-e-jpg" href="../../../../../assets/images/blog/beerotor/victory230/weight-42f5e5e2.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/weight_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="antenna-and-parts"&gt;Antenna and Parts&lt;/h3&gt;
-
-&lt;p&gt;The antenna, by the way, is a right hand, circular polarized, skew-planer wheel. That means it has 4 lobes. A cloverleaf antenna has 3 lobes. As long as your receiving antenna is right hand circular polarized, this will work.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-antenna-dcf-f-d-jpg" href="../../../../../assets/images/blog/beerotor/victory230/antenna-dcf75f5d.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/antenna_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Wow, no messin&amp;#39; around. It comes with replacement plastic parts to rebuild the entire thing once over, even an extra camera mount, screws and side plates. You also get a RSSI cable, sticky-backed velcro for your battery and an extra set of props.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-all-parts-b-c-f-jpg" href="../../../../../assets/images/blog/beerotor/victory230/all-parts-42b21c6f.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/all-parts_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;While you&amp;#39;re ordering, it&amp;#39;s pry smart to pick up some extra &lt;a href="http://rctimer.com/product-1474.html/#r-pNathanT"&gt;prop nuts&lt;/a&gt; (it only comes with 4) and props. Also, after disassembling my Victory230, it seems like the other likely parts to break or be lost in a hard crash are the bolts holding on the arms. From my measurements they&amp;#39;re M2x22mm.&lt;/p&gt;
-
-&lt;h4 id="props"&gt;Props&lt;/h4&gt;
-
-&lt;p&gt;The props by the way, are 5045&amp;#39;s (thats 5x4.5) and they have the same shape and sheen as the DAL bullnose V2 props. The orange one is a DAL v2 and the red one is an &lt;a href="http://rctimer.com/product-1560.html/#r-pNathanT"&gt;Rctimer&amp;#39;s BeeRotor 5x4.5 Bullnose&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-dalv-vs-rctimer-d-jpg" href="../../../../../assets/images/blog/beerotor/victory230/dalv2-vs-rctimer-10d90067.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/dalv2-vs-rctimer_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;With 5&amp;quot; props, my &lt;a href="http://www.banggood.com/Original-XiaoYi-Ambarella-A7LS-BSI-CMOS-WIFI-Sports-Action-Camera-p-969228.html?p=1G09211226617201502J"&gt;XiaoMi Yi&lt;/a&gt; doesn&amp;#39;t fit.&lt;/p&gt;
-
-&lt;p&gt;4&amp;quot; props allow the GoPro-size &lt;a href="http://www.banggood.com/Original-XiaoYi-Ambarella-A7LS-BSI-CMOS-WIFI-Sports-Action-Camera-p-969228.html?p=1G09211226617201502J"&gt;XiaoMi Yi&lt;/a&gt; to fit fine.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-in-b-a-jpg" href="../../../../../assets/images/blog/beerotor/victory230/4in-808b838a.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/4in_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you mount the battery on the underside (just move the velcro), this beast will even fit 6&amp;quot; props!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-in-d-a-a-d-jpg" href="../../../../../assets/images/blog/beerotor/victory230/6in-d02a5a1d.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/6in_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Grab a couple different size props when you&amp;#39;re ordering and try &amp;#39;em out! Here are the links to props that fit:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="http://rctimer.com/product-1607.html/#r-pNathanT"&gt;4x4x3 Tri&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="http://rctimer.com/product-1556.html/#r-pNathanT"&gt;4x4.5 Bullnose&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="http://rctimer.com/product-1598.html/#r-pNathanT"&gt;5x4x3 Tri&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="http://rctimer.com/product-1551.html/#r-pNathanT"&gt;5x4.5 Bullnose&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="http://rctimer.com/product-1573.html/#r-pNathanT"&gt;6x4 Bullnose&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id="motors"&gt;Motors&lt;/h4&gt;
-
-&lt;p&gt;It comes in two versions. The difference is the motors -- either &lt;a href="http://rctimer.com/product-1613.html/#r-pNathanT"&gt;FR2205/2300kv&lt;/a&gt; or &lt;a href="http://rctimer.com/product-1612.html/#r-pNathanT"&gt;FR2306/2300kv&lt;/a&gt; motors.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-FR-motor-eb-f-jpg" href="../../../../../assets/images/blog/beerotor/victory230/FR2306-motor-eb5282f3.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/FR2306-motor_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The 2306 motors are a little bigger, so at the same KV, they should be a little more powerful.&lt;/p&gt;
-
-&lt;p&gt;Basically, the only thing you need is a &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html?p=1G09211226617201502J"&gt;radio (buy a Taranis if you need a good one)&lt;/a&gt;, receiver and a battery. More on &lt;a href="#batteries"&gt;batteries&lt;/a&gt; in a minute.&lt;/p&gt;
-
-&lt;p&gt;I was going to use this &lt;a href="http://www.banggood.com/FrSky-DJT-JR-2_4GHz-Transmitter-Telemetry-Module-p-954940.html?p=1G09211226617201502J"&gt;FrSky DJT module&lt;/a&gt; in my &lt;a href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J"&gt;FlySky 9x&lt;/a&gt; and a &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;DIY FrSKY RX&lt;/a&gt;, but they won&amp;#39;t bind without updating the RX firmware. If you want to go this route, checkout &lt;a href="/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"&gt;my guide here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-frsky-diy-radio-rx-jpg" href="../../../../../assets/images/blog/frsky-diy/radio-rx-40464990.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/frsky-diy/radio-rx_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you&amp;#39;re looking for the best possible setup, just get a &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-Taranis-X9D-Plus-Transmitter-p-940819.html?p=1G09211226617201502J"&gt;Taranis Transmitter&lt;/a&gt; and an &lt;a href="http://www.banggood.com/FrSky-2_4G-ACCST-X4R-4CH-Telemetry-Receiver-p-947631.html?p=1G09211226617201502J"&gt;X4R receiver&lt;/a&gt; or a &lt;a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;amp;utm_content=mony&amp;amp;p=1G09211226617201502J"&gt;naked X4R&lt;/a&gt;. This setup is the mini-quad racing standard as it&amp;#39;s super reliable, responsive and easy to use.&lt;/p&gt;
-
-&lt;p&gt;If you have a HAM license, in the US, you can run a 433mhz radio control link. You&amp;#39;ll see me mount an OpenLRS 433mhz RX below. This will give a little more range than the X4R, but I&amp;#39;m using this mostly because it&amp;#39;s what I have on hand.&lt;/p&gt;
-
-&lt;h2 id="dis-assembly"&gt;(dis)assembly&lt;/h2&gt;
-
-&lt;p&gt;Let&amp;#39;s take it apart and see what&amp;#39;s inside. If you need to rebuild yours, this might be helpful.&lt;/p&gt;
-
-&lt;p&gt;Take off the props! I used an 8mm socket wrench.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-mm-a-a-jpg" href="../../../../../assets/images/blog/beerotor/victory230/8mm-1a9a8395.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/8mm_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Remove the four screws on the top of the plastic side panels and the two screws on the aluminum standoffs in the front.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-disassembly-f-jpg" href="../../../../../assets/images/blog/beerotor/victory230/disassembly-1-2578f252.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/disassembly-1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Unscrew the nut securing the gold SMA connector in the back, and remove the washer.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.27313337587746%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-sma-e-e-d-jpg" href="../../../../../assets/images/blog/beerotor/victory230/sma-13e8e14d.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/sma_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;While I was at it, I measured the thickness of carbon fibre, it&amp;#39;s a bit over 1mm. Rctimer could have cut this at 1mm or under, but they refuse to settle for anything less than excellent!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-carbon-plates-b-a-jpg" href="../../../../../assets/images/blog/beerotor/victory230/carbon-plates-6b3a0649.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/carbon-plates_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The nuts on the arms take the smallest socket wrench I have, 4mm. They&amp;#39;re tiny, so don&amp;#39;t lose &amp;#39;em when you take &amp;#39;em out!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-disassembly-c-ebd-a-jpg" href="../../../../../assets/images/blog/beerotor/victory230/disassembly-2-c2ebd9a3.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/disassembly-2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I was afraid the whole thing was going to fall apart, so I loosened each nut evenly and pulled them out all at the same time. This was unnecessary, as it stayed together quite well, even with the bolts out.&lt;/p&gt;
-
-&lt;p&gt;The XT-60 doesn&amp;#39;t fit through the top plate, with the rubber gasket on. Just slide the gasket off to get the XT-60 through the hole.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-xt-ec-ab-jpg" href="../../../../../assets/images/blog/beerotor/victory230/xt-60-6ec727ab.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/xt-60_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="inside"&gt;Inside&lt;/h3&gt;
-
-&lt;p&gt;Here&amp;#39;s whats inside:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-inside-f-jpg" href="../../../../../assets/images/blog/beerotor/victory230/inside-18f98881.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/inside_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The flight controller has all the same components as a &lt;a href="/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"&gt;BeerotorF3&lt;/a&gt;, it&amp;#39;s just been reformatted to fit inside of the Victory230&amp;#39;s frame.&lt;/p&gt;
-
-&lt;p&gt;The pinout:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.5071707953064%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-pinout-a-c-jpg" href="../../../../../assets/images/blog/beerotor/victory230/pinout-7a16799c.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/pinout-7a16799c.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Note the S.BUS / PPM cable and RSSI cables are included. The Spektrum satellite port is a normal Spektrum plug, so if you&amp;#39;re using a Spektrum radio setup, you can plug that in without doing any soldering.&lt;/p&gt;
-
-&lt;p&gt;Now let&amp;#39;s explore under the flight controller.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-pdb-jpg" href="../../../../../assets/images/blog/beerotor/victory230/pdb-14477047.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/pdb_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The 32 channel video transmitter is on the right.&lt;/p&gt;
-
-&lt;p&gt;I see an MP1593DN, 28v 3A voltage regulator on the PDB. You could run this on 6s, assuming the ESCs can handle it.&lt;/p&gt;
-
-&lt;p&gt;Speaking of ESCs, I spent a while looking for them, when I finally realized, they&amp;#39;re are in the arms!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.57177714518096%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-escs-bd-a-c-jpg" href="../../../../../assets/images/blog/beerotor/victory230/escs-bd88a2c2.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/escs_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;How is that possible!? The inner diameter of the carbon arms is 10mm. Those are some skinny ESCs!&lt;/p&gt;
-
-&lt;p&gt;The trick to re-assembly is to get all your arms ready to go, with the plastic U connectors (4 per arm) attached, then flip the arms up, one at a time, and drop a screw or two into each, then work the bottom plate on.&lt;/p&gt;
-
-&lt;p&gt;Also, make sure you securely tighten the gold SMA plug on the back. It&amp;#39;s bad news for your video transmitter if this plug comes un-screwed and your antenna doesn&amp;#39;t make full contact with the connector. Use the same socket wrench as you used to remove your props, 8mm, to tighten.&lt;/p&gt;
-
-&lt;h2 id="installation"&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;There are a few things to do when you get your Victory230 in the mail.&lt;/p&gt;
-
-&lt;h3 id="batteries"&gt;Batteries&lt;/h3&gt;
-
-&lt;p&gt;The first thing I did was try to figure out where to put the receiver. To figure out the best place for it, I fit all the other stuff that needs to go on the quad, starting with batteries.&lt;/p&gt;
-
-&lt;p&gt;1500mah is a good fit:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-mah-e-ddff-jpg" href="../../../../../assets/images/blog/beerotor/victory230/1500mah-3e2ddff6.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/1500mah_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I plan to fly 2200mah, they barely fit:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-mah-aba-f-jpg" href="../../../../../assets/images/blog/beerotor/victory230/2200mah-aba38f28.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/2200mah_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I wonder how long it will fly with a 900mah?&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-mah-e-bf-b-jpg" href="../../../../../assets/images/blog/beerotor/victory230/900mah-e412bf8b.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/900mah_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="hd-camera"&gt;HD Camera&lt;/h3&gt;
-
-&lt;p&gt;Hum... I think I need a different kind of HD camera or some sort of stand-off setup.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-xiaomi-yi-f-bec-jpg" href="../../../../../assets/images/blog/beerotor/victory230/xiaomi-yi-05f42bec.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/xiaomi-yi_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Since my &lt;a href="http://www.banggood.com/Original-XiaoYi-Ambarella-A7LS-BSI-CMOS-WIFI-Sports-Action-Camera-p-969228.html?p=1G09211226617201502J"&gt;XiaoMi Yi&lt;/a&gt; doesn&amp;#39;t fit upfront, at least with 5&amp;quot; props, that&amp;#39;s where I&amp;#39;ll put the receiver! With smaller props, my XiaoMi would fit up front, and I&amp;#39;d find a place for the RX in back.&lt;/p&gt;
-
-&lt;h3 id="receiver"&gt;Receiver&lt;/h3&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-rx-placement-a-jpg" href="../../../../../assets/images/blog/beerotor/victory230/rx-placement-378a9720.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/rx-placement_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This OpenLRS RX is setup for PPM, so I&amp;#39;ll use this plug.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-ppm-dd-jpg" href="../../../../../assets/images/blog/beerotor/victory230/ppm-dd659170.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/ppm_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I re-routed it up to the front. I can&amp;#39;t say that I&amp;#39;ve had a vibration damped receiver before. I also re-routed the power connector out the side, so my 2200mah battery fits better on top.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-rx-installed-e-e-d-jpg" href="../../../../../assets/images/blog/beerotor/victory230/rx-installed-60e5e7d4.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/rx-installed_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you have a smaller RX, it will probably fit right behind the camera.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-behind-the-cam-f-e-jpg" href="../../../../../assets/images/blog/beerotor/victory230/behind-the-cam-f44e0432.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/behind-the-cam_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="flashing-betaflight"&gt;Flashing BetaFlight&lt;/h2&gt;
-
-&lt;p&gt;Plug it into a USB port on your computer. The micro usb port is on the back, along with 12 programmable LEDs.&lt;/p&gt;
-
-&lt;p&gt;You&amp;#39;ll need the &lt;a href="https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx"&gt;CP210x driver&lt;/a&gt; from the Silicon Labs website.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-usb-jpg" href="../../../../../assets/images/blog/beerotor/victory230/usb-70540215.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/usb_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Mine had CleanFlight 1.11.0 on it, with what appear to be CleanFlight&amp;#39;s default PIDs.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;#39;s upgrade to BetaFlight.&lt;/p&gt;
-
-&lt;p&gt;Like all F3 chips, make sure you set the manual baud rate to &lt;code&gt;256000&lt;/code&gt;. I also set &lt;code&gt;Full chip erase&lt;/code&gt; when switching to BetaFlight.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.2112676056338%;'&gt;&lt;a id="assets-images-blog-flight-controllers-brf-cf-f-manual-baud-afe-fd-png" href="../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-afe571fd.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flight_controllers/brf3/cf-f3-manual-baud-afe571fd.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Download the latest version of &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;BetaFlight&lt;/a&gt; from the github.com release page &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;https://github.com/borisbstyle/betaflight/releases/&lt;/a&gt;. You want the file: &lt;code&gt;betaflight_SPRACINGF3.hex&lt;/code&gt;. If you&amp;#39;re going to be using my config from here &lt;a href="https://gist.github.com/nathantsoi/8e5cac9dbec4d901ab8d"&gt;https://gist.github.com/nathantsoi/8e5cac9dbec4d901ab8d&lt;/a&gt;, check the version at the top of the config file and make sure it matches the release version you download.&lt;/p&gt;
-
-&lt;p&gt;Click the &lt;code&gt;Load local firmware&lt;/code&gt; button and pick the &lt;code&gt;betaflight_SPRACINGF3.hex&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;p&gt;Click &lt;code&gt;Flash Firmware&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;If for some reason that doesn&amp;#39;t work, flashing via bootloader mode is amazingly easy. Just unplug the Victory230 from the USB cable, hold the boot button down while you power it on by plugging the USB back in. Choose &amp;quot;no reboot&amp;quot; and hit flash.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-inside-boot-d-a-jpg" href="../../../../../assets/images/blog/beerotor/victory230/inside-boot-3597d3a2.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/inside-boot-3597d3a2.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="video-transmitter"&gt;Video Transmitter&lt;/h2&gt;
-
-&lt;p&gt;The button on the back controls the video transmitter.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-vtx-e-jpg" href="../../../../../assets/images/blog/beerotor/victory230/vtx-763e9291.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/vtx-763e9291.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Long press to change bands. Short press to change channels within the band.&lt;/p&gt;
-
-&lt;p&gt;Here are the available channels:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 26.5625%;'&gt;&lt;a id="assets-images-blog-fpv-channels-elgae-fov-bfde-jpg" href="../../../../../assets/images/blog/fpv_channels/elgae-fov127-529bfde2.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/fpv_channels/elgae-fov127-529bfde2.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The OSD won&amp;#39;t worked when plugged into USB, so unplug the USB before testing the camera.&lt;/p&gt;
-
-&lt;p&gt;Protip, look in the side to see what channel you&amp;#39;re on.&lt;/p&gt;
-
-&lt;p&gt;Looking from this side the LEDs order is:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;8 7 6 5 4 3 2 1 A B E F&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-vtx-leds-jpg" href="../../../../../assets/images/blog/beerotor/victory230/vtx-leds-69353604.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/vtx-leds-69353604.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="configuring-betaflight"&gt;Configuring BetaFlight&lt;/h2&gt;
-
-&lt;p&gt;I&amp;#39;ll walk you though the configuration for BetaFlight with the CleanFlight configurator.&lt;/p&gt;
-
-&lt;p&gt;These instructions apply to any CleanFlight compatible F3 flight controller, not just the Victory230.&lt;/p&gt;
-
-&lt;p&gt;We&amp;#39;ll look at each screen we need to configure in the GUI and go over the settings.&lt;/p&gt;
-
-&lt;p&gt;Note that for every screen in the GUI, there are corresponding commands you can paste into the &lt;code&gt;CLI&lt;/code&gt; tab (it&amp;#39;s the bottom tab) and type &lt;code&gt;save&lt;/code&gt;. I&amp;#39;ve posted my whole config here: &lt;a href="https://gist.github.com/nathantsoi/8e5cac9dbec4d901ab8d"&gt;https://gist.github.com/nathantsoi/8e5cac9dbec4d901ab8d&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id="calibration"&gt;Calibration&lt;/h3&gt;
-
-&lt;p&gt;Set the copter on something really flat and stable, preferably not the table you&amp;#39;re working on, so it stays as still as possible, hit &lt;code&gt;Calibrate Accelerometer&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.1443661971831%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-calibrate-acc-b-ef-cea-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-calibrate-acc-b2ef1cea.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-calibrate-acc-b2ef1cea.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you have plugged in a magnetometer, calibrate that as well.&lt;/p&gt;
-
-&lt;h3 id="serial-ports"&gt;Serial Ports&lt;/h3&gt;
-
-&lt;p&gt;If you&amp;#39;re using a serial receiver, like SBUS. Enable &lt;code&gt;Serial RX&lt;/code&gt; on UART3 in the &lt;code&gt;Ports&lt;/code&gt; tab.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.1443661971831%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-serial-rx-a-f-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-serial-rx-a1f51270.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-serial-rx-a1f51270.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;You would enable &lt;code&gt;GPS&lt;/code&gt; on UART2 as well, if you&amp;#39;re using GPS.&lt;/p&gt;
-
-&lt;h3 id="general-settings-amp-features"&gt;General Settings &amp;amp; Features&lt;/h3&gt;
-
-&lt;p&gt;Next, on the settings tab, I like to turn off &lt;code&gt;Disarm motors regardless of throttle value&lt;/code&gt; in case there is a glitch in the radio link and the aux switch goes low. The downside is, you need to remember to throttle all the way down to kill your motors, even after the aux switch is off. This only matters if you&amp;#39;re arming with a switch, as opposed to stick arming.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.1443661971831%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-disarm-f-d-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-disarm-9f309d61.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-disarm-9f309d61.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Scroll down and set your &lt;code&gt;Receiver Mode&lt;/code&gt;, I&amp;#39;m using PPM. Turn on &lt;code&gt;CURRENT_METER&lt;/code&gt; and set the scale to &lt;code&gt;380&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.1443661971831%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-rx-a-c-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-rx-1744a9c7.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-rx-1744a9c7.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Scroll down some more and turn on &lt;code&gt;LED_STRIP&lt;/code&gt; under &lt;code&gt;Other Features&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.1443661971831%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-led-ec-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-led-467137ec.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-led-467137ec.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Hit &lt;code&gt;Save and Reboot&lt;/code&gt;, then continue to the &lt;code&gt;PID Tuning&lt;/code&gt; tab.&lt;/p&gt;
-
-&lt;h3 id="pid-controller"&gt;PID Controller&lt;/h3&gt;
-
-&lt;p&gt;Switch &lt;code&gt;PID Controller&lt;/code&gt; to &lt;code&gt;LuxFloat&lt;/code&gt; and hit &lt;code&gt;Save&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.1443661971831%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-lux-a-b-b-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-lux-a15b0b82.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-lux-a15b0b82.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;LuxFloat is the best :)&lt;/p&gt;
-
-&lt;h3 id="receiver"&gt;Receiver&lt;/h3&gt;
-
-&lt;p&gt;Check the &lt;code&gt;Receiver&lt;/code&gt; tab. You should make sure channels 1 through 3 say 1500 with your sticks centered. If they don&amp;#39;t use the trim buttons on your transmitter to trim it out.&lt;/p&gt;
-
-&lt;p&gt;You should also check your endpoints, that is, the range of values the flight controller sees for each channel. Mine go from 1004 to 1994. You&amp;#39;ll want to make sure these are reasonably close to 1000 and 2000. If they&amp;#39;re not, adjust your transmitter.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.1443661971831%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-receiver-d-f-cc-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-receiver-d9f63cc5.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-receiver-d9f63cc5.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If your receiver can inject RSSI on a PPM channel set that via the CLI. I&amp;#39;m using channel 9:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;set rssi_channel = 9
-save
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id="switches"&gt;Switches&lt;/h3&gt;
-
-&lt;p&gt;Next, go to the modes tab. It will be empty. Set it up to look something like this:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.1443661971831%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-modes-fdd-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-modes-1-7fdd1279.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-modes-1-7fdd1279.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Scroll down and set a switch for GTUNE and the OSD if you would like.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.1443661971831%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-modes-a-ccb-a-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-modes-2-8a1ccb1a.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-modes-2-8a1ccb1a.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Your &lt;code&gt;AUX x&lt;/code&gt; channels might not match mine, depending on your receiver, so be sure to check the &lt;code&gt;Reciever&lt;/code&gt; tab if you need to figure out which switch got assigned which AUX port.&lt;/p&gt;
-
-&lt;p&gt;You shouldn&amp;#39;t need your receiver for a while, so feel free to turn that off, if you still have it on.&lt;/p&gt;
-
-&lt;h3 id="beeper"&gt;Beeper&lt;/h3&gt;
-
-&lt;p&gt;If you want to disable the beeper when you&amp;#39;re working on your quad, paste this in the CLI tab:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;set beeper_off_flags = 65535
-save
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Just remember to re-enable the beeper before flying, with:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;set beeper_off_flags = 0
-save
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id="calibrate-escs"&gt;Calibrate ESCS&lt;/h3&gt;
-
-&lt;p&gt;This will make sure all your ESCs start spinning the motors at the same speed, at the same time, which is very important during takeoff, landing, and fine maneuvers.&lt;/p&gt;
-
-&lt;p&gt;Make sure your props are off and grab a battery, don&amp;#39;t plug it in yet though.&lt;/p&gt;
-
-&lt;p&gt;Make sure you have an antenna plugged into your video transmitter. Whenever you power on a radio transmitter or receiver, it must have an antenna attached or it could seriously damage the device. Also makes sure you are using the included SMA antenna (the antenna plug should have a pin coming out of the middle), not a RP-SMA. Using the wrong type of antenna is as bad as not plugging one in at all.&lt;/p&gt;
-
-&lt;p&gt;Flip the warning switch that says &lt;code&gt;I understand...&lt;/code&gt; and slide the master slider up to max.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.1443661971831%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-motor-c-b-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-motor-1-688c4b41.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-motor-1-688c4b41.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Plug in the battery.&lt;/p&gt;
-
-&lt;p&gt;You&amp;#39;ll hear a series of ascending tones. Wait for those to stop and the monontous sounding tones to start (all the same pitch), then drag the master slider down to 0.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.1443661971831%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-motor-b-a-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-motor-2-b54913a8.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-motor-2-b54913a8.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;You&amp;#39;ll hear a series of descending tones in a minute, then it will stop. Unplug the battery and you&amp;#39;ve got calibrated ESCs! &lt;/p&gt;
-
-&lt;h3 id="led-strip"&gt;LED strip&lt;/h3&gt;
-
-&lt;p&gt;On the &lt;code&gt;LED Strip&lt;/code&gt; tab, scroll down and hit &lt;code&gt;Wire Ordering Mode&lt;/code&gt;. Click the grid 12 times, in order, then hit &lt;code&gt;Wire Ordering Mode&lt;/code&gt; again.&lt;/p&gt;
-
-&lt;p&gt;Then use the &lt;code&gt;LED Function&lt;/code&gt; buttons to set the led indicators or colors. I went with red along the bottom, with throttle in the middle and &lt;code&gt;Indicator&lt;/code&gt; e.g. turn sigals on the left and right.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.1443661971831%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-leds-d-ab-d-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-leds-7d6ab4d8.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-leds-7d6ab4d8.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;We set these already, but these options are for the current and voltage sensor, so if you need to set them again after an upgrade, just paste this into the CLI:&lt;/p&gt;
-
-&lt;h3 id="blackbox"&gt;Blackbox&lt;/h3&gt;
-
-&lt;p&gt;Check the blackbox tab. This is where you&amp;#39;ll go to download blackbox logs. If you have any data in use on the chip, you can go ahead and erase it now.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.1443661971831%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-bb-bd-a-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-bb-bd8797a9.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-bb-bd8797a9.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="cli"&gt;CLI&lt;/h3&gt;
-
-&lt;p&gt;Finally, we get to the best part: CLI.&lt;/p&gt;
-
-&lt;p&gt;The CLI contains a superset of all the settings available in the configurator. All the settings can be set here by typing or pasting in the command. When you&amp;#39;re done, make sure you type &lt;code&gt;save&lt;/code&gt; and press enter. The board will reboot and you&amp;#39;ll be good to go.&lt;/p&gt;
-
-&lt;p&gt;Checkout the full documentation here to figure out what a specific parameter does: &lt;a href="https://github.com/cleanflight/cleanflight/blob/master/docs/Cli.md"&gt;https://github.com/cleanflight/cleanflight/blob/master/docs/Cli.md&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I bet you were wondering why we flashed BetaFlight instead of CleanFlight? Aside from the awesome stuff like filters and task scheduler, we can enable 2khz mode (500ms looptime), with:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;set gyro_lpf=OFF
-save
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;After rebooting, go back to the &lt;code&gt;CLI&lt;/code&gt; tab. You can see we&amp;#39;re running a 500ms looptime. The &lt;code&gt;status&lt;/code&gt; command will tell you system load and the &lt;code&gt;tasks&lt;/code&gt; command will tell you what the flight controller is busy doing. No need to run &lt;code&gt;save&lt;/code&gt; after these, as there is nothing to save.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.1443661971831%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-khz-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-2khz-18492396.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-2khz-18492396.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;You can grab my whole config here: &lt;a href="https://gist.github.com/nathantsoi/8e5cac9dbec4d901ab8d"&gt;https://gist.github.com/nathantsoi/8e5cac9dbec4d901ab8d&lt;/a&gt;. Feel free to leave a comment with your settings or share a gist!&lt;/p&gt;
-
-&lt;h3 id="failsafe"&gt;Failsafe&lt;/h3&gt;
-
-&lt;p&gt;It&amp;#39;s super important you understand how failsafe works so that your quad doesn&amp;#39;t fly away from you, never to return. Or, if it&amp;#39;s flying right at your face, you know how to turn it off before it slices you up!&lt;/p&gt;
-
-&lt;p&gt;There are 2 failsafe stages now in CleanFlight/BetaFlight&lt;/p&gt;
-
-&lt;p&gt;Josh explains here:&lt;/p&gt;
-
-&lt;div class="videoWrapper"&gt;
-  &lt;iframe width="853" height="480" src="https://www.youtube.com/embed/dikr9oDzQqc" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;And the full documentation is here: &lt;a href="https://github.com/cleanflight/cleanflight/blob/master/docs/Failsafe.md"&gt;https://github.com/cleanflight/cleanflight/blob/master/docs/Failsafe.md&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I like to setup my failsafe so that:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;In stage 1, hold throttle position, to keep doing whatever was going on before the link was lost. This will make sure the quad doesn&amp;#39;t fall out of the sky. The downside is that it could continue running at full throttle for a few milliseconds. I also turn down &lt;code&gt;failsafe_delay&lt;/code&gt; from 1 second to 500ms. This is the amount of time the throttle will be held at its last position with &lt;code&gt;rxfailsafe 3 h&lt;/code&gt; before stage two takes effect.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;rxfail 3 h&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;set failsafe_delay = 5&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;In stage 2, throttle down. Stage 2 is when the quad goes into autolevel and descends. This value will make sure the quad falls fast. I&amp;#39;d rather come down quickly and crash instead of potentially running into someone or something with the motors throttled up.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;set failsafe_throttle = 1000&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Make sure you save after pasting these into the CLI, with the &lt;code&gt;save&lt;/code&gt; command, then enter.&lt;/p&gt;
-
-&lt;p&gt;Once you&amp;#39;ve got in configured, benchtest the failsafe:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Remove the props&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Turn on the quad and receiver like normal, arm and throttle up.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Turn off the receiver.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The quad&amp;#39;s motors should spin for just over 100ms and then all turn off.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This way you know that if you loose signal, you won&amp;#39;t lose your quad.&lt;/p&gt;
-
-&lt;h2 id="tuning"&gt;Tuning&lt;/h2&gt;
-
-&lt;p&gt;Note that in my BetaFlight 2.3.5 config &lt;a href="https://gist.github.com/nathantsoi/8e5cac9dbec4d901ab8d"&gt;https://gist.github.com/nathantsoi/8e5cac9dbec4d901ab8d&lt;/a&gt; for the Victory230, I have set the default PID values. You should tune these to your liking given your battery and prop choice.&lt;/p&gt;
-
-&lt;p&gt;Also, I have enabled Air Mode on a switch, which is outstanding. However, you must be aware of several things when using Air Mode. It&amp;#39;s described &lt;a href="https://github.com/borisbstyle/betaflight/wiki/Frequently-Asked-Questions#how-do-i-enable-air-mode-"&gt;on the BetaFlight wiki&lt;/a&gt; in detail, but here&amp;#39;s the gist:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Arm with a switch (like in my config), arming via sticks is risky.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Set &lt;code&gt;min_throttle&lt;/code&gt; as low as possible by finding the throttle value (in the motors tab) at which all 4 motors spin reliably without twitching, then add 10 to that number and set that as &lt;code&gt;min_throttle&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;min_check&lt;/code&gt; determines your lowest possible throttle. Set it low, to &lt;code&gt;1020&lt;/code&gt; or so (I&amp;#39;ve done this in my config). In Air Mode, &lt;code&gt;min_check&lt;/code&gt; defines the minimum throttle sent to the motors. My Victory230 wouldn&amp;#39;t come down with the default value of &lt;code&gt;1100&lt;/code&gt;, it was just hovering. Wow, that&amp;#39;s a lot of power :)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The tuning procedure is described here: &lt;a href="https://github.com/borisbstyle/betaflight/wiki/Frequently-Asked-Questions#how-should-i-tune-my-copter-"&gt;https://github.com/borisbstyle/betaflight/wiki/Frequently-Asked-Questions#how-should-i-tune-my-copter-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Go fly then come back and download the dataflash to your computer. It takes forever, be patient.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.2112676056338%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cf-dataflash-e-a-ec-png" href="../../../../../assets/images/blog/beerotor/victory230/cf-dataflash-03e3a6ec.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cf-dataflash-03e3a6ec.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Once you&amp;#39;ve downloaded the blackbox logs, install the log viewer from the chrome web store to explore them: &lt;a href="https://chrome.google.com/webstore/detail/cleanflight-blackbox-expl/cahpidddaimdojnddnahjpnefajpheep"&gt;https://chrome.google.com/webstore/detail/cleanflight-blackbox-expl/cahpidddaimdojnddnahjpnefajpheep&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Then erase your flash so you&amp;#39;re ready for the next tuning session.&lt;/p&gt;
-
-&lt;h2 id="flashing-scarabosd"&gt;Flashing ScarabOSD&lt;/h2&gt;
-
-&lt;p&gt;Install your &lt;a href="http://www.banggood.com/CJMCU-CP2102-USB-To-TTLSerial-Module-UART-STC-Downloader-p-970993.html?p=1G09211226617201502J"&gt;USB/UART adapter&lt;/a&gt; like this:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 47.021484375%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-cp-d-fc-cc-jpg" href="../../../../../assets/images/blog/beerotor/victory230/cp2102-7d0fc3cc.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/cp2102-7d0fc3cc.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;You&amp;#39;ll then flash and configure it the same way as described in the &lt;a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/#flash-scarab-osd"&gt;the OZE32 ScarabOSD flashing guide&lt;/a&gt;. My configuration files are available below.&lt;/p&gt;
-
-&lt;h2 id="osd-configuration"&gt;OSD Configuration&lt;/h2&gt;
-
-&lt;p&gt;My &lt;code&gt;Config.h&lt;/code&gt; is available here: &lt;a href="https://gist.github.com/nathantsoi/ac3a3c01f21089cf1bc2"&gt;https://gist.github.com/nathantsoi/ac3a3c01f21089cf1bc2&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;to use, click &lt;code&gt;Raw&lt;/code&gt; and then save as Config.h in the &lt;code&gt;MW_OSD&lt;/code&gt; folder you extracted from the ScarabOSD release page.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;My &lt;code&gt;scarab-osd.osd&lt;/code&gt; is available here: &lt;a href="https://gist.github.com/nathantsoi/1ba3c5cc4892022b04ab"&gt;https://gist.github.com/nathantsoi/1ba3c5cc4892022b04ab&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;to use, open the GUI, connect and click the little &lt;code&gt;LOAD&lt;/code&gt; button on the left, under &lt;code&gt;DISK&lt;/code&gt;. Then hit &lt;code&gt;WRITE&lt;/code&gt; under &lt;code&gt;OSD CONTROLS&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 53.81708238851096%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-scarabosd-ed-bf-png" href="../../../../../assets/images/blog/beerotor/victory230/scarabosd-9ed9bf16.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/scarabosd-9ed9bf16.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you don&amp;#39;t get text overlay, try switching from NTSC to PAL. Don&amp;#39;t worry, almost all monitors and goggles handle either PAL or NTSC. Unfortunately, my &lt;a href="/blog/2016/02/06/hmdvr-fpv-video-recorder/"&gt;HMDVR&lt;/a&gt; crops PAL video.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 55.24861878453039%;'&gt;&lt;a id="assets-images-blog-minimosd-pal-ntsc-a-b-c-png" href="../../../../../assets/images/blog/minimosd/pal-ntsc-a3400b9c.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/minimosd/pal-ntsc-a3400b9c.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If your display doesn&amp;#39;t have all the fields, open the layout editor, update anything (or nothing) and hit &lt;code&gt;WRITE&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 106.70391061452513%;'&gt;&lt;a id="assets-images-blog-minimosd-layout-editor-a-a-png" href="../../../../../assets/images/blog/minimosd/layout-editor-a34a8906.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/minimosd/layout-editor-a34a8906.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you&amp;#39;re fonts look all weird, under &lt;code&gt;FONT TOOLS&lt;/code&gt; hit &lt;code&gt;SELECT&lt;/code&gt; open the data folder and pick the font you want to use. I used &lt;code&gt;default.mcm&lt;/code&gt;. Hit &lt;code&gt;Open&lt;/code&gt; then hit &lt;code&gt;Upload&lt;/code&gt;, still in the &lt;code&gt;FONT TOOLS&lt;/code&gt; section.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.66465256797582%;'&gt;&lt;a id="assets-images-blog-minimosd-pick-font-c-png" href="../../../../../assets/images/blog/minimosd/pick-font-348168c7.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/minimosd/pick-font-348168c7.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="esc-configuration"&gt;ESC Configuration&lt;/h2&gt;
-
-&lt;p&gt;The X-rotor 20A ESCs are pre-flashed with the BlHeli bootloader, so if you ever need to change any settings, you can use the CleanFlight passthrough programmer in BlHeli.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 97.5054229934924%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-blheli-passthrough-f-e-png" href="../../../../../assets/images/blog/beerotor/victory230/blheli-passthrough-946f73e4.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/beerotor/victory230/blheli-passthrough-946f73e4.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I didn&amp;#39;t upgrade my ESCS, since they come with BlHeli 14.3, but checkout the &lt;a href="/blog/2015/12/06/blheli-configuration/"&gt;BlHeli ESC Upgrading and Configuration&lt;/a&gt; guide for more details on updating your ESCs or changing settings.&lt;/p&gt;
-
-&lt;h2 id="further-reading"&gt;Further Reading&lt;/h2&gt;
-
-&lt;p&gt;Victory230 Manual: &lt;a href="http://www.rctimer.com/download/BeeRotor230Manual.pdf"&gt;http://www.rctimer.com/download/BeeRotor230Manual.pdf&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Post if you have any questions, comments or corrections. Thanks for reading and happy flying!&lt;/p&gt;
 </content>
   </entry>
 </feed>
