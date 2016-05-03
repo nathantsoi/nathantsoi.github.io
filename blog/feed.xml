@@ -21,11 +21,437 @@
     <content type="html"></content>
   </entry>
   <entry>
+    <title>Rctimer BeeRotor u210 mini quad build, setup and review</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/04/24/rctimer-u210-mini-quad-build-setup-and-review/"/>
+    <id>http://nathan.vertile.com/blog/2016/04/24/rctimer-u210-mini-quad-build-setup-and-review/</id>
+    <published>2016-04-24T14:22:00-07:00</published>
+    <updated>2016-05-03T09:37:01-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This is a build and setup guide for the new BeeRotor u210.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02046.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02046_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here&amp;#39;s some footage from the maiden flight:&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/-cSNH3Vv5fk?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id="review"&gt;Review&lt;/h2&gt;
+
+&lt;p&gt;The BeeRotor u210 uses an integrated PCB to make assembly easy. Combining this with the standard carbon fiber top and bottom plates (2mm) and 3mm carbon fiber arms, we get this without sacrificing strength.&lt;/p&gt;
+
+&lt;p&gt;It also decreases assembly time. I built mine in about 2 hours!&lt;/p&gt;
+
+&lt;p&gt;This is awesome, everything you need is included!&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01688.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01688_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 86.328125%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01699.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01699.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The frame kit even comes with an XT-60 lead, zip ties and battery straps!&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01693.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01693_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You might be thinking &amp;quot;why would I want to buy this when I could just get a separate PDB, flight controller, frame, etc.&amp;quot; Well, besides being easier to build, there are some really cool things that make this specific setup awesome.&lt;/p&gt;
+
+&lt;p&gt;First, you might have noticed that the PDB has some extra stuff on it. Notably these capacitors, which are inline with the ESC power wire and help minimize system noise caused by the ESCs.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01774.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01774_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Also, checkout these ESC covers. They may not seem that amazing at first, but they&amp;#39;re awesome because they let you easily change the motor connections on your ESC without cutting off the heat shrink, after you&amp;#39;ve assembled your quad.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01903.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01903_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Another interesting design choice is how the ESC signal wires are passed from the flight controller to the PDB:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01775.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01775_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Unfortunately, this requires soldering the flight controller to the PCB, which makes it a little harder, but not impossible to remove later. I think it would be nicer if instead, we soldered headers on the flight controller and used wires that were soldered to the PDB and terminated in 2.54mm female jumpers, much like how the video, beeper, led and power pins are set up.&lt;/p&gt;
+
+&lt;p&gt;In general, the PDB is really high quality, gold plated, 2mm thick:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01782.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01782_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The main carbon fiber plate is 2mm:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01841.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01841_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The arms are 3mm:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01837.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01837_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The actual voltage regulator components are on the bottom of the board&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01844.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01844_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Motor to motor distance is about 140mm back-to-front&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01863.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01863_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Side-to-side the motor distance is about 170mm&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01864.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01864_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It fits 5&amp;quot; props, just barely :)&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-beerotor-u-IMG-a-c-c-jpg" href="/assets/images/blog/beerotor/u210/IMG_20160430_194319-a58c5c31.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/IMG_20160430_194319_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="parts"&gt;Parts&lt;/h2&gt;
+
+&lt;p&gt;Everything you need except the receiver is included in the kit!&lt;/p&gt;
+
+&lt;table class="small-img"&gt;
+  &lt;tbody&gt;
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://rctimer.com/product-1635.html#r-pNathanT"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-beerotor-u-parts-ca-d-bc-bc-cc-jpg" href="/assets/images/blog/beerotor/u210/parts/2091ca2229d07bc9-bc087cc6.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/parts/2091ca2229d07bc9-bc087cc6.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://rctimer.com/product-1635.html#r-pNathanT"&gt;BeeRotor Ultra 210 FPV Racing Mini Quadcopter ARF combo, $239.99&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/FrSky-XSR-2_4GHz-16CH-ACCST-Receiver-S-Bus-CPPM-Output-Support-X9D-X9E-X9DP-X12S-X-Series-p-1031481.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-beerotor-u-parts-xsr-f-jpg" href="/assets/images/blog/beerotor/u210/parts/xsr-f0585666.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/parts/xsr-f0585666.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/FrSky-XSR-2_4GHz-16CH-ACCST-Receiver-S-Bus-CPPM-Output-Support-X9D-X9E-X9DP-X12S-X-Series-p-1031481.html?p=1G09211226617201502J"&gt;FrSky XSR, $28.69&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Total Cost: &lt;code&gt;$268.68&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id="tools"&gt;Tools&lt;/h2&gt;
+
+&lt;p&gt;Before we get started make sure you have the following tools and misc parts on hand:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;A &lt;a href="http://www.banggood.com/8-in-1-Hex-socket-driver-Hexagon-screwdriver-Set-For-RC-Models-p-1002287.html?p=1G09211226617201502J"&gt;proper hex driver set&lt;/a&gt;. You&amp;#39;ll need something that fits a 2.0mm hex socket head. I broke two right angle allen wrenches trying to screw the carbon plate to the plastic pieces of the quad-copter frame.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Soldering Iron. I have a Weller &lt;a href="http://amzn.to/1QWfalA"&gt;WES51&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;An &lt;a href="http://www.banggood.com/Metal-4_05_57_08_0mm-Hex-NUT-Key-Socket-Screw-Driver-Wrench-p-1050239.html?p=1G09211226617201502J"&gt;8mm socket wrench&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Blue Threadlocker. The cheapest place I&amp;#39;ve found to get this is &lt;a href="http://www.harborfreight.com/threadlocker-no-42-10-ml-medium-strength-65192.html"&gt;Harbor Freight&lt;/a&gt;, if you have one locally.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A &lt;a href="http://www.banggood.com/Wholesale-USB-To-TTL-COM-Converter-Module-buildin-In-CP2102-New-p-27989.html?p=1G09211226617201502J"&gt;CP2102&lt;/a&gt; USB/UART adapter for flashing and configuring the OSD.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="build"&gt;Build&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;#39;s built this!&lt;/p&gt;
+
+&lt;h3 id="pdb"&gt;PDB&lt;/h3&gt;
+
+&lt;p&gt;Start with the PDB, let&amp;#39;s attach the flight controller leads for the buzzer and video inputs and outputs. Tin these pads. You&amp;#39;ll notice the ground pads are much harder to tin. This is because they&amp;#39;re connected to the plane of the PCB which is a very large surface and takes longer to heat up than the other pads. You can turn up your soldering iron for these pads or just heat them for a little bit longer.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01784.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01784_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I used the video leads from the BRF3 package, which are a bit longer, you&amp;#39;ll see why in a bit. I trimmed them to about 60mm and tinned them.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01822.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01822_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It helps to use tweezers to align the wires and the pads.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01825.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01825_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Solder the leads on going across the board, then fold them back like so:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01787.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01787_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Plug in the PDB connector. This wire carries power from the PDB&amp;#39;s voltage regulator to power the BRF3.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01789.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01789_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now install the Video Transmitter (&lt;code&gt;VTX&lt;/code&gt;). There are 3 pins on one side and 4 pins on the other, so it only fits one way.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01793.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01793_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Flip the board over and solder the 7 pin headers into place. It&amp;#39;s not absolutely necessary, but it makes soldering slightly easier if you use a flux pen to flux the joints first. Just touch the tip of the pen to each pin to get some flux liquid in the joint before soldering.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01797.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01797_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If the solder isn&amp;#39;t coming down onto some of the solder pads, it just stays on the pin and you can see the gold pad still, turn up the heat on your iron.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01799.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01799_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Adding a capacitor to the video power supply is not absolutely necessary, but it will help eliminate noise from the video signal. This is especially important when there are more power fluctuations in the system. These power fluctuations are caused by the motors and the ESCs as they draw power (when throttling up) and add power (throttling down with damped light) into the system. The capacitor acts as part of an &lt;code&gt;LC filter&lt;/code&gt; to help smooth out these power fluctuations.&lt;/p&gt;
+
+&lt;p&gt;Since a capacitor is included, let&amp;#39;s go ahead and solder it onto the &lt;code&gt;VTX&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Capacitors do have a polarity (plus and minus side), so be sure to solder the pin with the white stripe to the far side of &lt;code&gt;VTX&amp;#39;s&lt;/code&gt; yellow component (which is also a capacitor, by the way) and the pin without the white stripe, to the far side of the black component (this component is a diode).&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ll mount the capacitor here, to minimize any chance that it could get in the way or be damaged in a crash. Note the folded arm is the &amp;quot;white stripe&amp;quot; side in this photo:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01802.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01802_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then I bent it like this, then trimmed the excess length from the pins.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01804.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01804_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01807.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01807_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Tin the end of the capacitor pins.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01808.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01808_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Tin the solder points on the VTX and then solder them together by putting a little blob of solder on your iron, holding the components together and touching each joint to let the solder flow between them.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01812.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01812_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We&amp;#39;re done soldering for now, so grab the included flight controller mounting hardware. Mine all came in a little bag: black plastic M3&lt;em&gt;5mm standoffs, M3&lt;/em&gt;12mm bolts (the longer ones in the little bag) and clear nylon nuts.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01814.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01814_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Install the bolts through the bottom of the PDB and screw on the black standoffs. Don&amp;#39;t use any threadlock, since threadlock will melt plastic nuts and bolts! Tightening them with your fingers should be enough, since the second nuts we&amp;#39;re about to install will act like a locknut.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01817.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01817_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note how the inside of the mounting holes on the PCB are not coated with a conductive material. This is great as it means the board can be safely mounted with metal screws or standoffs and it will not conduct through the screws.&lt;/p&gt;
+
+&lt;p&gt;Now we can attached the BRF3 flight controller. Plug in all the connectors first.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01819.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01819_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01820.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01820_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We&amp;#39;re about to cover the GPS port with the beeper, so if you&amp;#39;re going to use that in the future, plug it in before installing the flight controller.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01824.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01824_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here you can see why I used the longer video leads. I routed the wires around the post so they&amp;#39;re clear of the &lt;code&gt;OSD&lt;/code&gt; programming port to make access easier later.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01827.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01827_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now push it down onto the mounts and install the clear nuts. The one by the Spektrum satellite port doesn&amp;#39;t rotate, so back out the bolt and re-tighten it, going through both the standoff and the clear nut.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01831.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01831_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01832.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01832_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Solder the &lt;code&gt;ESC&lt;/code&gt; pins. It would be nice if these were a SH1.25 connector on the PDB side with female 2.54mm headers on the other side, so the flight controller could be removed without de-soldering these in the future.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01834.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01834_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now let&amp;#39;s install the arms. You&amp;#39;ll need the bag of 8 locknuts, the bag with 8x M3x12mm bolts, the arms, the bottom plate and the assembled PDB.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01835.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01835_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can put the bolts in either way, since the battery won&amp;#39;t be strapped to the bottom, but it feels cleaner to me to put the nuts on the inside, so I installed them like this:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01842.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01842_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 150.49019607843138%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01964.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01964_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="escs-and-motors"&gt;ESCS and Motors&lt;/h3&gt;
+
+&lt;p&gt;Prepare the ESCS by removing the heatshrink.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01870.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01870_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Remove the motor leads, the ground wire (untwist it from the signal wire first).&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01872.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01872_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The first time I tried this, I trimed the power leads to 20mm and the signal lead to 10mm. This didn&amp;#39;t work so well, so instead trim to about 45mm and 25mm respectively. Notice the ESC on the left has much shorter leads:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01885.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01885_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01888.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01888_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I&amp;#39;ll show you how to mount the ESCs like the one on the right in the photo above, to give the most flexibility allowing you to move it towards the frame or towards the motor. This will allow you to easily add or remove the landing gear from the hole in the quadcopter arm, without removing the ESC or motor.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01887.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01887_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Trim the ESC power and signal leads like so:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01884.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01884_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Tin the pads and leads, then solder the power and ground wires from the ESC onto the PDB. Make sure you solder the red to &lt;code&gt;+&lt;/code&gt; and black to &lt;code&gt;-&lt;/code&gt;. I had to turn my soldering iron all the way up for this, even then, I don&amp;#39;t think it was hot enough as the solder did not flow into a nice blob. It works, but isn&amp;#39;t super pretty.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01896.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01896_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then flip the ESC over and solder the signal wire.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01897.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01897_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Finish all four:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01891.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01891_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Trim your motor wires to about 35mm. Strip and tin the wires.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01893.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01893_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Solder the motor wires to the ESC. Note that motors &lt;code&gt;M2&lt;/code&gt; and &lt;code&gt;M3&lt;/code&gt; should be wired in the same order that they come out of the motor and motors &lt;code&gt;M1&lt;/code&gt; and &lt;code&gt;M4&lt;/code&gt; should have any two wires swapped. This can always be changed later if you forget, but it will save you from swapping two wires or changing the motor direction in BLHELI if a motor is rotating the wrong way.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;M2&lt;/code&gt; and &lt;code&gt;M3&lt;/code&gt; wiring:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01900.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01900_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;M1&lt;/code&gt; and &lt;code&gt;M4&lt;/code&gt; wiring:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01905.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01905_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Done!&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01891.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01891_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;While you have your soldering iron out, go ahead and solder on the XT-60 battery connector as well.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01938.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01938_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now install the plastic covers (which are awesome, btw) and bolt on the motors using the M3x6mm bolts and some blue threadlock. Use an ample amount of threadlock and tighten securely, but don&amp;#39;t over tighten. It is possible to strip the tapped holes in the motors, so be careful. Finger-tight is enough.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01903.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01903_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01935.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01935_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01942.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01942_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="receiver"&gt;Receiver&lt;/h3&gt;
+
+&lt;p&gt;Now would be the ideal time to plug in your receiver cable. I had to go back and do it later, but it&amp;#39;s a bit easier if you do it before installing the top plate. Check the &lt;a href="/blog/2016/02/03/rctimer-beerotorf3-flight-controller/#pinouts"&gt;pinouts&lt;/a&gt; on the BRF3 article if you&amp;#39;re not sure how these should be wired.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-ac-jpg" href="/assets/images/blog/beerotor/u210/DSC02002-1-59ac9976.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02002-1-59ac9976.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02001.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02001.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is my &lt;a href="http://www.banggood.com/FrSky-XSR-2_4GHz-16CH-ACCST-Receiver-S-Bus-CPPM-Output-Support-X9D-X9E-X9DP-X12S-X-Series-p-1031481.html?p=1G09211226617201502J"&gt;FrSKY XSR&lt;/a&gt;, wired for SBUS.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01994.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01994_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01997.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01997_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Find your video cable as well. Move the populated pins on the video header to the &lt;code&gt;Video&lt;/code&gt;, &lt;code&gt;Ground&lt;/code&gt; and &lt;code&gt;12v&lt;/code&gt; pins. Use a safety pin to release the wires from the connector as necessary.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01965.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01965_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01999.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01999_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Let&amp;#39;s assemble the top plate next. Grab the top plate, the camera plate, the two longer standoffs, four mid-size standoffs, four short standoffs and 12 of the smallest, M3x5mm screws. Using locktight, screw everything into place. Don&amp;#39;t forget to install the two mid-size standoffs on the back, like I did :)&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01952.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01952_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01957.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01957_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Install the little black rubber gasket in the &lt;code&gt;VTX&lt;/code&gt; hole. Insert the &lt;code&gt;VTX&lt;/code&gt; SMA adapter through the black rubber gasket. This isn&amp;#39;t easy. I had to push a pen through the hole first to open it up a bit, then shove the SMA adapter into the hole with the gasket then twist the plate to screw it onto the SMA adapter. Even though it&amp;#39;s a snug fit, don&amp;#39;t leave off the grommet! That would ground the carbon fiber frame to the video transmitter, which could wreak havoc on your video signal.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC01962.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC01962_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;With the brass washer between the rubber gasket and the nut, tighten the &lt;code&gt;VTX&lt;/code&gt; Adapter nut down using a 8mm socket wrench.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02009.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02009_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now would be a good time to install the velcro straps on the top plate. I didn&amp;#39;t do this until later and it was much more difficult.&lt;/p&gt;
+
+&lt;p&gt;Also, if you&amp;#39;re mounting the receiver to the top plate, zip tie that on now:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02005.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02005_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Grab the four longer M3x8mm screws and four more M3x5mm screws and install the top plate.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02009.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02009_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="camera"&gt;Camera&lt;/h3&gt;
+
+&lt;p&gt;Install the camera using the included camera mount.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02006.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02006_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Go as crazy as you want with the up-tilt:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02025.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02025_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Don&amp;#39;t forget to put one of the shorter little screws in the bottom of the mounting ring to hold the camera in place:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02024.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02024_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Install the red vibration dampeners, then the camera plate:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02007.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02007_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I like to put some zip ties on the frame, ends pointing up. Then use some heat shrink tube to attach these to the receiver antennas:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02017.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02017_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02020.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02020_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="configuration"&gt;Configuration&lt;/h2&gt;
+
+&lt;p&gt;Now let&amp;#39;s take a moment to test the motor direction, receiver, camera, and OSD before finishing the installation.&lt;/p&gt;
+
+&lt;p&gt;Make sure you install an antenna on your &lt;code&gt;VTX&lt;/code&gt; before powering it up, to avoid any damage to the transmitter. Make sure you use the proper type of antenna connector. You&amp;#39;ll need one with a pin in the middle. Using one without the pin could cause damage to the video transmitter.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02013.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02013_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="betaflight-configuration"&gt;BetaFlight Configuration&lt;/h3&gt;
+
+&lt;p&gt;Now let&amp;#39;s flash and configure the latest version of BetaFlight.&lt;/p&gt;
+
+&lt;p&gt;See the full configuration guide over on the &lt;a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/#configuring-betaflight"&gt;Victory 230, BetaFlight configuration&lt;/a&gt; guide, but basically:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;download the latest release from &lt;a href="https://github.com/borisbstyle/betaflight/releases/"&gt;the release page&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;paste my config into the cli: &lt;a href="https://gist.githubusercontent.com/nathantsoi/01207634878624ab6e03353c75291ce5/raw/beerotor-u160-betaflight.txt"&gt;https://gist.githubusercontent.com/nathantsoi/01207634878624ab6e03353c75291ce5/raw/beerotor-u160-betaflight.txt&lt;/a&gt;. Then type &lt;code&gt;SAVE&lt;/code&gt; and hit enter.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;switch to PPM if you&amp;#39;re not using SBUS&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;be sure to &lt;a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/#calibration"&gt;calibrate your accelerometer&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="scarab-osd"&gt;Scarab OSD&lt;/h3&gt;
+
+&lt;p&gt;Flash the latest version of Scarab OSD using your CP2102. Connect it like this:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02018.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02018_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;My &lt;code&gt;Config.h&lt;/code&gt; is available here: &lt;a href="https://gist.github.com/nathantsoi/ac3a3c01f21089cf1bc2"&gt;https://gist.github.com/nathantsoi/ac3a3c01f21089cf1bc2&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;to use, click &lt;code&gt;Raw&lt;/code&gt; and then save as Config.h in the &lt;code&gt;MW_OSD&lt;/code&gt; folder you extracted from the ScarabOSD release page.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My &lt;code&gt;scarab-osd.osd&lt;/code&gt; is available here: &lt;a href="https://gist.github.com/nathantsoi/1ba3c5cc4892022b04ab"&gt;https://gist.github.com/nathantsoi/1ba3c5cc4892022b04ab&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;to use, open the GUI, connect and click the little &lt;code&gt;LOAD&lt;/code&gt; button on the left, under &lt;code&gt;DISK&lt;/code&gt;. Then hit &lt;code&gt;WRITE&lt;/code&gt; under &lt;code&gt;OSD CONTROLS&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 53.81708238851096%;'&gt;&lt;a id="assets-images-blog-beerotor-victory-scarabosd-fde-a-png" href="/assets/images/blog/beerotor/victory230/scarabosd-2fde68a9.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/victory230/scarabosd-2fde68a9.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you don&amp;#39;t get text overlay, try switching from NTSC to PAL. Don&amp;#39;t worry, almost all monitors and goggles handle either PAL or NTSC. Unfortunately, my &lt;a href="/blog/2016/02/06/hmdvr-fpv-video-recorder/"&gt;HMDVR&lt;/a&gt; crops PAL video.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 55.24861878453039%;'&gt;&lt;a id="assets-images-blog-minimosd-pal-ntsc-a-b-c-png" href="/assets/images/blog/minimosd/pal-ntsc-a3400b9c.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/minimosd/pal-ntsc-a3400b9c.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If your display doesn&amp;#39;t have all the fields, open the layout editor, update anything (or nothing) and hit &lt;code&gt;WRITE&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 106.70391061452513%;'&gt;&lt;a id="assets-images-blog-minimosd-layout-editor-a-a-png" href="/assets/images/blog/minimosd/layout-editor-a34a8906.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/minimosd/layout-editor-a34a8906.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you&amp;#39;re fonts look all weird, under &lt;code&gt;FONT TOOLS&lt;/code&gt; hit &lt;code&gt;SELECT&lt;/code&gt; open the data folder and pick the font you want to use. I used &lt;code&gt;default.mcm&lt;/code&gt;. Hit &lt;code&gt;Open&lt;/code&gt; then hit &lt;code&gt;Upload&lt;/code&gt;, still in the &lt;code&gt;FONT TOOLS&lt;/code&gt; section.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.66465256797582%;'&gt;&lt;a id="assets-images-blog-minimosd-pick-font-c-png" href="/assets/images/blog/minimosd/pick-font-348168c7.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/minimosd/pick-font-348168c7.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Follow &lt;a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/#flash-scarab-osd"&gt;the OZE32 ScarabOSD flashing guide&lt;/a&gt; for more details.&lt;/p&gt;
+
+&lt;h3 id="calibrate-your-escs"&gt;Calibrate your ESCS&lt;/h3&gt;
+
+&lt;p&gt;Follow the &lt;a href="/blog/2015/12/06/blheli-calibration/#calibrate"&gt;ESC Calibration Guide&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="test-your-failsafe"&gt;Test your failsafe&lt;/h3&gt;
+
+&lt;p&gt;Be sure to check your failsafe before you fly.&lt;/p&gt;
+
+&lt;p&gt;Read the whole &lt;a href="/blog/2015/10/29/multirotor-setup-checklist/"&gt;pre-flight checklist here&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>AirBot Flip32 F3 AIO Lite and Typhoon 4-in-1 ESC</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/04/11/airbot-flip32-f3-aio-lite-and-typhoon-4-in-1-esc/"/>
     <id>http://nathan.vertile.com/blog/2016/04/11/airbot-flip32-f3-aio-lite-and-typhoon-4-in-1-esc/</id>
     <published>2016-04-11T13:56:00-07:00</published>
-    <updated>2016-04-25T11:01:36-07:00</updated>
+    <updated>2016-04-28T20:36:08-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -35,15 +461,15 @@
 
 &lt;p&gt;&lt;a href="http://shop.myairbot.com/index.php/flip32f3aio-lite.html" target="_blank"&gt;Airbot F3AIO-LITE&lt;/a&gt; F3 flight controller with 16MB of flash.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.80981595092024%;'&gt;&lt;a id="assets-images-blog-airbot-xf-aio-lite-f-bc-jpg" href="http://shop.myairbot.com/index.php/flip32f3aio-lite.html#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/airbot/xf3aio_lite_1200-f38322bc.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 76.80981595092024%;'&gt;&lt;a id="assets-images-blog-airbot-xf-aio-lite-f-bc-jpg" href="http://shop.myairbot.com/index.php/flip32f3aio-lite.html#r-pNathanT" class="linked-img "&gt;&lt;img src='/assets/images/blog/airbot/xf3aio_lite_1200-f38322bc.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;a href="http://shop.myairbot.com/index.php/typhoon4x20a4in1esc.html" target="_blank"&gt;Airbot Typhoon 4x20A 4in1 ESC&lt;/a&gt; which is 4 littlebee ESCs on a single 35x35mm PCB.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.96676737160121%;'&gt;&lt;a id="assets-images-blog-airbot-typhoon-x-a-in-escreleaseversion-f-fb-jpg" href="http://shop.myairbot.com/index.php/flip32f3aio-lite.html#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/airbot/typhoon4x20a4in1escreleaseversion_1-f21fb267.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.96676737160121%;'&gt;&lt;a id="assets-images-blog-airbot-typhoon-x-a-in-escreleaseversion-f-fb-jpg" href="http://shop.myairbot.com/index.php/typhoon4x20a4in1esc.html#r-pNathanT" class="linked-img "&gt;&lt;img src='/assets/images/blog/airbot/typhoon4x20a4in1escreleaseversion_1-f21fb267.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;a href="http://www.readytoflyquads.com/mini-power-distribution-board-with-2-bec-apmsensor" target="_blank"&gt;RTFQ Power Distribution Board&lt;/a&gt; which works in tadem with the flight controller to provide power along with voltage and current sensing.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 84.36185133239832%;'&gt;&lt;a id="assets-images-blog-airbot-pdb-xbec-pm-fab-f-jpg" href="http://www.readytoflyquads.com/mini-power-distribution-board-with-2-bec-apmsensor#r-pNathanT" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/airbot/3535pdb_2xbec_pm-1-fab8f214.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 84.36185133239832%;'&gt;&lt;a id="assets-images-blog-airbot-pdb-xbec-pm-fab-f-jpg" href="http://www.readytoflyquads.com/mini-power-distribution-board-with-2-bec-apmsensor#r-pNathanT" class="linked-img "&gt;&lt;img src='/assets/images/blog/airbot/3535pdb_2xbec_pm-1-fab8f214.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id="f3aio-lite"&gt;F3AIO-LITE&lt;/h3&gt;
 
@@ -51,13 +477,13 @@
 
 &lt;p&gt;It comes with the manual, pin headers and jumpers for the OSD / Flight controller selection&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-box-f-f-e-e-jpg" href="../../../../../assets/images/blog/airbot/box-f3-f32e527e.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/box-f3_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-box-f-f-e-e-jpg" href="/assets/images/blog/airbot/box-f3-f32e527e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/box-f3_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;On the front we see the Spektrum Satellite receiver port, USB port, STM32 ST-LINK debugging pins (broken out as pads) and the various 2.54mm header holes which are described in detail below in the &lt;a href="#f3aio-connection-diagram"&gt;connection diagram&lt;/a&gt; section.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 92.57692307692308%;'&gt;&lt;a id="assets-images-blog-airbot-f-front-e-a-ae-e-jpg" href="../../../../../assets/images/blog/airbot/f3-front-e2a0ae9e.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-front_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 92.57692307692308%;'&gt;&lt;a id="assets-images-blog-airbot-f-front-e-a-ae-e-jpg" href="/assets/images/blog/airbot/f3-front-e2a0ae9e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3-front_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 91.6923076923077%;'&gt;&lt;a id="assets-images-blog-airbot-f-back-f-ef-jpg" href="../../../../../assets/images/blog/airbot/f3-back-42f267ef.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-back_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 91.6923076923077%;'&gt;&lt;a id="assets-images-blog-airbot-f-back-f-ef-jpg" href="/assets/images/blog/airbot/f3-back-42f267ef.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3-back_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id="f3aio-pinouts"&gt;F3AIO Pinouts&lt;/h4&gt;
 
@@ -65,9 +491,9 @@
 
 &lt;p&gt;Both &lt;code&gt;RAM&lt;/code&gt; pins are connected, allowing power to pass from the video transmitter to the camera. This is also connected to the &lt;code&gt;V_sense&lt;/code&gt; line by a 0ohm resistor, which can be removed if you want. I prefer to leave these pins unused and power the camera and &lt;code&gt;VTX&lt;/code&gt; separately.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 89.92248062015504%;'&gt;&lt;a id="assets-images-blog-airbot-f-pinout-top-b-jpg" href="../../../../../assets/images/blog/airbot/f3-pinout-top-b8625379.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-pinout-top-b8625379.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 89.92248062015504%;'&gt;&lt;a id="assets-images-blog-airbot-f-pinout-top-b-jpg" href="/assets/images/blog/airbot/f3-pinout-top-b8625379.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3-pinout-top-b8625379.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 89.69258589511753%;'&gt;&lt;a id="assets-images-blog-airbot-f-pinout-bottom-d-jpg" href="../../../../../assets/images/blog/airbot/f3-pinout-bottom-2950d660.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-pinout-bottom-2950d660.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 89.69258589511753%;'&gt;&lt;a id="assets-images-blog-airbot-f-pinout-bottom-d-jpg" href="/assets/images/blog/airbot/f3-pinout-bottom-2950d660.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3-pinout-bottom-2950d660.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id="f3aio-jumper-settings"&gt;F3AIO Jumper Settings&lt;/h4&gt;
 
@@ -77,33 +503,33 @@
 
 &lt;p&gt;With the jumpers in this position, the USB port is connected to the OSD.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44938650306749%;'&gt;&lt;a id="assets-images-blog-airbot-f-osd-mode-b-ed-jpg" href="../../../../../assets/images/blog/airbot/f3-osd-mode-8055b5ed.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-osd-mode_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44938650306749%;'&gt;&lt;a id="assets-images-blog-airbot-f-osd-mode-b-ed-jpg" href="/assets/images/blog/airbot/f3-osd-mode-8055b5ed.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3-osd-mode_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h5 id="flight-controller-flashing-and-configuration-mode"&gt;Flight Controller Flashing and configuration mode&lt;/h5&gt;
 
 &lt;p&gt;With the jumpers in this position, the USB port is connected to the flight controller.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.45029039972668%;'&gt;&lt;a id="assets-images-blog-airbot-f-fc-mode-e-b-d-e-jpg" href="../../../../../assets/images/blog/airbot/f3-fc-mode-e0b4d9e9.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-fc-mode_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.45029039972668%;'&gt;&lt;a id="assets-images-blog-airbot-f-fc-mode-e-b-d-e-jpg" href="/assets/images/blog/airbot/f3-fc-mode-e0b4d9e9.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3-fc-mode_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h5 id="flight-mode"&gt;Flight Mode&lt;/h5&gt;
 
 &lt;p&gt;With the jumpers in this position, the USB port is disconnected and the OSD is connected to the flight controller.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.45890144137125%;'&gt;&lt;a id="assets-images-blog-airbot-f-osd-fc-mode-d-c-e-jpg" href="../../../../../assets/images/blog/airbot/f3-osd-fc-mode-d8c6046e.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-osd-fc-mode_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.45890144137125%;'&gt;&lt;a id="assets-images-blog-airbot-f-osd-fc-mode-d-c-e-jpg" href="/assets/images/blog/airbot/f3-osd-fc-mode-d8c6046e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3-osd-fc-mode_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id="f3aio-connection-diagram"&gt;F3AIO connection diagram&lt;/h4&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 61.1380985426787%;'&gt;&lt;a id="assets-images-blog-airbot-f-connection-f-cf-jpg" href="../../../../../assets/images/blog/airbot/f3-connection-711f17cf.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-connection_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 61.1380985426787%;'&gt;&lt;a id="assets-images-blog-airbot-f-connection-f-cf-jpg" href="/assets/images/blog/airbot/f3-connection-711f17cf.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3-connection_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Here&amp;#39;s how I chose to populate mine. I&amp;#39;m using a SBUS receiver: &lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-populated-ba-b-cb-jpg" href="../../../../../assets/images/blog/airbot/f3-populated-ba2b9cb3.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-populated_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-populated-ba-b-cb-jpg" href="/assets/images/blog/airbot/f3-populated-ba2b9cb3.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3-populated_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id="f3aio-flash-scarabosd"&gt;F3AIO Flash ScarabOSD&lt;/h4&gt;
 
 &lt;p&gt;If you plug in the board and see this when you launch the Scarab OSD configuration tool, it means you&amp;#39;ll need to update the Scarab OSD firmware:&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 40.28950542822678%;'&gt;&lt;a id="assets-images-blog-airbot-f-scarabosd-mismatching-version-dcf-d-png" href="../../../../../assets/images/blog/airbot/f3-scarabosd-mismatching-version-dcf7765d.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/f3-scarabosd-mismatching-version-dcf7765d.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 40.28950542822678%;'&gt;&lt;a id="assets-images-blog-airbot-f-scarabosd-mismatching-version-dcf-d-png" href="/assets/images/blog/airbot/f3-scarabosd-mismatching-version-dcf7765d.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3-scarabosd-mismatching-version-dcf7765d.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Flash and configure it the same way as described in the &lt;a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/#flash-scarab-osd"&gt;the OZE32 ScarabOSD flashing guide&lt;/a&gt;. My configuration files are available below.&lt;/p&gt;
 
@@ -133,27 +559,29 @@
 
 &lt;p&gt;I have the beta edition, expecting a few of the v1 in the mail. Here is what comes in the box:&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-box-typhoon-cbced-jpg" href="../../../../../assets/images/blog/airbot/box-typhoon-8cbced31.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/box-typhoon_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-box-typhoon-cbced-jpg" href="/assets/images/blog/airbot/box-typhoon-8cbced31.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/box-typhoon_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;You won&amp;#39;t need an extra capacitor to handle voltage spikes, like on the original LittleBee ESCs, since the Typhoon is engineered to handle the back-current.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 110.74698795180721%;'&gt;&lt;a id="assets-images-blog-airbot-typhoon-beta-front-c-jpg" href="../../../../../assets/images/blog/airbot/typhoon-beta-front-965c6773.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/typhoon-beta-front_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 110.74698795180721%;'&gt;&lt;a id="assets-images-blog-airbot-typhoon-beta-front-c-jpg" href="/assets/images/blog/airbot/typhoon-beta-front-965c6773.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/typhoon-beta-front_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 109.5067264573991%;'&gt;&lt;a id="assets-images-blog-airbot-typhoon-beta-back-d-b-jpg" href="../../../../../assets/images/blog/airbot/typhoon-beta-back-2d744b51.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/airbot/typhoon-beta-back_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 109.5067264573991%;'&gt;&lt;a id="assets-images-blog-airbot-typhoon-beta-back-d-b-jpg" href="/assets/images/blog/airbot/typhoon-beta-back-2d744b51.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/typhoon-beta-back_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Also, there is also an awesome new, upgraded version of the typhoon 4in1 that supports 6s! It uses the F396 processor and runs LittleBee 20A PRO firmware. Check it out here: (LittleBee Typhoon Pro)[&lt;a href="http://shop.myairbot.com/index.php/typhoon4x20a4in1esc-65.html#r-pNathanT"&gt;http://shop.myairbot.com/index.php/typhoon4x20a4in1esc-65.html#r-pNathanT&lt;/a&gt;]&lt;/p&gt;
 
 &lt;h3 id="rtfq-power-distribution-board"&gt;RTFQ Power Distribution Board&lt;/h3&gt;
 
 &lt;p&gt;It has 2 voltage regulators, one adjustable and one set to 5v. The little screw on the left is how the voltage on the variable regulator can be adjusted.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-flip-deluxe-pdb-top-ef-jpg" href="../../../../../assets/images/blog/flip-deluxe/pdb-top-ef154180.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flip-deluxe/pdb-top-ef154180.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-flip-deluxe-pdb-top-d-c-ec-jpg" href="/assets/images/blog/flip-deluxe/pdb-top-3d44c9ec.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/flip-deluxe/pdb-top-3d44c9ec.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-flip-deluxe-pdb-bottom-a-jpg" href="../../../../../assets/images/blog/flip-deluxe/pdb-bottom-02a92189.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flip-deluxe/pdb-bottom-02a92189.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-flip-deluxe-pdb-bottom-ff-c-jpg" href="/assets/images/blog/flip-deluxe/pdb-bottom-ff89391c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/flip-deluxe/pdb-bottom-ff89391c.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;It is cool the voltage can be adjusted, but I&amp;#39;m not sure when this is useful. Having some 12v and some 5v taps would cover 99% of all cases. Plus, the voltage regulator should be checked with a voltmeter before using it, so you&amp;#39;ll need to do the extra step of wiring a battery to the PDB and checking (and adjusting) the variable output before hooking up your gear.&lt;/p&gt;
 
 &lt;p&gt;The PDB build quality is good. It includes a 50a shut resistor which functions as a current sensor and should handle up to about 90 amps.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.43487563519658%;'&gt;&lt;a id="assets-images-blog-flip-deluxe-pdb-bottom-shunt-a-jpg" href="../../../../../assets/images/blog/flip-deluxe/pdb-bottom-shunt-a7187182.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/flip-deluxe/pdb-bottom-shunt_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.43487563519658%;'&gt;&lt;a id="assets-images-blog-flip-deluxe-pdb-bottom-shunt-b-a-jpg" href="/assets/images/blog/flip-deluxe/pdb-bottom-shunt-b471869a.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/flip-deluxe/pdb-bottom-shunt_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;You&amp;#39;ll want to connect the current sensor output &lt;code&gt;C_Sens&lt;/code&gt; from the PDB to the &lt;code&gt;CRNT&lt;/code&gt; pin on the F3AIO and the battery voltage &lt;code&gt;V_Sens&lt;/code&gt; output to the &lt;code&gt;BAT&lt;/code&gt; pin.&lt;/p&gt;
 
@@ -171,13 +599,13 @@
     </author>
     <content type="html">&lt;p&gt;This is a review and user guide for the &lt;a href="http://www.hobbyking.com/hobbyking/store/__66718__Turnigy_Reaktor_250W_10A_1_6S_Balance_Charger.html?aff=1624906"&gt;Turnigy Reaktor 250W 10A 1-6S Balance Charger&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-batteries-reaktor-ddffdce-jpg" href="../../../../../assets/images/blog/batteries/reaktor-ddffdce1.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/reaktor_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-batteries-reaktor-e-jpg" href="/assets/images/blog/batteries/reaktor-3384737e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/reaktor_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
 
 &lt;p&gt;Here&amp;#39;s everything that comes in the box:&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-batteries-reaktor-box-f-def-jpg" href="../../../../../assets/images/blog/batteries/reaktor-box-65f6def3.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/reaktor-box_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-batteries-reaktor-box-ba-f-jpg" href="/assets/images/blog/batteries/reaktor-box-12ba2f86.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/reaktor-box_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Features include:&lt;/p&gt;
 
@@ -235,7 +663,7 @@
     </author>
     <content type="html">&lt;p&gt;Hobbyking sent me some &lt;a href="http://www.hobbyking.com/hobbyking/store/__91183__Turnigy_Graphene_2200mAh_3S_45C_LiPo_Pack_w_XT60.html?aff=1624906"&gt;3s 2200mah Graphene&lt;/a&gt; and &lt;a href="http://www.hobbyking.com/hobbyking/store/__87989__Turnigy_Bolt_1300mAh_4S_15_2V_65_130C_High_Voltage_Lipoly_Pack_LiHV_.html?aff=1624906"&gt;4s 1300mah Turnigy Bolt&lt;/a&gt; batteries for testing and review. I flew them along with some of my other batteries and compared the data. Here&amp;#39;s what I found.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-batteries-all-compared-de-c-b-jpg" href="../../../../../assets/images/blog/batteries/all-compared-de3c285b.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/all-compared_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-batteries-all-compared-e-f-b-jpg" href="/assets/images/blog/batteries/all-compared-e7118f0b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/all-compared_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id="batteries-tested"&gt;Batteries Tested&lt;/h3&gt;
 
@@ -255,7 +683,7 @@
 
 &lt;p&gt;In short, the &lt;a href="http://www.hobbyking.com/hobbyking/store/__87989__Turnigy_Bolt_1300mAh_4S_15_2V_65_130C_High_Voltage_Lipoly_Pack_LiHV_.html?aff=1624906"&gt;Turnigy Bolt&lt;/a&gt; batteries are the most powerful (&lt;code&gt;P=IV&lt;/code&gt;). This chart shows the maximum power output (in Watts) by each battery. 4s batteries will always be more powerful than 3s batteries, I&amp;#39;ll explain more in a minute, but don&amp;#39;t discount the Graphene battery yet.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-batteries-power-c-f-c-png" href="../../../../../assets/images/blog/batteries/power-c2563f7c.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/power-c2563f7c.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-batteries-power-a-f-png" href="/assets/images/blog/batteries/power-a8062f78.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/power-a8062f78.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id="test-method"&gt;Test Method&lt;/h3&gt;
 
@@ -277,17 +705,17 @@
 
 &lt;p&gt;Here are the results:&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 62.43417203042715%;'&gt;&lt;a id="assets-images-blog-batteries-analysis-f-ac-d-jpg" href="../../../../../assets/images/blog/batteries/analysis-f10ac84d.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/analysis-f10ac84d.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 62.43417203042715%;'&gt;&lt;a id="assets-images-blog-batteries-analysis-b-bc-jpg" href="/assets/images/blog/batteries/analysis-b93215bc.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/analysis-b93215bc.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;First, look at the &lt;code&gt;max c tested&lt;/code&gt; chart in the top right. This is calculated by taking the max amps drawn and normalizing to the battery capacity. Since more amps will be drawn as the prop speed goes up and prop speed is a function of motor &lt;code&gt;KV&lt;/code&gt; rating, where &lt;code&gt;KV&lt;/code&gt;&amp;#39;s units are revolutions per volt, it makes sense that high voltage batteries will draw more current. Therefore, a higher voltage battery with a comparable c rating to a lower voltage battery will always output more power. This also means we should compare 3s and 4s batteries independently.&lt;/p&gt;
 
 &lt;p&gt;On the bottom half of the same chart we see the mean IR from each trough to peak measurement. Using peak detection, we identify the low and high points, then compute the IR by looking at the millivolt drop over the time periods where there are large positive increases in current consumption. Those points are shown on the following chart as the times between a turquoise dot followed by a red dot.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 115.69060773480663%;'&gt;&lt;a id="assets-images-blog-batteries-amps-ir-dc-d-png" href="../../../../../assets/images/blog/batteries/amps-ir-9dc78d54.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/amps-ir-9dc78d54.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 115.69060773480663%;'&gt;&lt;a id="assets-images-blog-batteries-amps-ir-f-png" href="/assets/images/blog/batteries/amps-ir-983f0793.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/amps-ir-983f0793.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;I normalized IR to a per-cell value to compare batteries of different voltage. My flight test results suggest that the Bolt batteries out-perform the Graphene batteries since they have a lower IR.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 98.59550561797754%;'&gt;&lt;a id="assets-images-blog-batteries-ir-d-f-jpg" href="../../../../../assets/images/blog/batteries/ir-9531d1f4.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/ir-9531d1f4.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 98.59550561797754%;'&gt;&lt;a id="assets-images-blog-batteries-ir-c-jpg" href="/assets/images/blog/batteries/ir-3455c067.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/ir-3455c067.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;These results were interesting, as I would expect the two new batteries to have a similar IR. I therefore decided to measure the IR on the bench with my Turnigy Reaktor charger.&lt;/p&gt;
 
@@ -295,7 +723,7 @@
 
 &lt;p&gt;Here are the results of the bench measurements vs. the field measurements. Recall this is &lt;code&gt;IR * -1&lt;/code&gt;, so the lower a bar extends, the higher IR, and therefore worse expected performance. Again, I normalized IR per cell so we can compare across different battery sizes:&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.18691588785047%;'&gt;&lt;a id="assets-images-blog-batteries-bench-vs-field-cadf-png" href="../../../../../assets/images/blog/batteries/bench-vs-field-64cadf12.png" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/bench-vs-field-64cadf12.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.18691588785047%;'&gt;&lt;a id="assets-images-blog-batteries-bench-vs-field-c-png" href="/assets/images/blog/batteries/bench-vs-field-c8809801.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/bench-vs-field-c8809801.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The Graphene battery performs better on the bench than the Bolt battery. So which number do we believe?&lt;/p&gt;
 
@@ -309,7 +737,7 @@
 
 &lt;p&gt;For example, the 4s chart shows that the Bolt battery outperforms my old TBC battery. The voltage drops on the new Bolt battery are much less severe than the voltage drops on the TBC battery. Note that these are from different flights, so the time at which the voltage drops is irrelevant in this comparison.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 36.89320388349515%;'&gt;&lt;a id="assets-images-blog-batteries-s-voltage-ee-a-jpg" href="../../../../../assets/images/blog/batteries/4s-voltage-0ee6a533.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/batteries/4s-voltage-0ee6a533.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 36.89320388349515%;'&gt;&lt;a id="assets-images-blog-batteries-s-voltage-f-f-jpg" href="/assets/images/blog/batteries/4s-voltage-73f36f50.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/4s-voltage-73f36f50.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;A small IR (e.g. minimal voltage drop) is crucial because, as voltage drops, prop speed and thrust decrease as well. Then this happens:&lt;/p&gt;
 
@@ -354,15 +782,15 @@
 
 &lt;p&gt;Since my only 3 position switch is already in use, I&amp;#39;ve setup the dial like a 3 position switch. Moving the dial will switch between adjusting P, I and D. I only adjust the roll and pitch axis, yaw will need to be tuned separately.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-inflight-adjustments-radio-bf-b-jpg" href="../../../../../assets/images/blog/inflight-adjustments/radio-68bf0b95.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/inflight-adjustments/radio-68bf0b95.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-inflight-adjustments-radio-bf-b-jpg" href="/assets/images/blog/inflight-adjustments/radio-68bf0b95.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/inflight-adjustments/radio-68bf0b95.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;I&amp;#39;ve mixed the &lt;code&gt;TRN&lt;/code&gt; and &lt;code&gt;GEAR&lt;/code&gt; switch in my radio so that when the &lt;code&gt;GEAR&lt;/code&gt; switch is down, flipping on &lt;code&gt;TRN&lt;/code&gt; send the channel high and when &lt;code&gt;GEAR&lt;/code&gt; is up, flipping &lt;code&gt;TRN&lt;/code&gt; sends the channel low. This way, I can control the direction of PID value (up or down) with &lt;code&gt;GEAR&lt;/code&gt; then make a small adjustment by flipping the momentary &lt;code&gt;TRN&lt;/code&gt; switch on and off.&lt;/p&gt;
 
 &lt;p&gt;Here&amp;#39;s how I mixed the switches in OpenTX:&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.048828125%;'&gt;&lt;a id="assets-images-blog-inflight-adjustments-mixer-c-fa-e-jpg" href="../../../../../assets/images/blog/inflight-adjustments/mixer-c83fa38e.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/inflight-adjustments/mixer-c83fa38e.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.048828125%;'&gt;&lt;a id="assets-images-blog-inflight-adjustments-mixer-c-fa-e-jpg" href="/assets/images/blog/inflight-adjustments/mixer-c83fa38e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/inflight-adjustments/mixer-c83fa38e.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 54.1015625%;'&gt;&lt;a id="assets-images-blog-inflight-adjustments-curve-f-bd-jpg" href="../../../../../assets/images/blog/inflight-adjustments/curve-f159bd83.jpg" class="linked-img colorbox"&gt;&lt;img src='../../../../../assets/images/blog/inflight-adjustments/curve-f159bd83.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 54.1015625%;'&gt;&lt;a id="assets-images-blog-inflight-adjustments-curve-f-bd-jpg" href="/assets/images/blog/inflight-adjustments/curve-f159bd83.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/inflight-adjustments/curve-f159bd83.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The PID specified by the dial are only adjusted up or down according to the direction of the &lt;code&gt;GEAR&lt;/code&gt; switch when &lt;code&gt;TRN&lt;/code&gt; is flicked on for a moment. No adjustment takes place until &lt;code&gt;TRN&lt;/code&gt; is flipped on.&lt;/p&gt;
 
@@ -384,37 +812,6 @@ save
 &lt;p&gt;You can test your setup by going to the PID tuning tab in the CleanFlight Configurator and using your radio to adjust the PIDs. Hit refresh in the configurator and you should see new values.&lt;/p&gt;
 
 &lt;p&gt;Note that the PIDs are not saved after disarming. To save my PIDS, I plug the multirotor into a computer, open the PID Tuning tab and hit save.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Drone Building at Maker Faire Bay Area 2016</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/03/23/drone-building-at-maker-faire-bay-area-2016/"/>
-    <id>http://nathan.vertile.com/blog/2016/03/23/drone-building-at-maker-faire-bay-area-2016/</id>
-    <published>2016-03-23T09:47:00-07:00</published>
-    <updated>2016-03-26T12:58:43-07:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-MF-BA-Badge-ebf-png" href="http://goo.gl/forms/djCWo2l39G" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/MF16BA_Badge_255-83ebf429.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you live in the SF Bay Area, come to Make Faire on May 20-22 and build a drone with me!&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;ll be hosting an exhibit called &lt;code&gt;Drone Building 101&lt;/code&gt; where I&amp;#39;ll be helping folks build their own FPV mini-quad. We&amp;#39;ll be building stuff like this little 160mm FPV racing drone: &lt;a href="/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"&gt;BeeRotor160 Build&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-beerotor-fc-c-c-jpg" href="/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/" class="linked-img "&gt;&lt;img src='../../../../../assets/images/blog/beerotor/fc-4-0c202c70.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Fill out this google form so I know you&amp;#39;re coming: &lt;a href="http://goo.gl/forms/djCWo2l39G"&gt;http://goo.gl/forms/djCWo2l39G&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Here are some ways you can join in on the fun:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;If you&amp;#39;re into drone building and would like to help others with their builds, fill out the above form and I&amp;#39;ll add you to the schedule!&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;If you have a mini-quad you&amp;#39;re working on building, bring it and we&amp;#39;ll help you get it setup and flying! Wondering what else you need to bring or what day to come? Fill out the form and I&amp;#39;ll coordinate!&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;If you&amp;#39;re new to the scene, order all the parts for a mini-quad, bring it to Maker Faire and we&amp;#39;ll help you build it! Wondering what parts to order? Fill out the form and I&amp;#39;ll help you out!&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;If you&amp;#39;re a supplier, I&amp;#39;m looking for sponsors to help other Maker&amp;#39;s make drones. Let me know, fill out the form!&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You can see the profile page for my exhibit on the Maker Faire website here: &lt;a href="http://makerfaire.com/maker/entry/55522/"&gt;http://makerfaire.com/maker/entry/55522/&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
 </feed>

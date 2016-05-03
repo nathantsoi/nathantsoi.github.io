@@ -25,6 +25,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/tags/betaflight/page/2</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/tags/cleanflight/page/2</loc>
     <priority>0.7</priority>
   </url>
@@ -246,10 +250,6 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2013/02/14</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2013/02</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -481,6 +481,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/04/24/rctimer-u210-mini-quad-build-setup-and-review</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016/04/25/eachine-vr-007-goggle-review</loc>
     <priority>0.7</priority>
   </url>
@@ -509,23 +513,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2013/02</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2013/03/29</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/slides/hellohadoop</loc>
+    <loc>http://nathan.vertile.com/slides/notes</loc>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2013/03</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/slides/notes</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -534,10 +542,6 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2013/04/16</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2013/04/24</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1173,7 +1177,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/lrs</loc>
+    <loc>http://nathan.vertile.com/blog/2013/04/24</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1241,7 +1245,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013/04</loc>
+    <loc>http://nathan.vertile.com/blog/tags/elastic-map-reduce</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1537,6 +1541,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/tags/210mm</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016</loc>
     <priority>0.7</priority>
   </url>
@@ -1546,6 +1554,10 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2016/04/25</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/04/24</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1845,7 +1857,11 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/elastic-map-reduce</loc>
+    <loc>http://nathan.vertile.com/blog/2013/04</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/lrs</loc>
     <priority>0.7</priority>
   </url>
 </urlset>
