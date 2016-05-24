@@ -5,52 +5,10 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-05-10T20:56:00-07:00</updated>
+  <updated>2016-05-04T11:02:00-07:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
-  <entry>
-    <title>HobbyKing Quanum V2 Pro Goggles</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"/>
-    <id>http://nathan.vertile.com/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/</id>
-    <published>2016-05-10T20:56:00-07:00</published>
-    <updated>2016-05-10T21:30:14-07:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;This is a build guide and review of the HobbyKing Quanum V2 Pro Goggles.&lt;/p&gt;
-
-&lt;p&gt;Here they are assembled:&lt;/p&gt;
-
-&lt;p&gt;&amp;lt;#%= img_span &amp;#39;blog/hk/quanum-v2-pro-goggles/&amp;#39; %&amp;gt;&lt;/p&gt;
-
-&lt;h2 id="unboxing"&gt;Unboxing&lt;/h2&gt;
-
-&lt;h2 id="build"&gt;Build&lt;/h2&gt;
-
-&lt;p&gt;Install the foam bumpers.&lt;/p&gt;
-
-&lt;p&gt;PHOTO&lt;/p&gt;
-
-&lt;p&gt;Remove the screen protector from monitor and insert it into the lower piece.&lt;/p&gt;
-
-&lt;p&gt;PHOTO&lt;/p&gt;
-
-&lt;p&gt;Assemble the lens by inserting the glass into the thicker plastic frame. The flat part should go down so it ends up like this.&lt;/p&gt;
-
-&lt;p&gt;PHOTO&lt;/p&gt;
-
-&lt;p&gt;Install the handles on the lens and place the lens in the goggle base.&lt;/p&gt;
-
-&lt;p&gt;PHOTO&lt;/p&gt;
-
-&lt;p&gt;The curved part points towards the screen.&lt;/p&gt;
-
-&lt;p&gt;PHOTO&lt;/p&gt;
-
-&lt;p&gt;Use some clear packing tape to secure the top and bottom.&lt;/p&gt;
-</content>
-  </entry>
   <entry>
     <title>STM32 hardfault debugging</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/05/04/stm32-hardfault-debugging/"/>
@@ -182,7 +140,7 @@ _HALT:
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/04/24/rctimer-u210-mini-quad-build-setup-and-review/"/>
     <id>http://nathan.vertile.com/blog/2016/04/24/rctimer-u210-mini-quad-build-setup-and-review/</id>
     <published>2016-04-24T14:22:00-07:00</published>
-    <updated>2016-05-23T09:19:33-07:00</updated>
+    <updated>2016-05-23T21:32:19-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -198,9 +156,9 @@ _HALT:
 
 &lt;h2 id="parts"&gt;Parts&lt;/h2&gt;
 
-&lt;p&gt;Everything you need except the &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;transmitter and receiver&lt;/a&gt;, &lt;a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;battery&lt;/a&gt; and &lt;a href="http://www.banggood.com/Wholesale-IMAX-B6-Digital-RC-Lipo-NiMH-battery-Balance-Charger-p-46220.html?p=1G09211226617201502J"&gt;charger&lt;/a&gt; is included in the kit!&lt;/p&gt;
+&lt;p&gt;Everything you need except the &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;transmitter and receiver&lt;/a&gt;, &lt;a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;battery&lt;/a&gt; and &lt;a href="http://www.banggood.com/Wholesale-IMAX-B6-Digital-RC-Lipo-NiMH-battery-Balance-Charger-p-46220.html?p=1G09211226617201502J"&gt;charger&lt;/a&gt; is included in the kit! You&amp;#39;ll also want some &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;good goggles&lt;/a&gt; if you&amp;#39;re just getting started.&lt;/p&gt;
 
-&lt;p&gt;If you&amp;#39;re just getting started, here&amp;#39;s what you&amp;#39;ll need:&lt;/p&gt;
+&lt;p&gt;This basic setup is great for a beginner:&lt;/p&gt;
 
 &lt;table class="small-img"&gt;
   &lt;tbody&gt;
@@ -243,7 +201,9 @@ _HALT:
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;You can read more about why I&amp;#39;ve picked these products over others on &lt;a href="https://airfield.io"&gt;Airfield.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Total Cost: &lt;code&gt;~$170&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You can read more about why I&amp;#39;ve picked these specific products and learn more about getting started over at &lt;a href="https://airfield.io"&gt;Airfield.io&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;If you already have the items above, get just the drone kit. It has everything you need including video transmitter and camera.&lt;/p&gt;
 
@@ -276,9 +236,9 @@ _HALT:
 &lt;li&gt;&lt;p&gt;This &lt;a href="http://www.banggood.com/615mm-Bike-Bone-Shape-Spanner-Wrench-Repair-Tool-10-Hexagon-Holes-p-923706.html?p=1G09211226617201502J"&gt;bike wrench&lt;/a&gt; works great for attaching and removing props. For $1.69, you can&amp;#39;t go wrong!&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02136.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02136_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
 &lt;h2 id="review"&gt;Review&lt;/h2&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-beerotor-u-DSC-JPG" href="/assets/images/blog/beerotor/u210/DSC02136.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/beerotor/u210/DSC02136_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The &lt;a href="http://rctimer.com/product-1635.html#r-pNathanT"&gt;BeeRotor u210&lt;/a&gt; uses an integrated PCB to make assembly easy. Combining this with the standard carbon fiber top and bottom plates (2mm) and 3mm carbon fiber arms, we get this without sacrificing strength.&lt;/p&gt;
 
@@ -848,6 +808,123 @@ _HALT:
 &lt;li&gt;&lt;p&gt;click the second to the left button, &lt;code&gt;Dec&lt;/code&gt;, until you get to &lt;code&gt;LiPo Termination&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;click the far right button to increase the &lt;code&gt;LiPo Termination&lt;/code&gt; value to it&amp;#39;s max value &lt;code&gt;4.3&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HobbyKing Graphene and Bolt High Voltage LiPo Battery Analysis</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/03/25/hobbyking-graphene-battery-analysis/"/>
+    <id>http://nathan.vertile.com/blog/2016/03/25/hobbyking-graphene-battery-analysis/</id>
+    <published>2016-03-24T21:49:00-07:00</published>
+    <updated>2016-04-05T22:08:38-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;Hobbyking sent me some &lt;a href="http://www.hobbyking.com/hobbyking/store/__91183__Turnigy_Graphene_2200mAh_3S_45C_LiPo_Pack_w_XT60.html?aff=1624906"&gt;3s 2200mah Graphene&lt;/a&gt; and &lt;a href="http://www.hobbyking.com/hobbyking/store/__87989__Turnigy_Bolt_1300mAh_4S_15_2V_65_130C_High_Voltage_Lipoly_Pack_LiHV_.html?aff=1624906"&gt;4s 1300mah Turnigy Bolt&lt;/a&gt; batteries for testing and review. I flew them along with some of my other batteries and compared the data. Here&amp;#39;s what I found.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-batteries-all-compared-e-f-b-jpg" href="/assets/images/blog/batteries/all-compared-e7118f0b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/all-compared_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="batteries-tested"&gt;Batteries Tested&lt;/h3&gt;
+
+&lt;p&gt;Shown in the photo above from left to right, these are the batteries I tested:&lt;/p&gt;
+
+&lt;p&gt;1x &lt;a href="http://www.banggood.com/Wholesale-Lion-Power-11_1V-1500mAh-40C-LiPo-Battery-BT695-p-65641.html?p=1G09211226617201502J"&gt;Lion Power 1500mah 40c 3S&lt;/a&gt; $13.59&lt;/p&gt;
+
+&lt;p&gt;2x &lt;a href="https://world.taobao.com/item/40573956829.htm?fromSite=main&amp;amp;_u=12br6phic92d"&gt;TBC 2200mah 25c 3S&lt;/a&gt; ~$8.20&lt;/p&gt;
+
+&lt;p&gt;2x &lt;a href="http://www.hobbyking.com/hobbyking/store/__91183__Turnigy_Graphene_2200mAh_3S_45C_LiPo_Pack_w_XT60.html?aff=1624906"&gt;Turnigy Graphene 2200mAh 3S 45C LiPo Pack w/ XT60&lt;/a&gt; $23.94&lt;/p&gt;
+
+&lt;p&gt;4x &lt;a href="http://www.hobbyking.com/hobbyking/store/__87989__Turnigy_Bolt_1300mAh_4S_15_2V_65_130C_High_Voltage_Lipoly_Pack_LiHV_.html?aff=1624906"&gt;Turnigy Bolt 1300mAh 4S 15.2V 65~130C High Voltage Lipoly Pack (LiHV)&lt;/a&gt; $24.73&lt;/p&gt;
+
+&lt;p&gt;2x &lt;a href="https://world.taobao.com/item/40573956829.htm?fromSite=main&amp;amp;_u=12br6phic92d"&gt;TBC 2200mah 25c 4S&lt;/a&gt; ~$11&lt;/p&gt;
+
+&lt;h3 id="wirecutter-version"&gt;Wirecutter Version&lt;/h3&gt;
+
+&lt;p&gt;In short, the &lt;a href="http://www.hobbyking.com/hobbyking/store/__87989__Turnigy_Bolt_1300mAh_4S_15_2V_65_130C_High_Voltage_Lipoly_Pack_LiHV_.html?aff=1624906"&gt;Turnigy Bolt&lt;/a&gt; batteries are the most powerful (&lt;code&gt;P=IV&lt;/code&gt;). This chart shows the maximum power output (in Watts) by each battery. 4s batteries will always be more powerful than 3s batteries, I&amp;#39;ll explain more in a minute, but don&amp;#39;t discount the Graphene battery yet.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-batteries-power-a-f-png" href="/assets/images/blog/batteries/power-a8062f78.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/power-a8062f78.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="test-method"&gt;Test Method&lt;/h3&gt;
+
+&lt;p&gt;You can read all about lab tests that look at Internal Resistance (IR) and power curves &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=2592234"&gt;here&lt;/a&gt;, which is awesome as it provides a solid basis of comparison, but at the end of the day, it doesn&amp;#39;t matter how well a battery performs in the lab if it doesn&amp;#39;t deliver in the field.&lt;/p&gt;
+
+&lt;p&gt;Therefore my goal in this article is to minimize all other variables with testing the batteries under real conditions -- flying at the field.&lt;/p&gt;
+
+&lt;p&gt;After charging each battery with my &lt;a href="/blog/2016/04/02/turnigy-reaktor-250w-charger/"&gt;Turnigy Reaktor 250W Charger&lt;/a&gt; I flew them with a &lt;a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"&gt;Victory230&lt;/a&gt; mini quad, recording the battery data via onboard blackbox logger.&lt;/p&gt;
+
+&lt;p&gt;While flying, my goal was to push each battery to it&amp;#39;s limit. I attempted to draw as much power as possible by flying straight up on 100% throttle, letting the quadcopter drop and then repeating the 100% throttle climb.&lt;/p&gt;
+
+&lt;p&gt;From this data, I choose the best flight for each battery type, where the &amp;quot;best&amp;quot; flight was the one in which the max power delivered was the highest. There were no flights that had significant outliers on this data point.&lt;/p&gt;
+
+&lt;p&gt;I then analyzed the blackbox data by programmatically calculating trough to peak amperage change on the biggest spikes. I then correlated this with the voltage data and computed mean IR per cell.&lt;/p&gt;
+
+&lt;p&gt;Along with this, I computed max C-rating tested (which is amp draw normalized to capacity), absolute max amps drawn, max point-in-time power drawn throughout the flight and the voltage curves.&lt;/p&gt;
+
+&lt;h3 id="results"&gt;Results&lt;/h3&gt;
+
+&lt;p&gt;Here are the results:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 62.43417203042715%;'&gt;&lt;a id="assets-images-blog-batteries-analysis-b-bc-jpg" href="/assets/images/blog/batteries/analysis-b93215bc.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/analysis-b93215bc.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;First, look at the &lt;code&gt;max c tested&lt;/code&gt; chart in the top right. This is calculated by taking the max amps drawn and normalizing to the battery capacity. Since more amps will be drawn as the prop speed goes up and prop speed is a function of motor &lt;code&gt;KV&lt;/code&gt; rating, where &lt;code&gt;KV&lt;/code&gt;&amp;#39;s units are revolutions per volt, it makes sense that high voltage batteries will draw more current. Therefore, a higher voltage battery with a comparable c rating to a lower voltage battery will always output more power. This also means we should compare 3s and 4s batteries independently.&lt;/p&gt;
+
+&lt;p&gt;On the bottom half of the same chart we see the mean IR from each trough to peak measurement. Using peak detection, we identify the low and high points, then compute the IR by looking at the millivolt drop over the time periods where there are large positive increases in current consumption. Those points are shown on the following chart as the times between a turquoise dot followed by a red dot.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 115.69060773480663%;'&gt;&lt;a id="assets-images-blog-batteries-amps-ir-f-png" href="/assets/images/blog/batteries/amps-ir-983f0793.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/amps-ir-983f0793.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I normalized IR to a per-cell value to compare batteries of different voltage. My flight test results suggest that the Bolt batteries out-perform the Graphene batteries since they have a lower IR.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 98.59550561797754%;'&gt;&lt;a id="assets-images-blog-batteries-ir-c-jpg" href="/assets/images/blog/batteries/ir-3455c067.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/ir-3455c067.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;These results were interesting, as I would expect the two new batteries to have a similar IR. I therefore decided to measure the IR on the bench with my Turnigy Reaktor charger.&lt;/p&gt;
+
+&lt;p&gt;IR varies by discharge level and temperature, so before measuring the IR with my charger, I charged each battery to it&amp;#39;s storage voltage and measured the temperature using my infrared thermometer. I kept the batteries out in the same place for a few hours and thankfully all batteries measured 74.4 degrees Fahrenheit.&lt;/p&gt;
+
+&lt;p&gt;Here are the results of the bench measurements vs. the field measurements. Recall this is &lt;code&gt;IR * -1&lt;/code&gt;, so the lower a bar extends, the higher IR, and therefore worse expected performance. Again, I normalized IR per cell so we can compare across different battery sizes:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.18691588785047%;'&gt;&lt;a id="assets-images-blog-batteries-bench-vs-field-c-png" href="/assets/images/blog/batteries/bench-vs-field-c8809801.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/bench-vs-field-c8809801.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The Graphene battery performs better on the bench than the Bolt battery. So which number do we believe?&lt;/p&gt;
+
+&lt;p&gt;Recall why I wanted to measure on the bench: the difference in IR between the two new sets of battery packs (Graphene and Bolt). It&amp;#39;s interesting that the bench measurements show the opposite result of the field testing. My guess is that this is because of the difference in load. On the bench the charger can only sink a few amps, whereas in the field, average IR for a flight is calculated using changes in amps drawn up to 80amps or more.&lt;/p&gt;
+
+&lt;p&gt;Therefore, I would tend to favor flight test data over bench test data, as it give a more realistic view of IR, that is IR under higher loads.&lt;/p&gt;
+
+&lt;h3 id="understanding-ir"&gt;Understanding IR&lt;/h3&gt;
+
+&lt;p&gt;Taking a step back, let&amp;#39;s look at how IR per cell relates to the voltage curve. A low IR battery&amp;#39;s voltage will drop less, when put under an equal load, than a battery with a higher IR. The batteries in the voltage curve with the smallest voltage drops (e.g. smallest troughs) should have the highest IR.&lt;/p&gt;
+
+&lt;p&gt;For example, the 4s chart shows that the Bolt battery outperforms my old TBC battery. The voltage drops on the new Bolt battery are much less severe than the voltage drops on the TBC battery. Note that these are from different flights, so the time at which the voltage drops is irrelevant in this comparison.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 36.89320388349515%;'&gt;&lt;a id="assets-images-blog-batteries-s-voltage-f-f-jpg" href="/assets/images/blog/batteries/4s-voltage-73f36f50.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/4s-voltage-73f36f50.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A small IR (e.g. minimal voltage drop) is crucial because, as voltage drops, prop speed and thrust decrease as well. Then this happens:&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="420" height="315" src="https://www.youtube.com/embed/yVA_LR6F3BQ?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h3 id="test-method-limitations"&gt;Test Method Limitations&lt;/h3&gt;
+
+&lt;p&gt;While I flew several batteries of each kind, I only tested one capacity of each type: 1300mah Bolt and 2200mah Graphene. It would be interesting to see if this changes for different capacity Graphene and Bolt batteries.&lt;/p&gt;
+
+&lt;p&gt;It is also interesting how well the IR rating corresponds to battery age. My TBC batteries are the oldest, the lionpower battery is fairly new and these were the first flights with the Bolt and Graphene Batteries.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ll need to get some new, low C-rated batteries to compare to the Graphene and Bolt batteries&amp;#39; IR and max power delivered.&lt;/p&gt;
+
+&lt;p&gt;Other limitations of my testing method include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Internal resistance changes at different temperatures. I intentionally stored the batteries in the same location before flying and flew these all on the same beautiful California day, close to the same time, with consistent weather throughout. They could however, have been slightly different temperatures.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;There are physical limitations to the amount of current I can demand from the battery with the &lt;a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"&gt;Victory230&lt;/a&gt;. It is equipped with 20a ESCs that are rated up to 4s, 2205 motors and 5&amp;quot; bullnose props. During testing I was able to pull a maximum of 86.84 amps, 6.84amps more than the ESCs can handle, but less than the 198 amps the Graphene batteries are rated for and less than the 169 amps for which the Bolt batteries are rated.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The 50 ohm shut resistor current sensor is rated to 90 amps. In the course of testing, the max amperage drawn from any battery was 86.84 amps, so I think this is a non-issue.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The 12 bit current sensor ADC on the STM32 has a fixed resolution of 1/4096. With a voltage range of 0-90 amps this implies we can measure down to .021972656 amps, which should be more than accurate enough for our purposes.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;My sensors could be improperly calibrated. While this doesn&amp;#39;t really matter for the purposes of this test, so long I&amp;#39;m within their range, it does mean that unless you have configured the exact same setup, my numbers may not be directly comparable to yours.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Battery age. My &lt;code&gt;TBC&lt;/code&gt; batteries are old. They&amp;#39;re almost exactly 1 year old. I didn&amp;#39;t record the exact number of flights on each one, but if I flew each once a week (on the weekend) they would have about 52 cycles. It will be interesting to see how the Graphene and Bolt batteries compare when they hit this age. It would also be nice to compare to some other new, performance batteries.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With these considerations in mind, I still think that flight test data is more useful in practice than bench IR tests.&lt;/p&gt;
 </content>
   </entry>
 </feed>
