@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link href='/favicon/apple-touch-icon-57x57-8e6554ae.png' rel='apple-touch-icon-precomposed' sizes='57x57'>
+<link href='/favicon/apple-touch-icon-114x114-e0cb1072.png' rel='apple-touch-icon-precomposed' sizes='114x114'>
+<link href='/favicon/apple-touch-icon-72x72-a86b7103.png' rel='apple-touch-icon-precomposed' sizes='72x72'>
+<link href='/favicon/apple-touch-icon-144x144-bd50bc10.png' rel='apple-touch-icon-precomposed' sizes='144x144'>
+<link href='/favicon/apple-touch-icon-60x60-ca47953b.png' rel='apple-touch-icon-precomposed' sizes='60x60'>
+<link href='/favicon/apple-touch-icon-120x120-068de821.png' rel='apple-touch-icon-precomposed' sizes='120x120'>
+<link href='/favicon/apple-touch-icon-76x76-2bd34869.png' rel='apple-touch-icon-precomposed' sizes='76x76'>
+<link href='/favicon/apple-touch-icon-152x152-da7652e0.png' rel='apple-touch-icon-precomposed' sizes='152x152'>
+<link href='/favicon/favicon-196x196-569e78d9.png' rel='icon' sizes='196x196' type='image/png'>
+<link href='/favicon/favicon-96x96-d809406c.png' rel='icon' sizes='96x96' type='image/png'>
+<link href='/favicon/favicon-32x32-162b5c6d.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/favicon/favicon-16x16-d0c2b051.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/favicon/favicon-128-2f649ba2.png' rel='icon' sizes='128x128' type='image/png'>
+<meta content=' ' name='application-name'>
+<meta content='#FFFFFF' name='msapplication-TileColor'>
+<meta content='/favicon/mstile-144x144-bd50bc10.png' name='msapplication-TileImage'>
+<meta content='/favicon/mstile-70x70-2f649ba2.png' name='msapplication-square70x70logo'>
+<meta content='/favicon/mstile-150x150-999c62ba.png' name='msapplication-square150x150logo'>
+<meta content='/favicon/mstile-310x150-37756fac.png' name='msapplication-wide310x150logo'>
+<meta content='/favicon/mstile-310x310-6bd894f0.png' name='msapplication-square310x310logo'>
+<title>
+DYS X160 v3
+</title>
+<link href="/assets/stylesheets/all-f65dd49a.css" rel="stylesheet" />
+<script src="/assets/javascripts/all-d5b91b8e.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-7406390-2', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  
+    // outbound link tracking
+    // http://www.sitepoint.com/track-outbound-links-google-analytics/
+    (function($) {
+      "use strict";
+      // current page host
+      var baseURI = window.location.host;
+      // click event on body
+      $("body").on("click", function(e) {
+        // abandon if link already aborted or analytics is not available
+        if (e.isDefaultPrevented() || typeof ga !== "function") return;
+        // abandon if no active link or link within domain
+        var link = $(e.target).closest("a");
+        if (link.length != 1 || baseURI == link[0].host) return;
+        // cancel event and record outbound link
+        e.preventDefault();
+        var href = link[0].href;
+        ga('send', {
+          'hitType': 'event',
+          'eventCategory': 'outbound',
+          'eventAction': 'link',
+          'eventLabel': href,
+          'hitCallback': loadPage
+        });
+        // redirect after one second if recording takes too long
+        setTimeout(loadPage, 1000);
+        // redirect to outbound page
+        function loadPage() {
+          document.location = href;
+        }
+      });
+    })(jQuery);
+</script>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+</head>
+<body>
+<nav class='navbar navbar-default' id='top' role='navigation'>
+<div class='container'>
+<div class='navbar-header'>
+<div class='navbar-brand'>
+<a href='/blog/'>
+<img src="/assets/images/home/smile-0a95f89f.jpg" />
+</a>
+<span>DYS X160 v3</span>
+</div>
+<button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<div class='navbar-right collapse navbar-collapse' id='bs-nav-collapse'>
+<ul class='nav navbar-nav'>
+<li>
+<form class='search navbar-form' role='search'>
+<div class='form-group'>
+<input class='form-control bloodhound typeahead' data-articles='[["STM32 hardfault debugging","/blog/2016/05/04/stm32-hardfault-debugging/"],["Eachine VR-007 Goggle Review","/blog/2016/04/25/eachine-vr-007-goggle-review/"],["Rctimer BeeRotor u210 mini quad build, setup and review","/blog/2016/04/24/rctimer-u210-mini-quad-build-setup-and-review/"],["AirBot Flip32 F3 AIO Lite and Typhoon 4-in-1 ESC","/blog/2016/04/11/airbot-flip32-f3-aio-lite-and-typhoon-4-in-1-esc/"],["DYS X160 v3","/blog/2016/04/05/dys-x160-v3/"],["Turnigy Reaktor 250W Charger","/blog/2016/04/02/turnigy-reaktor-250w-charger/"],["HobbyKing Graphene and Bolt High Voltage LiPo Battery Analysis","/blog/2016/03/25/hobbyking-graphene-battery-analysis/"],["BetaFlight in-flight PID tuning","/blog/2016/03/24/betaflight-in-flight-pid-tuning/"],["Drone Building at Maker Faire Bay Area 2016","/blog/2016/03/23/drone-building-at-maker-faire-bay-area-2016/"],["AVR Dissassembly","/blog/2016/02/25/avr-dissassembly/"],["Victory230 FPV Mini-quad Setup and Review","/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"],["FrSky RX SBUS and Frsky DJT Module","/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"],["HMDVR FPV Video Recorder","/blog/2016/02/06/hmdvr-fpv-video-recorder/"],["Rctimer BeerotorF3 Flight Controller","/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"],["Flying Sony NEX Micro 4/3rds Camera","/blog/2016/01/29/flying-micro-4-3rds-camera/"],["Q600 Quadcopter","/blog/2016/01/29/rctimer-q600-quadcopter/"],["ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller","/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/"],["PixHawk Flashing and Setup","/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/"],["BlHeli ESCs","/blog/2015/12/06/blheli-esc-identification/"],["BlHeli ESC Upgrading and Configuration","/blog/2015/12/06/blheli-configuration/"],["BlHeli CleanFlight ESC Calibration","/blog/2015/12/06/blheli-calibration/"],["Rctimer Micro 160 BeeRotor Build, Setup and Review","/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"],["Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if","/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/"],["Rctimer OZE32 / RTFQ Flip32 AIO Integrated Flight Controller Review and Setup","/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"],["Rooting Marshmellow, keeping SELinux","/blog/2015/11/03/rooting-marshmellow-keeping-selinux/"],["MultiRotor Setup Checklist","/blog/2015/10/29/multirotor-setup-checklist/"],["ST-LINK flash and debug on the SPRacingF3","/blog/2015/10/24/st-link-flash-and-debug-on-the-spracingf3-discovery/"],["Debugging Android Native (NDK) Apps","/blog/2015/09/27/debugging-android-native-ndk-apps/"],["Fixing an Arduino 0x000000 Error","/blog/2015/09/16/fixing-an-arduino-0x000000-error/"],["GPS VK16U6 CleanFlight Setup","/blog/2015/08/26/gps-vk16u6-cleanflight-setup/"],["Go FPV Latency Testing","/blog/2015/08/24/go-fpv-latency-testing/"],["Building Android on Ubuntu 14.04","/blog/2015/07/23/building-android-on-ubuntu-14-04/"],["Migrating to Amazon Elastic Map Reduce (EMR)","/blog/2015/07/15/migrating-to-amazon-elastic-map-reduce-emr/"],["Naze32 ST-Link Debugging","/blog/2015/07/06/naze32-st-link-debugging/"],["Decompiling an APK","/blog/2015/06/30/decompiling-an-apk/"],["Nexpose Community Edition copy Scan Template","/blog/2015/06/17/nexpose-community-edition-copy-scan-template/"],["Wireless Video Tx/Rx FPV Channels","/blog/2015/06/17/boscam-tx-rx-fpv-channels/"],["Making a UHF 433mhz Inverted Vee Antenna Set","/blog/2015/06/15/making-a-uhf-433mhz-inverted-vee-antenna-set/"],["Setup OrangeLRS with OpenLRSng","/blog/2015/05/21/setup-orangelrs-with-openlrsng/"],["Go FPV Goggles","/blog/2015/05/21/go-fpv-goggles/"],["FPV250 with Cleanflight, Minimosd, OpenLRSng and a Xiaomi Yi GoPro Clone","/blog/2015/05/19/fpv250-cleanflight/"],["Flashing BlHeli on HobbyKing BlueSeries 12a ESCs With a Chinese Arduino Nano Clone","/blog/2015/05/15/flashing-blheli-on-hobbyking-blueseries-12a-escs-with-a-chinese-arduino-nano-clone/"],["Flashing NodeMCU on the ESP8266","/blog/2015/05/14/flashing-nodemcu-on-the-esp8266/"],["Ebay HC-05 Bluetooth Setup Guide","/blog/2015/05/12/ebay-hc-05-bluetooth-setup-guide/"],["3D Camera on the Tricopter","/blog/2015/05/12/3d-camera-on-the-tricopter/"],["ProRes editing in Premier","/blog/2015/05/11/prores-editing-in-photoshop/"],["Xiaomi Yi -- The Ant Camera","/blog/2015/05/08/xiaomi-yi-the-ant-camera/"],["Minim OSD","/blog/2015/04/22/minim-osd/"],["Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone","/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/"],["Handling Dates in Hadoop Pig","/blog/2015/04/17/handling-dates-in-hadoop-pig/"],["LiPo Battery Price Analysis","/blog/2015/04/10/lipo-battery-price-analysis/"],["ADB over WiFi (aka, how do I debug when using USB host mode?)","/blog/2015/03/27/adb-over-wifi-aka-how-do-i-debug-when-using-usb-host-mode/"],["Shrink a linux VM on OSX","/blog/2015/03/18/shrink-a-linux-vm-on-osx/"],["Mounting a VHD NTFS image on Ubuntu","/blog/2015/02/27/mounting-a-vhd-ntfs-image-on-ubuntu/"],["Ubuntu on the Beaglebone Black","/blog/2015/01/16/ubuntu-on-the-beaglebone-black/"],["Configuring the HK-T6A for a Flight Simulator","/blog/2015/01/02/configuring-the-hk-t6a-for-a-flight-simulator/"],["A complete noob&#x0027;s guide to RC","/blog/2015/01/02/a-complete-noobs-guide-to-rc/"],["DropCam on a Captive Portal","/blog/2014/11/17/dropcam-on-a-captive-portal/"],["Java reversing tips","/blog/2014/09/18/java-reversing-tips/"],["Ooize Data Pipeline Done-Flag","/blog/2014/09/02/oozie-data-pipeline-done-flag/"],["Time Machine on exFat","/blog/2014/08/06/Time_Machine_on_exFat/"],["Optimizing Postgresql","/blog/2014/01/31/Optimizing_Postgresql/"],["Mail Maker","/blog/2014/01/24/Mail_Maker/"],["Angularjs and Rails","/blog/2013/07/12/Angularjs_and_Rails/"],["nginx ssl chained certs","/blog/2013/04/24/nginx_ssl_chained_certs/"],["rails log tagging","/blog/2013/04/24/rails_log_tagging/"],["Converting an Android Project to Maven","/blog/2013/04/16/Converting_an_Android_Project_to_Maven/"],["Oh! Map my rails!","/blog/2013/04/09/Oh_Map_my_rails/"],["mysql permissions","/blog/2013/04/09/mysql_permissions/"],["reset mysql slave","/blog/2013/03/29/reset_mysql_slave/"],["installing rmagick on 10.8 with homebrew","/blog/2013/02/14/installing_rmagick_on_108_with_homebrew/"],["NP-Completeness","/blog/2013/02/08/NP-Completeness/"],["Find and replace non-breaking spaces in vim","/blog/2013/02/01/Find_and_replace_non-breaking_spaces_in_vim/"],["Open Resty the Prebuilt Reverse Proxy","/blog/2013/02/01/Open_Resty_the_Prebuilt_Reverse_Proxy/"],["Sublime Text 2 Tweaks","/blog/2012/12/17/Sublime_Text_2_Tweaks/"],["Batch Convert CR2 to JPG","/blog/2012/12/01/Batch_Convert_CR2_to_JPG/"],["Androids in the wild","/blog/2012/06/30/Androids_in_the_wild/"],["Why you need database_cleaner","/blog/2012/06/11/Why_you_need_database_cleaner/"],["Find and replace in files on linux/unix","/blog/2012/05/12/Find_and_replace_in_files_on_linuxunix/"],["a pithy guide to railsconf 2012","/blog/2012/04/26/a_pithy_guide_to_railsconf_2012/"],["faster rails boot ruby 1.9.3 + debugger","/blog/2012/04/12/faster_rails_boot_ruby_193_debugger/"],["homebrew -- fix that nasty mysql.server start segfault","/blog/2012/03/29/homebrew_--_fix_that_nasty_mysqlserver_start_segfault/"],["read/write filesystem on rooted android for an ad-free android experience","/blog/2012/02/14/readwrite_filesystem_on_rooted_android_for_an_ad-free_android_experience/"],["Turn Wikipedia Back On","/blog/2012/01/17/Turn_Wikipedia_Back_On/"],["compiling qt4 on centos 5","/blog/2012/01/06/compiling_qt4_on_centos_5/"],["pip install pymongo with xcode 4","/blog/2011/08/09/pip_install_pymongo_with_xcode_4/"],["interactive python history -- better titled \"gimme some up arrow love\"","/blog/2011/08/05/interactive_python_history_--_better_titled_gimme_some_up_arrow_love/"],["Centos 5.5 yum repo sha256 fix","/blog/2011/07/27/Centos_55_yum_repo_sha256_fix/"],["Apple Keyboard for Android!","/blog/2011/07/15/Apple_Keyboard_for_Android/"],["jQuery Everywhere","/blog/2011/05/24/jQuery_Everywhere/"],["Django Migrations","/blog/2011/05/11/Django_Migrations/"],["RVM + Rails + Git + HTML5 Boiler Plate... What more could you possibly want?","/blog/2011/02/22/RVM_Rails_Git_HTML5_Boiler_Plate_What_more_could_you_possibly_want/"],["OneCast 2.0 - downloadable podcasts for androids of every color","/blog/2011/02/18/OneCast_20_-_downloadable_podcasts_for_androids_of_every_color/"],["Default Android Menu Icons in Your App","/blog/2011/02/17/Default_Android_Menu_Icons_in_Your_App/"],["Windows 7 x64 Android Development (ADB)","/blog/2010/11/06/Windows_7_x64_Android_Development_ADB/"],["Firefox Plugin - Watching for an Application Exit Event","/blog/2010/05/03/Firefox_Plugin_-_Watching_for_an_Application_Exit_Event/"],["Stop Redrawing a Fixed Orientation Android App","/blog/2010/03/08/Stop_Redrawing_a_Fixed_Orientation_Android_App/"]]' placeholder='Search' type='text'>
+</div>
+</form>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+
+<div class='container'>
+<div class='row row-offcanvas row-offcanvas-left'>
+<!-- sidebar -->
+<div class='col-xs-3 col-sm-3 sidebar-offcanvas'>
+<div id='sidebar' role='navigation'>
+<div class='sidebar-contents'>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+<a href='#top'>Contents</a>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 table-of-contents'>
+<ul class="nav"><li><a class="type-h2" href="#parts"><h2>Parts</h2></a></li>
+<li><a class="type-h2" href="#unboxing"><h2>Unboxing</h2></a></li>
+<li><a class="type-h2" href="#strength"><h2>Strength</h2></a></li>
+<li><a class="type-h2" href="#pinout"><h2>Pinout</h2></a></li><ul><li><a class="type-h3" href="#receiver"><h3>Receiver</h3></a></li>
+<li><a class="type-h3" href="#components"><h3>Components</h3></a></li></ul>
+<li><a class="type-h2" href="#video-transmitter-channels"><h2>Video transmitter channels</h2></a></li></ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+Related Articles
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 related'>
+<ul>
+<li><a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/">Victory230 FPV Mini-quad Setup and Review</a></li>
+<li><a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/">Rctimer OZE32 / RTFQ Flip32 AIO Integrated Flight Controller Review and Setup</a></li>
+<li><a href="/blog/2016/04/11/airbot-flip32-f3-aio-lite-and-typhoon-4-in-1-esc/">AirBot Flip32 F3 AIO Lite and Typhoon 4-in-1 ESC</a></li>
+<li><a href="/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/">Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone</a></li>
+<li><a href="/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/">Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if</a></li>
+<li><a href="/blog/2015/12/06/blheli-configuration/">BlHeli ESC Upgrading and Configuration</a></li>
+</ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header'></div>
+</div>
+<div class='row'>
+<div class='col-lg-12 text-center'>
+Checkout my other guides at
+<a href='/blog'>nathan.vertile.com/blog</a>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header text-center'>
+<div class='drawer-footer'>
+<small>
+©
+<a href='mailto:nathan@vertile.com'>Nathan Tsoi</a>
+</small>
+</div>
+</div>
+</div>
+<div class='row last'>
+<div class='col-lg-12 text-center'>
+<a class='btn-sm btn-default' href='https://github.com/nathantsoi' target='_blank'>
+<i class='fa fa-github'></i>
+</a>
+<a class='btn-sm btn-default' href='https://bitbucket.org/nathantsoi' target='_blank'>
+<i class='fa fa-bitbucket'></i>
+</a>
+<a class='btn-sm btn-default' href='https://twitter.com/nathantsoi/' target='_blank'>
+<i class='fa fa-twitter'></i>
+</a>
+<a class='btn-sm btn-default' href='https://angel.co/nathantsoi' target='_blank'>
+<i class='fa fa-angellist'></i>
+</a>
+<a class='btn-sm btn-default' href='https://linkedin.com/in/nattsoi/' target='_blank'>
+<i class='fa fa-linkedin'></i>
+</a>
+<a class='btn-sm btn-default' href='https://facebook.com/nathantsoi' target='_blank'>
+<i class='fa fa-facebook'></i>
+</a>
+<a class='btn-sm btn-default' href='https://plus.google.com/112518806102274696668' target='_blank'>
+<i class='fa fa-google-plus'></i>
+</a>
+<a class='btn-sm btn-default' href='https://news.ycombinator.com/user?id=natvert' target='_blank'>
+<i class='fa fa-hacker-news'></i>
+</a>
+<a class='btn-sm btn-default' href='https://trello.com/nathantsoi' target='_blank'>
+<i class='fa fa-trello'></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- main area -->
+<div class='col-sm-9 col-xs-12' id='mainbar'>
+<article>
+<p>This is a review and setup guide for the <a href="http://www.banggood.com/DYS-X160-Micro-FPV-Racer-with-5_8G-32CH-200mW-Transmitter-13-CMOS-Wide-Lens-ARF-p-1002021.html?p=1G09211226617201502J">DYS x160 v3 miniquad</a>.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-front-c-e-jpg" href="/assets/images/blog/x160/front-8239c0e9.jpg" class="linked-img colorbox"><img src='/assets/images/blog/x160/front_prev-fbf0893e.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.46398503274088%;'><a id="assets-images-blog-x-flying-d-a-jpg" href="/assets/images/blog/x160/flying-d5a78911.jpg" class="linked-img colorbox"><img src='/assets/images/blog/x160/flying_prev-44589c23.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>With my antenna in the front, it looks kinda like a unicorn:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.45643541228685%;'><a id="assets-images-blog-x-DSC-a-edce-jpg" href="/assets/images/blog/x160/DSC02118-4a05edce.jpg" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC02118_prev-bde2c718.jpg' class='trailing-space' ></img></a></div></div>
+
+<h2 id="parts">Parts</h2>
+
+<p>Everything you need except the <a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J">transmitter and receiver</a>, <a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J">battery</a> and <a href="http://www.banggood.com/Wholesale-IMAX-B6-Digital-RC-Lipo-NiMH-battery-Balance-Charger-p-46220.html?p=1G09211226617201502J">charger</a> is included in the kit! You&#39;ll also want some <a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J">good goggles</a> if you&#39;re just getting started.</p>
+
+<p>This basic setup is great for a beginner:</p>
+
+<table class="small-img">
+  <tbody>
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 100.0%;'><a id="assets-images-blog-parts-fs-i-transmitter-c-f-jpg" href="/assets/images/blog/parts/fs-i6-transmitter-33c0f071.jpg" class="linked-img colorbox"><img src='/assets/images/blog/parts/fs-i6-transmitter-33c0f071.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J">FlySky FS-i6 with iA6B Receiver, $53</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 100.0%;'><a id="assets-images-blog-parts-eachine-ev-f-jpg" href="/assets/images/blog/parts/eachine-ev800-52f95817.jpg" class="linked-img colorbox"><img src='/assets/images/blog/parts/eachine-ev800-52f95817.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J">Eachine EV800 Video Goggles, $77</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 100.0%;'><a id="assets-images-blog-parts-zop-power-s-fee-b-c-jpg" href="/assets/images/blog/parts/zop-power-3s-6fee8b4c.jpg" class="linked-img colorbox"><img src='/assets/images/blog/parts/zop-power-3s-6fee8b4c.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J">3s 11.1V 1800mAh 45C LiPo Battery with an XT-60 Plug, $15</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Wholesale-IMAX-B6-Digital-RC-Lipo-NiMH-battery-Balance-Charger-p-46220.html?p=1G09211226617201502J"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 100.0%;'><a id="assets-images-blog-parts-imax-b-charger-e-ef-b-jpg" href="/assets/images/blog/parts/imax-b6-charger-1e3ef4b1.jpg" class="linked-img colorbox"><img src='/assets/images/blog/parts/imax-b6-charger-1e3ef4b1.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Wholesale-IMAX-B6-Digital-RC-Lipo-NiMH-battery-Balance-Charger-p-46220.html?p=1G09211226617201502J">iMAX B6 RC Lipo Charger, $25</a>
+        </td>
+      </tr>
+
+  </tbody>
+</table>
+
+<p>Total Cost: <code>~$170</code></p>
+
+<p>You can read more about why I&#39;ve picked these specific products and learn more about getting started over at <a href="https://airfield.io">Airfield.io</a>.</p>
+
+<p>If you already have all these parts, get just the <a href="http://www.banggood.com/DYS-X160-Micro-FPV-Racer-with-5_8G-32CH-200mW-Transmitter-13-CMOS-Wide-Lens-ARF-p-1002021.html?p=1G09211226617201502J">DYS x160 v3 miniquad</a> for <code>$115.99</code>, which is an awesome price.</p>
+
+<h2 id="unboxing">Unboxing</h2>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-unboxing-af-jpg" href="/assets/images/blog/x160/unboxing-1-af203515.jpg" class="linked-img colorbox"><img src='/assets/images/blog/x160/unboxing-1_prev-a21104a4.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-unboxing-a-bdacc-jpg" href="/assets/images/blog/x160/unboxing-2-6a5bdacc.jpg" class="linked-img colorbox"><img src='/assets/images/blog/x160/unboxing-2_prev-f787d1e8.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>It comes with an antenna, landing gear, battery strap, PWM receiver breakout cable, some extra screws 8 <a href="http://www.banggood.com/4-Pairs-Eachine-3020-Propellers-CW-CCW-For-BG1104-4000KV-Motors-p-992325.html?p=1G09211226617201502J">3030 props</a> and user manual.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-unboxing-e-eef-jpg" href="/assets/images/blog/x160/unboxing-3-e3eef415.jpg" class="linked-img colorbox"><img src='/assets/images/blog/x160/unboxing-3_prev-62173465.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Opening up the antenna, we see this is not a circularly polarized cloverleaf, but a circularly polarized <a href="http://orbanmicrowave.com/wp-content/uploads/2015/03/TheBasicsofQuadrifilarHelixAntennas.pdf">quadrifilar helix antenna</a>. Thanks to <a href="https://www.qrz.com/db/AA4HA">AA4HA</a> over on qrz.com for helping identify it. Since it&#39;s circularly polarized, it should work fine with a normal cloverleaf on the receiving end.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.0%;'><a id="assets-images-blog-x-antenna-d-c-jpg" href="/assets/images/blog/x160/antenna-18d849c7.jpg" class="linked-img colorbox"><img src='/assets/images/blog/x160/antenna_prev-c972d60f.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Interestingly, the flight controller is not hard mounted. It&#39;s soft mounted on these rubbery pegs.</p>
+
+<p>To protect the fpv video transmitter, be sure to attach the FPV antenna before powering on the quad copter.</p>
+
+<p>It comes pre-loaded with CleanFlight 1.16, when you upgrade to BetaFligh, you&#39;ll want to use the SPRF3 hex file.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 19.43081452404318%;'><a id="assets-images-blog-x-cf-c-d-png" href="/assets/images/blog/x160/cf-1.16-c2d09340.png" class="linked-img colorbox"><img src='/assets/images/blog/x160/cf-1.16-c2d09340.png' class='trailing-space' ></img></a></div></div>
+
+<p>Here are the default PIDs, looks like it&#39;s set to use the <code>REWRITE</code> pid controller by default. Since the data flash has some data, it makes me think they flight-tested this before sending it, cool!</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 61.41078838174274%;'><a id="assets-images-blog-x-cf-default-pids-a-a-b-png" href="/assets/images/blog/x160/cf-default-pids-a9a734b9.png" class="linked-img colorbox"><img src='/assets/images/blog/x160/cf-default-pids-a9a734b9.png' class='trailing-space' ></img></a></div></div>
+
+<p>The flight controller is soft-mounted on rubber standoffs. The battery plug is an XT-60. You can see the video transmitter is covered by a metal shield, per the usual:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC01461.JPG" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC01461_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>DIP switches to change the video transmitter channels are on the top, which is convenient. There is a standard micro USB port on the other side of the flight controller.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC01463.JPG" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC01463_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Under that plastic piece on top is a MinimOSD:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02054.JPG" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC02054_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>The bottom piece of the arms has an integrated DYS XM10 ESC.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC01464.JPG" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC01464_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Weight with the antenna is 138g.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC01564.JPG" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC01564_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>The antenna connector is an SMA Female connector:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02058.JPG" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC02058_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>To install the landing gear you&#39;ll need to remove all the screws holding on the bottom plate. This was very difficult. One screw was stuck, so I had to use a heat gun and a pair of piers.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02066.JPG" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC02066_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Landing gear installed!</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02069.JPG" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC02069_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<h2 id="strength">Strength</h2>
+
+<p>On my second flight, just cruising around the courtyard by our apartment, I hit a tree about 12 feet up and crashed upside down on the video antenna.</p>
+
+<p>This pushed in the whole video transmitter and left the SMA adapter bent like so:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02271.JPG" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC02271_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>On further inspection, I found that the failure points were these two solder points that hold the VTX to the frame. The third, middle solder point did not fail. I suggest you add some extra solder to these solder points when installing the landing gear and you shouldn&#39;t have any trouble:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.455078125%;'><a id="assets-images-blog-x-DSC-a-a-jpg" href="/assets/images/blog/x160/DSC02276-4900a6a8.jpg" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC02276-4900a6a8.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Since re-enforcing these points, I&#39;ve been flying around without any issue. It seems unlikely that they&#39;ll break, but extra arms are available <a href="http://www.banggood.com/DYS-X160-FPV-Racer-Replacement-Arm-1pc-p-1019748.html?p=1G09211226617201502J">here</a></p>
+
+<h2 id="pinout">Pinout</h2>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.455078125%;'><a id="assets-images-blog-x-ports-f-c-jpg" href="/assets/images/blog/x160/ports-f1c04103.jpg" class="linked-img colorbox"><img src='/assets/images/blog/x160/ports-f1c04103.jpg' class='trailing-space' ></img></a></div></div>
+
+<h3 id="receiver">Receiver</h3>
+
+<p>Port 6 has PPM/PWM in. From left to right the pins are: <code>GND</code>, <code>5v</code>, <code>PPM</code>/<code>PWM1</code>, <code>PWM2</code>, ..., <code>PWM6</code></p>
+
+<p>Here I&#39;m using the <a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J">F801</a> <a href="/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/">DIY FrSky Receiver</a>:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-ppm-jpg" href="/assets/images/blog/x160/ppm-25382242.jpg" class="linked-img colorbox"><img src='/assets/images/blog/x160/ppm_prev-da2e5d9c.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Here is what the up-close wiring looks like on the receiver side:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02100.JPG" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC02100_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>I then installed a ziptie, attached to the bottom plate:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02111.JPG" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC02111_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>It sticks out the top along with the receiver antenna.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02107.JPG" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC02107_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>I then used some heatshrink to hold these together and turned the drone into a unicorn!</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02116.JPG" class="linked-img colorbox"><img src='/assets/images/blog/x160/DSC02116_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<h3 id="components">Components</h3>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.455078125%;'><a id="assets-images-blog-x-video-channels-b-jpg" href="/assets/images/blog/x160/video-channels-6611b751.jpg" class="linked-img colorbox"><img src='/assets/images/blog/x160/video-channels-6611b751.jpg' class='trailing-space' ></img></a></div></div>
+
+<h2 id="video-transmitter-channels">Video transmitter channels</h2>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.455078125%;'><a id="assets-images-blog-x-video-channels-b-jpg" href="/assets/images/blog/x160/video-channels-6611b751.jpg" class="linked-img colorbox"><img src='/assets/images/blog/x160/video-channels-6611b751.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='text-center' style='margin: 1em'>
+Checkout my other guides at
+<a href='/blog'>nathan.vertile.com/blog</a>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+//<![CDATA[
+                  var disqus_shortname = 'vertile';
+          
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+//]]>
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</article>
+
+</div>
+</div>
+</div>
+</body>
+</html>
