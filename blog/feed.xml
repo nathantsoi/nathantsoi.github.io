@@ -751,13 +751,19 @@ _HALT:
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/04/05/dys-x160-v3/"/>
     <id>http://nathan.vertile.com/blog/2016/04/05/dys-x160-v3/</id>
     <published>2016-04-04T21:06:00-07:00</published>
-    <updated>2016-05-26T09:42:47-07:00</updated>
+    <updated>2016-05-27T20:25:36-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
     <content type="html">&lt;p&gt;This is a review and setup guide for the &lt;a href="http://www.banggood.com/DYS-X160-Micro-FPV-Racer-with-5_8G-32CH-200mW-Transmitter-13-CMOS-Wide-Lens-ARF-p-1002021.html?p=1G09211226617201502J"&gt;DYS x160 v3 miniquad&lt;/a&gt;.&lt;/p&gt;
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-front-c-e-jpg" href="/assets/images/blog/x160/front-8239c0e9.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/front_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is a sample of the video quality and flight capability running default PIDs with BetaFlight 2.7 and 3s 900mah battery&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="300" src="https://www.youtube.com/embed/pG_X4s4EF-A?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.46398503274088%;'&gt;&lt;a id="assets-images-blog-x-flying-d-a-jpg" href="/assets/images/blog/x160/flying-d5a78911.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/flying_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
