@@ -5,16 +5,155 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-05-04T11:02:00-07:00</updated>
+  <updated>2016-05-10T20:56:00-07:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
+  <entry>
+    <title>HobbyKing Quanum V2 Pro Goggles</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"/>
+    <id>http://nathan.vertile.com/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/</id>
+    <published>2016-05-10T20:56:00-07:00</published>
+    <updated>2016-06-05T21:41:08-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This is a build guide and review of the HobbyKing Quanum V2 Pro Goggles.&lt;/p&gt;
+
+&lt;p&gt;Here they are assembled with my &lt;a href="/blog/2016/04/05/dys-x160-v3/"&gt;DYS X160&lt;/a&gt;:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-IMG-b-d-jpg" href="/assets/images/blog/hk/quanum-v2-pro-goggles/IMG_20160526_194705-270b12d5.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/IMG_20160526_194705_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="summary"&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;Overall, these goggles offer great performance at a great price. They are light, easy to assemble and should work fine with glasses. If you&amp;#39;re looking for a first (or second or third) pair of goggles, this is a great option.&lt;/p&gt;
+
+&lt;p&gt;As for the display, I like the single monitor style a bit better than the two monitor goggles (like Fatsharks) since the single monitor gives a more immersive experience. It feels more like like you&amp;#39;re &amp;quot;in&amp;quot; the display instead of the Fatsharks, which feel like you&amp;#39;re looking at a display in the distance.&lt;/p&gt;
+
+&lt;p&gt;That said, the 800x480 resolution is good (this is the same resolution as the &lt;a href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J"&gt;Fatshark Dominator V3&lt;/a&gt;), but is not as high as &lt;a href="http://www.banggood.com/Skyzone-SJ-V01-5_8G-40CH-FPV-Goggles-7-Inch-1280x800-HD-Video-Glasses-with-HDMI-Input-p-1041124.html?p=1G09211226617201502J"&gt;Headplay-Type Goggles&lt;/a&gt;. Note though, that with a 700tvl fpv camera, the horizontal resolution is about 933px, so you&amp;#39;re not losing much clarity at all.&lt;/p&gt;
+
+&lt;p&gt;The build process affords some flexibility, but it could be a downside if you&amp;#39;re not into some simple DIYing. If head-comfort is important, you can customize the shape of the goggles to fit your face. I probably should have added some extra padding around the cheeks, since everyone who tried on my pair of Quanums complained about a squashed nose. Other than that, they loved these goggles for the light weight and monitor clarity. The only other downside is the size. It&amp;#39;s great for when you&amp;#39;re using them, but it&amp;#39;s far less convenient for transportation. They need a big case, mine travel in that giant tub pictured above.&lt;/p&gt;
+
+&lt;p&gt;The Quanum receiver I used is awesome. The sensitivity is great and the OLED display is very clear, so it&amp;#39;s easy find the right channel, and once you&amp;#39;re on it, the signal is locked in. Compared to some other goggles I have including the &lt;a href="http://www.banggood.com/Eachine-VR-007-5_8G-40CH-HD-FPV-Goggles-Video-Glasses-4_3-Inch-With-7_4V-800mAh-Battery-p-960761.html?p=1G09211226617201502J"&gt;Eachine VR-007 Goggles&lt;/a&gt; and my Vuxiz iWear AV230-based DIY goggles with a &lt;a href="http://www.banggood.com/FPV-5_8G-8CH-200mW-AV-Wireless-Receiver-RC805-p-73202.html?p=1G09211226617201502J"&gt;Boscam RC805&lt;/a&gt; receiver, the range and image quality on the Quanum receiver is noticeably better.&lt;/p&gt;
+
+&lt;h3 id="parts"&gt;Parts&lt;/h3&gt;
+
+&lt;p&gt;Here are the parts I used in the build:&lt;/p&gt;
+
+&lt;table class="small-img"&gt;
+  &lt;tbody&gt;
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=97842&amp;aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-parts-quanum-pro-v-goggles-bdd-e-c-jpg" href="/assets/images/blog/parts/quanum-pro-v2-goggles-bdd2e2c4.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/quanum-pro-v2-goggles-bdd2e2c4.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=97842&amp;aff=1624906"&gt;HobbyKing Quanum Pro V2 DIY FPV Goggles, $37&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=65994&amp;aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-parts-quanum-rx-bcb-b-d-jpg" href="/assets/images/blog/parts/quanum-rx-bcb20b3d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/quanum-rx-bcb20b3d.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=65994&amp;aff=1624906"&gt;Quanum Auto Scan Receiver, $31&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;If you&amp;#39;re looking for a diversity receiver, the &lt;a href="http://www.hobbyking.com/hobbyking/store/__84862__Quanum_RC540R_5_8GHz_40CH_Race_Band_FPV_Diversity_Receiver.html&amp;amp;aff=1624906"&gt;Quanum RC540R 5.8GHz 40CH Race Band FPV Diversity Receiver&lt;/a&gt; is a great choice, albeit a bit more expensive than the Auto Scan receiver listed above.&lt;/p&gt;
+
+&lt;p&gt;Total Cost: &lt;code&gt;$68&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id="unboxing"&gt;Unboxing&lt;/h3&gt;
+
+&lt;p&gt;Ooh, a box.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02154.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02154_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The neoprene sleeve. &lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02156.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02156_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It comes with 3 different lenses of different magnification, some padding to change the shape of the goggles where they meet your face and an adaptor for your phone, if you want to use that instead of the monitor.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02157.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02157_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I&amp;#39;m no foam expert, but the goggle case is made out of EPO. I think? Either way, it&amp;#39;s more than durable enough for your face, unless you&amp;#39;re into FPV boxing or something cool like that.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02159.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02159_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lots of cables.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02160.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02160_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The 5&amp;quot; 800x480 monitor.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02161.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02161_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ok, let&amp;#39;s build!&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02163.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02163_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="build"&gt;Build&lt;/h3&gt;
+
+&lt;p&gt;Install the foam bumpers. I used hot glue.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02210.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02210_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02211.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02211_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Remove the screen protector from monitor and insert it into the lower piece.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02213.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02213_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Assemble the lens by inserting the glass into the plastic frame. I went with the &lt;code&gt;1x&lt;/code&gt; lens, but I think I may change that to a more powerful lens, so the screen looks bigger.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02214.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02214_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The flat part should go down so it ends up like this.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02216.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02216_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Install the handles on the lens and place the lens in the goggle base.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02217.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02217_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The curved part points towards the screen.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02218.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02218_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Use some clear packing tape to secure the top and bottom. You could glue these, but that would make it hard to change the lens.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02219.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02219_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Use the included strips of neoprene and the foam with one sticky side to pad the goggles where they&amp;#39;ll meet your face. I should have put extra neoprene around the cheek area so my nose is less squashed... but you know now :)&lt;/p&gt;
+
+&lt;p&gt;The idea is to glue layers of neoprene where you want the goggles to contact your face. Try to test fit the goggles with just the neoprene layers, when it fits well, then apply the sticky-sided foam.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02220.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02220_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Finally, install the receiver in the pocket and route the cables through the loops on the bottom:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02222.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02222_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I put my battery on the opposite side and route the cable under.&lt;/p&gt;
+
+&lt;p&gt;Here they are in action! My cousin is checkin&amp;#39; em out:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.59482758620689%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-demo-cc-ddc-jpg" href="/assets/images/blog/hk/quanum-v2-pro-goggles/demo-2-6cc19ddc.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/demo-2-6cc19ddc.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.59482758620689%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-demo-b-jpg" href="/assets/images/blog/hk/quanum-v2-pro-goggles/demo-1-377b4341.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/demo-1-377b4341.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+  </entry>
   <entry>
     <title>STM32 hardfault debugging</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/05/04/stm32-hardfault-debugging/"/>
     <id>http://nathan.vertile.com/blog/2016/05/04/stm32-hardfault-debugging/</id>
     <published>2016-05-04T11:02:00-07:00</published>
-    <updated>2016-05-04T22:52:12-07:00</updated>
+    <updated>2016-05-28T21:21:41-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -117,6 +256,10 @@ _HALT:
 
 &lt;p&gt;The idea here is to load all the relevant information into variables that can be easily inspected. The Fault Status and Address registers should give us a good idea of what caused the fault.&lt;/p&gt;
 
+&lt;p&gt;This application note by Keil describes the register value meanings by bit: &lt;a href="http://www.keil.com/appnotes/files/apnt209.pdf"&gt;http://www.keil.com/appnotes/files/apnt209.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a great example of debugging an imprecise bus access fault: &lt;a href="http://chmorgan.blogspot.com/2013/06/debugging-imprecise-bus-access-fault-on.html"&gt;http://chmorgan.blogspot.com/2013/06/debugging-imprecise-bus-access-fault-on.html&lt;/a&gt; &amp;quot;most often caused by a write to an invalid address.&amp;quot;&lt;/p&gt;
+
 &lt;p&gt;The stacked_pc variable is the address of the instruction after the fault-causing instruction and can be pasted into the dissambly view in Eclipse.&lt;/p&gt;
 
 &lt;p&gt;Mad props to Erich Styger over at &lt;a href="https://mcuoneclipse.com/2012/11/24/debugging-hard-faults-on-arm-cortex-m/"&gt;https://mcuoneclipse.com/2012/11/24/debugging-hard-faults-on-arm-cortex-m/&lt;/a&gt; who first introduced me to hardfault handling.&lt;/p&gt;
@@ -140,7 +283,7 @@ _HALT:
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/04/24/rctimer-u210-mini-quad-build-setup-and-review/"/>
     <id>http://nathan.vertile.com/blog/2016/04/24/rctimer-u210-mini-quad-build-setup-and-review/</id>
     <published>2016-04-24T14:22:00-07:00</published>
-    <updated>2016-05-23T21:32:19-07:00</updated>
+    <updated>2016-06-05T20:17:27-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -156,7 +299,7 @@ _HALT:
 
 &lt;h2 id="parts"&gt;Parts&lt;/h2&gt;
 
-&lt;p&gt;Everything you need except the &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;transmitter and receiver&lt;/a&gt;, &lt;a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;battery&lt;/a&gt; and &lt;a href="http://www.banggood.com/Wholesale-IMAX-B6-Digital-RC-Lipo-NiMH-battery-Balance-Charger-p-46220.html?p=1G09211226617201502J"&gt;charger&lt;/a&gt; is included in the kit! You&amp;#39;ll also want some &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;good goggles&lt;/a&gt; if you&amp;#39;re just getting started.&lt;/p&gt;
+&lt;p&gt;Everything you need except the &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;transmitter and receiver&lt;/a&gt;, &lt;a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;battery&lt;/a&gt; and &lt;a href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;charger&lt;/a&gt; is included in the kit! You&amp;#39;ll also want some &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;good goggles&lt;/a&gt; if you&amp;#39;re just getting started.&lt;/p&gt;
 
 &lt;p&gt;This basic setup is great for a beginner:&lt;/p&gt;
 
@@ -191,19 +334,19 @@ _HALT:
 
           &lt;tr&gt;
         &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Wholesale-IMAX-B6-Digital-RC-Lipo-NiMH-battery-Balance-Charger-p-46220.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-imax-b-charger-e-ef-b-jpg" href="/assets/images/blog/parts/imax-b6-charger-1e3ef4b1.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/imax-b6-charger-1e3ef4b1.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-Eachine-WT-b-a-c-jpg" href="/assets/images/blog/parts/Eachine-WT50-b9a70c27.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/Eachine-WT50-b9a70c27.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
         &lt;/td&gt;
         &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Wholesale-IMAX-B6-Digital-RC-Lipo-NiMH-battery-Balance-Charger-p-46220.html?p=1G09211226617201502J"&gt;iMAX B6 RC Lipo Charger, $25&lt;/a&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;Eachine WT50 6A 50W AC/DC Balance Charger Discharger For LiPo/NiCd/PB Battery, $34&lt;/a&gt;
         &lt;/td&gt;
       &lt;/tr&gt;
 
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Total Cost: &lt;code&gt;~$170&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;I picked this setup because these are the most feature-rich and cost effective components you can use to get into FPV flying! The &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;FS-i6 radio with iA6B receiver&lt;/a&gt; is the best value radio that supports PPM. The &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;EV800 Video Goggles&lt;/a&gt; are a great value at $77. The &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=97842&amp;amp;aff=1624906"&gt;HobbyKing Quanum DIY FPV Goggles&lt;/a&gt; paired with the &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=65994&amp;amp;aff=1624906"&gt;Quanum Auto Scan Receiver&lt;/a&gt; is also a very good choice since they have a little better quality, but you have to &lt;a href="/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"&gt;build it yourself (read the build guide here)&lt;/a&gt;. The &lt;a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;1800mah battery&lt;/a&gt; will work well in any 150-350mm size quadcopter and the 45c rating means it can deliver 81 Amps, which should be more than enough for your mini-quadcopter. Finally, the &lt;a href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;Eachine WT50&lt;/a&gt; charger includes a built in AC-DC converter, so you won&amp;#39;t need an external power supply, like you would with most chargers.&lt;/p&gt;
 
-&lt;p&gt;You can read more about why I&amp;#39;ve picked these specific products and learn more about getting started over at &lt;a href="https://airfield.io"&gt;Airfield.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Total Cost: &lt;code&gt;~$180&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;If you already have the items above, get just the drone kit. It has everything you need including video transmitter and camera.&lt;/p&gt;
 
@@ -751,7 +894,7 @@ _HALT:
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/04/05/dys-x160-v3/"/>
     <id>http://nathan.vertile.com/blog/2016/04/05/dys-x160-v3/</id>
     <published>2016-04-04T21:06:00-07:00</published>
-    <updated>2016-05-27T20:25:36-07:00</updated>
+    <updated>2016-06-05T23:34:18-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -759,7 +902,17 @@ _HALT:
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-front-c-e-jpg" href="/assets/images/blog/x160/front-8239c0e9.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/front_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Here is a sample of the video quality and flight capability running default PIDs with BetaFlight 2.7 and 3s 900mah battery&lt;/p&gt;
+&lt;h2 id="summary"&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;This is a fun little miniquad and at 138g without a battery, no registration (in the USA) is required to fly. The quad itself is great value at &lt;a href="http://www.banggood.com/DYS-X160-Micro-FPV-Racer-with-5_8G-32CH-200mW-Transmitter-13-CMOS-Wide-Lens-ARF-p-1002021.html?p=1G09211226617201502J"&gt;a little over $100 on banggood.com&lt;/a&gt;. It is quick and nimble on BetaFlight 2.7 and with the un-changeable amount of camera up-tilt, it might be a little much for a beginner, but for a second quadcopter, this thing is fun! Compared to the &lt;a href="/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"&gt;BeeRotor 160&lt;/a&gt;, it is a little bit lighter, fully integrated, no building is required, but slightly less durable.&lt;/p&gt;
+
+&lt;p&gt;I like the really small size, but it&amp;#39;s not big enough to carry an HD camera.&lt;/p&gt;
+
+&lt;p&gt;The smaller motors mean that we can&amp;#39;t run the standard super-durable &lt;a href="http://www.banggood.com/DYS-X30303-3-blade-bullnose-propeller-3030-CWCCW-Nylon-Fiber-p-1053275.html"&gt;DYS Props&lt;/a&gt; and SMA adaptor on the top is likely to be pushed down into the frame in a moderate crash. I talk about this more in the &lt;a href="#strength"&gt;strength&lt;/a&gt; section.&lt;/p&gt;
+
+&lt;p&gt;Overall, for the price, this little quad is a lot of fun. If you have the time and a little more cash, building a &lt;a href="/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"&gt;BeeRotor 160&lt;/a&gt; is great option as well.&lt;/p&gt;
+
+&lt;p&gt;Here is a sample of the video quality and flight capability running default PIDs with BetaFlight 2.7 and 3s 900mah battery:&lt;/p&gt;
 
 &lt;div class="videoWrapper"&gt;
   &lt;iframe width="560" height="300" src="https://www.youtube.com/embed/pG_X4s4EF-A?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
@@ -773,7 +926,7 @@ _HALT:
 
 &lt;h2 id="parts"&gt;Parts&lt;/h2&gt;
 
-&lt;p&gt;Everything you need except the &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;transmitter and receiver&lt;/a&gt;, &lt;a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;battery&lt;/a&gt; and &lt;a href="http://www.banggood.com/Wholesale-IMAX-B6-Digital-RC-Lipo-NiMH-battery-Balance-Charger-p-46220.html?p=1G09211226617201502J"&gt;charger&lt;/a&gt; is included in the kit! You&amp;#39;ll also want some &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;good goggles&lt;/a&gt; if you&amp;#39;re just getting started.&lt;/p&gt;
+&lt;p&gt;Everything you need except the &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;transmitter and receiver&lt;/a&gt;, &lt;a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;battery&lt;/a&gt; and &lt;a href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;charger&lt;/a&gt; is included in the kit! You&amp;#39;ll also want some &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;good goggles&lt;/a&gt; if you&amp;#39;re just getting started.&lt;/p&gt;
 
 &lt;p&gt;This basic setup is great for a beginner:&lt;/p&gt;
 
@@ -808,19 +961,19 @@ _HALT:
 
           &lt;tr&gt;
         &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Wholesale-IMAX-B6-Digital-RC-Lipo-NiMH-battery-Balance-Charger-p-46220.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-imax-b-charger-e-ef-b-jpg" href="/assets/images/blog/parts/imax-b6-charger-1e3ef4b1.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/imax-b6-charger-1e3ef4b1.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-Eachine-WT-b-a-c-jpg" href="/assets/images/blog/parts/Eachine-WT50-b9a70c27.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/Eachine-WT50-b9a70c27.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
         &lt;/td&gt;
         &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Wholesale-IMAX-B6-Digital-RC-Lipo-NiMH-battery-Balance-Charger-p-46220.html?p=1G09211226617201502J"&gt;iMAX B6 RC Lipo Charger, $25&lt;/a&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;Eachine WT50 6A 50W AC/DC Balance Charger Discharger For LiPo/NiCd/PB Battery, $34&lt;/a&gt;
         &lt;/td&gt;
       &lt;/tr&gt;
 
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Total Cost: &lt;code&gt;~$170&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;I picked this setup because these are the most feature-rich and cost effective components you can use to get into FPV flying! The &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;FS-i6 radio with iA6B receiver&lt;/a&gt; is the best value radio that supports PPM. The &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;EV800 Video Goggles&lt;/a&gt; are a great value at $77. The &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=97842&amp;amp;aff=1624906"&gt;HobbyKing Quanum DIY FPV Goggles&lt;/a&gt; paired with the &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=65994&amp;amp;aff=1624906"&gt;Quanum Auto Scan Receiver&lt;/a&gt; is also a very good choice since they have a little better quality, but you have to &lt;a href="/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"&gt;build it yourself (read the build guide here)&lt;/a&gt;. The &lt;a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;1800mah battery&lt;/a&gt; will work well in any 150-350mm size quadcopter and the 45c rating means it can deliver 81 Amps, which should be more than enough for your mini-quadcopter. Finally, the &lt;a href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;Eachine WT50&lt;/a&gt; charger includes a built in AC-DC converter, so you won&amp;#39;t need an external power supply, like you would with most chargers.&lt;/p&gt;
 
-&lt;p&gt;You can read more about why I&amp;#39;ve picked these specific products and learn more about getting started over at &lt;a href="https://airfield.io"&gt;Airfield.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Total Cost: &lt;code&gt;~$180&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;If you already have all these parts, get just the &lt;a href="http://www.banggood.com/DYS-X160-Micro-FPV-Racer-with-5_8G-32CH-200mW-Transmitter-13-CMOS-Wide-Lens-ARF-p-1002021.html?p=1G09211226617201502J"&gt;DYS x160 v3 miniquad&lt;/a&gt; for &lt;code&gt;$115.99&lt;/code&gt;, which is an awesome price.&lt;/p&gt;
 
@@ -931,70 +1084,6 @@ _HALT:
 &lt;h2 id="video-transmitter-channels"&gt;Video transmitter channels&lt;/h2&gt;
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-x-video-channels-b-jpg" href="/assets/images/blog/x160/video-channels-6611b751.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/video-channels-6611b751.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Turnigy Reaktor 250W Charger</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/04/02/turnigy-reaktor-250w-charger/"/>
-    <id>http://nathan.vertile.com/blog/2016/04/02/turnigy-reaktor-250w-charger/</id>
-    <published>2016-04-01T19:09:00-07:00</published>
-    <updated>2016-04-16T00:01:18-07:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;This is a review and user guide for the &lt;a href="http://www.hobbyking.com/hobbyking/store/__66718__Turnigy_Reaktor_250W_10A_1_6S_Balance_Charger.html?aff=1624906"&gt;Turnigy Reaktor 250W 10A 1-6S Balance Charger&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-batteries-reaktor-e-jpg" href="/assets/images/blog/batteries/reaktor-3384737e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/reaktor_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;Here&amp;#39;s everything that comes in the box:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-batteries-reaktor-box-ba-f-jpg" href="/assets/images/blog/batteries/reaktor-box-12ba2f86.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/batteries/reaktor-box_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Features include:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;IR measurement&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Automatic cell count detection&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Temperature based fan control&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Configurable max voltage per lipo cell, up to 4.3v&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="value"&gt;Value&lt;/h2&gt;
-
-&lt;p&gt;The Reaktor 250w is an amazing deal at $39.99, given it&amp;#39;s features are comparable to the much more expensive &lt;a href="http://amzn.to/25Di70v"&gt;iCharger 106B&lt;/a&gt; which runs $89.99.&lt;/p&gt;
-
-&lt;h2 id="parallel-charging"&gt;Parallel Charging&lt;/h2&gt;
-
-&lt;p&gt;Parallel charging makes it possible to charge multiple batteries of the same cell count and capacity all at once.&lt;/p&gt;
-
-&lt;p&gt;When parallel charging, remember to:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Only charge batteries of the same voltage (cell count) and capacity&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Plug in the main power plug (XT-60) before the balance plug&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="serial-data"&gt;Serial Data&lt;/h2&gt;
-
-&lt;p&gt;Download &lt;a href="http://www.logview.info/forum/index.php?resources/logview-studio.9/"&gt;LogView&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Select the device: &lt;code&gt;iCharger 106B&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Then click the &lt;code&gt;Source&lt;/code&gt; tab and pick &lt;code&gt;Silicone&lt;/code&gt; from the drop down.&lt;/p&gt;
-
-&lt;h2 id="charging-high-voltage-lipos"&gt;Charging High Voltage Lipos&lt;/h2&gt;
-
-&lt;p&gt;The Reaktor Charger can be configured to charge up to 4.3 volts per cell for lipo batteries.&lt;/p&gt;
-
-&lt;p&gt;Configure the Reaktor Charger for high voltage charging by powering on the charger then:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;click the left button, &lt;code&gt;Batt Type&lt;/code&gt;, until you get to settings&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;click the second to the left button, &lt;code&gt;Dec&lt;/code&gt;, until you get to &lt;code&gt;LiPo Termination&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;click the far right button to increase the &lt;code&gt;LiPo Termination&lt;/code&gt; value to it&amp;#39;s max value &lt;code&gt;4.3&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
 </feed>
