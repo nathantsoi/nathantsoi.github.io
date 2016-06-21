@@ -1181,11 +1181,11 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/inverted-vee</loc>
+    <loc>http://nathan.vertile.com/blog/2013/04/09</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013/04/09</loc>
+    <loc>http://nathan.vertile.com/blog/tags/antenna</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1937,7 +1937,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/antenna</loc>
+    <loc>http://nathan.vertile.com/blog/tags/inverted-vee</loc>
     <priority>0.7</priority>
   </url>
 </urlset>
