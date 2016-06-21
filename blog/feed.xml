@@ -5,10 +5,21 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-05-10T20:56:00-07:00</updated>
+  <updated>2016-06-19T20:42:00-07:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
+  <entry>
+    <title>Sirin FPV Typhoon Miniquad</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/06/20/sirin-fpv-typhoon-miniquad/"/>
+    <id>http://nathan.vertile.com/blog/2016/06/20/sirin-fpv-typhoon-miniquad/</id>
+    <published>2016-06-19T20:42:00-07:00</published>
+    <updated>2016-06-19T20:42:14-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html"></content>
+  </entry>
   <entry>
     <title>HobbyKing Quanum V2 Pro Goggles</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"/>
@@ -887,203 +898,6 @@ _HALT:
 &lt;p&gt;You&amp;#39;ll want to connect the current sensor output &lt;code&gt;C_Sens&lt;/code&gt; from the PDB to the &lt;code&gt;CRNT&lt;/code&gt; pin on the F3AIO and the battery voltage &lt;code&gt;V_Sens&lt;/code&gt; output to the &lt;code&gt;BAT&lt;/code&gt; pin.&lt;/p&gt;
 
 &lt;p&gt;Alternatively, if you&amp;#39;re not using a PDB, the &lt;code&gt;RAM&lt;/code&gt; pin is also connected to &lt;code&gt;V_Sens&lt;/code&gt;.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>DYS X160 v3</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/04/05/dys-x160-v3/"/>
-    <id>http://nathan.vertile.com/blog/2016/04/05/dys-x160-v3/</id>
-    <published>2016-04-04T21:06:00-07:00</published>
-    <updated>2016-06-05T23:34:18-07:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;This is a review and setup guide for the &lt;a href="http://www.banggood.com/DYS-X160-Micro-FPV-Racer-with-5_8G-32CH-200mW-Transmitter-13-CMOS-Wide-Lens-ARF-p-1002021.html?p=1G09211226617201502J"&gt;DYS x160 v3 miniquad&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-front-c-e-jpg" href="/assets/images/blog/x160/front-8239c0e9.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/front_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="summary"&gt;Summary&lt;/h2&gt;
-
-&lt;p&gt;This is a fun little miniquad and at 138g without a battery, no registration (in the USA) is required to fly. The quad itself is great value at &lt;a href="http://www.banggood.com/DYS-X160-Micro-FPV-Racer-with-5_8G-32CH-200mW-Transmitter-13-CMOS-Wide-Lens-ARF-p-1002021.html?p=1G09211226617201502J"&gt;a little over $100 on banggood.com&lt;/a&gt;. It is quick and nimble on BetaFlight 2.7 and with the un-changeable amount of camera up-tilt, it might be a little much for a beginner, but for a second quadcopter, this thing is fun! Compared to the &lt;a href="/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"&gt;BeeRotor 160&lt;/a&gt;, it is a little bit lighter, fully integrated, no building is required, but slightly less durable.&lt;/p&gt;
-
-&lt;p&gt;I like the really small size, but it&amp;#39;s not big enough to carry an HD camera.&lt;/p&gt;
-
-&lt;p&gt;The smaller motors mean that we can&amp;#39;t run the standard super-durable &lt;a href="http://www.banggood.com/DYS-X30303-3-blade-bullnose-propeller-3030-CWCCW-Nylon-Fiber-p-1053275.html"&gt;DYS Props&lt;/a&gt; and SMA adaptor on the top is likely to be pushed down into the frame in a moderate crash. I talk about this more in the &lt;a href="#strength"&gt;strength&lt;/a&gt; section.&lt;/p&gt;
-
-&lt;p&gt;Overall, for the price, this little quad is a lot of fun. If you have the time and a little more cash, building a &lt;a href="/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"&gt;BeeRotor 160&lt;/a&gt; is great option as well.&lt;/p&gt;
-
-&lt;p&gt;Here is a sample of the video quality and flight capability running default PIDs with BetaFlight 2.7 and 3s 900mah battery:&lt;/p&gt;
-
-&lt;div class="videoWrapper"&gt;
-  &lt;iframe width="560" height="300" src="https://www.youtube.com/embed/pG_X4s4EF-A?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.46398503274088%;'&gt;&lt;a id="assets-images-blog-x-flying-d-a-jpg" href="/assets/images/blog/x160/flying-d5a78911.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/flying_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;With my antenna in the front, it looks kinda like a unicorn:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.45643541228685%;'&gt;&lt;a id="assets-images-blog-x-DSC-a-edce-jpg" href="/assets/images/blog/x160/DSC02118-4a05edce.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC02118_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="parts"&gt;Parts&lt;/h2&gt;
-
-&lt;p&gt;Everything you need except the &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;transmitter and receiver&lt;/a&gt;, &lt;a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;battery&lt;/a&gt; and &lt;a href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;charger&lt;/a&gt; is included in the kit! You&amp;#39;ll also want some &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;good goggles&lt;/a&gt; if you&amp;#39;re just getting started.&lt;/p&gt;
-
-&lt;p&gt;This basic setup is great for a beginner:&lt;/p&gt;
-
-&lt;table class="small-img"&gt;
-  &lt;tbody&gt;
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-fs-i-transmitter-c-f-jpg" href="/assets/images/blog/parts/fs-i6-transmitter-33c0f071.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/fs-i6-transmitter-33c0f071.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;FlySky FS-i6 with iA6B Receiver, $53&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-eachine-ev-f-jpg" href="/assets/images/blog/parts/eachine-ev800-52f95817.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/eachine-ev800-52f95817.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;Eachine EV800 Video Goggles, $77&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-zop-power-s-fee-b-c-jpg" href="/assets/images/blog/parts/zop-power-3s-6fee8b4c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/zop-power-3s-6fee8b4c.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;3s 11.1V 1800mAh 45C LiPo Battery with an XT-60 Plug, $15&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-Eachine-WT-b-a-c-jpg" href="/assets/images/blog/parts/Eachine-WT50-b9a70c27.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/Eachine-WT50-b9a70c27.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;Eachine WT50 6A 50W AC/DC Balance Charger Discharger For LiPo/NiCd/PB Battery, $34&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;I picked this setup because these are the most feature-rich and cost effective components you can use to get into FPV flying! The &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;FS-i6 radio with iA6B receiver&lt;/a&gt; is the best value radio that supports PPM. The &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;EV800 Video Goggles&lt;/a&gt; are a great value at $77. The &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=97842&amp;amp;aff=1624906"&gt;HobbyKing Quanum DIY FPV Goggles&lt;/a&gt; paired with the &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=65994&amp;amp;aff=1624906"&gt;Quanum Auto Scan Receiver&lt;/a&gt; is also a very good choice since they have a little better quality, but you have to &lt;a href="/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"&gt;build it yourself (read the build guide here)&lt;/a&gt;. The &lt;a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;1800mah battery&lt;/a&gt; will work well in any 150-350mm size quadcopter and the 45c rating means it can deliver 81 Amps, which should be more than enough for your mini-quadcopter. Finally, the &lt;a href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;Eachine WT50&lt;/a&gt; charger includes a built in AC-DC converter, so you won&amp;#39;t need an external power supply, like you would with most chargers.&lt;/p&gt;
-
-&lt;p&gt;Total Cost: &lt;code&gt;~$180&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;If you already have all these parts, get just the &lt;a href="http://www.banggood.com/DYS-X160-Micro-FPV-Racer-with-5_8G-32CH-200mW-Transmitter-13-CMOS-Wide-Lens-ARF-p-1002021.html?p=1G09211226617201502J"&gt;DYS x160 v3 miniquad&lt;/a&gt; for &lt;code&gt;$115.99&lt;/code&gt;, which is an awesome price.&lt;/p&gt;
-
-&lt;h2 id="unboxing"&gt;Unboxing&lt;/h2&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-unboxing-af-jpg" href="/assets/images/blog/x160/unboxing-1-af203515.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/unboxing-1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-unboxing-a-bdacc-jpg" href="/assets/images/blog/x160/unboxing-2-6a5bdacc.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/unboxing-2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;It comes with an antenna, landing gear, battery strap, PWM receiver breakout cable, some extra screws 8 &lt;a href="http://www.banggood.com/4-Pairs-Eachine-3020-Propellers-CW-CCW-For-BG1104-4000KV-Motors-p-992325.html?p=1G09211226617201502J"&gt;3030 props&lt;/a&gt; and user manual.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-unboxing-e-eef-jpg" href="/assets/images/blog/x160/unboxing-3-e3eef415.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/unboxing-3_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Opening up the antenna, we see this is not a circularly polarized cloverleaf, but a circularly polarized &lt;a href="http://orbanmicrowave.com/wp-content/uploads/2015/03/TheBasicsofQuadrifilarHelixAntennas.pdf"&gt;quadrifilar helix antenna&lt;/a&gt;. Thanks to &lt;a href="https://www.qrz.com/db/AA4HA"&gt;AA4HA&lt;/a&gt; over on qrz.com for helping identify it. Since it&amp;#39;s circularly polarized, it should work fine with a normal cloverleaf on the receiving end.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-x-antenna-d-c-jpg" href="/assets/images/blog/x160/antenna-18d849c7.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/antenna_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Interestingly, the flight controller is not hard mounted. It&amp;#39;s soft mounted on these rubbery pegs.&lt;/p&gt;
-
-&lt;p&gt;To protect the fpv video transmitter, be sure to attach the FPV antenna before powering on the quad copter.&lt;/p&gt;
-
-&lt;p&gt;It comes pre-loaded with CleanFlight 1.16, when you upgrade to BetaFligh, you&amp;#39;ll want to use the SPRF3 hex file.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 19.43081452404318%;'&gt;&lt;a id="assets-images-blog-x-cf-c-d-png" href="/assets/images/blog/x160/cf-1.16-c2d09340.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/cf-1.16-c2d09340.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here are the default PIDs, looks like it&amp;#39;s set to use the &lt;code&gt;REWRITE&lt;/code&gt; pid controller by default. Since the data flash has some data, it makes me think they flight-tested this before sending it, cool!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 61.41078838174274%;'&gt;&lt;a id="assets-images-blog-x-cf-default-pids-a-a-b-png" href="/assets/images/blog/x160/cf-default-pids-a9a734b9.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/cf-default-pids-a9a734b9.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The flight controller is soft-mounted on rubber standoffs. The battery plug is an XT-60. You can see the video transmitter is covered by a metal shield, per the usual:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC01461.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC01461_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;DIP switches to change the video transmitter channels are on the top, which is convenient. There is a standard micro USB port on the other side of the flight controller.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC01463.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC01463_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Under that plastic piece on top is a MinimOSD:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02054.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC02054_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The bottom piece of the arms has an integrated DYS XM10 ESC.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC01464.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC01464_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Weight with the antenna is 138g.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC01564.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC01564_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The antenna connector is an SMA Female connector:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02058.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC02058_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;To install the landing gear you&amp;#39;ll need to remove all the screws holding on the bottom plate. This was very difficult. One screw was stuck, so I had to use a heat gun and a pair of piers.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02066.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC02066_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Landing gear installed!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02069.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC02069_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="strength"&gt;Strength&lt;/h2&gt;
-
-&lt;p&gt;On my second flight, just cruising around the courtyard by our apartment, I hit a tree about 12 feet up and crashed upside down on the video antenna.&lt;/p&gt;
-
-&lt;p&gt;This pushed in the whole video transmitter and left the SMA adapter bent like so:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02271.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC02271_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;On further inspection, I found that the failure points were these two solder points that hold the VTX to the frame. The third, middle solder point did not fail. I suggest you add some extra solder to these solder points when installing the landing gear and you shouldn&amp;#39;t have any trouble:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-x-DSC-a-a-jpg" href="/assets/images/blog/x160/DSC02276-4900a6a8.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC02276-4900a6a8.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Since re-enforcing these points, I&amp;#39;ve been flying around without any issue. It seems unlikely that they&amp;#39;ll break, but extra arms are available &lt;a href="http://www.banggood.com/DYS-X160-FPV-Racer-Replacement-Arm-1pc-p-1019748.html?p=1G09211226617201502J"&gt;here&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id="pinout"&gt;Pinout&lt;/h2&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-x-ports-f-c-jpg" href="/assets/images/blog/x160/ports-f1c04103.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/ports-f1c04103.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="receiver"&gt;Receiver&lt;/h3&gt;
-
-&lt;p&gt;Port 6 has PPM/PWM in. From left to right the pins are: &lt;code&gt;GND&lt;/code&gt;, &lt;code&gt;5v&lt;/code&gt;, &lt;code&gt;PPM&lt;/code&gt;/&lt;code&gt;PWM1&lt;/code&gt;, &lt;code&gt;PWM2&lt;/code&gt;, ..., &lt;code&gt;PWM6&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Here I&amp;#39;m using the &lt;a href="http://www.banggood.com/DIY-FRSKY-8CH-Receiver-RX-PPM-Output-For-X9DPLUS-XJT-DJT-DFT-DHT-p-987247.html?p=1G09211226617201502J"&gt;F801&lt;/a&gt; &lt;a href="/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"&gt;DIY FrSky Receiver&lt;/a&gt;:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-ppm-jpg" href="/assets/images/blog/x160/ppm-25382242.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/ppm_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here is what the up-close wiring looks like on the receiver side:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02100.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC02100_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I then installed a ziptie, attached to the bottom plate:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02111.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC02111_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;It sticks out the top along with the receiver antenna.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02107.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC02107_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I then used some heatshrink to hold these together and turned the drone into a unicorn!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-x-DSC-JPG" href="/assets/images/blog/x160/DSC02116.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/DSC02116_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="components"&gt;Components&lt;/h3&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-x-video-channels-b-jpg" href="/assets/images/blog/x160/video-channels-6611b751.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/video-channels-6611b751.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="video-transmitter-channels"&gt;Video transmitter channels&lt;/h2&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.455078125%;'&gt;&lt;a id="assets-images-blog-x-video-channels-b-jpg" href="/assets/images/blog/x160/video-channels-6611b751.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/x160/video-channels-6611b751.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
   </entry>
 </feed>

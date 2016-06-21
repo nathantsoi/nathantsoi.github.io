@@ -21,6 +21,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/page/3</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016/page/2</loc>
     <priority>0.7</priority>
   </url>
@@ -38,6 +42,10 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/tags/android/page/2</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/page/12</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -242,14 +250,6 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2013/02/01</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2013/02/08</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2013/02/14</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -461,6 +461,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/03/22/rctimer-br-x200-mini-quad-build-setup-and-review</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016/03/23/drone-building-at-maker-faire-bay-area-2016</loc>
     <priority>0.7</priority>
   </url>
@@ -501,6 +505,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/06/20/sirin-fpv-typhoon-miniquad</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog</loc>
     <priority>0.7</priority>
   </url>
@@ -525,7 +533,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013/02</loc>
+    <loc>http://nathan.vertile.com/blog/2013/02/08</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -537,7 +545,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013/03/29</loc>
+    <loc>http://nathan.vertile.com/blog/2013/02/14</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -545,15 +553,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2013/02</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2013/03/29</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2013/03</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2013/04/09</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2013/04/16</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1177,11 +1185,11 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/antenna</loc>
+    <loc>http://nathan.vertile.com/blog/2013/04/09</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013/04/24</loc>
+    <loc>http://nathan.vertile.com/blog/tags/sanders</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1581,6 +1589,14 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/06</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/06/20</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016/05</loc>
     <priority>0.7</priority>
   </url>
@@ -1630,6 +1646,10 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2016/03/23</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/03/22</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1909,7 +1929,15 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/tags/sanders</loc>
+    <loc>http://nathan.vertile.com/blog/2013/04/24</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2013/04/16</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/antenna</loc>
     <priority>0.7</priority>
   </url>
 </urlset>

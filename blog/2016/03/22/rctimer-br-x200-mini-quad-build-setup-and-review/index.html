@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link href='/favicon/apple-touch-icon-57x57-8e6554ae.png' rel='apple-touch-icon-precomposed' sizes='57x57'>
+<link href='/favicon/apple-touch-icon-114x114-e0cb1072.png' rel='apple-touch-icon-precomposed' sizes='114x114'>
+<link href='/favicon/apple-touch-icon-72x72-a86b7103.png' rel='apple-touch-icon-precomposed' sizes='72x72'>
+<link href='/favicon/apple-touch-icon-144x144-bd50bc10.png' rel='apple-touch-icon-precomposed' sizes='144x144'>
+<link href='/favicon/apple-touch-icon-60x60-ca47953b.png' rel='apple-touch-icon-precomposed' sizes='60x60'>
+<link href='/favicon/apple-touch-icon-120x120-068de821.png' rel='apple-touch-icon-precomposed' sizes='120x120'>
+<link href='/favicon/apple-touch-icon-76x76-2bd34869.png' rel='apple-touch-icon-precomposed' sizes='76x76'>
+<link href='/favicon/apple-touch-icon-152x152-da7652e0.png' rel='apple-touch-icon-precomposed' sizes='152x152'>
+<link href='/favicon/favicon-196x196-569e78d9.png' rel='icon' sizes='196x196' type='image/png'>
+<link href='/favicon/favicon-96x96-d809406c.png' rel='icon' sizes='96x96' type='image/png'>
+<link href='/favicon/favicon-32x32-162b5c6d.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/favicon/favicon-16x16-d0c2b051.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/favicon/favicon-128-2f649ba2.png' rel='icon' sizes='128x128' type='image/png'>
+<meta content=' ' name='application-name'>
+<meta content='#FFFFFF' name='msapplication-TileColor'>
+<meta content='/favicon/mstile-144x144-bd50bc10.png' name='msapplication-TileImage'>
+<meta content='/favicon/mstile-70x70-2f649ba2.png' name='msapplication-square70x70logo'>
+<meta content='/favicon/mstile-150x150-999c62ba.png' name='msapplication-square150x150logo'>
+<meta content='/favicon/mstile-310x150-37756fac.png' name='msapplication-wide310x150logo'>
+<meta content='/favicon/mstile-310x310-6bd894f0.png' name='msapplication-square310x310logo'>
+<title>
+Rctimer BR-X200 Mini-quad Build, Setup and Review
+</title>
+<link href="/assets/stylesheets/all-f65dd49a.css" rel="stylesheet" />
+<script src="/assets/javascripts/all-d5b91b8e.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-7406390-2', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  
+    // outbound link tracking
+    // http://www.sitepoint.com/track-outbound-links-google-analytics/
+    (function($) {
+      "use strict";
+      // current page host
+      var baseURI = window.location.host;
+      // click event on body
+      $("body").on("click", function(e) {
+        // abandon if link already aborted or analytics is not available
+        if (e.isDefaultPrevented() || typeof ga !== "function") return;
+        // abandon if no active link or link within domain
+        var link = $(e.target).closest("a");
+        if (link.length != 1 || baseURI == link[0].host) return;
+        // cancel event and record outbound link
+        e.preventDefault();
+        var href = link[0].href;
+        ga('send', {
+          'hitType': 'event',
+          'eventCategory': 'outbound',
+          'eventAction': 'link',
+          'eventLabel': href,
+          'hitCallback': loadPage
+        });
+        // redirect after one second if recording takes too long
+        setTimeout(loadPage, 1000);
+        // redirect to outbound page
+        function loadPage() {
+          document.location = href;
+        }
+      });
+    })(jQuery);
+</script>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+</head>
+<body>
+<nav class='navbar navbar-default' id='top' role='navigation'>
+<div class='container'>
+<div class='navbar-header'>
+<div class='navbar-brand'>
+<a href='/blog/'>
+<img src="/assets/images/home/smile-0a95f89f.jpg" />
+</a>
+<span>Rctimer BR-X200 Mini-quad Build, Setup and Review</span>
+</div>
+<button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<div class='navbar-right collapse navbar-collapse' id='bs-nav-collapse'>
+<ul class='nav navbar-nav'>
+<li>
+<form class='search navbar-form' role='search'>
+<div class='form-group'>
+<input class='form-control bloodhound typeahead' data-articles='[["Sirin FPV Typhoon Miniquad","/blog/2016/06/20/sirin-fpv-typhoon-miniquad/"],["HobbyKing Quanum V2 Pro Goggles","/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"],["STM32 hardfault debugging","/blog/2016/05/04/stm32-hardfault-debugging/"],["Eachine VR-007 Goggle Review","/blog/2016/04/25/eachine-vr-007-goggle-review/"],["Rctimer BeeRotor u210 mini quad build, setup and review","/blog/2016/04/24/rctimer-u210-mini-quad-build-setup-and-review/"],["AirBot Flip32 F3 AIO Lite and Typhoon 4-in-1 ESC","/blog/2016/04/11/airbot-flip32-f3-aio-lite-and-typhoon-4-in-1-esc/"],["DYS X160 v3","/blog/2016/04/05/dys-x160-v3/"],["Turnigy Reaktor 250W Charger","/blog/2016/04/02/turnigy-reaktor-250w-charger/"],["HobbyKing Graphene and Bolt High Voltage LiPo Battery Analysis","/blog/2016/03/25/hobbyking-graphene-battery-analysis/"],["BetaFlight in-flight PID tuning","/blog/2016/03/24/betaflight-in-flight-pid-tuning/"],["Drone Building at Maker Faire Bay Area 2016","/blog/2016/03/23/drone-building-at-maker-faire-bay-area-2016/"],["Rctimer BR-X200 Mini-quad Build, Setup and Review","/blog/2016/03/22/rctimer-br-x200-mini-quad-build-setup-and-review/"],["AVR Dissassembly","/blog/2016/02/25/avr-dissassembly/"],["Victory230 FPV Mini-quad Setup and Review","/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"],["FrSky RX SBUS and Frsky DJT Module","/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"],["HMDVR FPV Video Recorder","/blog/2016/02/06/hmdvr-fpv-video-recorder/"],["Rctimer BeerotorF3 Flight Controller","/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"],["Flying Sony NEX Micro 4/3rds Camera","/blog/2016/01/29/flying-micro-4-3rds-camera/"],["Q600 Quadcopter","/blog/2016/01/29/rctimer-q600-quadcopter/"],["ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller","/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/"],["PixHawk Flashing and Setup","/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/"],["BlHeli ESCs","/blog/2015/12/06/blheli-esc-identification/"],["BlHeli ESC Upgrading and Configuration","/blog/2015/12/06/blheli-configuration/"],["BlHeli CleanFlight ESC Calibration","/blog/2015/12/06/blheli-calibration/"],["Rctimer Micro 160 BeeRotor Build, Setup and Review","/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"],["Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if","/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/"],["Rctimer OZE32 / RTFQ Flip32 AIO Integrated Flight Controller Review and Setup","/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"],["Rooting Marshmellow, keeping SELinux","/blog/2015/11/03/rooting-marshmellow-keeping-selinux/"],["MultiRotor Setup Checklist","/blog/2015/10/29/multirotor-setup-checklist/"],["ST-LINK flash and debug on the SPRacingF3","/blog/2015/10/24/st-link-flash-and-debug-on-the-spracingf3-discovery/"],["Debugging Android Native (NDK) Apps","/blog/2015/09/27/debugging-android-native-ndk-apps/"],["Fixing an Arduino 0x000000 Error","/blog/2015/09/16/fixing-an-arduino-0x000000-error/"],["GPS VK16U6 CleanFlight Setup","/blog/2015/08/26/gps-vk16u6-cleanflight-setup/"],["Go FPV Latency Testing","/blog/2015/08/24/go-fpv-latency-testing/"],["Building Android on Ubuntu 14.04","/blog/2015/07/23/building-android-on-ubuntu-14-04/"],["Migrating to Amazon Elastic Map Reduce (EMR)","/blog/2015/07/15/migrating-to-amazon-elastic-map-reduce-emr/"],["Naze32 ST-Link Debugging","/blog/2015/07/06/naze32-st-link-debugging/"],["Decompiling an APK","/blog/2015/06/30/decompiling-an-apk/"],["Nexpose Community Edition copy Scan Template","/blog/2015/06/17/nexpose-community-edition-copy-scan-template/"],["Wireless Video Tx/Rx FPV Channels","/blog/2015/06/17/boscam-tx-rx-fpv-channels/"],["Making a UHF 433mhz Inverted Vee Antenna Set","/blog/2015/06/15/making-a-uhf-433mhz-inverted-vee-antenna-set/"],["Setup OrangeLRS with OpenLRSng","/blog/2015/05/21/setup-orangelrs-with-openlrsng/"],["Go FPV Goggles","/blog/2015/05/21/go-fpv-goggles/"],["FPV250 with Cleanflight, Minimosd, OpenLRSng and a Xiaomi Yi GoPro Clone","/blog/2015/05/19/fpv250-cleanflight/"],["Flashing BlHeli on HobbyKing BlueSeries 12a ESCs With a Chinese Arduino Nano Clone","/blog/2015/05/15/flashing-blheli-on-hobbyking-blueseries-12a-escs-with-a-chinese-arduino-nano-clone/"],["Flashing NodeMCU on the ESP8266","/blog/2015/05/14/flashing-nodemcu-on-the-esp8266/"],["Ebay HC-05 Bluetooth Setup Guide","/blog/2015/05/12/ebay-hc-05-bluetooth-setup-guide/"],["3D Camera on the Tricopter","/blog/2015/05/12/3d-camera-on-the-tricopter/"],["ProRes editing in Premier","/blog/2015/05/11/prores-editing-in-photoshop/"],["Xiaomi Yi -- The Ant Camera","/blog/2015/05/08/xiaomi-yi-the-ant-camera/"],["Minim OSD","/blog/2015/04/22/minim-osd/"],["Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone","/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/"],["Handling Dates in Hadoop Pig","/blog/2015/04/17/handling-dates-in-hadoop-pig/"],["LiPo Battery Price Analysis","/blog/2015/04/10/lipo-battery-price-analysis/"],["ADB over WiFi (aka, how do I debug when using USB host mode?)","/blog/2015/03/27/adb-over-wifi-aka-how-do-i-debug-when-using-usb-host-mode/"],["Shrink a linux VM on OSX","/blog/2015/03/18/shrink-a-linux-vm-on-osx/"],["Mounting a VHD NTFS image on Ubuntu","/blog/2015/02/27/mounting-a-vhd-ntfs-image-on-ubuntu/"],["Ubuntu on the Beaglebone Black","/blog/2015/01/16/ubuntu-on-the-beaglebone-black/"],["Configuring the HK-T6A for a Flight Simulator","/blog/2015/01/02/configuring-the-hk-t6a-for-a-flight-simulator/"],["A complete noob&#x0027;s guide to RC","/blog/2015/01/02/a-complete-noobs-guide-to-rc/"],["DropCam on a Captive Portal","/blog/2014/11/17/dropcam-on-a-captive-portal/"],["Java reversing tips","/blog/2014/09/18/java-reversing-tips/"],["Ooize Data Pipeline Done-Flag","/blog/2014/09/02/oozie-data-pipeline-done-flag/"],["Time Machine on exFat","/blog/2014/08/06/Time_Machine_on_exFat/"],["Optimizing Postgresql","/blog/2014/01/31/Optimizing_Postgresql/"],["Mail Maker","/blog/2014/01/24/Mail_Maker/"],["Angularjs and Rails","/blog/2013/07/12/Angularjs_and_Rails/"],["nginx ssl chained certs","/blog/2013/04/24/nginx_ssl_chained_certs/"],["rails log tagging","/blog/2013/04/24/rails_log_tagging/"],["Converting an Android Project to Maven","/blog/2013/04/16/Converting_an_Android_Project_to_Maven/"],["Oh! Map my rails!","/blog/2013/04/09/Oh_Map_my_rails/"],["mysql permissions","/blog/2013/04/09/mysql_permissions/"],["reset mysql slave","/blog/2013/03/29/reset_mysql_slave/"],["installing rmagick on 10.8 with homebrew","/blog/2013/02/14/installing_rmagick_on_108_with_homebrew/"],["NP-Completeness","/blog/2013/02/08/NP-Completeness/"],["Find and replace non-breaking spaces in vim","/blog/2013/02/01/Find_and_replace_non-breaking_spaces_in_vim/"],["Open Resty the Prebuilt Reverse Proxy","/blog/2013/02/01/Open_Resty_the_Prebuilt_Reverse_Proxy/"],["Sublime Text 2 Tweaks","/blog/2012/12/17/Sublime_Text_2_Tweaks/"],["Batch Convert CR2 to JPG","/blog/2012/12/01/Batch_Convert_CR2_to_JPG/"],["Androids in the wild","/blog/2012/06/30/Androids_in_the_wild/"],["Why you need database_cleaner","/blog/2012/06/11/Why_you_need_database_cleaner/"],["Find and replace in files on linux/unix","/blog/2012/05/12/Find_and_replace_in_files_on_linuxunix/"],["a pithy guide to railsconf 2012","/blog/2012/04/26/a_pithy_guide_to_railsconf_2012/"],["faster rails boot ruby 1.9.3 + debugger","/blog/2012/04/12/faster_rails_boot_ruby_193_debugger/"],["homebrew -- fix that nasty mysql.server start segfault","/blog/2012/03/29/homebrew_--_fix_that_nasty_mysqlserver_start_segfault/"],["read/write filesystem on rooted android for an ad-free android experience","/blog/2012/02/14/readwrite_filesystem_on_rooted_android_for_an_ad-free_android_experience/"],["Turn Wikipedia Back On","/blog/2012/01/17/Turn_Wikipedia_Back_On/"],["compiling qt4 on centos 5","/blog/2012/01/06/compiling_qt4_on_centos_5/"],["pip install pymongo with xcode 4","/blog/2011/08/09/pip_install_pymongo_with_xcode_4/"],["interactive python history -- better titled \"gimme some up arrow love\"","/blog/2011/08/05/interactive_python_history_--_better_titled_gimme_some_up_arrow_love/"],["Centos 5.5 yum repo sha256 fix","/blog/2011/07/27/Centos_55_yum_repo_sha256_fix/"],["Apple Keyboard for Android!","/blog/2011/07/15/Apple_Keyboard_for_Android/"],["jQuery Everywhere","/blog/2011/05/24/jQuery_Everywhere/"],["Django Migrations","/blog/2011/05/11/Django_Migrations/"],["RVM + Rails + Git + HTML5 Boiler Plate... What more could you possibly want?","/blog/2011/02/22/RVM_Rails_Git_HTML5_Boiler_Plate_What_more_could_you_possibly_want/"],["OneCast 2.0 - downloadable podcasts for androids of every color","/blog/2011/02/18/OneCast_20_-_downloadable_podcasts_for_androids_of_every_color/"],["Default Android Menu Icons in Your App","/blog/2011/02/17/Default_Android_Menu_Icons_in_Your_App/"],["Windows 7 x64 Android Development (ADB)","/blog/2010/11/06/Windows_7_x64_Android_Development_ADB/"],["Firefox Plugin - Watching for an Application Exit Event","/blog/2010/05/03/Firefox_Plugin_-_Watching_for_an_Application_Exit_Event/"],["Stop Redrawing a Fixed Orientation Android App","/blog/2010/03/08/Stop_Redrawing_a_Fixed_Orientation_Android_App/"]]' placeholder='Search' type='text'>
+</div>
+</form>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+
+<div class='container'>
+<div class='row row-offcanvas row-offcanvas-left'>
+<!-- sidebar -->
+<div class='col-xs-3 col-sm-3 sidebar-offcanvas'>
+<div id='sidebar' role='navigation'>
+<div class='sidebar-contents'>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+<a href='#top'>Contents</a>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 table-of-contents'>
+<ul class="nav"><li><a class="type-h2" href="#parts"><h2>Parts</h2></a></li><ul><li><a class="type-h3" href="#tools-and-misc-parts"><h3>Tools and Misc Parts</h3></a></li></ul>
+<li><a class="type-h2" href="#review"><h2>Review</h2></a></li>
+<li><a class="type-h2" href="#build"><h2>Build</h2></a></li><ul><li><a class="type-h3" href="#frame"><h3>Frame</h3></a></li>
+<li><a class="type-h3" href="#motors-and-escs"><h3>Motors and ESCs</h3></a></li>
+<li><a class="type-h3" href="#pdb-and-flight-controller"><h3>PDB and Flight Controller</h3></a></li>
+<li><a class="type-h3" href="#video"><h3>Video</h3></a></li>
+<li><a class="type-h3" href="#lc-filter"><h3>LC Filter</h3></a></li>
+<li><a class="type-h3" href="#flashing-scarabosd"><h3>Flashing ScarabOSD</h3></a></li>
+<li><a class="type-h3" href="#scarabosd-configuration"><h3>ScarabOSD Configuration</h3></a></li>
+<li><a class="type-h3" href="#configuring-betaflight"><h3>Configuring Betaflight</h3></a></li>
+<li><a class="type-h3" href="#calibrate-your-escs"><h3>Calibrate your ESCS</h3></a></li>
+<li><a class="type-h3" href="#test-your-failsafe"><h3>Test your failsafe</h3></a></li></ul></ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+Related Articles
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 related'>
+<ul>
+<li><a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/">ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller</a></li>
+<li><a href="/blog/2016/04/24/rctimer-u210-mini-quad-build-setup-and-review/">Rctimer BeeRotor u210 mini quad build, setup and review</a></li>
+<li><a href="/blog/2016/01/29/rctimer-q600-quadcopter/">Q600 Quadcopter</a></li>
+<li><a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/">Victory230 FPV Mini-quad Setup and Review</a></li>
+<li><a href="/blog/2015/04/22/minim-osd/">Minim OSD</a></li>
+<li><a href="/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/">PixHawk Flashing and Setup</a></li>
+</ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header'></div>
+</div>
+<div class='row'>
+<div class='col-lg-12 text-center'>
+Checkout my other guides at
+<a href='/blog'>nathan.vertile.com/blog</a>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header text-center'>
+<div class='drawer-footer'>
+<small>
+©
+<a href='mailto:nathan@vertile.com'>Nathan Tsoi</a>
+</small>
+</div>
+</div>
+</div>
+<div class='row last'>
+<div class='col-lg-12 text-center'>
+<a class='btn-sm btn-default' href='https://github.com/nathantsoi' target='_blank'>
+<i class='fa fa-github'></i>
+</a>
+<a class='btn-sm btn-default' href='https://bitbucket.org/nathantsoi' target='_blank'>
+<i class='fa fa-bitbucket'></i>
+</a>
+<a class='btn-sm btn-default' href='https://twitter.com/nathantsoi/' target='_blank'>
+<i class='fa fa-twitter'></i>
+</a>
+<a class='btn-sm btn-default' href='https://angel.co/nathantsoi' target='_blank'>
+<i class='fa fa-angellist'></i>
+</a>
+<a class='btn-sm btn-default' href='https://linkedin.com/in/nattsoi/' target='_blank'>
+<i class='fa fa-linkedin'></i>
+</a>
+<a class='btn-sm btn-default' href='https://facebook.com/nathantsoi' target='_blank'>
+<i class='fa fa-facebook'></i>
+</a>
+<a class='btn-sm btn-default' href='https://plus.google.com/112518806102274696668' target='_blank'>
+<i class='fa fa-google-plus'></i>
+</a>
+<a class='btn-sm btn-default' href='https://news.ycombinator.com/user?id=natvert' target='_blank'>
+<i class='fa fa-hacker-news'></i>
+</a>
+<a class='btn-sm btn-default' href='https://trello.com/nathantsoi' target='_blank'>
+<i class='fa fa-trello'></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- main area -->
+<div class='col-sm-9 col-xs-12' id='mainbar'>
+<article>
+<p>This is a review, build and setup guide for the Rctimer Beerotor X200.</p>
+
+<p>All up weight is <code>323g</code> for a power to weight ratio of approximately <code>10:1</code>.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-finished-weight-f-jpg" href="/assets/images/blog/beerotor/x200/finished-weight-67f01499.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/finished-weight_prev-97e68472.jpg' class='trailing-space' ></img></a></div></div>
+
+<h2 id="parts">Parts</h2>
+
+<p>Here&#39;s everything you&#39;ll need for the quadcopter:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.455078125%;'><a id="assets-images-blog-beerotor-x-parts-all-f-cba-jpg" href="/assets/images/blog/beerotor/x200/parts-all-f8529cba.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/parts-all-f8529cba.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>We&#39;ve got:</p>
+
+<table class="small-img">
+  <tbody>
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1582.html/#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-beerotor-x-parts-frame-c-b-f-jpg" href="/assets/images/blog/beerotor/x200/parts-frame-c7b194f9.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/parts-frame-c7b194f9.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1582.html/#r-pNathanT">x200 Frame, $29.99</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1545.html/#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-beerotor-x-parts-escs-e-ee-jpg" href="/assets/images/blog/beerotor/x200/parts-escs-2e961ee2.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/parts-escs-2e961ee2.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1545.html/#r-pNathanT">4x XDrone 20a ESCs, $43.96</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1612.html/#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-beerotor-x-parts-motors-b-cb-jpg" href="/assets/images/blog/beerotor/x200/parts-motors-8b5cb088.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/parts-motors-8b5cb088.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1612.html/#r-pNathanT">4x FR2306/2300KV Motors, $53.96</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1592.html/#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-beerotor-parts-brf-f-bb-jpg" href="/assets/images/blog/beerotor/parts-brf3-f542bb38.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/parts-brf3-f542bb38.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1592.html/#r-pNathanT">BRF3 Flight Controller with OSD and Baro, $34.99</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1593.html/#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-beerotor-parts-pdb-d-ae-aea-jpg" href="/assets/images/blog/beerotor/parts-pdb-d5ae1aea.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/parts-pdb-d5ae1aea.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1593.html/#r-pNathanT">BRF3 PDB with current sensor, $5.99</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1584.html/#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-beerotor-parts-camera-aab-bcf-jpg" href="/assets/images/blog/beerotor/parts-camera-aab1bcf4.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/parts-camera-aab1bcf4.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1584.html/#r-pNathanT">BeeRotor Mini FOV150 700TLV CCD camera, $21.99</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1594.html/#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-beerotor-parts-vtx-e-cbbb-jpg" href="/assets/images/blog/beerotor/parts-vtx-e163cbbb.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/parts-vtx-e163cbbb.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1594.html/#r-pNathanT">ELGAE 5.8g 200mW LT200 VTX (32CH), $14.99</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1590.html/#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-beerotor-parts-antenna-ed-ad-jpg" href="/assets/images/blog/beerotor/parts-antenna-ed8118ad.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/parts-antenna-ed8118ad.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.rctimer.com/product-1590.html/#r-pNathanT">BeeRotor 5.8GHz, Right Hand Circular Polarized Skew Planer Wheel Antenna, $6.99</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://rctimer.com/product-1598.html/#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-beerotor-parts-props-x-x-c-eea-jpg" href="/assets/images/blog/beerotor/parts-props-5x4x3-c8eea643.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/parts-props-5x4x3-c8eea643.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://rctimer.com/product-1598.html/#r-pNathanT">5x4x3 Tri Blade Propellers, $2.49</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://rctimer.com/product-1598.html/#r-pNathanT"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.95559502664298%;'><a id="assets-images-blog-beerotor-parts-props-x-d-b-de-jpg" href="/assets/images/blog/beerotor/parts-props-5x4.5-2d5b2de3.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/parts-props-5x4.5-2d5b2de3.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://rctimer.com/product-1598.html/#r-pNathanT">5x4.5 Propellers, $3.99</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&utm_content=mony?p=1G09211226617201502J"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-frsky-diy-vs-x-r-a-fc-jpg" href="/assets/images/blog/frsky-diy/vs-x4r-47a65fc3.jpg" class="linked-img colorbox"><img src='/assets/images/blog/frsky-diy/vs-x4r_prev-c81b43a1.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&utm_content=mony?p=1G09211226617201502J">FrSky naked x4r receiver, $17.89</a>
+        </td>
+      </tr>
+
+  </tbody>
+</table>
+
+<p>Total Cost: $248.33</p>
+
+<h3 id="tools-and-misc-parts">Tools and Misc Parts</h3>
+
+<p>Before we get started make sure you have the following tools and misc parts on hand</p>
+
+<ul>
+<li><p>A <a href="http://www.banggood.com/8-in-1-Hex-socket-driver-Hexagon-screwdriver-Set-For-RC-Models-p-1002287.html?p=1G09211226617201502J">proper hex driver set</a>. You&#39;ll need something that fits a 2.0mm hex socket head. I broke two right angle allen wrenches trying to screw the carbon plate to the plastic pieces of the quad-copter frame.</p></li>
+<li><p>Soldering Iron. I have a Weller <a href="http://amzn.to/1QWfalA">WES51</a></p></li>
+<li><p><a href="http://www.banggood.com/Wholesale-19_1mm-Adhesive-Dual-Wall-3-1-Heat-Shrink-Tube-Sleeve-50cm-Metre-p-47226.html?p=1G09211226617201502J">20mm</a> to <a href="http://www.banggood.com/Wholesale-25_4mm-Adhesive-Polyolefin-31-Heat-Shrink-Tubing-Tube-Sleeve-Sleeving-Wrap-p-47233.html?p=1G09211226617201502J">25mm</a> heatshrink tubing, for covering various electronic components.</p></li>
+<li><p>Blue Threadlocker. The cheapest place I&#39;ve found to get this is <a href="http://www.harborfreight.com/threadlocker-no-42-10-ml-medium-strength-65192.html">Harbor Freight</a>, if you have one locally.</p></li>
+</ul>
+
+<h2 id="review">Review</h2>
+
+<p>The carbon fiber is 3mm on the bottom plate</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-carbon-bottom-c-bcd-jpg" href="/assets/images/blog/beerotor/x200/carbon-bottom-35c18bcd.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/carbon-bottom_prev-e53b95a9.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>The body plates are 2mm</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-carbon-body-a-f-e-jpg" href="/assets/images/blog/beerotor/x200/carbon-body-a3f4e864.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/carbon-body_prev-4b7169a4.jpg' class='trailing-space' ></img></a></div></div>
+
+<h2 id="build">Build</h2>
+
+<p>Start with the frame.</p>
+
+<h3 id="frame">Frame</h3>
+
+<p>Find the camera plate and place it between both frame plates.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-frame-a-jpg" href="/assets/images/blog/beerotor/x200/build-frame-1-610a8675.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-frame-1_prev-7d61bab4.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Test fit the camera and screw in the standoffs using the shorter screws. Make sure you use some threadlock.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-frame-camera-bd-a-jpg" href="/assets/images/blog/beerotor/x200/build-frame-camera-bd7a7346.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-frame-camera_prev-1833c8a7.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-frame-f-c-b-jpg" href="/assets/images/blog/beerotor/x200/build-frame-2-f0c417b9.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-frame-2_prev-fd066636.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>It comes with 5 posts, but I only used 3. I&#39;ll use the others as spares + save some weight.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-frame-df-jpg" href="/assets/images/blog/beerotor/x200/build-frame-3-714df475.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-frame-3_prev-4b262f6a.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>You&#39;ll notice there are two camera plate slots. I&#39;ll go with the less aggressive angle for now, and maybe swap to the more aggressive angle once it&#39;s all tuned up.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-frame-camera-bd-a-jpg" href="/assets/images/blog/beerotor/x200/build-frame-camera-bd7a7346.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-frame-camera_prev-1833c8a7.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Here, the plate is installed.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-frame-e-fa-jpg" href="/assets/images/blog/beerotor/x200/build-frame-4-90e9fa50.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-frame-4_prev-fc7edcf1.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Install the camera.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-frame-camera-a-c-jpg" href="/assets/images/blog/beerotor/x200/build-frame-camera-2-a026595c.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-frame-camera-2_prev-156e4d45.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Test fit the body by sliding it into the bottom plate. Open up the holes in the bottom plate with some sand paper, if it&#39;s too tight.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-frame-sanding-bc-d-c-jpg" href="/assets/images/blog/beerotor/x200/build-frame-sanding-92bc9d4c.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-frame-sanding_prev-a9e2b224.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-frame-sanding-e-e-jpg" href="/assets/images/blog/beerotor/x200/build-frame-sanding-2-e849428e.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-frame-sanding-2_prev-f112b8c4.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>I decided to add another standoff in the middle top, so I have something to attach the <a href="http://goo.gl/A5bJ2Q">Xiaomi Yi camera</a>.</p>
+
+<h3 id="motors-and-escs">Motors and ESCs</h3>
+
+<p>Now remove the body and solder the motors to the ESCs. First, trim the motor wires. I trimmed them to 20mm.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-motors-trimmed-a-f-jpg" href="/assets/images/blog/beerotor/x200/build-motors-trimmed-7138a62f.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-motors-trimmed_prev-ba4c0ba0.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Strip and tin the wires.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-motors-tinned-eb-d-f-jpg" href="/assets/images/blog/beerotor/x200/build-motors-tinned-7eb4d8f7.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-motors-tinned_prev-da0df8a7.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Mount the motors using the included M3*6mm screws and threadlock.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-motors-threadlock-ac-jpg" href="/assets/images/blog/beerotor/x200/build-motors-threadlock-ac739940.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-motors-threadlock_prev-8ab6c54e.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Remove the heat shrink from the ESCs.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-escs-heatshrink-f-faa-jpg" href="/assets/images/blog/beerotor/x200/build-escs-heatshrink-51f6faa2.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-escs-heatshrink_prev-d9118be7.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>De-solder the motor wire leads from the ESCs.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-escs-desoldered-a-a-b-d-jpg" href="/assets/images/blog/beerotor/x200/build-escs-desoldered-a9a4b71d.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-escs-desoldered_prev-989f07a2.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Now solder the ESCs to the motors. I always start with the middle wire. Don&#39;t worry about the wiring order. Just attach them and we&#39;ll swap the wires on motors that are rotating the wrong way after we get the flight controller plugged in. If you have some new ~15mm heatshrink to cover the ESCs, slip it on before soldering.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-escs-soldered-d-c-jpg" href="/assets/images/blog/beerotor/x200/build-escs-soldered-562d90c4.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-escs-soldered_prev-acfd2720.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Complete the same steps for the rest of the ESCs and motors.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-escs-all-soldered-e-e-jpg" href="/assets/images/blog/beerotor/x200/build-escs-all-soldered-01210e4e.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-escs-all-soldered_prev-882b7758.jpg' class='trailing-space' ></img></a></div></div>
+
+<h3 id="pdb-and-flight-controller">PDB and Flight Controller</h3>
+
+<p>Let&#39;s prep the PDB for installation. Grab the included 16AWG wires and XT-60 connector.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-pdb-power-b-jpg" href="/assets/images/blog/beerotor/x200/build-pdb-power-b3422046.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-pdb-power_prev-859e1b91.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Cut the video transmitter power leads down. I cut them to 130mm.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-vtx-cut-c-jpg" href="/assets/images/blog/beerotor/x200/build-vtx-cut-35352c34.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-vtx-cut_prev-9ba3f819.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Strip and tin both sets of wires.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-pdb-power-tinned-ef-fb-jpg" href="/assets/images/blog/beerotor/x200/build-pdb-power-tinned-7ef978fb.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-pdb-power-tinned_prev-f27f3821.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Solder both of these onto the battery pads on the PDB.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-pdb-power-soldered-c-b-c-jpg" href="/assets/images/blog/beerotor/x200/build-pdb-power-soldered-3c0b48c4.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-pdb-power-soldered_prev-bfefe009.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Now solder the XT-60 on. It helps ensure you don&#39;t melt the connector, if you have an extra female XT-60 lying around, plug it in. I usually tape the connector to my workbench, slip the heatshrink onto the wires, tin the connector, tin the wires then solder them together.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-pdb-xt-bedc-jpg" href="/assets/images/blog/beerotor/x200/build-pdb-xt60-113bedc2.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-pdb-xt60_prev-710bce68.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Now, lets mount the flight controller.</p>
+
+<p>I&#39;m using M3x12mm nylon screws with 4mm standoffs between the PDB and the BRF3. In place of standoffs on the bottom, I&#39;m using two M3 nylon nuts, which are slightly over 2mm tall each. Any 4mm+ standoffs will work. You&#39;ll need two sets.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-fc-mount-e-f-e-jpg" href="/assets/images/blog/beerotor/x200/build-fc-mount-1-e4668f4e.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-fc-mount-1_prev-0d9fe841.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Loosely install the nylon screws and two nuts.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-fc-mount-ea-c-jpg" href="/assets/images/blog/beerotor/x200/build-fc-mount-2-94ea3c34.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-fc-mount-2_prev-23b192d5.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Install the standoffs that will be between the PDB and the flight controller.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-fc-mount-jpg" href="/assets/images/blog/beerotor/x200/build-fc-mount-3-34107974.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-fc-mount-3_prev-209e6fa2.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Tin the pads on the PDB. I&#39;ve found the easiest way to do this is to touch your iron to the pad then feed solder onto the iron.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-pdb-tinned-c-jpg" href="/assets/images/blog/beerotor/x200/build-pdb-tinned-c8136357.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-pdb-tinned_prev-bd665c78.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Measure each ESC power wire, cut and solder them on.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-pdb-soldered-jpg" href="/assets/images/blog/beerotor/x200/build-pdb-soldered-1-93957712.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-pdb-soldered-1_prev-33515352.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Note that the <code>GND</code> and <code>V+</code> pads are in sets of two on either side:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-pdb-soldered-cbf-e-jpg" href="/assets/images/blog/beerotor/x200/build-pdb-soldered-2-cbf4e164.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-pdb-soldered-2_prev-c27da62d.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Use a pin to remove the DuPont ESC pins from their headers and optionally protect them with some heatshrink.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-pin-esc-header-b-b-jpg" href="/assets/images/blog/beerotor/x200/pin-esc-header-6577b1b7.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/pin-esc-header_prev-0db07199.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Complete the other side of the PDB then solder some pin headers onto the BeeRotorF3</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-flight-controllers-brf-brf-withpins-b-eb-jpg" href="/assets/images/blog/flight_controllers/brf3/brf3-withpins-b75775eb.jpg" class="linked-img colorbox"><img src='/assets/images/blog/flight_controllers/brf3/brf3-withpins_prev-2d402674.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Attach the flight controller. I&#39;m using M3x3mm nylon screws. I&#39;ve oriented the USB port out the back.</p>
+
+<p>If you&#39;re mounting the flight controller pointing in the same direction that I&#39;m showing here, be sure to set <code>set align_board_yaw = 90</code> in the configurator GUI.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-fc-mount-d-b-f-jpg" href="/assets/images/blog/beerotor/x200/build-fc-mount-4-3d7b423f.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-fc-mount-4_prev-539f880c.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Prepare your receiver. I&#39;m using a <a href="http://www.banggood.com/FrSky-X4R-SB-2_4G-316-Channel-ACCST-Telemetry-Receiver-Naked-p-1035549.html?utm_campaign=X4R&amp;utm_content=mony?p=1G09211226617201502J">naked X4R-SB</a>.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 61.672727272727265%;'><a id="assets-images-blog-frsky-diy-x-r-pinout-bba-eb-jpg" href="/assets/images/blog/frsky-diy/x4r-pinout-9bba4eb1.jpg" class="linked-img colorbox"><img src='/assets/images/blog/frsky-diy/x4r-pinout_prev-054baaaa.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>I removed the extra wires from the SH connector on the BeeRotorF3 side using a pin. Check the <a href="/blog/2016/02/03/rctimer-beerotorf3-flight-controller/#pinouts">BeeRotor F3 Pinout</a> for details.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-receiver-test-eacb-b-jpg" href="/assets/images/blog/beerotor/x200/receiver-test-1-69eacb3b.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/receiver-test-1_prev-6d83eb39.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Another good receiver option is the <a href="/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/">DIY FrSky F802</a> flashed to SBUS. RSSI-ADC is the grey wire, SBUS on the Green/White wire.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-frsky-diy-sbus-d-jpg" href="/assets/images/blog/frsky-diy/sbus-302d0396.jpg" class="linked-img colorbox"><img src='/assets/images/blog/frsky-diy/sbus_prev-f99d9212.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>If you&#39;re using the DIY FrSky module, enable SBUS then <code>set rssi_channel=9</code> You don&#39;t actually need to connect the RSSI ADC.</p>
+
+<p>See the <a href="/blog/2016/02/03/rctimer-beerotorf3-flight-controller/#serial-rx">BeerotorF3 Serial RX Configuration</a> guide for detailed setup instructions.</p>
+
+<p>Now would be a good time to pause and test your receiver.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-receiver-test-b-b-jpg" href="/assets/images/blog/beerotor/x200/receiver-test-2-6b9b0546.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/receiver-test-2_prev-cd06bfe8.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Turn on <code>Serial RX</code> on the Ports page:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 25.65720294426919%;'><a id="assets-images-blog-beerotor-x-betaflight-ports-rx-c-b-png" href="/assets/images/blog/beerotor/x200/betaflight-ports-rx3-9c60b723.png" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/betaflight-ports-rx3-9c60b723.png' class='trailing-space' ></img></a></div></div>
+
+<p>Then on the main settings tab, pick <code>RX_SERIAL</code> in the <code>Receiver mode</code> section and pick <code>SBUS</code> in the <code>Serial Receiver Provider</code> section. F3 boards all have a built-in inverter, so you won&#39;t need an external inverter.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 89.51965065502183%;'><a id="assets-images-blog-beerotor-x-betaflight-rx-configuration-c-bf-png" href="/assets/images/blog/beerotor/x200/betaflight-rx-configuration-c386bf92.png" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/betaflight-rx-configuration-c386bf92.png' class='trailing-space' ></img></a></div></div>
+
+<p>If you&#39;re using SBUS with OpenLRS or the <a href="/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/">DIY FrSKY module</a>, the signal coming from these recievers is actually not inverted, so make sure you <code>set sbus_inversion=OFF</code>. With OpenLRS, I also set RSSI to be sent on channel 9 of the signal, so I <code>set rssi_channel=9</code> in the CLI.</p>
+
+<p>Now is a good time to setup your receiver fail safe.</p>
+
+<p>To set the X4R-SB receiver fail safe to send no data when the signal is lost, which is what we want, so BetaFlight knows that the signal has been lost, power on the receiver, with your transmitter turned off. I did this by plugging the quad&#39;s USB port into my computer and when the red light is flashing, press and release the bind button. The green light will flash twice and you&#39;re all set!</p>
+
+<p>You can test the configuration by powering on your quad and transmitter, then turning off the transmitter and checking the Receiver tab. Notice the throttle channel is at <code>885</code> which is below the lowest valid signal value.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 54.82041587901701%;'><a id="assets-images-blog-beerotor-x-betaflight-rx-failsafe-a-png" href="/assets/images/blog/beerotor/x200/betaflight-rx-failsafe-2113a618.png" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/betaflight-rx-failsafe-2113a618.png' class='trailing-space' ></img></a></div></div>
+
+<h3 id="video">Video</h3>
+
+<p>Let&#39;s wire the onboard OSD to the video transmitter and camera. The video signal will pass from your camera, through the BRF3 flight controller&#39;s OSD and then out to the video transmitter.</p>
+
+<p>Note, I had to come back later and add an LC filter to make the video cleaner, you may want to do this first: <a href="#lc-filter">Build an LC Filter</a>, then come back.</p>
+
+<p>Make sure you slip some heat shrink tube onto each wire before soldering.</p>
+
+<p>The OSD video in is closest to the boot button. My wires are <code>Yellow</code> -&gt; <code>OSD IN</code>, <code>Orange</code> -&gt; <code>OSD OUT</code>. <code>OSD IN</code> is the camera and <code>OSD OUT</code> is the video transmitter. Don&#39;t forget to put the heat shrink on the wires before soldering.</p>
+
+<p>Trim the video, ground and power leads from the video transmitter. Then wire the camera power lead (red in this photo) to the video transmitter&#39;s power out (blue). If you&#39;re using another camera video source, wire that to the camera power lead instead.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.0%;'><a id="assets-images-blog-beerotor-x-build-vtx-ce-a-be-jpg" href="/assets/images/blog/beerotor/x200/build-vtx-1-7ce5a1be.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-vtx-1_prev-83e7d3aa.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Wire the camera video out lead (yellow) to the OSD&#39;s video in (yellow).</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.0%;'><a id="assets-images-blog-beerotor-x-build-vtx-bdef-jpg" href="/assets/images/blog/beerotor/x200/build-vtx-2-bdef5761.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-vtx-2_prev-f3ed69a0.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Wire the video transmitter&#39;s video in line wire (yellow) to the OSD&#39;s video out (orange).</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.0%;'><a id="assets-images-blog-beerotor-x-build-vtx-fcf-db-jpg" href="/assets/images/blog/beerotor/x200/build-vtx-3-3fcf24db.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-vtx-3_prev-20897f36.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Wire the camera&#39;s ground lead to one of the ground lines from the OSD.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.0%;'><a id="assets-images-blog-beerotor-x-build-vtx-d-a-jpg" href="/assets/images/blog/beerotor/x200/build-vtx-4-534d99a4.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-vtx-4_prev-dd6640f8.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Wire the OSD&#39;s other ground lead to the video transmitter. Here&#39;s how it should be wired when you&#39;re done. Your wire colors may be different, so be sure to check the pin positions.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.0%;'><a id="assets-images-blog-beerotor-x-build-vtx-e-ccc-jpg" href="/assets/images/blog/beerotor/x200/build-vtx-5-92e9ccc9.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-vtx-5_prev-d6385527.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Finally, shrink your heatshrink tube and twist up the leads to minimize interference.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 133.33333333333331%;'><a id="assets-images-blog-beerotor-x-build-vtx-ebd-b-jpg" href="/assets/images/blog/beerotor/x200/build-vtx-6-7ebd8b60.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-vtx-6_prev-fc1f79ae.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Before you apply power to the camera, make sure the video signal is closest to the outside and the power is on the inside like the photo below. Reversing these will break your camera.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-camera-wiring-b-f-b-jpg" href="/assets/images/blog/beerotor/x200/build-camera-wiring-b12f4b89.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-camera-wiring_prev-59889a02.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Time to test the camera. First let&#39;s update the OSD.</p>
+
+<h3 id="lc-filter">LC Filter</h3>
+
+<p>There was so much noise caused by this super-powerful mini-quad I had to add an LC filter. Here&#39;s how I built mine.</p>
+
+<p>To build this LC filter, you&#39;ll need an <a href="http://www.banggood.com/10Pcs-330UH-3A-Toroid-Core-Inductor-Wire-Wind-Wound-p-1006115.html?p=1G09211226617201502J">inductor</a> and a <a href="http://www.banggood.com/1uF-2200uF-125Pcs-25-Value-Electrolytic-Capacitors-Assorted-Kit-Set-p-917575.html?p=1G09211226617201502J">capacitor</a>.</p>
+
+<p>I used a 330UF inductor and 50v, 470uF capacitor. Almost any inductor will work. You&#39;ll want a 470uF+ capacitor that is rated for 20-50% more volts than you plan to run on your quad. For example my high voltage lipos run at <code>17.4v</code> fully charged so at a minimum you&#39;ll want a <code>20.88v</code> rated capacitor. I used a 50v just to be safe.</p>
+
+<p>Cut the main power wire. This is the power line that connects the main battery to the video transmitter. Don&#39;t cut the power line that goes between the video transmitter and the camera. You&#39;ll want to strip the wire and tin it. We&#39;ll solder one end of the inductor to this.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.8%;'><a id="assets-images-blog-beerotor-x-lc-d-bc-jpg" href="/assets/images/blog/beerotor/x200/lc-1-d43113bc.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/lc-1_prev-b81c5923.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Now remove the ground wire pin header from the plug using a pin, no need to cut this wire. Solder on another small wire to the exposed pin header. This will be our &quot;ground wire extension&quot;:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.8%;'><a id="assets-images-blog-beerotor-x-lc-a-b-jpg" href="/assets/images/blog/beerotor/x200/lc-2-96a3b115.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/lc-2_prev-5a0d857f.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Put the ground wire back into the plug and it will look like this:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.8%;'><a id="assets-images-blog-beerotor-x-lc-b-c-e-jpg" href="/assets/images/blog/beerotor/x200/lc-3-b1c7155e.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/lc-3_prev-30e60796.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Trim the ground wire extension to a few centimeters. Slide some heat shrink tube on to the longer side of the cut power wire and onto the short ground wire extension.</p>
+
+<p>Now solder one end of the inductor to the positive side of the capacitor. The capacitor has a white stripe, the pin closest to this stripe is ground, so wire the power line to the other pin. Then solder these two pins to the short power wire connected to the plug. Solder the other side of the inductor to the other side of the power wire. Finally, solder the ground wire extension to the ground on the capacitor.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 133.6898395721925%;'><a id="assets-images-blog-beerotor-x-lc-b-a-f-jpg" href="/assets/images/blog/beerotor/x200/lc-4-6b716a2f.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/lc-4_prev-565a1534.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>It should look like this when you&#39;re done:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.8%;'><a id="assets-images-blog-beerotor-x-lc-b-dada-jpg" href="/assets/images/blog/beerotor/x200/lc-5-b4dada73.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/lc-5_prev-2d0cb613.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Power everything on and make sure it works, don&#39;t forget to attach antennas first!</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 74.8%;'><a id="assets-images-blog-beerotor-x-lc-a-b-jpg" href="/assets/images/blog/beerotor/x200/lc-6-a00b3953.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/lc-6_prev-9226d94f.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Put one more layer of heat shrink over the whole thing you&#39;re done!</p>
+
+<h3 id="flashing-scarabosd">Flashing ScarabOSD</h3>
+
+<p>Plugin the OSD to your <a href="http://www.banggood.com/CJMCU-CP2102-USB-To-TTLSerial-Module-UART-STC-Downloader-p-970993.html?p=1G09211226617201502J">CP2012</a> like so. If you need the <a href="https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx">CP2102 Driver</a> download that as well.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-flash-scarab-osd-wiring-fef-jpg" href="/assets/images/blog/beerotor/x200/flash-scarab-osd-wiring-fef17283.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/flash-scarab-osd-wiring_prev-37f972b9.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Download the latest release of ScarabOSD from here: <a href="https://github.com/ShikOfTheRa/scarab-osd/releases">https://github.com/ShikOfTheRa/scarab-osd/releases</a> and extract the zip file.</p>
+
+<p>Download my ScarabOSD <a href="https://gist.githubusercontent.com/nathantsoi/97730f7af797254e06dc80fab3af1850/raw/Config.h">Config.h</a> and copy it into the extracted folder.</p>
+
+<p>Open Arduino, <a href="https://www.arduino.cc/en/Main/Software">download</a> it first, if you don&#39;t already have it. From Arduino, open the <code>MW_OSD</code> folder in the extracted Scarab OSD source and from that folder open <code>MW_OSD.ino</code>.</p>
+
+<p>Click the Upload button to install the latest version of the ScarabOSD firmware on the BeeRotorF3.</p>
+
+<p>See <a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/#flash-scarab-osd">the OZE32 ScarabOSD flashing guide</a> for details.</p>
+
+<h3 id="scarabosd-configuration">ScarabOSD Configuration</h3>
+
+<p>Now let&#39;s configure the OSD. </p>
+
+<p>Download my configuration from <a href="https://gist.githubusercontent.com/nathantsoi/1ba3c5cc4892022b04ab/raw/scarab-osd.osd">https://gist.githubusercontent.com/nathantsoi/1ba3c5cc4892022b04ab/raw/scarab-osd.osd</a>.</p>
+
+<p>You&#39;ll find the configuration tool in the extracted folder under <code>MW_OSD_GUI/</code>.</p>
+
+<p>Click the name of the port on the left side, under <code>Port Status</code> to connect to the OSD. All the buttons in this section will go from red to green when connected. Mine is called <code>SLABS_U~BTOUART</code>. The CP2102 must be plugged in before starting the configuration tool, otherwise this button will be missing. Just plugin the CP2102 and restart the app if this is the case.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 53.80859375%;'><a id="assets-images-blog-beerotor-x-scarab-osd-com-port-f-a-jpg" href="/assets/images/blog/beerotor/x200/scarab-osd-com-port-6125f55a.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/scarab-osd-com-port-6125f55a.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>On the left side of the tool, under the <code>DISK</code> section, click <code>LOAD</code> and open the scarab-osd.osd file you downloaded.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 53.80859375%;'><a id="assets-images-blog-beerotor-x-scarab-osd-disk-load-b-jpg" href="/assets/images/blog/beerotor/x200/scarab-osd-disk-load-9b243393.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/scarab-osd-disk-load-9b243393.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Under settings on the left, click <code>WRITE</code> to send the loaded configuration to the OSD.</p>
+
+<p>Then on the far right under <code>LAYOUT</code> pick <code>LAYOUT EDITOR</code>. The options under the sample display will change, then hit <code>WRITE</code> to upload the layout.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 53.80859375%;'><a id="assets-images-blog-beerotor-x-scarab-osd-write-layout-e-f-b-jpg" href="/assets/images/blog/beerotor/x200/scarab-osd-write-layout-e5f8621b.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/scarab-osd-write-layout-e5f8621b.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>If you&#39;re not using my config, make sure you set the camera setting to PAL for the BR-700 camera or to whatever video format your camera uses.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 53.80859375%;'><a id="assets-images-blog-beerotor-x-scarab-osd-pal-or-ntsc-be-fc-jpg" href="/assets/images/blog/beerotor/x200/scarab-osd-pal-or-ntsc-9be92fc3.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/scarab-osd-pal-or-ntsc-9be92fc3.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>I tested my camera and it was working fine, so I assembled the rest of the body.</p>
+
+<p>Zip tie all the ESC signal leads together.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-body-f-d-a-f-jpg" href="/assets/images/blog/beerotor/x200/build-body-1-f35d4a6f.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-body-1_prev-ceecb0df.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Roll up the video leads and zip tie those in there too.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-body-d-d-ff-jpg" href="/assets/images/blog/beerotor/x200/build-body-2-d594d7ff.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-body-2_prev-4ad494cf.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Put some heat shrink tube on the receiver. I mounted it in the front, but it fits on the back as well.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-body-fc-d-c-jpg" href="/assets/images/blog/beerotor/x200/build-body-3-fc95d0c4.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-body-3_prev-a6e1c60c.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Slide the body into place.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-body-dcfd-jpg" href="/assets/images/blog/beerotor/x200/build-body-4-dcfd1416.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-body-4_prev-57858132.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Put some heatshrink tube on the video transmitter</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-body-adcd-f-jpg" href="/assets/images/blog/beerotor/x200/build-body-5-adcd7f52.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-body-5_prev-e3e8537f.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Zip tie that down too.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-body-df-jpg" href="/assets/images/blog/beerotor/x200/build-body-6-4723df69.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-body-6_prev-e8dbe4a8.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Zip tie the power leads on the ESCs.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-body-a-dd-jpg" href="/assets/images/blog/beerotor/x200/build-body-7-2a7241dd.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-body-7_prev-f26c4148.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Bolt the body into place.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-body-ec-f-jpg" href="/assets/images/blog/beerotor/x200/build-body-8-118ec53f.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-body-8_prev-0e95062d.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Attach some zip ties, sticking up on the back and then heatshrink your antenna wires to the zip ties. One of my antenna wires is much shorter than the other because of the receiver&#39;s position, but no worries. I kept it symmetric by using zip ties and heatshrink of the same length, even on the shorter side.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-beerotor-x-build-body-a-ce-jpg" href="/assets/images/blog/beerotor/x200/build-body-9-23a4ce91.jpg" class="linked-img colorbox"><img src='/assets/images/blog/beerotor/x200/build-body-9_prev-46c4991a.jpg' class='trailing-space' ></img></a></div></div>
+
+<h3 id="configuring-betaflight">Configuring Betaflight</h3>
+
+<p>Now let&#39;s flash and configure the latest version of BetaFlight.</p>
+
+<p>See the full configuration guide over on the <a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/#configuring-betaflight">Victory 230, BetaFlight configuration</a> guide, but basically:</p>
+
+<ul>
+<li><p>download the latest release from <a href="https://github.com/borisbstyle/betaflight/releases/">the release page</a>.</p></li>
+<li><p>paste my config into the cli: <a href="https://gist.githubusercontent.com/nathantsoi/ea60cbefb971082031f04cdc67d442c0/raw/x200.txt">https://gist.githubusercontent.com/nathantsoi/ea60cbefb971082031f04cdc67d442c0/raw/x200.txt</a>. Then type <code>SAVE</code> and hit enter.</p></li>
+<li><p>be sure to set <code>set align_board_yaw = 90</code> if you didn&#39;t use the above config</p></li>
+<li><p>switch to PPM if you&#39;re not using SBUS</p></li>
+<li><p>be sure to <a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/#calibration">calibrate your accelerometer</a></p></li>
+</ul>
+
+<h3 id="calibrate-your-escs">Calibrate your ESCS</h3>
+
+<p>Follow the <a href="/blog/2015/12/06/blheli-calibration/#calibrate">ESC Calibration Guide</a></p>
+
+<h3 id="test-your-failsafe">Test your failsafe</h3>
+
+<p>Be sure to check your failsafe before you fly.</p>
+
+<p>Read the whole <a href="/blog/2015/10/29/multirotor-setup-checklist/">pre-flight checklist here</a>.</p>
+
+<p>Time to fly!</p>
+
+<div class='text-center' style='margin: 1em'>
+Checkout my other guides at
+<a href='/blog'>nathan.vertile.com/blog</a>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+//<![CDATA[
+                  var disqus_shortname = 'vertile';
+          
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+//]]>
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</article>
+
+</div>
+</div>
+</div>
+</body>
+</html>
