@@ -5,21 +5,10 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-06-19T20:42:00-07:00</updated>
+  <updated>2016-05-10T20:56:00-07:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
-  <entry>
-    <title>Sirin FPV Typhoon Miniquad</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/06/20/sirin-fpv-typhoon-miniquad/"/>
-    <id>http://nathan.vertile.com/blog/2016/06/20/sirin-fpv-typhoon-miniquad/</id>
-    <published>2016-06-19T20:42:00-07:00</published>
-    <updated>2016-06-19T20:42:14-07:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html"></content>
-  </entry>
   <entry>
     <title>HobbyKing Quanum V2 Pro Goggles</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"/>
@@ -157,6 +146,474 @@
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.59482758620689%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-demo-cc-ddc-jpg" href="/assets/images/blog/hk/quanum-v2-pro-goggles/demo-2-6cc19ddc.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/demo-2-6cc19ddc.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.59482758620689%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-demo-b-jpg" href="/assets/images/blog/hk/quanum-v2-pro-goggles/demo-1-377b4341.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/demo-1-377b4341.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Drone Building 101 with the HobbyKing FPV Starter Setup</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/05/08/drone-building-101-with-the-hobbyking-fpv-starter-setup/"/>
+    <id>http://nathan.vertile.com/blog/2016/05/08/drone-building-101-with-the-hobbyking-fpv-starter-setup/</id>
+    <published>2016-05-08T10:41:00-07:00</published>
+    <updated>2016-06-30T23:49:22-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;At Maker Faire Bay Area 2016, David, Jack, Huned and I built a drone with the help of some kids. This is the story of that drone.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02354-31857772.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02354_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br/&gt;
+Let&amp;#39;s start with the results. Here is some video of the drone flying with the BetaFlight 3.0 firmware.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/bU7gAYHmaRc?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br/&gt;
+And chasing the drone with the &lt;a href="/blog/2016/03/22/rctimer-br-x200-mini-quad-build-setup-and-review/"&gt;x200&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/t8cB3LPqxNg?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id="parts"&gt;Parts&lt;/h2&gt;
+
+&lt;p&gt;Here are all the parts we used:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 87.29674796747967%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-a-e-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02097-9a4e6684.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02097_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table class="small-img"&gt;
+  &lt;tbody&gt;
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__86239__KINGKONG_260_FPV_Racer_Frame_Set_Pair_Kit_.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-frame-b-ad-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/frame-6b8ad82d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/frame-6b8ad82d.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__86239__KINGKONG_260_FPV_Racer_Frame_Set_Pair_Kit_.html?aff=1624906"&gt;KingKong 260 FPV Frame Set (Pair) w/ props, $17.69&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__86544__DYS_BLHeli_16A_Mini_ESC_with_Soldering_Pin_Option_2_4s.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-esc-d-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/esc-19d19b54.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/esc-19d19b54.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__86544__DYS_BLHeli_16A_Mini_ESC_with_Soldering_Pin_Option_2_4s.html?aff=1624906"&gt;4x DYS BLHeli 16A Mini ESCs 2-4s, $4.99&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__61433__DYS_BE1806_2300kv_Brushless_Multirotor_Motor_2S_3S.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-motors-e-a-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/motors-3e197a96.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/motors-3e197a96.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__61433__DYS_BE1806_2300kv_Brushless_Multirotor_Motor_2S_3S.html?aff=1624906"&gt;4x DYS BE1806 2300kv Motors, $8.95&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__85524__Skyline32_Acro_Flight_Controller_w_Baseflight_Cleanflight.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-fc-ca-c-e-e-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/fc-ca7c9e0e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/fc-ca7c9e0e.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__85524__Skyline32_Acro_Flight_Controller_w_Baseflight_Cleanflight.html?aff=1624906"&gt;Skyline Skyline32 Flight Controller, $14.99&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__22494__Turnigy_3A_UBEC_with_Low_Voltage_Buzzer.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-ubec-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/ubec-6d488056.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/ubec-6d488056.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__22494__Turnigy_3A_UBEC_with_Low_Voltage_Buzzer.html?aff=1624906"&gt;3A UBEC with Low Voltage Buzzer, $2.99&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__42750__Turnigy_Pure_Silicone_Wire_12AWG_1m_Red_US_Warehouse_.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.6078431372549%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-wire-a-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/wire-1039a309.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/wire-1039a309.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__42750__Turnigy_Pure_Silicone_Wire_12AWG_1m_Red_US_Warehouse_.html?aff=1624906"&gt;12ga Silicone Wire, $2.52&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__10414__Male_XT60_Connectors_5pcs_bag_GENUINE.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 77.05882352941177%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-xt-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/xt-60-1215d504.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/xt-60-1215d504.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__10414__Male_XT60_Connectors_5pcs_bag_GENUINE.html?aff=1624906"&gt;XT-60 Connector, $1.94&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__89692__QUANUM_700TVL_SONY_1_3_Camera_2_1mm_Lens_NTSC_.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-camera-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/camera-d3033760.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/camera-d3033760.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__89692__QUANUM_700TVL_SONY_1_3_Camera_2_1mm_Lens_NTSC_.html?aff=1624906"&gt;700TVL 1/3 2.1mm Sony CCD Camera, $34.49&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__81333__LT200_5_8GHz_200mW_32_Channel_FPV_A_V_Transmitter.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-vtx-db-b-c-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/vtx-7db18b6c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/vtx-7db18b6c.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__81333__LT200_5_8GHz_200mW_32_Channel_FPV_A_V_Transmitter.html?aff=1624906"&gt;LT200 5.8GHz 200mw 32 Channel FPV Transmitter, $16.48&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__76890__Aomway_5_8GHz_4_Leaf_Clover_Antenna_Set_for_TX_RX_RP_SMA_RHCP_.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-antenna-e-ef-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/antenna-428e85ef.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/antenna-428e85ef.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__76890__Aomway_5_8GHz_4_Leaf_Clover_Antenna_Set_for_TX_RX_RP_SMA_RHCP_.html?aff=1624906"&gt;Aomway 5.8GHz 4-Leaf Clover Antenna Set for TX/RX (RP-SMA) (RHCP), $7.40&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Total: &lt;code&gt;$153.55&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Note, I ordered the ESCs listed above because they were the lightest weight and cheapest ESCs available. However, they are very small and very difficult to solder as well. If this is your first build, I highly recommend that you choose an easier ESC to work with. The &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=98053&amp;amp;aff=1624906"&gt;Turnigy Multistar 20A V2 Slim BLHeli Multi-Rotor Brushless ESC 2-6S&lt;/a&gt; is an excellent value and should be much easier to work with.&lt;/p&gt;
+
+&lt;table class="small-img"&gt;
+  &lt;tbody&gt;
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=98053&amp;aff=162490"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-esc-fa-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/esc-2-189fa185.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/esc-2-189fa185.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=98053&amp;aff=162490"&gt;4x Turnigy Multistar 20A V2 Slim BLHeli Multi-Rotor Brushless ESC 2-6S, $4.99&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id="getting-started"&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;Start with the frame, and lunch, if you&amp;#39;re hungry. The frame kit is awesome, it comes with two whole frame sets, so if you break any parts, you&amp;#39;ll have plenty of backups.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-acdf-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02310-842acdf8.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02310_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You&amp;#39;ll be really tempted to get out all the little screws and stuff for the frame and start assembling it. Don&amp;#39;t do that yet though.&lt;/p&gt;
+
+&lt;h2 id="power-system"&gt;Power System&lt;/h2&gt;
+
+&lt;p&gt;Instead, we&amp;#39;ll prep the motors and ESCs.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-cd-f-c-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02312-cd7f019c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02312_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Cut the motor wires to length. We&amp;#39;ll be putting the ESCs on the arms, but if you want, there might be room to mount them under the body, in which case you would want slightly longer wires.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-b-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02314-026b6b54.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02314_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Prepare the ESCs by bending all the pins down at a 90 degree angle&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.01254390366282%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-faea-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_124328-892faea3.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_124328-892faea3.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now strip the wires and tin them, it helps to have some helping hands. You&amp;#39;ll also want to bend the pins on the ESC down and together into pairs of two, so they&amp;#39;re easier to solder.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-d-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02322-d28951d2.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02322_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Be sure to slide some heat shrink onto the motor wires before soldering them on.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02323-66357860.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02323_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Notice we&amp;#39;re soldering the motor to the &amp;quot;bottom&amp;quot; side, if you orient the text upright.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.98396407953817%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-ac-ead-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521-ac0ead83.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521-ac0ead83.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="motor-order"&gt;Motor Order&lt;/h3&gt;
+
+&lt;p&gt;The wiring order between the motors and ESCs determines which way the motors will spin. I&amp;#39;ll refer to the motors by their number as shown in this diagram:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 95.2755905511811%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-motor-order-e-f-f-png" href="/assets/images/blog/hk/maker-faire-2016/motor-order-1e5f952f.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/motor-order-1e5f952f.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Two motors should have the wires directly connected, not crossed. These motors will spin counter-clockwise and should be positioned at motors 2 and 3.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.45161290322581%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC03004.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC03004_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The other two motors should have two of the wires crossed, like so. They&amp;#39;ll be placed at position 1 and 4.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC02955.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02955_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Complete all four motor / ESC sets. Frowning inquisitively when done is optional.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-f-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02324-808f85b5.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02324_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Next solder on the power and ground wires to the &lt;code&gt;V+&lt;/code&gt; and &lt;code&gt;V-&lt;/code&gt; pins respectively, using the same technique of bending and soldering the pins together.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-f-c-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_174341-173f344c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_174341_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Repeat with all four ESCs and then screw the motors onto the frame, placing them in the proper position as noted in the &lt;a href="#motor-order"&gt;motor order&lt;/a&gt; section above.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-f-a-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_175209-97f50a39.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_175209_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="pdb"&gt;PDB&lt;/h3&gt;
+
+&lt;p&gt;Now would be a good time to install the PDB on the bottom of the quadcopter.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-b-c-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02327-b052c9d3.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02327_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Install the LEDs onto the back of quad copter, make sure the LEDs point out towards the back.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-e-ed-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02334-851e72ed.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02334_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Whoops, we installed them the wrong way the firs time. This is how they should be installed.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.46314871347579%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-b-a-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC03024-4b309a27.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC03024_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Also, if you want to use heat shrink to protect the ESCs, slide some over before soldering the power wires to the PDB. I came back and did this later.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.43861649562905%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC03007.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC03007_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now route the power wires from the ESC down through the frame and solder them to the PDB.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_180518-78b56335.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_180518_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Solder the wires onto the XT-60 plug.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-f-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160522_113758-8133f199.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160522_113758_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="flight-controller"&gt;Flight controller&lt;/h3&gt;
+
+&lt;p&gt;Ok, time for the flight controller.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-c-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_180703-4795c644.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_180703_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is the pinout diagram&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 53.25%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-SKYline-c-ff-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/SKYline32-9c1ff9b6.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/SKYline32-9c1ff9b6.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Install the standoffs.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0140056022409%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-d-f-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_181141_1-0d10279f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_181141_1-0d10279f.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here&amp;#39;s what it looks like when it&amp;#39;s done.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.75786924939467%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-d-bb-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_183654-9d8bb6d3.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_183654-9d8bb6d3.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now is a good time to install the landing gear.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.01053518752634%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-bcf-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_145732-385bcf8d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_145732_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Much later in the day, we got around to connecting the single wires from the flight controller to the ESCs like so.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.46141215106732%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC02998.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02998_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Using a pin, remove the &lt;code&gt;power&lt;/code&gt;, &lt;code&gt;ground&lt;/code&gt;, &lt;code&gt;PWM5&lt;/code&gt; and &lt;code&gt;PWM6&lt;/code&gt; from the header that plugs into the flight controller. We won&amp;#39;t need these. Clip the connectors off the ends of the PWM cables and solder them to the ESC.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.4358819987959%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC02993.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02993_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Optionally, you can connect the &lt;code&gt;Vbat&lt;/code&gt; pins to the PDB. This will allow the flight controller to check the battery voltage.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.96402877697842%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-d-c-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_231338-98d18c35.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_231338-98d18c35.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.87179487179488%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-f-f-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_230850-044f729f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_230850_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Next, get out your BEC and wire the battery side into the PDB.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC02964.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02964_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC03026.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC03026_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I cut the led light wires and soldered them straight onto the output side of the BEC. Route the power cable up through the frame. This will be plugged into the receiver.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC03033.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC03033_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now would be a good time to assemble the top part of the frame, so we can test fit it.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.03722084367246%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-ecf-d-e-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_223253-4ecf9d3e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_223253_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.03722084367246%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-fab-c-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_223257-fab8c3b0.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_223257_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="reciever"&gt;Reciever&lt;/h3&gt;
+
+&lt;p&gt;Using the cable included with the flight controller, plug in the receiver.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.03722084367246%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-d-bf-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_215805-3d4bf228.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_215805_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Plug the power wire from the BEC into the receiver and position the receiver.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.03722084367246%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-a-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_223241-11a4b624.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_223241_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="video-system"&gt;Video system&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;#39;s get out the video transmitter.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.91323748140803%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-e-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_214144-728e7803.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_214144_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This camera has the SONY Effio chip, which should give it a very nice wide dynamic range. I&amp;#39;m really excited to see how this camera will perform.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.74747474747475%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-c-fd-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_213613-c78053fd.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_213613-c78053fd.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Attach the camera plate to the camera. I followed the directions in the manual and trimmed the bottom posts by about 2cm to get a little bit of up-tilt.&lt;/p&gt;
+
+&lt;p&gt;The camera doesn&amp;#39;t actually rest against these posts, so it is possible to get a large amount of up-tilt by adjusting the top and bottom screws.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-eb-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_214555-eb405822.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_214555_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The text on the front of the camera is the top.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95039682539682%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-b-fd-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_214617-32b362fd.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_214617_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Use the pointy screws to install the camera.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_215236-85494699.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_215236_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Grab the video transmitter.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.91323748140803%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-ab-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_215539-8399ab96.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_215539_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Using the pin technique, remove the unused wires from the video transmitter: &lt;code&gt;audio&lt;/code&gt; (white) and &lt;code&gt;5v out&lt;/code&gt; (purple).&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.98994772818656%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-a-bb-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_222116-a13bb405.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_222116_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Solder the red and black wires from the video transmitter plug to &lt;code&gt;+&lt;/code&gt; and &lt;code&gt;-&lt;/code&gt; on the PDB. I also soldered on a capacitor to decrease noise. Any capacitor around 470uF, that can handle 25v+ will work well. I used a 330uf 50v capacitor.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.97247706422019%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-a-c-f-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_231030-a2c0948f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_231030_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now would be a good time to pause and test your setup. I assume you&amp;#39;ve already built your goggles. If not, follow &lt;a href="/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"&gt;the guide here&lt;/a&gt; first.&lt;/p&gt;
+
+&lt;p&gt;Things to check are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Receiver is bound&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You should see an &amp;#39;RX&amp;#39; symbol with a battery on the top right corner of the transmitter screen. &lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Video is working&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Do you see a picture in the goggles? If not, double check the wiring on your camera and video transmitter.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Camera is focused&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You can adjust the focus by unscrewing the lens slightly and loosening the ring on the threads. Adjust to the proper position using your goggles to check the sharpness of an object across the room. Re-tighten the ring when done.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-a-c-f-a-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_232507-4a1c9f1a.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_232507_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When all those things are good, we can attach the VTX to the main body of the quad copter. First, I drilled a little hole here.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-b-c-f-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160623_195704-9b80c28f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160623_195704_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then I peeled the sticker off of the VTX and used some double sided tape to mount the transmitter on the weird vertical plate on the back of the frame.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.79055597867479%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-b-edf-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160623_195932-b6edf319.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160623_195932_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then I zip tied it on.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.7880410531013%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-eb-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160623_200249-662eb78d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160623_200249_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Zip tie down the receiver, BEC and ESCs.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-a-e-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160623_201702-a82e9d87.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160623_201702_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Install the prop adapters onto the motors using the shorter screws included with the motors and some blue thread locker.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-c-a-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160623_203855-64c13a2b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160623_203855_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The kit includes an antenna standoff thing, but I prefer to use two zip ties and some heatshrink.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-b-f-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160623_203704-18b2362f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160623_203704_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Awesome, done!&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-e-ec-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160623_205010-e56733ec.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160623_205010_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="betaflight"&gt;BetaFlight&lt;/h2&gt;
+
+&lt;p&gt;Now we can update the firmware. You have 3 options for firmware: BetaFlight, CleanFlight and iNav. I always use BetaFlight, since it is the best flying firmware available.&lt;/p&gt;
+
+&lt;p&gt;If you don&amp;#39;t have Google Chrome, install that then download the &lt;a href="https://chrome.google.com/webstore/detail/betaflight-configurator/kdaghagfopacdngbohiknlhcocjccjao"&gt;BetaFlight configurator Chrome app&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Head over to the &lt;a href="https://github.com/betaflight/betaflight/releases/latest"&gt;BetaFlight Releases&lt;/a&gt; page and download the latest NAZE hex file.&lt;/p&gt;
+
+&lt;p&gt;Plug in the flight controller to your computer with a USB cable, then go to the firmware flashing tab.&lt;/p&gt;
+
+&lt;p&gt;Pick the latest BetaFlight release and click flash.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 64.82412060301507%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-betaflight-flash-fadf-d-png" href="/assets/images/blog/hk/maker-faire-2016/betaflight/flash-fadf70d3.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/betaflight/flash-fadf70d3.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When it&amp;#39;s done, hit connect.&lt;/p&gt;
+
+&lt;p&gt;First setting to change is the board orientation on the Configuration tab. Change Yaw Degrees to 270, since we mounted the USB plug on the side of the quadcopter.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 72.17054263565892%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-betaflight-orientation-c-fe-png" href="/assets/images/blog/hk/maker-faire-2016/betaflight/orientation-72c76fe2.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/betaflight/orientation-72c76fe2.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Once this is set, go back to the &lt;code&gt;Setup&lt;/code&gt; tab and move the quadcopter around. Verify that as you move the quadcopter, the image matches the direction you&amp;#39;re moving the quadcopter.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 72.17054263565892%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-betaflight-rotate-ed-f-png" href="/assets/images/blog/hk/maker-faire-2016/betaflight/rotate-ed15865f.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/betaflight/rotate-ed15865f.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now take the quadcopter to a hard flat surface, like the floor, and under the setup tab, click &lt;code&gt;Calibrate Accelerometer&lt;/code&gt;. When that is done, click &lt;code&gt;Calibrate Magnometer&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 72.17054263565892%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-betaflight-calibrate-d-png" href="/assets/images/blog/hk/maker-faire-2016/betaflight/calibrate-2d350142.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/betaflight/calibrate-2d350142.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;During Accelerometer calibration the quadcopter should be as still as possible.&lt;/p&gt;
+
+&lt;p&gt;During Magnometer calibration, the multirotor should be rotated 360 degrees on each axis. This does not need to be precise, but should be done away from any magnetic fields.&lt;/p&gt;
+
+&lt;h3 id="radio-setup"&gt;Radio setup&lt;/h3&gt;
+
+&lt;p&gt;We&amp;#39;ll use a switch to arm and change the flight mode, so you&amp;#39;ll want to configure the AUX channels on your radio like so:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.80595084087969%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-b-b-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160624_194620-b656b82b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160624_194620_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To save, press and hold the &lt;code&gt;CANCEL&lt;/code&gt; button. This is not intuitive.&lt;/p&gt;
+
+&lt;p&gt;You can confirm it&amp;#39;s working on the Receiver screen. When you flip the switch on the left, &lt;code&gt;AUX1&lt;/code&gt; should change values and when you move the 3 position switch on the right, &lt;code&gt;AUX2&lt;/code&gt; should change values. You&amp;#39;ll need to plug in a battery to the quadcopter to power the receiver.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 72.17054263565892%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-betaflight-rx-c-png" href="/assets/images/blog/hk/maker-faire-2016/betaflight/rx-6c352861.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/betaflight/rx-6c352861.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then switch to the &lt;code&gt;Modes&lt;/code&gt; tab and set it up like this:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 72.17054263565892%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-betaflight-modes-be-c-a-png" href="/assets/images/blog/hk/maker-faire-2016/betaflight/modes-01be1c5a.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/betaflight/modes-01be1c5a.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This means that the left switch will arm and disarm the quad. If you flip the left switch while flying, the motors will turn off, so don&amp;#39;t do that!&lt;/p&gt;
+
+&lt;p&gt;The 3 position switch on the right will control flight mode. All the way up is &amp;quot;Acro&amp;quot; mode, which will not auto-level. Middle is &amp;quot;Angle&amp;quot; mode which will auto level but still let you do flips. Down is &amp;quot;Horizon&amp;quot; mode, which will auto level and not let you do flips.&lt;/p&gt;
+
+&lt;h3 id="failsafe"&gt;Failsafe&lt;/h3&gt;
+
+&lt;p&gt;You should not have had props on this entire time, but if they&amp;#39;re on, remove them now. With props off, test the failsafe by:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;plugging in a battery&lt;/li&gt;
+&lt;li&gt;arming the quad with the left switch (flip it down) on the radio
+
+&lt;ul&gt;
+&lt;li&gt;the motors will start spinning&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;throttle up a bit&lt;/li&gt;
+&lt;li&gt;turn off the radio&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The motors should then slow down for a few seconds then turn off.&lt;/p&gt;
+
+&lt;p&gt;You&amp;#39;ll also see this red parachute in the configuration tool.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 72.17054263565892%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-betaflight-failsafe-cbc-png" href="/assets/images/blog/hk/maker-faire-2016/betaflight/failsafe-cbc21334.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/betaflight/failsafe-cbc21334.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now that you&amp;#39;ve tested the fail safe, we can go test-hover!&lt;/p&gt;
+
+&lt;p&gt;Install some propellers. I also picked up some 5mm lock nuts from the local hardware store. If you use the included prop spinners instead, be sure to use threadlock to secure them!&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-c-dc-e-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160624_201247-41c2dc4e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160624_201247_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that these motors can handle 6&amp;quot; props, but this will be pushing their limit. If you want to be on the safe side, use some &lt;a href="http://www.hobbyking.com/hobbyking/store/__103558__Dalprops_34_Indestructible_34_V2_5045_3_Blade_Props_CW_CCW_Set_Purple_2_pairs_.html?aff=1624906"&gt;5&amp;quot; props&lt;/a&gt; instead.&lt;/p&gt;
+
+&lt;p&gt;Time to go fly!&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.48433615116858%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC03055.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC03055.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
   </entry>
   <entry>
