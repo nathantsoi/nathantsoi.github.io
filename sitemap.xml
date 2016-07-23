@@ -529,6 +529,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/07/09/betaflight-spektrum-satellite-receiver-guide</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/07/10/eachine-ev800-review</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/07/10/eachine-goggles-one-review</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog</loc>
     <priority>0.7</priority>
   </url>
@@ -1593,7 +1609,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/tags/radio</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/flysky</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/i6</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/07</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/07/10</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/07/09</loc>
     <priority>0.7</priority>
   </url>
   <url>
