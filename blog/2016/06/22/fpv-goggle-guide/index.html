@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link href='/favicon/apple-touch-icon-57x57-8e6554ae.png' rel='apple-touch-icon-precomposed' sizes='57x57'>
+<link href='/favicon/apple-touch-icon-114x114-e0cb1072.png' rel='apple-touch-icon-precomposed' sizes='114x114'>
+<link href='/favicon/apple-touch-icon-72x72-a86b7103.png' rel='apple-touch-icon-precomposed' sizes='72x72'>
+<link href='/favicon/apple-touch-icon-144x144-bd50bc10.png' rel='apple-touch-icon-precomposed' sizes='144x144'>
+<link href='/favicon/apple-touch-icon-60x60-ca47953b.png' rel='apple-touch-icon-precomposed' sizes='60x60'>
+<link href='/favicon/apple-touch-icon-120x120-068de821.png' rel='apple-touch-icon-precomposed' sizes='120x120'>
+<link href='/favicon/apple-touch-icon-76x76-2bd34869.png' rel='apple-touch-icon-precomposed' sizes='76x76'>
+<link href='/favicon/apple-touch-icon-152x152-da7652e0.png' rel='apple-touch-icon-precomposed' sizes='152x152'>
+<link href='/favicon/favicon-196x196-569e78d9.png' rel='icon' sizes='196x196' type='image/png'>
+<link href='/favicon/favicon-96x96-d809406c.png' rel='icon' sizes='96x96' type='image/png'>
+<link href='/favicon/favicon-32x32-162b5c6d.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/favicon/favicon-16x16-d0c2b051.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/favicon/favicon-128-2f649ba2.png' rel='icon' sizes='128x128' type='image/png'>
+<meta content=' ' name='application-name'>
+<meta content='#FFFFFF' name='msapplication-TileColor'>
+<meta content='/favicon/mstile-144x144-bd50bc10.png' name='msapplication-TileImage'>
+<meta content='/favicon/mstile-70x70-2f649ba2.png' name='msapplication-square70x70logo'>
+<meta content='/favicon/mstile-150x150-999c62ba.png' name='msapplication-square150x150logo'>
+<meta content='/favicon/mstile-310x150-37756fac.png' name='msapplication-wide310x150logo'>
+<meta content='/favicon/mstile-310x310-6bd894f0.png' name='msapplication-square310x310logo'>
+<title>
+FPV Goggle Guide
+</title>
+<link href="/assets/stylesheets/all-9c4dcd92.css" rel="stylesheet" />
+<script src="/assets/javascripts/all-d5b91b8e.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-7406390-2', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  
+    // outbound link tracking
+    // http://www.sitepoint.com/track-outbound-links-google-analytics/
+    (function($) {
+      "use strict";
+      // current page host
+      var baseURI = window.location.host;
+      // click event on body
+      $("body").on("click", function(e) {
+        // abandon if link already aborted or analytics is not available
+        if (e.isDefaultPrevented() || typeof ga !== "function") return;
+        // abandon if no active link or link within domain
+        var link = $(e.target).closest("a");
+        if (link.length != 1 || baseURI == link[0].host) return;
+        // cancel event and record outbound link
+        e.preventDefault();
+        var href = link[0].href;
+        ga('send', {
+          'hitType': 'event',
+          'eventCategory': 'outbound',
+          'eventAction': 'link',
+          'eventLabel': href,
+          'hitCallback': loadPage
+        });
+        // redirect after one second if recording takes too long
+        setTimeout(loadPage, 1000);
+        // redirect to outbound page
+        function loadPage() {
+          document.location = href;
+        }
+      });
+    })(jQuery);
+</script>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+</head>
+<body>
+<nav class='navbar navbar-default' id='top' role='navigation'>
+<div class='container'>
+<div class='navbar-header'>
+<div class='navbar-brand'>
+<a href='/blog/'>
+<img src="/assets/images/home/smile-0289c4fe.jpg" />
+</a>
+<span>FPV Goggle Guide</span>
+</div>
+<button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<div class='navbar-right collapse navbar-collapse' id='bs-nav-collapse'>
+<ul class='nav navbar-nav'>
+<li>
+<form class='search navbar-form' role='search'>
+<div class='form-group'>
+<input class='form-control bloodhound typeahead' data-articles='[["J-Link Getting Started Guide","/blog/2016/07/25/j-link-getting-started-guide/"],["Eachine EV800 Review","/blog/2016/07/10/eachine-ev800-review/"],["Eachine Goggles One Review","/blog/2016/07/10/eachine-goggles-one-review/"],["FlySky i6 Radio Setup and Hacking Guide","/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/"],["BetaFlight Spektrum Satellite Receiver Guide","/blog/2016/07/09/betaflight-spektrum-satellite-receiver-guide/"],["FPV Goggle Guide","/blog/2016/06/22/fpv-goggle-guide/"],["HobbyKing Quanum V2 Pro Goggles","/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"],["Drone Building 101 with the HobbyKing FPV Starter Setup","/blog/2016/05/08/drone-building-101-with-the-hobbyking-fpv-starter-setup/"],["STM32 hardfault debugging","/blog/2016/05/04/stm32-hardfault-debugging/"],["Eachine VR-007 Goggle Review","/blog/2016/04/25/eachine-vr-007-goggle-review/"],["Rctimer BeeRotor u210 mini quad build, setup and review","/blog/2016/04/24/rctimer-u210-mini-quad-build-setup-and-review/"],["AirBot Flip32 F3 AIO Lite and Typhoon 4-in-1 ESC","/blog/2016/04/11/airbot-flip32-f3-aio-lite-and-typhoon-4-in-1-esc/"],["DYS X160 v3","/blog/2016/04/05/dys-x160-v3/"],["Turnigy Reaktor 250W Charger","/blog/2016/04/02/turnigy-reaktor-250w-charger/"],["HobbyKing Graphene and Bolt High Voltage LiPo Battery Analysis","/blog/2016/03/25/hobbyking-graphene-battery-analysis/"],["BetaFlight in-flight PID tuning","/blog/2016/03/24/betaflight-in-flight-pid-tuning/"],["Drone Building at Maker Faire Bay Area 2016","/blog/2016/03/23/drone-building-at-maker-faire-bay-area-2016/"],["Rctimer BR-X200 Mini-quad Build, Setup and Review","/blog/2016/03/22/rctimer-br-x200-mini-quad-build-setup-and-review/"],["AVR Dissassembly","/blog/2016/02/25/avr-dissassembly/"],["Victory230 FPV Mini-quad Setup and Review","/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"],["FrSky RX SBUS and Frsky DJT Module","/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"],["HMDVR FPV Video Recorder","/blog/2016/02/06/hmdvr-fpv-video-recorder/"],["Rctimer BeerotorF3 Flight Controller","/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"],["Flying Sony NEX Micro 4/3rds Camera","/blog/2016/01/29/flying-micro-4-3rds-camera/"],["Q600 Quadcopter","/blog/2016/01/29/rctimer-q600-quadcopter/"],["ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller","/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/"],["PixHawk Flashing and Setup","/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/"],["BlHeli ESCs","/blog/2015/12/06/blheli-esc-identification/"],["BlHeli ESC Upgrading and Configuration","/blog/2015/12/06/blheli-configuration/"],["BlHeli CleanFlight ESC Calibration","/blog/2015/12/06/blheli-calibration/"],["Rctimer Micro 160 BeeRotor Build, Setup and Review","/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"],["Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if","/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/"],["Rctimer OZE32 / RTFQ Flip32 AIO Integrated Flight Controller Review and Setup","/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"],["Rooting Marshmellow, keeping SELinux","/blog/2015/11/03/rooting-marshmellow-keeping-selinux/"],["MultiRotor Setup Checklist","/blog/2015/10/29/multirotor-setup-checklist/"],["ST-LINK flash and debug on the SPRacingF3","/blog/2015/10/24/st-link-flash-and-debug-on-the-spracingf3-discovery/"],["Debugging Android Native (NDK) Apps","/blog/2015/09/27/debugging-android-native-ndk-apps/"],["Fixing an Arduino 0x000000 Error","/blog/2015/09/16/fixing-an-arduino-0x000000-error/"],["GPS VK16U6 CleanFlight Setup","/blog/2015/08/26/gps-vk16u6-cleanflight-setup/"],["Go FPV Latency Testing","/blog/2015/08/24/go-fpv-latency-testing/"],["Building Android on Ubuntu 14.04","/blog/2015/07/23/building-android-on-ubuntu-14-04/"],["Migrating to Amazon Elastic Map Reduce (EMR)","/blog/2015/07/15/migrating-to-amazon-elastic-map-reduce-emr/"],["Naze32 ST-Link Debugging","/blog/2015/07/06/naze32-st-link-debugging/"],["Decompiling an APK","/blog/2015/06/30/decompiling-an-apk/"],["Nexpose Community Edition copy Scan Template","/blog/2015/06/17/nexpose-community-edition-copy-scan-template/"],["Wireless Video Tx/Rx FPV Channels","/blog/2015/06/17/boscam-tx-rx-fpv-channels/"],["Making a UHF 433mhz Inverted Vee Antenna Set","/blog/2015/06/15/making-a-uhf-433mhz-inverted-vee-antenna-set/"],["Setup OrangeLRS with OpenLRSng","/blog/2015/05/21/setup-orangelrs-with-openlrsng/"],["Go FPV Goggles","/blog/2015/05/21/go-fpv-goggles/"],["FPV250 with Cleanflight, Minimosd, OpenLRSng and a Xiaomi Yi GoPro Clone","/blog/2015/05/19/fpv250-cleanflight/"],["Flashing BlHeli on HobbyKing BlueSeries 12a ESCs With a Chinese Arduino Nano Clone","/blog/2015/05/15/flashing-blheli-on-hobbyking-blueseries-12a-escs-with-a-chinese-arduino-nano-clone/"],["Flashing NodeMCU on the ESP8266","/blog/2015/05/14/flashing-nodemcu-on-the-esp8266/"],["Ebay HC-05 Bluetooth Setup Guide","/blog/2015/05/12/ebay-hc-05-bluetooth-setup-guide/"],["3D Camera on the Tricopter","/blog/2015/05/12/3d-camera-on-the-tricopter/"],["ProRes editing in Premier","/blog/2015/05/11/prores-editing-in-photoshop/"],["Xiaomi Yi -- The Ant Camera","/blog/2015/05/08/xiaomi-yi-the-ant-camera/"],["Minim OSD","/blog/2015/04/22/minim-osd/"],["Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone","/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/"],["Handling Dates in Hadoop Pig","/blog/2015/04/17/handling-dates-in-hadoop-pig/"],["LiPo Battery Price Analysis","/blog/2015/04/10/lipo-battery-price-analysis/"],["ADB over WiFi (aka, how do I debug when using USB host mode?)","/blog/2015/03/27/adb-over-wifi-aka-how-do-i-debug-when-using-usb-host-mode/"],["Shrink a linux VM on OSX","/blog/2015/03/18/shrink-a-linux-vm-on-osx/"],["Mounting a VHD NTFS image on Ubuntu","/blog/2015/02/27/mounting-a-vhd-ntfs-image-on-ubuntu/"],["Ubuntu on the Beaglebone Black","/blog/2015/01/16/ubuntu-on-the-beaglebone-black/"],["Configuring the HK-T6A for a Flight Simulator","/blog/2015/01/02/configuring-the-hk-t6a-for-a-flight-simulator/"],["A complete noob&#x0027;s guide to RC","/blog/2015/01/02/a-complete-noobs-guide-to-rc/"],["DropCam on a Captive Portal","/blog/2014/11/17/dropcam-on-a-captive-portal/"],["Java reversing tips","/blog/2014/09/18/java-reversing-tips/"],["Ooize Data Pipeline Done-Flag","/blog/2014/09/02/oozie-data-pipeline-done-flag/"],["Time Machine on exFat","/blog/2014/08/06/Time_Machine_on_exFat/"],["Optimizing Postgresql","/blog/2014/01/31/Optimizing_Postgresql/"],["Mail Maker","/blog/2014/01/24/Mail_Maker/"],["Angularjs and Rails","/blog/2013/07/12/Angularjs_and_Rails/"],["nginx ssl chained certs","/blog/2013/04/24/nginx_ssl_chained_certs/"],["rails log tagging","/blog/2013/04/24/rails_log_tagging/"],["Converting an Android Project to Maven","/blog/2013/04/16/Converting_an_Android_Project_to_Maven/"],["Oh! Map my rails!","/blog/2013/04/09/Oh_Map_my_rails/"],["mysql permissions","/blog/2013/04/09/mysql_permissions/"],["reset mysql slave","/blog/2013/03/29/reset_mysql_slave/"],["installing rmagick on 10.8 with homebrew","/blog/2013/02/14/installing_rmagick_on_108_with_homebrew/"],["NP-Completeness","/blog/2013/02/08/NP-Completeness/"],["Find and replace non-breaking spaces in vim","/blog/2013/02/01/Find_and_replace_non-breaking_spaces_in_vim/"],["Open Resty the Prebuilt Reverse Proxy","/blog/2013/02/01/Open_Resty_the_Prebuilt_Reverse_Proxy/"],["Sublime Text 2 Tweaks","/blog/2012/12/17/Sublime_Text_2_Tweaks/"],["Batch Convert CR2 to JPG","/blog/2012/12/01/Batch_Convert_CR2_to_JPG/"],["Androids in the wild","/blog/2012/06/30/Androids_in_the_wild/"],["Why you need database_cleaner","/blog/2012/06/11/Why_you_need_database_cleaner/"],["Find and replace in files on linux/unix","/blog/2012/05/12/Find_and_replace_in_files_on_linuxunix/"],["a pithy guide to railsconf 2012","/blog/2012/04/26/a_pithy_guide_to_railsconf_2012/"],["faster rails boot ruby 1.9.3 + debugger","/blog/2012/04/12/faster_rails_boot_ruby_193_debugger/"],["homebrew -- fix that nasty mysql.server start segfault","/blog/2012/03/29/homebrew_--_fix_that_nasty_mysqlserver_start_segfault/"],["read/write filesystem on rooted android for an ad-free android experience","/blog/2012/02/14/readwrite_filesystem_on_rooted_android_for_an_ad-free_android_experience/"],["Turn Wikipedia Back On","/blog/2012/01/17/Turn_Wikipedia_Back_On/"],["compiling qt4 on centos 5","/blog/2012/01/06/compiling_qt4_on_centos_5/"],["pip install pymongo with xcode 4","/blog/2011/08/09/pip_install_pymongo_with_xcode_4/"],["interactive python history -- better titled \"gimme some up arrow love\"","/blog/2011/08/05/interactive_python_history_--_better_titled_gimme_some_up_arrow_love/"],["Centos 5.5 yum repo sha256 fix","/blog/2011/07/27/Centos_55_yum_repo_sha256_fix/"],["Apple Keyboard for Android!","/blog/2011/07/15/Apple_Keyboard_for_Android/"],["jQuery Everywhere","/blog/2011/05/24/jQuery_Everywhere/"],["Django Migrations","/blog/2011/05/11/Django_Migrations/"],["RVM + Rails + Git + HTML5 Boiler Plate... What more could you possibly want?","/blog/2011/02/22/RVM_Rails_Git_HTML5_Boiler_Plate_What_more_could_you_possibly_want/"],["OneCast 2.0 - downloadable podcasts for androids of every color","/blog/2011/02/18/OneCast_20_-_downloadable_podcasts_for_androids_of_every_color/"],["Default Android Menu Icons in Your App","/blog/2011/02/17/Default_Android_Menu_Icons_in_Your_App/"],["Windows 7 x64 Android Development (ADB)","/blog/2010/11/06/Windows_7_x64_Android_Development_ADB/"],["Firefox Plugin - Watching for an Application Exit Event","/blog/2010/05/03/Firefox_Plugin_-_Watching_for_an_Application_Exit_Event/"],["Stop Redrawing a Fixed Orientation Android App","/blog/2010/03/08/Stop_Redrawing_a_Fixed_Orientation_Android_App/"]]' placeholder='Search' type='text'>
+</div>
+</form>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+
+<div class='container'>
+<div class='row row-offcanvas row-offcanvas-left'>
+<!-- sidebar -->
+<div class='col-xs-3 col-sm-3 sidebar-offcanvas'>
+<div id='sidebar' role='navigation'>
+<div class='sidebar-contents'>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+<a href='#top'>Contents</a>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 table-of-contents'>
+<ul class="nav"><li><a class="type-h2" href="#top-picks"><h2>Top Picks</h2></a></li><ul><li><a class="type-h3" href="#best-value-goggles"><h3>Best Value Goggles</h3></a></li>
+<li><a class="type-h3" href="#highest-quality-image"><h3>Highest Quality Image</h3></a></li>
+<li><a class="type-h3" href="#most-portable-goggles"><h3>Most Portable Goggles</h3></a></li></ul>
+<li><a class="type-h2" href="#goggles-not-part-of-this-guide-yet"><h2>Goggles not part of this guide (yet)</h2></a></li>
+<li><a class="type-h2" href="#goggles-one"><h2>Goggles One</h2></a></li>
+<li><a class="type-h2" href="#eachine-ev800"><h2>Eachine EV800</h2></a></li>
+<li><a class="type-h2" href="#hobbyking-quanum-v2-pro-diy-goggles"><h2>HobbyKing Quanum V2 Pro DIY goggles</h2></a></li>
+<li><a class="type-h2" href="#beerotor-goggles"><h2>BeeRotor Goggles</h2></a></li>
+<li><a class="type-h2" href="#eachine-vr700"><h2>Eachine VR700</h2></a></li>
+<li><a class="type-h2" href="#diy-fatsharks"><h2>DIY Fatsharks</h2></a></li></ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+Related Articles
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 related'>
+<ul>
+<li><a href="/blog/2016/01/29/rctimer-q600-quadcopter/">Q600 Quadcopter</a></li>
+<li><a href="/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/">FlySky i6 Radio Setup and Hacking Guide</a></li>
+<li><a href="/blog/2016/04/05/dys-x160-v3/">DYS X160 v3</a></li>
+<li><a href="/blog/2016/01/29/flying-micro-4-3rds-camera/">Flying Sony NEX Micro 4/3rds Camera</a></li>
+<li><a href="/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/">PixHawk Flashing and Setup</a></li>
+<li><a href="/blog/2016/02/03/rctimer-beerotorf3-flight-controller/">Rctimer BeerotorF3 Flight Controller</a></li>
+</ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header'></div>
+</div>
+<div class='row'>
+<div class='col-lg-12 text-center'>
+Checkout my other guides at
+<a href='/blog'>nathan.vertile.com/blog</a>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header text-center'>
+<div class='drawer-footer'>
+<small>
+©
+<a href='mailto:nathan@vertile.com'>Nathan Tsoi</a>
+</small>
+</div>
+</div>
+</div>
+<div class='row last'>
+<div class='col-lg-12 text-center'>
+<a class='btn-sm btn-default' href='https://github.com/nathantsoi' target='_blank'>
+<i class='fa fa-github'></i>
+</a>
+<a class='btn-sm btn-default' href='https://bitbucket.org/nathantsoi' target='_blank'>
+<i class='fa fa-bitbucket'></i>
+</a>
+<a class='btn-sm btn-default' href='https://twitter.com/nathantsoi/' target='_blank'>
+<i class='fa fa-twitter'></i>
+</a>
+<a class='btn-sm btn-default' href='https://angel.co/nathantsoi' target='_blank'>
+<i class='fa fa-angellist'></i>
+</a>
+<a class='btn-sm btn-default' href='https://linkedin.com/in/nattsoi/' target='_blank'>
+<i class='fa fa-linkedin'></i>
+</a>
+<a class='btn-sm btn-default' href='https://facebook.com/nathantsoi' target='_blank'>
+<i class='fa fa-facebook'></i>
+</a>
+<a class='btn-sm btn-default' href='https://plus.google.com/112518806102274696668' target='_blank'>
+<i class='fa fa-google-plus'></i>
+</a>
+<a class='btn-sm btn-default' href='https://news.ycombinator.com/user?id=natvert' target='_blank'>
+<i class='fa fa-hacker-news'></i>
+</a>
+<a class='btn-sm btn-default' href='https://trello.com/nathantsoi' target='_blank'>
+<i class='fa fa-trello'></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- main area -->
+<div class='col-sm-9 col-xs-12' id='mainbar'>
+<article>
+<p>I bought a bunch of FPV goggles and tried them out so you don&#39;t have to. This article is a review and comparison of all these goggles.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-DSC-JPG" href="/assets/images/blog/goggles/DSC03300.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/DSC03300_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<h2 id="top-picks">Top Picks</h2>
+
+<p>Here are the goggles I would buy and why. Scroll down or use the navigation on the left to find a detailed review of each.</p>
+
+<h3 id="best-value-goggles">Best Value Goggles</h3>
+
+<table class="small-img">
+  <tbody>
+          <tr>
+        <td>
+          <a  href="#eachine-ev800"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03282.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/ev800/DSC03282_prev.JPG' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a  href="#eachine-ev800">If you want to spend under $100 and get a high quality, versatile pair of goggles. Get the EV800 goggles. They have an integrated battery, buttons to change frequency and channel and even convert into a monitor if you don't want to fly in goggles all the time.</a>
+        </td>
+      </tr>
+
+  </tbody>
+          <tr>
+        <td>
+          <a  href="#hobbyking-quanum-v2-pro-diy-goggles"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03301.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/quanum/DSC03301_prev.JPG' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a  href="#hobbyking-quanum-v2-pro-diy-goggles">HobbyKing Quanum V2 Pro DIY goggles and Quanum Receiver. Are really good value (at least at their current discount price of ~$37), watch out though, no free shipping from HobbyKing means they're not quite as good of a deal as the EV800's. They're lightweight, have a good screen and the Quanum receiver's OLED display is super handy, but you have to build them yourself.</a>
+        </td>
+      </tr>
+
+</table>
+
+<h3 id="highest-quality-image">Highest Quality Image</h3>
+
+<table class="small-img">
+  <tbody>
+          <tr>
+        <td>
+          <a  href="#goggles-one"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03279.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/goggles_one/DSC03279_prev.JPG' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a  href="#goggles-one">The Goggles One have the highest quality, most immersive display, are lightweight and comfortable as well as they have an HDMI input.</a>
+        </td>
+      </tr>
+
+  </tbody>
+</table>
+
+<h3 id="most-portable-goggles">Most Portable Goggles</h3>
+
+<p><a href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J">Fatshark Dominator V3</a> or DIY yourself some stereoscopic goggles.</p>
+
+<table class="small-img">
+  <tbody>
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 100.0%;'><a id="assets-images-blog-goggles-c-fe-ab-f-f-c-a-d-d-de-jpg" href="/assets/images/blog/goggles/c9fe39ab-12f8-4414-8833-068f247c2a2d-00d72de6.jpg" class="linked-img colorbox"><img src='/assets/images/blog/goggles/c9fe39ab-12f8-4414-8833-068f247c2a2d-00d72de6.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J">Fatshark Dominator V3 goggles are really expensive at $374.99, but they're portable! If you've gotta be cool, all the cool kids fly with Fatsharks.</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a  href="#diy-fatsharks"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 56.23376623376623%;'><a id="assets-images-blog-goggles-diy-icuiti-iwear-av-head-mounted-display-portable-headphone-c-jpg" href="/assets/images/blog/goggles/diy/icuiti-iwear-av230-head-mounted-display-portable-320-10-240-headphone-3980c859.jpg" class="linked-img colorbox"><img src='/assets/images/blog/goggles/diy/icuiti-iwear-av230-head-mounted-display-portable-320-10-240-headphone-3980c859.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a  href="#diy-fatsharks">DIY your own goggles. I made some with a pair of AV230 goggles I found on craigslist.org</a>
+        </td>
+      </tr>
+
+  </tbody>
+</table>
+
+<h2 id="goggles-not-part-of-this-guide-yet">Goggles not part of this guide (yet)</h2>
+
+<p>You might have noticed that I don&#39;t have Fatshark goggles in the photo above or on the list below. This is for two reasons. First they&#39;re super expensive, <a href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J">$374.99 for the Dominator V3</a>, without a receiver. The <a href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J">Dominator V3</a> are the same resolution as the <a href="#eachine-ev800">Eachine EV800</a>&#39;s, but the <a href="#eachine-ev800">EV800</a>&#39;s are <a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J">$79.99</a>. The <a href="http://www.banggood.com/Fatshark-Fat-Shark-Dominator-HD-V2-FPV-Goggles-Video-Glasses-Headset-p-1008009.html?p=1G09211226617201502J">Dominator V2</a> have a slightly higher resolution at 800x600 px, but will set you back <a href="http://www.banggood.com/Fatshark-Fat-Shark-Dominator-HD-V2-FPV-Goggles-Video-Glasses-Headset-p-1008009.html?p=1G09211226617201502J">$449.99</a>. The least expensive pair of Fatsharks are currently the <a href="http://www.banggood.com/FatShark-Fat-Shark-Teleporter-V5-FPV-Goggles-5_8G-7CH-Video-Glasses-Headset-p-1041414.html?p=1G09211226617201502J">Teleporter V5</a> which will set you back <a href="http://www.banggood.com/FatShark-Fat-Shark-Teleporter-V5-FPV-Goggles-5_8G-7CH-Video-Glasses-Headset-p-1041414.html?p=1G09211226617201502J">$165</a> for some 320x240 px goggles, which is lower resolution than the <a href="#vr700">$59.99 VR700 goggles</a>.</p>
+
+<p>Due to their price, I don&#39;t own any Fatshark goggles. I have however, flown with a friend&#39;s Fatshark goggles. The main difference between any stereoscopic goggles (two screens in the goggles, one for each eye) like Fatsharks and goggles with a single screen is the immersive nature of the experience. Stereoscopic goggles tend to look smaller and further off, as though one were viewing a TV from a distance. Single-monitor goggles look closer and make the user feel more a part of the scene, giving an overall more immersive feel.</p>
+
+<p>The big difference is overall size. You can see from the photo below the size difference between the <a href="#goggles-one">Goggles One</a> and my <a href="#diy-fatsharks">DIY Fatsharks</a>. In general the stereoscopic goggles require far less distance between the lens and the screen and are therefore, much more portable.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-DSC-JPG" href="/assets/images/blog/goggles/DSC03402.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/DSC03402_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-DSC-JPG" href="/assets/images/blog/goggles/DSC03404.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/DSC03404_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>You also might be wondering why there aren&#39;t any HeadPlay goggles reviewed here? That&#39;s because they&#39;re basically the same specs as the Goggles One goggles and the only apparent difference is a diversity video receiver (which the Goggles One do not have), but the HeadPlay are $100 more. I couldn&#39;t justify paying $100 for diversity, but if someone wants to send me some, I&#39;d be happy to add them to this review.</p>
+
+<h2 id="goggles-one">Goggles One</h2>
+
+<p>At <a href="http://www.banggood.com/Eachine-Goggles-One-5-Inch-5_8G-40CH-Raceband-HD-1080p-72-Degree-HDMI-FPV-Goggles-Video-Glasses-p-1043694.html?p=1G09211226617201502J">$149.99 from banggood.com</a> for 1080p resolution goggles with an HDMI input, these are not the least expensive goggles reviewed, but they are great value. The screen looks huge and is extremely sharp. From a flying-experience perspective, these are the best.</p>
+
+<p>The video receiver operates on 40 channels, with Raceband.</p>
+
+<p>Here they are, awesome name plastered on the front. These will get some spray paint or stickers...</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03279.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/goggles_one/DSC03279_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>The battery mounts on the back, for comfort, which is actually really nice.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03277.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/goggles_one/DSC03277_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>The buttons on the side are for both the monitor and the video receiver. Unfortunately, there is only one button for the receiver. The &quot;scan&quot; button. It&#39;s the same button that turns on the goggles and searches for the best available channel. I&#39;m not a fan of this. I want buttons to change band and channel as there are on the <a href="#ev800">EV800</a>. It works fine when flying alone, but with only one button, I&#39;m not sure how one would find the right chanenl when multiple quads are transmitting, especially if the bands overlap or are close together.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03278.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/goggles_one/DSC03278_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>The weird looking piece on the top of the face area is really comfortable. No idea what it would feel like without this, but it seems to be a good idea.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03281.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/goggles_one/DSC03281_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Unfortunately, several friends who tried these goggles said the same thing about the nose as the Hobbyking DIY goggles. They sit rather low on the nose and can feel constricting on the nostrils. One option is to cut the foam from the nose, but this may let in unwanted light.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03287.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/goggles_one/DSC03287_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>There is an RP-SMA adapter for the antenna:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03291.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/goggles_one/DSC03291_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>It comes with a manual, screen cleaner, USB charging cable, mini HDMI (type c) to normal HDMI (type a) cable, 2x batteries and a whip antenna.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03413.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/goggles_one/DSC03413_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<ul>
+<li><p>Pros:</p>
+
+<ul>
+<li>Excellent value.</li>
+<li>1080p screen (1920x1080 px)</li>
+<li>2x 1600mah 2s batteries</li>
+<li>HDMI support</li>
+</ul></li>
+<li><p>Cons:</p>
+
+<ul>
+<li>I have a wide face and the face area is rather narrow. Folks with wide faces may find these slightly uncomfortable.</li>
+<li>HDMI plug is tiny and easy to lose, but that doesn&#39;t really matter.</li>
+</ul></li>
+<li><p>Gotchas:</p>
+
+<ul>
+<li>The plastic cover was trimmed too loosely when I got them, so it dug into my face when I wore the goggles tight. A quick trim of the outermost plastic case with some scissors remedied the problem.</li>
+</ul></li>
+</ul>
+
+<h2 id="eachine-ev800">Eachine EV800</h2>
+
+<p>In short, these are the best goggles for a beginner. Though slightly more expensive than the <a href="#eachine-vr700">VR 700</a>, they are an amazing value at <a href="http://www.banggood.com/Eachine-Goggles-One-5-Inch-5_8G-40CH-Raceband-HD-1080p-72-Degree-HDMI-FPV-Goggles-Video-Glasses-p-1043694.html?p=1G09211226617201502J">$79.99 from banggood.com</a>, have excellent receiver sensitivity, a reasonably high resolution screen (800x480 px) and can be converted to a standalone monitor if you want to share the view or fly with just a monitor and not goggles.</p>
+
+<p>Note that a 700tvl camera, popular due to it&#39;s low latency, is about 900x500 px. The advantage of increased resolution above the camera&#39;s resolution is negligible. If however, one were planning on flying from an HD video link like the DJI LightBridge, HD Goggles like the <a href="#goggles-one">Goggles One</a> would be better.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03282.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/ev800/DSC03282_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>The battery is integrated into the goggles which is good and bad. Good because it&#39;s easy to use. Bad because it cannot be swapped out. However, there is an external cable to allow powering the goggles via USB or a battery with a JST plug.</p>
+
+<p>There is even a screw hole on the bottom of the monitor section for mounting.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03284.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/ev800/DSC03284_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03285.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/ev800/DSC03285_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03286.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/ev800/DSC03286_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>The EV800 have an RP-SMA antenna plug and a bunch of buttons. This is much better than the single button on the VR700, but equally confusing.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03406.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/ev800/DSC03406_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>The goggle portion can be removed to use these as a monitor.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03409.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/ev800/DSC03409_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>As is, I think these are the best all around goggles. If, for the same price, these had an OLED display, a diversity RX and an optional face piece with foam, they would be absolutely killer.</p>
+
+<ul>
+<li><p>Pros:</p>
+
+<ul>
+<li>Good resolution (800x480 px)</li>
+<li>Great value</li>
+<li>Excellent integrated receiver sensitivity</li>
+</ul></li>
+<li><p>Cons:</p>
+
+<ul>
+<li>The face piece doesn&#39;t have any foam. Some folks I talked to liked this and others didn&#39;t. Seems like it&#39;s a personal pref, but it could be a con for some.</li>
+<li>The buttons are confusing. Why are there 2 sets of channel and band buttons?</li>
+</ul></li>
+<li><p>Gotchas:</p>
+
+<ul>
+<li>The battery is integrated.</li>
+<li>There is no foam around the eye piece. This isn&#39;t really a &quot;con&quot; though, because these are actually more comfortable than other goggles with foam. It also makes these an ideal pair of goggles to share, as the hard surfaces are easy to wipe down.</li>
+</ul></li>
+</ul>
+
+<h2 id="hobbyking-quanum-v2-pro-diy-goggles">HobbyKing Quanum V2 Pro DIY goggles</h2>
+
+<p>Read <a href="/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/">the full build guide here</a>.</p>
+
+<p>The <a href="https://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=97842&amp;aff=1624906">Quanam V2 pro goggles</a> have recently come down in price. At $37.60, they are a good deal. 800 x 480 px resolution.</p>
+
+<p>They don&#39;t come with a receiver, but the <a href="http://www.hobbyking.com/hobbyking/store/__65994__Quanum_Auto_Scan_5_8Ghz_FPV_Receiver.html?aff=1624906">$30.86 Quanum Auto Scan 5.8Ghz FPV Receiver</a> and <a href="http://www.hobbyking.com/hobbyking/store/__84862__Quanum_RC540R_5_8GHz_40CH_Race_Band_FPV_Diversity_Receiver.html?aff=1624906">$70.42 Quanum RC540R 5.8GHz 40CH Race Band FPV Diversity Receiver</a> are both good options that have a built in OLED screen. These are great as they allow the pilot to see the exact frequency and channel the receiver is using. I wish the other goggles on this page included an OLED like this.</p>
+
+<p>Less expensive options are the <a href="http://www.banggood.com/FPV-5_8G-8CH-200mW-AV-Wireless-Receiver-RC805-p-73202.html?p=1G09211226617201502J">$17.98 Boscam FPV 5.8G 8CH RC805</a> or the <a href="http://www.banggood.com/DIY-RX5808-5_8G-40CH-Diversity-FPV-Receiver-with-OLED-Display-for-FPV-Racer-Quad-p-1051163.html?p=1G09211226617201502J">$41.99 DIY RX5808 5.8G 40CH Dieversity RX</a> which includes an OLED display.</p>
+
+<p>In total, these goggles will set you back between $55 and $108. The quality of the video link is determined by the quality of the receiver. I have tried out all of the above mentioned receivers, except the DIY RX5808, and the ones I have tried work great. Watch out though, you&#39;ll have to pay for shipping from HobbyKing, which isn&#39;t usually that cheap, so that alone makes these a little bit less of a good deal.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03301.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/quanum/DSC03301_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03450.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/quanum/DSC03450_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Unfortunately, several friends who tried these goggles have told me that they sit rather low on the nose and can feel constricting on the nostrils. This could probably be fixed by removing some foam around the nose or building up the cheeks a bit more.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03452.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/quanum/DSC03452_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03454.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/quanum/DSC03454_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>This is the <a href="http://www.hobbyking.com/hobbyking/store/__65994__Quanum_Auto_Scan_5_8Ghz_FPV_Receiver.html?aff=1624906">$30.86 Quanum Auto Scan 5.8Ghz FPV Receiver</a>.</p>
+
+<p>I don&#39;t have a transmitter turned on at the moment so <code>RSSI</code> is <code>0%</code>. Battery voltage is shown on the screen. <code>E3</code> is the channel <code>5.665GHz</code> is the frequency, which is actually really handy.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03455.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/quanum/DSC03455_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<ul>
+<li><p>Pros:</p>
+
+<ul>
+<li>Nice, 5&quot; monitor (800 x 480 px).</li>
+<li>Great value, only $55 when paired with the RC805 or $70 if you choose the Quanum receiver.</li>
+<li>Light weight.</li>
+<li>Can be used with glasses.</li>
+</ul></li>
+<li><p>Cons:</p>
+
+<ul>
+<li>Must be assembled yourself.</li>
+<li>They&#39;re as comfortable as you make them.</li>
+<li>No receiver included, but you can choose your own.</li>
+<li>No battery included, but you can choose your own.</li>
+<li>You&#39;ll have to pay for shipping, which makes them a little bit less of a great deal.</li>
+</ul></li>
+</ul>
+
+<h2 id="beerotor-goggles">BeeRotor Goggles</h2>
+
+<p>These are in the works from <a href="https://www.facebook.com/groups/beerotor/permalink/473294756213480">Frank over at RCTimer</a> and I&#39;m excited to check them out!</p>
+
+<h2 id="eachine-vr700">Eachine VR700</h2>
+
+<p>The <a href="http://www.banggood.com/Eachine-VR-007-5_8G-40CH-HD-FPV-Goggles-Video-Glasses-4_3-Inch-With-7_4V-800mAh-Battery-p-960761.html?p=1G09211226617201502J">VR700s</a> are the cheapest pair of goggles you can buy, for <a href="http://www.banggood.com/Eachine-VR-007-5_8G-40CH-HD-FPV-Goggles-Video-Glasses-4_3-Inch-With-7_4V-800mAh-Battery-p-960761.html?p=1G09211226617201502J">$59.99 on banggood.com</a>. Build quality, ergonomics and price are great. The downsides of these goggles are the low resolution screen (480x272 px) and poor receiver sensitivity, which I&#39;ll dig into further below.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC03288.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vr700/DSC03288_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC03289.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vr700/DSC03289_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC03292.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vr700/DSC03292_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC03293.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vr700/DSC03293_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Here&#39;s the box they come in:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01741.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vr700/DSC01741_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Gotta love the awesome tag line on the back. Sadly, the jungle is actually not &quot;all in sight&quot; at only 480x272 px resolution.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC02021.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vr700/DSC02021_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>No padding, but that&#39;s cool. These things are durable.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01746.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vr700/DSC01746_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>It comes with a manual, micro usb to type A (normal), the goggles, a whip antenna, battery and a screen cleaning wipe.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01748.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vr700/DSC01748_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>The battery is a nifty 1600mah 2s lipo.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01750.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vr700/DSC01750_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>There is a battery gauge with 3 leds and a button.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01754.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vr700/DSC01754_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>The micro usb charging port is on the side.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01753.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vr700/DSC01753_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>The goggles themselves have an RP-SMA plug for the antenna.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01757.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vr700/DSC01757_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>There is one light, which indicates that the goggles are on, and one button, which lets you change channels. There is no visual feedback of which channel you&#39;re on and I haven&#39;t figured out exactly how the button works. I just keep pressing it usually and eventually end up on the right channel. Not ideal, but it works.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01759.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vr700/DSC01759_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>The three buttons on the side are for the display to adjust things like brightness and contrast.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01764.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vr700/DSC01764_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>All in all, these goggles are great for giving rides, but not ideal for the primary pair of goggles for a pilot. The resolution is too low and the video receiver is not reliable enough for me to be comfortable flying with them.</p>
+
+<ul>
+<li><p>Pros:</p>
+
+<ul>
+<li>Price, the least expensive option.</li>
+</ul></li>
+<li><p>Cons:</p>
+
+<ul>
+<li>One button for the VTX.</li>
+<li>Lower resolution monitor means you can easily see the pixels on the screen when flying.</li>
+<li>The receiver sensitivity is not very good, meaning you won&#39;t get very good range. So I don&#39;t recommend these, even as beginner goggles.</li>
+</ul></li>
+</ul>
+
+<h2 id="diy-fatsharks">DIY Fatsharks</h2>
+
+<p>If you&#39;re on a super tight budget, building your own goggles might be the way to go.</p>
+
+<p>Here are my DIY goggles in use:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.55948553054662%;'><a id="assets-images-blog-goggles-diy-a-d-b-cce-bfd-a-AcOHDhy-atY-e-jpeg" href="/assets/images/blog/goggles/diy/47a6d820b3127cce9854bfd12a0000000030108AcOHDhy0atY-5706369e.jpeg" class="linked-img colorbox"><img src='/assets/images/blog/goggles/diy/47a6d820b3127cce9854bfd12a0000000030108AcOHDhy0atY-5706369e.jpeg' class='trailing-space' ></img></a></div></div>
+
+<p>These video goggles use an <a href="http://www.banggood.com/FPV-5_8G-8CH-200mW-AV-Wireless-Receiver-RC805-p-73202.html?p=1G09211226617201502J">RC805</a> video receiver, which I chose because it was so cost effective and has two video outputs.</p>
+
+<p>They&#39;re based on the unimpressive <a href="http://www.cnet.com/products/icuiti-iwear/">AV230</a> 320 x 240px video goggles, which I bought on craigslist.org.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 56.23376623376623%;'><a id="assets-images-blog-goggles-diy-icuiti-iwear-av-head-mounted-display-portable-headphone-c-jpg" href="/assets/images/blog/goggles/diy/icuiti-iwear-av230-head-mounted-display-portable-320-10-240-headphone-3980c859.jpg" class="linked-img colorbox"><img src='/assets/images/blog/goggles/diy/icuiti-iwear-av230-head-mounted-display-portable-320-10-240-headphone-3980c859.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>I cut them in half and put them inside some $3 ski goggles from aliexpress. I put a JST power plug on the RC805 and I velcro a battery on the front of the goggles when I fly.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-diy-DSC-JPG" href="/assets/images/blog/goggles/diy/DSC03488.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/diy/DSC03488_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>I have an <a href="/blog/2016/02/06/hmdvr-fpv-video-recorder/">HMDVR FPV Video Recorder</a> attached to one of the outputs of the RC805.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-diy-DSC-JPG" href="/assets/images/blog/goggles/diy/DSC03487.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/diy/DSC03487_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>The cable from the AV230 is wound up and zip tied under the goggles. The other RC805 output is wired to the goggles. I added JST servo plugs for the video signal to all the components.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-diy-DSC-JPG" href="/assets/images/blog/goggles/diy/DSC03489.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/diy/DSC03489_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>There is also a lipo voltage alarm on the front of the goggles.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-diy-DSC-JPG" href="/assets/images/blog/goggles/diy/DSC03492.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/diy/DSC03492_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<ul>
+<li><p>Pros:</p>
+
+<ul>
+<li>Cheap. They cost a total of $40, $20 for the goggles, $17 for the receiver and $3 for the goggles. Add an <a href="http://www.banggood.com/Mini-DVR-Video-Audio-Recorder-For-FPV-Multicopters-p-1021117.html?p=1G09211226617201502J">HMDVR FPV</a> Video Recorder for ~$20 more, but this DVR could be added to any goggles.</li>
+<li>Excellent reception. The RC805 receiver has great sensitivity and the video reception is always good.</li>
+</ul></li>
+<li><p>Cons:</p>
+
+<ul>
+<li>Small, low resolution, low brightness screen. This could be made better by using better goggles as a base.</li>
+<li>They take the most DIYing. Even sourcing parts can be hard, I used goggles that cannot be bought at retail anymore, but this is how one would find the best deal.</li>
+</ul></li>
+</ul>
+
+<div class='text-center' style='margin: 1em'>
+Checkout my other guides at
+<a href='/blog'>nathan.vertile.com/blog</a>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+//<![CDATA[
+                  var disqus_shortname = 'vertile';
+          
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+//]]>
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</article>
+
+</div>
+</div>
+</div>
+</body>
+</html>

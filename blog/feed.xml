@@ -5,10 +5,155 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-07-09T23:15:00-07:00</updated>
+  <updated>2016-07-24T20:20:00-07:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
+  <entry>
+    <title>J-Link Getting Started Guide</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/25/j-link-getting-started-guide/"/>
+    <id>http://nathan.vertile.com/blog/2016/07/25/j-link-getting-started-guide/</id>
+    <published>2016-07-24T20:20:00-07:00</published>
+    <updated>2016-07-25T22:17:45-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;These are my notes on J-link debugging, mostly for ARM.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-jlink-DSC-JPG" href="/assets/images/blog/jlink/DSC03526.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/jlink/DSC03526_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="software"&gt;Software&lt;/h2&gt;
+
+&lt;p&gt;Head over to the &lt;a href="https://www.segger.com/downloads/jlink"&gt;jlink downloads&lt;/a&gt; page to grab the latest software for your platform.&lt;/p&gt;
+
+&lt;p&gt;Install the package then connect your debugger.&lt;/p&gt;
+
+&lt;h2 id="pinout"&gt;Pinout&lt;/h2&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 78.01418439716312%;'&gt;&lt;a id="assets-images-blog-jlink-pin-jlink-b-afde-png" href="/assets/images/blog/jlink/20pin-jlink-7b2afde5.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/jlink/20pin-jlink-7b2afde5.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I just used some &lt;a href="http://www.banggood.com/3Pcs-40P-20cm-Female-to-Female-Dupont-Jumper-Jump-Cable-Wire-For-Arduino-p-1033590.html?p=1G09211226617201502J"&gt;Dupont jumper cables&lt;/a&gt; to connect the SWD lines. You could get one of &lt;a href="http://www.banggood.com/V8-All-ARM-JTAG-Adapter-Converter-For-TQ2440-MINI2440-Neu-J-link-Emulator-p-1038713.html?p=1G09211226617201502J"&gt;these breakout boards&lt;/a&gt;, but that seems unnecessary.&lt;/p&gt;
+
+&lt;p&gt;You would connect the Dupont cables like this. Note that when using the grey 20 pin Jtag cable, the pinout should be viewed from the &amp;quot;back&amp;quot;.&lt;/p&gt;
+
+&lt;h2 id="swd"&gt;SWD&lt;/h2&gt;
+
+&lt;p&gt;Here is an example SWD connection. I check that my J-Link was sending 3.3v on the VCC pin, and I think this is standard, but if you want to be sure, double check it before connecting.&lt;/p&gt;
+
+&lt;p&gt;Where:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;RED &amp;lt;-&amp;gt; VCC
+YELLOW &amp;lt;-&amp;gt; GND
+BLUE &amp;lt;-&amp;gt; SWDIO
+GREEN &amp;lt;-&amp;gt; SWDCLK
+ORANGE &amp;lt;-&amp;gt; RESET
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-jlink-DSC-JPG" href="/assets/images/blog/jlink/DSC03524.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/jlink/DSC03524_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-jlink-DSC-JPG" href="/assets/images/blog/jlink/DSC03525.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/jlink/DSC03525_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is an example connection to the &lt;a href="/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/"&gt;FlySky FS-i6&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-jlink-DSC-JPG" href="/assets/images/blog/jlink/DSC03530.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/jlink/DSC03530_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="flashing"&gt;Flashing&lt;/h2&gt;
+
+&lt;p&gt;Find your device in &lt;a href="https://www.segger.com/jlink_supported_devices.html"&gt;the device list&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Once you know the device, run &lt;code&gt;JLinkExe&lt;/code&gt; from your terminal. These examples are from my mac, using the MKL16Z64VLH4 I was working with in my &lt;a href="/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/"&gt;FlySky FS-i6 hacking guide&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Create a file, it doesn&amp;#39;t matter what it&amp;#39;s called. I&amp;#39;ll call mine &lt;code&gt;dump.jtag&lt;/code&gt; and put this in it:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;si 1
+speed 4000
+device MKL16Z64XXX4
+r
+h
+savebin fsi6.bin, 0x0, 0x10000
+exit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that the syntax for savebin is &lt;code&gt;filename&lt;/code&gt;, &lt;code&gt;start addr&lt;/code&gt;, &lt;code&gt;size&lt;/code&gt;. Our target has 64kb of flash.&lt;/p&gt;
+
+&lt;p&gt;Then run:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;JLinkExe -CommanderScript dump.jtag
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now you should have a file called fsi6.bin&lt;/p&gt;
+
+&lt;p&gt;You can run &lt;code&gt;xxd fsi6.bin &amp;gt; fsi6.txt&lt;/code&gt; to see a readable output of the binary.&lt;/p&gt;
+
+&lt;p&gt;Make any edits and run &lt;code&gt;xxd -r fsi6.txt &amp;gt; modified-fsi6.bin&lt;/code&gt; &lt;/p&gt;
+
+&lt;p&gt;Then create another file called &lt;code&gt;loadbin.jlink&lt;/code&gt; with the contents:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;si 1
+speed 4000
+device MKL16Z64XXX4
+r
+h
+loadbin modified-fsi6.bin
+exit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To just connect to the target, run:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;JLinkExe -device MKL16Z64xxx4
+si 1
+speed 4000
+r
+h
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You&amp;#39;ll see:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;› JLinkExe -device MKL16Z64xxx4
+SEGGER J-Link Commander V6.00 (Compiled Jul 22 2016 19:27:23)
+DLL version V6.00, compiled Jul 22 2016 19:27:17
+
+Connecting to J-Link via USB...O.K.
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware version: V8.00
+S/N: 304439649
+License(s): RDI,FlashDL,FlashBP,JFlash,GDBFULL
+VTref = 3.280V
+
+
+Type "connect" to establish a target connection, '?' for help
+J-Link&amp;gt;si 1
+Selecting SWD as current target interface.
+J-Link&amp;gt;speed 4000
+Selecting 4000 kHz as target interface speed
+J-Link&amp;gt;r
+Target connection not established yet but required for command.
+Device "MKL16Z64XXX4" selected.
+
+
+Found SWD-DP with ID 0x0BC11477
+Found SWD-DP with ID 0x0BC11477
+AP-IDR: 0x04770031, Type: AHB-AP
+Found Cortex-M0 r0p0, Little endian.
+FPUnit: 2 code (BP) slots and 0 literal slots
+CoreSight components:
+ROMTbl 0 @ F0002000
+ROMTbl 0 [0]: FFFFE000, CID: B105900D, PID: 000BB932 MTB-M0+
+ROMTbl 0 [1]: FFFFF000, CID: B105900D, PID: 0008E000 MTBDWT
+ROMTbl 0 [2]: F00FD000, CID: B105100D, PID: 000BB4C0 ROM Table
+ROMTbl 1 @ E00FF000
+ROMTbl 1 [0]: FFF0F000, CID: B105E00D, PID: 000BB008 SCS
+ROMTbl 1 [1]: FFF02000, CID: B105E00D, PID: 000BB00A DWT
+ROMTbl 1 [2]: FFF03000, CID: B105E00D, PID: 000BB00B FPB
+Cortex-M0 identified.
+Reset delay: 0 ms
+Reset type NORMAL: Resets core &amp;amp; peripherals via SYSRESETREQ &amp;amp; VECTRESET bit.
+J-Link&amp;gt;h
+PC = 000001A0, CycleCnt = 00000000
+R0 = 80000000, R1 = 40000000, R2 = 00000004, R3 = 0000FF00
+R4 = 40076000, R5 = 40008100, R6 = 00000001, R7 = 200015F0
+R8 = 3FBFDFDF, R9 = FF5EFFBF, R10= 0000F3D4, R11= 0000F3D4
+R12= BFFBFEFF
+SP(R13)= 20001460, MSP= 20001460, PSP= FF4FEFF8, R14(LR) = 0000A311
+XPSR = A1000000: APSR = NzCvq, EPSR = 01000000, IPSR = 000 (NoException)
+CFBP = 00000000, CONTROL = 00, FAULTMASK = 00, BASEPRI = 00, PRIMASK = 00
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
   <entry>
     <title>Eachine EV800 Review</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/10/eachine-ev800-review/"/>
@@ -36,11 +181,13 @@
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/"/>
     <id>http://nathan.vertile.com/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/</id>
     <published>2016-07-08T22:00:00-07:00</published>
-    <updated>2016-07-23T10:23:16-07:00</updated>
+    <updated>2016-07-25T22:16:55-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
     <content type="html">&lt;p&gt;This is my unboxing, review and hacking guide for the &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;Flysky FS-i6&lt;/a&gt; 2.4ghz radio transmitter.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03245.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03245_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;I started this project thinking I could easily use the &lt;a href="http://www.banggood.com/2_4G-CC2500-A7105-Flysky-Frsky-Devo-DSM2-Multiprotocol-TX-Module-With-Antenna-p-1048377.html?p=1G09211226617201502J"&gt;4-in-1 DIY transmitter module&lt;/a&gt; in the radio, but this turned out to not be the case. Instead, I&amp;#39;ve start working on porting OpenTX with serial support for the &lt;a href="http://www.banggood.com/2_4G-CC2500-A7105-Flysky-Frsky-Devo-DSM2-Multiprotocol-TX-Module-With-Antenna-p-1048377.html?p=1G09211226617201502J"&gt;4-in-1 DIY transmitter module&lt;/a&gt;. Devs, help me out here! &lt;a href="https://github.com/nathantsoi/opentx/tree/target/fs-i6"&gt;https://github.com/nathantsoi/opentx/tree/target/fs-i6&lt;/a&gt;&lt;/p&gt;
 
@@ -94,7 +241,7 @@
 
 &lt;p&gt;Pinout:&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-fs-i-px-FlySky-IA-B-pinout-d-d-jpg" href="/assets/images/blog/fs_i6/500px-FlySky_IA6B_pinout-d48d2059.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/500px-FlySky_IA6B_pinout-d48d2059.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-fs-i-px-FlySky-IA-B-pinout-f-eed-f-jpg" href="/assets/images/blog/fs_i6/500px-FlySky_IA6B_pinout-f89eed4f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/500px-FlySky_IA6B_pinout-f89eed4f.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id="teardown"&gt;Teardown&lt;/h2&gt;
 
@@ -147,6 +294,14 @@
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03439.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03439_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.49022801302932%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03440.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03440_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="firmware"&gt;Firmware&lt;/h2&gt;
+
+&lt;p&gt;I have dumped the version of the firmware shipped with my controller here. Use &lt;code&gt;xxd -r [filename]&lt;/code&gt; to restore it to a flash-able &lt;code&gt;bin&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://gist.github.com/nathantsoi/ab352234dedfaf0451c5faa50bfeb9a4"&gt;https://gist.github.com/nathantsoi/ab352234dedfaf0451c5faa50bfeb9a4&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Restore it as described here in my &lt;a href="/blog/2016/07/25/j-link-getting-started-guide/"&gt;J-Link article&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id="diy-tx-module"&gt;DIY TX Module&lt;/h2&gt;
 
@@ -234,11 +389,11 @@ Red: V+
 
 &lt;p&gt;To use the switch, we&amp;#39;ll need to cut a trace on the PCB. To figure out which one, checkout this pinout for the radio module. As this module does not have the standard &lt;a href="http://www.banggood.com/A7105-Wireless-RF-2_4GHz-Transceiver-Module-3_3V-Power-Supply-Module-p-909404.html?p=1G09211226617201502J"&gt;A7105&lt;/a&gt; module, I reverse engineered the one on the board.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 87.76508972267537%;'&gt;&lt;a id="assets-images-blog-fs-i-fs-i-pinout-ab-jpg" href="/assets/images/blog/fs_i6/fs-i6_pinout-6ab03140.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/fs-i6_pinout-6ab03140.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 87.76508972267537%;'&gt;&lt;a id="assets-images-blog-fs-i-fs-i-pinout-fb-fe-jpg" href="/assets/images/blog/fs_i6/fs-i6_pinout-fb7320fe.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/fs-i6_pinout-fb7320fe.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;We need to cut the power line between the PCB and the radio module. Right here.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 49.26470588235294%;'&gt;&lt;a id="assets-images-blog-fs-i-fs-i-pinout-cut-aa-aad-jpg" href="/assets/images/blog/fs_i6/fs-i6_pinout-cut-01aa7aad.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/fs-i6_pinout-cut-01aa7aad.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 49.26470588235294%;'&gt;&lt;a id="assets-images-blog-fs-i-fs-i-pinout-cut-ee-b-jpg" href="/assets/images/blog/fs_i6/fs-i6_pinout-cut-45ee607b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/fs-i6_pinout-cut-45ee607b.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Take a new razor blade and make a cut as shown above. Once you&amp;#39;ve made the cut, check the continuity between the solder points on each side. Here&amp;#39;s what it looks like when we&amp;#39;re done.&lt;/p&gt;
 
@@ -259,7 +414,7 @@ Note that your USBASP programmer should have two voltage settings. BE SURE TO US
 
 &lt;p&gt;To program the module connect your &lt;a href="http://www.banggood.com/USBASP-USBISP-3_3-5V-AVR-Downloader-Programmer-With-ATMEGA8-ATMEGA128-p-934425.html?p=1G09211226617201502J"&gt;USBASP&lt;/a&gt; like so, if you installed the headers on the back like I did in the section above.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 190.2555910543131%;'&gt;&lt;a id="assets-images-blog-fs-i-in-isp-d-b-d-jpg" href="/assets/images/blog/fs_i6/4-in-1-isp-d70b154d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/4-in-1-isp-d70b154d.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 190.2555910543131%;'&gt;&lt;a id="assets-images-blog-fs-i-in-isp-a-cde-a-jpg" href="/assets/images/blog/fs_i6/4-in-1-isp-a63cde8a.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/4-in-1-isp-a63cde8a.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 96.98630136986301%;'&gt;&lt;a id="assets-images-blog-fs-i-usb-asp-pinout-ee-e-png" href="/assets/images/blog/fs_i6/usb-asp-pinout-3ee427e9.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/usb-asp-pinout-3ee427e9.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -379,610 +534,375 @@ avrdude done.  Thank you.
     <content type="html"></content>
   </entry>
   <entry>
-    <title>HobbyKing Quanum V2 Pro Goggles</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"/>
-    <id>http://nathan.vertile.com/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/</id>
-    <published>2016-05-10T20:56:00-07:00</published>
-    <updated>2016-06-05T21:41:08-07:00</updated>
+    <title>FPV Goggle Guide</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/06/22/fpv-goggle-guide/"/>
+    <id>http://nathan.vertile.com/blog/2016/06/22/fpv-goggle-guide/</id>
+    <published>2016-06-22T11:24:00-07:00</published>
+    <updated>2016-07-24T00:17:37-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
-    <content type="html">&lt;p&gt;This is a build guide and review of the HobbyKing Quanum V2 Pro Goggles.&lt;/p&gt;
+    <content type="html">&lt;p&gt;I bought a bunch of FPV goggles and tried them out so you don&amp;#39;t have to. This article is a review and comparison of all these goggles.&lt;/p&gt;
 
-&lt;p&gt;Here they are assembled with my &lt;a href="/blog/2016/04/05/dys-x160-v3/"&gt;DYS X160&lt;/a&gt;:&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-DSC-JPG" href="/assets/images/blog/goggles/DSC03300.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/DSC03300_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-IMG-b-d-jpg" href="/assets/images/blog/hk/quanum-v2-pro-goggles/IMG_20160526_194705-270b12d5.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/IMG_20160526_194705_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id="top-picks"&gt;Top Picks&lt;/h2&gt;
 
-&lt;h3 id="summary"&gt;Summary&lt;/h3&gt;
+&lt;p&gt;Here are the goggles I would buy and why. Scroll down or use the navigation on the left to find a detailed review of each.&lt;/p&gt;
 
-&lt;p&gt;Overall, these goggles offer great performance at a great price. They are light, easy to assemble and should work fine with glasses. If you&amp;#39;re looking for a first (or second or third) pair of goggles, this is a great option.&lt;/p&gt;
-
-&lt;p&gt;As for the display, I like the single monitor style a bit better than the two monitor goggles (like Fatsharks) since the single monitor gives a more immersive experience. It feels more like like you&amp;#39;re &amp;quot;in&amp;quot; the display instead of the Fatsharks, which feel like you&amp;#39;re looking at a display in the distance.&lt;/p&gt;
-
-&lt;p&gt;That said, the 800x480 resolution is good (this is the same resolution as the &lt;a href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J"&gt;Fatshark Dominator V3&lt;/a&gt;), but is not as high as &lt;a href="http://www.banggood.com/Skyzone-SJ-V01-5_8G-40CH-FPV-Goggles-7-Inch-1280x800-HD-Video-Glasses-with-HDMI-Input-p-1041124.html?p=1G09211226617201502J"&gt;Headplay-Type Goggles&lt;/a&gt;. Note though, that with a 700tvl fpv camera, the horizontal resolution is about 933px, so you&amp;#39;re not losing much clarity at all.&lt;/p&gt;
-
-&lt;p&gt;The build process affords some flexibility, but it could be a downside if you&amp;#39;re not into some simple DIYing. If head-comfort is important, you can customize the shape of the goggles to fit your face. I probably should have added some extra padding around the cheeks, since everyone who tried on my pair of Quanums complained about a squashed nose. Other than that, they loved these goggles for the light weight and monitor clarity. The only other downside is the size. It&amp;#39;s great for when you&amp;#39;re using them, but it&amp;#39;s far less convenient for transportation. They need a big case, mine travel in that giant tub pictured above.&lt;/p&gt;
-
-&lt;p&gt;The Quanum receiver I used is awesome. The sensitivity is great and the OLED display is very clear, so it&amp;#39;s easy find the right channel, and once you&amp;#39;re on it, the signal is locked in. Compared to some other goggles I have including the &lt;a href="http://www.banggood.com/Eachine-VR-007-5_8G-40CH-HD-FPV-Goggles-Video-Glasses-4_3-Inch-With-7_4V-800mAh-Battery-p-960761.html?p=1G09211226617201502J"&gt;Eachine VR-007 Goggles&lt;/a&gt; and my Vuxiz iWear AV230-based DIY goggles with a &lt;a href="http://www.banggood.com/FPV-5_8G-8CH-200mW-AV-Wireless-Receiver-RC805-p-73202.html?p=1G09211226617201502J"&gt;Boscam RC805&lt;/a&gt; receiver, the range and image quality on the Quanum receiver is noticeably better.&lt;/p&gt;
-
-&lt;h3 id="parts"&gt;Parts&lt;/h3&gt;
-
-&lt;p&gt;Here are the parts I used in the build:&lt;/p&gt;
+&lt;h3 id="best-value-goggles"&gt;Best Value Goggles&lt;/h3&gt;
 
 &lt;table class="small-img"&gt;
   &lt;tbody&gt;
           &lt;tr&gt;
         &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=97842&amp;aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-parts-quanum-pro-v-goggles-bdd-e-c-jpg" href="/assets/images/blog/parts/quanum-pro-v2-goggles-bdd2e2c4.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/quanum-pro-v2-goggles-bdd2e2c4.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+          &lt;a  href="#eachine-ev800"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03282.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/ev800/DSC03282_prev.JPG' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
         &lt;/td&gt;
         &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=97842&amp;aff=1624906"&gt;HobbyKing Quanum Pro V2 DIY FPV Goggles, $37&lt;/a&gt;
+          &lt;a  href="#eachine-ev800"&gt;If you want to spend under $100 and get a high quality, versatile pair of goggles. Get the EV800 goggles. They have an integrated battery, buttons to change frequency and channel and even convert into a monitor if you don't want to fly in goggles all the time.&lt;/a&gt;
         &lt;/td&gt;
       &lt;/tr&gt;
 
+  &lt;/tbody&gt;
           &lt;tr&gt;
         &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=65994&amp;aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-parts-quanum-rx-bcb-b-d-jpg" href="/assets/images/blog/parts/quanum-rx-bcb20b3d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/quanum-rx-bcb20b3d.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+          &lt;a  href="#hobbyking-quanum-v2-pro-diy-goggles"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03301.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/quanum/DSC03301_prev.JPG' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
         &lt;/td&gt;
         &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=65994&amp;aff=1624906"&gt;Quanum Auto Scan Receiver, $31&lt;/a&gt;
+          &lt;a  href="#hobbyking-quanum-v2-pro-diy-goggles"&gt;HobbyKing Quanum V2 Pro DIY goggles and Quanum Receiver. Are really good value (at least at their current discount price of ~$37), watch out though, no free shipping from HobbyKing means they're not quite as good of a deal as the EV800's. They're lightweight, have a good screen and the Quanum receiver's OLED display is super handy, but you have to build them yourself.&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;h3 id="highest-quality-image"&gt;Highest Quality Image&lt;/h3&gt;
+
+&lt;table class="small-img"&gt;
+  &lt;tbody&gt;
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a  href="#goggles-one"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03279.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03279_prev.JPG' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a  href="#goggles-one"&gt;The Goggles One have the highest quality, most immersive display, are lightweight and comfortable as well as they have an HDMI input.&lt;/a&gt;
         &lt;/td&gt;
       &lt;/tr&gt;
 
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;If you&amp;#39;re looking for a diversity receiver, the &lt;a href="http://www.hobbyking.com/hobbyking/store/__84862__Quanum_RC540R_5_8GHz_40CH_Race_Band_FPV_Diversity_Receiver.html&amp;amp;aff=1624906"&gt;Quanum RC540R 5.8GHz 40CH Race Band FPV Diversity Receiver&lt;/a&gt; is a great choice, albeit a bit more expensive than the Auto Scan receiver listed above.&lt;/p&gt;
+&lt;h3 id="most-portable-goggles"&gt;Most Portable Goggles&lt;/h3&gt;
 
-&lt;p&gt;Total Cost: &lt;code&gt;$68&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id="unboxing"&gt;Unboxing&lt;/h3&gt;
-
-&lt;p&gt;Ooh, a box.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02154.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02154_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The neoprene sleeve. &lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02156.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02156_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;It comes with 3 different lenses of different magnification, some padding to change the shape of the goggles where they meet your face and an adaptor for your phone, if you want to use that instead of the monitor.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02157.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02157_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I&amp;#39;m no foam expert, but the goggle case is made out of EPO. I think? Either way, it&amp;#39;s more than durable enough for your face, unless you&amp;#39;re into FPV boxing or something cool like that.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02159.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02159_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Lots of cables.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02160.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02160_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The 5&amp;quot; 800x480 monitor.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02161.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02161_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Ok, let&amp;#39;s build!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02163.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02163_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="build"&gt;Build&lt;/h3&gt;
-
-&lt;p&gt;Install the foam bumpers. I used hot glue.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02210.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02210_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02211.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02211_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Remove the screen protector from monitor and insert it into the lower piece.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02213.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02213_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Assemble the lens by inserting the glass into the plastic frame. I went with the &lt;code&gt;1x&lt;/code&gt; lens, but I think I may change that to a more powerful lens, so the screen looks bigger.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02214.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02214_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The flat part should go down so it ends up like this.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02216.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02216_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Install the handles on the lens and place the lens in the goggle base.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02217.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02217_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The curved part points towards the screen.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02218.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02218_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Use some clear packing tape to secure the top and bottom. You could glue these, but that would make it hard to change the lens.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02219.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02219_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Use the included strips of neoprene and the foam with one sticky side to pad the goggles where they&amp;#39;ll meet your face. I should have put extra neoprene around the cheek area so my nose is less squashed... but you know now :)&lt;/p&gt;
-
-&lt;p&gt;The idea is to glue layers of neoprene where you want the goggles to contact your face. Try to test fit the goggles with just the neoprene layers, when it fits well, then apply the sticky-sided foam.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02220.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02220_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Finally, install the receiver in the pocket and route the cables through the loops on the bottom:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-DSC-JPG" href="/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02222.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/DSC02222_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I put my battery on the opposite side and route the cable under.&lt;/p&gt;
-
-&lt;p&gt;Here they are in action! My cousin is checkin&amp;#39; em out:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.59482758620689%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-demo-cc-ddc-jpg" href="/assets/images/blog/hk/quanum-v2-pro-goggles/demo-2-6cc19ddc.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/demo-2-6cc19ddc.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.59482758620689%;'&gt;&lt;a id="assets-images-blog-hk-quanum-v-pro-goggles-demo-b-jpg" href="/assets/images/blog/hk/quanum-v2-pro-goggles/demo-1-377b4341.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/quanum-v2-pro-goggles/demo-1-377b4341.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Drone Building 101 with the HobbyKing FPV Starter Setup</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/05/08/drone-building-101-with-the-hobbyking-fpv-starter-setup/"/>
-    <id>http://nathan.vertile.com/blog/2016/05/08/drone-building-101-with-the-hobbyking-fpv-starter-setup/</id>
-    <published>2016-05-08T10:41:00-07:00</published>
-    <updated>2016-06-30T23:49:22-07:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;At Maker Faire Bay Area 2016, David, Jack, Huned and I built a drone with the help of some kids. This is the story of that drone.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02354-31857772.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02354_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br/&gt;
-Let&amp;#39;s start with the results. Here is some video of the drone flying with the BetaFlight 3.0 firmware.&lt;/p&gt;
-
-&lt;div class="videoWrapper"&gt;
-  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/bU7gAYHmaRc?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br/&gt;
-And chasing the drone with the &lt;a href="/blog/2016/03/22/rctimer-br-x200-mini-quad-build-setup-and-review/"&gt;x200&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class="videoWrapper"&gt;
-  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/t8cB3LPqxNg?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h2 id="parts"&gt;Parts&lt;/h2&gt;
-
-&lt;p&gt;Here are all the parts we used:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 87.29674796747967%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-a-e-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02097-9a4e6684.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02097_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J"&gt;Fatshark Dominator V3&lt;/a&gt; or DIY yourself some stereoscopic goggles.&lt;/p&gt;
 
 &lt;table class="small-img"&gt;
   &lt;tbody&gt;
           &lt;tr&gt;
         &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__86239__KINGKONG_260_FPV_Racer_Frame_Set_Pair_Kit_.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-frame-b-ad-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/frame-6b8ad82d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/frame-6b8ad82d.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-goggles-c-fe-ab-f-f-c-a-d-d-de-jpg" href="/assets/images/blog/goggles/c9fe39ab-12f8-4414-8833-068f247c2a2d-00d72de6.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/c9fe39ab-12f8-4414-8833-068f247c2a2d-00d72de6.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
         &lt;/td&gt;
         &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__86239__KINGKONG_260_FPV_Racer_Frame_Set_Pair_Kit_.html?aff=1624906"&gt;KingKong 260 FPV Frame Set (Pair) w/ props, $17.69&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__86544__DYS_BLHeli_16A_Mini_ESC_with_Soldering_Pin_Option_2_4s.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-esc-d-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/esc-19d19b54.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/esc-19d19b54.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__86544__DYS_BLHeli_16A_Mini_ESC_with_Soldering_Pin_Option_2_4s.html?aff=1624906"&gt;4x DYS BLHeli 16A Mini ESCs 2-4s, $4.99&lt;/a&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J"&gt;Fatshark Dominator V3 goggles are really expensive at $374.99, but they're portable! If you've gotta be cool, all the cool kids fly with Fatsharks.&lt;/a&gt;
         &lt;/td&gt;
       &lt;/tr&gt;
 
           &lt;tr&gt;
         &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__61433__DYS_BE1806_2300kv_Brushless_Multirotor_Motor_2S_3S.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-motors-e-a-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/motors-3e197a96.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/motors-3e197a96.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+          &lt;a  href="#diy-fatsharks"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 56.23376623376623%;'&gt;&lt;a id="assets-images-blog-goggles-diy-icuiti-iwear-av-head-mounted-display-portable-headphone-c-jpg" href="/assets/images/blog/goggles/diy/icuiti-iwear-av230-head-mounted-display-portable-320-10-240-headphone-3980c859.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/diy/icuiti-iwear-av230-head-mounted-display-portable-320-10-240-headphone-3980c859.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
         &lt;/td&gt;
         &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__61433__DYS_BE1806_2300kv_Brushless_Multirotor_Motor_2S_3S.html?aff=1624906"&gt;4x DYS BE1806 2300kv Motors, $8.95&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__85524__Skyline32_Acro_Flight_Controller_w_Baseflight_Cleanflight.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-fc-ca-c-e-e-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/fc-ca7c9e0e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/fc-ca7c9e0e.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__85524__Skyline32_Acro_Flight_Controller_w_Baseflight_Cleanflight.html?aff=1624906"&gt;Skyline Skyline32 Flight Controller, $14.99&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__22494__Turnigy_3A_UBEC_with_Low_Voltage_Buzzer.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-ubec-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/ubec-6d488056.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/ubec-6d488056.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__22494__Turnigy_3A_UBEC_with_Low_Voltage_Buzzer.html?aff=1624906"&gt;3A UBEC with Low Voltage Buzzer, $2.99&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__42750__Turnigy_Pure_Silicone_Wire_12AWG_1m_Red_US_Warehouse_.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 79.6078431372549%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-wire-a-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/wire-1039a309.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/wire-1039a309.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__42750__Turnigy_Pure_Silicone_Wire_12AWG_1m_Red_US_Warehouse_.html?aff=1624906"&gt;12ga Silicone Wire, $2.52&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__10414__Male_XT60_Connectors_5pcs_bag_GENUINE.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 77.05882352941177%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-xt-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/xt-60-1215d504.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/xt-60-1215d504.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__10414__Male_XT60_Connectors_5pcs_bag_GENUINE.html?aff=1624906"&gt;XT-60 Connector, $1.94&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__89692__QUANUM_700TVL_SONY_1_3_Camera_2_1mm_Lens_NTSC_.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-camera-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/camera-d3033760.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/camera-d3033760.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__89692__QUANUM_700TVL_SONY_1_3_Camera_2_1mm_Lens_NTSC_.html?aff=1624906"&gt;700TVL 1/3 2.1mm Sony CCD Camera, $34.49&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__81333__LT200_5_8GHz_200mW_32_Channel_FPV_A_V_Transmitter.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-vtx-db-b-c-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/vtx-7db18b6c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/vtx-7db18b6c.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__81333__LT200_5_8GHz_200mW_32_Channel_FPV_A_V_Transmitter.html?aff=1624906"&gt;LT200 5.8GHz 200mw 32 Channel FPV Transmitter, $16.48&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__76890__Aomway_5_8GHz_4_Leaf_Clover_Antenna_Set_for_TX_RX_RP_SMA_RHCP_.html?aff=1624906"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-antenna-e-ef-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/antenna-428e85ef.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/antenna-428e85ef.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/__76890__Aomway_5_8GHz_4_Leaf_Clover_Antenna_Set_for_TX_RX_RP_SMA_RHCP_.html?aff=1624906"&gt;Aomway 5.8GHz 4-Leaf Clover Antenna Set for TX/RX (RP-SMA) (RHCP), $7.40&lt;/a&gt;
+          &lt;a  href="#diy-fatsharks"&gt;DIY your own goggles. I made some with a pair of AV230 goggles I found on craigslist.org&lt;/a&gt;
         &lt;/td&gt;
       &lt;/tr&gt;
 
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Total: &lt;code&gt;$153.55&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="goggles-not-part-of-this-guide-yet"&gt;Goggles not part of this guide (yet)&lt;/h2&gt;
 
-&lt;p&gt;Note, I ordered the ESCs listed above because they were the lightest weight and cheapest ESCs available. However, they are very small and very difficult to solder as well. If this is your first build, I highly recommend that you choose an easier ESC to work with. The &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=98053&amp;amp;aff=1624906"&gt;Turnigy Multistar 20A V2 Slim BLHeli Multi-Rotor Brushless ESC 2-6S&lt;/a&gt; is an excellent value and should be much easier to work with.&lt;/p&gt;
+&lt;p&gt;You might have noticed that I don&amp;#39;t have Fatshark goggles in the photo above or on the list below. This is for two reasons. First they&amp;#39;re super expensive, &lt;a href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J"&gt;$374.99 for the Dominator V3&lt;/a&gt;, without a receiver. The &lt;a href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J"&gt;Dominator V3&lt;/a&gt; are the same resolution as the &lt;a href="#eachine-ev800"&gt;Eachine EV800&lt;/a&gt;&amp;#39;s, but the &lt;a href="#eachine-ev800"&gt;EV800&lt;/a&gt;&amp;#39;s are &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;$79.99&lt;/a&gt;. The &lt;a href="http://www.banggood.com/Fatshark-Fat-Shark-Dominator-HD-V2-FPV-Goggles-Video-Glasses-Headset-p-1008009.html?p=1G09211226617201502J"&gt;Dominator V2&lt;/a&gt; have a slightly higher resolution at 800x600 px, but will set you back &lt;a href="http://www.banggood.com/Fatshark-Fat-Shark-Dominator-HD-V2-FPV-Goggles-Video-Glasses-Headset-p-1008009.html?p=1G09211226617201502J"&gt;$449.99&lt;/a&gt;. The least expensive pair of Fatsharks are currently the &lt;a href="http://www.banggood.com/FatShark-Fat-Shark-Teleporter-V5-FPV-Goggles-5_8G-7CH-Video-Glasses-Headset-p-1041414.html?p=1G09211226617201502J"&gt;Teleporter V5&lt;/a&gt; which will set you back &lt;a href="http://www.banggood.com/FatShark-Fat-Shark-Teleporter-V5-FPV-Goggles-5_8G-7CH-Video-Glasses-Headset-p-1041414.html?p=1G09211226617201502J"&gt;$165&lt;/a&gt; for some 320x240 px goggles, which is lower resolution than the &lt;a href="#vr700"&gt;$59.99 VR700 goggles&lt;/a&gt;.&lt;/p&gt;
 
-&lt;table class="small-img"&gt;
-  &lt;tbody&gt;
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=98053&amp;aff=162490"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.27433628318583%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-parts-esc-fa-jpg" href="/assets/images/blog/hk/maker-faire-2016/parts/esc-2-189fa185.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/parts/esc-2-189fa185.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=98053&amp;aff=162490"&gt;4x Turnigy Multistar 20A V2 Slim BLHeli Multi-Rotor Brushless ESC 2-6S, $4.99&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
+&lt;p&gt;Due to their price, I don&amp;#39;t own any Fatshark goggles. I have however, flown with a friend&amp;#39;s Fatshark goggles. The main difference between any stereoscopic goggles (two screens in the goggles, one for each eye) like Fatsharks and goggles with a single screen is the immersive nature of the experience. Stereoscopic goggles tend to look smaller and further off, as though one were viewing a TV from a distance. Single-monitor goggles look closer and make the user feel more a part of the scene, giving an overall more immersive feel.&lt;/p&gt;
 
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;The big difference is overall size. You can see from the photo below the size difference between the &lt;a href="#goggles-one"&gt;Goggles One&lt;/a&gt; and my &lt;a href="#diy-fatsharks"&gt;DIY Fatsharks&lt;/a&gt;. In general the stereoscopic goggles require far less distance between the lens and the screen and are therefore, much more portable.&lt;/p&gt;
 
-&lt;h2 id="getting-started"&gt;Getting Started&lt;/h2&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-DSC-JPG" href="/assets/images/blog/goggles/DSC03402.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/DSC03402_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Start with the frame, and lunch, if you&amp;#39;re hungry. The frame kit is awesome, it comes with two whole frame sets, so if you break any parts, you&amp;#39;ll have plenty of backups.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-DSC-JPG" href="/assets/images/blog/goggles/DSC03404.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/DSC03404_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-acdf-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02310-842acdf8.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02310_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;You also might be wondering why there aren&amp;#39;t any HeadPlay goggles reviewed here? That&amp;#39;s because they&amp;#39;re basically the same specs as the Goggles One goggles and the only apparent difference is a diversity video receiver (which the Goggles One do not have), but the HeadPlay are $100 more. I couldn&amp;#39;t justify paying $100 for diversity, but if someone wants to send me some, I&amp;#39;d be happy to add them to this review.&lt;/p&gt;
 
-&lt;p&gt;You&amp;#39;ll be really tempted to get out all the little screws and stuff for the frame and start assembling it. Don&amp;#39;t do that yet though.&lt;/p&gt;
+&lt;h2 id="goggles-one"&gt;Goggles One&lt;/h2&gt;
 
-&lt;h2 id="power-system"&gt;Power System&lt;/h2&gt;
+&lt;p&gt;At &lt;a href="http://www.banggood.com/Eachine-Goggles-One-5-Inch-5_8G-40CH-Raceband-HD-1080p-72-Degree-HDMI-FPV-Goggles-Video-Glasses-p-1043694.html?p=1G09211226617201502J"&gt;$149.99 from banggood.com&lt;/a&gt; for 1080p resolution goggles with an HDMI input, these are not the least expensive goggles reviewed, but they are great value. The screen looks huge and is extremely sharp. From a flying-experience perspective, these are the best.&lt;/p&gt;
 
-&lt;p&gt;Instead, we&amp;#39;ll prep the motors and ESCs.&lt;/p&gt;
+&lt;p&gt;The video receiver operates on 40 channels, with Raceband.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-cd-f-c-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02312-cd7f019c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02312_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Here they are, awesome name plastered on the front. These will get some spray paint or stickers...&lt;/p&gt;
 
-&lt;p&gt;Cut the motor wires to length. We&amp;#39;ll be putting the ESCs on the arms, but if you want, there might be room to mount them under the body, in which case you would want slightly longer wires.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03279.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03279_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-b-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02314-026b6b54.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02314_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The battery mounts on the back, for comfort, which is actually really nice.&lt;/p&gt;
 
-&lt;p&gt;Prepare the ESCs by bending all the pins down at a 90 degree angle&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03277.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03277_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.01254390366282%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-faea-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_124328-892faea3.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_124328-892faea3.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The buttons on the side are for both the monitor and the video receiver. Unfortunately, there is only one button for the receiver. The &amp;quot;scan&amp;quot; button. It&amp;#39;s the same button that turns on the goggles and searches for the best available channel. I&amp;#39;m not a fan of this. I want buttons to change band and channel as there are on the &lt;a href="#ev800"&gt;EV800&lt;/a&gt;. It works fine when flying alone, but with only one button, I&amp;#39;m not sure how one would find the right chanenl when multiple quads are transmitting, especially if the bands overlap or are close together.&lt;/p&gt;
 
-&lt;p&gt;Now strip the wires and tin them, it helps to have some helping hands. You&amp;#39;ll also want to bend the pins on the ESC down and together into pairs of two, so they&amp;#39;re easier to solder.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03278.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03278_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-d-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02322-d28951d2.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02322_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The weird looking piece on the top of the face area is really comfortable. No idea what it would feel like without this, but it seems to be a good idea.&lt;/p&gt;
 
-&lt;p&gt;Be sure to slide some heat shrink onto the motor wires before soldering them on.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03281.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03281_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02323-66357860.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02323_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Unfortunately, several friends who tried these goggles said the same thing about the nose as the Hobbyking DIY goggles. They sit rather low on the nose and can feel constricting on the nostrils. One option is to cut the foam from the nose, but this may let in unwanted light.&lt;/p&gt;
 
-&lt;p&gt;Notice we&amp;#39;re soldering the motor to the &amp;quot;bottom&amp;quot; side, if you orient the text upright.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03287.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03287_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.98396407953817%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-ac-ead-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521-ac0ead83.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521-ac0ead83.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;There is an RP-SMA adapter for the antenna:&lt;/p&gt;
 
-&lt;h3 id="motor-order"&gt;Motor Order&lt;/h3&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03291.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03291_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The wiring order between the motors and ESCs determines which way the motors will spin. I&amp;#39;ll refer to the motors by their number as shown in this diagram:&lt;/p&gt;
+&lt;p&gt;It comes with a manual, screen cleaner, USB charging cable, mini HDMI (type c) to normal HDMI (type a) cable, 2x batteries and a whip antenna.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 95.2755905511811%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-motor-order-e-f-f-png" href="/assets/images/blog/hk/maker-faire-2016/motor-order-1e5f952f.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/motor-order-1e5f952f.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Two motors should have the wires directly connected, not crossed. These motors will spin counter-clockwise and should be positioned at motors 2 and 3.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.45161290322581%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC03004.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC03004_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The other two motors should have two of the wires crossed, like so. They&amp;#39;ll be placed at position 1 and 4.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC02955.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02955_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Complete all four motor / ESC sets. Frowning inquisitively when done is optional.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-f-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02324-808f85b5.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02324_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Next solder on the power and ground wires to the &lt;code&gt;V+&lt;/code&gt; and &lt;code&gt;V-&lt;/code&gt; pins respectively, using the same technique of bending and soldering the pins together.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-f-c-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_174341-173f344c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_174341_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Repeat with all four ESCs and then screw the motors onto the frame, placing them in the proper position as noted in the &lt;a href="#motor-order"&gt;motor order&lt;/a&gt; section above.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-f-a-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_175209-97f50a39.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_175209_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="pdb"&gt;PDB&lt;/h3&gt;
-
-&lt;p&gt;Now would be a good time to install the PDB on the bottom of the quadcopter.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-b-c-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02327-b052c9d3.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02327_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Install the LEDs onto the back of quad copter, make sure the LEDs point out towards the back.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-e-ed-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC02334-851e72ed.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02334_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Whoops, we installed them the wrong way the firs time. This is how they should be installed.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.46314871347579%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-b-a-jpg" href="/assets/images/blog/hk/maker-faire-2016/DSC03024-4b309a27.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC03024_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Also, if you want to use heat shrink to protect the ESCs, slide some over before soldering the power wires to the PDB. I came back and did this later.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.43861649562905%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC03007.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC03007_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now route the power wires from the ESC down through the frame and solder them to the PDB.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_180518-78b56335.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_180518_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Solder the wires onto the XT-60 plug.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-f-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160522_113758-8133f199.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160522_113758_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="flight-controller"&gt;Flight controller&lt;/h3&gt;
-
-&lt;p&gt;Ok, time for the flight controller.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-c-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_180703-4795c644.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_180703_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here is the pinout diagram&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 53.25%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-SKYline-c-ff-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/SKYline32-9c1ff9b6.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/SKYline32-9c1ff9b6.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Install the standoffs.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0140056022409%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-d-f-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_181141_1-0d10279f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_181141_1-0d10279f.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here&amp;#39;s what it looks like when it&amp;#39;s done.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.75786924939467%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-d-bb-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_183654-9d8bb6d3.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_183654-9d8bb6d3.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now is a good time to install the landing gear.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.01053518752634%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-bcf-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160521_145732-385bcf8d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160521_145732_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Much later in the day, we got around to connecting the single wires from the flight controller to the ESCs like so.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.46141215106732%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC02998.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02998_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Using a pin, remove the &lt;code&gt;power&lt;/code&gt;, &lt;code&gt;ground&lt;/code&gt;, &lt;code&gt;PWM5&lt;/code&gt; and &lt;code&gt;PWM6&lt;/code&gt; from the header that plugs into the flight controller. We won&amp;#39;t need these. Clip the connectors off the ends of the PWM cables and solder them to the ESC.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.4358819987959%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC02993.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02993_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Optionally, you can connect the &lt;code&gt;Vbat&lt;/code&gt; pins to the PDB. This will allow the flight controller to check the battery voltage.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.96402877697842%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-d-c-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_231338-98d18c35.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_231338-98d18c35.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.87179487179488%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-f-f-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_230850-044f729f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_230850_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Next, get out your BEC and wire the battery side into the PDB.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC02964.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC02964_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC03026.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC03026_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I cut the led light wires and soldered them straight onto the output side of the BEC. Route the power cable up through the frame. This will be plugged into the receiver.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC03033.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC03033_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now would be a good time to assemble the top part of the frame, so we can test fit it.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.03722084367246%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-ecf-d-e-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_223253-4ecf9d3e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_223253_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.03722084367246%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-fab-c-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_223257-fab8c3b0.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_223257_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="reciever"&gt;Reciever&lt;/h3&gt;
-
-&lt;p&gt;Using the cable included with the flight controller, plug in the receiver.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.03722084367246%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-d-bf-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_215805-3d4bf228.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_215805_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Plug the power wire from the BEC into the receiver and position the receiver.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.03722084367246%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-a-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_223241-11a4b624.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_223241_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="video-system"&gt;Video system&lt;/h3&gt;
-
-&lt;p&gt;Let&amp;#39;s get out the video transmitter.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.91323748140803%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-e-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_214144-728e7803.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_214144_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This camera has the SONY Effio chip, which should give it a very nice wide dynamic range. I&amp;#39;m really excited to see how this camera will perform.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.74747474747475%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-c-fd-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_213613-c78053fd.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_213613-c78053fd.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Attach the camera plate to the camera. I followed the directions in the manual and trimmed the bottom posts by about 2cm to get a little bit of up-tilt.&lt;/p&gt;
-
-&lt;p&gt;The camera doesn&amp;#39;t actually rest against these posts, so it is possible to get a large amount of up-tilt by adjusting the top and bottom screws.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-eb-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_214555-eb405822.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_214555_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The text on the front of the camera is the top.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95039682539682%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-b-fd-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_214617-32b362fd.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_214617_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Use the pointy screws to install the camera.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_215236-85494699.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_215236_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Grab the video transmitter.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.91323748140803%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-ab-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_215539-8399ab96.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_215539_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Using the pin technique, remove the unused wires from the video transmitter: &lt;code&gt;audio&lt;/code&gt; (white) and &lt;code&gt;5v out&lt;/code&gt; (purple).&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.98994772818656%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-a-bb-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_222116-a13bb405.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_222116_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Solder the red and black wires from the video transmitter plug to &lt;code&gt;+&lt;/code&gt; and &lt;code&gt;-&lt;/code&gt; on the PDB. I also soldered on a capacitor to decrease noise. Any capacitor around 470uF, that can handle 25v+ will work well. I used a 330uf 50v capacitor.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.97247706422019%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-a-c-f-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_231030-a2c0948f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_231030_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now would be a good time to pause and test your setup. I assume you&amp;#39;ve already built your goggles. If not, follow &lt;a href="/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"&gt;the guide here&lt;/a&gt; first.&lt;/p&gt;
-
-&lt;p&gt;Things to check are:&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03413.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03413_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Receiver is bound&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Pros:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;You should see an &amp;#39;RX&amp;#39; symbol with a battery on the top right corner of the transmitter screen. &lt;/li&gt;
+&lt;li&gt;Excellent value.&lt;/li&gt;
+&lt;li&gt;1080p screen (1920x1080 px)&lt;/li&gt;
+&lt;li&gt;2x 1600mah 2s batteries&lt;/li&gt;
+&lt;li&gt;HDMI support&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Video is working&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Cons:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Do you see a picture in the goggles? If not, double check the wiring on your camera and video transmitter.&lt;/li&gt;
+&lt;li&gt;I have a wide face and the face area is rather narrow. Folks with wide faces may find these slightly uncomfortable.&lt;/li&gt;
+&lt;li&gt;HDMI plug is tiny and easy to lose, but that doesn&amp;#39;t really matter.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Camera is focused&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Gotchas:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;You can adjust the focus by unscrewing the lens slightly and loosening the ring on the threads. Adjust to the proper position using your goggles to check the sharpness of an object across the room. Re-tighten the ring when done.&lt;/li&gt;
+&lt;li&gt;The plastic cover was trimmed too loosely when I got them, so it dug into my face when I wore the goggles tight. A quick trim of the outermost plastic case with some scissors remedied the problem.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-a-c-f-a-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160622_232507-4a1c9f1a.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160622_232507_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id="eachine-ev800"&gt;Eachine EV800&lt;/h2&gt;
 
-&lt;p&gt;When all those things are good, we can attach the VTX to the main body of the quad copter. First, I drilled a little hole here.&lt;/p&gt;
+&lt;p&gt;In short, these are the best goggles for a beginner. Though slightly more expensive than the &lt;a href="#eachine-vr700"&gt;VR 700&lt;/a&gt;, they are an amazing value at &lt;a href="http://www.banggood.com/Eachine-Goggles-One-5-Inch-5_8G-40CH-Raceband-HD-1080p-72-Degree-HDMI-FPV-Goggles-Video-Glasses-p-1043694.html?p=1G09211226617201502J"&gt;$79.99 from banggood.com&lt;/a&gt;, have excellent receiver sensitivity, a reasonably high resolution screen (800x480 px) and can be converted to a standalone monitor if you want to share the view or fly with just a monitor and not goggles.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-b-c-f-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160623_195704-9b80c28f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160623_195704_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Note that a 700tvl camera, popular due to it&amp;#39;s low latency, is about 900x500 px. The advantage of increased resolution above the camera&amp;#39;s resolution is negligible. If however, one were planning on flying from an HD video link like the DJI LightBridge, HD Goggles like the &lt;a href="#goggles-one"&gt;Goggles One&lt;/a&gt; would be better.&lt;/p&gt;
 
-&lt;p&gt;Then I peeled the sticker off of the VTX and used some double sided tape to mount the transmitter on the weird vertical plate on the back of the frame.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03282.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/ev800/DSC03282_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.79055597867479%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-b-edf-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160623_195932-b6edf319.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160623_195932_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The battery is integrated into the goggles which is good and bad. Good because it&amp;#39;s easy to use. Bad because it cannot be swapped out. However, there is an external cable to allow powering the goggles via USB or a battery with a JST plug.&lt;/p&gt;
 
-&lt;p&gt;Then I zip tied it on.&lt;/p&gt;
+&lt;p&gt;There is even a screw hole on the bottom of the monitor section for mounting.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.7880410531013%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-eb-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160623_200249-662eb78d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160623_200249_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03284.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/ev800/DSC03284_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Zip tie down the receiver, BEC and ESCs.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03285.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/ev800/DSC03285_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-a-e-d-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160623_201702-a82e9d87.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160623_201702_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03286.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/ev800/DSC03286_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Install the prop adapters onto the motors using the shorter screws included with the motors and some blue thread locker.&lt;/p&gt;
+&lt;p&gt;The EV800 have an RP-SMA antenna plug and a bunch of buttons. This is much better than the single button on the VR700, but equally confusing.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-c-a-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160623_203855-64c13a2b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160623_203855_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03406.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/ev800/DSC03406_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The kit includes an antenna standoff thing, but I prefer to use two zip ties and some heatshrink.&lt;/p&gt;
+&lt;p&gt;The goggle portion can be removed to use these as a monitor.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-b-f-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160623_203704-18b2362f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160623_203704_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03409.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/ev800/DSC03409_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Awesome, done!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-e-ec-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160623_205010-e56733ec.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160623_205010_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="betaflight"&gt;BetaFlight&lt;/h2&gt;
-
-&lt;p&gt;Now we can update the firmware. You have 3 options for firmware: BetaFlight, CleanFlight and iNav. I always use BetaFlight, since it is the best flying firmware available.&lt;/p&gt;
-
-&lt;p&gt;If you don&amp;#39;t have Google Chrome, install that then download the &lt;a href="https://chrome.google.com/webstore/detail/betaflight-configurator/kdaghagfopacdngbohiknlhcocjccjao"&gt;BetaFlight configurator Chrome app&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Head over to the &lt;a href="https://github.com/betaflight/betaflight/releases/latest"&gt;BetaFlight Releases&lt;/a&gt; page and download the latest NAZE hex file.&lt;/p&gt;
-
-&lt;p&gt;Plug in the flight controller to your computer with a USB cable, then go to the firmware flashing tab.&lt;/p&gt;
-
-&lt;p&gt;Pick the latest BetaFlight release and click flash.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 64.82412060301507%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-betaflight-flash-fadf-d-png" href="/assets/images/blog/hk/maker-faire-2016/betaflight/flash-fadf70d3.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/betaflight/flash-fadf70d3.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;When it&amp;#39;s done, hit connect.&lt;/p&gt;
-
-&lt;p&gt;First setting to change is the board orientation on the Configuration tab. Change Yaw Degrees to 270, since we mounted the USB plug on the side of the quadcopter.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 72.17054263565892%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-betaflight-orientation-c-fe-png" href="/assets/images/blog/hk/maker-faire-2016/betaflight/orientation-72c76fe2.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/betaflight/orientation-72c76fe2.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Once this is set, go back to the &lt;code&gt;Setup&lt;/code&gt; tab and move the quadcopter around. Verify that as you move the quadcopter, the image matches the direction you&amp;#39;re moving the quadcopter.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 72.17054263565892%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-betaflight-rotate-ed-f-png" href="/assets/images/blog/hk/maker-faire-2016/betaflight/rotate-ed15865f.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/betaflight/rotate-ed15865f.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now take the quadcopter to a hard flat surface, like the floor, and under the setup tab, click &lt;code&gt;Calibrate Accelerometer&lt;/code&gt;. When that is done, click &lt;code&gt;Calibrate Magnometer&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 72.17054263565892%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-betaflight-calibrate-d-png" href="/assets/images/blog/hk/maker-faire-2016/betaflight/calibrate-2d350142.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/betaflight/calibrate-2d350142.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;During Accelerometer calibration the quadcopter should be as still as possible.&lt;/p&gt;
-
-&lt;p&gt;During Magnometer calibration, the multirotor should be rotated 360 degrees on each axis. This does not need to be precise, but should be done away from any magnetic fields.&lt;/p&gt;
-
-&lt;h3 id="radio-setup"&gt;Radio setup&lt;/h3&gt;
-
-&lt;p&gt;We&amp;#39;ll use a switch to arm and change the flight mode, so you&amp;#39;ll want to configure the AUX channels on your radio like so:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.80595084087969%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-b-b-b-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160624_194620-b656b82b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160624_194620_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;To save, press and hold the &lt;code&gt;CANCEL&lt;/code&gt; button. This is not intuitive.&lt;/p&gt;
-
-&lt;p&gt;You can confirm it&amp;#39;s working on the Receiver screen. When you flip the switch on the left, &lt;code&gt;AUX1&lt;/code&gt; should change values and when you move the 3 position switch on the right, &lt;code&gt;AUX2&lt;/code&gt; should change values. You&amp;#39;ll need to plug in a battery to the quadcopter to power the receiver.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 72.17054263565892%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-betaflight-rx-c-png" href="/assets/images/blog/hk/maker-faire-2016/betaflight/rx-6c352861.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/betaflight/rx-6c352861.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Then switch to the &lt;code&gt;Modes&lt;/code&gt; tab and set it up like this:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 72.17054263565892%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-betaflight-modes-be-c-a-png" href="/assets/images/blog/hk/maker-faire-2016/betaflight/modes-01be1c5a.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/betaflight/modes-01be1c5a.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This means that the left switch will arm and disarm the quad. If you flip the left switch while flying, the motors will turn off, so don&amp;#39;t do that!&lt;/p&gt;
-
-&lt;p&gt;The 3 position switch on the right will control flight mode. All the way up is &amp;quot;Acro&amp;quot; mode, which will not auto-level. Middle is &amp;quot;Angle&amp;quot; mode which will auto level but still let you do flips. Down is &amp;quot;Horizon&amp;quot; mode, which will auto level and not let you do flips.&lt;/p&gt;
-
-&lt;h3 id="failsafe"&gt;Failsafe&lt;/h3&gt;
-
-&lt;p&gt;You should not have had props on this entire time, but if they&amp;#39;re on, remove them now. With props off, test the failsafe by:&lt;/p&gt;
+&lt;p&gt;As is, I think these are the best all around goggles. If, for the same price, these had an OLED display, a diversity RX and an optional face piece with foam, they would be absolutely killer.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;plugging in a battery&lt;/li&gt;
-&lt;li&gt;arming the quad with the left switch (flip it down) on the radio
+&lt;li&gt;&lt;p&gt;Pros:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;the motors will start spinning&lt;/li&gt;
+&lt;li&gt;Good resolution (800x480 px)&lt;/li&gt;
+&lt;li&gt;Great value&lt;/li&gt;
+&lt;li&gt;Excellent integrated receiver sensitivity&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;throttle up a bit&lt;/li&gt;
-&lt;li&gt;turn off the radio&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Cons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The face piece doesn&amp;#39;t have any foam. Some folks I talked to liked this and others didn&amp;#39;t. Seems like it&amp;#39;s a personal pref, but it could be a con for some.&lt;/li&gt;
+&lt;li&gt;The buttons are confusing. Why are there 2 sets of channel and band buttons?&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Gotchas:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The battery is integrated.&lt;/li&gt;
+&lt;li&gt;There is no foam around the eye piece. This isn&amp;#39;t really a &amp;quot;con&amp;quot; though, because these are actually more comfortable than other goggles with foam. It also makes these an ideal pair of goggles to share, as the hard surfaces are easy to wipe down.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The motors should then slow down for a few seconds then turn off.&lt;/p&gt;
+&lt;h2 id="hobbyking-quanum-v2-pro-diy-goggles"&gt;HobbyKing Quanum V2 Pro DIY goggles&lt;/h2&gt;
 
-&lt;p&gt;You&amp;#39;ll also see this red parachute in the configuration tool.&lt;/p&gt;
+&lt;p&gt;Read &lt;a href="/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"&gt;the full build guide here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 72.17054263565892%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-betaflight-failsafe-cbc-png" href="/assets/images/blog/hk/maker-faire-2016/betaflight/failsafe-cbc21334.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/betaflight/failsafe-cbc21334.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;a href="https://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=97842&amp;amp;aff=1624906"&gt;Quanam V2 pro goggles&lt;/a&gt; have recently come down in price. At $37.60, they are a good deal. 800 x 480 px resolution.&lt;/p&gt;
 
-&lt;p&gt;Now that you&amp;#39;ve tested the fail safe, we can go test-hover!&lt;/p&gt;
+&lt;p&gt;They don&amp;#39;t come with a receiver, but the &lt;a href="http://www.hobbyking.com/hobbyking/store/__65994__Quanum_Auto_Scan_5_8Ghz_FPV_Receiver.html?aff=1624906"&gt;$30.86 Quanum Auto Scan 5.8Ghz FPV Receiver&lt;/a&gt; and &lt;a href="http://www.hobbyking.com/hobbyking/store/__84862__Quanum_RC540R_5_8GHz_40CH_Race_Band_FPV_Diversity_Receiver.html?aff=1624906"&gt;$70.42 Quanum RC540R 5.8GHz 40CH Race Band FPV Diversity Receiver&lt;/a&gt; are both good options that have a built in OLED screen. These are great as they allow the pilot to see the exact frequency and channel the receiver is using. I wish the other goggles on this page included an OLED like this.&lt;/p&gt;
 
-&lt;p&gt;Install some propellers. I also picked up some 5mm lock nuts from the local hardware store. If you use the included prop spinners instead, be sure to use threadlock to secure them!&lt;/p&gt;
+&lt;p&gt;Less expensive options are the &lt;a href="http://www.banggood.com/FPV-5_8G-8CH-200mW-AV-Wireless-Receiver-RC805-p-73202.html?p=1G09211226617201502J"&gt;$17.98 Boscam FPV 5.8G 8CH RC805&lt;/a&gt; or the &lt;a href="http://www.banggood.com/DIY-RX5808-5_8G-40CH-Diversity-FPV-Receiver-with-OLED-Display-for-FPV-Racer-Quad-p-1051163.html?p=1G09211226617201502J"&gt;$41.99 DIY RX5808 5.8G 40CH Dieversity RX&lt;/a&gt; which includes an OLED display.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-IMG-c-dc-e-jpg" href="/assets/images/blog/hk/maker-faire-2016/IMG_20160624_201247-41c2dc4e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/IMG_20160624_201247_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In total, these goggles will set you back between $55 and $108. The quality of the video link is determined by the quality of the receiver. I have tried out all of the above mentioned receivers, except the DIY RX5808, and the ones I have tried work great. Watch out though, you&amp;#39;ll have to pay for shipping from HobbyKing, which isn&amp;#39;t usually that cheap, so that alone makes these a little bit less of a good deal.&lt;/p&gt;
 
-&lt;p&gt;Note that these motors can handle 6&amp;quot; props, but this will be pushing their limit. If you want to be on the safe side, use some &lt;a href="http://www.hobbyking.com/hobbyking/store/__103558__Dalprops_34_Indestructible_34_V2_5045_3_Blade_Props_CW_CCW_Set_Purple_2_pairs_.html?aff=1624906"&gt;5&amp;quot; props&lt;/a&gt; instead.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03301.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/quanum/DSC03301_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Time to go fly!&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03450.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/quanum/DSC03450_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.48433615116858%;'&gt;&lt;a id="assets-images-blog-hk-maker-faire-DSC-JPG" href="/assets/images/blog/hk/maker-faire-2016/DSC03055.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/hk/maker-faire-2016/DSC03055.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Unfortunately, several friends who tried these goggles have told me that they sit rather low on the nose and can feel constricting on the nostrils. This could probably be fixed by removing some foam around the nose or building up the cheeks a bit more.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03452.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/quanum/DSC03452_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03454.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/quanum/DSC03454_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This is the &lt;a href="http://www.hobbyking.com/hobbyking/store/__65994__Quanum_Auto_Scan_5_8Ghz_FPV_Receiver.html?aff=1624906"&gt;$30.86 Quanum Auto Scan 5.8Ghz FPV Receiver&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;#39;t have a transmitter turned on at the moment so &lt;code&gt;RSSI&lt;/code&gt; is &lt;code&gt;0%&lt;/code&gt;. Battery voltage is shown on the screen. &lt;code&gt;E3&lt;/code&gt; is the channel &lt;code&gt;5.665GHz&lt;/code&gt; is the frequency, which is actually really handy.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03455.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/quanum/DSC03455_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Pros:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Nice, 5&amp;quot; monitor (800 x 480 px).&lt;/li&gt;
+&lt;li&gt;Great value, only $55 when paired with the RC805 or $70 if you choose the Quanum receiver.&lt;/li&gt;
+&lt;li&gt;Light weight.&lt;/li&gt;
+&lt;li&gt;Can be used with glasses.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Cons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Must be assembled yourself.&lt;/li&gt;
+&lt;li&gt;They&amp;#39;re as comfortable as you make them.&lt;/li&gt;
+&lt;li&gt;No receiver included, but you can choose your own.&lt;/li&gt;
+&lt;li&gt;No battery included, but you can choose your own.&lt;/li&gt;
+&lt;li&gt;You&amp;#39;ll have to pay for shipping, which makes them a little bit less of a great deal.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="beerotor-goggles"&gt;BeeRotor Goggles&lt;/h2&gt;
+
+&lt;p&gt;These are in the works from &lt;a href="https://www.facebook.com/groups/beerotor/permalink/473294756213480"&gt;Frank over at RCTimer&lt;/a&gt; and I&amp;#39;m excited to check them out!&lt;/p&gt;
+
+&lt;h2 id="eachine-vr700"&gt;Eachine VR700&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href="http://www.banggood.com/Eachine-VR-007-5_8G-40CH-HD-FPV-Goggles-Video-Glasses-4_3-Inch-With-7_4V-800mAh-Battery-p-960761.html?p=1G09211226617201502J"&gt;VR700s&lt;/a&gt; are the cheapest pair of goggles you can buy, for &lt;a href="http://www.banggood.com/Eachine-VR-007-5_8G-40CH-HD-FPV-Goggles-Video-Glasses-4_3-Inch-With-7_4V-800mAh-Battery-p-960761.html?p=1G09211226617201502J"&gt;$59.99 on banggood.com&lt;/a&gt;. Build quality, ergonomics and price are great. The downsides of these goggles are the low resolution screen (480x272 px) and poor receiver sensitivity, which I&amp;#39;ll dig into further below.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC03288.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC03288_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC03289.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC03289_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC03292.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC03292_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC03293.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC03293_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here&amp;#39;s the box they come in:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01741.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01741_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Gotta love the awesome tag line on the back. Sadly, the jungle is actually not &amp;quot;all in sight&amp;quot; at only 480x272 px resolution.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC02021.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC02021_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;No padding, but that&amp;#39;s cool. These things are durable.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01746.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01746_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It comes with a manual, micro usb to type A (normal), the goggles, a whip antenna, battery and a screen cleaning wipe.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01748.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01748_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The battery is a nifty 1600mah 2s lipo.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01750.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01750_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There is a battery gauge with 3 leds and a button.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01754.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01754_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The micro usb charging port is on the side.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01753.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01753_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The goggles themselves have an RP-SMA plug for the antenna.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01757.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01757_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There is one light, which indicates that the goggles are on, and one button, which lets you change channels. There is no visual feedback of which channel you&amp;#39;re on and I haven&amp;#39;t figured out exactly how the button works. I just keep pressing it usually and eventually end up on the right channel. Not ideal, but it works.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01759.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01759_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The three buttons on the side are for the display to adjust things like brightness and contrast.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01764.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01764_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;All in all, these goggles are great for giving rides, but not ideal for the primary pair of goggles for a pilot. The resolution is too low and the video receiver is not reliable enough for me to be comfortable flying with them.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Pros:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Price, the least expensive option.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Cons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;One button for the VTX.&lt;/li&gt;
+&lt;li&gt;Lower resolution monitor means you can easily see the pixels on the screen when flying.&lt;/li&gt;
+&lt;li&gt;The receiver sensitivity is not very good, meaning you won&amp;#39;t get very good range. So I don&amp;#39;t recommend these, even as beginner goggles.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="diy-fatsharks"&gt;DIY Fatsharks&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;#39;re on a super tight budget, building your own goggles might be the way to go.&lt;/p&gt;
+
+&lt;p&gt;Here are my DIY goggles in use:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.55948553054662%;'&gt;&lt;a id="assets-images-blog-goggles-diy-a-d-b-cce-bfd-a-AcOHDhy-atY-e-jpeg" href="/assets/images/blog/goggles/diy/47a6d820b3127cce9854bfd12a0000000030108AcOHDhy0atY-5706369e.jpeg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/diy/47a6d820b3127cce9854bfd12a0000000030108AcOHDhy0atY-5706369e.jpeg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;These video goggles use an &lt;a href="http://www.banggood.com/FPV-5_8G-8CH-200mW-AV-Wireless-Receiver-RC805-p-73202.html?p=1G09211226617201502J"&gt;RC805&lt;/a&gt; video receiver, which I chose because it was so cost effective and has two video outputs.&lt;/p&gt;
+
+&lt;p&gt;They&amp;#39;re based on the unimpressive &lt;a href="http://www.cnet.com/products/icuiti-iwear/"&gt;AV230&lt;/a&gt; 320 x 240px video goggles, which I bought on craigslist.org.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 56.23376623376623%;'&gt;&lt;a id="assets-images-blog-goggles-diy-icuiti-iwear-av-head-mounted-display-portable-headphone-c-jpg" href="/assets/images/blog/goggles/diy/icuiti-iwear-av230-head-mounted-display-portable-320-10-240-headphone-3980c859.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/diy/icuiti-iwear-av230-head-mounted-display-portable-320-10-240-headphone-3980c859.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I cut them in half and put them inside some $3 ski goggles from aliexpress. I put a JST power plug on the RC805 and I velcro a battery on the front of the goggles when I fly.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-diy-DSC-JPG" href="/assets/images/blog/goggles/diy/DSC03488.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/diy/DSC03488_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I have an &lt;a href="/blog/2016/02/06/hmdvr-fpv-video-recorder/"&gt;HMDVR FPV Video Recorder&lt;/a&gt; attached to one of the outputs of the RC805.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-diy-DSC-JPG" href="/assets/images/blog/goggles/diy/DSC03487.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/diy/DSC03487_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The cable from the AV230 is wound up and zip tied under the goggles. The other RC805 output is wired to the goggles. I added JST servo plugs for the video signal to all the components.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-diy-DSC-JPG" href="/assets/images/blog/goggles/diy/DSC03489.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/diy/DSC03489_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There is also a lipo voltage alarm on the front of the goggles.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-diy-DSC-JPG" href="/assets/images/blog/goggles/diy/DSC03492.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/diy/DSC03492_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Pros:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cheap. They cost a total of $40, $20 for the goggles, $17 for the receiver and $3 for the goggles. Add an &lt;a href="http://www.banggood.com/Mini-DVR-Video-Audio-Recorder-For-FPV-Multicopters-p-1021117.html?p=1G09211226617201502J"&gt;HMDVR FPV&lt;/a&gt; Video Recorder for ~$20 more, but this DVR could be added to any goggles.&lt;/li&gt;
+&lt;li&gt;Excellent reception. The RC805 receiver has great sensitivity and the video reception is always good.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Cons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Small, low resolution, low brightness screen. This could be made better by using better goggles as a base.&lt;/li&gt;
+&lt;li&gt;They take the most DIYing. Even sourcing parts can be hard, I used goggles that cannot be bought at retail anymore, but this is how one would find the best deal.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
 </feed>
