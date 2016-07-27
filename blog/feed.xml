@@ -534,375 +534,553 @@ avrdude done.  Thank you.
     <content type="html"></content>
   </entry>
   <entry>
-    <title>FPV Goggle Guide</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/06/22/fpv-goggle-guide/"/>
-    <id>http://nathan.vertile.com/blog/2016/06/22/fpv-goggle-guide/</id>
-    <published>2016-06-22T11:24:00-07:00</published>
-    <updated>2016-07-24T00:17:37-07:00</updated>
+    <title>Omnibus Flight Controller and Airbot Typhoon 180 Miniquad Build</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/07/omnibus-typhoon-miniquad/"/>
+    <id>http://nathan.vertile.com/blog/2016/07/07/omnibus-typhoon-miniquad/</id>
+    <published>2016-07-06T20:42:00-07:00</published>
+    <updated>2016-07-27T00:32:16-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
-    <content type="html">&lt;p&gt;I bought a bunch of FPV goggles and tried them out so you don&amp;#39;t have to. This article is a review and comparison of all these goggles.&lt;/p&gt;
+    <content type="html">&lt;p&gt;This is a review, build and setup guide for the Airbot Typhoon 180 Miniquad with the brand new Omnibus flight controller.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-DSC-JPG" href="/assets/images/blog/goggles/DSC03300.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/DSC03300_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03594.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03594_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id="top-picks"&gt;Top Picks&lt;/h2&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03595.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03595_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Here are the goggles I would buy and why. Scroll down or use the navigation on the left to find a detailed review of each.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03589.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03589_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id="best-value-goggles"&gt;Best Value Goggles&lt;/h3&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03586.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03586_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03587.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03587_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="review"&gt;Review&lt;/h2&gt;
+
+&lt;p&gt;The Omnibus flight controller uses the MPU6000 over SPI for the best possible flight performance. If you haven&amp;#39;t already seen it, you should checkout &lt;a href="https://youtu.be/Obo4nvcyDms"&gt;Josh&amp;#39;s awesome video on different IMUs&lt;/a&gt;. Also onboard are a barometer and MAX7456 OSD chip for the BetaFlight integrated OSD.&lt;/p&gt;
+
+&lt;p&gt;Also onboard is a high performance 5v, 1.5a STMicrocontroller L78 voltage regulator, so you can plug the flight battery right into the flight controller, without a PDB.&lt;/p&gt;
+
+&lt;p&gt;I have a prototype board. Production boards are gold plated.&lt;/p&gt;
+
+&lt;h2 id="pinouts"&gt;Pinouts&lt;/h2&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.0524934383202%;'&gt;&lt;a id="assets-images-blog-airbot-omnibus-lite-v-pinout-cdeb-jpg" href="/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-1cdeb020.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-1cdeb020.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is the Typhoon pinout:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-typhoon-pinout-a-a-ad-jpg" href="/assets/images/blog/airbot/typhoon-pinout-a3a342ad.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/typhoon-pinout_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="flight-controller-setup"&gt;Flight controller setup&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;#39;s start by soldering the pin headers to the board. To choose which headers you&amp;#39;ll use, let&amp;#39;s consider a few things. First, the voltage of the camera and video transmitter you&amp;#39;ll be using. I will be using a camera that can take between 5v-22v and a video transmitter that can take between 7-24v (2s-5s LiPo). This is important because it determines how our video power pins will be wired. If you&amp;#39;re using a 5v camera, you would want to wire any 5v output from the flight controller to the &lt;code&gt;V+&lt;/code&gt; on the camera. If you&amp;#39;re using a camera that can handle the voltage straight from the battery, you can connect &lt;code&gt;VBAT&lt;/code&gt; and &lt;code&gt;RAM&lt;/code&gt; to power both the transmitter and the camera from the battery. If you&amp;#39;re using FPV gear that can only handle 5v, connect &lt;code&gt;RAM&lt;/code&gt; and a &lt;code&gt;5v&lt;/code&gt; line.&lt;/p&gt;
+
+&lt;p&gt;These are the pins I&amp;#39;ll populate:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.0524934383202%;'&gt;&lt;a id="assets-images-blog-airbot-omnibus-lite-v-pinout-headers-aa-d-d-jpg" href="/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-headers-aa0d250d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-headers-aa0d250d.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I&amp;#39;ve labeled the battery pins red, since VBAT will have the battery directly connected, be sure not to connect the battery to any other pins!&lt;/p&gt;
+
+&lt;p&gt;Note that until you connect one of the RAM pins to a power source, the 3x RAM pins are only connected to each other and have no power.&lt;/p&gt;
+
+&lt;p&gt;Instead of just connecting RAM to VBAT with a jumper, which will work fine, I&amp;#39;m going to do one better. I&amp;#39;ll use &lt;a href="http://www.banggood.com/10Pcs-330UH-3A-Toroid-Core-Inductor-Wire-Wind-Wound-p-1006115.html?p=1G09211226617201502J"&gt;an inductor&lt;/a&gt; to connect &lt;code&gt;VBAT&lt;/code&gt; and any &lt;code&gt;5v&lt;/code&gt;. If you don&amp;#39;t have an inductor laying around, no worries, just use a wire and connect the two pins.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.0524934383202%;'&gt;&lt;a id="assets-images-blog-airbot-omnibus-lite-v-pinout-inductor-c-f-b-jpg" href="/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-inductor-c996f95b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-inductor-c996f95b.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The next thing to consider is what receiver you&amp;#39;ll be using: Serial RX (such as IBUS, FRSKY or Spektrum Satellite) or PPM. I&amp;#39;ll be using the IBUS receiver included with the &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;FlySky FS-i6&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;My prototype board came with both the PPM and SerialRX resistors connected. At some point there will be software to support using PPM and SerialRX on the same pin allowing you to select between them in the configurator. Until then, you&amp;#39;ll want to remove the resistor labeled &lt;code&gt;SBUS&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;If the &lt;code&gt;SBUS&lt;/code&gt; resistor is removed and the PPM resistor is installed, you&amp;#39;ll want to connect your SBUS or IBUS or any serial receiver to a different serial port:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.0524934383202%;'&gt;&lt;a id="assets-images-blog-airbot-omnibus-lite-v-pinout-rx-e-abf-jpg" href="/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-rx-68e6abf8.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-rx-68e6abf8.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that this 5v rail does not get power from the flight controller, but is isolated, in case you&amp;#39;re using ESCs with a 5v BEC.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.0524934383202%;'&gt;&lt;a id="assets-images-blog-airbot-omnibus-lite-v-pinout-esc-v-be-d-e-jpg" href="/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-esc5v-55be5d9e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-esc5v-55be5d9e.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This means that it might be easier to plug your serial receiver into &lt;code&gt;UART1&lt;/code&gt; or &lt;code&gt;UART2&lt;/code&gt; (this is how I configured my quad).&lt;/p&gt;
+
+&lt;h2 id="parts"&gt;Parts&lt;/h2&gt;
+
+&lt;p&gt;Here are the parts we&amp;#39;ll be using for this awesome little 180mm quad.&lt;/p&gt;
 
 &lt;table class="small-img"&gt;
   &lt;tbody&gt;
           &lt;tr&gt;
         &lt;td&gt;
-          &lt;a  href="#eachine-ev800"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03282.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/ev800/DSC03282_prev.JPG' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Lisam-LS-180-180mm-Carbon-Fiber-Frame-Kit-Mini-Quadcopter-p-1002030.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-airbot-parts-frame-eb-fc-jpg" href="/assets/images/blog/airbot/180/parts/frame-01eb2fc1.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/parts/frame-01eb2fc1.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
         &lt;/td&gt;
         &lt;td&gt;
-          &lt;a  href="#eachine-ev800"&gt;If you want to spend under $100 and get a high quality, versatile pair of goggles. Get the EV800 goggles. They have an integrated battery, buttons to change frequency and channel and even convert into a monitor if you don't want to fly in goggles all the time.&lt;/a&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Lisam-LS-180-180mm-Carbon-Fiber-Frame-Kit-Mini-Quadcopter-p-1002030.html?p=1G09211226617201502J"&gt;Frame: Lisam LS-180 180mm Carbon Fiber Frame Kit Mini Quadcopter&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://shop.myairbot.com/index.php/motor/airbot-t2204-motor-2300kv-56.html"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.625%;'&gt;&lt;a id="assets-images-blog-airbot-parts-xt-a-c-b-webp" href="/assets/images/blog/airbot/180/parts/xt2204-800-6a6c697b.webp" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/parts/xt2204-800-6a6c697b.webp' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://shop.myairbot.com/index.php/motor/airbot-t2204-motor-2300kv-56.html"&gt;Motors: Micro Titan 2204 Motor 2300KV v2&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://shop.myairbot.com/index.php/typhoon4x20a4in1esc-65.html"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-airbot-parts-typhoon-x-a-in-de-b-jpg" href="/assets/images/blog/airbot/180/parts/typhoon4x20a4in1-36de74b0.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/parts/typhoon4x20a4in1-36de74b0.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://shop.myairbot.com/index.php/typhoon4x20a4in1esc-65.html"&gt;ESC: Typhoon 4x20A 4in1 ESC PRO&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a  href="#flight-controller"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.0524934383202%;'&gt;&lt;a id="assets-images-blog-airbot-omnibus-lite-v-pinout-cdeb-jpg" href="/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-1cdeb020.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-1cdeb020.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a  href="#flight-controller"&gt;Flight Controller: OMNIBUS F3 with an integrate BetaFlight OSD&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Eachine-TS5840-Upgraded-40CH-5_8G-200mW-Wireless-AV-Transmitter-TX-for-FPV-Multicopter-p-1033810.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-fpv-channels-ts-e-a-d-jpg" href="/assets/images/blog/fpv_channels/ts5840-e5709a9d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fpv_channels/ts5840-e5709a9d.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Eachine-TS5840-Upgraded-40CH-5_8G-200mW-Wireless-AV-Transmitter-TX-for-FPV-Multicopter-p-1033810.html?p=1G09211226617201502J"&gt;Video Transmitter: Eachine TS5840 Upgraded 40CH 5.8G 200mW&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://rctimer.com/product-1588.html/#r-pNathanT"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-airbot-parts-antenna-b-a-jpg" href="/assets/images/blog/airbot/180/parts/antenna-b63873a4.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/parts/antenna-b63873a4.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://rctimer.com/product-1588.html/#r-pNathanT"&gt;Video Antenna: 5.8ghz Circular Polarized Antenna&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/FOXEER-HS1177M-600TVL-CCD-Sony-Chip-Components-PAL-NTSC-2_8mm-IR-Mini-FPV-Camera-5V-22V-with-Bracket-p-1049378.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-airbot-parts-HS-M-a-ab-jpg" href="/assets/images/blog/airbot/180/parts/HS1177M-0636a3ab.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/parts/HS1177M-0636a3ab.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/FOXEER-HS1177M-600TVL-CCD-Sony-Chip-Components-PAL-NTSC-2_8mm-IR-Mini-FPV-Camera-5V-22V-with-Bracket-p-1049378.html?p=1G09211226617201502J"&gt;Camera: FOXEER HS1177M 600TVL HAD II CCD PAL NTSC 2.8mm IR Blocked Mini FPV Camera 5V-22V&lt;/a&gt;
         &lt;/td&gt;
       &lt;/tr&gt;
 
   &lt;/tbody&gt;
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a  href="#hobbyking-quanum-v2-pro-diy-goggles"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03301.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/quanum/DSC03301_prev.JPG' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a  href="#hobbyking-quanum-v2-pro-diy-goggles"&gt;HobbyKing Quanum V2 Pro DIY goggles and Quanum Receiver. Are really good value (at least at their current discount price of ~$37), watch out though, no free shipping from HobbyKing means they're not quite as good of a deal as the EV800's. They're lightweight, have a good screen and the Quanum receiver's OLED display is super handy, but you have to build them yourself.&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
 &lt;/table&gt;
 
-&lt;h3 id="highest-quality-image"&gt;Highest Quality Image&lt;/h3&gt;
+&lt;p&gt;Here&amp;#39;s an alternative, lower cost camera: &lt;a href="http://www.banggood.com/800TVL-13-CMOS-120-Degree-2_8mm-lens-FPV-Camera-3_3-5V-NTSC-PAL-p-1053383.html?p=1G09211226617201502J"&gt;800TVL 1/3 CMOS 120 Degree 2.8mm lens FPV Camera 3.3-5V NTSC PAL&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Everything for the quad is listed above, except the &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;transmitter and receiver&lt;/a&gt;, &lt;a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;battery&lt;/a&gt; and &lt;a href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;charger&lt;/a&gt; is included in the kit! You&amp;#39;ll also want some &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;good goggles&lt;/a&gt; if you&amp;#39;re just getting started.&lt;/p&gt;
+
+&lt;p&gt;This basic setup is great for a beginner:&lt;/p&gt;
 
 &lt;table class="small-img"&gt;
   &lt;tbody&gt;
           &lt;tr&gt;
         &lt;td&gt;
-          &lt;a  href="#goggles-one"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03279.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03279_prev.JPG' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-fs-i-transmitter-ffe-a-jpg" href="/assets/images/blog/parts/fs-i6-transmitter-15ffe6a2.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/fs-i6-transmitter-15ffe6a2.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
         &lt;/td&gt;
         &lt;td&gt;
-          &lt;a  href="#goggles-one"&gt;The Goggles One have the highest quality, most immersive display, are lightweight and comfortable as well as they have an HDMI input.&lt;/a&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;FlySky FS-i6 with iA6B Receiver, $53&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-eachine-ev-ea-d-jpg" href="/assets/images/blog/parts/eachine-ev800-ea39189d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/eachine-ev800-ea39189d.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;Eachine EV800 Video Goggles, $77&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-zop-power-s-e-e-ebc-jpg" href="/assets/images/blog/parts/zop-power-3s-e9e73ebc.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/zop-power-3s-e9e73ebc.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;3s 11.1V 1800mAh 45C LiPo Battery with an XT-60 Plug, $15&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+          &lt;tr&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-Eachine-WT-ed-b-ea-jpg" href="/assets/images/blog/parts/Eachine-WT50-1ed5b2ea.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/Eachine-WT50-1ed5b2ea.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;a target="_blank" href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;Eachine WT50 6A 50W AC/DC Balance Charger Discharger For LiPo/NiCd/PB Battery, $34&lt;/a&gt;
         &lt;/td&gt;
       &lt;/tr&gt;
 
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id="most-portable-goggles"&gt;Most Portable Goggles&lt;/h3&gt;
+&lt;p&gt;I picked this setup because these are the most feature-rich and cost effective components you can use to get into FPV flying! The &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;FS-i6 radio with iA6B receiver&lt;/a&gt; is the best value radio that supports PPM. The &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;EV800 Video Goggles&lt;/a&gt; are a great value at $77. The &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=97842&amp;amp;aff=1624906"&gt;HobbyKing Quanum DIY FPV Goggles&lt;/a&gt; paired with the &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=65994&amp;amp;aff=1624906"&gt;Quanum Auto Scan Receiver&lt;/a&gt; is also a very good choice since they have a little better quality, but you have to &lt;a href="/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"&gt;build it yourself (read the build guide here)&lt;/a&gt;. The &lt;a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;1800mah battery&lt;/a&gt; will work well in any 150-350mm size quadcopter and the 45c rating means it can deliver 81 Amps, which should be more than enough for your mini-quadcopter. Finally, the &lt;a href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;Eachine WT50&lt;/a&gt; charger includes a built in AC-DC converter, so you won&amp;#39;t need an external power supply, like you would with most chargers.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J"&gt;Fatshark Dominator V3&lt;/a&gt; or DIY yourself some stereoscopic goggles.&lt;/p&gt;
+&lt;p&gt;Total Cost: &lt;code&gt;~$180&lt;/code&gt;&lt;/p&gt;
 
-&lt;table class="small-img"&gt;
-  &lt;tbody&gt;
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-goggles-c-fe-ab-f-f-c-a-d-d-de-jpg" href="/assets/images/blog/goggles/c9fe39ab-12f8-4414-8833-068f247c2a2d-00d72de6.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/c9fe39ab-12f8-4414-8833-068f247c2a2d-00d72de6.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J"&gt;Fatshark Dominator V3 goggles are really expensive at $374.99, but they're portable! If you've gotta be cool, all the cool kids fly with Fatsharks.&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
+&lt;p&gt;Let&amp;#39;s start building!&lt;/p&gt;
 
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a  href="#diy-fatsharks"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 56.23376623376623%;'&gt;&lt;a id="assets-images-blog-goggles-diy-icuiti-iwear-av-head-mounted-display-portable-headphone-c-jpg" href="/assets/images/blog/goggles/diy/icuiti-iwear-av230-head-mounted-display-portable-320-10-240-headphone-3980c859.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/diy/icuiti-iwear-av230-head-mounted-display-portable-320-10-240-headphone-3980c859.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a  href="#diy-fatsharks"&gt;DIY your own goggles. I made some with a pair of AV230 goggles I found on craigslist.org&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
+&lt;h2 id="review"&gt;Review&lt;/h2&gt;
 
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;The Omnibus flight controller is an awesome F3 flight controller with a MAX7456 OSD chip directly connected to the flight controller, so it can be configured from the BetaFlight configurator.&lt;/p&gt;
 
-&lt;h2 id="goggles-not-part-of-this-guide-yet"&gt;Goggles not part of this guide (yet)&lt;/h2&gt;
+&lt;p&gt;I have a prototype Omnibus flight controller. Yours will be gold plated.&lt;/p&gt;
 
-&lt;p&gt;You might have noticed that I don&amp;#39;t have Fatshark goggles in the photo above or on the list below. This is for two reasons. First they&amp;#39;re super expensive, &lt;a href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J"&gt;$374.99 for the Dominator V3&lt;/a&gt;, without a receiver. The &lt;a href="http://www.banggood.com/Fatshark-Dominator-V3-FPV-Video-Goggles-Glasses-WVGA-720p-HDMI-800X480-p-1000597.html?p=1G09211226617201502J"&gt;Dominator V3&lt;/a&gt; are the same resolution as the &lt;a href="#eachine-ev800"&gt;Eachine EV800&lt;/a&gt;&amp;#39;s, but the &lt;a href="#eachine-ev800"&gt;EV800&lt;/a&gt;&amp;#39;s are &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;$79.99&lt;/a&gt;. The &lt;a href="http://www.banggood.com/Fatshark-Fat-Shark-Dominator-HD-V2-FPV-Goggles-Video-Glasses-Headset-p-1008009.html?p=1G09211226617201502J"&gt;Dominator V2&lt;/a&gt; have a slightly higher resolution at 800x600 px, but will set you back &lt;a href="http://www.banggood.com/Fatshark-Fat-Shark-Dominator-HD-V2-FPV-Goggles-Video-Glasses-Headset-p-1008009.html?p=1G09211226617201502J"&gt;$449.99&lt;/a&gt;. The least expensive pair of Fatsharks are currently the &lt;a href="http://www.banggood.com/FatShark-Fat-Shark-Teleporter-V5-FPV-Goggles-5_8G-7CH-Video-Glasses-Headset-p-1041414.html?p=1G09211226617201502J"&gt;Teleporter V5&lt;/a&gt; which will set you back &lt;a href="http://www.banggood.com/FatShark-Fat-Shark-Teleporter-V5-FPV-Goggles-5_8G-7CH-Video-Glasses-Headset-p-1041414.html?p=1G09211226617201502J"&gt;$165&lt;/a&gt; for some 320x240 px goggles, which is lower resolution than the &lt;a href="#vr700"&gt;$59.99 VR700 goggles&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.banggood.com/Lisam-LS-180-180mm-Carbon-Fiber-Frame-Kit-Mini-Quadcopter-p-1002030.html?p=1G09211226617201502J"&gt;The frame&lt;/a&gt; is well built, high quality carbon fiber. I only have metric calipers, but I&amp;#39;ll convert for you.&lt;/p&gt;
 
-&lt;p&gt;Due to their price, I don&amp;#39;t own any Fatshark goggles. I have however, flown with a friend&amp;#39;s Fatshark goggles. The main difference between any stereoscopic goggles (two screens in the goggles, one for each eye) like Fatsharks and goggles with a single screen is the immersive nature of the experience. Stereoscopic goggles tend to look smaller and further off, as though one were viewing a TV from a distance. Single-monitor goggles look closer and make the user feel more a part of the scene, giving an overall more immersive feel.&lt;/p&gt;
+&lt;p&gt;Main body plate is 3.175mm.&lt;/p&gt;
 
-&lt;p&gt;The big difference is overall size. You can see from the photo below the size difference between the &lt;a href="#goggles-one"&gt;Goggles One&lt;/a&gt; and my &lt;a href="#diy-fatsharks"&gt;DIY Fatsharks&lt;/a&gt;. In general the stereoscopic goggles require far less distance between the lens and the screen and are therefore, much more portable.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03446.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03446_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-DSC-JPG" href="/assets/images/blog/goggles/DSC03402.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/DSC03402_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Side plate is 1.07mm.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-DSC-JPG" href="/assets/images/blog/goggles/DSC03404.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/DSC03404_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03448.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03448_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;You also might be wondering why there aren&amp;#39;t any HeadPlay goggles reviewed here? That&amp;#39;s because they&amp;#39;re basically the same specs as the Goggles One goggles and the only apparent difference is a diversity video receiver (which the Goggles One do not have), but the HeadPlay are $100 more. I couldn&amp;#39;t justify paying $100 for diversity, but if someone wants to send me some, I&amp;#39;d be happy to add them to this review.&lt;/p&gt;
+&lt;p&gt;Top plate is 1.77mm.&lt;/p&gt;
 
-&lt;h2 id="goggles-one"&gt;Goggles One&lt;/h2&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03449.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03449_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;At &lt;a href="http://www.banggood.com/Eachine-Goggles-One-5-Inch-5_8G-40CH-Raceband-HD-1080p-72-Degree-HDMI-FPV-Goggles-Video-Glasses-p-1043694.html?p=1G09211226617201502J"&gt;$149.99 from banggood.com&lt;/a&gt; for 1080p resolution goggles with an HDMI input, these are not the least expensive goggles reviewed, but they are great value. The screen looks huge and is extremely sharp. From a flying-experience perspective, these are the best.&lt;/p&gt;
+&lt;p&gt;I used some nail polish to seal the edge of the frame.&lt;/p&gt;
 
-&lt;p&gt;The video receiver operates on 40 channels, with Raceband.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03419.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03419_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Here they are, awesome name plastered on the front. These will get some spray paint or stickers...&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://shop.myairbot.com/index.php/motor/airbot-t2204-motor-2300kv-56.html"&gt;The Micro Titan 2204 Motors&lt;/a&gt; are awesome. They would be slightly better if they did not use clockwise and counter-clockwise shafts, but lock nuts instead. Not a big deal, because now we can buy some &lt;a href="http://www.banggood.com/10-Pairs-Emax-MT2205-RS2205-2205-CWCCW-Brushless-Motor-Replacement-Screw-Nut-p-1057639.html?p=1G09211226617201502J"&gt;CW/CCW locknuts&lt;/a&gt; in case you lose one.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03279.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03279_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03237.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03237_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The battery mounts on the back, for comfort, which is actually really nice.&lt;/p&gt;
+&lt;h2 id="build-guide"&gt;Build Guide&lt;/h2&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03277.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03277_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 78.86178861788618%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03164.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03164_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The buttons on the side are for both the monitor and the video receiver. Unfortunately, there is only one button for the receiver. The &amp;quot;scan&amp;quot; button. It&amp;#39;s the same button that turns on the goggles and searches for the best available channel. I&amp;#39;m not a fan of this. I want buttons to change band and channel as there are on the &lt;a href="#ev800"&gt;EV800&lt;/a&gt;. It works fine when flying alone, but with only one button, I&amp;#39;m not sure how one would find the right chanenl when multiple quads are transmitting, especially if the bands overlap or are close together.&lt;/p&gt;
+&lt;p&gt;Let&amp;#39;s start with the frame&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03278.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03278_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id="frame"&gt;Frame&lt;/h3&gt;
 
-&lt;p&gt;The weird looking piece on the top of the face area is really comfortable. No idea what it would feel like without this, but it seems to be a good idea.&lt;/p&gt;
+&lt;p&gt;Let&amp;#39;s build out the frame a bit first. Attach some nylon standoffs.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03281.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03281_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03229.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03229_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Unfortunately, several friends who tried these goggles said the same thing about the nose as the Hobbyking DIY goggles. They sit rather low on the nose and can feel constricting on the nostrils. One option is to cut the foam from the nose, but this may let in unwanted light.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03233.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03233_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03287.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03287_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Use some blue thread locker to attach the motors.&lt;/p&gt;
 
-&lt;p&gt;There is an RP-SMA adapter for the antenna:&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03232.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03232_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03291.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03291_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03235.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03235_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;It comes with a manual, screen cleaner, USB charging cable, mini HDMI (type c) to normal HDMI (type a) cable, 2x batteries and a whip antenna.&lt;/p&gt;
+&lt;p&gt;The motors have reverse-threaded shafts, which I&amp;#39;m not a fan of. It would be better if they were all threaded the same way and used lock nuts, but it doesn&amp;#39;t really matter. Just make sure you put the motors with sliver prop nuts on the bottom right and top left.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-goggles-one-DSC-JPG" href="/assets/images/blog/goggles/goggles_one/DSC03413.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/goggles_one/DSC03413_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03236.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03236_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Attach the motors with black prop spinners in the other corners.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03237.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03237_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="escs"&gt;ESCs&lt;/h3&gt;
+
+&lt;p&gt;Next, let&amp;#39;s prep the ESC. We can see the pro edition uses the SiLabs 396 MCU:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03469.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03469_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Solder an XT-60 or deans battery lead on one side of your Typhoon ESC and a smaller servo plug on the other side. One is for the battery and the other side will connect to the flight controller.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03479.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03479_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Install the Typhoon ESC with another set of standoffs.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03481.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03481_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="flight-controller"&gt;Flight Controller&lt;/h3&gt;
+
+&lt;p&gt;Start by soldering the pin headers onto your flight controller. A flux pen will make this easier, but is not required.&lt;/p&gt;
+
+&lt;p&gt;Here is the board with pins populated. I&amp;#39;ve solder an inductor as described above, to power the video camera and transmitter. This isn&amp;#39;t necessary, but there also isn&amp;#39;t any downside, except weight.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03473.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03473_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Alternatively, just put some pin headers on and use a jumper, like this. On a side note, those wires I have soldered straight to the board are for the SWD debugging port. You won&amp;#39;t need to attach those unless you want to debug the code.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.42468239564428%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03563.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03563_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Let&amp;#39;s plug in the flight controller. Here is how the ESC is connected. PWM inputs in the foreground and power (&lt;code&gt;VBAT&lt;/code&gt;) in the background.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03485.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03485_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here&amp;#39;s what it looks like with the flight controller mounted. The inductor looks huge! It&amp;#39;s wayyyy overkill.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03498.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03498_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03499.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03499_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Install BetaFlight by &lt;a href="https://chrome.google.com/webstore/detail/betaflight-configurator/kdaghagfopacdngbohiknlhcocjccjao"&gt;downloading the configurator&lt;/a&gt; or get the latest version of the configurator as follows:&lt;/p&gt;
+
+&lt;p&gt;Go to &lt;a href="https://github.com/betaflight/betaflight-configurator"&gt;https://github.com/betaflight/betaflight-configurator&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Click &lt;code&gt;Clone or download&lt;/code&gt; then &lt;code&gt;Download ZIP&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 54.33673469387755%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-download-b-f-eab-png" href="/assets/images/blog/betaflight-configurator/download-b52f9eab.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/download-b52f9eab.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then open &lt;a href="chrome://extensions"&gt;chrome://extensions&lt;/a&gt;, check &lt;code&gt;Developer Mode&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Click &lt;code&gt;Load Unpacked Extension&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 38.775510204081634%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-load-unpacked-e-c-png" href="/assets/images/blog/betaflight-configurator/load-unpacked-060e5c84.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/load-unpacked-060e5c84.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Pick the folder you downloaded and unzipped, then launch the configurator.&lt;/p&gt;
+
+&lt;p&gt;Then open the firmware flashing tab, pick the board and the latest BetaFlight version. Change the &lt;code&gt;Manual baud rate&lt;/code&gt; to &lt;code&gt;256000&lt;/code&gt; as with all F3 flight controllers, then hit &lt;code&gt;Load Firmware [Online]&lt;/code&gt; and &lt;code&gt;Flash Firmware&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-flash-a-cd-png" href="/assets/images/blog/betaflight-configurator/flash-3a235cd8.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/flash-3a235cd8.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then hit connect.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-connect-c-png" href="/assets/images/blog/betaflight-configurator/connect-601509c1.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/connect-601509c1.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Open the OSD tab, pick the font style you prefer (from the upper right hand corner, I like bold&lt;code&gt;) then click&lt;/code&gt;Upload Font`. The flight controller will reboot when the upload is complete.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-osd-bd-png" href="/assets/images/blog/betaflight-configurator/osd-6058bd39.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/osd-6058bd39.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you like to fly with an artificial horizon, go back to the OSD tab, enable it and hit &lt;code&gt;Save&lt;/code&gt;. In this photo, I have the video from the OMNIBUS being captured by my computer so you can see it:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 38.9344262295082%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-ahi-e-png" href="/assets/images/blog/betaflight-configurator/ahi-4948e564.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/ahi-4948e564.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now double check your power connections, ensuring all grounds are connected to ground, the battery pin is correct and that 5v goes to 5v. Then plug in the battery.&lt;/p&gt;
+
+&lt;p&gt;Open the BetaFlight configurator and spin up each motor to ensure it is the correct location and spins the correct direction.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-motors-d-dafd-png" href="/assets/images/blog/betaflight-configurator/motors-d39dafd5.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/motors-d39dafd5.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now would be a good time to calibrate your ESCs as well. To do this, unplug the battery, slide the &lt;code&gt;Master&lt;/code&gt; slider on the motors tab all the way up, plug in the battery. Wait for the beeping to stop, then slide the master slider all the way down. Wait for the beeping to stop then unplug the battery.&lt;/p&gt;
+
+&lt;h3 id="camera"&gt;Camera&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;#39;s install the standoffs then get to the camera.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03531.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03531_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The camera comes with a manual and some buttons on a PCB to control the menu.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03459.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03459_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here&amp;#39;s how you&amp;#39;ll attach the camera.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03500.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03500_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The Video Transmitter.&lt;/p&gt;
+
+&lt;h3 id="final-assembly"&gt;Final assembly&lt;/h3&gt;
+
+&lt;p&gt;Tidy up the build, I&amp;#39;ll zip tie down the motors.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03539.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03539_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Install the LED strip.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03541.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03541_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Assemble the beeper.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03543.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03543_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Install the better.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03545.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03545_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="video-transmitter"&gt;Video transmitter&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#39;ll mount the transmitter here. I used a dab of hot glue to keep the zip tie in place.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03546.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03546_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Screw the camera into the faceplate.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03535.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03535_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Mount the camera.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03551.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03551_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Install the top plate.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03552.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03552_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Looking good.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03554.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03554_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03555.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03555_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03579.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03579_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id="channels"&gt;Channels&lt;/h4&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 36.3013698630137%;'&gt;&lt;a id="assets-images-blog-fpv-channels-TS-channels-f-bc-b-png" href="/assets/images/blog/fpv_channels/TS5840-channels-f6bc75b5.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fpv_channels/TS5840-channels-f6bc75b5.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id="dip-switch"&gt;Dip Switch&lt;/h4&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 86.5%;'&gt;&lt;a id="assets-images-blog-fpv-channels-TS-switches-c-cd-c-png" href="/assets/images/blog/fpv_channels/TS5840-switches-c9cd043c.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fpv_channels/TS5840-switches-c9cd043c.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="receiver"&gt;Receiver&lt;/h3&gt;
+
+&lt;p&gt;We&amp;#39;ll be using the &lt;a href="http://www.banggood.com/Flysky-2_4G-6CH-FS-iA6B-Receiver-PPM-Output-With-iBus-Port-p-978603.html?p=1G09211226617201502J"&gt;FlySky iA6B Receiver&lt;/a&gt; included with the &lt;a href="http://www.banggood.com/Flysky-2_4G-6CH-FS-iA6B-Receiver-PPM-Output-With-iBus-Port-p-978603.html?p=1G09211226617201502J"&gt;FlySky i6 Radio Transmitter&lt;/a&gt;. The protocol is SBUS and we&amp;#39;ll use Serial Port 2. If you&amp;#39;re using other serial devices, you can choose any open serial port.&lt;/p&gt;
+
+&lt;p&gt;Wire it up like so, I&amp;#39;m using UART2:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03501.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03501_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I also removed the case and pins.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03567.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03567_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03573.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03573_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03574.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03574_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then mounted it on the bottom of the quad.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03576.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03576_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03596.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03596_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So first, go to the ports tab and enable Serial RX for UART2.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-serial-e-b-a-png" href="/assets/images/blog/betaflight-configurator/serial-e83b788a.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/serial-e83b788a.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then open the configuration tab and pick &lt;code&gt;RX_SERIAL&lt;/code&gt; under the &lt;code&gt;Receiver Mode&lt;/code&gt; section and &lt;code&gt;IBUS&lt;/code&gt; for the &lt;code&gt;Serial Receiver Provider&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-rx-a-a-png" href="/assets/images/blog/betaflight-configurator/rx-1a1a8165.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/rx-1a1a8165.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now would be a good time to set your flight modes and switches. First, let&amp;#39;s setup the radio.&lt;/p&gt;
+
+&lt;h3 id="flysky-fs-i6-transmitter-config"&gt;Flysky FS-i6 Transmitter Config&lt;/h3&gt;
+
+&lt;p&gt;Start by configuration your transmitter to send the proper switches on the given channels.&lt;/p&gt;
+
+&lt;p&gt;Press and hold &lt;code&gt;OK&lt;/code&gt; on the transmitter to bring up the menu.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03504.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03504_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Hit &lt;code&gt;UP&lt;/code&gt; to move the cursor to &lt;code&gt;Functions Setup&lt;/code&gt; and hit &lt;code&gt;OK&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03505.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03505_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Move &lt;code&gt;DOWN&lt;/code&gt; until you get to &lt;code&gt;AUX Channels&lt;/code&gt; then hit &lt;code&gt;OK&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03506.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03506_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Hit &lt;code&gt;UP&lt;/code&gt; to change channel 5 to SWA hit &lt;code&gt;OK&lt;/code&gt; and change channel 6 to &lt;code&gt;SWC&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Press and hold &lt;code&gt;Cancel&lt;/code&gt; to save and get out of the menu, then press &lt;code&gt;Cancel&lt;/code&gt; twice more to exit the menus.&lt;/p&gt;
+
+&lt;p&gt;Check the receiver tab in the configurator and make sure moving the switches moves AUX1 (far left switch) and AUX2 (3 position switch).&lt;/p&gt;
+
+&lt;p&gt;Then go setup your modes.&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;ll use the left most switch to arm and the 3 position switch for flight modes.&lt;/p&gt;
+
+&lt;p&gt;Acro mode by default, then middle will be for horizon (which is auto-leveling but still allows flips) and all the way down will be angle (which doesn&amp;#39;t allow flips) and beeper. The beeper is enabled with Angle mode in case I lose video, I can take off my goggles and look for the quad while listening for the beeper.&lt;/p&gt;
+
+&lt;p&gt;Paste this into the configurator or set them on the modes tab:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;aux 0 0 0 1700 2100
+aux 1 1 1 1800 2100
+aux 2 2 1 1300 1700
+aux 3 12 1 1800 2100
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you&amp;#39;re using PPM mode. The setup is almost the same, just connect like so and enable RX_PPM instead of Serial RX. Here is an example with the same &lt;a href="http://www.banggood.com/Flysky-2_4G-6CH-FS-iA6B-Receiver-PPM-Output-With-iBus-Port-p-978603.html?p=1G09211226617201502J"&gt;FlySky iA6B Receiver&lt;/a&gt;, which can also do PPM.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03521.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03521_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="blackbox"&gt;Blackbox&lt;/h3&gt;
+
+&lt;p&gt;To get the blackbox working, simply insert a FAT32 formatted micro SDcard. Make sure the partition is set to be Master Boot Record (MBR).&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re using a mac, plug in the SDcard, open a terminal and run:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;› diskutil list
+/dev/disk0 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *1.0 TB     disk0
+   1:                        EFI EFI                     209.7 MB   disk0s1
+   2:          Apple_CoreStorage meta                    1.0 TB     disk0s2
+   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
+/dev/disk1 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *2.0 TB     disk1
+   1:                        EFI EFI                     209.7 MB   disk1s1
+   2:                  Apple_HFS data                    2.0 TB     disk1s2
+/dev/disk2 (internal, virtual):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:                  Apple_HFS meta                   +1.0 TB     disk2
+/dev/disk3 (external, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *2.0 GB     disk3
+   1:       Microsoft Basic Data UNTITLED                2.0 GB     disk3s1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Find your SDcard device on the list then run, replacing &lt;code&gt;disk3&lt;/code&gt; with the path to your disk:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;sudo diskutil eraseDisk FAT32 UNTITLED MBRFormat /dev/disk3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The SDCard should be inserted upside down with the pins facing up.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-sdcard-fbe-png" href="/assets/images/blog/betaflight-configurator/sdcard-028fbe08.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/sdcard-028fbe08.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Open the BetaFlight configurator and go to the blackbox tab. You&amp;#39;ll see a message stating all is well!&lt;/p&gt;
+
+&lt;p&gt;To pull the logs, simply copy them off the SDCard from your computer!&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 55.654761904761905%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-bb-pull-logs-png" href="/assets/images/blog/betaflight-configurator/bb-pull-logs-58905862.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/bb-pull-logs-58905862.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="led-strip"&gt;Led Strip&lt;/h3&gt;
+
+&lt;p&gt;Open the &lt;code&gt;Configuration Tab&lt;/code&gt; and under &lt;code&gt;Other Features&lt;/code&gt; enable &lt;code&gt;LED_STRIP&lt;/code&gt;. Note that the &lt;code&gt;TRANSPONDER&lt;/code&gt; cannot be enabled at the same time. You can use either the led strip or the transponder.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-led-enable-be-aa-png" href="/assets/images/blog/betaflight-configurator/led-enable-2be173aa.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/led-enable-2be173aa.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Start by setting the LED order. Hit &lt;code&gt;Clear All&lt;/code&gt;, then &lt;code&gt;Wire Ordering Mode&lt;/code&gt; then click 8 boxes in a row (or however many LEDs you have in whatever configuration) and click &lt;code&gt;Wire Ordering Mode&lt;/code&gt; again to exit ordering mode.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-led-b-c-b-png" href="/assets/images/blog/betaflight-configurator/led-1-1b5c41b4.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/led-1-1b5c41b4.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;My config is pretty simple, colored leds with throttle indication in the middle.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-led-d-png" href="/assets/images/blog/betaflight-configurator/led-2-d4113093.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/led-2-d4113093.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="other-configuration"&gt;Other configuration&lt;/h3&gt;
+
+&lt;p&gt;Download my &lt;a href="#"&gt;BetaFlight 3.0 config here&lt;/a&gt; or use the following settings:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Pros:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Excellent value.&lt;/li&gt;
-&lt;li&gt;1080p screen (1920x1080 px)&lt;/li&gt;
-&lt;li&gt;2x 1600mah 2s batteries&lt;/li&gt;
-&lt;li&gt;HDMI support&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Cons:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;I have a wide face and the face area is rather narrow. Folks with wide faces may find these slightly uncomfortable.&lt;/li&gt;
-&lt;li&gt;HDMI plug is tiny and easy to lose, but that doesn&amp;#39;t really matter.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Gotchas:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The plastic cover was trimmed too loosely when I got them, so it dug into my face when I wore the goggles tight. A quick trim of the outermost plastic case with some scissors remedied the problem.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;4khz (250ms loop time). Because it&amp;#39;s awesome!&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id="eachine-ev800"&gt;Eachine EV800&lt;/h2&gt;
-
-&lt;p&gt;In short, these are the best goggles for a beginner. Though slightly more expensive than the &lt;a href="#eachine-vr700"&gt;VR 700&lt;/a&gt;, they are an amazing value at &lt;a href="http://www.banggood.com/Eachine-Goggles-One-5-Inch-5_8G-40CH-Raceband-HD-1080p-72-Degree-HDMI-FPV-Goggles-Video-Glasses-p-1043694.html?p=1G09211226617201502J"&gt;$79.99 from banggood.com&lt;/a&gt;, have excellent receiver sensitivity, a reasonably high resolution screen (800x480 px) and can be converted to a standalone monitor if you want to share the view or fly with just a monitor and not goggles.&lt;/p&gt;
-
-&lt;p&gt;Note that a 700tvl camera, popular due to it&amp;#39;s low latency, is about 900x500 px. The advantage of increased resolution above the camera&amp;#39;s resolution is negligible. If however, one were planning on flying from an HD video link like the DJI LightBridge, HD Goggles like the &lt;a href="#goggles-one"&gt;Goggles One&lt;/a&gt; would be better.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03282.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/ev800/DSC03282_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The battery is integrated into the goggles which is good and bad. Good because it&amp;#39;s easy to use. Bad because it cannot be swapped out. However, there is an external cable to allow powering the goggles via USB or a battery with a JST plug.&lt;/p&gt;
-
-&lt;p&gt;There is even a screw hole on the bottom of the monitor section for mounting.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03284.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/ev800/DSC03284_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03285.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/ev800/DSC03285_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03286.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/ev800/DSC03286_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The EV800 have an RP-SMA antenna plug and a bunch of buttons. This is much better than the single button on the VR700, but equally confusing.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03406.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/ev800/DSC03406_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The goggle portion can be removed to use these as a monitor.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-ev-DSC-JPG" href="/assets/images/blog/goggles/ev800/DSC03409.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/ev800/DSC03409_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;As is, I think these are the best all around goggles. If, for the same price, these had an OLED display, a diversity RX and an optional face piece with foam, they would be absolutely killer.&lt;/p&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-khz-b-df-png" href="/assets/images/blog/betaflight-configurator/4khz-18b03df0.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/4khz-18b03df0.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Pros:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Good resolution (800x480 px)&lt;/li&gt;
-&lt;li&gt;Great value&lt;/li&gt;
-&lt;li&gt;Excellent integrated receiver sensitivity&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Cons:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The face piece doesn&amp;#39;t have any foam. Some folks I talked to liked this and others didn&amp;#39;t. Seems like it&amp;#39;s a personal pref, but it could be a con for some.&lt;/li&gt;
-&lt;li&gt;The buttons are confusing. Why are there 2 sets of channel and band buttons?&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Gotchas:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The battery is integrated.&lt;/li&gt;
-&lt;li&gt;There is no foam around the eye piece. This isn&amp;#39;t really a &amp;quot;con&amp;quot; though, because these are actually more comfortable than other goggles with foam. It also makes these an ideal pair of goggles to share, as the hard surfaces are easy to wipe down.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Adjust min check and max check&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h2 id="hobbyking-quanum-v2-pro-diy-goggles"&gt;HobbyKing Quanum V2 Pro DIY goggles&lt;/h2&gt;
-
-&lt;p&gt;Read &lt;a href="/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"&gt;the full build guide here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href="https://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=97842&amp;amp;aff=1624906"&gt;Quanam V2 pro goggles&lt;/a&gt; have recently come down in price. At $37.60, they are a good deal. 800 x 480 px resolution.&lt;/p&gt;
-
-&lt;p&gt;They don&amp;#39;t come with a receiver, but the &lt;a href="http://www.hobbyking.com/hobbyking/store/__65994__Quanum_Auto_Scan_5_8Ghz_FPV_Receiver.html?aff=1624906"&gt;$30.86 Quanum Auto Scan 5.8Ghz FPV Receiver&lt;/a&gt; and &lt;a href="http://www.hobbyking.com/hobbyking/store/__84862__Quanum_RC540R_5_8GHz_40CH_Race_Band_FPV_Diversity_Receiver.html?aff=1624906"&gt;$70.42 Quanum RC540R 5.8GHz 40CH Race Band FPV Diversity Receiver&lt;/a&gt; are both good options that have a built in OLED screen. These are great as they allow the pilot to see the exact frequency and channel the receiver is using. I wish the other goggles on this page included an OLED like this.&lt;/p&gt;
-
-&lt;p&gt;Less expensive options are the &lt;a href="http://www.banggood.com/FPV-5_8G-8CH-200mW-AV-Wireless-Receiver-RC805-p-73202.html?p=1G09211226617201502J"&gt;$17.98 Boscam FPV 5.8G 8CH RC805&lt;/a&gt; or the &lt;a href="http://www.banggood.com/DIY-RX5808-5_8G-40CH-Diversity-FPV-Receiver-with-OLED-Display-for-FPV-Racer-Quad-p-1051163.html?p=1G09211226617201502J"&gt;$41.99 DIY RX5808 5.8G 40CH Dieversity RX&lt;/a&gt; which includes an OLED display.&lt;/p&gt;
-
-&lt;p&gt;In total, these goggles will set you back between $55 and $108. The quality of the video link is determined by the quality of the receiver. I have tried out all of the above mentioned receivers, except the DIY RX5808, and the ones I have tried work great. Watch out though, you&amp;#39;ll have to pay for shipping from HobbyKing, which isn&amp;#39;t usually that cheap, so that alone makes these a little bit less of a good deal.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03301.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/quanum/DSC03301_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03450.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/quanum/DSC03450_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Unfortunately, several friends who tried these goggles have told me that they sit rather low on the nose and can feel constricting on the nostrils. This could probably be fixed by removing some foam around the nose or building up the cheeks a bit more.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03452.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/quanum/DSC03452_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03454.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/quanum/DSC03454_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This is the &lt;a href="http://www.hobbyking.com/hobbyking/store/__65994__Quanum_Auto_Scan_5_8Ghz_FPV_Receiver.html?aff=1624906"&gt;$30.86 Quanum Auto Scan 5.8Ghz FPV Receiver&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I don&amp;#39;t have a transmitter turned on at the moment so &lt;code&gt;RSSI&lt;/code&gt; is &lt;code&gt;0%&lt;/code&gt;. Battery voltage is shown on the screen. &lt;code&gt;E3&lt;/code&gt; is the channel &lt;code&gt;5.665GHz&lt;/code&gt; is the frequency, which is actually really handy.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-quanum-DSC-JPG" href="/assets/images/blog/goggles/quanum/DSC03455.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/quanum/DSC03455_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;set min_check = 1040
+set max_check = 1900
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Pros:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Nice, 5&amp;quot; monitor (800 x 480 px).&lt;/li&gt;
-&lt;li&gt;Great value, only $55 when paired with the RC805 or $70 if you choose the Quanum receiver.&lt;/li&gt;
-&lt;li&gt;Light weight.&lt;/li&gt;
-&lt;li&gt;Can be used with glasses.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Cons:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Must be assembled yourself.&lt;/li&gt;
-&lt;li&gt;They&amp;#39;re as comfortable as you make them.&lt;/li&gt;
-&lt;li&gt;No receiver included, but you can choose your own.&lt;/li&gt;
-&lt;li&gt;No battery included, but you can choose your own.&lt;/li&gt;
-&lt;li&gt;You&amp;#39;ll have to pay for shipping, which makes them a little bit less of a great deal.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Super Expo and Airmode&lt;/li&gt;
 &lt;/ul&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;feature AIRMODE
+feature SUPEREXPO_RATES
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id="beerotor-goggles"&gt;BeeRotor Goggles&lt;/h2&gt;
+&lt;h3 id="troubleshooting"&gt;Troubleshooting&lt;/h3&gt;
 
-&lt;p&gt;These are in the works from &lt;a href="https://www.facebook.com/groups/beerotor/permalink/473294756213480"&gt;Frank over at RCTimer&lt;/a&gt; and I&amp;#39;m excited to check them out!&lt;/p&gt;
+&lt;h4 id="quad-won-39-t-arm"&gt;Quad won&amp;#39;t arm&lt;/h4&gt;
 
-&lt;h2 id="eachine-vr700"&gt;Eachine VR700&lt;/h2&gt;
+&lt;p&gt;Give it a few seconds after you plug in the battery, sometimes the SDCard takes a second or two to settle. If you still can&amp;#39;t arm after waiting more than 30 seconds. Open the configurator and run &lt;code&gt;status&lt;/code&gt; several times. Copy the output and ask for help on the forums (or leave a comment below). You won&amp;#39;t be able to arm if the CPU usage is too high.&lt;/p&gt;
 
-&lt;p&gt;The &lt;a href="http://www.banggood.com/Eachine-VR-007-5_8G-40CH-HD-FPV-Goggles-Video-Glasses-4_3-Inch-With-7_4V-800mAh-Battery-p-960761.html?p=1G09211226617201502J"&gt;VR700s&lt;/a&gt; are the cheapest pair of goggles you can buy, for &lt;a href="http://www.banggood.com/Eachine-VR-007-5_8G-40CH-HD-FPV-Goggles-Video-Glasses-4_3-Inch-With-7_4V-800mAh-Battery-p-960761.html?p=1G09211226617201502J"&gt;$59.99 on banggood.com&lt;/a&gt;. Build quality, ergonomics and price are great. The downsides of these goggles are the low resolution screen (480x272 px) and poor receiver sensitivity, which I&amp;#39;ll dig into further below.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC03288.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC03288_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC03289.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC03289_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC03292.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC03292_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC03293.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC03293_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here&amp;#39;s the box they come in:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01741.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01741_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Gotta love the awesome tag line on the back. Sadly, the jungle is actually not &amp;quot;all in sight&amp;quot; at only 480x272 px resolution.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC02021.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC02021_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;No padding, but that&amp;#39;s cool. These things are durable.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01746.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01746_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;It comes with a manual, micro usb to type A (normal), the goggles, a whip antenna, battery and a screen cleaning wipe.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01748.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01748_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The battery is a nifty 1600mah 2s lipo.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01750.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01750_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;There is a battery gauge with 3 leds and a button.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01754.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01754_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The micro usb charging port is on the side.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01753.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01753_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The goggles themselves have an RP-SMA plug for the antenna.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01757.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01757_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;There is one light, which indicates that the goggles are on, and one button, which lets you change channels. There is no visual feedback of which channel you&amp;#39;re on and I haven&amp;#39;t figured out exactly how the button works. I just keep pressing it usually and eventually end up on the right channel. Not ideal, but it works.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01759.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01759_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The three buttons on the side are for the display to adjust things like brightness and contrast.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-vr-DSC-JPG" href="/assets/images/blog/goggles/vr700/DSC01764.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/vr700/DSC01764_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;All in all, these goggles are great for giving rides, but not ideal for the primary pair of goggles for a pilot. The resolution is too low and the video receiver is not reliable enough for me to be comfortable flying with them.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Pros:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Price, the least expensive option.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Cons:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;One button for the VTX.&lt;/li&gt;
-&lt;li&gt;Lower resolution monitor means you can easily see the pixels on the screen when flying.&lt;/li&gt;
-&lt;li&gt;The receiver sensitivity is not very good, meaning you won&amp;#39;t get very good range. So I don&amp;#39;t recommend these, even as beginner goggles.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="diy-fatsharks"&gt;DIY Fatsharks&lt;/h2&gt;
-
-&lt;p&gt;If you&amp;#39;re on a super tight budget, building your own goggles might be the way to go.&lt;/p&gt;
-
-&lt;p&gt;Here are my DIY goggles in use:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.55948553054662%;'&gt;&lt;a id="assets-images-blog-goggles-diy-a-d-b-cce-bfd-a-AcOHDhy-atY-e-jpeg" href="/assets/images/blog/goggles/diy/47a6d820b3127cce9854bfd12a0000000030108AcOHDhy0atY-5706369e.jpeg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/diy/47a6d820b3127cce9854bfd12a0000000030108AcOHDhy0atY-5706369e.jpeg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;These video goggles use an &lt;a href="http://www.banggood.com/FPV-5_8G-8CH-200mW-AV-Wireless-Receiver-RC805-p-73202.html?p=1G09211226617201502J"&gt;RC805&lt;/a&gt; video receiver, which I chose because it was so cost effective and has two video outputs.&lt;/p&gt;
-
-&lt;p&gt;They&amp;#39;re based on the unimpressive &lt;a href="http://www.cnet.com/products/icuiti-iwear/"&gt;AV230&lt;/a&gt; 320 x 240px video goggles, which I bought on craigslist.org.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 56.23376623376623%;'&gt;&lt;a id="assets-images-blog-goggles-diy-icuiti-iwear-av-head-mounted-display-portable-headphone-c-jpg" href="/assets/images/blog/goggles/diy/icuiti-iwear-av230-head-mounted-display-portable-320-10-240-headphone-3980c859.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/diy/icuiti-iwear-av230-head-mounted-display-portable-320-10-240-headphone-3980c859.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I cut them in half and put them inside some $3 ski goggles from aliexpress. I put a JST power plug on the RC805 and I velcro a battery on the front of the goggles when I fly.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-diy-DSC-JPG" href="/assets/images/blog/goggles/diy/DSC03488.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/diy/DSC03488_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I have an &lt;a href="/blog/2016/02/06/hmdvr-fpv-video-recorder/"&gt;HMDVR FPV Video Recorder&lt;/a&gt; attached to one of the outputs of the RC805.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-diy-DSC-JPG" href="/assets/images/blog/goggles/diy/DSC03487.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/diy/DSC03487_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The cable from the AV230 is wound up and zip tied under the goggles. The other RC805 output is wired to the goggles. I added JST servo plugs for the video signal to all the components.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-diy-DSC-JPG" href="/assets/images/blog/goggles/diy/DSC03489.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/diy/DSC03489_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;There is also a lipo voltage alarm on the front of the goggles.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-goggles-diy-DSC-JPG" href="/assets/images/blog/goggles/diy/DSC03492.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/goggles/diy/DSC03492_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Pros:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Cheap. They cost a total of $40, $20 for the goggles, $17 for the receiver and $3 for the goggles. Add an &lt;a href="http://www.banggood.com/Mini-DVR-Video-Audio-Recorder-For-FPV-Multicopters-p-1021117.html?p=1G09211226617201502J"&gt;HMDVR FPV&lt;/a&gt; Video Recorder for ~$20 more, but this DVR could be added to any goggles.&lt;/li&gt;
-&lt;li&gt;Excellent reception. The RC805 receiver has great sensitivity and the video reception is always good.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Cons:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Small, low resolution, low brightness screen. This could be made better by using better goggles as a base.&lt;/li&gt;
-&lt;li&gt;They take the most DIYing. Even sourcing parts can be hard, I used goggles that cannot be bought at retail anymore, but this is how one would find the best deal.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-tasks-e-a-dcef-png" href="/assets/images/blog/betaflight-configurator/tasks-e5a2dcef.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/tasks-e5a2dcef.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
   </entry>
 </feed>

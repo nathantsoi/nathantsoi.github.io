@@ -533,6 +533,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/07/07/omnibus-typhoon-miniquad</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016/07/09/betaflight-spektrum-satellite-receiver-guide</loc>
     <priority>0.7</priority>
   </url>
@@ -1617,6 +1621,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/tags/flight-controller</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/180mm</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/guide</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/tags/radio</loc>
     <priority>0.7</priority>
   </url>
@@ -1662,6 +1678,10 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2016/07/09</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/07/07</loc>
     <priority>0.7</priority>
   </url>
   <url>
