@@ -5,10 +5,118 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-07-24T20:20:00-07:00</updated>
+  <updated>2016-07-28T22:30:00-07:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
+  <entry>
+    <title>BetaFlight Kiss Flight Controller</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/29/betaflight-kiss-flight-controller/"/>
+    <id>http://nathan.vertile.com/blog/2016/07/29/betaflight-kiss-flight-controller/</id>
+    <published>2016-07-28T22:30:00-07:00</published>
+    <updated>2016-08-05T22:20:31-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This guide will show you how to install BetaFlight on your Kiss FC.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-kissfc-front-JPG" href="/assets/images/blog/kissfc/front.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/front_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-kissfc-back-JPG" href="/assets/images/blog/kissfc/back.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/back_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When I told &lt;a href="http://flyduino.net"&gt;flyduino.net&lt;/a&gt; we were interested in supporting the KissFC in BetaFlight, the were kind enough to mail me one. At the same time, I wasl talking to &lt;a href="https://www.patreon.com/thedroneracingengineer"&gt;Joshua&lt;/a&gt; and he also send me a KissFC! Thx guys. Y&amp;#39;all are the best. I&amp;#39;m going to pass one of the KissFC&amp;#39;s on, so we have some more developer&amp;#39;s with one in their arsenal.&lt;/p&gt;
+
+&lt;h2 id="pinout"&gt;Pinout&lt;/h2&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.50717703349282%;'&gt;&lt;a id="assets-images-blog-kissfc-pinout-d-c-d-png" href="/assets/images/blog/kissfc/pinout-5d903c7d.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/pinout-5d903c7d.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 90.34175334323923%;'&gt;&lt;a id="assets-images-blog-kissfc-schematic-bd-png" href="/assets/images/blog/kissfc/schematic-12673bd7.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/schematic-12673bd7.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="ppm"&gt;PPM&lt;/h3&gt;
+
+&lt;p&gt;Wire your PPM receiver like this.&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;Green -&amp;gt; Signal
+Red -&amp;gt; 5v
+Blue -&amp;gt; GND
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-kissfc-DSC-JPG" href="/assets/images/blog/kissfc/DSC03616.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/DSC03616_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then enable PPM in the BetaFlight Configurator on the &lt;code&gt;Configuration&lt;/code&gt; tab under &lt;code&gt;Receiver Mode&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.2112676056338%;'&gt;&lt;a id="assets-images-blog-kissfc-serialrx-ppm-a-png" href="/assets/images/blog/kissfc/serialrx-ppm-054a7772.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/serialrx-ppm-054a7772.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Hit &lt;code&gt;save and reboot&lt;/code&gt; and check that your receiver is working in the &lt;code&gt;Receiver&lt;/code&gt; tab.&lt;/p&gt;
+
+&lt;h3 id="serial-rx"&gt;Serial RX&lt;/h3&gt;
+
+&lt;p&gt;Wire your Serial RX receiver like this.&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;Green -&amp;gt; Signal
+Red -&amp;gt; 5v
+Blue -&amp;gt; GND
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-kissfc-DSC-JPG" href="/assets/images/blog/kissfc/DSC03615.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/DSC03615_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then enable Serial RX on UART1:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.2112676056338%;'&gt;&lt;a id="assets-images-blog-kissfc-serialrx-uart-bcf-e-b-png" href="/assets/images/blog/kissfc/serialrx-uart1-bcf43e5b.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/serialrx-uart1-bcf43e5b.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Hit &lt;code&gt;save and reboot&lt;/code&gt;, then enable &lt;code&gt;Serial RX&lt;/code&gt; and select the correct protocol, I&amp;#39;m using &lt;code&gt;IBUS&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.2112676056338%;'&gt;&lt;a id="assets-images-blog-kissfc-serialrx-ibus-fe-png" href="/assets/images/blog/kissfc/serialrx-ibus-7544fe34.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/serialrx-ibus-7544fe34.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Hit &lt;code&gt;save and reboot&lt;/code&gt; and check that your receiver is working in the &lt;code&gt;Receiver&lt;/code&gt; tab.&lt;/p&gt;
+
+&lt;h2 id="flashing"&gt;Flashing&lt;/h2&gt;
+
+&lt;p&gt;First, download the latest &lt;a href="https://github.com/betaflight/betaflight/releases/latest"&gt;BetaFlight release&lt;/a&gt; and the &lt;a href="http://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-programmers/stsw-stm32080.html"&gt;STM32 DFU Flash tool&lt;/a&gt;. The DFU download link is at the bottom of the page. It may be possible to flash the BetaFlight hex with the BetaFlight configurator, but I couldn&amp;#39;t get it to work. Instead, I&amp;#39;ll use the DFU flash tool for the first flash. After that, the BetaFligth configurator worked fine for me.&lt;/p&gt;
+
+&lt;p&gt;Install the DFU software by unzipping the download and following the walk through. Launch the DFU flash tool and you should see:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.35460992907801%;'&gt;&lt;a id="assets-images-blog-kissfc-dfu-ed-a-png" href="/assets/images/blog/kissfc/dfu-ed80511a.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/dfu-ed80511a.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Under &amp;quot;Upload Action&amp;quot; click &amp;quot;Choose&amp;quot; and find the BetaFlight &lt;code&gt;KISSFC&lt;/code&gt; .hex file you downloaded. You&amp;#39;ll need to change the allowable file type to &lt;code&gt;All Files&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 86.21745788667687%;'&gt;&lt;a id="assets-images-blog-kissfc-dfu-file-type-e-b-png" href="/assets/images/blog/kissfc/dfu-file-type-223e464b.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/dfu-file-type-223e464b.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Plug in the board while holding the boot button. Click upload, accept the warning and you should see:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 101.06571936056838%;'&gt;&lt;a id="assets-images-blog-kissfc-dfu-uploaded-a-b-f-png" href="/assets/images/blog/kissfc/dfu-uploaded-6a16b6f1.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/dfu-uploaded-6a16b6f1.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ok, even though the flashing worked, we&amp;#39;re not done yet. You&amp;#39;ll need to open the BetaFlight configurator and flash the KISSFC as you would normally. I&amp;#39;ll choose &lt;code&gt;Full chip erase&lt;/code&gt; as well, just to be safe.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 97.09507042253522%;'&gt;&lt;a id="assets-images-blog-kissfc-flash-normally-d-d-png" href="/assets/images/blog/kissfc/flash-normally-4d88563d.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/flash-normally-4d88563d.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When you&amp;#39;re done, the board should reboot and you can connect.&lt;/p&gt;
+
+&lt;h3 id="swd"&gt;SWD&lt;/h3&gt;
+
+&lt;p&gt;SWD is the debugging interface which is used for stepping through instructions while developing software for the flight controller.&lt;/p&gt;
+
+&lt;p&gt;Debugging pins are:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;AUX1 (PA13) -&amp;gt; SWDIO
+AUX2 (PA14) -&amp;gt; SWDCLK
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here&amp;#39;s how to wire it:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-kissfc-IMG-a-e-ebbd-jpg" href="/assets/images/blog/kissfc/IMG_20160804_222400-a6e3ebbd.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/IMG_20160804_222400_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that pwm inputs matching these pins must be disabled. Change:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;target.h&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;#define USABLE_TIMER_CHANNEL_COUNT 10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;target.c&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="highlight json"&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM2,&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="err"&gt;IO_TAG(PB11),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM_Channel_4,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM2_IRQn,&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="err"&gt;0,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;IOCFG_AF_PP,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;GPIO_AF_1&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="err"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+    &lt;/span&gt;&lt;span class="err"&gt;//&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM4,&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="err"&gt;IO_TAG(PA13),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM_Channel_2,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM4_IRQn,&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="err"&gt;0,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;IOCFG_AF_PP,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;GPIO_AF_10&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="err"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+    &lt;/span&gt;&lt;span class="err"&gt;//&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM8,&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="err"&gt;IO_TAG(PA14),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM_Channel_3,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM8_CC_IRQn,&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;0,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;IOCFG_AF_PP,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;GPIO_AF_5&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="err"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;span class="err"&gt;};&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
   <entry>
     <title>J-Link Getting Started Guide</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/25/j-link-getting-started-guide/"/>
@@ -532,555 +640,5 @@ avrdude done.  Thank you.
       <name>Nathan Tsoi</name>
     </author>
     <content type="html"></content>
-  </entry>
-  <entry>
-    <title>Omnibus Flight Controller and Airbot Typhoon 180 Miniquad Build</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/07/omnibus-typhoon-miniquad/"/>
-    <id>http://nathan.vertile.com/blog/2016/07/07/omnibus-typhoon-miniquad/</id>
-    <published>2016-07-06T20:42:00-07:00</published>
-    <updated>2016-07-27T00:32:16-07:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;This is a review, build and setup guide for the Airbot Typhoon 180 Miniquad with the brand new Omnibus flight controller.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03594.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03594_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03595.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03595_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03589.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03589_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03586.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03586_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03587.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03587_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="review"&gt;Review&lt;/h2&gt;
-
-&lt;p&gt;The Omnibus flight controller uses the MPU6000 over SPI for the best possible flight performance. If you haven&amp;#39;t already seen it, you should checkout &lt;a href="https://youtu.be/Obo4nvcyDms"&gt;Josh&amp;#39;s awesome video on different IMUs&lt;/a&gt;. Also onboard are a barometer and MAX7456 OSD chip for the BetaFlight integrated OSD.&lt;/p&gt;
-
-&lt;p&gt;Also onboard is a high performance 5v, 1.5a STMicrocontroller L78 voltage regulator, so you can plug the flight battery right into the flight controller, without a PDB.&lt;/p&gt;
-
-&lt;p&gt;I have a prototype board. Production boards are gold plated.&lt;/p&gt;
-
-&lt;h2 id="pinouts"&gt;Pinouts&lt;/h2&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.0524934383202%;'&gt;&lt;a id="assets-images-blog-airbot-omnibus-lite-v-pinout-cdeb-jpg" href="/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-1cdeb020.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-1cdeb020.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here is the Typhoon pinout:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-typhoon-pinout-a-a-ad-jpg" href="/assets/images/blog/airbot/typhoon-pinout-a3a342ad.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/typhoon-pinout_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="flight-controller-setup"&gt;Flight controller setup&lt;/h2&gt;
-
-&lt;p&gt;Let&amp;#39;s start by soldering the pin headers to the board. To choose which headers you&amp;#39;ll use, let&amp;#39;s consider a few things. First, the voltage of the camera and video transmitter you&amp;#39;ll be using. I will be using a camera that can take between 5v-22v and a video transmitter that can take between 7-24v (2s-5s LiPo). This is important because it determines how our video power pins will be wired. If you&amp;#39;re using a 5v camera, you would want to wire any 5v output from the flight controller to the &lt;code&gt;V+&lt;/code&gt; on the camera. If you&amp;#39;re using a camera that can handle the voltage straight from the battery, you can connect &lt;code&gt;VBAT&lt;/code&gt; and &lt;code&gt;RAM&lt;/code&gt; to power both the transmitter and the camera from the battery. If you&amp;#39;re using FPV gear that can only handle 5v, connect &lt;code&gt;RAM&lt;/code&gt; and a &lt;code&gt;5v&lt;/code&gt; line.&lt;/p&gt;
-
-&lt;p&gt;These are the pins I&amp;#39;ll populate:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.0524934383202%;'&gt;&lt;a id="assets-images-blog-airbot-omnibus-lite-v-pinout-headers-aa-d-d-jpg" href="/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-headers-aa0d250d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-headers-aa0d250d.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I&amp;#39;ve labeled the battery pins red, since VBAT will have the battery directly connected, be sure not to connect the battery to any other pins!&lt;/p&gt;
-
-&lt;p&gt;Note that until you connect one of the RAM pins to a power source, the 3x RAM pins are only connected to each other and have no power.&lt;/p&gt;
-
-&lt;p&gt;Instead of just connecting RAM to VBAT with a jumper, which will work fine, I&amp;#39;m going to do one better. I&amp;#39;ll use &lt;a href="http://www.banggood.com/10Pcs-330UH-3A-Toroid-Core-Inductor-Wire-Wind-Wound-p-1006115.html?p=1G09211226617201502J"&gt;an inductor&lt;/a&gt; to connect &lt;code&gt;VBAT&lt;/code&gt; and any &lt;code&gt;5v&lt;/code&gt;. If you don&amp;#39;t have an inductor laying around, no worries, just use a wire and connect the two pins.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.0524934383202%;'&gt;&lt;a id="assets-images-blog-airbot-omnibus-lite-v-pinout-inductor-c-f-b-jpg" href="/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-inductor-c996f95b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-inductor-c996f95b.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The next thing to consider is what receiver you&amp;#39;ll be using: Serial RX (such as IBUS, FRSKY or Spektrum Satellite) or PPM. I&amp;#39;ll be using the IBUS receiver included with the &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;FlySky FS-i6&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;My prototype board came with both the PPM and SerialRX resistors connected. At some point there will be software to support using PPM and SerialRX on the same pin allowing you to select between them in the configurator. Until then, you&amp;#39;ll want to remove the resistor labeled &lt;code&gt;SBUS&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;If the &lt;code&gt;SBUS&lt;/code&gt; resistor is removed and the PPM resistor is installed, you&amp;#39;ll want to connect your SBUS or IBUS or any serial receiver to a different serial port:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.0524934383202%;'&gt;&lt;a id="assets-images-blog-airbot-omnibus-lite-v-pinout-rx-e-abf-jpg" href="/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-rx-68e6abf8.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-rx-68e6abf8.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Note that this 5v rail does not get power from the flight controller, but is isolated, in case you&amp;#39;re using ESCs with a 5v BEC.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.0524934383202%;'&gt;&lt;a id="assets-images-blog-airbot-omnibus-lite-v-pinout-esc-v-be-d-e-jpg" href="/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-esc5v-55be5d9e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-esc5v-55be5d9e.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This means that it might be easier to plug your serial receiver into &lt;code&gt;UART1&lt;/code&gt; or &lt;code&gt;UART2&lt;/code&gt; (this is how I configured my quad).&lt;/p&gt;
-
-&lt;h2 id="parts"&gt;Parts&lt;/h2&gt;
-
-&lt;p&gt;Here are the parts we&amp;#39;ll be using for this awesome little 180mm quad.&lt;/p&gt;
-
-&lt;table class="small-img"&gt;
-  &lt;tbody&gt;
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Lisam-LS-180-180mm-Carbon-Fiber-Frame-Kit-Mini-Quadcopter-p-1002030.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-airbot-parts-frame-eb-fc-jpg" href="/assets/images/blog/airbot/180/parts/frame-01eb2fc1.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/parts/frame-01eb2fc1.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Lisam-LS-180-180mm-Carbon-Fiber-Frame-Kit-Mini-Quadcopter-p-1002030.html?p=1G09211226617201502J"&gt;Frame: Lisam LS-180 180mm Carbon Fiber Frame Kit Mini Quadcopter&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://shop.myairbot.com/index.php/motor/airbot-t2204-motor-2300kv-56.html"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.625%;'&gt;&lt;a id="assets-images-blog-airbot-parts-xt-a-c-b-webp" href="/assets/images/blog/airbot/180/parts/xt2204-800-6a6c697b.webp" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/parts/xt2204-800-6a6c697b.webp' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://shop.myairbot.com/index.php/motor/airbot-t2204-motor-2300kv-56.html"&gt;Motors: Micro Titan 2204 Motor 2300KV v2&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://shop.myairbot.com/index.php/typhoon4x20a4in1esc-65.html"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-airbot-parts-typhoon-x-a-in-de-b-jpg" href="/assets/images/blog/airbot/180/parts/typhoon4x20a4in1-36de74b0.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/parts/typhoon4x20a4in1-36de74b0.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://shop.myairbot.com/index.php/typhoon4x20a4in1esc-65.html"&gt;ESC: Typhoon 4x20A 4in1 ESC PRO&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a  href="#flight-controller"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.0524934383202%;'&gt;&lt;a id="assets-images-blog-airbot-omnibus-lite-v-pinout-cdeb-jpg" href="/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-1cdeb020.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/omnibus-lite.v.1.0.pinout-1cdeb020.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a  href="#flight-controller"&gt;Flight Controller: OMNIBUS F3 with an integrate BetaFlight OSD&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Eachine-TS5840-Upgraded-40CH-5_8G-200mW-Wireless-AV-Transmitter-TX-for-FPV-Multicopter-p-1033810.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-fpv-channels-ts-e-a-d-jpg" href="/assets/images/blog/fpv_channels/ts5840-e5709a9d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fpv_channels/ts5840-e5709a9d.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Eachine-TS5840-Upgraded-40CH-5_8G-200mW-Wireless-AV-Transmitter-TX-for-FPV-Multicopter-p-1033810.html?p=1G09211226617201502J"&gt;Video Transmitter: Eachine TS5840 Upgraded 40CH 5.8G 200mW&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://rctimer.com/product-1588.html/#r-pNathanT"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95559502664298%;'&gt;&lt;a id="assets-images-blog-airbot-parts-antenna-b-a-jpg" href="/assets/images/blog/airbot/180/parts/antenna-b63873a4.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/parts/antenna-b63873a4.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://rctimer.com/product-1588.html/#r-pNathanT"&gt;Video Antenna: 5.8ghz Circular Polarized Antenna&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/FOXEER-HS1177M-600TVL-CCD-Sony-Chip-Components-PAL-NTSC-2_8mm-IR-Mini-FPV-Camera-5V-22V-with-Bracket-p-1049378.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-airbot-parts-HS-M-a-ab-jpg" href="/assets/images/blog/airbot/180/parts/HS1177M-0636a3ab.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/parts/HS1177M-0636a3ab.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/FOXEER-HS1177M-600TVL-CCD-Sony-Chip-Components-PAL-NTSC-2_8mm-IR-Mini-FPV-Camera-5V-22V-with-Bracket-p-1049378.html?p=1G09211226617201502J"&gt;Camera: FOXEER HS1177M 600TVL HAD II CCD PAL NTSC 2.8mm IR Blocked Mini FPV Camera 5V-22V&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Here&amp;#39;s an alternative, lower cost camera: &lt;a href="http://www.banggood.com/800TVL-13-CMOS-120-Degree-2_8mm-lens-FPV-Camera-3_3-5V-NTSC-PAL-p-1053383.html?p=1G09211226617201502J"&gt;800TVL 1/3 CMOS 120 Degree 2.8mm lens FPV Camera 3.3-5V NTSC PAL&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Everything for the quad is listed above, except the &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;transmitter and receiver&lt;/a&gt;, &lt;a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;battery&lt;/a&gt; and &lt;a href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;charger&lt;/a&gt; is included in the kit! You&amp;#39;ll also want some &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;good goggles&lt;/a&gt; if you&amp;#39;re just getting started.&lt;/p&gt;
-
-&lt;p&gt;This basic setup is great for a beginner:&lt;/p&gt;
-
-&lt;table class="small-img"&gt;
-  &lt;tbody&gt;
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-fs-i-transmitter-ffe-a-jpg" href="/assets/images/blog/parts/fs-i6-transmitter-15ffe6a2.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/fs-i6-transmitter-15ffe6a2.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;FlySky FS-i6 with iA6B Receiver, $53&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-eachine-ev-ea-d-jpg" href="/assets/images/blog/parts/eachine-ev800-ea39189d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/eachine-ev800-ea39189d.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;Eachine EV800 Video Goggles, $77&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-zop-power-s-e-e-ebc-jpg" href="/assets/images/blog/parts/zop-power-3s-e9e73ebc.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/zop-power-3s-e9e73ebc.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;3s 11.1V 1800mAh 45C LiPo Battery with an XT-60 Plug, $15&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-          &lt;tr&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-parts-Eachine-WT-ed-b-ea-jpg" href="/assets/images/blog/parts/Eachine-WT50-1ed5b2ea.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/parts/Eachine-WT50-1ed5b2ea.jpg' class='' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;a target="_blank" href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;Eachine WT50 6A 50W AC/DC Balance Charger Discharger For LiPo/NiCd/PB Battery, $34&lt;/a&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;I picked this setup because these are the most feature-rich and cost effective components you can use to get into FPV flying! The &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;FS-i6 radio with iA6B receiver&lt;/a&gt; is the best value radio that supports PPM. The &lt;a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"&gt;EV800 Video Goggles&lt;/a&gt; are a great value at $77. The &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=97842&amp;amp;aff=1624906"&gt;HobbyKing Quanum DIY FPV Goggles&lt;/a&gt; paired with the &lt;a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=65994&amp;amp;aff=1624906"&gt;Quanum Auto Scan Receiver&lt;/a&gt; is also a very good choice since they have a little better quality, but you have to &lt;a href="/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"&gt;build it yourself (read the build guide here)&lt;/a&gt;. The &lt;a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J"&gt;1800mah battery&lt;/a&gt; will work well in any 150-350mm size quadcopter and the 45c rating means it can deliver 81 Amps, which should be more than enough for your mini-quadcopter. Finally, the &lt;a href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J"&gt;Eachine WT50&lt;/a&gt; charger includes a built in AC-DC converter, so you won&amp;#39;t need an external power supply, like you would with most chargers.&lt;/p&gt;
-
-&lt;p&gt;Total Cost: &lt;code&gt;~$180&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Let&amp;#39;s start building!&lt;/p&gt;
-
-&lt;h2 id="review"&gt;Review&lt;/h2&gt;
-
-&lt;p&gt;The Omnibus flight controller is an awesome F3 flight controller with a MAX7456 OSD chip directly connected to the flight controller, so it can be configured from the BetaFlight configurator.&lt;/p&gt;
-
-&lt;p&gt;I have a prototype Omnibus flight controller. Yours will be gold plated.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://www.banggood.com/Lisam-LS-180-180mm-Carbon-Fiber-Frame-Kit-Mini-Quadcopter-p-1002030.html?p=1G09211226617201502J"&gt;The frame&lt;/a&gt; is well built, high quality carbon fiber. I only have metric calipers, but I&amp;#39;ll convert for you.&lt;/p&gt;
-
-&lt;p&gt;Main body plate is 3.175mm.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03446.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03446_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Side plate is 1.07mm.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03448.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03448_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Top plate is 1.77mm.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03449.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03449_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I used some nail polish to seal the edge of the frame.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03419.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03419_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;a href="http://shop.myairbot.com/index.php/motor/airbot-t2204-motor-2300kv-56.html"&gt;The Micro Titan 2204 Motors&lt;/a&gt; are awesome. They would be slightly better if they did not use clockwise and counter-clockwise shafts, but lock nuts instead. Not a big deal, because now we can buy some &lt;a href="http://www.banggood.com/10-Pairs-Emax-MT2205-RS2205-2205-CWCCW-Brushless-Motor-Replacement-Screw-Nut-p-1057639.html?p=1G09211226617201502J"&gt;CW/CCW locknuts&lt;/a&gt; in case you lose one.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03237.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03237_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="build-guide"&gt;Build Guide&lt;/h2&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 78.86178861788618%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03164.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03164_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Let&amp;#39;s start with the frame&lt;/p&gt;
-
-&lt;h3 id="frame"&gt;Frame&lt;/h3&gt;
-
-&lt;p&gt;Let&amp;#39;s build out the frame a bit first. Attach some nylon standoffs.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03229.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03229_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03233.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03233_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Use some blue thread locker to attach the motors.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03232.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03232_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03235.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03235_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The motors have reverse-threaded shafts, which I&amp;#39;m not a fan of. It would be better if they were all threaded the same way and used lock nuts, but it doesn&amp;#39;t really matter. Just make sure you put the motors with sliver prop nuts on the bottom right and top left.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03236.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03236_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Attach the motors with black prop spinners in the other corners.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03237.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03237_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="escs"&gt;ESCs&lt;/h3&gt;
-
-&lt;p&gt;Next, let&amp;#39;s prep the ESC. We can see the pro edition uses the SiLabs 396 MCU:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03469.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03469_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Solder an XT-60 or deans battery lead on one side of your Typhoon ESC and a smaller servo plug on the other side. One is for the battery and the other side will connect to the flight controller.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03479.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03479_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Install the Typhoon ESC with another set of standoffs.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03481.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03481_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="flight-controller"&gt;Flight Controller&lt;/h3&gt;
-
-&lt;p&gt;Start by soldering the pin headers onto your flight controller. A flux pen will make this easier, but is not required.&lt;/p&gt;
-
-&lt;p&gt;Here is the board with pins populated. I&amp;#39;ve solder an inductor as described above, to power the video camera and transmitter. This isn&amp;#39;t necessary, but there also isn&amp;#39;t any downside, except weight.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03473.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03473_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Alternatively, just put some pin headers on and use a jumper, like this. On a side note, those wires I have soldered straight to the board are for the SWD debugging port. You won&amp;#39;t need to attach those unless you want to debug the code.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.42468239564428%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03563.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03563_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Let&amp;#39;s plug in the flight controller. Here is how the ESC is connected. PWM inputs in the foreground and power (&lt;code&gt;VBAT&lt;/code&gt;) in the background.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03485.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03485_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here&amp;#39;s what it looks like with the flight controller mounted. The inductor looks huge! It&amp;#39;s wayyyy overkill.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03498.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03498_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03499.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03499_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Install BetaFlight by &lt;a href="https://chrome.google.com/webstore/detail/betaflight-configurator/kdaghagfopacdngbohiknlhcocjccjao"&gt;downloading the configurator&lt;/a&gt; or get the latest version of the configurator as follows:&lt;/p&gt;
-
-&lt;p&gt;Go to &lt;a href="https://github.com/betaflight/betaflight-configurator"&gt;https://github.com/betaflight/betaflight-configurator&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Click &lt;code&gt;Clone or download&lt;/code&gt; then &lt;code&gt;Download ZIP&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 54.33673469387755%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-download-b-f-eab-png" href="/assets/images/blog/betaflight-configurator/download-b52f9eab.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/download-b52f9eab.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Then open &lt;a href="chrome://extensions"&gt;chrome://extensions&lt;/a&gt;, check &lt;code&gt;Developer Mode&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Click &lt;code&gt;Load Unpacked Extension&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 38.775510204081634%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-load-unpacked-e-c-png" href="/assets/images/blog/betaflight-configurator/load-unpacked-060e5c84.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/load-unpacked-060e5c84.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Pick the folder you downloaded and unzipped, then launch the configurator.&lt;/p&gt;
-
-&lt;p&gt;Then open the firmware flashing tab, pick the board and the latest BetaFlight version. Change the &lt;code&gt;Manual baud rate&lt;/code&gt; to &lt;code&gt;256000&lt;/code&gt; as with all F3 flight controllers, then hit &lt;code&gt;Load Firmware [Online]&lt;/code&gt; and &lt;code&gt;Flash Firmware&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-flash-a-cd-png" href="/assets/images/blog/betaflight-configurator/flash-3a235cd8.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/flash-3a235cd8.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Then hit connect.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-connect-c-png" href="/assets/images/blog/betaflight-configurator/connect-601509c1.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/connect-601509c1.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Open the OSD tab, pick the font style you prefer (from the upper right hand corner, I like bold&lt;code&gt;) then click&lt;/code&gt;Upload Font`. The flight controller will reboot when the upload is complete.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-osd-bd-png" href="/assets/images/blog/betaflight-configurator/osd-6058bd39.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/osd-6058bd39.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you like to fly with an artificial horizon, go back to the OSD tab, enable it and hit &lt;code&gt;Save&lt;/code&gt;. In this photo, I have the video from the OMNIBUS being captured by my computer so you can see it:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 38.9344262295082%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-ahi-e-png" href="/assets/images/blog/betaflight-configurator/ahi-4948e564.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/ahi-4948e564.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now double check your power connections, ensuring all grounds are connected to ground, the battery pin is correct and that 5v goes to 5v. Then plug in the battery.&lt;/p&gt;
-
-&lt;p&gt;Open the BetaFlight configurator and spin up each motor to ensure it is the correct location and spins the correct direction.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-motors-d-dafd-png" href="/assets/images/blog/betaflight-configurator/motors-d39dafd5.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/motors-d39dafd5.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now would be a good time to calibrate your ESCs as well. To do this, unplug the battery, slide the &lt;code&gt;Master&lt;/code&gt; slider on the motors tab all the way up, plug in the battery. Wait for the beeping to stop, then slide the master slider all the way down. Wait for the beeping to stop then unplug the battery.&lt;/p&gt;
-
-&lt;h3 id="camera"&gt;Camera&lt;/h3&gt;
-
-&lt;p&gt;Let&amp;#39;s install the standoffs then get to the camera.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03531.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03531_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The camera comes with a manual and some buttons on a PCB to control the menu.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03459.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03459_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here&amp;#39;s how you&amp;#39;ll attach the camera.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03500.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03500_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The Video Transmitter.&lt;/p&gt;
-
-&lt;h3 id="final-assembly"&gt;Final assembly&lt;/h3&gt;
-
-&lt;p&gt;Tidy up the build, I&amp;#39;ll zip tie down the motors.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03539.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03539_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Install the LED strip.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03541.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03541_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Assemble the beeper.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03543.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03543_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Install the better.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03545.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03545_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="video-transmitter"&gt;Video transmitter&lt;/h3&gt;
-
-&lt;p&gt;I&amp;#39;ll mount the transmitter here. I used a dab of hot glue to keep the zip tie in place.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03546.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03546_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Screw the camera into the faceplate.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03535.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03535_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Mount the camera.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03551.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03551_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Install the top plate.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03552.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03552_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Looking good.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03554.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03554_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03555.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03555_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03579.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03579_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id="channels"&gt;Channels&lt;/h4&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 36.3013698630137%;'&gt;&lt;a id="assets-images-blog-fpv-channels-TS-channels-f-bc-b-png" href="/assets/images/blog/fpv_channels/TS5840-channels-f6bc75b5.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fpv_channels/TS5840-channels-f6bc75b5.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id="dip-switch"&gt;Dip Switch&lt;/h4&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 86.5%;'&gt;&lt;a id="assets-images-blog-fpv-channels-TS-switches-c-cd-c-png" href="/assets/images/blog/fpv_channels/TS5840-switches-c9cd043c.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fpv_channels/TS5840-switches-c9cd043c.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="receiver"&gt;Receiver&lt;/h3&gt;
-
-&lt;p&gt;We&amp;#39;ll be using the &lt;a href="http://www.banggood.com/Flysky-2_4G-6CH-FS-iA6B-Receiver-PPM-Output-With-iBus-Port-p-978603.html?p=1G09211226617201502J"&gt;FlySky iA6B Receiver&lt;/a&gt; included with the &lt;a href="http://www.banggood.com/Flysky-2_4G-6CH-FS-iA6B-Receiver-PPM-Output-With-iBus-Port-p-978603.html?p=1G09211226617201502J"&gt;FlySky i6 Radio Transmitter&lt;/a&gt;. The protocol is SBUS and we&amp;#39;ll use Serial Port 2. If you&amp;#39;re using other serial devices, you can choose any open serial port.&lt;/p&gt;
-
-&lt;p&gt;Wire it up like so, I&amp;#39;m using UART2:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03501.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03501_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I also removed the case and pins.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03567.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03567_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03573.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03573_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03574.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03574_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Then mounted it on the bottom of the quad.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03576.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03576_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03596.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03596_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;So first, go to the ports tab and enable Serial RX for UART2.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-serial-e-b-a-png" href="/assets/images/blog/betaflight-configurator/serial-e83b788a.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/serial-e83b788a.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Then open the configuration tab and pick &lt;code&gt;RX_SERIAL&lt;/code&gt; under the &lt;code&gt;Receiver Mode&lt;/code&gt; section and &lt;code&gt;IBUS&lt;/code&gt; for the &lt;code&gt;Serial Receiver Provider&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-rx-a-a-png" href="/assets/images/blog/betaflight-configurator/rx-1a1a8165.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/rx-1a1a8165.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now would be a good time to set your flight modes and switches. First, let&amp;#39;s setup the radio.&lt;/p&gt;
-
-&lt;h3 id="flysky-fs-i6-transmitter-config"&gt;Flysky FS-i6 Transmitter Config&lt;/h3&gt;
-
-&lt;p&gt;Start by configuration your transmitter to send the proper switches on the given channels.&lt;/p&gt;
-
-&lt;p&gt;Press and hold &lt;code&gt;OK&lt;/code&gt; on the transmitter to bring up the menu.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03504.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03504_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Hit &lt;code&gt;UP&lt;/code&gt; to move the cursor to &lt;code&gt;Functions Setup&lt;/code&gt; and hit &lt;code&gt;OK&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03505.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03505_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Move &lt;code&gt;DOWN&lt;/code&gt; until you get to &lt;code&gt;AUX Channels&lt;/code&gt; then hit &lt;code&gt;OK&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03506.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03506_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Hit &lt;code&gt;UP&lt;/code&gt; to change channel 5 to SWA hit &lt;code&gt;OK&lt;/code&gt; and change channel 6 to &lt;code&gt;SWC&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Press and hold &lt;code&gt;Cancel&lt;/code&gt; to save and get out of the menu, then press &lt;code&gt;Cancel&lt;/code&gt; twice more to exit the menus.&lt;/p&gt;
-
-&lt;p&gt;Check the receiver tab in the configurator and make sure moving the switches moves AUX1 (far left switch) and AUX2 (3 position switch).&lt;/p&gt;
-
-&lt;p&gt;Then go setup your modes.&lt;/p&gt;
-
-&lt;p&gt;We&amp;#39;ll use the left most switch to arm and the 3 position switch for flight modes.&lt;/p&gt;
-
-&lt;p&gt;Acro mode by default, then middle will be for horizon (which is auto-leveling but still allows flips) and all the way down will be angle (which doesn&amp;#39;t allow flips) and beeper. The beeper is enabled with Angle mode in case I lose video, I can take off my goggles and look for the quad while listening for the beeper.&lt;/p&gt;
-
-&lt;p&gt;Paste this into the configurator or set them on the modes tab:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;aux 0 0 0 1700 2100
-aux 1 1 1 1800 2100
-aux 2 2 1 1300 1700
-aux 3 12 1 1800 2100
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you&amp;#39;re using PPM mode. The setup is almost the same, just connect like so and enable RX_PPM instead of Serial RX. Here is an example with the same &lt;a href="http://www.banggood.com/Flysky-2_4G-6CH-FS-iA6B-Receiver-PPM-Output-With-iBus-Port-p-978603.html?p=1G09211226617201502J"&gt;FlySky iA6B Receiver&lt;/a&gt;, which can also do PPM.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03521.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03521_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="blackbox"&gt;Blackbox&lt;/h3&gt;
-
-&lt;p&gt;To get the blackbox working, simply insert a FAT32 formatted micro SDcard. Make sure the partition is set to be Master Boot Record (MBR).&lt;/p&gt;
-
-&lt;p&gt;If you&amp;#39;re using a mac, plug in the SDcard, open a terminal and run:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;› diskutil list
-/dev/disk0 (internal, physical):
-   #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:      GUID_partition_scheme                        *1.0 TB     disk0
-   1:                        EFI EFI                     209.7 MB   disk0s1
-   2:          Apple_CoreStorage meta                    1.0 TB     disk0s2
-   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
-/dev/disk1 (internal, physical):
-   #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:      GUID_partition_scheme                        *2.0 TB     disk1
-   1:                        EFI EFI                     209.7 MB   disk1s1
-   2:                  Apple_HFS data                    2.0 TB     disk1s2
-/dev/disk2 (internal, virtual):
-   #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:                  Apple_HFS meta                   +1.0 TB     disk2
-/dev/disk3 (external, physical):
-   #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:      GUID_partition_scheme                        *2.0 GB     disk3
-   1:       Microsoft Basic Data UNTITLED                2.0 GB     disk3s1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Find your SDcard device on the list then run, replacing &lt;code&gt;disk3&lt;/code&gt; with the path to your disk:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;sudo diskutil eraseDisk FAT32 UNTITLED MBRFormat /dev/disk3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The SDCard should be inserted upside down with the pins facing up.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-sdcard-fbe-png" href="/assets/images/blog/betaflight-configurator/sdcard-028fbe08.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/sdcard-028fbe08.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Open the BetaFlight configurator and go to the blackbox tab. You&amp;#39;ll see a message stating all is well!&lt;/p&gt;
-
-&lt;p&gt;To pull the logs, simply copy them off the SDCard from your computer!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 55.654761904761905%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-bb-pull-logs-png" href="/assets/images/blog/betaflight-configurator/bb-pull-logs-58905862.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/bb-pull-logs-58905862.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="led-strip"&gt;Led Strip&lt;/h3&gt;
-
-&lt;p&gt;Open the &lt;code&gt;Configuration Tab&lt;/code&gt; and under &lt;code&gt;Other Features&lt;/code&gt; enable &lt;code&gt;LED_STRIP&lt;/code&gt;. Note that the &lt;code&gt;TRANSPONDER&lt;/code&gt; cannot be enabled at the same time. You can use either the led strip or the transponder.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-led-enable-be-aa-png" href="/assets/images/blog/betaflight-configurator/led-enable-2be173aa.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/led-enable-2be173aa.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Start by setting the LED order. Hit &lt;code&gt;Clear All&lt;/code&gt;, then &lt;code&gt;Wire Ordering Mode&lt;/code&gt; then click 8 boxes in a row (or however many LEDs you have in whatever configuration) and click &lt;code&gt;Wire Ordering Mode&lt;/code&gt; again to exit ordering mode.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-led-b-c-b-png" href="/assets/images/blog/betaflight-configurator/led-1-1b5c41b4.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/led-1-1b5c41b4.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;My config is pretty simple, colored leds with throttle indication in the middle.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-led-d-png" href="/assets/images/blog/betaflight-configurator/led-2-d4113093.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/led-2-d4113093.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="other-configuration"&gt;Other configuration&lt;/h3&gt;
-
-&lt;p&gt;Download my &lt;a href="#"&gt;BetaFlight 3.0 config here&lt;/a&gt; or use the following settings:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;4khz (250ms loop time). Because it&amp;#39;s awesome!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-khz-b-df-png" href="/assets/images/blog/betaflight-configurator/4khz-18b03df0.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/4khz-18b03df0.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Adjust min check and max check&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;set min_check = 1040
-set max_check = 1900
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Super Expo and Airmode&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;feature AIRMODE
-feature SUPEREXPO_RATES
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id="troubleshooting"&gt;Troubleshooting&lt;/h3&gt;
-
-&lt;h4 id="quad-won-39-t-arm"&gt;Quad won&amp;#39;t arm&lt;/h4&gt;
-
-&lt;p&gt;Give it a few seconds after you plug in the battery, sometimes the SDCard takes a second or two to settle. If you still can&amp;#39;t arm after waiting more than 30 seconds. Open the configurator and run &lt;code&gt;status&lt;/code&gt; several times. Copy the output and ask for help on the forums (or leave a comment below). You won&amp;#39;t be able to arm if the CPU usage is too high.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 65.37489469250211%;'&gt;&lt;a id="assets-images-blog-betaflight-configurator-tasks-e-a-dcef-png" href="/assets/images/blog/betaflight-configurator/tasks-e5a2dcef.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/betaflight-configurator/tasks-e5a2dcef.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-</content>
   </entry>
 </feed>

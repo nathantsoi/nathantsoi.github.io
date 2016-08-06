@@ -116,8 +116,9 @@ BetaFlight Kiss Flight Controller
 </div>
 <div class='row'>
 <div class='col-lg-12 table-of-contents'>
-<ul class="nav"><li><a class="type-h2" href="#pinout"><h2>Pinout</h2></a></li>
-<li><a class="type-h2" href="#flashing"><h2>Flashing</h2></a></li></ul>
+<ul class="nav"><li><a class="type-h2" href="#pinout"><h2>Pinout</h2></a></li><ul><li><a class="type-h3" href="#ppm"><h3>PPM</h3></a></li>
+<li><a class="type-h3" href="#serial-rx"><h3>Serial RX</h3></a></li></ul>
+<li><a class="type-h2" href="#flashing"><h2>Flashing</h2></a></li><ul><li><a class="type-h3" href="#swd"><h3>SWD</h3></a></li></ul></ul>
 </div>
 </div>
 <div class='row'>
@@ -128,12 +129,12 @@ Related Articles
 <div class='row'>
 <div class='col-lg-12 related'>
 <ul>
+<li><a href="/blog/2016/02/06/hmdvr-fpv-video-recorder/">HMDVR FPV Video Recorder</a></li>
+<li><a href="/blog/2016/07/25/j-link-getting-started-guide/">J-Link Getting Started Guide</a></li>
 <li><a href="/blog/2015/12/06/blheli-calibration/">BlHeli CleanFlight ESC Calibration</a></li>
-<li><a href="/blog/2015/06/17/boscam-tx-rx-fpv-channels/">Wireless Video Tx/Rx FPV Channels</a></li>
-<li><a href="/blog/2015/05/08/xiaomi-yi-the-ant-camera/">Xiaomi Yi -- The Ant Camera</a></li>
-<li><a href="/blog/2016/04/02/turnigy-reaktor-250w-charger/">Turnigy Reaktor 250W Charger</a></li>
-<li><a href="/blog/2016/03/24/betaflight-in-flight-pid-tuning/">BetaFlight in-flight PID tuning</a></li>
-<li><a href="/blog/2016/03/23/drone-building-at-maker-faire-bay-area-2016/">Drone Building at Maker Faire Bay Area 2016</a></li>
+<li><a href="/blog/2015/10/29/multirotor-setup-checklist/">MultiRotor Setup Checklist</a></li>
+<li><a href="/blog/2015/12/06/blheli-esc-identification/">BlHeli ESCs</a></li>
+<li><a href="/blog/2015/12/06/blheli-configuration/">BlHeli ESC Upgrading and Configuration</a></li>
 </ul>
 </div>
 </div>
@@ -208,9 +209,45 @@ Checkout my other guides at
 
 <div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 90.34175334323923%;'><a id="assets-images-blog-kissfc-schematic-bd-png" href="/assets/images/blog/kissfc/schematic-12673bd7.png" class="linked-img colorbox"><img src='/assets/images/blog/kissfc/schematic-12673bd7.png' class='trailing-space' ></img></a></div></div>
 
+<h3 id="ppm">PPM</h3>
+
+<p>Wire your PPM receiver like this.</p>
+<pre class="highlight plaintext"><code>Green -&gt; Signal
+Red -&gt; 5v
+Blue -&gt; GND
+</code></pre>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-kissfc-DSC-JPG" href="/assets/images/blog/kissfc/DSC03616.JPG" class="linked-img colorbox"><img src='/assets/images/blog/kissfc/DSC03616_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Then enable PPM in the BetaFlight Configurator on the <code>Configuration</code> tab under <code>Receiver Mode</code>.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 60.2112676056338%;'><a id="assets-images-blog-kissfc-serialrx-ppm-a-png" href="/assets/images/blog/kissfc/serialrx-ppm-054a7772.png" class="linked-img colorbox"><img src='/assets/images/blog/kissfc/serialrx-ppm-054a7772.png' class='trailing-space' ></img></a></div></div>
+
+<p>Hit <code>save and reboot</code> and check that your receiver is working in the <code>Receiver</code> tab.</p>
+
+<h3 id="serial-rx">Serial RX</h3>
+
+<p>Wire your Serial RX receiver like this.</p>
+<pre class="highlight plaintext"><code>Green -&gt; Signal
+Red -&gt; 5v
+Blue -&gt; GND
+</code></pre>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-kissfc-DSC-JPG" href="/assets/images/blog/kissfc/DSC03615.JPG" class="linked-img colorbox"><img src='/assets/images/blog/kissfc/DSC03615_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Then enable Serial RX on UART1:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 60.2112676056338%;'><a id="assets-images-blog-kissfc-serialrx-uart-bcf-e-b-png" href="/assets/images/blog/kissfc/serialrx-uart1-bcf43e5b.png" class="linked-img colorbox"><img src='/assets/images/blog/kissfc/serialrx-uart1-bcf43e5b.png' class='trailing-space' ></img></a></div></div>
+
+<p>Hit <code>save and reboot</code>, then enable <code>Serial RX</code> and select the correct protocol, I&#39;m using <code>IBUS</code>:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 60.2112676056338%;'><a id="assets-images-blog-kissfc-serialrx-ibus-fe-png" href="/assets/images/blog/kissfc/serialrx-ibus-7544fe34.png" class="linked-img colorbox"><img src='/assets/images/blog/kissfc/serialrx-ibus-7544fe34.png' class='trailing-space' ></img></a></div></div>
+
+<p>Hit <code>save and reboot</code> and check that your receiver is working in the <code>Receiver</code> tab.</p>
+
 <h2 id="flashing">Flashing</h2>
 
-<p>First, download the latest <a href="https://github.com/betaflight/betaflight/releases/latest">BetaFlight release</a> and the <a href="http://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-programmers/stsw-stm32080.html">STM32 DFU Flash tool</a>. The DFU download link is at the bottom of the page. It may be possible to flash the BetaFlight hex with the BetaFlight configurator, but I couldn&#39;t get it to work. Instead, I&#39;ll use the DFU flash tool for the first flash.</p>
+<p>First, download the latest <a href="https://github.com/betaflight/betaflight/releases/latest">BetaFlight release</a> and the <a href="http://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-programmers/stsw-stm32080.html">STM32 DFU Flash tool</a>. The DFU download link is at the bottom of the page. It may be possible to flash the BetaFlight hex with the BetaFlight configurator, but I couldn&#39;t get it to work. Instead, I&#39;ll use the DFU flash tool for the first flash. After that, the BetaFligth configurator worked fine for me.</p>
 
 <p>Install the DFU software by unzipping the download and following the walk through. Launch the DFU flash tool and you should see:</p>
 
@@ -229,6 +266,32 @@ Checkout my other guides at
 <div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 97.09507042253522%;'><a id="assets-images-blog-kissfc-flash-normally-d-d-png" href="/assets/images/blog/kissfc/flash-normally-4d88563d.png" class="linked-img colorbox"><img src='/assets/images/blog/kissfc/flash-normally-4d88563d.png' class='trailing-space' ></img></a></div></div>
 
 <p>When you&#39;re done, the board should reboot and you can connect.</p>
+
+<h3 id="swd">SWD</h3>
+
+<p>SWD is the debugging interface which is used for stepping through instructions while developing software for the flight controller.</p>
+
+<p>Debugging pins are:</p>
+<pre class="highlight plaintext"><code>AUX1 (PA13) -&gt; SWDIO
+AUX2 (PA14) -&gt; SWDCLK
+</code></pre>
+
+<p>Here&#39;s how to wire it:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.0%;'><a id="assets-images-blog-kissfc-IMG-a-e-ebbd-jpg" href="/assets/images/blog/kissfc/IMG_20160804_222400-a6e3ebbd.jpg" class="linked-img colorbox"><img src='/assets/images/blog/kissfc/IMG_20160804_222400_prev-8799cb13.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Note that pwm inputs matching these pins must be disabled. Change:</p>
+
+<p><code>target.h</code>:</p>
+<pre class="highlight plaintext"><code>#define USABLE_TIMER_CHANNEL_COUNT 10
+</code></pre>
+
+<p><code>target.c</code>:</p>
+<pre class="highlight json"><code><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="err">TIM2,</span><span class="w">  </span><span class="err">IO_TAG(PB11),</span><span class="w"> </span><span class="err">TIM_Channel_4,</span><span class="w"> </span><span class="err">TIM2_IRQn,</span><span class="w">               </span><span class="err">0,</span><span class="w"> </span><span class="err">IOCFG_AF_PP,</span><span class="w"> </span><span class="err">GPIO_AF_1</span><span class="p">}</span><span class="err">,</span><span class="w">
+    </span><span class="err">//</span><span class="p">{</span><span class="w"> </span><span class="err">TIM4,</span><span class="w">  </span><span class="err">IO_TAG(PA13),</span><span class="w"> </span><span class="err">TIM_Channel_2,</span><span class="w"> </span><span class="err">TIM4_IRQn,</span><span class="w">               </span><span class="err">0,</span><span class="w"> </span><span class="err">IOCFG_AF_PP,</span><span class="w"> </span><span class="err">GPIO_AF_10</span><span class="p">}</span><span class="err">,</span><span class="w">
+    </span><span class="err">//</span><span class="p">{</span><span class="w"> </span><span class="err">TIM8,</span><span class="w">  </span><span class="err">IO_TAG(PA14),</span><span class="w"> </span><span class="err">TIM_Channel_3,</span><span class="w"> </span><span class="err">TIM8_CC_IRQn,</span><span class="w">            </span><span class="err">0,</span><span class="w"> </span><span class="err">IOCFG_AF_PP,</span><span class="w"> </span><span class="err">GPIO_AF_5</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span><span class="err">};</span><span class="w">
+</span></code></pre>
 
 <div class='text-center' style='margin: 1em'>
 Checkout my other guides at
