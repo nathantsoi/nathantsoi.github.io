@@ -230,11 +230,15 @@ Checkout my other guides at
 
 <p>The Omnibus flight controller uses the MPU6000 over SPI for the best possible flight performance. If you haven&#39;t already seen it, you should checkout <a href="https://youtu.be/Obo4nvcyDms">Josh&#39;s awesome video on different IMUs</a>. Along with the MPU6000 are a barometer and an AB7456 OSD chip (an upgraded MAX7456) for the BetaFlight integrated OSD.</p>
 
-<p>Finally, you won&#39;t need a PDB with this build because there is a high performance 5v, 1.5a STMicrocontroller L78 voltage regulator, so you can plug the flight battery right into the flight controller.</p>
+<p>The Omnibus has an SDCard for blackbox logging and uses the much faster VCP USB link, so it takes minutes instead of hours to copy your blackbox logs off the flight controller.</p>
+
+<p>Finally, you won&#39;t need a PDB with this build because there is a high performance 5v, 1.5a STMicrocontroller L78 voltage regulator (rated up to 4s), so you can plug the flight battery right into the flight controller.</p>
 
 <p>I&#39;ll be using the AirBot Typhoon 4-in-1 Pro ESC.</p>
 
 <p>I have a prototype board. Production boards are gold plated.</p>
+
+<p><b>Update Aug, 2016</b>: Given how fast BetaFlight development moves, my config is probably out of date. I&#39;ll try to keep it updated, but it&#39;s better to start with the default BetaFlight settings from the latest release and setup whatever features you need, as described below.</p>
 
 <p>Here is my complete BetaFlight 3.0 config, if you want to copy and paste. Please read through the guide to better understand the settings <a href="https://gist.github.com/nathantsoi/ee8adb244e62fb4f128e840c785828a4">https://gist.github.com/nathantsoi/ee8adb244e62fb4f128e840c785828a4</a></p>
 
