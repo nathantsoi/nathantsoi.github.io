@@ -289,7 +289,7 @@ CFBP = 00000000, CONTROL = 00, FAULTMASK = 00, BASEPRI = 00, PRIMASK = 00
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/"/>
     <id>http://nathan.vertile.com/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/</id>
     <published>2016-07-08T22:00:00-07:00</published>
-    <updated>2016-07-25T22:16:55-07:00</updated>
+    <updated>2016-08-28T19:55:09-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -350,6 +350,10 @@ CFBP = 00000000, CONTROL = 00, FAULTMASK = 00, BASEPRI = 00, PRIMASK = 00
 &lt;p&gt;Pinout:&lt;/p&gt;
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-fs-i-px-FlySky-IA-B-pinout-f-eed-f-jpg" href="/assets/images/blog/fs_i6/500px-FlySky_IA6B_pinout-f89eed4f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/500px-FlySky_IA6B_pinout-f89eed4f.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.50390625%;'&gt;&lt;a id="assets-images-blog-fs-i-pins-back-fccc-c-jpg" href="/assets/images/blog/fs_i6/pins-back-4fccc06c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/pins-back-4fccc06c.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.40625%;'&gt;&lt;a id="assets-images-blog-fs-i-pins-front-a-b-jpg" href="/assets/images/blog/fs_i6/pins-front-a87307b4.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/pins-front-a87307b4.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id="teardown"&gt;Teardown&lt;/h2&gt;
 
@@ -531,6 +535,16 @@ Note that your USBASP programmer should have two voltage settings. BE SURE TO US
 &lt;p&gt;Now that you&amp;#39;ve got the module connected to your USBASP, &lt;a href="https://github.com/pascallanger/DIY-Multiprotocol-TX-Module/releases"&gt;download the code from github&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Edit the &lt;a href="https://gist.github.com/nathantsoi/a65b7baff0e044af05f6854e799c5fc5"&gt;_Config.h&lt;/a&gt; file or &lt;a href="https://gist.github.com/nathantsoi/a65b7baff0e044af05f6854e799c5fc5"&gt;use mine&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Turn the dial to &lt;code&gt;0&lt;/code&gt; and pick &amp;#39;Upload Using Programmer&amp;#39;&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 67.17557251908397%;'&gt;&lt;a id="assets-images-blog-fs-i-programmer-b-png" href="/assets/images/blog/fs_i6/programmer-58028b50.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/programmer-58028b50.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Wait for the confirmation message and you&amp;#39;re good to go!&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 18.060498220640568%;'&gt;&lt;a id="assets-images-blog-fs-i-confirmed-e-b-png" href="/assets/images/blog/fs_i6/confirmed-181e83b6.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/confirmed-181e83b6.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Alternatively, you can flash via the command line.&lt;/p&gt;
 
 &lt;p&gt;Turn on verbose logging in the Arduino studio, build the firmware and copy out the firmware build command.&lt;/p&gt;
 

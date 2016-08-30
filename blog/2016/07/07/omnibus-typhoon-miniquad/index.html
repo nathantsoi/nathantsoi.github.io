@@ -27,7 +27,7 @@
 <title>
 Omnibus Flight Controller and Airbot Typhoon 180 Miniquad Build
 </title>
-<link href="/assets/stylesheets/all-9c4dcd92.css" rel="stylesheet" />
+<link href="/assets/stylesheets/all-6acef658.css" rel="stylesheet" />
 <script src="/assets/javascripts/all-d5b91b8e.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -148,7 +148,7 @@ Related Articles
 <li><a href="/blog/2016/05/08/drone-building-101-with-the-hobbyking-fpv-starter-setup/">Drone Building 101 with the HobbyKing FPV Starter Setup</a></li>
 <li><a href="/blog/2016/03/22/rctimer-br-x200-mini-quad-build-setup-and-review/">Rctimer BR-X200 Mini-quad Build, Setup and Review</a></li>
 <li><a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/">ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller</a></li>
-<li><a href="/blog/2016/01/29/rctimer-q600-quadcopter/">Q600 Quadcopter</a></li>
+<li><a href="/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/">Rctimer Micro 160 BeeRotor Build, Setup and Review</a></li>
 <li><a href="/blog/2016/06/22/fpv-goggle-guide/">FPV Goggle Guide</a></li>
 </ul>
 </div>
@@ -238,7 +238,7 @@ Checkout my other guides at
 
 <p>I have a prototype board. Production boards are gold plated.</p>
 
-<p><b>Update Aug, 2016</b>: Given how fast BetaFlight development moves, my config is probably out of date. I&#39;ll try to keep it updated, but it&#39;s better to start with the default BetaFlight settings from the latest release and setup whatever features you need, as described below.</p>
+<p><b>Update Aug, 2016</b>: Given how fast BetaFlight development moves, the linked config file is probably out of date. I&#39;ll try to keep it updated, but it&#39;s better to start with the default BetaFlight settings from the latest release and setup whatever features you need, as described below.</p>
 
 <p>Here is my complete BetaFlight 3.0 config, if you want to copy and paste. Please read through the guide to better understand the settings <a href="https://gist.github.com/nathantsoi/ee8adb244e62fb4f128e840c785828a4">https://gist.github.com/nathantsoi/ee8adb244e62fb4f128e840c785828a4</a></p>
 
@@ -268,7 +268,11 @@ Checkout my other guides at
 
 <p>The next thing to consider is what receiver you&#39;ll be using: Serial RX (such as IBUS, FRSKY or Spektrum Satellite) or PPM. I&#39;ll be using the IBUS receiver included with the <a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J">FlySky FS-i6</a>.</p>
 
-<p>My prototype board came with both the PPM and SerialRX resistors connected. At some point there will be software to support using PPM and SerialRX on the same pin allowing you to select between them in the configurator. Until then, you&#39;ll want to remove the resistor labeled <code>SBUS</code>.</p>
+<p><b>Update Aug, 2016</b>: The PPM pin and SERIAL RX pin are shared between UART3 and PPM. Simply plug in the reciever to the one port and pick PPM or Serial RX in the BetaFlight configurator. This also means that when PPM is in use, UART3 cannot be used. However, if you are out of serial ports, using PPM and need one more, you can remove the SBUS resistor as described below and uncomment this line from the BetaFlight source code <code>#define AVOID_UART3_FOR_PWM_PPM</code>. This will enable both PPM and UART3.</p>
+
+<p><outdated>
+Outdated: My prototype board came with both the PPM and SerialRX resistors connected. At some point there will be software to support using PPM and SerialRX on the same pin allowing you to select between them in the configurator. Until then, you&#39;ll want to remove the resistor labeled <code>SBUS</code>.
+</outdated></p>
 
 <p>If the <code>SBUS</code> resistor is removed and the PPM resistor is installed, you&#39;ll want to connect your SBUS or IBUS or any serial receiver to a different serial port:</p>
 
@@ -346,6 +350,15 @@ Checkout my other guides at
         </td>
         <td>
           <a target="_blank" href="http://www.banggood.com/FOXEER-HS1177M-600TVL-CCD-Sony-Chip-Components-PAL-NTSC-2_8mm-IR-Mini-FPV-Camera-5V-22V-with-Bracket-p-1049378.html?p=1G09211226617201502J">Camera: FOXEER HS1177M 600TVL HAD II CCD PAL NTSC 2.8mm IR Blocked Mini FPV Camera 5V-22V</a>
+        </td>
+      </tr>
+
+          <tr>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/CJMCU-8-Bit-WS2812-5050-RGB-LED-Driver-Development-Board-p-958214.html?p=1G09211226617201502J"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 100.0%;'><a id="assets-images-blog-airbot-parts-SKU-jpg" href="/assets/images/blog/airbot/180/parts/SKU182363-1-54924036.jpg" class="linked-img colorbox"><img src='/assets/images/blog/airbot/180/parts/SKU182363-1-54924036.jpg' class='' ></img></a></div></div></a>
+        </td>
+        <td>
+          <a target="_blank" href="http://www.banggood.com/CJMCU-8-Bit-WS2812-5050-RGB-LED-Driver-Development-Board-p-958214.html?p=1G09211226617201502J">RGB Led Strip</a>
         </td>
       </tr>
 
@@ -609,6 +622,8 @@ Checkout my other guides at
 
 <p>We&#39;ll be using the <a href="http://www.banggood.com/Flysky-2_4G-6CH-FS-iA6B-Receiver-PPM-Output-With-iBus-Port-p-978603.html?p=1G09211226617201502J">FlySky iA6B Receiver</a> included with the <a href="http://www.banggood.com/Flysky-2_4G-6CH-FS-iA6B-Receiver-PPM-Output-With-iBus-Port-p-978603.html?p=1G09211226617201502J">FlySky i6 Radio Transmitter</a>. The protocol is SBUS and we&#39;ll use Serial Port 2. If you&#39;re using other serial devices, you can choose any open serial port.</p>
 
+<p><b>Update Aug, 2016</b>: The shared PPM / SERIAL RX pin is working so there is no need to use UART2. Simply plug into this port and configure the receiver for UART3 as described below.</p>
+
 <p>Wire it up like so, I&#39;m using UART2:</p>
 
 <div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03501.JPG" class="linked-img colorbox"><img src='/assets/images/blog/airbot/180/DSC03501_prev.JPG' class='trailing-space' ></img></a></div></div>
@@ -620,6 +635,12 @@ Checkout my other guides at
 <div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03573.JPG" class="linked-img colorbox"><img src='/assets/images/blog/airbot/180/DSC03573_prev.JPG' class='trailing-space' ></img></a></div></div>
 
 <div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03574.JPG" class="linked-img colorbox"><img src='/assets/images/blog/airbot/180/DSC03574_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Here are the pinouts for those interested:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.43376187814421%;'><a id="assets-images-blog-fs-i-pins-tx-c-d-jpg" href="/assets/images/blog/fs_i6/pins-tx-c8d29284.jpg" class="linked-img colorbox"><img src='/assets/images/blog/fs_i6/pins-tx_prev-64773ea3.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.46509070918087%;'><a id="assets-images-blog-fs-i-pins-rx-f-cbf-jpg" href="/assets/images/blog/fs_i6/pins-rx-f0cbf059.jpg" class="linked-img colorbox"><img src='/assets/images/blog/fs_i6/pins-rx_prev-42d260de.jpg' class='trailing-space' ></img></a></div></div>
 
 <p>Then mounted it on the bottom of the quad.</p>
 
