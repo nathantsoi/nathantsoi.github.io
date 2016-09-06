@@ -5,10 +5,556 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-07-28T22:30:00-07:00</updated>
+  <updated>2016-09-04T20:22:00-07:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
+  <entry>
+    <title>Omnibus F3 Pro</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/09/05/omnibus-f3-pro/"/>
+    <id>http://nathan.vertile.com/blog/2016/09/05/omnibus-f3-pro/</id>
+    <published>2016-09-04T20:22:00-07:00</published>
+    <updated>2016-09-05T19:59:46-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This is an overview of the new OmnibusF3 Pro from Airbot.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 102.54060807996667%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03791.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03791_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;My board is a prototype. Final boards are basically the same except they are gold plated and include an LC filter. Awesome!&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 99.483306836248%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03818.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03818_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;The OmnibusF3 Pro improves upon the standard OmnibusF3, adding a Baro and Current sensor.&lt;/p&gt;
+
+&lt;p&gt;Read the full OmnibusF3 review and setup guide in the &lt;a href="/blog/2016/07/07/omnibus-typhoon-miniquad/#pinouts"&gt;Omnibus Flight Controller and Airbot Typhoon 180 Miniquad Build&lt;/a&gt; article.&lt;/p&gt;
+
+&lt;h2 id="pinouts"&gt;Pinouts&lt;/h2&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 102.93040293040292%;'&gt;&lt;a id="assets-images-blog-airbot-omnibusf-pro-top-a-c-c-png" href="/assets/images/blog/airbot/180/omnibusf3-pro-top-a0c107c7.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/omnibusf3-pro-top-a0c107c7.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 97.90996784565917%;'&gt;&lt;a id="assets-images-blog-airbot-omnibusf-pro-bottom-c-f-aea-png" href="/assets/images/blog/airbot/180/omnibusf3-pro-bottom-c19f8aea.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/omnibusf3-pro-bottom-c19f8aea.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bridge two of these pads to pick the voltage that will be applied to the RAM bus (the video pins).&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 99.483306836248%;'&gt;&lt;a id="assets-images-blog-airbot-omnibusf-pro-voltage-selection-cb-ff-jpg" href="/assets/images/blog/airbot/180/omnibusf3-pro-voltage-selection-4cb414ff.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/omnibusf3-pro-voltage-selection_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The 4-in-1 ESC can be connected via the SH1.0 connector:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 99.483306836248%;'&gt;&lt;a id="assets-images-blog-airbot-omnibusf-pro-in-e-e-jpg" href="/assets/images/blog/airbot/180/omnibusf3-pro-4-in-1-e6e43390.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/omnibusf3-pro-4-in-1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Or connected via the standard 2.54mm pins on top.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Geeetech Prusa I3 X Build Guide</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/08/06/geeetech-prusa-i3-x-build-guide/"/>
+    <id>http://nathan.vertile.com/blog/2016/08/06/geeetech-prusa-i3-x-build-guide/</id>
+    <published>2016-08-05T21:14:00-07:00</published>
+    <updated>2016-09-05T19:57:38-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;I just got my first 3D printer, the &lt;a href="http://us.banggood.com/Geeetech-Prusa-I3-X-3D-Printer-DIY-Kit-Full-Acrylic-Frame-p-1010500.html?p=1G09211226617201502J"&gt;Geeetech Prusa I3 X&lt;/a&gt;. This post details my experience as a 3D printing noob: unboxing, assembling and using this 3D printer. First, let me show you what this printer can do.&lt;/p&gt;
+
+&lt;p&gt;Here, I&amp;#39;m printing an Atlas statue to hold up my colleague&amp;#39;s monitor.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-b-cd-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-1-b99700cd.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-b-d-dcf-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-2-b8d55dcf.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-ff-e-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-3-3ff4590e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-3_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-f-a-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-4-4f79a346.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-4_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-f-b-e-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-5-5f146b0e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-5_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-b-fb-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-6-b78fb280.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-6_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-c-b-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-7-5c17b065.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-7_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="safety-tips"&gt;Safety tips&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Never plug or unplug cables from the controller board while the board is powered. This can damage the board or motor controllers.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;This thing gets HOT, don&amp;#39;t let little kids touch the build plate or nozzle&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;PLA is foodsafe and the fumes are probably not too toxic when printing. However, ABS is NOT foodsafe nor are the fumes safe. Be sure to run the printer in a well ventilated area while printed ABS.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="other-parts"&gt;Other Parts&lt;/h2&gt;
+
+&lt;p&gt;Along with the printer, you&amp;#39;ll need some filament. You can get this &lt;a href="http://www.banggood.com/1_75mm-3D-Printer-ABS-Filament-For-Makerbot-Mendel-Printrbot-Reprap-Prusa-Sumpod-p-988881.html?p=1G09211226617201502J"&gt;from Banggood&lt;/a&gt; for about $30 per kg, but if you live in the USA, I suggest you get filament &lt;a href="http://amzn.to/2c0ekDw"&gt;from this Amazon supplier for only $8-10 per kg&lt;/a&gt;. The ratings for the Amazon filament are not great, but I&amp;#39;ve been using this for all my prints and it works fine.&lt;/p&gt;
+
+&lt;p&gt;From time to time the nozzle does clog, so having some &lt;a href="http://www.banggood.com/8Pcs-Four-Sizes-E3D-V6-Brass-Nozzle-For-1_75mm-Filament-Copper-Nozzle-Extruder-Print-Head-p-1072935.html?p=1G09211226617201502J"&gt;extra nozzles&lt;/a&gt; on hand is always a good idea.&lt;/p&gt;
+
+&lt;p&gt;To get the prints to stick to the print bed, I have found that &lt;a href="http://amzn.to/2bOMajU"&gt;Elmer&amp;#39;s washable (purple) glue stick&lt;/a&gt; works well for both PLA and ABS. Also, it is much easier to work with than ABS juice and gives a similar result. Glue stick can be cleaned off with rubbing alcohol. Alternatively, if you don&amp;#39;t want to mess with the gluestick, get &lt;a href="http://amzn.to/2bWSQXF"&gt;a PEI sheet&lt;/a&gt; and print straight onto this surface without any preparation.&lt;/p&gt;
+
+&lt;p&gt;I just ordered a PEI sheet, in hopes of making printing even easier. I&amp;#39;ll post an update when I get this installed.&lt;/p&gt;
+
+&lt;p&gt;Finally, you&amp;#39;ll want some &lt;a href="http://amzn.to/2cqgnli"&gt;100% pure acetone&lt;/a&gt; if you&amp;#39;re working with ABS. It&amp;#39;s useful for gluing parts together, as acetone melts ABS. Mix equal parts Acetone and some plastic from failed ABS prints to make &amp;quot;ABS Juice,&amp;quot; which can be used to glue parts together or adhere prints to the print bed. Acetone can also be used to clear clogged print nozzles, by soaking the nozzle in acetone overnight. &lt;/p&gt;
+
+&lt;h2 id="unboxing"&gt;Unboxing&lt;/h2&gt;
+
+&lt;h3 id="part-1"&gt;Part 1&lt;/h3&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/P6H0sEpB7UM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="part-2"&gt;Part 2&lt;/h3&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/yUzJ26VXunQ?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id="build"&gt;Build&lt;/h2&gt;
+
+&lt;p&gt;Download the build instructions here: &lt;a href="http://www.geeetech.com/Documents/Building%20Instructions%20of%20Geeetech%20Prusa%20I3%20X.pdf"&gt;http://www.geeetech.com/Documents/Building%20Instructions%20of%20Geeetech%20Prusa%20I3%20X.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I found it easiest to follow the PDF and watch the youtube videos when I had questions.&lt;/p&gt;
+
+&lt;p&gt;Here are all the parts.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-parts-a-d-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/parts-2006a94d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/parts_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Checkout how the bag numbers correspond to &lt;code&gt;Part ID&lt;/code&gt; in the directions.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 64.01985111662532%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-directions-png" href="/assets/images/blog/geeetech-prusa-i3-x/directions-1-42269242.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/directions-1-42269242.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-directions-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/directions-2-46667100.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/directions-2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="general-tips"&gt;General Tips&lt;/h3&gt;
+
+&lt;p&gt;In this guide, I&amp;#39;ll refer to the axis of the printer as described in this diagram.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 102.09205020920503%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-xyz-eee-b-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/xyz-33eee80b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/xyz-33eee80b.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Use blue thread lock wherever you have metal on metal, however the blue thread lock will degrade the acrylic frame, so be sure to not let the thread lock touch the acrylic! The only places I was able to safely use lock tight was on the motor couplers.&lt;/p&gt;
+
+&lt;p&gt;By the way, bag 38 which has the motor couplers, also has some allen wrenches you can use for assembly.&lt;/p&gt;
+
+&lt;p&gt;Also, they don&amp;#39;t mention this, but bags 7 and 8 include 3mm and 4mm washers, use them whenever bolts in bags numbered 22, 23 and 30 are used. This will help strengthen the frame.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-bolts-with-washers-c-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/bolts-with-washers-9254553c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/bolts-with-washers_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="step-1-threaded-rod"&gt;Step 1 - Threaded Rod&lt;/h3&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-threaded-rod-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-1.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-1_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-threaded-rod-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-3.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-3_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class="videoWrapper"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/xnf8jDOtkDg?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-2-y-axis-plates"&gt;Step 2 - Y axis plates&lt;/h3&gt;
+
+&lt;p&gt;On this step, I got everything assembled, then used a ruler to make sure both sides were square. Adjust the outer-most nuts if one side is longer or shorter than the other.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-threaded-rod-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-4.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-4_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-threaded-rod-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-5.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-5_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ShPodbaHq10?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-3-y-axis-motor"&gt;Step 3 - Y axis motor&lt;/h3&gt;
+
+&lt;p&gt;I found that mounting the gear upside down actually fit best.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-y-motor-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-motor-1.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-motor-1_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-y-motor-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-motor-2.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-motor-2_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-y-motor-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-motor-3.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-motor-3_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/PnZP_BbhrOo?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-4-pulleys"&gt;Step 4 - Pulleys&lt;/h3&gt;
+
+&lt;p&gt;Here, the quantity of M3x20 screws in the manual is 3. You only need 1. Also you&amp;#39;ll need a M3x50mm screw for the other pulley. The Youtube video labeled this as M3x40, but it says M3x50 in the manual. Since my kit didn&amp;#39;t include M3x40, I&amp;#39;ll use a silver M3x50 screw (Bag #28 in my kit).&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-pully-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-pully-1.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-pully-1_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Also, the pulley brackets came a little bit too snug, so the wheel couldn&amp;#39;t turn freely. I used a pair of needle nose pliers to open them up a little bit.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-pully-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-pully-2.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-pully-2_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Be very careful that there is enough clearance when installing the bearings and that they can spin freely without contacting the edge of the bracket with any pressure. I destroyed a bearing because it rubbed on the edge of the bracket. Open up the bracket a little extra if in doubt, to make sure there is enough clearance.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/M007xiYXIy8?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-5-print-platform"&gt;Step 5 - Print Platform&lt;/h3&gt;
+
+&lt;p&gt;The washers go between the bolt head and the acrylic.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-y-plate-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-1.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-1_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-y-plate-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-2.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-2_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-y-plate-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-3.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-3_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-y-plate-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-4.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-4_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-y-plate-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-5.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-5_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Unlike the video, this kit uses only 1 rod-holder thing per rod, not 2.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-y-plate-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-6.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-6_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-y-plate-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-7.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-7_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I also tightened down the bolts on the threaded rod before tightening the rod holders, so everything stays the same size.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/gL6qOlwtokg?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-6-y-belt"&gt;Step 6 - Y-belt&lt;/h3&gt;
+
+&lt;p&gt;I don&amp;#39;t have a hole punch, so I used a Dremel on slow speed with a milling bit to punch the holes, but you could pry just drill through the belt. It&amp;#39;s fairly stiff.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-y-belt-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-belt-1.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-belt-1_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Make sure you loosen the screw on the y-axis pulley thing all the way, to give as much slack as possible while installing the belt. Once you have the belt screwed into the carriage, then tighten the y-axis pulley.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-y-belt-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-belt-2.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-belt-2_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/FfFizql0My8?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-7-left-z-motor-mount"&gt;Step 7 - Left Z motor mount&lt;/h3&gt;
+
+&lt;p&gt;Be careful in this step, not to over tighten the screws that hold the acrylic pieces together, as they could crack.&lt;/p&gt;
+
+&lt;p&gt;The trick with these is to get all the acrylic pieces loosely attached, then once everything is in place, tighten them all down.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/4Mv5tIU37So?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-8-right-z-motor-mount"&gt;Step 8 - Right Z motor mount&lt;/h3&gt;
+
+&lt;p&gt;Same as the left, be careful not to over tighten!&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/HAsf0nzeTCA?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-9-side-panels"&gt;Step 9 - Side Panels&lt;/h3&gt;
+
+&lt;p&gt;Again, be very careful to not over tighten the screws.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/EklCSqLgRr4?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-10-main-frame-assembly"&gt;Step 10 - Main frame assembly&lt;/h3&gt;
+
+&lt;p&gt;This step isn&amp;#39;t well explained and the pdf directions show that you need more square nuts than you actually need.&lt;/p&gt;
+
+&lt;p&gt;Basically, you want to attach the main frame and the tray, like this.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-frame-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-frame.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-frame_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-frame-tray-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-frame-tray-1.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-frame-tray-1_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-frame-tray-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-frame-tray-2.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-frame-tray-2_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-frame-tray-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-frame-tray-3.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-frame-tray-3_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/TASHOBrlKBc?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-11-fan-mount"&gt;Step 11 - Fan mount&lt;/h3&gt;
+
+&lt;p&gt;This one is straightforward, just screw in the fan. It would have been easier for me if this was included in the kit, but it seems like they forgot to include it.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/VUl04hh8pho?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-12-z-motor-assembly"&gt;Step 12 - Z motor assembly&lt;/h3&gt;
+
+&lt;p&gt;I used thread lock on the screws in the motor couplers.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/C6A-wl_ISjA?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-13-x-axis-motor-ends"&gt;Step 13 - X axis motor ends&lt;/h3&gt;
+
+&lt;p&gt;This bit was rather long, but not too hard, just follow the directions.&lt;/p&gt;
+
+&lt;p&gt;I did wonder how long to make the gap between nuts on the (really long) endstop screw. Here is how long I made mine. Basically I wanted it to be as long as possible, while making sure the top nut was not able to come free.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-z-carriage-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-z-carriage.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-z-carriage_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The final part of this step uses a different linear bearing than in the video.&lt;/p&gt;
+
+&lt;p&gt;Refer to the PDF or these photos to see how to mount the same kind that we&amp;#39;re using.&lt;/p&gt;
+
+&lt;p&gt;I used a spare steel rod to ensure that they were aligned while tightening.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/HwHE9ikosew?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-14-x-axis-idler"&gt;Step 14 - X axis idler&lt;/h3&gt;
+
+&lt;p&gt;The hole for the smooth rod was too small, so the smooth rod was rubbing against the acrylic when inserted. I used my &lt;a href="http://www.banggood.com/3Pcs-14-Inch-Hex-Shank-HSS-Titanium-Coated-Step-Drill-Bit-Set-3-124-124-20mm-p-1003275.html?p=1G09211226617201502J"&gt;reamer&lt;/a&gt; to add 2mm to the diameter of the hole.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/7zuNZP5k2Nc?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-15-extruder-carriage"&gt;Step 15 - Extruder Carriage&lt;/h3&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-carriage-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-carriage-1.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-carriage-1_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-carriage-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-carriage-2.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-carriage-2_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/O-JVtTczs_M?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-16-x-amp-y-axis-assembly"&gt;Step 16 - X &amp;amp; Y Axis Assembly&lt;/h3&gt;
+
+&lt;p&gt;In this step, if the threaded rod is difficult to turn, try adjusting the nuts on the brass coupler to slightly change the orientation of the coupler.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/I2ijszntoC4?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-17-x-motor"&gt;Step 17 - X Motor&lt;/h3&gt;
+
+&lt;p&gt;Attach the geared bushing to the X motor.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-x-gear-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-x-gear.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-x-gear_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Mounting the gear flush with the end of the motor shaft seems to provide the best alignment.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/fVMWl0bjfDY?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-18-x-axis-belt"&gt;Step 18 - X Axis Belt&lt;/h3&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/SkaNJoFZ5sg?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-19-mount-the-extruder"&gt;Step 19 - Mount the Extruder&lt;/h3&gt;
+
+&lt;p&gt;Use some 4mm washers if you still have some left.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/V5we0uQcMn4?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-20-install-the-lcd"&gt;Step 20 - Install the LCD&lt;/h3&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/6Hskd442l24?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-21-mount-the-control-board"&gt;Step 21 - Mount the Control Board&lt;/h3&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/av2L6Hd8co0?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-22-build-platform"&gt;Step 22 - Build Platform&lt;/h3&gt;
+
+&lt;p&gt;Wires go out the back.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-build-platform-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-platform.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/build-platform_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Use washers from bag 7.&lt;/p&gt;
+
+&lt;p&gt;I found it easiest to hold the washer and wingnut in one hand while using a hex driver to start the bolt threading from the top, then tightening the wing nut by hand.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/AmCoC-ja340?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-23-power-supply"&gt;Step 23 - Power Supply&lt;/h3&gt;
+
+&lt;p&gt;IMPORTANT! There is a switch inside the power supply that will change it between 110 and 210 volts.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re in the US like me, you&amp;#39;ll want to switch this UP to make sure that it has the correct 110v input selected.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-power-supply-ac-b-ab-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/power-supply-ac6b66ab.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/power-supply_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When you mount the power supply, there are 2 sets of holes on the top, very close together. Make sure you use the slightly lower holes so the bottom holes line up.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/uInzhnnaeM4?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-24-y-endstop"&gt;Step 24 - Y Endstop&lt;/h3&gt;
+
+&lt;p&gt;Then mount the endstop, using washers from bag 6, which they don&amp;#39;t mention anywhere.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/5KR6mUGqOXw?showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id="step-25-wiring"&gt;Step 25 - Wiring&lt;/h3&gt;
+
+&lt;p&gt;Here is the pinout:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 59.1796875%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-gt-pinout-f-fd-d-d-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/gt2560-pinout-f3fd5d1d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/gt2560-pinout-f3fd5d1d.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here are the axis names and directions for the end stops:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 102.09205020920503%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-xyz-eee-b-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/xyz-33eee80b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/xyz-33eee80b.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is what mine looks like, all wired up:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-wired-up-d-ff-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/wired-up-d6ff7270.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/wired-up_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;All the end stops are at the MIN of the axis, so make sure to use the MIN plug for each axis.&lt;/p&gt;
+
+&lt;p&gt;There are 2 Z motors, hence the two plugs.&lt;/p&gt;
+
+&lt;p&gt;Connect the extruder fan to FAN 1.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-fan-e-efddd-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/fan1-5e0efddd.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/fan1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There was no individual video for this step, so skip to around 36 minutes into the overall assembly video:&lt;/p&gt;
+
+&lt;p&gt;Bag 49 has the cable wrap.&lt;/p&gt;
+
+&lt;p&gt;Bag 57 has the extruder fan extension.&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/yRRMay7vPsw?rel=0&amp;showinfo=0&amp;t=36m32s" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id="first-print"&gt;First print&lt;/h2&gt;
+
+&lt;p&gt;Ok. I got it all assembled, then I had no idea what to do, so I turned it on.&lt;/p&gt;
+
+&lt;p&gt;It had a few problems, the fan was loud, so I bent it back into place and it was quiet again.&lt;/p&gt;
+
+&lt;p&gt;Then I thought, now what do I do. Wellll... print something I guess!&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/IFx5BYJDhcY?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To actually print something, we&amp;#39;ll need an &lt;code&gt;.stl&lt;/code&gt; object file. We take this file and load it in our slicer.&lt;/p&gt;
+
+&lt;h3 id="model-slicer"&gt;Model Slicer&lt;/h3&gt;
+
+&lt;p&gt;Download an &lt;code&gt;.stl&lt;/code&gt; model from &lt;a href="https://www.youmagine.com/"&gt;youmagine&lt;/a&gt; or &lt;a href="https://thingaverse.com"&gt;thingaverse&lt;/a&gt; and the slicer, &lt;a href="https://ultimaker.com/en/products/cura-software"&gt;Cura&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Install Cura and import your &lt;code&gt;.stl&lt;/code&gt; file&lt;/p&gt;
+
+&lt;p&gt;Pick the type of plastic you&amp;#39;re printing, ABS or PLA. The default temps in Cura work fine for me. I have found that the max temp I can easily get on the print bed is 85 or 90 degrees, so I usually keep it at that for ABS prints. 60 degrees for PLA is no issue.&lt;/p&gt;
+
+&lt;p&gt;There are 2 options you&amp;#39;ll want to update. Under &lt;code&gt;Machine&lt;/code&gt; set nozzle diameter and set layer height to something around %50 of your nozzle diameter.&lt;/p&gt;
+
+&lt;p&gt;I have a &lt;code&gt;.3mm&lt;/code&gt; nozzle, so I usually use &lt;code&gt;.15mm&lt;/code&gt; layer hight for high quality prints and &lt;code&gt;.2mm&lt;/code&gt; for slightly lower quality, but faster prints.&lt;/p&gt;
+
+&lt;p&gt;Once you&amp;#39;ve set the settings above, the &lt;code&gt;.gcode&lt;/code&gt; will be generated and you can save this to a file. Save it to an sdcard with a descriptive name.&lt;/p&gt;
+
+&lt;h3 id="print-control-software"&gt;Print Control Software&lt;/h3&gt;
+
+&lt;p&gt;The Geeetech Prusa i3 has an SDCard onboard that makes it possible to print without attaching the printer to a computer. To calibrate it the first time, I found it easiest to hook up to &lt;a href="http://octoprint.org/"&gt;OctoPrint&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/5J64e8KPB30?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The other option is &lt;a href="http://www.pronterface.com/"&gt;Pronterface&lt;/a&gt;. It has less features, but is easier to install and get running. To start using it, plug in the USB cable between the printer and your computer. Then in Pronterface, connect at BAUD &lt;code&gt;250000&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Just like OctoPrint, Pronterface lets you control the motors via the GUI on your computer. I started moving around the motors with Pronterface and found that the Z motors were stuttering and not turning properly, so I turned everything off. Then I adjusted the little screw on the Z-Axis motor driver, turning it right about 15 degrees. This was enough to increase the power slightly and it moved!&lt;/p&gt;
+
+&lt;p&gt;Next, I used the home buttons in Pronterface to let the printer find its &amp;quot;home&amp;quot; position.&lt;/p&gt;
+
+&lt;p&gt;Finally, I adjusted the bed by moving the print head to each corner of the print bed and using the screws on the print bed to level it. I used a business card to check the distances.&lt;/p&gt;
+
+&lt;p&gt;While I was running the Z axis motors, I lubricated the threaded rod with some CLP BreakFree lubricant, which contains PTFE (teflon).&lt;/p&gt;
+
+&lt;h3 id="setup-and-calibration"&gt;Setup and calibration&lt;/h3&gt;
+
+&lt;p&gt;Note when setting up and calibrating, the extruder motor will not run when the hot end is not hot, so to test the hot end, be sure to heat it up first.&lt;/p&gt;
+
+&lt;p&gt;I noticed the edges of the print bed are about .5mm higher than the center, so be sure to calibrate the center of the print bed as well as the edges. Also, the deflection of the aluminum print bed changes significantly with temperature. The greater the temperature, the greater the deflection in the middle of the bed, so when I print ABS at 90 degrees, I need to adjust the Z-Axis endstop screw, loosening it by 1/3 of a turn.&lt;/p&gt;
+
+&lt;p&gt;After a few prints, my X axis was binding, so I turned off the motors and checked how hard it was to move by hand. It was quite difficult, so I added some CLP Breakfree lubricant to both rails and moved the extruder manually until it moved without binding. I also increased the POT on the X axis to 1.1v, just below the 1.2v recommended max.&lt;/p&gt;
+
+&lt;h4 id="belt-tension"&gt;Belt Tension&lt;/h4&gt;
+
+&lt;p&gt;The first thing to calibrate is the belt tension. We want it as tight as possible, but not too tight such that the axis binds (e.g. can&amp;#39;t move). Start by lubricating all the bearings and linear rods by covering them with a PTFE lubricant and moving them to every extreme. I used CLP Breakfree:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-clp-c-d-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/clp-78c7d666.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/clp_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now tighten one axis while moving it with your hand. Tighten it until you can&amp;#39;t move it, then backup a bit so that it moves freely with little resistance.&lt;/p&gt;
+
+&lt;p&gt;If you pull a belt and let go, you should get a nice guitar-like humming noise.&lt;/p&gt;
+
+&lt;h4 id="bed-leveling"&gt;Bed Leveling&lt;/h4&gt;
+
+&lt;p&gt;Next, you&amp;#39;ll want to level the bed. Do this by moving the print head to each corner of the bed. At each position, place a business card between the build platform and the nozzle. The card should just barely fit, resulting in a gap between the nozzle and the bed around .1mm to .2mm.&lt;/p&gt;
+
+&lt;p&gt;Once the bed is level, you&amp;#39;ll want to adjust the auto-home distance between the head and the bed. Since the platform will deform slightly when heated, you&amp;#39;ll want to do this with a hot build platform, so using the LCD, go to &lt;code&gt;Prepare&lt;/code&gt; -&amp;gt; &lt;code&gt;Preheat ABS&lt;/code&gt; and pick the first option &lt;code&gt;Preheat ABS 1&lt;/code&gt;. Once the bed gets up to around 90 degrees C, use OctoPrint to move the print head over the bed then auto-home the Z axis. Using the business card again, check the distance between the build plate and the nozzle. Use the Z-axis endstop screw to adjust the distance, using the OctoPrint home button between adjustments.&lt;/p&gt;
+
+&lt;h4 id="bed-preparation"&gt;Bed Preparation&lt;/h4&gt;
+
+&lt;p&gt;There are lots of discussions on the interwebs about the best way to get your prints to stick to the print bed. Through a bunch of testing, I have found that purple (washable) Elmers glue stick is the easiest and most effective way for me to get prints to stick. I simply glue stick the bed before printing and it lasts around 10 prints. When it no longer sticks, I clean the bed with rubbing alcohol and re-apply the glue stick.&lt;/p&gt;
+
+&lt;p&gt;I just ordered &lt;a href="http://amzn.to/2bWSQXF"&gt;a PEI sheet&lt;/a&gt;, in hopes of making printing even easier. I&amp;#39;ll post an update when I get this installed.&lt;/p&gt;
+
+&lt;h4 id="firmware"&gt;Firmware&lt;/h4&gt;
+
+&lt;p&gt;The firmware is available for download here &lt;a href="http://www.geeetech.com/forum/viewtopic.php?f=20&amp;amp;t=17046"&gt;http://www.geeetech.com/forum/viewtopic.php?f=20&amp;amp;t=17046&lt;/a&gt;, look for the section title &lt;code&gt;2) Firmware for Prusa I3 X(GT2560)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s a direct link to the zipfile: &lt;a href="http://www.geeetech.com/forum/download/file.php?id=1589&amp;amp;sid=4474d46075a042b461d3f059c8597de1"&gt;http://www.geeetech.com/forum/download/file.php?id=1589&amp;amp;sid=4474d46075a042b461d3f059c8597de1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Though the printer comes with firmware pre-installed, you&amp;#39;ll want to have the firmware available if you want to change and save any firmware settings.&lt;/p&gt;
+
+&lt;p&gt;I did not update the firmware on my printer, and it works fine.&lt;/p&gt;
+
+&lt;h3 id="upgrades"&gt;Upgrades&lt;/h3&gt;
+
+&lt;h4 id="pla-fan"&gt;PLA Fan&lt;/h4&gt;
+
+&lt;p&gt;One of the first upgrades I made was printing one of &lt;a href="http://www.thingiverse.com/thing:1291207"&gt;these PLA cooling fans&lt;/a&gt; for the MK8 hotend. Since there is no dedicated fan, you can use the main printhead fan when printing PLA, as it does much better with active cooling.&lt;/p&gt;
+
+&lt;h4 id="print-bed"&gt;Print bed&lt;/h4&gt;
+
+&lt;p&gt;Grab a &lt;a href="http://amzn.to/2bWSQXF"&gt;a PEI sheet&lt;/a&gt; for hassle free printing.&lt;/p&gt;
+
+&lt;h4 id="power"&gt;Power&lt;/h4&gt;
+
+&lt;p&gt;Since this printer only comes with a 15 amp power supply, I decided to pickup a new 30 amp power supply, and this one fits in the same mounting holes: &lt;a href="http://www.banggood.com/Wholesale-12V-30A-360W-Switch-Power-Supply-Driver-for-LED-Strip-Light-Display-220V110V-p-39987.html"&gt;12V 30A 360W Switching Power Supply&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id="auto-leveling-bed"&gt;Auto leveling bed&lt;/h4&gt;
+
+&lt;p&gt;I just ordered a &lt;a href="http://www.banggood.com/NJK-5002C-Hall-Sensor-Proximity-Switch-NPN-3-wires-Normally-Open-Type-p-936554.html?p=1G09211226617201502J"&gt;NJK-5002C Hall Sensor Proximity Switch&lt;/a&gt; to do auto bed leveling as described by Tom here:&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/EcGFLwj0pnA?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h4 id="lighting"&gt;Lighting&lt;/h4&gt;
+
+&lt;p&gt;I also got some &lt;a href="http://www.banggood.com/10W-Warm-Pure-White-High-Brightest-Save-Power-LED-Light-Lamp-p-88169.html?p=1G09211226617201502J"&gt;12v LEDs&lt;/a&gt; to wire onto the extruder carriage.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>BetaFlight Kiss Flight Controller</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/29/betaflight-kiss-flight-controller/"/>
@@ -263,393 +809,87 @@ CFBP = 00000000, CONTROL = 00, FAULTMASK = 00, BASEPRI = 00, PRIMASK = 00
 </content>
   </entry>
   <entry>
+    <title>Airbot F3S AIO Flight Controller and Typhoon 4-in-1 ESC</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/12/airbot-f3s-aio/"/>
+    <id>http://nathan.vertile.com/blog/2016/07/12/airbot-f3s-aio/</id>
+    <published>2016-07-11T22:49:00-07:00</published>
+    <updated>2016-09-05T10:49:24-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This is a quick overview of the &lt;a href="http://shop.myairbot.com/index.php/flight-control/cleanflight-baseflight/f3saio-pro.html"&gt;Airbot F3S AIO&lt;/a&gt; Flight controller and &lt;a href="http://shop.myairbot.com/index.php/typhoon4x20a4in1esc-66.html"&gt;Typhoon 4-in-1 Pro&lt;/a&gt; ESC.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-DSC-jpg" href="/assets/images/blog/airbot/f3s/DSC03325.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/DSC03325_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href="http://shop.myairbot.com/index.php/flight-control/cleanflight-baseflight/f3saio-pro.html"&gt;F3S&lt;/a&gt; is an upgraded, F3 version, of the &lt;a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"&gt;OZE32&lt;/a&gt; which is a PDB, MinimOSD and flight controller all in one. I have a beta version of the F3s, the final version is gold plated.&lt;/p&gt;
+
+&lt;p&gt;The button on the top will switch the USB/UART between the flight controller and OSD. No more messing with dip switches, woohoo!&lt;/p&gt;
+
+&lt;p&gt;The integrated OSD is a MinimOSD, not directly connected to the flight controller. This board is compatible with the BetaFlight and CleanFlight SPRacingF3 targets.&lt;/p&gt;
+
+&lt;p&gt;The pro version has a MPU6050, which includes the gyro, accelerometer and magnetometer. There is a BMP280 barometer and 16MB of onboard flash.&lt;/p&gt;
+
+&lt;p&gt;On the bottom, we can see there is an &lt;code&gt;AB7456&lt;/code&gt; OSD chip, which is a more robust version of the &lt;code&gt;MAX7456&lt;/code&gt; chip with 2x the amount of character memory.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-DSC-jpg" href="/assets/images/blog/airbot/f3s/DSC03326.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/DSC03326_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="typhoon-4-in-1-pro-esc"&gt;Typhoon 4-in-1 Pro ESC&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href="http://shop.myairbot.com/index.php/typhoon4x20a4in1esc-66.html"&gt;Typhoon 4-in-1 Pro&lt;/a&gt; ESC is awesome.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-DSC-jpg" href="/assets/images/blog/airbot/f3s/DSC03466.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/DSC03466_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The pro version uses F396 MCUs and runs BLHeli.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-DSC-jpg" href="/assets/images/blog/airbot/f3s/DSC03469.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/DSC03469_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="pinouts"&gt;Pinouts&lt;/h2&gt;
+
+&lt;p&gt;Here is the F3S AIO Pinout:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 45.52486187845304%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-f-s-aio-bdf-a-png" href="/assets/images/blog/airbot/f3s/f3s-aio-77bdf73a.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/f3s-aio-77bdf73a.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 67.75280898876404%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-f-s-aio-example-e-c-jpg" href="/assets/images/blog/airbot/f3s/f3s-aio-example-e38c7162.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/f3s-aio-example-e38c7162.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The Typhoon 4-in-1 ESC Pinout:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-typhoon-pinout-e-ca-f-jpg" href="/assets/images/blog/airbot/typhoon-pinout-e460ca0f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/typhoon-pinout_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that motors 3 and 4 are in the opposite positions expected by CleanFlight and BetaFlight, so be sure to swap those pins when plugging into the flight controller.&lt;/p&gt;
+
+&lt;h2 id="mounting"&gt;Mounting&lt;/h2&gt;
+
+&lt;p&gt;We&amp;#39;ll stack the ESC and the flight controller together.&lt;/p&gt;
+
+&lt;p&gt;Wire in the ESC.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-DSC-jpg" href="/assets/images/blog/airbot/f3s/DSC03307.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/DSC03307_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The motor signal wires for the 4-in-1 ESC can be wired to the flight controller like so:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-DSC-JPG" href="/assets/images/blog/airbot/f3s/DSC03342.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/DSC03342_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Wire power like so. The smaller, shorter leads will supply power to the 4-in-1 ESC.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-DSC-JPG" href="/assets/images/blog/airbot/f3s/DSC03359.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/DSC03359_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="setup"&gt;Setup&lt;/h2&gt;
+
+&lt;p&gt;Snappy FPV has a great setup and overview here:&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/Vj8WOgBULY8?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
     <title>Eachine EV800 Review</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/10/eachine-ev800-review/"/>
     <id>http://nathan.vertile.com/blog/2016/07/10/eachine-ev800-review/</id>
     <published>2016-07-09T23:15:00-07:00</published>
     <updated>2016-07-09T23:15:19-07:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html"></content>
-  </entry>
-  <entry>
-    <title>Eachine Goggles One Review</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/10/eachine-goggles-one-review/"/>
-    <id>http://nathan.vertile.com/blog/2016/07/10/eachine-goggles-one-review/</id>
-    <published>2016-07-09T22:46:00-07:00</published>
-    <updated>2016-07-09T22:46:56-07:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html"></content>
-  </entry>
-  <entry>
-    <title>FlySky i6 Radio Setup and Hacking Guide</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/"/>
-    <id>http://nathan.vertile.com/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/</id>
-    <published>2016-07-08T22:00:00-07:00</published>
-    <updated>2016-08-28T19:55:09-07:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;This is my unboxing, review and hacking guide for the &lt;a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J"&gt;Flysky FS-i6&lt;/a&gt; 2.4ghz radio transmitter.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03245.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03245_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I started this project thinking I could easily use the &lt;a href="http://www.banggood.com/2_4G-CC2500-A7105-Flysky-Frsky-Devo-DSM2-Multiprotocol-TX-Module-With-Antenna-p-1048377.html?p=1G09211226617201502J"&gt;4-in-1 DIY transmitter module&lt;/a&gt; in the radio, but this turned out to not be the case. Instead, I&amp;#39;ve start working on porting OpenTX with serial support for the &lt;a href="http://www.banggood.com/2_4G-CC2500-A7105-Flysky-Frsky-Devo-DSM2-Multiprotocol-TX-Module-With-Antenna-p-1048377.html?p=1G09211226617201502J"&gt;4-in-1 DIY transmitter module&lt;/a&gt;. Devs, help me out here! &lt;a href="https://github.com/nathantsoi/opentx/tree/target/fs-i6"&gt;https://github.com/nathantsoi/opentx/tree/target/fs-i6&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id="unboxing"&gt;Unboxing&lt;/h2&gt;
-
-&lt;p&gt;Here&amp;#39;s the box.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03241.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03241_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Inside is the cool protective plastic thing.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03242.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03242_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Get the version that comes with the iA6B receiver, which is PPM enabled.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03245.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03245_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Side-by-side with the Turnigy i6&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03247.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03247_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="review"&gt;Review&lt;/h2&gt;
-
-&lt;p&gt;The FlySky i6 is the ultimate beginner radio. We can make it even better by adding a DIY 4-in-1 module and re-painting it to look awesome.&lt;/p&gt;
-
-&lt;h3 id="features"&gt;Features&lt;/h3&gt;
-
-&lt;p&gt;Switches and Knobs:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;3x 2 position switch&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;1x 3 position switch&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;2x Knobs&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Pros:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Diversity TX and RX&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;PPM or iBUS options&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Nice Smooth Gimbals&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Cons:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;No LIPO support without modification.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="ia6b-rx"&gt;iA6B RX&lt;/h3&gt;
-
-&lt;p&gt;Pinout:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-fs-i-px-FlySky-IA-B-pinout-f-eed-f-jpg" href="/assets/images/blog/fs_i6/500px-FlySky_IA6B_pinout-f89eed4f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/500px-FlySky_IA6B_pinout-f89eed4f.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.50390625%;'&gt;&lt;a id="assets-images-blog-fs-i-pins-back-fccc-c-jpg" href="/assets/images/blog/fs_i6/pins-back-4fccc06c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/pins-back-4fccc06c.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.40625%;'&gt;&lt;a id="assets-images-blog-fs-i-pins-front-a-b-jpg" href="/assets/images/blog/fs_i6/pins-front-a87307b4.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/pins-front-a87307b4.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="teardown"&gt;Teardown&lt;/h2&gt;
-
-&lt;p&gt;Remove the 4 screws on the back.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03249.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03249_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Crack it open. The antenna stub will probably fall out, no worries, just hold onto it.&lt;/p&gt;
-
-&lt;p&gt;Disconnect the bottom two plugs from the mainboard and separate the front and back case.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03250.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03250_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Separate the front and back.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03253.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03253_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Note the two antennas for the diversity transmitter and &lt;code&gt;MKL16Z64VLH4&lt;/code&gt; Freescale Kinetis microcontroller &lt;a href="http://cache.freescale.com/files/microcontrollers/doc/data_sheet/KL16P64M48SF5.pdf"&gt;Datasheet is here&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;There is a populated SWD port on the right for easy debugging.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03255.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03255_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Removing the 4 outer screws on the display module we can pull the display up.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03256.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03256_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Disconnect all the plugs (antennas too, unlike the photo).&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03368.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03368_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;And the board can be removed.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03369.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03369_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The LCD can be removed by pulling the lower clip down slightly and lifting the LCD.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03374.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03374_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The display cable shows the only markings on the display &lt;code&gt;HSG12864-35&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03375.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03375_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The backlight is soldered in place, but we can see the other side of the PCB by pulling it up gently.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03380.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03380_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Removing the radio transmitter, we can see:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03439.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03439_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.49022801302932%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03440.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03440_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="firmware"&gt;Firmware&lt;/h2&gt;
-
-&lt;p&gt;I have dumped the version of the firmware shipped with my controller here. Use &lt;code&gt;xxd -r [filename]&lt;/code&gt; to restore it to a flash-able &lt;code&gt;bin&lt;/code&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://gist.github.com/nathantsoi/ab352234dedfaf0451c5faa50bfeb9a4"&gt;https://gist.github.com/nathantsoi/ab352234dedfaf0451c5faa50bfeb9a4&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Restore it as described here in my &lt;a href="/blog/2016/07/25/j-link-getting-started-guide/"&gt;J-Link article&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id="diy-tx-module"&gt;DIY TX Module&lt;/h2&gt;
-
-&lt;p&gt;WARNING! DRAGONS AHEAD READ THIS BEFORE PURCHASING OR INSTALLING THE DIY MODULE!&lt;/p&gt;
-
-&lt;p&gt;When I started this project, I hoped to install this &lt;a href="http://www.banggood.com/2_4G-CC2500-A7105-Flysky-Frsky-Devo-DSM2-Multiprotocol-TX-Module-With-Antenna-p-1048377.html?p=1G09211226617201502J"&gt;DIY transmitter module&lt;/a&gt; which allows you to use the radio with basically any other protocol including FrSky and Spektrum. However, to do this I also wanted to disable the internal module, which turned out to be very difficult. Even after isolating the internal radio module from the power line, the module was still getting power from some other pins.&lt;/p&gt;
-
-&lt;p&gt;I then tried removing the build-in wireless module entirely, but that didn&amp;#39;t work either. Now that the module is out, my radio refuses to boot. So, this project is on hold while I write some custom firmware for the radio.&lt;/p&gt;
-
-&lt;p&gt;Consider the following a guide on how NOT to install the DIY module. While you may be able to get it to work, the range could be greatly reduced because of interference from the internal module. Therefore I suggest you buy a &lt;a href="http://www.banggood.com/Wholesale-FlySky-Upgrade-FS-TH9X-FS-TH9XB-2_4G-9CH-RC-Remote-Control-Transmitter-Mode-2-p-47904.html?p=1G09211226617201502J"&gt;FlySky 9x&lt;/a&gt; instead, if you want to use the DIY TX module.&lt;/p&gt;
-
-&lt;p&gt;WARNING! Please read the above note, if you did not already.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;ll be using this &lt;a href="http://www.banggood.com/2_4G-CC2500-A7105-Flysky-Frsky-Devo-DSM2-Multiprotocol-TX-Module-With-Antenna-p-1048377.html?p=1G09211226617201502J"&gt;DIY transmitter module&lt;/a&gt; which allows you to use the radio with basically any other protocol including FrSky and Spektrum.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03258.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03258_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03259.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03259_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03260.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03260_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03261.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03261_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I&amp;#39;ll install the module here.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03263.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03263_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Start by drilling a small hole for the knob. I held the module in place and used a sharp screwdriver to mark the case with a scratch.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03264.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03264_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I then did the same thing on the second hole then test fit the module. I removed the antenna holder temporarily.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03266.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03266_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Re-routed the antenna into the handle by cutting a v shape in the little tabs. I used wire clippers for this.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03343.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03343_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Then I secured the antenna with a small dab of hot glue.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03347.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03347_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Solder some leads onto the module.&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;Green: PPM
-Black: GROUND
-Red: V+
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03320.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03320_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;And solder on the ISP header so you can re-program the module later without removing it. I soldered it on the back side, so be aware that the pins will be flipped from the normal ISP header. I give the pinouts below in the &lt;a href="#4-in-1-diy-tx-module-programming"&gt;4-in-1 DIY TX Module Programming&lt;/a&gt; section.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03356.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03356_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;To install the new antenna&amp;#39;s SMA adapter, I cut the old antenna holder on both sides then used a reamer to open up the hole a bit.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03346.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03346_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03349.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03349_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Once you&amp;#39;ve got that opened enough, the SMA adapter should fit nicely and can be secured with some hot glue.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03353.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03353_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I installed the lock washer and nut. They don&amp;#39;t do anything except make it look a little nicer.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03352.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03352_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Then I installed the module like so, using an extra screw in the existing post to hold it in place.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03361.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03361_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now, here&amp;#39;s the plan. Normally, when you power on the transmitter, the radio module (silver thing in the photo below) receives power as well. This is normally fine, however with our new module, we&amp;#39;ll want to disable the internal radio while the DIY module is turned on.&lt;/p&gt;
-
-&lt;p&gt;For this, I&amp;#39;m going to use a switch. You could just cut the trace as described below, to disable the internal module entirely, which would be fine, but the internal module should be a few MS faster than the DIY module, since the internal module is directly connected to the main MCU and does not need PPM conversion like the module. Therefore, it is slightly better to use the internal module for FlySky receivers, even though the DIY module does support FlySky RX.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03397.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03397_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I&amp;#39;ve installed mine in the front, but my switch was small and this was rather hard to do. I suggest you get a larger switch and install it in the back.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03398.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03398_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03400.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03400_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;To use the switch, we&amp;#39;ll need to cut a trace on the PCB. To figure out which one, checkout this pinout for the radio module. As this module does not have the standard &lt;a href="http://www.banggood.com/A7105-Wireless-RF-2_4GHz-Transceiver-Module-3_3V-Power-Supply-Module-p-909404.html?p=1G09211226617201502J"&gt;A7105&lt;/a&gt; module, I reverse engineered the one on the board.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 87.76508972267537%;'&gt;&lt;a id="assets-images-blog-fs-i-fs-i-pinout-fb-fe-jpg" href="/assets/images/blog/fs_i6/fs-i6_pinout-fb7320fe.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/fs-i6_pinout-fb7320fe.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;We need to cut the power line between the PCB and the radio module. Right here.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 49.26470588235294%;'&gt;&lt;a id="assets-images-blog-fs-i-fs-i-pinout-cut-ee-b-jpg" href="/assets/images/blog/fs_i6/fs-i6_pinout-cut-45ee607b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/fs-i6_pinout-cut-45ee607b.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Take a new razor blade and make a cut as shown above. Once you&amp;#39;ve made the cut, check the continuity between the solder points on each side. Here&amp;#39;s what it looks like when we&amp;#39;re done.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-fs-i-DSC-JPG" href="/assets/images/blog/fs_i6/DSC03395.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/DSC03395_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now take the leads from the switch and wire the green wire (middle wire) to the solder blob on the 3.3v output.&lt;/p&gt;
-
-&lt;p&gt;Solder one side of the switch to the internal radio module.&lt;/p&gt;
-
-&lt;p&gt;Solder the other side to the DIY module power.&lt;/p&gt;
-
-&lt;p&gt;Before we re-assemble, let&amp;#39;s program the DIY module with our configured code.&lt;/p&gt;
-
-&lt;h4 id="diy-tx-module-programming"&gt;DIY TX Module Programming&lt;/h4&gt;
-
-&lt;p&gt;You can program the 
-Note that your USBASP programmer should have two voltage settings. BE SURE TO USE THE 3.3v SETTING!&lt;/p&gt;
-
-&lt;p&gt;To program the module connect your &lt;a href="http://www.banggood.com/USBASP-USBISP-3_3-5V-AVR-Downloader-Programmer-With-ATMEGA8-ATMEGA128-p-934425.html?p=1G09211226617201502J"&gt;USBASP&lt;/a&gt; like so, if you installed the headers on the back like I did in the section above.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 190.2555910543131%;'&gt;&lt;a id="assets-images-blog-fs-i-in-isp-a-cde-a-jpg" href="/assets/images/blog/fs_i6/4-in-1-isp-a63cde8a.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/4-in-1-isp-a63cde8a.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 96.98630136986301%;'&gt;&lt;a id="assets-images-blog-fs-i-usb-asp-pinout-ee-e-png" href="/assets/images/blog/fs_i6/usb-asp-pinout-3ee427e9.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/usb-asp-pinout-3ee427e9.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Connect each pin to it&amp;#39;s counterpart, MISO to MISO, MOSI to MOSI and so on.&lt;/p&gt;
-
-&lt;p&gt;Now that you&amp;#39;ve got the module connected to your USBASP, &lt;a href="https://github.com/pascallanger/DIY-Multiprotocol-TX-Module/releases"&gt;download the code from github&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Edit the &lt;a href="https://gist.github.com/nathantsoi/a65b7baff0e044af05f6854e799c5fc5"&gt;_Config.h&lt;/a&gt; file or &lt;a href="https://gist.github.com/nathantsoi/a65b7baff0e044af05f6854e799c5fc5"&gt;use mine&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Turn the dial to &lt;code&gt;0&lt;/code&gt; and pick &amp;#39;Upload Using Programmer&amp;#39;&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 67.17557251908397%;'&gt;&lt;a id="assets-images-blog-fs-i-programmer-b-png" href="/assets/images/blog/fs_i6/programmer-58028b50.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/programmer-58028b50.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Wait for the confirmation message and you&amp;#39;re good to go!&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 18.060498220640568%;'&gt;&lt;a id="assets-images-blog-fs-i-confirmed-e-b-png" href="/assets/images/blog/fs_i6/confirmed-181e83b6.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/confirmed-181e83b6.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Alternatively, you can flash via the command line.&lt;/p&gt;
-
-&lt;p&gt;Turn on verbose logging in the Arduino studio, build the firmware and copy out the firmware build command.&lt;/p&gt;
-
-&lt;p&gt;Change the adapter (-c) to usbasp and flash in a terminal:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;› /Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin/avrdude -C/Applications/Arduino.app/Contents/Java/hardware/tools/avr/etc/avrdude.conf -v -patmega328p -cusbasp -D -Uflash:w:/var/folders/jc/xx5l7d_j63n6fy575yt6l2r00000gn/T/build39d13a724d817953cbd2b39be187c91c.tmp/Multiprotocol.ino.hex:i
-
-avrdude: Version 6.0.1, compiled on Apr 14 2015 at 16:30:25
-         Copyright (c) 2000-2005 Brian Dean, http://www.bdmicro.com/
-         Copyright (c) 2007-2009 Joerg Wunsch
-
-         System wide configuration file is "/Applications/Arduino.app/Contents/Java/hardware/tools/avr/etc/avrdude.conf"
-         User configuration file is "/Users/ntsoi/.avrduderc"
-         User configuration file does not exist or is not a regular file, skipping
-
-         Using Port                    : usb
-         Using Programmer              : usbasp
-         AVR Part                      : ATmega328P
-         Chip Erase delay              : 9000 us
-         PAGEL                         : PD7
-         BS2                           : PC2
-         RESET disposition             : dedicated
-         RETRY pulse                   : SCK
-         serial program mode           : yes
-         parallel program mode         : yes
-         Timeout                       : 200
-         StabDelay                     : 100
-         CmdexeDelay                   : 25
-         SyncLoops                     : 32
-         ByteDelay                     : 0
-         PollIndex                     : 3
-         PollValue                     : 0x53
-         Memory Detail                 :
-
-                                  Block Poll               Page                       Polled
-           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
-           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
-           eeprom        65    20     4    0 no       1024    4      0  3600  3600 0xff 0xff
-           flash         65     6   128    0 yes     32768  128    256  4500  4500 0xff 0xff
-           lfuse          0     0     0    0 no          1    0      0  4500  4500 0x00 0x00
-           hfuse          0     0     0    0 no          1    0      0  4500  4500 0x00 0x00
-           efuse          0     0     0    0 no          1    0      0  4500  4500 0x00 0x00
-           lock           0     0     0    0 no          1    0      0  4500  4500 0x00 0x00
-           calibration    0     0     0    0 no          1    0      0     0     0 0x00 0x00
-           signature      0     0     0    0 no          3    0      0     0     0 0x00 0x00
-
-         Programmer Type : usbasp
-         Description     : USBasp, http://www.fischl.de/usbasp/
-
-avrdude: auto set sck period (because given equals null)
-avrdude: warning: cannot set sck period. please check for usbasp firmware update.
-avrdude: AVR device initialized and ready to accept instructions
-
-Reading | ################################################## | 100% 0.01s
-
-avrdude: Device signature = 0x1e950f
-avrdude: safemode: lfuse reads as FF
-avrdude: safemode: hfuse reads as DA
-avrdude: safemode: efuse reads as 7
-avrdude: reading input file "/var/folders/jc/xx5l7d_j63n6fy575yt6l2r00000gn/T/build39d13a724d817953cbd2b39be187c91c.tmp/Multiprotocol.ino.hex"
-avrdude: writing flash (19048 bytes):
-
-Writing | ################################################## | 100% 13.28s
-
-avrdude: 19048 bytes of flash written
-avrdude: verifying flash memory against /var/folders/jc/xx5l7d_j63n6fy575yt6l2r00000gn/T/build39d13a724d817953cbd2b39be187c91c.tmp/Multiprotocol.ino.hex:
-avrdude: load data flash data from input file /var/folders/jc/xx5l7d_j63n6fy575yt6l2r00000gn/T/build39d13a724d817953cbd2b39be187c91c.tmp/Multiprotocol.ino.hex:
-avrdude: input file /var/folders/jc/xx5l7d_j63n6fy575yt6l2r00000gn/T/build39d13a724d817953cbd2b39be187c91c.tmp/Multiprotocol.ino.hex contains 19048 bytes
-avrdude: reading on-chip flash data:
-
-Reading | ################################################## | 100% 7.50s
-
-avrdude: verifying ...
-avrdude: verification error, first mismatch at byte 0x0002
-         0x04 != 0x4c
-avrdude: verification error; content mismatch
-
-avrdude: safemode: lfuse reads as FF
-avrdude: safemode: hfuse reads as DA
-avrdude: safemode: efuse reads as 7
-avrdude: safemode: Fuses OK (H:07, E:DA, L:FF)
-
-avrdude done.  Thank you.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id="binding"&gt;Binding&lt;/h3&gt;
-
-&lt;p&gt;I have configured my module such that the dial should be turned to the following value for each protocol:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;//  Dial    Protocol        Sub protocol    RX_Num  Power       Auto Bind       Option
-/*  1 */  {MODE_FLYSKY, Flysky    , 0  , P_HIGH, NO_AUTOBIND, 0    },
-/*  2 */  {MODE_FRSKY , 0         , 0  , P_HIGH, NO_AUTOBIND, 0xD7 },  // D7 fine tuning
-/*  3 */  {MODE_FRSKYX, CH_8      , 0  , P_HIGH, NO_AUTOBIND, 0xD7 },  // D7 fine tuning
-/*  4 */  {MODE_FRSKYX, CH_16     , 0  , P_HIGH, NO_AUTOBIND, 0xD7 },  // D7 fine tuning
-/*  5 */  {MODE_DSM2  , DSM2      , 0  , P_HIGH, NO_AUTOBIND, 6    },  // 6 channels @ 11ms
-/*  6 */  {MODE_DSM2  , DSMX      , 0  , P_HIGH, NO_AUTOBIND, 6    },  // 6 channels @ 11ms
-/*  7 */  {MODE_CX10  , CX10_GREEN, 0  , P_HIGH, NO_AUTOBIND, 0    },
-/*  8 */  {MODE_BAYANG, 0         , 0  , P_HIGH, NO_AUTOBIND, 0    },
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-  </entry>
-  <entry>
-    <title>BetaFlight Spektrum Satellite Receiver Guide</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/09/betaflight-spektrum-satellite-receiver-guide/"/>
-    <id>http://nathan.vertile.com/blog/2016/07/09/betaflight-spektrum-satellite-receiver-guide/</id>
-    <published>2016-07-08T21:56:00-07:00</published>
-    <updated>2016-07-08T21:56:53-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>

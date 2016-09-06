@@ -5,14 +5,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://nathan.vertile.com/blog/2013/03/29</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://nathan.vertile.com/blog/2013/02</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>http://nathan.vertile.com/blog/2013/02/14</loc>
     <priority>0.7</priority>
   </url>
@@ -229,6 +221,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/page/13</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/tags/android/page/2</loc>
     <priority>0.7</priority>
   </url>
@@ -254,6 +250,10 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2016/page/3</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/page/4</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -553,7 +553,23 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/07/12/airbot-f3s-aio</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016/07/25/j-link-getting-started-guide</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/07/29/betaflight-kiss-flight-controller</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/08/06/geeetech-prusa-i3-x-build-guide</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/09/05/omnibus-f3-pro</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1661,7 +1677,35 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/tags/kissfc</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/3d-printing</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/tags/omnibusf3</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/09</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/09/05</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/08</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/08/06</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1669,7 +1713,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/07/29</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016/07/25</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/07/12</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -2042,6 +2094,14 @@
   </url>
   <url>
     <loc>http://nathan.vertile.com/blog/2013/03</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2013/03/29</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2013/02</loc>
     <priority>0.7</priority>
   </url>
 </urlset>

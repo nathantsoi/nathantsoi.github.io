@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link href='/favicon/apple-touch-icon-57x57-8e6554ae.png' rel='apple-touch-icon-precomposed' sizes='57x57'>
+<link href='/favicon/apple-touch-icon-114x114-e0cb1072.png' rel='apple-touch-icon-precomposed' sizes='114x114'>
+<link href='/favicon/apple-touch-icon-72x72-a86b7103.png' rel='apple-touch-icon-precomposed' sizes='72x72'>
+<link href='/favicon/apple-touch-icon-144x144-bd50bc10.png' rel='apple-touch-icon-precomposed' sizes='144x144'>
+<link href='/favicon/apple-touch-icon-60x60-ca47953b.png' rel='apple-touch-icon-precomposed' sizes='60x60'>
+<link href='/favicon/apple-touch-icon-120x120-068de821.png' rel='apple-touch-icon-precomposed' sizes='120x120'>
+<link href='/favicon/apple-touch-icon-76x76-2bd34869.png' rel='apple-touch-icon-precomposed' sizes='76x76'>
+<link href='/favicon/apple-touch-icon-152x152-da7652e0.png' rel='apple-touch-icon-precomposed' sizes='152x152'>
+<link href='/favicon/favicon-196x196-569e78d9.png' rel='icon' sizes='196x196' type='image/png'>
+<link href='/favicon/favicon-96x96-d809406c.png' rel='icon' sizes='96x96' type='image/png'>
+<link href='/favicon/favicon-32x32-162b5c6d.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/favicon/favicon-16x16-d0c2b051.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/favicon/favicon-128-2f649ba2.png' rel='icon' sizes='128x128' type='image/png'>
+<meta content=' ' name='application-name'>
+<meta content='#FFFFFF' name='msapplication-TileColor'>
+<meta content='/favicon/mstile-144x144-bd50bc10.png' name='msapplication-TileImage'>
+<meta content='/favicon/mstile-70x70-2f649ba2.png' name='msapplication-square70x70logo'>
+<meta content='/favicon/mstile-150x150-999c62ba.png' name='msapplication-square150x150logo'>
+<meta content='/favicon/mstile-310x150-37756fac.png' name='msapplication-wide310x150logo'>
+<meta content='/favicon/mstile-310x310-6bd894f0.png' name='msapplication-square310x310logo'>
+<title>
+Geeetech Prusa I3 X Build Guide
+</title>
+<link href="/assets/stylesheets/all-6acef658.css" rel="stylesheet" />
+<script src="/assets/javascripts/all-d5b91b8e.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-7406390-2', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  
+    // outbound link tracking
+    // http://www.sitepoint.com/track-outbound-links-google-analytics/
+    (function($) {
+      "use strict";
+      // current page host
+      var baseURI = window.location.host;
+      // click event on body
+      $("body").on("click", function(e) {
+        // abandon if link already aborted or analytics is not available
+        if (e.isDefaultPrevented() || typeof ga !== "function") return;
+        // abandon if no active link or link within domain
+        var link = $(e.target).closest("a");
+        if (link.length != 1 || baseURI == link[0].host) return;
+        // cancel event and record outbound link
+        e.preventDefault();
+        var href = link[0].href;
+        ga('send', {
+          'hitType': 'event',
+          'eventCategory': 'outbound',
+          'eventAction': 'link',
+          'eventLabel': href,
+          'hitCallback': loadPage
+        });
+        // redirect after one second if recording takes too long
+        setTimeout(loadPage, 1000);
+        // redirect to outbound page
+        function loadPage() {
+          document.location = href;
+        }
+      });
+    })(jQuery);
+</script>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+</head>
+<body>
+<nav class='navbar navbar-default' id='top' role='navigation'>
+<div class='container'>
+<div class='navbar-header'>
+<div class='navbar-brand'>
+<a href='/blog/'>
+<img src="/assets/images/home/smile-0289c4fe.jpg" />
+</a>
+<span>Geeetech Prusa I3 X Build Guide</span>
+</div>
+<button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<div class='navbar-right collapse navbar-collapse' id='bs-nav-collapse'>
+<ul class='nav navbar-nav'>
+<li>
+<form class='search navbar-form' role='search'>
+<div class='form-group'>
+<input class='form-control bloodhound typeahead' data-articles='[["Omnibus F3 Pro","/blog/2016/09/05/omnibus-f3-pro/"],["Geeetech Prusa I3 X Build Guide","/blog/2016/08/06/geeetech-prusa-i3-x-build-guide/"],["BetaFlight Kiss Flight Controller","/blog/2016/07/29/betaflight-kiss-flight-controller/"],["J-Link Getting Started Guide","/blog/2016/07/25/j-link-getting-started-guide/"],["Airbot F3S AIO Flight Controller and Typhoon 4-in-1 ESC","/blog/2016/07/12/airbot-f3s-aio/"],["Eachine EV800 Review","/blog/2016/07/10/eachine-ev800-review/"],["Eachine Goggles One Review","/blog/2016/07/10/eachine-goggles-one-review/"],["FlySky i6 Radio Setup and Hacking Guide","/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/"],["BetaFlight Spektrum Satellite Receiver Guide","/blog/2016/07/09/betaflight-spektrum-satellite-receiver-guide/"],["Omnibus Flight Controller and Airbot Typhoon 180 Miniquad Build","/blog/2016/07/07/omnibus-typhoon-miniquad/"],["FPV Goggle Guide","/blog/2016/06/22/fpv-goggle-guide/"],["HobbyKing Quanum V2 Pro Goggles","/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/"],["Drone Building 101 with the HobbyKing FPV Starter Setup","/blog/2016/05/08/drone-building-101-with-the-hobbyking-fpv-starter-setup/"],["STM32 hardfault debugging","/blog/2016/05/04/stm32-hardfault-debugging/"],["Eachine VR-007 Goggle Review","/blog/2016/04/25/eachine-vr-007-goggle-review/"],["Rctimer BeeRotor u210 mini quad build, setup and review","/blog/2016/04/24/rctimer-u210-mini-quad-build-setup-and-review/"],["AirBot Flip32 F3 AIO Lite and Typhoon 4-in-1 ESC","/blog/2016/04/11/airbot-flip32-f3-aio-lite-and-typhoon-4-in-1-esc/"],["DYS X160 v3","/blog/2016/04/05/dys-x160-v3/"],["Turnigy Reaktor 250W Charger","/blog/2016/04/02/turnigy-reaktor-250w-charger/"],["HobbyKing Graphene and Bolt High Voltage LiPo Battery Analysis","/blog/2016/03/25/hobbyking-graphene-battery-analysis/"],["BetaFlight in-flight PID tuning","/blog/2016/03/24/betaflight-in-flight-pid-tuning/"],["Drone Building at Maker Faire Bay Area 2016","/blog/2016/03/23/drone-building-at-maker-faire-bay-area-2016/"],["Rctimer BR-X200 Mini-quad Build, Setup and Review","/blog/2016/03/22/rctimer-br-x200-mini-quad-build-setup-and-review/"],["AVR Dissassembly","/blog/2016/02/25/avr-dissassembly/"],["Victory230 FPV Mini-quad Setup and Review","/blog/2016/02/10/rctimer-victory230-fpv-miniquad/"],["FrSky RX SBUS and Frsky DJT Module","/blog/2016/02/09/airwolf-diy-frsky-rx-sbus/"],["HMDVR FPV Video Recorder","/blog/2016/02/06/hmdvr-fpv-video-recorder/"],["Rctimer BeerotorF3 Flight Controller","/blog/2016/02/03/rctimer-beerotorf3-flight-controller/"],["Flying Sony NEX Micro 4/3rds Camera","/blog/2016/01/29/flying-micro-4-3rds-camera/"],["Q600 Quadcopter","/blog/2016/01/29/rctimer-q600-quadcopter/"],["ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller","/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/"],["PixHawk Flashing and Setup","/blog/2016/01/29/rctimer-fixhawk-pixhawk-flashing-and-setup/"],["BlHeli ESCs","/blog/2015/12/06/blheli-esc-identification/"],["BlHeli ESC Upgrading and Configuration","/blog/2015/12/06/blheli-configuration/"],["BlHeli CleanFlight ESC Calibration","/blog/2015/12/06/blheli-calibration/"],["Rctimer Micro 160 BeeRotor Build, Setup and Review","/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/"],["Flashing SiLabs xRotor 20a with BlHeli via C2 4w-if","/blog/2015/11/16/flashing-xrotor-20a-with-blheli-via-4w-if/"],["Rctimer OZE32 / RTFQ Flip32 AIO Integrated Flight Controller Review and Setup","/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"],["Rooting Marshmellow, keeping SELinux","/blog/2015/11/03/rooting-marshmellow-keeping-selinux/"],["MultiRotor Setup Checklist","/blog/2015/10/29/multirotor-setup-checklist/"],["ST-LINK flash and debug on the SPRacingF3","/blog/2015/10/24/st-link-flash-and-debug-on-the-spracingf3-discovery/"],["Debugging Android Native (NDK) Apps","/blog/2015/09/27/debugging-android-native-ndk-apps/"],["Fixing an Arduino 0x000000 Error","/blog/2015/09/16/fixing-an-arduino-0x000000-error/"],["GPS VK16U6 CleanFlight Setup","/blog/2015/08/26/gps-vk16u6-cleanflight-setup/"],["Go FPV Latency Testing","/blog/2015/08/24/go-fpv-latency-testing/"],["Building Android on Ubuntu 14.04","/blog/2015/07/23/building-android-on-ubuntu-14-04/"],["Migrating to Amazon Elastic Map Reduce (EMR)","/blog/2015/07/15/migrating-to-amazon-elastic-map-reduce-emr/"],["Naze32 ST-Link Debugging","/blog/2015/07/06/naze32-st-link-debugging/"],["Decompiling an APK","/blog/2015/06/30/decompiling-an-apk/"],["Nexpose Community Edition copy Scan Template","/blog/2015/06/17/nexpose-community-edition-copy-scan-template/"],["Wireless Video Tx/Rx FPV Channels","/blog/2015/06/17/boscam-tx-rx-fpv-channels/"],["Making a UHF 433mhz Inverted Vee Antenna Set","/blog/2015/06/15/making-a-uhf-433mhz-inverted-vee-antenna-set/"],["Setup OrangeLRS with OpenLRSng","/blog/2015/05/21/setup-orangelrs-with-openlrsng/"],["Go FPV Goggles","/blog/2015/05/21/go-fpv-goggles/"],["FPV250 with Cleanflight, Minimosd, OpenLRSng and a Xiaomi Yi GoPro Clone","/blog/2015/05/19/fpv250-cleanflight/"],["Flashing BlHeli on HobbyKing BlueSeries 12a ESCs With a Chinese Arduino Nano Clone","/blog/2015/05/15/flashing-blheli-on-hobbyking-blueseries-12a-escs-with-a-chinese-arduino-nano-clone/"],["Flashing NodeMCU on the ESP8266","/blog/2015/05/14/flashing-nodemcu-on-the-esp8266/"],["Ebay HC-05 Bluetooth Setup Guide","/blog/2015/05/12/ebay-hc-05-bluetooth-setup-guide/"],["3D Camera on the Tricopter","/blog/2015/05/12/3d-camera-on-the-tricopter/"],["ProRes editing in Premier","/blog/2015/05/11/prores-editing-in-photoshop/"],["Xiaomi Yi -- The Ant Camera","/blog/2015/05/08/xiaomi-yi-the-ant-camera/"],["Minim OSD","/blog/2015/04/22/minim-osd/"],["Flashing BlHeli on HobbyKing F20 ESCs With a Chinese Arduino Nano Clone","/blog/2015/04/20/flashing-blheli-on-hobbyking-f20-escs-with-a-chinese-arduino-nano-clone/"],["Handling Dates in Hadoop Pig","/blog/2015/04/17/handling-dates-in-hadoop-pig/"],["LiPo Battery Price Analysis","/blog/2015/04/10/lipo-battery-price-analysis/"],["ADB over WiFi (aka, how do I debug when using USB host mode?)","/blog/2015/03/27/adb-over-wifi-aka-how-do-i-debug-when-using-usb-host-mode/"],["Shrink a linux VM on OSX","/blog/2015/03/18/shrink-a-linux-vm-on-osx/"],["Mounting a VHD NTFS image on Ubuntu","/blog/2015/02/27/mounting-a-vhd-ntfs-image-on-ubuntu/"],["Ubuntu on the Beaglebone Black","/blog/2015/01/16/ubuntu-on-the-beaglebone-black/"],["Configuring the HK-T6A for a Flight Simulator","/blog/2015/01/02/configuring-the-hk-t6a-for-a-flight-simulator/"],["A complete noob&#x0027;s guide to RC","/blog/2015/01/02/a-complete-noobs-guide-to-rc/"],["DropCam on a Captive Portal","/blog/2014/11/17/dropcam-on-a-captive-portal/"],["Java reversing tips","/blog/2014/09/18/java-reversing-tips/"],["Ooize Data Pipeline Done-Flag","/blog/2014/09/02/oozie-data-pipeline-done-flag/"],["Time Machine on exFat","/blog/2014/08/06/Time_Machine_on_exFat/"],["Optimizing Postgresql","/blog/2014/01/31/Optimizing_Postgresql/"],["Mail Maker","/blog/2014/01/24/Mail_Maker/"],["Angularjs and Rails","/blog/2013/07/12/Angularjs_and_Rails/"],["nginx ssl chained certs","/blog/2013/04/24/nginx_ssl_chained_certs/"],["rails log tagging","/blog/2013/04/24/rails_log_tagging/"],["Converting an Android Project to Maven","/blog/2013/04/16/Converting_an_Android_Project_to_Maven/"],["Oh! Map my rails!","/blog/2013/04/09/Oh_Map_my_rails/"],["mysql permissions","/blog/2013/04/09/mysql_permissions/"],["reset mysql slave","/blog/2013/03/29/reset_mysql_slave/"],["installing rmagick on 10.8 with homebrew","/blog/2013/02/14/installing_rmagick_on_108_with_homebrew/"],["NP-Completeness","/blog/2013/02/08/NP-Completeness/"],["Find and replace non-breaking spaces in vim","/blog/2013/02/01/Find_and_replace_non-breaking_spaces_in_vim/"],["Open Resty the Prebuilt Reverse Proxy","/blog/2013/02/01/Open_Resty_the_Prebuilt_Reverse_Proxy/"],["Sublime Text 2 Tweaks","/blog/2012/12/17/Sublime_Text_2_Tweaks/"],["Batch Convert CR2 to JPG","/blog/2012/12/01/Batch_Convert_CR2_to_JPG/"],["Androids in the wild","/blog/2012/06/30/Androids_in_the_wild/"],["Why you need database_cleaner","/blog/2012/06/11/Why_you_need_database_cleaner/"],["Find and replace in files on linux/unix","/blog/2012/05/12/Find_and_replace_in_files_on_linuxunix/"],["a pithy guide to railsconf 2012","/blog/2012/04/26/a_pithy_guide_to_railsconf_2012/"],["faster rails boot ruby 1.9.3 + debugger","/blog/2012/04/12/faster_rails_boot_ruby_193_debugger/"],["homebrew -- fix that nasty mysql.server start segfault","/blog/2012/03/29/homebrew_--_fix_that_nasty_mysqlserver_start_segfault/"],["read/write filesystem on rooted android for an ad-free android experience","/blog/2012/02/14/readwrite_filesystem_on_rooted_android_for_an_ad-free_android_experience/"],["Turn Wikipedia Back On","/blog/2012/01/17/Turn_Wikipedia_Back_On/"],["compiling qt4 on centos 5","/blog/2012/01/06/compiling_qt4_on_centos_5/"],["pip install pymongo with xcode 4","/blog/2011/08/09/pip_install_pymongo_with_xcode_4/"],["interactive python history -- better titled \"gimme some up arrow love\"","/blog/2011/08/05/interactive_python_history_--_better_titled_gimme_some_up_arrow_love/"],["Centos 5.5 yum repo sha256 fix","/blog/2011/07/27/Centos_55_yum_repo_sha256_fix/"],["Apple Keyboard for Android!","/blog/2011/07/15/Apple_Keyboard_for_Android/"],["jQuery Everywhere","/blog/2011/05/24/jQuery_Everywhere/"],["Django Migrations","/blog/2011/05/11/Django_Migrations/"],["RVM + Rails + Git + HTML5 Boiler Plate... What more could you possibly want?","/blog/2011/02/22/RVM_Rails_Git_HTML5_Boiler_Plate_What_more_could_you_possibly_want/"],["OneCast 2.0 - downloadable podcasts for androids of every color","/blog/2011/02/18/OneCast_20_-_downloadable_podcasts_for_androids_of_every_color/"],["Default Android Menu Icons in Your App","/blog/2011/02/17/Default_Android_Menu_Icons_in_Your_App/"],["Windows 7 x64 Android Development (ADB)","/blog/2010/11/06/Windows_7_x64_Android_Development_ADB/"],["Firefox Plugin - Watching for an Application Exit Event","/blog/2010/05/03/Firefox_Plugin_-_Watching_for_an_Application_Exit_Event/"],["Stop Redrawing a Fixed Orientation Android App","/blog/2010/03/08/Stop_Redrawing_a_Fixed_Orientation_Android_App/"]]' placeholder='Search' type='text'>
+</div>
+</form>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+
+<div class='container'>
+<div class='row row-offcanvas row-offcanvas-left'>
+<!-- sidebar -->
+<div class='col-xs-3 col-sm-3 sidebar-offcanvas'>
+<div id='sidebar' role='navigation'>
+<div class='sidebar-contents'>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+<a href='#top'>Contents</a>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 table-of-contents'>
+<ul class="nav"><li><a class="type-h2" href="#safety-tips"><h2>Safety tips</h2></a></li>
+<li><a class="type-h2" href="#other-parts"><h2>Other Parts</h2></a></li>
+<li><a class="type-h2" href="#unboxing"><h2>Unboxing</h2></a></li><ul><li><a class="type-h3" href="#part-1"><h3>Part 1</h3></a></li>
+<li><a class="type-h3" href="#part-2"><h3>Part 2</h3></a></li></ul>
+<li><a class="type-h2" href="#build"><h2>Build</h2></a></li><ul><li><a class="type-h3" href="#general-tips"><h3>General Tips</h3></a></li>
+<li><a class="type-h3" href="#step-1-threaded-rod"><h3>Step 1 - Threaded Rod</h3></a></li>
+<li><a class="type-h3" href="#step-2-y-axis-plates"><h3>Step 2 - Y axis plates</h3></a></li>
+<li><a class="type-h3" href="#step-3-y-axis-motor"><h3>Step 3 - Y axis motor</h3></a></li>
+<li><a class="type-h3" href="#step-4-pulleys"><h3>Step 4 - Pulleys</h3></a></li>
+<li><a class="type-h3" href="#step-5-print-platform"><h3>Step 5 - Print Platform</h3></a></li>
+<li><a class="type-h3" href="#step-6-y-belt"><h3>Step 6 - Y-belt</h3></a></li>
+<li><a class="type-h3" href="#step-7-left-z-motor-mount"><h3>Step 7 - Left Z motor mount</h3></a></li>
+<li><a class="type-h3" href="#step-8-right-z-motor-mount"><h3>Step 8 - Right Z motor mount</h3></a></li>
+<li><a class="type-h3" href="#step-9-side-panels"><h3>Step 9 - Side Panels</h3></a></li>
+<li><a class="type-h3" href="#step-10-main-frame-assembly"><h3>Step 10 - Main frame assembly</h3></a></li>
+<li><a class="type-h3" href="#step-11-fan-mount"><h3>Step 11 - Fan mount</h3></a></li>
+<li><a class="type-h3" href="#step-12-z-motor-assembly"><h3>Step 12 - Z motor assembly</h3></a></li>
+<li><a class="type-h3" href="#step-13-x-axis-motor-ends"><h3>Step 13 - X axis motor ends</h3></a></li>
+<li><a class="type-h3" href="#step-14-x-axis-idler"><h3>Step 14 - X axis idler</h3></a></li>
+<li><a class="type-h3" href="#step-15-extruder-carriage"><h3>Step 15 - Extruder Carriage</h3></a></li>
+<li><a class="type-h3" href="#step-16-x-amp-y-axis-assembly"><h3>Step 16 - X &amp; Y Axis Assembly</h3></a></li>
+<li><a class="type-h3" href="#step-17-x-motor"><h3>Step 17 - X Motor</h3></a></li>
+<li><a class="type-h3" href="#step-18-x-axis-belt"><h3>Step 18 - X Axis Belt</h3></a></li>
+<li><a class="type-h3" href="#step-19-mount-the-extruder"><h3>Step 19 - Mount the Extruder</h3></a></li>
+<li><a class="type-h3" href="#step-20-install-the-lcd"><h3>Step 20 - Install the LCD</h3></a></li>
+<li><a class="type-h3" href="#step-21-mount-the-control-board"><h3>Step 21 - Mount the Control Board</h3></a></li>
+<li><a class="type-h3" href="#step-22-build-platform"><h3>Step 22 - Build Platform</h3></a></li>
+<li><a class="type-h3" href="#step-23-power-supply"><h3>Step 23 - Power Supply</h3></a></li>
+<li><a class="type-h3" href="#step-24-y-endstop"><h3>Step 24 - Y Endstop</h3></a></li>
+<li><a class="type-h3" href="#step-25-wiring"><h3>Step 25 - Wiring</h3></a></li></ul>
+<li><a class="type-h2" href="#first-print"><h2>First print</h2></a></li><ul><li><a class="type-h3" href="#model-slicer"><h3>Model Slicer</h3></a></li>
+<li><a class="type-h3" href="#print-control-software"><h3>Print Control Software</h3></a></li>
+<li><a class="type-h3" href="#setup-and-calibration"><h3>Setup and calibration</h3></a></li><ul><li><a class="type-h4" href="#belt-tension"><h4>Belt Tension</h4></a></li>
+<li><a class="type-h4" href="#bed-leveling"><h4>Bed Leveling</h4></a></li>
+<li><a class="type-h4" href="#bed-preparation"><h4>Bed Preparation</h4></a></li>
+<li><a class="type-h4" href="#firmware"><h4>Firmware</h4></a></li></ul>
+<li><a class="type-h3" href="#upgrades"><h3>Upgrades</h3></a></li><ul><li><a class="type-h4" href="#pla-fan"><h4>PLA Fan</h4></a></li>
+<li><a class="type-h4" href="#print-bed"><h4>Print bed</h4></a></li>
+<li><a class="type-h4" href="#power"><h4>Power</h4></a></li>
+<li><a class="type-h4" href="#auto-leveling-bed"><h4>Auto leveling bed</h4></a></li>
+<li><a class="type-h4" href="#lighting"><h4>Lighting</h4></a></li></ul></ul></ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header'>
+Related Articles
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 related'>
+<ul>
+<li><a href="/blog/2016/01/29/rctimer-q600-quadcopter/">Q600 Quadcopter</a></li>
+<li><a href="/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/">FlySky i6 Radio Setup and Hacking Guide</a></li>
+<li><a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/">ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller</a></li>
+<li><a href="/blog/2016/06/22/fpv-goggle-guide/">FPV Goggle Guide</a></li>
+<li><a href="/blog/2016/04/05/dys-x160-v3/">DYS X160 v3</a></li>
+<li><a href="/blog/2016/01/29/flying-micro-4-3rds-camera/">Flying Sony NEX Micro 4/3rds Camera</a></li>
+</ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header'></div>
+</div>
+<div class='row'>
+<div class='col-lg-12 text-center'>
+Checkout my other guides at
+<a href='/blog'>nathan.vertile.com/blog</a>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 page-header text-center'>
+<div class='drawer-footer'>
+<small>
+©
+<a href='mailto:nathan@vertile.com'>Nathan Tsoi</a>
+</small>
+</div>
+</div>
+</div>
+<div class='row last'>
+<div class='col-lg-12 text-center'>
+<a class='btn-sm btn-default' href='https://github.com/nathantsoi' target='_blank'>
+<i class='fa fa-github'></i>
+</a>
+<a class='btn-sm btn-default' href='https://bitbucket.org/nathantsoi' target='_blank'>
+<i class='fa fa-bitbucket'></i>
+</a>
+<a class='btn-sm btn-default' href='https://twitter.com/nathantsoi/' target='_blank'>
+<i class='fa fa-twitter'></i>
+</a>
+<a class='btn-sm btn-default' href='https://angel.co/nathantsoi' target='_blank'>
+<i class='fa fa-angellist'></i>
+</a>
+<a class='btn-sm btn-default' href='https://linkedin.com/in/nattsoi/' target='_blank'>
+<i class='fa fa-linkedin'></i>
+</a>
+<a class='btn-sm btn-default' href='https://facebook.com/nathantsoi' target='_blank'>
+<i class='fa fa-facebook'></i>
+</a>
+<a class='btn-sm btn-default' href='https://plus.google.com/112518806102274696668' target='_blank'>
+<i class='fa fa-google-plus'></i>
+</a>
+<a class='btn-sm btn-default' href='https://news.ycombinator.com/user?id=natvert' target='_blank'>
+<i class='fa fa-hacker-news'></i>
+</a>
+<a class='btn-sm btn-default' href='https://trello.com/nathantsoi' target='_blank'>
+<i class='fa fa-trello'></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- main area -->
+<div class='col-sm-9 col-xs-12' id='mainbar'>
+<article>
+<p>I just got my first 3D printer, the <a href="http://us.banggood.com/Geeetech-Prusa-I3-X-3D-Printer-DIY-Kit-Full-Acrylic-Frame-p-1010500.html?p=1G09211226617201502J">Geeetech Prusa I3 X</a>. This post details my experience as a 3D printing noob: unboxing, assembling and using this 3D printer. First, let me show you what this printer can do.</p>
+
+<p>Here, I&#39;m printing an Atlas statue to hold up my colleague&#39;s monitor.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 133.33333333333331%;'><a id="assets-images-blog-geeetech-prusa-i-x-atlas-b-cd-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-1-b99700cd.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-1_prev-4fdbae53.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 133.33333333333331%;'><a id="assets-images-blog-geeetech-prusa-i-x-atlas-b-d-dcf-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-2-b8d55dcf.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-2_prev-d5fb4da0.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 133.33333333333331%;'><a id="assets-images-blog-geeetech-prusa-i-x-atlas-ff-e-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-3-3ff4590e.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-3_prev-c9e40dde.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 133.33333333333331%;'><a id="assets-images-blog-geeetech-prusa-i-x-atlas-f-a-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-4-4f79a346.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-4_prev-d3ff99e6.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 133.33333333333331%;'><a id="assets-images-blog-geeetech-prusa-i-x-atlas-f-b-e-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-5-5f146b0e.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-5_prev-62ea39c3.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 133.33333333333331%;'><a id="assets-images-blog-geeetech-prusa-i-x-atlas-b-fb-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-6-b78fb280.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-6_prev-323d473a.jpg' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.0%;'><a id="assets-images-blog-geeetech-prusa-i-x-atlas-c-b-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-7-5c17b065.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-7_prev-b14fbff2.jpg' class='trailing-space' ></img></a></div></div>
+
+<h2 id="safety-tips">Safety tips</h2>
+
+<ul>
+<li><p>Never plug or unplug cables from the controller board while the board is powered. This can damage the board or motor controllers.</p></li>
+<li><p>This thing gets HOT, don&#39;t let little kids touch the build plate or nozzle</p></li>
+<li><p>PLA is foodsafe and the fumes are probably not too toxic when printing. However, ABS is NOT foodsafe nor are the fumes safe. Be sure to run the printer in a well ventilated area while printed ABS.</p></li>
+</ul>
+
+<h2 id="other-parts">Other Parts</h2>
+
+<p>Along with the printer, you&#39;ll need some filament. You can get this <a href="http://www.banggood.com/1_75mm-3D-Printer-ABS-Filament-For-Makerbot-Mendel-Printrbot-Reprap-Prusa-Sumpod-p-988881.html?p=1G09211226617201502J">from Banggood</a> for about $30 per kg, but if you live in the USA, I suggest you get filament <a href="http://amzn.to/2c0ekDw">from this Amazon supplier for only $8-10 per kg</a>. The ratings for the Amazon filament are not great, but I&#39;ve been using this for all my prints and it works fine.</p>
+
+<p>From time to time the nozzle does clog, so having some <a href="http://www.banggood.com/8Pcs-Four-Sizes-E3D-V6-Brass-Nozzle-For-1_75mm-Filament-Copper-Nozzle-Extruder-Print-Head-p-1072935.html?p=1G09211226617201502J">extra nozzles</a> on hand is always a good idea.</p>
+
+<p>To get the prints to stick to the print bed, I have found that <a href="http://amzn.to/2bOMajU">Elmer&#39;s washable (purple) glue stick</a> works well for both PLA and ABS. Also, it is much easier to work with than ABS juice and gives a similar result. Glue stick can be cleaned off with rubbing alcohol. Alternatively, if you don&#39;t want to mess with the gluestick, get <a href="http://amzn.to/2bWSQXF">a PEI sheet</a> and print straight onto this surface without any preparation.</p>
+
+<p>I just ordered a PEI sheet, in hopes of making printing even easier. I&#39;ll post an update when I get this installed.</p>
+
+<p>Finally, you&#39;ll want some <a href="http://amzn.to/2cqgnli">100% pure acetone</a> if you&#39;re working with ABS. It&#39;s useful for gluing parts together, as acetone melts ABS. Mix equal parts Acetone and some plastic from failed ABS prints to make &quot;ABS Juice,&quot; which can be used to glue parts together or adhere prints to the print bed. Acetone can also be used to clear clogged print nozzles, by soaking the nozzle in acetone overnight. </p>
+
+<h2 id="unboxing">Unboxing</h2>
+
+<h3 id="part-1">Part 1</h3>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/P6H0sEpB7UM?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="part-2">Part 2</h3>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/yUzJ26VXunQ?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h2 id="build">Build</h2>
+
+<p>Download the build instructions here: <a href="http://www.geeetech.com/Documents/Building%20Instructions%20of%20Geeetech%20Prusa%20I3%20X.pdf">http://www.geeetech.com/Documents/Building%20Instructions%20of%20Geeetech%20Prusa%20I3%20X.pdf</a></p>
+
+<p>I found it easiest to follow the PDF and watch the youtube videos when I had questions.</p>
+
+<p>Here are all the parts.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-parts-a-d-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/parts-2006a94d.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/parts_prev-e3994431.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Checkout how the bag numbers correspond to <code>Part ID</code> in the directions.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 64.01985111662532%;'><a id="assets-images-blog-geeetech-prusa-i-x-directions-png" href="/assets/images/blog/geeetech-prusa-i3-x/directions-1-42269242.png" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/directions-1-42269242.png' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-directions-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/directions-2-46667100.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/directions-2_prev-9b3dd691.jpg' class='trailing-space' ></img></a></div></div>
+
+<h3 id="general-tips">General Tips</h3>
+
+<p>In this guide, I&#39;ll refer to the axis of the printer as described in this diagram.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 102.09205020920503%;'><a id="assets-images-blog-geeetech-prusa-i-x-xyz-eee-b-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/xyz-33eee80b.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/xyz-33eee80b.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Use blue thread lock wherever you have metal on metal, however the blue thread lock will degrade the acrylic frame, so be sure to not let the thread lock touch the acrylic! The only places I was able to safely use lock tight was on the motor couplers.</p>
+
+<p>By the way, bag 38 which has the motor couplers, also has some allen wrenches you can use for assembly.</p>
+
+<p>Also, they don&#39;t mention this, but bags 7 and 8 include 3mm and 4mm washers, use them whenever bolts in bags numbered 22, 23 and 30 are used. This will help strengthen the frame.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-bolts-with-washers-c-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/bolts-with-washers-9254553c.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/bolts-with-washers_prev-85b9e46d.jpg' class='trailing-space' ></img></a></div></div>
+
+<h3 id="step-1-threaded-rod">Step 1 - Threaded Rod</h3>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-threaded-rod-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-1.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-1_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-threaded-rod-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-3.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-3_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class="videoWrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xnf8jDOtkDg?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-2-y-axis-plates">Step 2 - Y axis plates</h3>
+
+<p>On this step, I got everything assembled, then used a ruler to make sure both sides were square. Adjust the outer-most nuts if one side is longer or shorter than the other.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-threaded-rod-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-4.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-4_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-threaded-rod-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-5.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-threaded-rod-5_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ShPodbaHq10?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-3-y-axis-motor">Step 3 - Y axis motor</h3>
+
+<p>I found that mounting the gear upside down actually fit best.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-y-motor-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-motor-1.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-motor-1_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-y-motor-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-motor-2.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-motor-2_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-y-motor-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-motor-3.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-motor-3_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/PnZP_BbhrOo?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-4-pulleys">Step 4 - Pulleys</h3>
+
+<p>Here, the quantity of M3x20 screws in the manual is 3. You only need 1. Also you&#39;ll need a M3x50mm screw for the other pulley. The Youtube video labeled this as M3x40, but it says M3x50 in the manual. Since my kit didn&#39;t include M3x40, I&#39;ll use a silver M3x50 screw (Bag #28 in my kit).</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-pully-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-pully-1.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-pully-1_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Also, the pulley brackets came a little bit too snug, so the wheel couldn&#39;t turn freely. I used a pair of needle nose pliers to open them up a little bit.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-pully-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-pully-2.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-pully-2_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Be very careful that there is enough clearance when installing the bearings and that they can spin freely without contacting the edge of the bracket with any pressure. I destroyed a bearing because it rubbed on the edge of the bracket. Open up the bracket a little extra if in doubt, to make sure there is enough clearance.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/M007xiYXIy8?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-5-print-platform">Step 5 - Print Platform</h3>
+
+<p>The washers go between the bolt head and the acrylic.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-y-plate-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-1.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-1_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-y-plate-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-2.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-2_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-y-plate-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-3.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-3_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-y-plate-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-4.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-4_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-y-plate-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-5.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-5_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Unlike the video, this kit uses only 1 rod-holder thing per rod, not 2.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-y-plate-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-6.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-6_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-y-plate-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-7.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-plate-7_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>I also tightened down the bolts on the threaded rod before tightening the rod holders, so everything stays the same size.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/gL6qOlwtokg?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-6-y-belt">Step 6 - Y-belt</h3>
+
+<p>I don&#39;t have a hole punch, so I used a Dremel on slow speed with a milling bit to punch the holes, but you could pry just drill through the belt. It&#39;s fairly stiff.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-y-belt-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-belt-1.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-belt-1_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Make sure you loosen the screw on the y-axis pulley thing all the way, to give as much slack as possible while installing the belt. Once you have the belt screwed into the carriage, then tighten the y-axis pulley.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-y-belt-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-y-belt-2.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-y-belt-2_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/FfFizql0My8?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-7-left-z-motor-mount">Step 7 - Left Z motor mount</h3>
+
+<p>Be careful in this step, not to over tighten the screws that hold the acrylic pieces together, as they could crack.</p>
+
+<p>The trick with these is to get all the acrylic pieces loosely attached, then once everything is in place, tighten them all down.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/4Mv5tIU37So?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-8-right-z-motor-mount">Step 8 - Right Z motor mount</h3>
+
+<p>Same as the left, be careful not to over tighten!</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/HAsf0nzeTCA?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-9-side-panels">Step 9 - Side Panels</h3>
+
+<p>Again, be very careful to not over tighten the screws.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/EklCSqLgRr4?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-10-main-frame-assembly">Step 10 - Main frame assembly</h3>
+
+<p>This step isn&#39;t well explained and the pdf directions show that you need more square nuts than you actually need.</p>
+
+<p>Basically, you want to attach the main frame and the tray, like this.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-frame-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-frame.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-frame_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-frame-tray-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-frame-tray-1.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-frame-tray-1_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-frame-tray-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-frame-tray-2.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-frame-tray-2_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-frame-tray-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-frame-tray-3.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-frame-tray-3_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/TASHOBrlKBc?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-11-fan-mount">Step 11 - Fan mount</h3>
+
+<p>This one is straightforward, just screw in the fan. It would have been easier for me if this was included in the kit, but it seems like they forgot to include it.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/VUl04hh8pho?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-12-z-motor-assembly">Step 12 - Z motor assembly</h3>
+
+<p>I used thread lock on the screws in the motor couplers.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/C6A-wl_ISjA?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-13-x-axis-motor-ends">Step 13 - X axis motor ends</h3>
+
+<p>This bit was rather long, but not too hard, just follow the directions.</p>
+
+<p>I did wonder how long to make the gap between nuts on the (really long) endstop screw. Here is how long I made mine. Basically I wanted it to be as long as possible, while making sure the top nut was not able to come free.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-z-carriage-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-z-carriage.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-z-carriage_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>The final part of this step uses a different linear bearing than in the video.</p>
+
+<p>Refer to the PDF or these photos to see how to mount the same kind that we&#39;re using.</p>
+
+<p>I used a spare steel rod to ensure that they were aligned while tightening.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/HwHE9ikosew?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-14-x-axis-idler">Step 14 - X axis idler</h3>
+
+<p>The hole for the smooth rod was too small, so the smooth rod was rubbing against the acrylic when inserted. I used my <a href="http://www.banggood.com/3Pcs-14-Inch-Hex-Shank-HSS-Titanium-Coated-Step-Drill-Bit-Set-3-124-124-20mm-p-1003275.html?p=1G09211226617201502J">reamer</a> to add 2mm to the diameter of the hole.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/7zuNZP5k2Nc?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-15-extruder-carriage">Step 15 - Extruder Carriage</h3>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-carriage-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-carriage-1.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-carriage-1_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-carriage-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-carriage-2.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-carriage-2_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/O-JVtTczs_M?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-16-x-amp-y-axis-assembly">Step 16 - X &amp; Y Axis Assembly</h3>
+
+<p>In this step, if the threaded rod is difficult to turn, try adjusting the nuts on the brass coupler to slightly change the orientation of the coupler.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/I2ijszntoC4?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-17-x-motor">Step 17 - X Motor</h3>
+
+<p>Attach the geared bushing to the X motor.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-x-gear-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-x-gear.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-x-gear_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Mounting the gear flush with the end of the motor shaft seems to provide the best alignment.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/fVMWl0bjfDY?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-18-x-axis-belt">Step 18 - X Axis Belt</h3>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/SkaNJoFZ5sg?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-19-mount-the-extruder">Step 19 - Mount the Extruder</h3>
+
+<p>Use some 4mm washers if you still have some left.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/V5we0uQcMn4?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-20-install-the-lcd">Step 20 - Install the LCD</h3>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/6Hskd442l24?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-21-mount-the-control-board">Step 21 - Mount the Control Board</h3>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/av2L6Hd8co0?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-22-build-platform">Step 22 - Build Platform</h3>
+
+<p>Wires go out the back.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-build-platform-JPG" href="/assets/images/blog/geeetech-prusa-i3-x/build-platform.JPG" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/build-platform_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<p>Use washers from bag 7.</p>
+
+<p>I found it easiest to hold the washer and wingnut in one hand while using a hex driver to start the bolt threading from the top, then tightening the wing nut by hand.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/AmCoC-ja340?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-23-power-supply">Step 23 - Power Supply</h3>
+
+<p>IMPORTANT! There is a switch inside the power supply that will change it between 110 and 210 volts.</p>
+
+<p>If you&#39;re in the US like me, you&#39;ll want to switch this UP to make sure that it has the correct 110v input selected.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-power-supply-ac-b-ab-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/power-supply-ac6b66ab.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/power-supply_prev-a11738dd.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>When you mount the power supply, there are 2 sets of holes on the top, very close together. Make sure you use the slightly lower holes so the bottom holes line up.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/uInzhnnaeM4?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-24-y-endstop">Step 24 - Y Endstop</h3>
+
+<p>Then mount the endstop, using washers from bag 6, which they don&#39;t mention anywhere.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/5KR6mUGqOXw?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3 id="step-25-wiring">Step 25 - Wiring</h3>
+
+<p>Here is the pinout:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 59.1796875%;'><a id="assets-images-blog-geeetech-prusa-i-x-gt-pinout-f-fd-d-d-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/gt2560-pinout-f3fd5d1d.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/gt2560-pinout-f3fd5d1d.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Here are the axis names and directions for the end stops:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 102.09205020920503%;'><a id="assets-images-blog-geeetech-prusa-i-x-xyz-eee-b-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/xyz-33eee80b.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/xyz-33eee80b.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Here is what mine looks like, all wired up:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-wired-up-d-ff-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/wired-up-d6ff7270.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/wired-up_prev-634ad6b3.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>All the end stops are at the MIN of the axis, so make sure to use the MIN plug for each axis.</p>
+
+<p>There are 2 Z motors, hence the two plugs.</p>
+
+<p>Connect the extruder fan to FAN 1.</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-fan-e-efddd-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/fan1-5e0efddd.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/fan1_prev-36985c67.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>There was no individual video for this step, so skip to around 36 minutes into the overall assembly video:</p>
+
+<p>Bag 49 has the cable wrap.</p>
+
+<p>Bag 57 has the extruder fan extension.</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/yRRMay7vPsw?rel=0&showinfo=0&t=36m32s" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h2 id="first-print">First print</h2>
+
+<p>Ok. I got it all assembled, then I had no idea what to do, so I turned it on.</p>
+
+<p>It had a few problems, the fan was loud, so I bent it back into place and it was quiet again.</p>
+
+<p>Then I thought, now what do I do. Wellll... print something I guess!</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/IFx5BYJDhcY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>To actually print something, we&#39;ll need an <code>.stl</code> object file. We take this file and load it in our slicer.</p>
+
+<h3 id="model-slicer">Model Slicer</h3>
+
+<p>Download an <code>.stl</code> model from <a href="https://www.youmagine.com/">youmagine</a> or <a href="https://thingaverse.com">thingaverse</a> and the slicer, <a href="https://ultimaker.com/en/products/cura-software">Cura</a>.</p>
+
+<p>Install Cura and import your <code>.stl</code> file</p>
+
+<p>Pick the type of plastic you&#39;re printing, ABS or PLA. The default temps in Cura work fine for me. I have found that the max temp I can easily get on the print bed is 85 or 90 degrees, so I usually keep it at that for ABS prints. 60 degrees for PLA is no issue.</p>
+
+<p>There are 2 options you&#39;ll want to update. Under <code>Machine</code> set nozzle diameter and set layer height to something around %50 of your nozzle diameter.</p>
+
+<p>I have a <code>.3mm</code> nozzle, so I usually use <code>.15mm</code> layer hight for high quality prints and <code>.2mm</code> for slightly lower quality, but faster prints.</p>
+
+<p>Once you&#39;ve set the settings above, the <code>.gcode</code> will be generated and you can save this to a file. Save it to an sdcard with a descriptive name.</p>
+
+<h3 id="print-control-software">Print Control Software</h3>
+
+<p>The Geeetech Prusa i3 has an SDCard onboard that makes it possible to print without attaching the printer to a computer. To calibrate it the first time, I found it easiest to hook up to <a href="http://octoprint.org/">OctoPrint</a></p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/5J64e8KPB30?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>The other option is <a href="http://www.pronterface.com/">Pronterface</a>. It has less features, but is easier to install and get running. To start using it, plug in the USB cable between the printer and your computer. Then in Pronterface, connect at BAUD <code>250000</code>.</p>
+
+<p>Just like OctoPrint, Pronterface lets you control the motors via the GUI on your computer. I started moving around the motors with Pronterface and found that the Z motors were stuttering and not turning properly, so I turned everything off. Then I adjusted the little screw on the Z-Axis motor driver, turning it right about 15 degrees. This was enough to increase the power slightly and it moved!</p>
+
+<p>Next, I used the home buttons in Pronterface to let the printer find its &quot;home&quot; position.</p>
+
+<p>Finally, I adjusted the bed by moving the print head to each corner of the print bed and using the screws on the print bed to level it. I used a business card to check the distances.</p>
+
+<p>While I was running the Z axis motors, I lubricated the threaded rod with some CLP BreakFree lubricant, which contains PTFE (teflon).</p>
+
+<h3 id="setup-and-calibration">Setup and calibration</h3>
+
+<p>Note when setting up and calibrating, the extruder motor will not run when the hot end is not hot, so to test the hot end, be sure to heat it up first.</p>
+
+<p>I noticed the edges of the print bed are about .5mm higher than the center, so be sure to calibrate the center of the print bed as well as the edges. Also, the deflection of the aluminum print bed changes significantly with temperature. The greater the temperature, the greater the deflection in the middle of the bed, so when I print ABS at 90 degrees, I need to adjust the Z-Axis endstop screw, loosening it by 1/3 of a turn.</p>
+
+<p>After a few prints, my X axis was binding, so I turned off the motors and checked how hard it was to move by hand. It was quite difficult, so I added some CLP Breakfree lubricant to both rails and moved the extruder manually until it moved without binding. I also increased the POT on the X axis to 1.1v, just below the 1.2v recommended max.</p>
+
+<h4 id="belt-tension">Belt Tension</h4>
+
+<p>The first thing to calibrate is the belt tension. We want it as tight as possible, but not too tight such that the axis binds (e.g. can&#39;t move). Start by lubricating all the bearings and linear rods by covering them with a PTFE lubricant and moving them to every extreme. I used CLP Breakfree:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-geeetech-prusa-i-x-clp-c-d-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/clp-78c7d666.jpg" class="linked-img colorbox"><img src='/assets/images/blog/geeetech-prusa-i3-x/clp_prev-a29d058f.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Now tighten one axis while moving it with your hand. Tighten it until you can&#39;t move it, then backup a bit so that it moves freely with little resistance.</p>
+
+<p>If you pull a belt and let go, you should get a nice guitar-like humming noise.</p>
+
+<h4 id="bed-leveling">Bed Leveling</h4>
+
+<p>Next, you&#39;ll want to level the bed. Do this by moving the print head to each corner of the bed. At each position, place a business card between the build platform and the nozzle. The card should just barely fit, resulting in a gap between the nozzle and the bed around .1mm to .2mm.</p>
+
+<p>Once the bed is level, you&#39;ll want to adjust the auto-home distance between the head and the bed. Since the platform will deform slightly when heated, you&#39;ll want to do this with a hot build platform, so using the LCD, go to <code>Prepare</code> -&gt; <code>Preheat ABS</code> and pick the first option <code>Preheat ABS 1</code>. Once the bed gets up to around 90 degrees C, use OctoPrint to move the print head over the bed then auto-home the Z axis. Using the business card again, check the distance between the build plate and the nozzle. Use the Z-axis endstop screw to adjust the distance, using the OctoPrint home button between adjustments.</p>
+
+<h4 id="bed-preparation">Bed Preparation</h4>
+
+<p>There are lots of discussions on the interwebs about the best way to get your prints to stick to the print bed. Through a bunch of testing, I have found that purple (washable) Elmers glue stick is the easiest and most effective way for me to get prints to stick. I simply glue stick the bed before printing and it lasts around 10 prints. When it no longer sticks, I clean the bed with rubbing alcohol and re-apply the glue stick.</p>
+
+<p>I just ordered <a href="http://amzn.to/2bWSQXF">a PEI sheet</a>, in hopes of making printing even easier. I&#39;ll post an update when I get this installed.</p>
+
+<h4 id="firmware">Firmware</h4>
+
+<p>The firmware is available for download here <a href="http://www.geeetech.com/forum/viewtopic.php?f=20&amp;t=17046">http://www.geeetech.com/forum/viewtopic.php?f=20&amp;t=17046</a>, look for the section title <code>2) Firmware for Prusa I3 X(GT2560)</code></p>
+
+<p>Here&#39;s a direct link to the zipfile: <a href="http://www.geeetech.com/forum/download/file.php?id=1589&amp;sid=4474d46075a042b461d3f059c8597de1">http://www.geeetech.com/forum/download/file.php?id=1589&amp;sid=4474d46075a042b461d3f059c8597de1</a></p>
+
+<p>Though the printer comes with firmware pre-installed, you&#39;ll want to have the firmware available if you want to change and save any firmware settings.</p>
+
+<p>I did not update the firmware on my printer, and it works fine.</p>
+
+<h3 id="upgrades">Upgrades</h3>
+
+<h4 id="pla-fan">PLA Fan</h4>
+
+<p>One of the first upgrades I made was printing one of <a href="http://www.thingiverse.com/thing:1291207">these PLA cooling fans</a> for the MK8 hotend. Since there is no dedicated fan, you can use the main printhead fan when printing PLA, as it does much better with active cooling.</p>
+
+<h4 id="print-bed">Print bed</h4>
+
+<p>Grab a <a href="http://amzn.to/2bWSQXF">a PEI sheet</a> for hassle free printing.</p>
+
+<h4 id="power">Power</h4>
+
+<p>Since this printer only comes with a 15 amp power supply, I decided to pickup a new 30 amp power supply, and this one fits in the same mounting holes: <a href="http://www.banggood.com/Wholesale-12V-30A-360W-Switch-Power-Supply-Driver-for-LED-Strip-Light-Display-220V110V-p-39987.html">12V 30A 360W Switching Power Supply</a>.</p>
+
+<h4 id="auto-leveling-bed">Auto leveling bed</h4>
+
+<p>I just ordered a <a href="http://www.banggood.com/NJK-5002C-Hall-Sensor-Proximity-Switch-NPN-3-wires-Normally-Open-Type-p-936554.html?p=1G09211226617201502J">NJK-5002C Hall Sensor Proximity Switch</a> to do auto bed leveling as described by Tom here:</p>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/EcGFLwj0pnA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h4 id="lighting">Lighting</h4>
+
+<p>I also got some <a href="http://www.banggood.com/10W-Warm-Pure-White-High-Brightest-Save-Power-LED-Light-Lamp-p-88169.html?p=1G09211226617201502J">12v LEDs</a> to wire onto the extruder carriage.</p>
+
+<div class='text-center' style='margin: 1em'>
+Checkout my other guides at
+<a href='/blog'>nathan.vertile.com/blog</a>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+//<![CDATA[
+                  var disqus_shortname = 'vertile';
+          
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+//]]>
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</article>
+
+</div>
+</div>
+</div>
+</body>
+</html>
