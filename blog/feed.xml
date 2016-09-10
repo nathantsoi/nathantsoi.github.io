@@ -5,10 +5,219 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-09-04T20:22:00-07:00</updated>
+  <updated>2016-09-06T20:18:00-07:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
+  <entry>
+    <title>Grasshopper F210 RTF Quadcopter Review</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/09/07/grasshopper-f210-rtf-quadcopter-review/"/>
+    <id>http://nathan.vertile.com/blog/2016/09/07/grasshopper-f210-rtf-quadcopter-review/</id>
+    <published>2016-09-06T20:18:00-07:00</published>
+    <updated>2016-09-09T23:01:38-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This is a review and setup guide for the &lt;a href="http://goo.gl/qhVtlB"&gt;Grasshoper F210 Quadcopter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-grasshopperf-grasshopper-c-faacd-jpg" href="/assets/images/blog/grasshopperf210/grasshopper-c90faacd.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/grasshopper_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="unboxing"&gt;Unboxing&lt;/h2&gt;
+
+&lt;p&gt;It comes in this fancy looking case.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-grasshopperf-bb-cf-jpg" href="/assets/images/blog/grasshopperf210/1-13bb31cf.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-grasshopperf-af-a-d-jpg" href="/assets/images/blog/grasshopperf210/2-af40a7d8.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-grasshopperf-af-dc-jpg" href="/assets/images/blog/grasshopperf210/0-1af04dc7.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/0_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Inside the case is:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8087110064744%;'&gt;&lt;a id="assets-images-blog-grasshopperf-f-f-jpg" href="/assets/images/blog/grasshopperf210/3-9f36f730.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/3_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;A simple balance charger.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;An &amp;quot;Ideafly&amp;quot; branded 1300MAH 4s battery.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Some zip ties, sticky sided velcro and heat shrink. The zip ties and heat shrink are to attach your receiver. The sticky velcro is for the battery.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It comes with two sets of &amp;quot;indestructible&amp;quot; DAL-type props, an &lt;a href="https://en.wikipedia.org/wiki/SMA_connector#Reverse_polarity_SMA"&gt;RP-SMA&lt;/a&gt; (as opposed to SMA) whip antenna, which I upgraded to the &lt;a href="(http://www.gearbest.com/fpv-system/pp_314005.html?wid=21&amp;amp;lkid=10107579)"&gt;red circular polarized antenna&lt;/a&gt; shown in the pictures. &lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.81675392670158%;'&gt;&lt;a id="assets-images-blog-grasshopperf-antenna-ebceff-c-jpg" href="/assets/images/blog/grasshopperf210/antenna-ebceff8c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/antenna-ebceff8c.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;And a mini DVD. I have no idea what is on this and I don&amp;#39;t have a DVD drive. A USB drive would probably be more useful, but everything we need is available online, so no need to include any software at all.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Notably missing is an &lt;a href="http://www.banggood.com/Metal-4_05_57_08_0mm-Hex-NUT-Key-Socket-Screw-Driver-Wrench-p-1050239.html?p=1G09211226617201502J"&gt;8mm socket wrench&lt;/a&gt; for affixing the propeller nuts. No worries though, if you have a &lt;a href="/blog/2016/08/06/geeetech-prusa-i3-x-build-guide/"&gt;3d Printer&lt;/a&gt; you can just &lt;a href="http://www.thingiverse.com/thing:1761328"&gt;print your own with this model from Thingiverse&lt;/a&gt;!&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-grasshopperf-wrench-bc-cd-jpg" href="/assets/images/blog/grasshopperf210/wrench-bc605cd4.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/wrench_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You&amp;#39;ll also want some &lt;a href="http://www.gearbest.com/multi-rotor-parts/pp_327717.html"&gt;extra batteries&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="components"&gt;Components&lt;/h2&gt;
+
+&lt;p&gt;The &amp;quot;Ideafly&amp;quot; branded 2205/2300kv motors appear to be the same as &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=2698609"&gt;these &amp;quot;Racestar&amp;quot; motors&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-grasshopperf-d-dc-jpg" href="/assets/images/blog/grasshopperf210/4-d2dc2172.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/4_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;ESCs are Flycolor Raptor 20amp and should run up to 4s. They&amp;#39;re stuck down with some double sided tape, which should be fine, but it probably wouldn&amp;#39;t hurt to zip tie them down as well.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.81021394064872%;'&gt;&lt;a id="assets-images-blog-grasshopperf-afa-jpg" href="/assets/images/blog/grasshopperf210/5-6237afa3.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/5-6237afa3.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We can tell the exact ESC model by looking at them in BlHeliSuite.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.10269576379974%;'&gt;&lt;a id="assets-images-blog-grasshopperf-blheli-preflash-c-jpg" href="/assets/images/blog/grasshopperf210/blheli-preflash-8207c608.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/blheli-preflash-8207c608.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The flight controller is an SPRacing F3 acro board. This is the board without a barometer (for altitude) or magnetometer (for heading).&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.93380406001765%;'&gt;&lt;a id="assets-images-blog-grasshopperf-aaac-b-jpg" href="/assets/images/blog/grasshopperf210/6-23aaac7b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/6_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The camera is a standard board cam. Be sure to adjust the up-tilt to your liking and tighten the camera before flying. Mine was a bit loose on arrival.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 102.14947089947091%;'&gt;&lt;a id="assets-images-blog-grasshopperf-ac-jpg" href="/assets/images/blog/grasshopperf210/7-75ac5703.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/7_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.80790340285401%;'&gt;&lt;a id="assets-images-blog-grasshopperf-abd-jpg" href="/assets/images/blog/grasshopperf210/8-abd01991.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/8-abd01991.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The VTX is an LT200 with RaceBand.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95039682539682%;'&gt;&lt;a id="assets-images-blog-grasshopperf-vtx-ae-c-e-jpg" href="/assets/images/blog/grasshopperf210/vtx-11ae9c6e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/vtx_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The position makes it impossible to see the current channel via the LEDs on the back or adjust the channel with the small button.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-grasshopperf-vtx-button-a-cfa-jpg" href="/assets/images/blog/grasshopperf210/vtx-button-9a3cfa12.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/vtx-button_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now that you know where the button is, trim back the heatshrink so you can see the LEDs and use a zip tie to re-attach the transmitter. I&amp;#39;ve used some clear heatshrink, but just cutting away the black from in front of the LEDs works fine as well.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-grasshopperf-vtx-heatshrink-jpg" href="/assets/images/blog/grasshopperf210/vtx-heatshrink-19689207.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/vtx-heatshrink_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It also doesn&amp;#39;t have a beeper. I highly suggest you install a beeper before flying in tall grass or in any location it might get lost on landing. Having a beeper makes finding an otherwise lost quad, possible in tall shrubbery. &lt;a href="http://www.gearbest.com/diy-parts-components/pp_226989.html?wid=21&amp;amp;lkid=10107248"&gt;Grab a few beepers here&lt;/a&gt; and solder it on like so:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95039682539682%;'&gt;&lt;a id="assets-images-blog-grasshopperf-beeper-bbf-jpg" href="/assets/images/blog/grasshopperf210/beeper-43bbf222.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/beeper_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="frame"&gt;Frame&lt;/h2&gt;
+
+&lt;p&gt;Top and side plates are 1.5mm&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-grasshopperf-f-ff-jpg" href="/assets/images/blog/grasshopperf210/9-31f39ff3.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/9_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bottom plate is 3mm&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.6898395721925%;'&gt;&lt;a id="assets-images-blog-grasshopperf-dd-fe-d-jpg" href="/assets/images/blog/grasshopperf210/10-dd03fe9d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/10_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There are motor protectors, which is nice, but I&amp;#39;ve never crashed hard enough that this matters... maybe I&amp;#39;m just too careful :)&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-grasshopperf-f-c-f-jpg" href="/assets/images/blog/grasshopperf210/11-8f235c4f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/11_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The LED eyes are a nice touch.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-grasshopperf-b-ad-jpg" href="/assets/images/blog/grasshopperf210/12-85b87ad0.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/12_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;But mine came with the signal wire disconnected. Its unclear to me how these were originally wired, but I&amp;#39;ve wired mine inline with the other LEDs on the back, like so. To configure these in the &lt;a href="https://chrome.google.com/webstore/detail/betaflight-configurator/kdaghagfopacdngbohiknlhcocjccjao"&gt;BetaFlight Configurator&lt;/a&gt;, they&amp;#39;ll be LEDs number 4 (left) and 5 (right). I think I&amp;#39;ll just make them yellow by default and connected to throttle. Awesome!&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.93380406001765%;'&gt;&lt;a id="assets-images-blog-grasshopperf-signal-wire-disconnected-f-jpg" href="/assets/images/blog/grasshopperf210/signal-wire-disconnected-39f88485.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/signal-wire-disconnected_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Even after wiring up the eye LEDs, they still blink red, so they must have another controller. I&amp;#39;ll disassemble the eyes at some point and see what&amp;#39;s going on. I guess they&amp;#39;ll just blink red for now.&lt;/p&gt;
+
+&lt;p&gt;The heatshrink antennas serve no purpose, so I cut them down and heatshrinked my receiver antennas to them.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-grasshopperf-new-antennas-d-afee-jpg" href="/assets/images/blog/grasshopperf210/new-antennas-d20afee6.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/new-antennas_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="firmware"&gt;Firmware&lt;/h2&gt;
+
+&lt;p&gt;Since I usually use the &lt;a href="https://chrome.google.com/webstore/detail/betaflight-configurator/kdaghagfopacdngbohiknlhcocjccjao"&gt;BetaFlight Configurator&lt;/a&gt;, I had to resurrect the CleanFlight configurator, expecting it would come pre-installed with CleanFlight, but to my pleasant surprise, it comes with BetaFlight pre-installed! Awesome!&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 71.0387323943662%;'&gt;&lt;a id="assets-images-blog-grasshopperf-btfl-a-fa-jpg" href="/assets/images/blog/grasshopperf210/btfl-5a67fa21.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/btfl-5a67fa21.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Since it already has BetaFlight installed, I&amp;#39;m sure this thing flys great of out the box. Another interesting note, since the BetaFlight configurator only supports version 2.9.x and later, you&amp;#39;ll need to use the CleanFlight configurator to change any settings. I&amp;#39;ll go ahead and dump the defaults, then upgrade it to the latest BetaFlight version so I can use the new BetaFlight pid controller and the &lt;a href="https://chrome.google.com/webstore/detail/betaflight-configurator/kdaghagfopacdngbohiknlhcocjccjao"&gt;BetaFlight Configurator&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Make sure you toggle the &amp;quot;Show unstable releases&amp;quot; switch to get the latest firmware version and set the BAUD manually.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 62.676056338028175%;'&gt;&lt;a id="assets-images-blog-grasshopperf-btfl-flash-acc-e-jpg" href="/assets/images/blog/grasshopperf210/btfl-flash-79acc72e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/btfl-flash-79acc72e.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then connect to BlHeliSuite and upgrade the ESCs. Remember to plug in a battery when upgrading the ESCs. Mine came with BlHeli 14.4 and I upgraded to 14.6.&lt;/p&gt;
+
+&lt;p&gt;You&amp;#39;ll see a confirmation after successfully flashing.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.41237113402062%;'&gt;&lt;a id="assets-images-blog-grasshopperf-blheli-confirm-da-c-jpg" href="/assets/images/blog/grasshopperf210/blheli-confirm-583da34c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/blheli-confirm-583da34c.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I also chose to overwrite the settings with the current config when prompted.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 40.57507987220447%;'&gt;&lt;a id="assets-images-blog-grasshopperf-blheli-write-ee-fd-jpg" href="/assets/images/blog/grasshopperf210/blheli-write-28ee75fd.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/blheli-write-28ee75fd.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;All set: &lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.38461538461539%;'&gt;&lt;a id="assets-images-blog-grasshopperf-blheli-postflash-ff-d-jpg" href="/assets/images/blog/grasshopperf210/blheli-postflash-7ff7d465.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/blheli-postflash-7ff7d465.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then go to the motors tab and calibrate the ESCs by unplugging the battery, turning all motors to max, plugging in the battery, wait for the series of beeps to stop. Lower the throttle slider to it&amp;#39;s minimum and wait for the beeping to stop again. Unplug the battery and you&amp;#39;re all calibrated up!&lt;/p&gt;
+
+&lt;h2 id="receiver"&gt;Receiver&lt;/h2&gt;
+
+&lt;p&gt;I&amp;#39;m using the &lt;a href="/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/#iA6B RX"&gt;FS-iA6B&lt;/a&gt;, included with the &lt;a href="/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/"&gt;FlySky i6&lt;/a&gt;, which supports PWM, PPM and SerialRX (iBUS). SerialRX has the least latency, so I&amp;#39;ll use iBUS.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-grasshopperf-radio-f-f-cf-jpg" href="/assets/images/blog/grasshopperf210/radio-1f8f39cf.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/radio_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-grasshopperf-radio-rx-fa-jpg" href="/assets/images/blog/grasshopperf210/radio-rx-fa633456.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/radio-rx_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you&amp;#39;re using this radio, checkout my &lt;a href="/blog/2016/07/07/omnibus-typhoon-miniquad/#flysky-fs-i6-transmitter-config"&gt;transmitter setup guide&lt;/a&gt; for details on aux channels and failsafe.&lt;/p&gt;
+
+&lt;p&gt;Hooking up a receiver is easy, the wires for both PPM and PWM come pre-installed. To use SerialRX, as I&amp;#39;ll be doing, just switch the plug like so:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.95039682539682%;'&gt;&lt;a id="assets-images-blog-grasshopperf-rx-ce-jpg" href="/assets/images/blog/grasshopperf210/rx-1-53999ce6.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/rx-1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Alternatively, solder the SerialRX leads straight to the board like so:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-grasshopperf-rx-direct-f-d-jpg" href="/assets/images/blog/grasshopperf210/rx-direct-041f5d95.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/rx-direct_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then turn on SerialRX for whatever serial port your using:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.20774647887323%;'&gt;&lt;a id="assets-images-blog-grasshopperf-bf-serial-cc-png" href="/assets/images/blog/grasshopperf210/bf-serial-3cc45468.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/bf-serial-3cc45468.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And configure the serial protocol:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 73.55595667870037%;'&gt;&lt;a id="assets-images-blog-grasshopperf-bf-serial-config-fdda-png" href="/assets/images/blog/grasshopperf210/bf-serial-config-618fdda7.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/bf-serial-config-618fdda7.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you were using PPM, you would connect it like this: &lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-grasshopperf-rx-ff-jpg" href="/assets/images/blog/grasshopperf210/rx-2-ff998967.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/rx-2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;PWM would be connected like this:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-grasshopperf-rx-afb-jpg" href="/assets/images/blog/grasshopperf210/rx-3-1496afb9.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/rx-3_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="config"&gt;Config&lt;/h2&gt;
+
+&lt;p&gt;Update your settings. You can find my full config file here: &lt;a href="https://gist.githubusercontent.com/nathantsoi/4d9519b63453647e9d8ce7d87c959b07/raw/grasshopper-f210.txt"&gt;https://gist.github.com/nathantsoi/4d9519b63453647e9d8ce7d87c959b07&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Be sure to set yaw degrees to 90, since the board is rotated.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.20774647887323%;'&gt;&lt;a id="assets-images-blog-grasshopperf-bf-yaw-png" href="/assets/images/blog/grasshopperf210/bf-yaw-92338128.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/bf-yaw-92338128.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here are my aux settings (make sure your &lt;a href="/blog/2016/07/07/omnibus-typhoon-miniquad/#flysky-fs-i6-transmitter-config"&gt;radio matches&lt;/a&gt;):&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 102.02464788732395%;'&gt;&lt;a id="assets-images-blog-grasshopperf-bf-aux-fd-ca-png" href="/assets/images/blog/grasshopperf210/bf-aux-89fd30ca.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/bf-aux-89fd30ca.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Led settings.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 87.85211267605634%;'&gt;&lt;a id="assets-images-blog-grasshopperf-bf-led-d-c-d-png" href="/assets/images/blog/grasshopperf210/bf-led-d01c5d82.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/bf-led-d01c5d82.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Even after wiring up the eye LEDs, they still just blink red, so there must be something else going on with them. They appear to have their own controller, but I need to disassemble the eyes to see what&amp;#39;s up...&lt;/p&gt;
+
+&lt;h2 id="review"&gt;Review&lt;/h2&gt;
+
+&lt;p&gt;Overall these are really good components on a nice frame. The camera does leave something to be desired, but it should be easy to swap out &lt;a href="http://www.banggood.com/RunCam-OWL-PLUS-700TVL-0_0001-LUX-FPV-Camera-FOV-150-Wide-Angle-F2_0-lens-IR-Blocked-5-22V-p-1057924.html?p=1G09211226617201502J"&gt;a nicer camera&lt;/a&gt; whenever you&amp;#39;re ready.&lt;/p&gt;
+
+&lt;p&gt;The frame does have this weird cut-away at the front, I think it&amp;#39;s suppose to make it look more like a bug, but I&amp;#39;m not sure. I think the whole design would be a bit stronger without this cut, but it&amp;#39;s fine, probably doesn&amp;#39;t make much difference.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-grasshopperf-mouth-c-a-c-jpg" href="/assets/images/blog/grasshopperf210/mouth-c6a1740c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/mouth_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Aside from a few tweaks we made before flying, most of which are optional (tighten the camera, connect the SerialRX pins for our receiver, connect the LED eyes, add a beeper) it was basically ready to fly out of the box, which is awesome.&lt;/p&gt;
+
+&lt;p&gt;The flight controller is an SPRacing F3, which is fine, but so 2 years ago (I just made that up, I have no idea how old the Spracing F3 is). My point is that there are a bunch of new flight controllers, F3 and F4, F7&amp;#39;s are coming out soon. For a few bucks more they could have put an &lt;a href="/blog/2016/07/07/omnibus-typhoon-miniquad/#review"&gt;OMNIBUSF3&lt;/a&gt; which has a built in BetaFlight integrated OSD. I understand they&amp;#39;re trying to keep costs down, so this is fine to start, but presents an excellent upgrade opportunity.&lt;/p&gt;
+
+&lt;p&gt;Which brings me to the last thing and really the only thing this quad is missing, an OSD. Maybe at some point I&amp;#39;ll add an &lt;a href="/blog/2015/04/22/minim-osd/"&gt;OSD&lt;/a&gt; or upgrade to an omnibus flight controller. Until then, this thing flys great on BetaFlight 3.0!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Omnibus F3 Pro</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/09/05/omnibus-f3-pro/"/>
@@ -40,13 +249,241 @@
 
 &lt;p&gt;Bridge two of these pads to pick the voltage that will be applied to the RAM bus (the video pins).&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 99.483306836248%;'&gt;&lt;a id="assets-images-blog-airbot-omnibusf-pro-voltage-selection-cb-ff-jpg" href="/assets/images/blog/airbot/180/omnibusf3-pro-voltage-selection-4cb414ff.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/omnibusf3-pro-voltage-selection_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 99.483306836248%;'&gt;&lt;a id="assets-images-blog-airbot-omnibusf-pro-voltage-selection-e-c-d-jpg" href="/assets/images/blog/airbot/180/omnibusf3-pro-voltage-selection-5e26c4d2.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/omnibusf3-pro-voltage-selection_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The 4-in-1 ESC can be connected via the SH1.0 connector:&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 99.483306836248%;'&gt;&lt;a id="assets-images-blog-airbot-omnibusf-pro-in-e-e-jpg" href="/assets/images/blog/airbot/180/omnibusf3-pro-4-in-1-e6e43390.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/omnibusf3-pro-4-in-1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 99.483306836248%;'&gt;&lt;a id="assets-images-blog-airbot-omnibusf-pro-in-d-b-f-jpg" href="/assets/images/blog/airbot/180/omnibusf3-pro-4-in-1-4d48b22f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/omnibusf3-pro-4-in-1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Or connected via the standard 2.54mm pins on top.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>DIY 4 in 1 Module with ER9X</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/09/01/diy-4-in-1-module-with-er9x/"/>
+    <id>http://nathan.vertile.com/blog/2016/09/01/diy-4-in-1-module-with-er9x/</id>
+    <published>2016-08-31T23:05:00-07:00</published>
+    <updated>2016-09-09T23:10:33-07:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This is a setup guide for the &lt;a href="http://www.banggood.com/2_4G-CC2500-A7105-Flysky-Frsky-Devo-DSM2-Multiprotocol-TX-Module-With-Antenna-p-1048377.html?p=1G09211226617201502J"&gt;4-in-1 radio module from banggood.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-diy-radio-module-antenna-e-a-jpg" href="/assets/images/blog/diy-radio-module/antenna-50e939a2.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/diy-radio-module/antenna_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This radio module can speak almost every protocol on the market today. You can find the details of each protocol along with the full documentation and the firmware on the github page here: &lt;a href="https://github.com/pascallanger/DIY-Multiprotocol-TX-Module#protocol-selection"&gt;https://github.com/pascallanger/DIY-Multiprotocol-TX-Module#protocol-selection&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="prepare-the-multi-module"&gt;Prepare the multi-module&lt;/h2&gt;
+
+&lt;p&gt;When you get the multi-module, it comes without a case.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-diy-radio-module-pack-a-fe-e-jpg" href="/assets/images/blog/diy-radio-module/pack-a555fe1e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/diy-radio-module/pack_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So I went ahead and printed &lt;a href="http://www.rcgroups.com/forums/showpost.php?p=35349049&amp;amp;postcount=3"&gt;this case by nebbian&lt;/a&gt;, &lt;a href="http://www.thingiverse.com/thing:1691786"&gt;download it here one from thingiverse&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-diy-radio-module-case-f-ceedd-jpg" href="/assets/images/blog/diy-radio-module/case-2-f6ceedd4.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/diy-radio-module/case-2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here&amp;#39;s what the module looks like.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-diy-radio-module-front-dd-f-c-jpg" href="/assets/images/blog/diy-radio-module/front-4dd8f0c6.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/diy-radio-module/front_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-diy-radio-module-back-dbdca-b-jpg" href="/assets/images/blog/diy-radio-module/back-0dbdca8b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/diy-radio-module/back_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then I made another case in purple.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-diy-radio-module-case-da-jpg" href="/assets/images/blog/diy-radio-module/case-9303da50.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/diy-radio-module/case_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can see in the above photo I&amp;#39;ve upgraded the connector to a &lt;a href="https://octopart.com/22-17-2052-molex-772934"&gt;bottom-entry Molex 22172052 connector&lt;/a&gt;. Since this is a single point of failure, $1.20 seems like a small price to pay for some extra security.&lt;/p&gt;
+
+&lt;p&gt;You can also see I soldered &lt;a href="http://www.banggood.com/10pcs-2x40P-40Pin-2_54mm-Straight-Double-Row-Male-Pin-Header-Strip-p-989805.html?p=1G09211226617201502J"&gt;some pin headers&lt;/a&gt; on the In System Programmer (ISP) header.&lt;/p&gt;
+
+&lt;h2 id="multimodule-firmware-update"&gt;Multimodule firmware update&lt;/h2&gt;
+
+&lt;p&gt;Download the latest release from &lt;a href="https://github.com/pascallanger/DIY-Multiprotocol-TX-Module/releases"&gt;https://github.com/pascallanger/DIY-Multiprotocol-TX-Module/releases&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="configure-the-firmware"&gt;Configure the firmware&lt;/h3&gt;
+
+&lt;p&gt;You&amp;#39;ll want to modify &lt;code&gt;_Config.h&lt;/code&gt; to include only the radio protocols you need.&lt;/p&gt;
+
+&lt;p&gt;Here is my whole config file: &lt;a href="https://gist.github.com/nathantsoi/a65b7baff0e044af05f6854e799c5fc5"&gt;https://gist.github.com/nathantsoi/a65b7baff0e044af05f6854e799c5fc5&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here are my changes:&lt;/p&gt;
+&lt;pre class="highlight diff"&gt;&lt;code&gt;&lt;span class="gh"&gt;diff --git a/Multiprotocol/_Config.h b/Multiprotocol/_Config.h
+index eb075a1..9add3f8 100644
+&lt;/span&gt;&lt;span class="gd"&gt;--- a/Multiprotocol/_Config.h
+&lt;/span&gt;&lt;span class="gi"&gt;+++ b/Multiprotocol/_Config.h
+&lt;/span&gt; /****************************/
+&lt;span class="gu"&gt;@@ -41,10 +41,10 @@
+&lt;/span&gt; //Bellow is the list of all available protocols. Comment the protocols you are not using with "//" to save Flash space.
+ #ifdef A7105_INSTALLED
+    #define FLYSKY_A7105_INO
+&lt;span class="gd"&gt;-   #define HUBSAN_A7105_INO
+&lt;/span&gt;&lt;span class="gi"&gt;+   //#define   HUBSAN_A7105_INO
+&lt;/span&gt; #endif
+ #ifdef CYRF6936_INSTALLED
+&lt;span class="gd"&gt;-   #define DEVO_CYRF6936_INO
+&lt;/span&gt;&lt;span class="gi"&gt;+   //#define   DEVO_CYRF6936_INO
+&lt;/span&gt;    #define DSM2_CYRF6936_INO
+    #define J6PRO_CYRF6936_INO
+ #endif
+&lt;span class="gu"&gt;@@ -57,19 +57,19 @@
+&lt;/span&gt;    #define BAYANG_NRF24L01_INO
+    #define CG023_NRF24L01_INO
+    #define CX10_NRF24L01_INO
+&lt;span class="gd"&gt;-   #define ESKY_NRF24L01_INO
+-   #define HISKY_NRF24L01_INO
+-   #define KN_NRF24L01_INO
+-   #define SLT_NRF24L01_INO
+-   #define SYMAX_NRF24L01_INO
+-   #define V2X2_NRF24L01_INO
+-   #define YD717_NRF24L01_INO
+-   #define MT99XX_NRF24L01_INO
+-   #define MJXQ_NRF24L01_INO
+-   #define SHENQI_NRF24L01_INO
+-   #define FY326_NRF24L01_INO
+-   #define FQ777_NRF24L01_INO
+-   #define ASSAN_NRF24L01_INO
+&lt;/span&gt;&lt;span class="gi"&gt;+   //#define   ESKY_NRF24L01_INO
++   //#define   HISKY_NRF24L01_INO
++   //#define   KN_NRF24L01_INO
++   //#define   SLT_NRF24L01_INO
++   //#define   SYMAX_NRF24L01_INO
++   //#define   V2X2_NRF24L01_INO
++   //#define   YD717_NRF24L01_INO
++   //#define   MT99XX_NRF24L01_INO
++   //#define   MJXQ_NRF24L01_INO
++   //#define   SHENQI_NRF24L01_INO
++   //#define   FY326_NRF24L01_INO
++   //#define   FQ777_NRF24L01_INO
++   //#define   ASSAN_NRF24L01_INO
+&lt;/span&gt; #endif
+
+
+&lt;span class="gu"&gt;@@ -151,12 +151,12 @@ const PPM_Parameters PPM_prot[15]=    {
+&lt;/span&gt; /* 4   */  {MODE_HISKY ,   Hisky       ,   0   ,   P_HIGH  ,   NO_AUTOBIND ,   0       },
+ /* 5   */  {MODE_V2X2  ,   0           ,   0   ,   P_HIGH  ,   NO_AUTOBIND ,   0       },
+ /* 6   */  {MODE_DSM2  ,   DSM2        ,   0   ,   P_HIGH  ,   NO_AUTOBIND ,   2       },  // option=2=6 channels @ 22ms
+&lt;span class="gd"&gt;-/* 7   */  {MODE_DEVO  ,   0           ,   0   ,   P_HIGH  ,   NO_AUTOBIND ,   0       },
+&lt;/span&gt;&lt;span class="gi"&gt;+/* 7   */  {MODE_DSM2  ,   DSMX        ,   0   ,   P_HIGH  ,   NO_AUTOBIND ,   2       },  // option=2=6 channels @ 22ms
+&lt;/span&gt; /* 8   */  {MODE_YD717 ,   YD717       ,   0   ,   P_HIGH  ,   NO_AUTOBIND ,   0       },
+ /* 9   */  {MODE_KN    ,   WLTOYS      ,   0   ,   P_HIGH  ,   NO_AUTOBIND ,   0       },
+ /* 10  */  {MODE_SYMAX ,   SYMAX       ,   0   ,   P_HIGH  ,   NO_AUTOBIND ,   0       },
+ /* 11  */  {MODE_SLT   ,   0           ,   0   ,   P_HIGH  ,   NO_AUTOBIND ,   0       },
+&lt;span class="gd"&gt;-/* 12  */  {MODE_CX10  ,   CX10_BLUE   ,   0   ,   P_HIGH  ,   NO_AUTOBIND ,   0       },
+&lt;/span&gt;&lt;span class="gi"&gt;+/* 12  */  {MODE_CX10  ,   CX10_GREEN, 0   ,   P_HIGH  ,   NO_AUTOBIND ,   0       },
+&lt;/span&gt; /* 13  */  {MODE_CG023 ,   CG023       ,   0   ,   P_HIGH  ,   NO_AUTOBIND ,   0       },
+ /* 14  */  {MODE_BAYANG,   0           ,   0   ,   P_HIGH  ,   NO_AUTOBIND ,   0       },
+ /* 15  */  {MODE_SYMAX ,   SYMAX5C     ,   0   ,   P_HIGH  ,   NO_AUTOBIND ,   0       }
+&lt;span class="gu"&gt;@@ -250,4 +250,4 @@ const PPM_Parameters PPM_prot[15]=  {
+&lt;/span&gt; // As an exxample, it's usefull for the WLTOYS F929/F939/F949/F959 (all using the Flysky protocol) which requires a bind at each power up.
+
+ // Option: the value is between -127 and +127.
+&lt;span class="gd"&gt;-// The option value is only valid for some protocols, read this page for more information: https://github.com/pascallanger/DIY-Multiprotocol-TX-Module/blob/master/Protocols_Details.md
+&lt;/span&gt;\ No newline at end of file
+&lt;span class="gi"&gt;+// The option value is only valid for some protocols, read this page for more information: https://github.com/pascallanger/DIY-Multiprotocol-TX-Module/blob/master/Protocols_Details.md
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="connect-the-module"&gt;Connect the Module&lt;/h3&gt;
+
+&lt;p&gt;Connect the &lt;a href="http://www.banggood.com/USBASP-USBISP-3_3-5V-AVR-Downloader-Programmer-With-ATMEGA8-ATMEGA128-p-934425.html?p=1G09211226617201502J"&gt;ISP header&lt;/a&gt; on the radio module to your programmer. Connect &lt;code&gt;MISO&lt;/code&gt; to &lt;code&gt;MISO&lt;/code&gt;, &lt;code&gt;MOSI&lt;/code&gt; to &lt;code&gt;MOSI&lt;/code&gt; etc, like so:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-diy-radio-module-module-isp-f-jpg" href="/assets/images/blog/diy-radio-module/module-isp-27394f10.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/diy-radio-module/module-isp_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="flash"&gt;Flash&lt;/h3&gt;
+
+&lt;p&gt;Open the &lt;code&gt;Multiprotocol.ino&lt;/code&gt; file in the &lt;a href="https://www.arduino.cc/en/Main/Software"&gt;Arduino&lt;/a&gt; IDE.&lt;/p&gt;
+
+&lt;p&gt;Pick the ISP programmer&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.77165354330708%;'&gt;&lt;a id="assets-images-blog-diy-radio-module-pick-programmer-eeb-png" href="/assets/images/blog/diy-radio-module/pick-programmer-38810eeb.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/diy-radio-module/pick-programmer-38810eeb.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then choose &amp;quot;Upload Using Programmer&amp;quot;&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 61.25000000000001%;'&gt;&lt;a id="assets-images-blog-diy-radio-module-program-cf-b-d-png" href="/assets/images/blog/diy-radio-module/program-cf9b8d67.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/diy-radio-module/program-cf9b8d67.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You&amp;#39;ll get a success message when it completes:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0104997900042%;'&gt;&lt;a id="assets-images-blog-diy-radio-module-module-programmed-dd-d-f-jpg" href="/assets/images/blog/diy-radio-module/module-programmed-13dd9d9f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/diy-radio-module/module-programmed_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="enable-serial"&gt;Enable Serial&lt;/h3&gt;
+
+&lt;p&gt;To enable the serial connection between your ER9X radio and the radio module for easy configuration, you&amp;#39;ll need to do the following:&lt;/p&gt;
+
+&lt;p&gt;Depending on your board version either add resistors or a solder bridge as shown below:&lt;/p&gt;
+
+&lt;p&gt;1st revision, add 2 resistors as shown here: &lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 68.09290953545232%;'&gt;&lt;a id="assets-images-blog-diy-radio-module-resistors-da-f-jpg" href="/assets/images/blog/diy-radio-module/resistors-1834da2f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/diy-radio-module/resistors-1834da2f.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For the 2nd version, like I have, just solder bridge the tx and rx pads:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.06702412868633%;'&gt;&lt;a id="assets-images-blog-diy-radio-module-bridge-ef-jpg" href="/assets/images/blog/diy-radio-module/bridge-8ef03109.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/diy-radio-module/bridge-8ef03109.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="updating-the-radio"&gt;Updating the Radio&lt;/h2&gt;
+
+&lt;h3 id="connect-the-programmer"&gt;Connect the programmer&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#39;m using a &lt;a href="http://www.banggood.com/USBASP-USBISP-3_3-5V-AVR-Downloader-Programmer-With-ATMEGA8-ATMEGA128-p-934425.html?p=1G09211226617201502J"&gt;USB ASP programmer&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 44.73257698541329%;'&gt;&lt;a id="assets-images-blog-x-x-ISP-d-e-d-png" href="/assets/images/blog/9x/9x-ISP-8d843e0d.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/9x/9x-ISP-8d843e0d.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 96.98630136986301%;'&gt;&lt;a id="assets-images-blog-fs-i-usb-asp-pinout-ee-e-png" href="/assets/images/blog/fs_i6/usb-asp-pinout-3ee427e9.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/fs_i6/usb-asp-pinout-3ee427e9.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-x-connection-fda-cb-jpg" href="/assets/images/blog/9x/connection-1-1fda5cb3.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/9x/connection-1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-x-connection-ee-b-c-jpg" href="/assets/images/blog/9x/connection-2-ee9b22c5.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/9x/connection-2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-x-connection-d-df-jpg" href="/assets/images/blog/9x/connection-3-50d57df8.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/9x/connection-3_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="download-er9x"&gt;Download Er9x&lt;/h3&gt;
+
+&lt;p&gt;You can get ER9X, which is the bit you install on the radio, here: &lt;a href="http://www.er9x.com/"&gt;http://www.er9x.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Also, download the latest version of Eepe from the same page, which runs on your computer to flash the radio.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m using a beta version of the firmware, which includes the 4-in-1 module protocol. The beta version is available here: &lt;a href="http://openrcforums.com/forum/viewtopic.php?f=5&amp;amp;t=4598"&gt;http://openrcforums.com/forum/viewtopic.php?f=5&amp;amp;t=4598&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="backup-existing-firmware"&gt;Backup existing firmware&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#39;m using &lt;a href="http://download.savannah.gnu.org/releases/avrdude/"&gt;avrdude&lt;/a&gt; which can be &lt;a href="http://download.savannah.gnu.org/releases/avrdude/"&gt;downloaded here&lt;/a&gt; or you can install on a mac with the terminal command: &lt;code&gt;brew install avrdude&lt;/code&gt;. &lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;avrdude -c usbasp -p m64 -U flash:r:opentx.bin:r
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="write-the-new-firmware"&gt;Write the new firmware&lt;/h3&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;avrdude –c usbasp –p m64 –u –U flash:w:er9x.hex
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that flashing with avrdude didn&amp;#39;t work for me, but flashing with &lt;a href="http://www.er9x.com/"&gt;EEPE&lt;/a&gt; worked great.&lt;/p&gt;
+
+&lt;h3 id="binding"&gt;Binding&lt;/h3&gt;
+
+&lt;p&gt;Binding with ER9X using the serial protocol is awesome. After you get ER9X installed and the radio module in the back, setup a new model and open the protocol page:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-x-transmitter-screen-a-c-jpg" href="/assets/images/blog/9x/transmitter-screen-a8c99661.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/9x/transmitter-screen_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Move to the &lt;code&gt;BIND&lt;/code&gt; option, hit OK and you&amp;#39;re in bind mode!&lt;/p&gt;
+
+&lt;p&gt;Plug in your RX in bind mode and you&amp;#39;re good to go.&lt;/p&gt;
+
+&lt;h4 id="spektrum-rx"&gt;Spektrum RX&lt;/h4&gt;
+
+&lt;p&gt;A couple notes on binding a Spektrum Satellite receiver.&lt;/p&gt;
+
+&lt;p&gt;Note that is it is easiest, when using a spektrum satellite receiver with a flight controller, to bind the satellite connected to the main receiver (not the flight controller) first. Then attach the satallite to the flight controller.&lt;/p&gt;
+
+&lt;p&gt;Alternatively, use the CLI command:&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;set spektrum_sat_bind = 9
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will put the receiver in bind mode.&lt;/p&gt;
+
+&lt;p&gt;Then press bind on your receiver, on the protocol page as shown above.&lt;/p&gt;
+
+&lt;p&gt;Make sure to change to TAER channel order in BetaFlight.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;OPTION&lt;/code&gt; option sets the number of AUX channels.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.97598463016331%;'&gt;&lt;a id="assets-images-blog-x-option-f-cb-d-jpg" href="/assets/images/blog/9x/option-f24cb74d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/9x/option_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
   </entry>
   <entry>
@@ -62,19 +499,19 @@
 
 &lt;p&gt;Here, I&amp;#39;m printing an Atlas statue to hold up my colleague&amp;#39;s monitor.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-b-cd-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-1-b99700cd.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-e-e-fa-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-1-4e3e31fa.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-b-d-dcf-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-2-b8d55dcf.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-d-f-b-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-2-d23f23b0.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-ff-e-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-3-3ff4590e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-3_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-ec-ac-b-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-3-ec25ac8b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-3_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-f-a-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-4-4f79a346.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-4_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-a-a-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-4-a437749a.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-4_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-f-b-e-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-5-5f146b0e.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-5_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-ca-ac-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-5-6ca24ac3.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-5_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-b-fb-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-6-b78fb280.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-6_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 133.33333333333331%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-a-d-fb-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-6-a4d518fb.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-6_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-c-b-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-7-5c17b065.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-7_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-atlas-f-c-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/atlas-7-59f4c821.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/atlas-7_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id="safety-tips"&gt;Safety tips&lt;/h2&gt;
 
@@ -118,19 +555,19 @@
 
 &lt;p&gt;Here are all the parts.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-parts-a-d-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/parts-2006a94d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/parts_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-parts-f-c-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/parts-74f0c365.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/parts_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Checkout how the bag numbers correspond to &lt;code&gt;Part ID&lt;/code&gt; in the directions.&lt;/p&gt;
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 64.01985111662532%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-directions-png" href="/assets/images/blog/geeetech-prusa-i3-x/directions-1-42269242.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/directions-1-42269242.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-directions-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/directions-2-46667100.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/directions-2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-directions-b-b-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/directions-2-391b6b49.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/directions-2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id="general-tips"&gt;General Tips&lt;/h3&gt;
 
 &lt;p&gt;In this guide, I&amp;#39;ll refer to the axis of the printer as described in this diagram.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 102.09205020920503%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-xyz-eee-b-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/xyz-33eee80b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/xyz-33eee80b.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 102.09205020920503%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-xyz-d-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/xyz-874536d3.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/xyz-874536d3.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Use blue thread lock wherever you have metal on metal, however the blue thread lock will degrade the acrylic frame, so be sure to not let the thread lock touch the acrylic! The only places I was able to safely use lock tight was on the motor couplers.&lt;/p&gt;
 
@@ -138,7 +575,7 @@
 
 &lt;p&gt;Also, they don&amp;#39;t mention this, but bags 7 and 8 include 3mm and 4mm washers, use them whenever bolts in bags numbered 22, 23 and 30 are used. This will help strengthen the frame.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-bolts-with-washers-c-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/bolts-with-washers-9254553c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/bolts-with-washers_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-bolts-with-washers-f-c-e-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/bolts-with-washers-3f74c4e3.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/bolts-with-washers_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id="step-1-threaded-rod"&gt;Step 1 - Threaded Rod&lt;/h3&gt;
 
@@ -394,7 +831,7 @@
 
 &lt;p&gt;If you&amp;#39;re in the US like me, you&amp;#39;ll want to switch this UP to make sure that it has the correct 110v input selected.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-power-supply-ac-b-ab-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/power-supply-ac6b66ab.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/power-supply_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-power-supply-cfaaa-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/power-supply-0cfaaa70.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/power-supply_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;When you mount the power supply, there are 2 sets of holes on the top, very close together. Make sure you use the slightly lower holes so the bottom holes line up.&lt;/p&gt;
 
@@ -414,15 +851,15 @@
 
 &lt;p&gt;Here is the pinout:&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 59.1796875%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-gt-pinout-f-fd-d-d-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/gt2560-pinout-f3fd5d1d.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/gt2560-pinout-f3fd5d1d.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 59.1796875%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-gt-pinout-bdc-f-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/gt2560-pinout-6bdc2f84.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/gt2560-pinout-6bdc2f84.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Here are the axis names and directions for the end stops:&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 102.09205020920503%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-xyz-eee-b-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/xyz-33eee80b.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/xyz-33eee80b.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 102.09205020920503%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-xyz-d-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/xyz-874536d3.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/xyz-874536d3.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Here is what mine looks like, all wired up:&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-wired-up-d-ff-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/wired-up-d6ff7270.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/wired-up_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-wired-up-c-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/wired-up-1008c889.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/wired-up_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;All the end stops are at the MIN of the axis, so make sure to use the MIN plug for each axis.&lt;/p&gt;
 
@@ -430,7 +867,7 @@
 
 &lt;p&gt;Connect the extruder fan to FAN 1.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-fan-e-efddd-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/fan1-5e0efddd.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/fan1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-fan-b-ee-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/fan1-b7562ee7.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/fan1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;There was no individual video for this step, so skip to around 36 minutes into the overall assembly video:&lt;/p&gt;
 
@@ -500,7 +937,7 @@
 
 &lt;p&gt;The first thing to calibrate is the belt tension. We want it as tight as possible, but not too tight such that the axis binds (e.g. can&amp;#39;t move). Start by lubricating all the bearings and linear rods by covering them with a PTFE lubricant and moving them to every extreme. I used CLP Breakfree:&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-clp-c-d-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/clp-78c7d666.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/clp_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-clp-db-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/clp-1216db10.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/clp_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Now tighten one axis while moving it with your hand. Tighten it until you can&amp;#39;t move it, then backup a bit so that it moves freely with little resistance.&lt;/p&gt;
 
@@ -807,92 +1244,5 @@ XPSR = A1000000: APSR = NzCvq, EPSR = 01000000, IPSR = 000 (NoException)
 CFBP = 00000000, CONTROL = 00, FAULTMASK = 00, BASEPRI = 00, PRIMASK = 00
 &lt;/code&gt;&lt;/pre&gt;
 </content>
-  </entry>
-  <entry>
-    <title>Airbot F3S AIO Flight Controller and Typhoon 4-in-1 ESC</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/12/airbot-f3s-aio/"/>
-    <id>http://nathan.vertile.com/blog/2016/07/12/airbot-f3s-aio/</id>
-    <published>2016-07-11T22:49:00-07:00</published>
-    <updated>2016-09-05T10:49:24-07:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;This is a quick overview of the &lt;a href="http://shop.myairbot.com/index.php/flight-control/cleanflight-baseflight/f3saio-pro.html"&gt;Airbot F3S AIO&lt;/a&gt; Flight controller and &lt;a href="http://shop.myairbot.com/index.php/typhoon4x20a4in1esc-66.html"&gt;Typhoon 4-in-1 Pro&lt;/a&gt; ESC.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-DSC-jpg" href="/assets/images/blog/airbot/f3s/DSC03325.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/DSC03325_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href="http://shop.myairbot.com/index.php/flight-control/cleanflight-baseflight/f3saio-pro.html"&gt;F3S&lt;/a&gt; is an upgraded, F3 version, of the &lt;a href="/blog/2015/11/09/rctimer-oze32-integrated-flight-controller-review-and-setup/"&gt;OZE32&lt;/a&gt; which is a PDB, MinimOSD and flight controller all in one. I have a beta version of the F3s, the final version is gold plated.&lt;/p&gt;
-
-&lt;p&gt;The button on the top will switch the USB/UART between the flight controller and OSD. No more messing with dip switches, woohoo!&lt;/p&gt;
-
-&lt;p&gt;The integrated OSD is a MinimOSD, not directly connected to the flight controller. This board is compatible with the BetaFlight and CleanFlight SPRacingF3 targets.&lt;/p&gt;
-
-&lt;p&gt;The pro version has a MPU6050, which includes the gyro, accelerometer and magnetometer. There is a BMP280 barometer and 16MB of onboard flash.&lt;/p&gt;
-
-&lt;p&gt;On the bottom, we can see there is an &lt;code&gt;AB7456&lt;/code&gt; OSD chip, which is a more robust version of the &lt;code&gt;MAX7456&lt;/code&gt; chip with 2x the amount of character memory.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-DSC-jpg" href="/assets/images/blog/airbot/f3s/DSC03326.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/DSC03326_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="typhoon-4-in-1-pro-esc"&gt;Typhoon 4-in-1 Pro ESC&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href="http://shop.myairbot.com/index.php/typhoon4x20a4in1esc-66.html"&gt;Typhoon 4-in-1 Pro&lt;/a&gt; ESC is awesome.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-DSC-jpg" href="/assets/images/blog/airbot/f3s/DSC03466.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/DSC03466_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The pro version uses F396 MCUs and runs BLHeli.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-DSC-jpg" href="/assets/images/blog/airbot/f3s/DSC03469.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/DSC03469_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="pinouts"&gt;Pinouts&lt;/h2&gt;
-
-&lt;p&gt;Here is the F3S AIO Pinout:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 45.52486187845304%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-f-s-aio-bdf-a-png" href="/assets/images/blog/airbot/f3s/f3s-aio-77bdf73a.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/f3s-aio-77bdf73a.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 67.75280898876404%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-f-s-aio-example-e-c-jpg" href="/assets/images/blog/airbot/f3s/f3s-aio-example-e38c7162.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/f3s-aio-example-e38c7162.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The Typhoon 4-in-1 ESC Pinout:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-typhoon-pinout-e-ca-f-jpg" href="/assets/images/blog/airbot/typhoon-pinout-e460ca0f.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/typhoon-pinout_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Note that motors 3 and 4 are in the opposite positions expected by CleanFlight and BetaFlight, so be sure to swap those pins when plugging into the flight controller.&lt;/p&gt;
-
-&lt;h2 id="mounting"&gt;Mounting&lt;/h2&gt;
-
-&lt;p&gt;We&amp;#39;ll stack the ESC and the flight controller together.&lt;/p&gt;
-
-&lt;p&gt;Wire in the ESC.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-DSC-jpg" href="/assets/images/blog/airbot/f3s/DSC03307.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/DSC03307_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The motor signal wires for the 4-in-1 ESC can be wired to the flight controller like so:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-DSC-JPG" href="/assets/images/blog/airbot/f3s/DSC03342.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/DSC03342_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Wire power like so. The smaller, shorter leads will supply power to the 4-in-1 ESC.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-airbot-f-s-DSC-JPG" href="/assets/images/blog/airbot/f3s/DSC03359.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/f3s/DSC03359_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="setup"&gt;Setup&lt;/h2&gt;
-
-&lt;p&gt;Snappy FPV has a great setup and overview here:&lt;/p&gt;
-
-&lt;div class="videoWrapper"&gt;
-  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/Vj8WOgBULY8?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Eachine EV800 Review</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/10/eachine-ev800-review/"/>
-    <id>http://nathan.vertile.com/blog/2016/07/10/eachine-ev800-review/</id>
-    <published>2016-07-09T23:15:00-07:00</published>
-    <updated>2016-07-09T23:15:19-07:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html"></content>
   </entry>
 </feed>

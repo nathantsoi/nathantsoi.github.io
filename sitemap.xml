@@ -569,7 +569,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/09/01/diy-4-in-1-module-with-er9x</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016/09/05/omnibus-f3-pro</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/09/07/grasshopper-f210-rtf-quadcopter-review</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1685,6 +1693,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/tags/9x</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/tags/omnibusf3</loc>
     <priority>0.7</priority>
   </url>
@@ -1697,7 +1709,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://nathan.vertile.com/blog/2016/09/07</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://nathan.vertile.com/blog/2016/09/05</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://nathan.vertile.com/blog/2016/09/01</loc>
     <priority>0.7</priority>
   </url>
   <url>
