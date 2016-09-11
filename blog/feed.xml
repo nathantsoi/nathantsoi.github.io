@@ -14,13 +14,29 @@
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/09/07/grasshopper-f210-rtf-quadcopter-review/"/>
     <id>http://nathan.vertile.com/blog/2016/09/07/grasshopper-f210-rtf-quadcopter-review/</id>
     <published>2016-09-06T20:18:00-07:00</published>
-    <updated>2016-09-09T23:01:38-07:00</updated>
+    <updated>2016-09-11T09:39:20-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
     <content type="html">&lt;p&gt;This is a review and setup guide for the &lt;a href="http://goo.gl/qhVtlB"&gt;Grasshoper F210 Quadcopter&lt;/a&gt;.&lt;/p&gt;
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-grasshopperf-grasshopper-c-faacd-jpg" href="/assets/images/blog/grasshopperf210/grasshopper-c90faacd.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/grasshopper_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here&amp;#39;s how it flys on BetaFlight 3.0, as noted below, I decided to move the antennas out of the view of the HD camera later:&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/2S01JjLkhGQ?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;That video is on a &lt;a href="#"&gt;4s High Voltage (4.3v / cell) Lipo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-grasshopperf-bolt-d-f-a-jpg" href="/assets/images/blog/grasshopperf210/bolt-62d04f6a.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/bolt_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It flys equally well on the included 4s battery:&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/SvJwhDHOQAc?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
 
 &lt;h2 id="unboxing"&gt;Unboxing&lt;/h2&gt;
 
@@ -60,6 +76,8 @@
 &lt;p&gt;The &amp;quot;Ideafly&amp;quot; branded 2205/2300kv motors appear to be the same as &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=2698609"&gt;these &amp;quot;Racestar&amp;quot; motors&lt;/a&gt;.&lt;/p&gt;
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-grasshopperf-d-dc-jpg" href="/assets/images/blog/grasshopperf210/4-d2dc2172.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/4_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It&amp;#39;s nice the motors come with lock nuts instead of spinners, but I wish they would stop making counter-clockwise motors. Locknuts hold the prop on fine, no matter which direction the shaft is threaded. It&amp;#39;s just a pain to find the reverse-thread lock nuts. You should probably buy some extra right off the bat. You&amp;#39;re bound to lose one, and that&amp;#39;ll keep you grounded unless you have extra on hand. &lt;a href="http://www.banggood.com/10-Pairs-Emax-MT2205-RS2205-2205-CWCCW-Brushless-Motor-Replacement-Screw-Nut-p-1057639.html?p=1G09211226617201502J"&gt;I&amp;#39;ve found the best price for CW/CCW locknuts is here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;ESCs are Flycolor Raptor 20amp and should run up to 4s. They&amp;#39;re stuck down with some double sided tape, which should be fine, but it probably wouldn&amp;#39;t hurt to zip tie them down as well.&lt;/p&gt;
 
@@ -119,9 +137,17 @@
 
 &lt;p&gt;Even after wiring up the eye LEDs, they still blink red, so they must have another controller. I&amp;#39;ll disassemble the eyes at some point and see what&amp;#39;s going on. I guess they&amp;#39;ll just blink red for now.&lt;/p&gt;
 
-&lt;p&gt;The heatshrink antennas serve no purpose, so I cut them down and heatshrinked my receiver antennas to them.&lt;/p&gt;
+&lt;p&gt;The heatshrink antennas serve no purpose, so I cut them down and heatshrinked my receiver antennas to them. I should have moved them though, since they are visible in the HD camera footage.&lt;/p&gt;
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-grasshopperf-new-antennas-d-afee-jpg" href="/assets/images/blog/grasshopperf210/new-antennas-d20afee6.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/new-antennas_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Also, there really isn&amp;#39;t a great place to put the camera. At first, I mounted it on the top, behind the antennas. This works fine, you&amp;#39;ll just need an extra &lt;a href="http://www.gearbest.com/rc-parts/pp_109425.html?wid=21&amp;amp;lkid=10107779"&gt;velcro strap&lt;/a&gt;, and to move your antennas first. Even though the uptilt seems extreme, the video looks totally natural.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-grasshopperf-camera-c-e-e-jpg" href="/assets/images/blog/grasshopperf210/camera-1-c89e7e10.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/camera-1_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Next, I tried mounting the camera in front of the antennas, but this obstructed my FPV camera view. So, I suggest you move the antennas and mount the camera as shown in the photo above.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-grasshopperf-camera-a-jpg" href="/assets/images/blog/grasshopperf210/camera-2-03355a61.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/grasshopperf210/camera-2_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id="firmware"&gt;Firmware&lt;/h2&gt;
 
@@ -216,6 +242,10 @@
 &lt;p&gt;The flight controller is an SPRacing F3, which is fine, but so 2 years ago (I just made that up, I have no idea how old the Spracing F3 is). My point is that there are a bunch of new flight controllers, F3 and F4, F7&amp;#39;s are coming out soon. For a few bucks more they could have put an &lt;a href="/blog/2016/07/07/omnibus-typhoon-miniquad/#review"&gt;OMNIBUSF3&lt;/a&gt; which has a built in BetaFlight integrated OSD. I understand they&amp;#39;re trying to keep costs down, so this is fine to start, but presents an excellent upgrade opportunity.&lt;/p&gt;
 
 &lt;p&gt;Which brings me to the last thing and really the only thing this quad is missing, an OSD. Maybe at some point I&amp;#39;ll add an &lt;a href="/blog/2015/04/22/minim-osd/"&gt;OSD&lt;/a&gt; or upgrade to an omnibus flight controller. Until then, this thing flys great on BetaFlight 3.0!&lt;/p&gt;
+
+&lt;h3 id="durability"&gt;Durability&lt;/h3&gt;
+
+&lt;p&gt;When I was flying, I flew a bit far away. My failsafe is set to drop (as opposed to land), so when I lost signal the grasshopper dropped out of the sky onto a concrete road. The only thing that broke were the landing gear and a bit of carbon fiber under the mouth! This is amazing. It is super durable!&lt;/p&gt;
 </content>
   </entry>
   <entry>
