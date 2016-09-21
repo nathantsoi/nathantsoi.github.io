@@ -253,21 +253,21 @@
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/09/05/omnibus-f3-pro/"/>
     <id>http://nathan.vertile.com/blog/2016/09/05/omnibus-f3-pro/</id>
     <published>2016-09-04T20:22:00-07:00</published>
-    <updated>2016-09-05T19:59:46-07:00</updated>
+    <updated>2016-09-20T11:02:33-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
     <content type="html">&lt;p&gt;This is an overview of the new OmnibusF3 Pro from Airbot.&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 102.54060807996667%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03791.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03791_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-omnibusf-pro-OMNIBUSF-Pro-c-jpg" href="/assets/images/blog/omnibusf3pro/OMNIBUSF3-Pro-4-9993635c.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/omnibusf3pro/OMNIBUSF3-Pro-4-9993635c.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;My board is a prototype. Final boards are basically the same except they are gold plated and include an LC filter. Awesome!&lt;/p&gt;
+&lt;p&gt;It even has an LC filter. Awesome!&lt;/p&gt;
 
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 99.483306836248%;'&gt;&lt;a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03818.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/180/DSC03818_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-omnibusf-pro-OMNIBUSF-Pro-c-e-e-jpg" href="/assets/images/blog/omnibusf3pro/OMNIBUSF3-Pro-3-3c3e37e7.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/omnibusf3pro/OMNIBUSF3-Pro-3-3c3e37e7.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
 
-&lt;p&gt;The OmnibusF3 Pro improves upon the standard OmnibusF3, adding a Baro and Current sensor.&lt;/p&gt;
+&lt;p&gt;The OmnibusF3 Pro has all the awesomeness of the OmnibusF3 including the integrated OSD, SPI MPU6000 and SDCard. The Pro version adds more features such as the barometer, current sensor, integrated PDB and LC Filter!&lt;/p&gt;
 
 &lt;p&gt;Read the full OmnibusF3 review and setup guide in the &lt;a href="/blog/2016/07/07/omnibus-typhoon-miniquad/#pinouts"&gt;Omnibus Flight Controller and Airbot Typhoon 180 Miniquad Build&lt;/a&gt; article.&lt;/p&gt;
 
