@@ -122,7 +122,7 @@ Omnibus Flight Controller and Airbot Typhoon 180 Miniquad Build
 <li><a class="type-h2" href="#parts"><h2>Parts</h2></a></li>
 <li><a class="type-h2" href="#review"><h2>Review</h2></a></li>
 <li><a class="type-h2" href="#build-guide"><h2>Build Guide</h2></a></li><ul><li><a class="type-h3" href="#frame"><h3>Frame</h3></a></li>
-<li><a class="type-h3" href="#escs"><h3>ESCs</h3></a></li>
+<li><a class="type-h3" href="#escs"><h3>ESCs</h3></a></li><ul><li><a class="type-h4" href="#typhoon-motor-order"><h4>Typhoon motor order</h4></a></li></ul>
 <li><a class="type-h3" href="#flight-controller"><h3>Flight Controller</h3></a></li>
 <li><a class="type-h3" href="#camera"><h3>Camera</h3></a></li>
 <li><a class="type-h3" href="#final-assembly"><h3>Final assembly</h3></a></li>
@@ -147,9 +147,9 @@ Related Articles
 <li><a href="/blog/2016/04/24/rctimer-u210-mini-quad-build-setup-and-review/">Rctimer BeeRotor u210 mini quad build, setup and review</a></li>
 <li><a href="/blog/2016/05/08/drone-building-101-with-the-hobbyking-fpv-starter-setup/">Drone Building 101 with the HobbyKing FPV Starter Setup</a></li>
 <li><a href="/blog/2016/03/22/rctimer-br-x200-mini-quad-build-setup-and-review/">Rctimer BR-X200 Mini-quad Build, Setup and Review</a></li>
-<li><a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/">ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller</a></li>
 <li><a href="/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/">Rctimer Micro 160 BeeRotor Build, Setup and Review</a></li>
-<li><a href="/blog/2016/06/22/fpv-goggle-guide/">FPV Goggle Guide</a></li>
+<li><a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/">ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller</a></li>
+<li><a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/">Victory230 FPV Mini-quad Setup and Review</a></li>
 </ul>
 </div>
 </div>
@@ -487,6 +487,26 @@ Outdated: My prototype board came with both the PPM and SerialRX resistors conne
 <p>Install the Typhoon ESC with another set of standoffs.</p>
 
 <div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03481.JPG" class="linked-img colorbox"><img src='/assets/images/blog/airbot/180/DSC03481_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<h4 id="typhoon-motor-order">Typhoon motor order</h4>
+
+<p>Note that when connecting the Typhoon to a BetaFlight flight controller, the Typhoon motor order is slightly different than the motor order that BetaFlight expects. Motors 3 and 4 on the typhoon are swapped, relative to the BetaFlight motor order.</p>
+
+<p>Here is the expected motor order:</p>
+
+<div class='ratio-box-resizer img-half-width'><div class='ratio-box' style='padding-bottom: 95.2755905511811%;'><a id="assets-images-blog-airbot-motor-order-c-ee-png" href="/assets/images/blog/airbot/motor-order-9c413ee9.png" class="linked-img colorbox"><img src='/assets/images/blog/airbot/motor-order-9c413ee9.png' class='trailing-space' ></img></a></div></div>
+
+<p>Here is the motor order on the Typhoon ESC:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 100.0%;'><a id="assets-images-blog-airbot-typhoon-pinout-motor-order-e-bd-jpg" href="/assets/images/blog/airbot/typhoon-pinout-motor-order-e8602bd2.jpg" class="linked-img colorbox"><img src='/assets/images/blog/airbot/typhoon-pinout-motor-order-e8602bd2.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Here&#39;s how mine looks plugged in, pinout from the ESC:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.0%;'><a id="assets-images-blog-airbot-typhoon-pinout-photo-df-b-jpg" href="/assets/images/blog/airbot/typhoon-pinout-photo-1282df6b.jpg" class="linked-img colorbox"><img src='/assets/images/blog/airbot/typhoon-pinout-photo-1282df6b.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>And the flight controller side:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 75.0%;'><a id="assets-images-blog-airbot-typhoon-pinout-photo-omnibus-fa-bd-jpg" href="/assets/images/blog/airbot/typhoon-pinout-photo-omnibus-1fa80bd1.jpg" class="linked-img colorbox"><img src='/assets/images/blog/airbot/typhoon-pinout-photo-omnibus-1fa80bd1.jpg' class='trailing-space' ></img></a></div></div>
 
 <h3 id="flight-controller">Flight Controller</h3>
 
