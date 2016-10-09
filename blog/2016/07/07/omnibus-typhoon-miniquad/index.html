@@ -28,7 +28,7 @@
 Omnibus Flight Controller and Airbot Typhoon 180 Miniquad Build
 </title>
 <link href="/assets/stylesheets/all-6acef658.css" rel="stylesheet" />
-<script src="/assets/javascripts/all-d5b91b8e.js"></script>
+<script src="/assets/javascripts/all-053b43cc.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -123,7 +123,7 @@ Omnibus Flight Controller and Airbot Typhoon 180 Miniquad Build
 <li><a class="type-h2" href="#review"><h2>Review</h2></a></li>
 <li><a class="type-h2" href="#build-guide"><h2>Build Guide</h2></a></li><ul><li><a class="type-h3" href="#frame"><h3>Frame</h3></a></li>
 <li><a class="type-h3" href="#escs"><h3>ESCs</h3></a></li><ul><li><a class="type-h4" href="#typhoon-motor-order"><h4>Typhoon motor order</h4></a></li></ul>
-<li><a class="type-h3" href="#flight-controller"><h3>Flight Controller</h3></a></li>
+<li><a class="type-h3" href="#flight-controller"><h3>Flight Controller</h3></a></li><ul><li><a class="type-h4" href="#updating-betaflight"><h4>Updating BetaFlight</h4></a></li></ul>
 <li><a class="type-h3" href="#camera"><h3>Camera</h3></a></li>
 <li><a class="type-h3" href="#final-assembly"><h3>Final assembly</h3></a></li>
 <li><a class="type-h3" href="#video-transmitter"><h3>Video transmitter</h3></a></li><ul><li><a class="type-h4" href="#channels"><h4>Channels</h4></a></li>
@@ -149,7 +149,7 @@ Related Articles
 <li><a href="/blog/2016/03/22/rctimer-br-x200-mini-quad-build-setup-and-review/">Rctimer BR-X200 Mini-quad Build, Setup and Review</a></li>
 <li><a href="/blog/2015/12/05/rctimer-micro-160-beerotor-build-setup-and-review/">Rctimer Micro 160 BeeRotor Build, Setup and Review</a></li>
 <li><a href="/blog/2016/01/29/rctimer-asp-micro-4-3rds-gimbal-and-simplebgc-32-bit-gimbal-controller/">ASP micro 4/3rds Gimbal and SimpleBGC 32-bit Gimbal Controller</a></li>
-<li><a href="/blog/2016/02/10/rctimer-victory230-fpv-miniquad/">Victory230 FPV Mini-quad Setup and Review</a></li>
+<li><a href="/blog/2016/06/22/fpv-goggle-guide/">FPV Goggle Guide</a></li>
 </ul>
 </div>
 </div>
@@ -251,6 +251,8 @@ Checkout my other guides at
 <div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-airbot-typhoon-pinout-ac-d-c-a-jpg" href="/assets/images/blog/airbot/typhoon-pinout-ac7d2c5a.jpg" class="linked-img colorbox"><img src='/assets/images/blog/airbot/typhoon-pinout_prev-ca54098e.jpg' class='trailing-space' ></img></a></div></div>
 
 <h2 id="flight-controller-setup">Flight controller setup</h2>
+
+<p><b>Update Oct, 2016</b>: Please update your firmware when you get your new board! Even though all boards ship with Firmware 3.0.0 and up, you&#39;ll want to make sure you flash your board to the latest version of BetaFlight because some boards, even if they say firmware version 3.0.0 may have early, release candidate firmware instead of the final version. Update your board before doing anything else! It&#39;s easy, just follow the <a href="#updating-betaflight">Firmware Update Guide here</a>.</p>
 
 <p>Let&#39;s start by soldering the pin headers to the board. To choose which headers you&#39;ll use, let&#39;s consider a few things. First, the voltage of the camera and video transmitter you&#39;ll be using. I will be using a camera that can take between 5v-22v and a video transmitter that can take between 7-24v (2s-5s LiPo). This is important because it determines how our video power pins will be wired. If you&#39;re using a 5v camera, you would want to wire any 5v output from the flight controller to the <code>V+</code> on the camera. If you&#39;re using a camera that can handle the voltage straight from the battery, you can connect <code>VBAT</code> and <code>RAM</code> to power both the transmitter and the camera from the battery. If you&#39;re using FPV gear that can only handle 5v, connect <code>RAM</code> and a <code>5v</code> line.</p>
 
@@ -384,10 +386,10 @@ Outdated: My prototype board came with both the PPM and SerialRX resistors conne
 
           <tr>
         <td>
-          <a target="_blank" href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 100.0%;'><a id="assets-images-blog-parts-eachine-ev-ea-d-jpg" href="/assets/images/blog/parts/eachine-ev800-ea39189d.jpg" class="linked-img colorbox"><img src='/assets/images/blog/parts/eachine-ev800-ea39189d.jpg' class='' ></img></a></div></div></a>
+          <a target="_blank" href="http://www.banggood.com/Eachine-VR-D2-5-Inches-800480-40CH-Raceband-5_8G-Diversity-FPV-Goggles-with-DVR-Lens-Adjustable-p-1074866.html?p=1G09211226617201502J"><div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-goggles-vrd-DSC-JPG" href="/assets/images/blog/goggles/vrd2/DSC03914.JPG" class="linked-img colorbox"><img src='/assets/images/blog/goggles/vrd2/DSC03914_prev.JPG' class='' ></img></a></div></div></a>
         </td>
         <td>
-          <a target="_blank" href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J">Eachine EV800 Video Goggles, $77</a>
+          <a target="_blank" href="http://www.banggood.com/Eachine-VR-D2-5-Inches-800480-40CH-Raceband-5_8G-Diversity-FPV-Goggles-with-DVR-Lens-Adjustable-p-1074866.html?p=1G09211226617201502J">Eachine VR D2 Video Goggles, $99</a>
         </td>
       </tr>
 
@@ -412,7 +414,7 @@ Outdated: My prototype board came with both the PPM and SerialRX resistors conne
   </tbody>
 </table>
 
-<p>I picked this setup because these are the most feature-rich and cost effective components you can use to get into FPV flying! The <a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J">FS-i6 radio with iA6B receiver</a> is the best value radio that supports PPM. The <a href="http://www.banggood.com/Eachine-EV800-5-Inches-800x480-FPV-Goggles-5_8G-40CH-Raceband-Auto-Searching-Build-In-Battery-p-1053357.html?p=1G09211226617201502J">EV800 Video Goggles</a> are a great value at $77. The <a href="http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idproduct=97842&amp;aff=1624906">HobbyKing Quanum DIY FPV Goggles</a> paired with the <a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=65994&amp;aff=1624906">Quanum Auto Scan Receiver</a> is also a very good choice since they have a little better quality, but you have to <a href="/blog/2016/05/11/hobbyking-quanum-v2-pro-goggles/">build it yourself (read the build guide here)</a>. The <a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J">1800mah battery</a> will work well in any 150-350mm size quadcopter and the 45c rating means it can deliver 81 Amps, which should be more than enough for your mini-quadcopter. Finally, the <a href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J">Eachine WT50</a> charger includes a built in AC-DC converter, so you won&#39;t need an external power supply, like you would with most chargers.</p>
+<p>I picked this setup because these are the most feature-rich and cost effective components you can use to get into FPV flying! The <a href="http://www.banggood.com/FlySky-FS-i6-2_4G-6CH-AFHDS-RC-Transmitter-With-FS-iA6B-Receiver-p-983537.html?p=1G09211226617201502J">FS-i6 radio with iA6B receiver</a> is the best value radio that supports PPM. The <a href="http://www.banggood.com/Eachine-VR-D2-5-Inches-800480-40CH-Raceband-5_8G-Diversity-FPV-Goggles-with-DVR-Lens-Adjustable-p-1074866.html?p=1G09211226617201502J">Eachine VR D2</a> are a great value at $99. The <a href="http://www.banggood.com/ZOP-Power-11_1V-1800mAh-45C-Lipo-Battery-XT60-Plug-p-991825.html?p=1G09211226617201502J">1800mah battery</a> will work well in any 150-350mm size quadcopter and the 45c rating means it can deliver 81 Amps, which should be more than enough for your mini-quadcopter. Finally, the <a href="http://www.banggood.com/Eachine-WT50-6A-50W-ACDC-Balance-Charger-Discharger-For-LiPoNiCdPB-Battery-p-1054492.html?p=1G09211226617201502J">Eachine WT50</a> charger includes a built in AC-DC converter, so you won&#39;t need an external power supply, like you would with most chargers.</p>
 
 <p>Total Cost: <code>~$180</code></p>
 
@@ -529,6 +531,8 @@ Outdated: My prototype board came with both the PPM and SerialRX resistors conne
 <div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03498.JPG" class="linked-img colorbox"><img src='/assets/images/blog/airbot/180/DSC03498_prev.JPG' class='trailing-space' ></img></a></div></div>
 
 <div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.44951140065146%;'><a id="assets-images-blog-airbot-DSC-JPG" href="/assets/images/blog/airbot/180/DSC03499.JPG" class="linked-img colorbox"><img src='/assets/images/blog/airbot/180/DSC03499_prev.JPG' class='trailing-space' ></img></a></div></div>
+
+<h4 id="updating-betaflight">Updating BetaFlight</h4>
 
 <p>Install BetaFlight by <a href="https://chrome.google.com/webstore/detail/betaflight-configurator/kdaghagfopacdngbohiknlhcocjccjao">downloading the configurator</a> or get the latest version of the configurator as follows:</p>
 
