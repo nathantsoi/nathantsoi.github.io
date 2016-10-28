@@ -5,16 +5,76 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-09-06T20:18:00-07:00</updated>
+  <updated>2016-10-11T18:01:00-06:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
   <entry>
+    <title>OmnibusF4 and the BFOSD</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/10/12/omnibusf4/"/>
+    <id>http://nathan.vertile.com/blog/2016/10/12/omnibusf4/</id>
+    <published>2016-10-11T18:01:00-06:00</published>
+    <updated>2016-10-27T15:17:59-06:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;This is an overview of the OMNIBUS F4 flight controller and BetaFlight OSD (BFOSD).&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-omnibusf-DSC-JPG" href="/assets/images/blog/omnibusf4/DSC03977.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/omnibusf4/DSC03977_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-omnibusf-DSC-JPG" href="/assets/images/blog/omnibusf4/DSC03978.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/omnibusf4/DSC03978_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="review"&gt;Review&lt;/h2&gt;
+
+&lt;p&gt;The OmnibusF4 is one of the best F4 flight controllers on the market today. Like the &lt;a href="/blog/2016/07/07/omnibus-typhoon-miniquad/#review"&gt;OmnibusF3&lt;/a&gt;, it has an integrated BetaFlight OSD and voltage regulator. Instead of an F3 processor, it has a faster F4 processor and instead of an SDCard slot, it has onboard flash.&lt;/p&gt;
+
+&lt;p&gt;The other big difference between the &lt;a href="/blog/2016/07/07/omnibus-typhoon-miniquad/#review"&gt;OmnibusF3&lt;/a&gt; and the OmnibusF4 is that the OmnibusF4 uses a dedicated bus for the GYRO. While this is usually unnoticeable, thanks to software improvements in BetaFlight, it may make a small difference when running fast looptimes since the OSD and the GYRO never need to share time on the same bus. In non-technical terms, this means that the GYRO can talk to the main processor without any interruptions from any other devices.&lt;/p&gt;
+
+&lt;h3 id="osd"&gt;OSD&lt;/h3&gt;
+
+&lt;p&gt;The big advantages of using an integrated BFOSD vs a MINIM-OSD are that 1) no extra flashing step is required,  2) the BFOSD can be configured in the BetaFlight GUI and 3) the BFOSD sticks menu allows you to configure all the latest options BetaFlight has to offer.&lt;/p&gt;
+
+&lt;h4 id="osd-gui-configuration"&gt;OSD GUI Configuration&lt;/h4&gt;
+
+&lt;p&gt;Here&amp;#39;s an example of the GUI configuration. It&amp;#39;s drag and drop:&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/uT0eiDlvKIM?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h4 id="osd-sticks-menu"&gt;OSD Sticks Menu&lt;/h4&gt;
+
+&lt;p&gt;The OSD sticks menu is the same as the OMNIBUSF3 and it is awesome. Here&amp;#39;s an example of what it can do:&lt;/p&gt;
+
+&lt;div class="videoWrapper"&gt;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/de8lCzX8ICA?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id="pinouts"&gt;Pinouts&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;#39;re familiar with the layout of the Omnibus F3, the OmnibusF4 is very similar:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.19704433497536%;'&gt;&lt;a id="assets-images-blog-omnibusf-pinout-top-bd-a-png" href="/assets/images/blog/omnibusf4/pinout-top-3bd9087a.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/omnibusf4/pinout-top-3bd9087a.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For a full wiring guide, see the &lt;a href="/blog/2016/07/07/omnibus-typhoon-miniquad/#flight-controller-setup"&gt;Omnibus F3&lt;/a&gt; flight controller setup.&lt;/p&gt;
+
+&lt;h2 id="receiver"&gt;Receiver&lt;/h2&gt;
+
+&lt;p&gt;F3 processors have built-in UART (serial port) inversion, which is important for S.BUS receivers, however on the F4 processor, this is not built in. Therefore, the OmnibusF4 has another component on the board that does serial inversion on the main S.BUS/PPM input port.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.19704433497536%;'&gt;&lt;a id="assets-images-blog-omnibusf-pinout-top-inverter-ddc-ac-png" href="/assets/images/blog/omnibusf4/pinout-top-inverter-7ddc79ac.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/omnibusf4/pinout-top-inverter-7ddc79ac.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This main input port, shown above, is used for either PPM input or S.BUS (inverted). To use UART1 without inversion, use the pin on the lower left hand side of the board, which does not have an inverter.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 80.19704433497536%;'&gt;&lt;a id="assets-images-blog-omnibusf-pinout-top-uart-e-eaa-png" href="/assets/images/blog/omnibusf4/pinout-top-uart1-e2eaa627.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/omnibusf4/pinout-top-uart1-e2eaa627.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
     <title>Grasshopper F210 RTF Quadcopter Review</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/09/07/grasshopper-f210-rtf-quadcopter-review/"/>
     <id>http://nathan.vertile.com/blog/2016/09/07/grasshopper-f210-rtf-quadcopter-review/</id>
-    <published>2016-09-06T20:18:00-07:00</published>
-    <updated>2016-10-01T18:56:30-07:00</updated>
+    <published>2016-09-06T21:18:00-06:00</published>
+    <updated>2016-10-18T14:11:01-06:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -252,8 +312,8 @@
     <title>Omnibus F3 Pro</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/09/05/omnibus-f3-pro/"/>
     <id>http://nathan.vertile.com/blog/2016/09/05/omnibus-f3-pro/</id>
-    <published>2016-09-04T20:22:00-07:00</published>
-    <updated>2016-09-20T11:02:33-07:00</updated>
+    <published>2016-09-04T21:22:00-06:00</published>
+    <updated>2016-10-18T14:11:01-06:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -292,8 +352,8 @@
     <title>DIY 4 in 1 Module with ER9X</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/09/01/diy-4-in-1-module-with-er9x/"/>
     <id>http://nathan.vertile.com/blog/2016/09/01/diy-4-in-1-module-with-er9x/</id>
-    <published>2016-08-31T23:05:00-07:00</published>
-    <updated>2016-09-09T23:10:33-07:00</updated>
+    <published>2016-09-01T00:05:00-06:00</published>
+    <updated>2016-10-18T14:11:01-06:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -520,8 +580,8 @@ index eb075a1..9add3f8 100644
     <title>Geeetech Prusa I3 X Build Guide</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/08/06/geeetech-prusa-i3-x-build-guide/"/>
     <id>http://nathan.vertile.com/blog/2016/08/06/geeetech-prusa-i3-x-build-guide/</id>
-    <published>2016-08-05T21:14:00-07:00</published>
-    <updated>2016-09-05T19:57:38-07:00</updated>
+    <published>2016-08-05T22:14:00-06:00</published>
+    <updated>2016-10-18T14:11:01-06:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -1026,8 +1086,8 @@ index eb075a1..9add3f8 100644
     <title>BetaFlight Kiss Flight Controller</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/29/betaflight-kiss-flight-controller/"/>
     <id>http://nathan.vertile.com/blog/2016/07/29/betaflight-kiss-flight-controller/</id>
-    <published>2016-07-28T22:30:00-07:00</published>
-    <updated>2016-08-05T22:20:31-07:00</updated>
+    <published>2016-07-28T23:30:00-06:00</published>
+    <updated>2016-10-18T14:11:01-06:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -1128,151 +1188,6 @@ AUX2 (PA14) -&amp;gt; SWDCLK
     &lt;/span&gt;&lt;span class="err"&gt;//&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM8,&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="err"&gt;IO_TAG(PA14),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM_Channel_3,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM8_CC_IRQn,&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;0,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;IOCFG_AF_PP,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;GPIO_AF_5&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="err"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;span class="err"&gt;};&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-</content>
-  </entry>
-  <entry>
-    <title>J-Link Getting Started Guide</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/25/j-link-getting-started-guide/"/>
-    <id>http://nathan.vertile.com/blog/2016/07/25/j-link-getting-started-guide/</id>
-    <published>2016-07-24T20:20:00-07:00</published>
-    <updated>2016-07-25T22:17:45-07:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;These are my notes on J-link debugging, mostly for ARM.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-jlink-DSC-JPG" href="/assets/images/blog/jlink/DSC03526.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/jlink/DSC03526_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="software"&gt;Software&lt;/h2&gt;
-
-&lt;p&gt;Head over to the &lt;a href="https://www.segger.com/downloads/jlink"&gt;jlink downloads&lt;/a&gt; page to grab the latest software for your platform.&lt;/p&gt;
-
-&lt;p&gt;Install the package then connect your debugger.&lt;/p&gt;
-
-&lt;h2 id="pinout"&gt;Pinout&lt;/h2&gt;
-
-&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 78.01418439716312%;'&gt;&lt;a id="assets-images-blog-jlink-pin-jlink-b-afde-png" href="/assets/images/blog/jlink/20pin-jlink-7b2afde5.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/jlink/20pin-jlink-7b2afde5.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I just used some &lt;a href="http://www.banggood.com/3Pcs-40P-20cm-Female-to-Female-Dupont-Jumper-Jump-Cable-Wire-For-Arduino-p-1033590.html?p=1G09211226617201502J"&gt;Dupont jumper cables&lt;/a&gt; to connect the SWD lines. You could get one of &lt;a href="http://www.banggood.com/V8-All-ARM-JTAG-Adapter-Converter-For-TQ2440-MINI2440-Neu-J-link-Emulator-p-1038713.html?p=1G09211226617201502J"&gt;these breakout boards&lt;/a&gt;, but that seems unnecessary.&lt;/p&gt;
-
-&lt;p&gt;You would connect the Dupont cables like this. Note that when using the grey 20 pin Jtag cable, the pinout should be viewed from the &amp;quot;back&amp;quot;.&lt;/p&gt;
-
-&lt;h2 id="swd"&gt;SWD&lt;/h2&gt;
-
-&lt;p&gt;Here is an example SWD connection. I check that my J-Link was sending 3.3v on the VCC pin, and I think this is standard, but if you want to be sure, double check it before connecting.&lt;/p&gt;
-
-&lt;p&gt;Where:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;RED &amp;lt;-&amp;gt; VCC
-YELLOW &amp;lt;-&amp;gt; GND
-BLUE &amp;lt;-&amp;gt; SWDIO
-GREEN &amp;lt;-&amp;gt; SWDCLK
-ORANGE &amp;lt;-&amp;gt; RESET
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-jlink-DSC-JPG" href="/assets/images/blog/jlink/DSC03524.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/jlink/DSC03524_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-jlink-DSC-JPG" href="/assets/images/blog/jlink/DSC03525.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/jlink/DSC03525_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here is an example connection to the &lt;a href="/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/"&gt;FlySky FS-i6&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-jlink-DSC-JPG" href="/assets/images/blog/jlink/DSC03530.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/jlink/DSC03530_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id="flashing"&gt;Flashing&lt;/h2&gt;
-
-&lt;p&gt;Find your device in &lt;a href="https://www.segger.com/jlink_supported_devices.html"&gt;the device list&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Once you know the device, run &lt;code&gt;JLinkExe&lt;/code&gt; from your terminal. These examples are from my mac, using the MKL16Z64VLH4 I was working with in my &lt;a href="/blog/2016/07/09/flysky-i6-radio-setup-and-hacking-guide/"&gt;FlySky FS-i6 hacking guide&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Create a file, it doesn&amp;#39;t matter what it&amp;#39;s called. I&amp;#39;ll call mine &lt;code&gt;dump.jtag&lt;/code&gt; and put this in it:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;si 1
-speed 4000
-device MKL16Z64XXX4
-r
-h
-savebin fsi6.bin, 0x0, 0x10000
-exit
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note that the syntax for savebin is &lt;code&gt;filename&lt;/code&gt;, &lt;code&gt;start addr&lt;/code&gt;, &lt;code&gt;size&lt;/code&gt;. Our target has 64kb of flash.&lt;/p&gt;
-
-&lt;p&gt;Then run:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;JLinkExe -CommanderScript dump.jtag
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now you should have a file called fsi6.bin&lt;/p&gt;
-
-&lt;p&gt;You can run &lt;code&gt;xxd fsi6.bin &amp;gt; fsi6.txt&lt;/code&gt; to see a readable output of the binary.&lt;/p&gt;
-
-&lt;p&gt;Make any edits and run &lt;code&gt;xxd -r fsi6.txt &amp;gt; modified-fsi6.bin&lt;/code&gt; &lt;/p&gt;
-
-&lt;p&gt;Then create another file called &lt;code&gt;loadbin.jlink&lt;/code&gt; with the contents:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;si 1
-speed 4000
-device MKL16Z64XXX4
-r
-h
-loadbin modified-fsi6.bin
-exit
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To just connect to the target, run:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;JLinkExe -device MKL16Z64xxx4
-si 1
-speed 4000
-r
-h
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You&amp;#39;ll see:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;› JLinkExe -device MKL16Z64xxx4
-SEGGER J-Link Commander V6.00 (Compiled Jul 22 2016 19:27:23)
-DLL version V6.00, compiled Jul 22 2016 19:27:17
-
-Connecting to J-Link via USB...O.K.
-Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
-Hardware version: V8.00
-S/N: 304439649
-License(s): RDI,FlashDL,FlashBP,JFlash,GDBFULL
-VTref = 3.280V
-
-
-Type "connect" to establish a target connection, '?' for help
-J-Link&amp;gt;si 1
-Selecting SWD as current target interface.
-J-Link&amp;gt;speed 4000
-Selecting 4000 kHz as target interface speed
-J-Link&amp;gt;r
-Target connection not established yet but required for command.
-Device "MKL16Z64XXX4" selected.
-
-
-Found SWD-DP with ID 0x0BC11477
-Found SWD-DP with ID 0x0BC11477
-AP-IDR: 0x04770031, Type: AHB-AP
-Found Cortex-M0 r0p0, Little endian.
-FPUnit: 2 code (BP) slots and 0 literal slots
-CoreSight components:
-ROMTbl 0 @ F0002000
-ROMTbl 0 [0]: FFFFE000, CID: B105900D, PID: 000BB932 MTB-M0+
-ROMTbl 0 [1]: FFFFF000, CID: B105900D, PID: 0008E000 MTBDWT
-ROMTbl 0 [2]: F00FD000, CID: B105100D, PID: 000BB4C0 ROM Table
-ROMTbl 1 @ E00FF000
-ROMTbl 1 [0]: FFF0F000, CID: B105E00D, PID: 000BB008 SCS
-ROMTbl 1 [1]: FFF02000, CID: B105E00D, PID: 000BB00A DWT
-ROMTbl 1 [2]: FFF03000, CID: B105E00D, PID: 000BB00B FPB
-Cortex-M0 identified.
-Reset delay: 0 ms
-Reset type NORMAL: Resets core &amp;amp; peripherals via SYSRESETREQ &amp;amp; VECTRESET bit.
-J-Link&amp;gt;h
-PC = 000001A0, CycleCnt = 00000000
-R0 = 80000000, R1 = 40000000, R2 = 00000004, R3 = 0000FF00
-R4 = 40076000, R5 = 40008100, R6 = 00000001, R7 = 200015F0
-R8 = 3FBFDFDF, R9 = FF5EFFBF, R10= 0000F3D4, R11= 0000F3D4
-R12= BFFBFEFF
-SP(R13)= 20001460, MSP= 20001460, PSP= FF4FEFF8, R14(LR) = 0000A311
-XPSR = A1000000: APSR = NzCvq, EPSR = 01000000, IPSR = 000 (NoException)
-CFBP = 00000000, CONTROL = 00, FAULTMASK = 00, BASEPRI = 00, PRIMASK = 00
-&lt;/code&gt;&lt;/pre&gt;
 </content>
   </entry>
 </feed>
