@@ -5,7 +5,7 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-10-11T18:01:00-06:00</updated>
+  <updated>2016-10-11T17:01:00-07:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
@@ -13,8 +13,8 @@
     <title>OmnibusF4 and the BFOSD</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/10/12/omnibusf4/"/>
     <id>http://nathan.vertile.com/blog/2016/10/12/omnibusf4/</id>
-    <published>2016-10-11T18:01:00-06:00</published>
-    <updated>2016-10-27T15:17:59-06:00</updated>
+    <published>2016-10-11T17:01:00-07:00</published>
+    <updated>2016-11-05T21:46:35-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -73,8 +73,8 @@
     <title>Grasshopper F210 RTF Quadcopter Review</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/09/07/grasshopper-f210-rtf-quadcopter-review/"/>
     <id>http://nathan.vertile.com/blog/2016/09/07/grasshopper-f210-rtf-quadcopter-review/</id>
-    <published>2016-09-06T21:18:00-06:00</published>
-    <updated>2016-10-18T14:11:01-06:00</updated>
+    <published>2016-09-06T20:18:00-07:00</published>
+    <updated>2016-11-05T21:46:35-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -312,8 +312,8 @@
     <title>Omnibus F3 Pro</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/09/05/omnibus-f3-pro/"/>
     <id>http://nathan.vertile.com/blog/2016/09/05/omnibus-f3-pro/</id>
-    <published>2016-09-04T21:22:00-06:00</published>
-    <updated>2016-10-18T14:11:01-06:00</updated>
+    <published>2016-09-04T20:22:00-07:00</published>
+    <updated>2016-11-05T21:46:35-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -352,8 +352,8 @@
     <title>DIY 4 in 1 Module with ER9X</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/09/01/diy-4-in-1-module-with-er9x/"/>
     <id>http://nathan.vertile.com/blog/2016/09/01/diy-4-in-1-module-with-er9x/</id>
-    <published>2016-09-01T00:05:00-06:00</published>
-    <updated>2016-10-18T14:11:01-06:00</updated>
+    <published>2016-08-31T23:05:00-07:00</published>
+    <updated>2016-11-05T21:46:35-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -580,8 +580,8 @@ index eb075a1..9add3f8 100644
     <title>Geeetech Prusa I3 X Build Guide</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/08/06/geeetech-prusa-i3-x-build-guide/"/>
     <id>http://nathan.vertile.com/blog/2016/08/06/geeetech-prusa-i3-x-build-guide/</id>
-    <published>2016-08-05T22:14:00-06:00</published>
-    <updated>2016-10-18T14:11:01-06:00</updated>
+    <published>2016-08-05T21:14:00-07:00</published>
+    <updated>2016-11-05T21:46:35-07:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -1086,8 +1086,8 @@ index eb075a1..9add3f8 100644
     <title>BetaFlight Kiss Flight Controller</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/29/betaflight-kiss-flight-controller/"/>
     <id>http://nathan.vertile.com/blog/2016/07/29/betaflight-kiss-flight-controller/</id>
-    <published>2016-07-28T23:30:00-06:00</published>
-    <updated>2016-10-18T14:11:01-06:00</updated>
+    <published>2016-07-28T22:30:00-07:00</published>
+    <updated>2016-11-08T21:00:15-08:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -1104,6 +1104,20 @@ index eb075a1..9add3f8 100644
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.50717703349282%;'&gt;&lt;a id="assets-images-blog-kissfc-pinout-d-c-d-png" href="/assets/images/blog/kissfc/pinout-5d903c7d.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/pinout-5d903c7d.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 90.34175334323923%;'&gt;&lt;a id="assets-images-blog-kissfc-schematic-bd-png" href="/assets/images/blog/kissfc/schematic-12673bd7.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/schematic-12673bd7.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id="motor-order"&gt;Motor order&lt;/h3&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;BetaFlight Motor Number -&amp;gt; KISSFC PAD LABEL
+1 -&amp;gt; 3
+2 -&amp;gt; 2
+3 -&amp;gt; 4
+4 -&amp;gt; 1
+5 -&amp;gt; 5
+6 -&amp;gt; 6
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Where KISSFC PAD is the label next to the pad on the flight controller and the BetaFlight Motor Number is given by the motor order diagram:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 95.2755905511811%;'&gt;&lt;a id="assets-images-blog-airbot-motor-order-c-ee-png" href="/assets/images/blog/airbot/motor-order-9c413ee9.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/motor-order-9c413ee9.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id="ppm"&gt;PPM&lt;/h3&gt;
 

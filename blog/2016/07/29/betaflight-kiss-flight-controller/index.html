@@ -116,7 +116,8 @@ BetaFlight Kiss Flight Controller
 </div>
 <div class='row'>
 <div class='col-lg-12 table-of-contents'>
-<ul class="nav"><li><a class="type-h2" href="#pinout"><h2>Pinout</h2></a></li><ul><li><a class="type-h3" href="#ppm"><h3>PPM</h3></a></li>
+<ul class="nav"><li><a class="type-h2" href="#pinout"><h2>Pinout</h2></a></li><ul><li><a class="type-h3" href="#motor-order"><h3>Motor order</h3></a></li>
+<li><a class="type-h3" href="#ppm"><h3>PPM</h3></a></li>
 <li><a class="type-h3" href="#serial-rx"><h3>Serial RX</h3></a></li></ul>
 <li><a class="type-h2" href="#flashing"><h2>Flashing</h2></a></li><ul><li><a class="type-h3" href="#swd"><h3>SWD</h3></a></li></ul></ul>
 </div>
@@ -132,9 +133,9 @@ Related Articles
 <li><a href="/blog/2016/07/12/airbot-f3s-aio/">Airbot F3S AIO Flight Controller and Typhoon 4-in-1 ESC</a></li>
 <li><a href="/blog/2016/02/06/hmdvr-fpv-video-recorder/">HMDVR FPV Video Recorder</a></li>
 <li><a href="/blog/2016/07/25/j-link-getting-started-guide/">J-Link Getting Started Guide</a></li>
+<li><a href="/blog/2015/12/06/blheli-configuration/">BlHeli ESC Upgrading and Configuration</a></li>
 <li><a href="/blog/2016/10/12/omnibusf4/">OmnibusF4 and the BFOSD</a></li>
 <li><a href="/blog/2015/12/06/blheli-calibration/">BlHeli CleanFlight ESC Calibration</a></li>
-<li><a href="/blog/2015/10/29/multirotor-setup-checklist/">MultiRotor Setup Checklist</a></li>
 </ul>
 </div>
 </div>
@@ -208,6 +209,20 @@ Checkout my other guides at
 <div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 66.50717703349282%;'><a id="assets-images-blog-kissfc-pinout-d-c-d-png" href="/assets/images/blog/kissfc/pinout-5d903c7d.png" class="linked-img colorbox"><img src='/assets/images/blog/kissfc/pinout-5d903c7d.png' class='trailing-space' ></img></a></div></div>
 
 <div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 90.34175334323923%;'><a id="assets-images-blog-kissfc-schematic-bd-png" href="/assets/images/blog/kissfc/schematic-12673bd7.png" class="linked-img colorbox"><img src='/assets/images/blog/kissfc/schematic-12673bd7.png' class='trailing-space' ></img></a></div></div>
+
+<h3 id="motor-order">Motor order</h3>
+<pre class="highlight plaintext"><code>BetaFlight Motor Number -&gt; KISSFC PAD LABEL
+1 -&gt; 3
+2 -&gt; 2
+3 -&gt; 4
+4 -&gt; 1
+5 -&gt; 5
+6 -&gt; 6
+</code></pre>
+
+<p>Where KISSFC PAD is the label next to the pad on the flight controller and the BetaFlight Motor Number is given by the motor order diagram:</p>
+
+<div class='ratio-box-resizer img-half-width'><div class='ratio-box' style='padding-bottom: 95.2755905511811%;'><a id="assets-images-blog-airbot-motor-order-c-ee-png" href="/assets/images/blog/airbot/motor-order-9c413ee9.png" class="linked-img colorbox"><img src='/assets/images/blog/airbot/motor-order-9c413ee9.png' class='trailing-space' ></img></a></div></div>
 
 <h3 id="ppm">PPM</h3>
 

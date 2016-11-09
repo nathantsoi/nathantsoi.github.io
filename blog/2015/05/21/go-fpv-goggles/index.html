@@ -117,7 +117,8 @@ Go FPV Goggles
 <div class='row'>
 <div class='col-lg-12 table-of-contents'>
 <ul class="nav"><li><a class="type-h2" href="#background"><h2>Background</h2></a></li>
-<li><a class="type-h2" href="#parts"><h2>Parts</h2></a></li>
+<li><a class="type-h2" href="#parts"><h2>Parts</h2></a></li><ul><li><a class="type-h3" href="#components"><h3>Components</h3></a></li>
+<li><a class="type-h3" href="#goggles"><h3>Goggles</h3></a></li></ul>
 <li><a class="type-h2" href="#performance"><h2>Performance</h2></a></li>
 <li><a class="type-h2" href="#phone"><h2>Phone and Power Considerations</h2></a></li>
 <li><a class="type-h2" href="#build-it"><h2>Build Your Own</h2></a></li></ul>
@@ -132,11 +133,11 @@ Related Articles
 <div class='col-lg-12 related'>
 <ul>
 <li><a href="/blog/2016/02/06/hmdvr-fpv-video-recorder/">HMDVR FPV Video Recorder</a></li>
-<li><a href="/blog/2015/10/29/multirotor-setup-checklist/">MultiRotor Setup Checklist</a></li>
-<li><a href="/blog/2016/07/25/j-link-getting-started-guide/">J-Link Getting Started Guide</a></li>
-<li><a href="/blog/2015/05/14/flashing-nodemcu-on-the-esp8266/">Flashing NodeMCU on the ESP8266</a></li>
-<li><a href="/blog/2015/12/06/blheli-esc-identification/">BlHeli ESCs</a></li>
 <li><a href="/blog/2016/07/12/airbot-f3s-aio/">Airbot F3S AIO Flight Controller and Typhoon 4-in-1 ESC</a></li>
+<li><a href="/blog/2016/07/25/j-link-getting-started-guide/">J-Link Getting Started Guide</a></li>
+<li><a href="/blog/2015/12/06/blheli-esc-identification/">BlHeli ESCs</a></li>
+<li><a href="/blog/2015/10/29/multirotor-setup-checklist/">MultiRotor Setup Checklist</a></li>
+<li><a href="/blog/2015/01/02/configuring-the-hk-t6a-for-a-flight-simulator/">Configuring the HK-T6A for a Flight Simulator</a></li>
 </ul>
 </div>
 </div>
@@ -223,13 +224,23 @@ Checkout my other guides at
 
 <p>The physical goggles are just <a href="http://amzn.to/1HfJdRb">Google Cardboard</a> with a <a href="http://www.banggood.com/FPV-5_8G-8CH-200mW-AV-Wireless-Receiver-RC805-p-73202.html?p=1G09211226617201502J">Boscam RC805 Video Receiver</a> (I use this <a href="http://www.banggood.com/Boscam-FPV-5_8G-200mW-AV-Wireless-Transmitter-TS351-p-73198.html?p=1G09211226617201502J">Boscam TS351 transmitter</a>) velcroed on and hooked up to <a href="http://www.banggood.com/USB2_0-Video-TV-Tuner-DVD-Audio-Capture-Card-Converter-Record-Receiver-p-921000.html?p=1G09211226617201502J">an analog to digital converter (ADC)</a> that speaks the <a href="http://en.wikipedia.org/wiki/USB_video_device_class">UVC protocol</a>. You&#39;ll need a USB OTG cable to hook up the ADC to your phone. This cable and the other cables big and bulky, so I soldered on my own shorter, lighter cables, including a custom made OTG cable. I also soldered in a JST connector, so I could plug a lipo straight into the Reciever, which can take up to ~16v safely.</p>
 
+<h3 id="components">Components</h3>
+
 <p>My goggles don&#39;t look like cardboard, even though they are, because I made them out of a box that had printing on it. I think it was a box for a kitchen item. It had a nice plastic feel, which I hope will keep some of the moisture away from the cardboard.</p>
 
 <p><span class="center img-half-width"><img alt="go fpv components" src="/assets/images/blog/go_goggles/DSC05995.JPG" /></span></p>
 
-<p>Alternatively, you could just buy <a href="http://amzn.to/1jNqx19">these awesome goggles</a> for ~$20, which I use myself:</p>
+<h3 id="goggles">Goggles</h3>
 
-<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 81.39999999999999%;'><a id="assets-images-blog-go-goggles-vrbox-a-b-jpg" href="http://amzn.to/1jNqx19" class="linked-img "><img src='/assets/images/blog/go_goggles/vrbox-2867a05b.jpg' class='trailing-space' ></img></a></div></div>
+<p>Instead of using cardboard, I suggest you pay around $20 for a nice pair of pre-built goggles like the <a href="http://www.banggood.com/VR-BOX-2_0-Google-Cardboard-VR-Virtual-Reality-3D-Glasses-with-Bluetooth-Remote-Control-p-1027863.html?p=1G09211226617201502J">VR Box</a> or <a href="http://www.banggood.com/BlitzWolf-BW-VR3-3D-VR-Glasses-Virtual-Reality-Headset-For-3_5-6_3-inch-Cellphone-p-1080443.html?p=1G09211226617201502J">BlitzWolf BW-VR3</a>.</p>
+
+<p>I&#39;m a big fan of the slightly larger, slightly more comfortable <a href="http://www.banggood.com/BlitzWolf-BW-VR3-3D-VR-Glasses-Virtual-Reality-Headset-For-3_5-6_3-inch-Cellphone-p-1080443.html?p=1G09211226617201502J">Blitzwolf goggles</a>. They have a nice leather-esque pad around the eyes. The phone flips down instead of slides out of the side. This makes it a little easier to change settings on your phone and it makes connecting the USB cable a bit easier:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 100.0%;'><a id="assets-images-blog-go-goggles-blitzwolf-e-c-c-jpg" href="http://www.banggood.com/VR-BOX-2_0-Google-Cardboard-VR-Virtual-Reality-3D-Glasses-with-Bluetooth-Remote-Control-p-1027863.html?p=1G09211226617201502J" class="linked-img "><img src='/assets/images/blog/go_goggles/blitzwolf-269e0c9c.jpg' class='trailing-space' ></img></a></div></div>
+
+<p>Here are the <a href="http://www.banggood.com/VR-BOX-2_0-Google-Cardboard-VR-Virtual-Reality-3D-Glasses-with-Bluetooth-Remote-Control-p-1027863.html?p=1G09211226617201502J">VR Box goggles</a>, which are a little bit smaller and lighter, but a little lower quality:</p>
+
+<div class='ratio-box-resizer img-three-quarters-width'><div class='ratio-box' style='padding-bottom: 81.39999999999999%;'><a id="assets-images-blog-go-goggles-vrbox-a-b-jpg" href="http://www.banggood.com/VR-BOX-2_0-Google-Cardboard-VR-Virtual-Reality-3D-Glasses-with-Bluetooth-Remote-Control-p-1027863.html?p=1G09211226617201502J" class="linked-img "><img src='/assets/images/blog/go_goggles/vrbox-2867a05b.jpg' class='trailing-space' ></img></a></div></div>
 
 <h2 id="performance">Performance</h2>
 
