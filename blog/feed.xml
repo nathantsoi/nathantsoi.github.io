@@ -5,10 +5,118 @@
   <id>http://nathan.vertile.com/blog</id>
   <link href="http://nathan.vertile.com/blog"/>
   <link href="http://nathan.vertile.com/blog/blog/feed.xml" rel="self"/>
-  <updated>2016-10-11T17:01:00-07:00</updated>
+  <updated>2016-11-13T19:44:00-08:00</updated>
   <author>
     <name>Nathan Tsoi</name>
   </author>
+  <entry>
+    <title>Flash BLHELI_S with DSHOT using BlHeli-Configurator</title>
+    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/11/14/flash-blheli_s-with-dshot/"/>
+    <id>http://nathan.vertile.com/blog/2016/11/14/flash-blheli_s-with-dshot/</id>
+    <published>2016-11-13T19:44:00-08:00</published>
+    <updated>2016-11-14T23:27:42-08:00</updated>
+    <author>
+      <name>Nathan Tsoi</name>
+    </author>
+    <content type="html">&lt;p&gt;The BlHeli configurator by &lt;a href="https://www.rcgroups.com/forums/member.php?u=632094"&gt;@diehertz&lt;/a&gt; is here! And so is the beta version of DSHOT for BLHELI_S. In this guide I&amp;#39;ll tell you a little bit about what I&amp;#39;ve learned from diehertz about BLHELI_S and how to flash your own ESCs.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-quarter-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.0%;'&gt;&lt;a id="assets-images-blog-blheli-configurator-icon-a-d-cb-png" href="https://chrome.google.com/webstore/detail/blheli-configurator/mejfjggmbnocnfibbibmoogocnjbcjnk" class="linked-img "&gt;&lt;img src='/assets/images/blog/blheli-configurator/icon_128-30a7d7cb.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id="what-is-blheli_s-dshot"&gt;What is BLHELI_S? DSHOT?&lt;/h2&gt;
+
+&lt;p&gt;The BLHELI_S description basically says that it&amp;#39;s meant to be an easy to use version of BLHELI, however that&amp;#39;s not why I&amp;#39;m really interested in it. I&amp;#39;m interested, because Steffen, the creator of BlHeli, has been working on DSHOT support! &lt;a href="https://github.com/bitdump/BLHeli/tree/master/BLHeli_S%20SiLabs/Dshot%20test%20code%20hex%20files"&gt;beta hex files are here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You might be wondering now, what is DSHOT? DSHOT is the first ESC protocol that is totally digital (as opposed to analog). This is super exciting because digital protocols are not subject to the same issues that analog suffers from. What this means for us is that we&amp;#39;ll get super accurate and super smooth motor response along the full motor range, all without calibration!&lt;/p&gt;
+
+&lt;p&gt;An analog signal is susceptible to noise on the wire and can vary the signal slightly as the noise on the wire changes. This is why, if you&amp;#39;re running PPM or PWM between your RX and your flight controller, you&amp;#39;ll notice on the RX page of the BetaFlight configurator, that the values change slightly without moving the sticks.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 62.5%;'&gt;&lt;a id="assets-images-blog-blheli-configurator-ppm-bac-b-gif" href="/assets/images/blog/blheli-configurator/ppm-bac46b33.gif" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/blheli-configurator/ppm-bac46b33.gif' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To continue the analogy with the RX to FC connection, you can think about all the other ESC protocols (PWM, ONESHOT125, ONESHOT42 and MUTLISHOT) as PPM/PWM, which are all analog signals, susceptible to timing issues and noise. DSHOT on the other hand is like SBUS, a super solid, fast and accurate digital protocol.&lt;/p&gt;
+
+&lt;p&gt;Note that BlHeli ESCs will not necessarily work with BLHELI_S, you&amp;#39;ll need to get some ESCs that support BLHELI_S.&lt;/p&gt;
+
+&lt;p&gt;Ok, let&amp;#39;s flash some ESCs, I&amp;#39;ll be using some &lt;a href="http://shop.myairbot.com/index.php/bumpbee-s.html"&gt;BumpBee BLHELI_S ESCs&lt;/a&gt;, but I&amp;#39;ll try to expand this article over time to include other ESCs as well.&lt;/p&gt;
+
+&lt;h2 id="hex-file-naming-convention"&gt;HEX File Naming Convention&lt;/h2&gt;
+
+&lt;p&gt;To figure out which HEX file to flash to our ESCs, I talked with diehertz, creator of &lt;a href="https://chrome.google.com/webstore/detail/blheli-configurator/mejfjggmbnocnfibbibmoogocnjbcjnk"&gt;BlHeli Configurator&lt;/a&gt; and he gave me a quick overview of the naming scheme for BLHELI_S. Here is the summary from diehertz:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The files are named: &lt;code&gt;[A-O]_[HL]_[0-9]{2}&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;First letter encodes ESC circuitry, decisions like which MCU pins is used for signal/gate drivers/bemf etc. This will be unique to your ESC and a description of this choice is &lt;a href="https://github.com/bitdump/BLHeli/blob/master/BLHeli_S%20SiLabs/BLHeli_S.asm#L101-L115"&gt;available in blheli source here&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Second letter is for the processor, in the case of the BumpBee ESCs, we&amp;#39;ll be using &lt;code&gt;H&lt;/code&gt; for the &lt;code&gt;BB21x&lt;/code&gt; processor.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Number is FET dead time (time it takes to switch them off and stop any current from flowing), used as a counter for a simple &lt;code&gt;while (--i);&lt;/code&gt; loop&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Unit is &lt;code&gt;1 / BB21-frequency&lt;/code&gt;, around &lt;code&gt;20ns&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;There are ESCs that use zero as a last param, I believe they use specialized chips for gate control. For example, Emax Lightning_S 35A uses B_H|_0&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that chosing a FET dead time that is TOO LOW can kill your ESCs, so be careful, if you&amp;#39;re not sure, it&amp;#39;s safer to pick a higher value. For example, picking a firmware ending in  &lt;code&gt;_90&lt;/code&gt; is safer than using one that ends in &lt;code&gt;_15&lt;/code&gt;, unless you know your ESC&amp;#39;s FETs can support the lower dead time.&lt;/p&gt;
+
+&lt;h2 id="flashing"&gt;Flashing&lt;/h2&gt;
+
+&lt;p&gt;My BumpBee_S ESCs came with the &lt;code&gt;J_L_90&lt;/code&gt; hex installed and I&amp;#39;m going to flash the right hex, which is &lt;code&gt;J_H_15&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Grab &lt;a href="https://chrome.google.com/webstore/detail/blheli-configurator/mejfjggmbnocnfibbibmoogocnjbcjnk"&gt;BlHeli Configurator&lt;/a&gt; if you don&amp;#39;t have it already and &lt;a href="https://github.com/bitdump/BLHeli/archive/master.zip"&gt;download the HEX file&lt;/a&gt; you&amp;#39;ll be using. The easiest thing to do is just to download all hex files as a zip from &lt;a href="https://github.com/bitdump/BLHeli/archive/master.zip"&gt;https://github.com/bitdump/BLHeli/archive/master.zip&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Connect your ESC to your flight controller as you normally would. Note that the &lt;a href="https://chrome.google.com/webstore/detail/blheli-configurator/mejfjggmbnocnfibbibmoogocnjbcjnk"&gt;BlHeli Configurator&lt;/a&gt; only supports pass-through programming, so if you need to flash some ESCs without a bootloader, you&amp;#39;ll need the &lt;a href="http://blhelisuite.wordpress.com"&gt;BlHeli Suite&lt;/a&gt;, which will let you program your ESCs via C2 or with an Arduino.&lt;/p&gt;
+
+&lt;p&gt;Ok, now that you&amp;#39;ve got all the software and your flight controller wired to your ESC, onto flashing.&lt;/p&gt;
+
+&lt;p&gt;If your ESCs came with a different firmware than the one we&amp;#39;re about to select, be sure to select the scary checkbox:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 5.078125%;'&gt;&lt;a id="assets-images-blog-blheli-configurator-checkbox-ad-ea-png" href="/assets/images/blog/blheli-configurator/checkbox-ad98ea99.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/blheli-configurator/checkbox-ad98ea99.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then pick the right DSHOT hex file.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 95.15845070422534%;'&gt;&lt;a id="assets-images-blog-blheli-configurator-pick-firmware-d-b-png" href="/assets/images/blog/blheli-configurator/pick-firmware-d6333b59.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/blheli-configurator/pick-firmware-d6333b59.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ok... flashing:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 95.15845070422534%;'&gt;&lt;a id="assets-images-blog-blheli-configurator-flashing-d-f-c-png" href="/assets/images/blog/blheli-configurator/flashing-d39f161c.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/blheli-configurator/flashing-d39f161c.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;That&amp;#39;s it! You&amp;#39;re all set. I usually go into the BetaFlight configurator at this point and make sure I have DSHOT set as the motor protocol then throttle up the ESCs to make sure they&amp;#39;re working :)&lt;/p&gt;
+
+&lt;h2 id="specific-escs"&gt;Specific ESCs&lt;/h2&gt;
+
+&lt;p&gt;Here are my notes on flashing and configuring specific ESCs. I&amp;#39;ll try to expand this section as I flash more ESCs with DSHOT and feel free to comment below if you have tips or questions.&lt;/p&gt;
+
+&lt;h3 id="bumpbee_s"&gt;BumpBee_S&lt;/h3&gt;
+
+&lt;p&gt;DSHOT 600 seems to works great. I have only bench tested, I will update this after I get my first flight in.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note that there are 2 different version of the BumpBee, the &lt;code&gt;BumpBee&lt;/code&gt; and &lt;code&gt;BumpBee_S&lt;/code&gt;, only the &lt;code&gt;_S&lt;/code&gt; version supports DSHOT.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If there are 3 LEDs on the back, then it is Bumpbee_S using &lt;code&gt;BB21&lt;/code&gt;, and &lt;code&gt;J_H_xx&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 51.11111111111111%;'&gt;&lt;a id="assets-images-blog-blheli-configurator-bumpbee-s-id-ed-png" href="/assets/images/blog/blheli-configurator/bumpbee_s_id-28ed4195.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/blheli-configurator/bumpbee_s_id_prev.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;If there is no LED on the back, it is BUMPBEE, it is &lt;code&gt;F396&lt;/code&gt; and it will not work with BLHELI_S&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;To get DSHOT working, you&amp;#39;ll need to remove this capacitor (thx again to diehertz for the tip):&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 53.02734375%;'&gt;&lt;a id="assets-images-blog-blheli-configurator-bumpbee-s-dshot-a-e-png" href="/assets/images/blog/blheli-configurator/bumpbee_s_dshot_1-39a7e467.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/blheli-configurator/bumpbee_s_dshot_1-39a7e467.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After removal, it will look like this:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 51.11111111111111%;'&gt;&lt;a id="assets-images-blog-blheli-configurator-bumpbee-s-dshot-c-png" href="/assets/images/blog/blheli-configurator/bumpbee_s_dshot_2-656290c9.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/blheli-configurator/bumpbee_s_dshot_2_prev.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you need to connect a C2 programmer, here is the pinout:&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 52.6080476900149%;'&gt;&lt;a id="assets-images-blog-blheli-configurator-Bumpbee-C-da-c-f-png" href="/assets/images/blog/blheli-configurator/Bumpbee_C2-da4c96f6.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/blheli-configurator/Bumpbee_C2-da4c96f6.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+  </entry>
   <entry>
     <title>OmnibusF4 and the BFOSD</title>
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/10/12/omnibusf4/"/>
@@ -581,7 +689,7 @@ index eb075a1..9add3f8 100644
     <link rel="alternate" href="http://nathan.vertile.com/blog/2016/08/06/geeetech-prusa-i3-x-build-guide/"/>
     <id>http://nathan.vertile.com/blog/2016/08/06/geeetech-prusa-i3-x-build-guide/</id>
     <published>2016-08-05T21:14:00-07:00</published>
-    <updated>2016-11-05T21:46:35-07:00</updated>
+    <updated>2016-11-14T23:25:57-08:00</updated>
     <author>
       <name>Nathan Tsoi</name>
     </author>
@@ -612,6 +720,10 @@ index eb075a1..9add3f8 100644
 &lt;/ul&gt;
 
 &lt;h2 id="other-parts"&gt;Other Parts&lt;/h2&gt;
+
+&lt;p&gt;Update Nov 2016. I have found after several months of use that &lt;a href="http://www.banggood.com/Wltoys-A949-RC-Car-483mm-Ball-Bearing-A949-33-4Pcs-p-968282.html?p=1G09211226617201502J"&gt;the bearings&lt;/a&gt; do wear out. They are easy to switch out, but be sure to order some extra.&lt;/p&gt;
+
+&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 74.8%;'&gt;&lt;a id="assets-images-blog-geeetech-prusa-i-x-IMG-ed-b-c-jpg" href="/assets/images/blog/geeetech-prusa-i3-x/IMG_20161113_193817-ed80b9c6.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/geeetech-prusa-i3-x/IMG_20161113_193817_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Along with the printer, you&amp;#39;ll need some filament. You can get this &lt;a href="http://www.banggood.com/1_75mm-3D-Printer-ABS-Filament-For-Makerbot-Mendel-Printrbot-Reprap-Prusa-Sumpod-p-988881.html?p=1G09211226617201502J"&gt;from Banggood&lt;/a&gt; for about $30 per kg, but if you live in the USA, I suggest you get filament &lt;a href="http://amzn.to/2c0ekDw"&gt;from this Amazon supplier for only $8-10 per kg&lt;/a&gt;. The ratings for the Amazon filament are not great, but I&amp;#39;ve been using this for all my prints and it works fine.&lt;/p&gt;
 
@@ -1080,128 +1192,6 @@ index eb075a1..9add3f8 100644
 &lt;h4 id="lighting"&gt;Lighting&lt;/h4&gt;
 
 &lt;p&gt;I also got some &lt;a href="http://www.banggood.com/10W-Warm-Pure-White-High-Brightest-Save-Power-LED-Light-Lamp-p-88169.html?p=1G09211226617201502J"&gt;12v LEDs&lt;/a&gt; to wire onto the extruder carriage.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>BetaFlight Kiss Flight Controller</title>
-    <link rel="alternate" href="http://nathan.vertile.com/blog/2016/07/29/betaflight-kiss-flight-controller/"/>
-    <id>http://nathan.vertile.com/blog/2016/07/29/betaflight-kiss-flight-controller/</id>
-    <published>2016-07-28T22:30:00-07:00</published>
-    <updated>2016-11-08T21:00:15-08:00</updated>
-    <author>
-      <name>Nathan Tsoi</name>
-    </author>
-    <content type="html">&lt;p&gt;This guide will show you how to install BetaFlight on your Kiss FC.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-kissfc-front-JPG" href="/assets/images/blog/kissfc/front.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/front_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-kissfc-back-JPG" href="/assets/images/blog/kissfc/back.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/back_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;When I told &lt;a href="http://flyduino.net"&gt;flyduino.net&lt;/a&gt; we were interested in supporting the KissFC in BetaFlight, the were kind enough to mail me one. At the same time, I wasl talking to &lt;a href="https://www.patreon.com/thedroneracingengineer"&gt;Joshua&lt;/a&gt; and he also send me a KissFC! Thx guys. Y&amp;#39;all are the best. I&amp;#39;m going to pass one of the KissFC&amp;#39;s on, so we have some more developer&amp;#39;s with one in their arsenal.&lt;/p&gt;
-
-&lt;h2 id="pinout"&gt;Pinout&lt;/h2&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.50717703349282%;'&gt;&lt;a id="assets-images-blog-kissfc-pinout-d-c-d-png" href="/assets/images/blog/kissfc/pinout-5d903c7d.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/pinout-5d903c7d.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 90.34175334323923%;'&gt;&lt;a id="assets-images-blog-kissfc-schematic-bd-png" href="/assets/images/blog/kissfc/schematic-12673bd7.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/schematic-12673bd7.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="motor-order"&gt;Motor order&lt;/h3&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;BetaFlight Motor Number -&amp;gt; KISSFC PAD LABEL
-1 -&amp;gt; 3
-2 -&amp;gt; 2
-3 -&amp;gt; 4
-4 -&amp;gt; 1
-5 -&amp;gt; 5
-6 -&amp;gt; 6
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Where KISSFC PAD is the label next to the pad on the flight controller and the BetaFlight Motor Number is given by the motor order diagram:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-half-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 95.2755905511811%;'&gt;&lt;a id="assets-images-blog-airbot-motor-order-c-ee-png" href="/assets/images/blog/airbot/motor-order-9c413ee9.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/airbot/motor-order-9c413ee9.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id="ppm"&gt;PPM&lt;/h3&gt;
-
-&lt;p&gt;Wire your PPM receiver like this.&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;Green -&amp;gt; Signal
-Red -&amp;gt; 5v
-Blue -&amp;gt; GND
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-kissfc-DSC-JPG" href="/assets/images/blog/kissfc/DSC03616.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/DSC03616_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Then enable PPM in the BetaFlight Configurator on the &lt;code&gt;Configuration&lt;/code&gt; tab under &lt;code&gt;Receiver Mode&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.2112676056338%;'&gt;&lt;a id="assets-images-blog-kissfc-serialrx-ppm-a-png" href="/assets/images/blog/kissfc/serialrx-ppm-054a7772.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/serialrx-ppm-054a7772.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Hit &lt;code&gt;save and reboot&lt;/code&gt; and check that your receiver is working in the &lt;code&gt;Receiver&lt;/code&gt; tab.&lt;/p&gt;
-
-&lt;h3 id="serial-rx"&gt;Serial RX&lt;/h3&gt;
-
-&lt;p&gt;Wire your Serial RX receiver like this.&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;Green -&amp;gt; Signal
-Red -&amp;gt; 5v
-Blue -&amp;gt; GND
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 66.44951140065146%;'&gt;&lt;a id="assets-images-blog-kissfc-DSC-JPG" href="/assets/images/blog/kissfc/DSC03615.JPG" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/DSC03615_prev.JPG' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Then enable Serial RX on UART1:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.2112676056338%;'&gt;&lt;a id="assets-images-blog-kissfc-serialrx-uart-bcf-e-b-png" href="/assets/images/blog/kissfc/serialrx-uart1-bcf43e5b.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/serialrx-uart1-bcf43e5b.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Hit &lt;code&gt;save and reboot&lt;/code&gt;, then enable &lt;code&gt;Serial RX&lt;/code&gt; and select the correct protocol, I&amp;#39;m using &lt;code&gt;IBUS&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 60.2112676056338%;'&gt;&lt;a id="assets-images-blog-kissfc-serialrx-ibus-fe-png" href="/assets/images/blog/kissfc/serialrx-ibus-7544fe34.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/serialrx-ibus-7544fe34.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Hit &lt;code&gt;save and reboot&lt;/code&gt; and check that your receiver is working in the &lt;code&gt;Receiver&lt;/code&gt; tab.&lt;/p&gt;
-
-&lt;h2 id="flashing"&gt;Flashing&lt;/h2&gt;
-
-&lt;p&gt;First, download the latest &lt;a href="https://github.com/betaflight/betaflight/releases/latest"&gt;BetaFlight release&lt;/a&gt; and the &lt;a href="http://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-programmers/stsw-stm32080.html"&gt;STM32 DFU Flash tool&lt;/a&gt;. The DFU download link is at the bottom of the page. It may be possible to flash the BetaFlight hex with the BetaFlight configurator, but I couldn&amp;#39;t get it to work. Instead, I&amp;#39;ll use the DFU flash tool for the first flash. After that, the BetaFligth configurator worked fine for me.&lt;/p&gt;
-
-&lt;p&gt;Install the DFU software by unzipping the download and following the walk through. Launch the DFU flash tool and you should see:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 100.35460992907801%;'&gt;&lt;a id="assets-images-blog-kissfc-dfu-ed-a-png" href="/assets/images/blog/kissfc/dfu-ed80511a.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/dfu-ed80511a.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Under &amp;quot;Upload Action&amp;quot; click &amp;quot;Choose&amp;quot; and find the BetaFlight &lt;code&gt;KISSFC&lt;/code&gt; .hex file you downloaded. You&amp;#39;ll need to change the allowable file type to &lt;code&gt;All Files&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 86.21745788667687%;'&gt;&lt;a id="assets-images-blog-kissfc-dfu-file-type-e-b-png" href="/assets/images/blog/kissfc/dfu-file-type-223e464b.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/dfu-file-type-223e464b.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Plug in the board while holding the boot button. Click upload, accept the warning and you should see:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 101.06571936056838%;'&gt;&lt;a id="assets-images-blog-kissfc-dfu-uploaded-a-b-f-png" href="/assets/images/blog/kissfc/dfu-uploaded-6a16b6f1.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/dfu-uploaded-6a16b6f1.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Ok, even though the flashing worked, we&amp;#39;re not done yet. You&amp;#39;ll need to open the BetaFlight configurator and flash the KISSFC as you would normally. I&amp;#39;ll choose &lt;code&gt;Full chip erase&lt;/code&gt; as well, just to be safe.&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 97.09507042253522%;'&gt;&lt;a id="assets-images-blog-kissfc-flash-normally-d-d-png" href="/assets/images/blog/kissfc/flash-normally-4d88563d.png" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/flash-normally-4d88563d.png' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;When you&amp;#39;re done, the board should reboot and you can connect.&lt;/p&gt;
-
-&lt;h3 id="swd"&gt;SWD&lt;/h3&gt;
-
-&lt;p&gt;SWD is the debugging interface which is used for stepping through instructions while developing software for the flight controller.&lt;/p&gt;
-
-&lt;p&gt;Debugging pins are:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;AUX1 (PA13) -&amp;gt; SWDIO
-AUX2 (PA14) -&amp;gt; SWDCLK
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Here&amp;#39;s how to wire it:&lt;/p&gt;
-
-&lt;div class='ratio-box-resizer img-three-quarters-width'&gt;&lt;div class='ratio-box' style='padding-bottom: 75.0%;'&gt;&lt;a id="assets-images-blog-kissfc-IMG-a-e-ebbd-jpg" href="/assets/images/blog/kissfc/IMG_20160804_222400-a6e3ebbd.jpg" class="linked-img colorbox"&gt;&lt;img src='/assets/images/blog/kissfc/IMG_20160804_222400_prev.jpg' class='trailing-space' &gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Note that pwm inputs matching these pins must be disabled. Change:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;target.h&lt;/code&gt;:&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;#define USABLE_TIMER_CHANNEL_COUNT 10
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;target.c&lt;/code&gt;:&lt;/p&gt;
-&lt;pre class="highlight json"&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM2,&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="err"&gt;IO_TAG(PB11),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM_Channel_4,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM2_IRQn,&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="err"&gt;0,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;IOCFG_AF_PP,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;GPIO_AF_1&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="err"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
-    &lt;/span&gt;&lt;span class="err"&gt;//&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM4,&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="err"&gt;IO_TAG(PA13),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM_Channel_2,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM4_IRQn,&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="err"&gt;0,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;IOCFG_AF_PP,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;GPIO_AF_10&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="err"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
-    &lt;/span&gt;&lt;span class="err"&gt;//&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM8,&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="err"&gt;IO_TAG(PA14),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM_Channel_3,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;TIM8_CC_IRQn,&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;0,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;IOCFG_AF_PP,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;GPIO_AF_5&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="err"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;span class="err"&gt;};&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 </content>
   </entry>
 </feed>
